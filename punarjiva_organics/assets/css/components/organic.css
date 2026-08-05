@@ -1,0 +1,318 @@
+/* ===========================================================================
+   organic.css — the "organic, pure, natural" theme layer.
+
+   Three quiet devices, none of which touch layout or readability:
+     1. a paper grain over the whole page, so flat cream reads as handmade stock
+     2. tree-of-life watermarks scattered behind sections at varied positions,
+        sizes and rotations, taken from the mark in the logo
+     3. a torn/deckled edge where sections meet, instead of a ruled line
+
+   All of it is decorative: aria-hidden, pointer-events:none, and it all
+   disappears cleanly under prefers-reduced-motion or if an asset fails.
+   =========================================================================== */
+
+/* ---------- 1. paper grain ------------------------------------------------ */
+
+/* A fine fibrous noise, generated in the browser rather than shipped as an
+   image — no extra request, and it scales to any screen density. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: .055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* ---------- 1b. page-wide leaf drift --------------------------------------
+   Leaves cross the whole page from left to right on an arc, not straight —
+   they rise, sail, and settle, the way a leaf actually travels on moving air.
+   The arc comes from nesting: the outer span carries the horizontal journey,
+   the inner image carries the rise-and-fall and the tumble. Combining both on
+   one element would only ever give a straight line. */
+
+.leafDrift {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Content sits above the drift; the page background sits below it. */
+body > main,
+body > .navBar,
+body > div > .navBar,
+body > .siteFooter,
+body > div > .siteFooter { position: relative; z-index: 1; }
+
+.leafDrift .driftTrack {
+  position: absolute;
+  left: -8%;
+  display: block;
+  will-change: transform;
+  animation-name: driftAcross;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.leafDrift .driftLeaf {
+  display: block;
+  width: 100%;
+  opacity: .5;
+  will-change: transform;
+  animation-name: driftArc;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Horizontal journey: fully off one edge to fully off the other. */
+@keyframes driftAcross {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(118vw, 0, 0); }
+}
+
+/* Vertical arc + tumble, one full pass per crossing. */
+@keyframes driftArc {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25%  { transform: translate3d(0, -9vh, 0) rotate(90deg); }
+  50%  { transform: translate3d(0, 4vh, 0) rotate(180deg); }
+  75%  { transform: translate3d(0, -6vh, 0) rotate(268deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(360deg); }
+}
+
+/* Six leaves, each with its own lane, size, speed and phase, so the stream
+   never visibly repeats. Durations are long on purpose — this is ambient. */
+.leafDrift .driftTrackOne   { top: 12%; width: 30px; animation-duration: 42s; animation-delay:  -2s; }
+.leafDrift .driftTrackTwo   { top: 28%; width: 20px; animation-duration: 58s; animation-delay: -19s; }
+.leafDrift .driftTrackThree { top: 46%; width: 26px; animation-duration: 49s; animation-delay: -34s; }
+.leafDrift .driftTrackFour  { top: 63%; width: 17px; animation-duration: 66s; animation-delay:  -8s; }
+.leafDrift .driftTrackFive  { top: 78%; width: 24px; animation-duration: 53s; animation-delay: -27s; }
+.leafDrift .driftTrackSix   { top: 90%; width: 15px; animation-duration: 71s; animation-delay: -45s; }
+
+.leafDrift .driftTrackOne   .driftLeaf { animation-duration: 11s; opacity: .5; }
+.leafDrift .driftTrackTwo   .driftLeaf { animation-duration: 14s; opacity: .38; }
+.leafDrift .driftTrackThree .driftLeaf { animation-duration: 9s;  opacity: .45; }
+.leafDrift .driftTrackFour  .driftLeaf { animation-duration: 16s; opacity: .32; }
+.leafDrift .driftTrackFive  .driftLeaf { animation-duration: 12s; opacity: .42; }
+.leafDrift .driftTrackSix   .driftLeaf { animation-duration: 18s; opacity: .3; }
+
+/* ---------- 1c. standing trees --------------------------------------------
+   Larger, more present than the watermarks — a tree rooted at the edge of a
+   section, meant to be noticed and to read as calm rather than as texture. */
+
+.standingTree {
+  position: absolute;
+  bottom: 0;
+  width: clamp(150px, 20vw, 280px);
+  opacity: .16;
+  pointer-events: none;
+  z-index: 0;
+  transform-origin: bottom center;
+  animation: standingSway 14s ease-in-out infinite alternate;
+}
+
+.standingTreeLeft { left: -30px; }
+.standingTreeRight { right: -30px; animation-delay: -6s; }
+
+@keyframes standingSway {
+  from { transform: rotate(-1.4deg) scale(1); }
+  to   { transform: rotate(1.4deg) scale(1.03); }
+}
+
+@media (max-width: 767.98px) {
+  .standingTree { opacity: .1; width: 130px; }
+  .standingTreeRight { display: none; }
+}
+
+/* ---------- 2. tree watermarks -------------------------------------------- */
+
+/* Applied to any section carrying .hasTrees. Each tree is placed, scaled and
+   rotated differently so the repetition never becomes a visible pattern. */
+
+/* overflow:hidden is load-bearing, not tidiness. Every decorative layer here
+   is deliberately positioned past its section's edge; without clipping on the
+   section itself those overhangs widen the document and the whole page scrolls
+   sideways. Verified: the mandala alone pushed scrollWidth to 1344 on a
+   1280px viewport before this was added. */
+.hasTrees,
+.hasMandala,
+.hasStandingTrees {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hasTrees > .container,
+.hasTrees > * { position: relative; z-index: 1; }
+
+.treeField {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.treeField .treeMark {
+  position: absolute;
+  opacity: .05;
+  filter: grayscale(.15);
+  will-change: transform;
+}
+
+/* Five placements, deliberately uneven — an even grid would read as wallpaper. */
+.treeField .treeMarkOne {
+  width: 230px; left: -60px; top: -30px;
+  transform: rotate(-9deg);
+  animation: treeBreathe 17s ease-in-out infinite alternate;
+}
+.treeField .treeMarkTwo {
+  width: 150px; right: 7%; top: 12%;
+  transform: rotate(11deg);
+  opacity: .04;
+  animation: treeBreathe 23s ease-in-out infinite alternate-reverse;
+}
+.treeField .treeMarkThree {
+  width: 300px; right: -80px; bottom: -90px;
+  transform: rotate(5deg);
+  animation: treeBreathe 29s ease-in-out infinite alternate;
+}
+.treeField .treeMarkFour {
+  width: 120px; left: 27%; bottom: 4%;
+  transform: rotate(-16deg);
+  opacity: .035;
+  animation: treeBreathe 21s ease-in-out infinite alternate-reverse;
+}
+.treeField .treeMarkFive {
+  width: 180px; left: 62%; top: -50px;
+  transform: rotate(19deg);
+  opacity: .04;
+  animation: treeBreathe 26s ease-in-out infinite alternate;
+}
+
+/* Barely-there swell, as if the canopy were moving in air. */
+@keyframes treeBreathe {
+  from { transform: translate3d(0, 0, 0) scale(1) rotate(var(--treeTilt, 0deg)); }
+  to   { transform: translate3d(0, -14px, 0) scale(1.05) rotate(var(--treeTilt, 0deg)); }
+}
+
+/* Rotation has to ride along in the keyframe or it gets overwritten, so each
+   placement declares its tilt as a variable the animation reuses. */
+.treeField .treeMarkOne   { --treeTilt: -9deg; }
+.treeField .treeMarkTwo   { --treeTilt: 11deg; }
+.treeField .treeMarkThree { --treeTilt: 5deg; }
+.treeField .treeMarkFour  { --treeTilt: -16deg; }
+.treeField .treeMarkFive  { --treeTilt: 19deg; }
+
+/* ---------- 3. mandala ornament ------------------------------------------- */
+
+/* The lotus ring from the logo, used sparingly — once per page at most, as a
+   corner ornament on the closing CTA. */
+.mandalaOrnament {
+  position: absolute;
+  width: 200px;
+  opacity: .07;
+  pointer-events: none;
+  right: -54px;
+  top: -54px;
+  animation: mandalaTurn 90s linear infinite;
+}
+
+.mandalaOrnamentLeft {
+  right: auto;
+  left: -60px;
+  top: auto;
+  bottom: -60px;
+  animation-direction: reverse;
+}
+
+@keyframes mandalaTurn {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---------- 4. deckled section edge --------------------------------------- */
+
+/* A torn-paper boundary instead of a hard rule. Drawn as a repeating SVG mask
+   so it stays crisp at any width. */
+.edgeDeckle { position: relative; }
+
+.edgeDeckle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 14px;
+  background: inherit;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='14' preserveAspectRatio='none'%3E%3Cpath d='M0 0h120v6c-10 4-18 1-28 4s-16-3-26-1-16 4-26 2-14-4-20-2z' fill='%23000'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='14' preserveAspectRatio='none'%3E%3Cpath d='M0 0h120v6c-10 4-18 1-28 4s-16-3-26-1-16 4-26 2-14-4-20-2z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-size: 120px 14px;
+  mask-size: 120px 14px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  pointer-events: none;
+}
+
+/* ---------- 5. purity markers ---------------------------------------------- */
+
+/* A small honest row of what the store actually claims — no certification
+   badges are shown, because none have been verified. See data/home.json. */
+.purityStrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--spaceSm);
+  padding: var(--spaceMd) 0;
+}
+
+.purityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  padding: .9rem 1rem;
+  background: var(--colorWhite);
+  border: 1px solid var(--colorLine);
+  border-radius: var(--radiusPill) 14px var(--radiusPill) 14px;
+  box-shadow: var(--shadowSoft);
+  transition: transform .2s ease, border-radius .35s ease;
+}
+
+.purityItem:hover {
+  transform: translateY(-3px);
+  border-radius: 14px var(--radiusPill) 14px var(--radiusPill);
+}
+
+.purityItem .purityIcon {
+  font-size: 1.3rem;
+  color: var(--colorForest);
+  line-height: 1;
+  margin-top: .1rem;
+}
+
+.purityItem .purityTitle {
+  display: block;
+  font-weight: 600;
+  color: var(--colorPlum);
+  font-size: .95rem;
+}
+
+.purityItem .purityText { font-size: .84rem; color: var(--colorInkSoft); }
+
+/* ---------- reduced motion -------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .treeField .treeMark,
+  .mandalaOrnament { animation: none !important; }
+  .purityItem:hover { transform: none; }
+}
+
+/* The grain is a fixed full-screen layer; on very small screens it costs more
+   than it gives, so it steps aside. */
+@media (max-width: 575.98px) {
+  body::before { opacity: .04; }
+  .treeField .treeMarkTwo,
+  .treeField .treeMarkFour { display: none; }
+}

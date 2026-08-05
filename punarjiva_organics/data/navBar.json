@@ -1,0 +1,32 @@
+{
+  "_note": "Nav structure and labels. Links are stored PROJECT-RELATIVE (no ../) and resolved through pjPath() at render time, so they work from every page depth. Add or reorder items here — no HTML edits.",
+  "brandLabel": "Punarjiva Organics",
+  "brandTagline": "Rebirth Through Nature",
+  "items": [
+    { "label": "Home", "href": "index.html", "key": "home" },
+    { "label": "About", "href": "pages/about.html", "key": "about" },
+    { "label": "Products", "href": "pages/products.html", "key": "products" },
+    {
+      "label": "Blog",
+      "key": "blog",
+      "children": [
+        { "label": "All Articles", "href": "pages/blog.html", "key": "blog" },
+        { "label": "Ayurveda", "href": "pages/blog.html?category=ayurveda", "key": "blog" },
+        { "label": "Organic Living", "href": "pages/blog.html?category=organic-living", "key": "blog" },
+        { "label": "Recipes", "href": "pages/blog.html?category=recipes", "key": "blog" }
+      ]
+    },
+    {
+      "label": "More",
+      "key": "more",
+      "children": [
+        { "label": "Gallery", "href": "pages/gallery.html", "key": "gallery" },
+        { "label": "Reviews", "href": "pages/reviews.html", "key": "reviews" },
+        { "label": "FAQ", "href": "pages/faq.html", "key": "faq" }
+      ]
+    },
+    { "label": "Visit", "href": "pages/visit.html", "key": "visit" },
+    { "label": "Contact", "href": "pages/contact.html", "key": "contact" }
+  ],
+  "ctaLabel": "💬 WhatsApp Order"
+}

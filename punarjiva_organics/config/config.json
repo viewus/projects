@@ -1,0 +1,44 @@
+{
+  "siteName": "Punarjiva Organics",
+  "legalName": "Punarjiva Organics Private Limited",
+  "tagline": "Rebirth Through Nature",
+  "descriptor": "Organic • Natural • Ayurvedic",
+  "baseUrl": "https://projects1.akhileshravuri.online/punarjiva_organics/",
+  "themeColor": "#2F5D3A",
+  "logoPath": "assets/svg/logos/logoPunarjivaMark.svg",
+  "logoPhoto": "assets/images/logo-punarjiva.jpg",
+  "defaultOgImage": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&q=80",
+  "twitterHandle": "",
+  "contact": {
+    "phone": "+91 9063621883",
+    "phoneHref": "tel:+919063621883",
+    "whatsapp": "https://wa.me/919063621883",
+    "email": "namaste@punarjiva.com",
+    "emailNote": "TODO — verify with the client. The site publishes namaste@punarjiva.com while the domain is punarjiva.in. Left exactly as published rather than silently changed.",
+    "addressLine1": "Shop No.10, Siva Shankar Shopping Mall",
+    "addressLine2": "Proddatur, Cuddapah",
+    "addressRegion": "Andhra Pradesh",
+    "postalCode": "516360",
+    "country": "India",
+    "addressFull": "Punarjiva Organics Private Limited, Shop No.10, Siva Shankar Shopping Mall, Proddatur, Cuddapah, Andhra Pradesh – 516360",
+    "landmark": "Inside Siva Shankar Shopping Mall",
+    "mapsUrl": "https://maps.app.goo.gl/BkWk7Pic4zYY8xMZA?g_st=aw",
+    "hours": "TODO — confirm store timings with the client",
+    "hoursFallback": "Please call to confirm timings",
+    "googleReviewsUrl": "https://maps.app.goo.gl/BkWk7Pic4zYY8xMZA?g_st=aw"
+  },
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "note": "TODO — add real profile URLs. Empty values are skipped by the footer renderer, so no dead links are output."
+  },
+  "cors": {
+    "allowedOrigins": [
+      "https://projects1.akhileshravuri.online",
+      "https://www.punarjiva.in",
+      "https://punarjiva.in"
+    ],
+    "note": "Informational only. This file enforces nothing — real CORS is enforced by the API's own response headers server-side. Update it there too, not just here."
+  }
+}

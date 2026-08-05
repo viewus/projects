@@ -1,0 +1,7 @@
+{
+  "_note": "Every network endpoint the site calls lives here. Adding or changing one means editing THIS file only — no JavaScript changes. To go live with a form-relay service (Formspree, Web3Forms, Basin, ...), replace the url below with the one they give you; contactForm.js needs no edit.",
+  "contactForm": {
+    "url": "https://TODO-replace-with-real-endpoint.example.com/contact",
+    "method": "POST"
+  }
+}

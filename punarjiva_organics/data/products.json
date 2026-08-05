@@ -1,0 +1,60 @@
+{
+  "_note": "Category names, one-line descriptions and item lists are VERBATIM from punarjiva.in. NO PRICES: the source publishes none, and inventing them would misrepresent the business. Prices can be added later as an optional 'price' key per item — the renderer already skips it when absent.",
+  "_backgroundNote": "Header background photograph. Swap for a real store photo by putting a file in assets/images/ and using a project-relative path like 'assets/images/storeFront.jpg'. backgroundTint controls readability over it: 'strong' (most legible), '' (default), or 'light' (photo shows through most). Remove backgroundImage entirely to fall back to the plain brand gradient.",
+  "backgroundImage": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1600&q=80",
+  "backgroundTint": "strong",
+  "pageEyebrow": "What We Stock",
+  "pageTitle": "Our Organic & Natural Offerings",
+  "pageIntro": "A focused selection of organic groceries, natural cosmetics and Ayurvedic energy boosters — to gently bring Punarjivam into your daily routine.",
+  "categories": [
+    {
+      "title": "Organic Groceries",
+      "body": "Clean staples that honour traditional Indian kitchens.",
+      "icon": "bi-basket",
+      "variant": "elevated",
+      "image": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Open bowls of millets, pulses and whole spices on a wooden table",
+      "items": [
+        "Millets & grains",
+        "Pulses & dals",
+        "Cold-pressed oils",
+        "Flours & atta",
+        "Spices & masalas",
+        "Natural sweeteners"
+      ]
+    },
+    {
+      "title": "Natural Cosmetics",
+      "body": "Nature-led personal care that feels grounding and gentle.",
+      "icon": "bi-flower1",
+      "variant": "elevated",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Natural skincare jars and a bar of handmade soap beside dried botanicals",
+      "items": [
+        "Skin care",
+        "Hair oils & cleansers",
+        "Bath essentials",
+        "Body butters & balms"
+      ]
+    },
+    {
+      "title": "Ayurvedic Energy Boosters",
+      "body": "Classical and inspired blends that support vitality and resilience.",
+      "icon": "bi-cup-hot",
+      "variant": "elevated",
+      "image": "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Ayurvedic herbs and a traditional brass mortar and pestle on a stone counter",
+      "items": [
+        "Herbal tonics",
+        "Chyawanprash & lehyams",
+        "Daily energy mixes",
+        "Immunity & strength support"
+      ]
+    }
+  ],
+  "availabilityHeading": "Checking availability",
+  "availabilityText": "Stock changes with the season and with what our suppliers can source cleanly. Send your list on WhatsApp or call the store and we will confirm what is on the shelf before you travel.",
+  "disclaimer": "Ayurvedic and herbal products support general wellbeing. They are not medicines and are not intended to diagnose, treat or cure any condition. Please consult a qualified practitioner for medical advice.",
+  "ctaHeading": "Send us your list",
+  "ctaText": "Share your grocery, cosmetic or wellness list; we'll confirm availability and guide you with care."
+}

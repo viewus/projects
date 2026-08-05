@@ -1,0 +1,57 @@
+/* Tables — the wrapper scrolls on its own so a wide table never makes the
+   whole page scroll sideways on mobile. */
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--radiusMd);
+  border: 1px solid var(--colorLine);
+  background: var(--colorWhite);
+}
+
+.dataTable { width: 100%; margin: 0; border-collapse: collapse; font-size: .97rem; }
+
+.dataTable .tableCaption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--fontHeading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--colorForestDark);
+  padding: var(--spaceSm) var(--spaceMd) .5rem;
+}
+
+.dataTable .dataTableHead {
+  background: var(--colorLeafSoft);
+  color: var(--colorForestDark);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .7rem var(--spaceMd);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dataTable .dataTableRowHead {
+  font-weight: 600;
+  color: var(--colorForestDark);
+  padding: .8rem var(--spaceMd);
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.dataTable .dataTableCell { padding: .8rem var(--spaceMd); vertical-align: top; }
+
+/* A value we could not verify — shown muted so it reads as "ask us", not fact. */
+.dataTable .dataTableUnknown { color: var(--colorInkSoft); font-style: italic; }
+
+/* --- variants ------------------------------------------------------------- */
+
+.tableStriped tbody tr:nth-child(odd) { background: var(--colorCream); }
+.tableStriped tbody tr + tr { border-top: 1px solid var(--colorLine); }
+
+.tableBordered th, .tableBordered td { border: 1px solid var(--colorLine); }
+
+.tableCompact .dataTableHead,
+.tableCompact .dataTableRowHead,
+.tableCompact .dataTableCell { padding: .45rem .8rem; font-size: .9rem; }

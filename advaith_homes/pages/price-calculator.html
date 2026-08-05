@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Suite — Advaith Homes</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/price-calculator.css">
+</head>
+<body data-page="price-calculator">
+    <div id="nav-placeholder"></div>
+
+    <section class="calc-suite">
+        <div class="container">
+            <div class="calc-grid-main">
+                <!-- Sidebar Navigation -->
+                <aside class="calc-nav reveal">
+                    <div class="calc-nav__title">Financial Suite</div>
+                    <div class="calc-nav__item active" data-tool="mortgage">
+                        <span class="calc-nav__icon">🏠</span>
+                        <span>Mortgage Repayments</span>
+                    </div>
+                    <div class="calc-nav__item" data-tool="sdlt">
+                        <span class="calc-nav__icon">⚖️</span>
+                        <span>Stamp Duty (SDLT)</span>
+                    </div>
+                    <div class="calc-nav__item" data-tool="total">
+                        <span class="calc-nav__icon">💰</span>
+                        <span>Total Moving Costs</span>
+                    </div>
+                    <div class="calc-nav__item" data-tool="afford">
+                        <span class="calc-nav__icon">🏦</span>
+                        <span>Affordability Check</span>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: var(--bg-alt); border-radius: 12px;">
+                        <div style="font-weight: 700; color: var(--slate-900); font-size: 0.9rem; margin-bottom: 8px;">Need exact numbers?</div>
+                        <p style="font-size: 0.8rem; line-height: 1.4; margin-bottom: 12px;">Our experts provide verified valuations and exact fee structures for your specific purchase.</p>
+                        <a href="../free-consultation.html" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;">Expert Consultation</a>
+                    </div>
+                </aside>
+
+                <!-- Tool Area -->
+                <main class="calc-card reveal reveal-delay-1">
+                    
+                    <!-- 1. Mortgage Tool -->
+                    <div class="tool-view active" id="tool-mortgage">
+                        <div class="calc-header">
+                            <h2>Mortgage Calculator</h2>
+                            <p>Calculate your estimated monthly repayments based on current market rates.</p>
+                        </div>
+                        <div class="tool-layout">
+                            <div class="tool-inputs">
+                                <div class="input-field">
+                                    <label>Property Price</label>
+                                    <div class="input-wrap">
+                                        <span class="input-prefix">£</span>
+                                        <input type="number" id="m-price" value="450000">
+                                    </div>
+                                    <div class="slider-group">
+                                        <input type="range" min="100000" max="2000000" step="10000" value="450000" class="premium-slider" id="m-price-s">
+                                    </div>
+                                </div>
+                                <div class="input-field">
+                                    <label>Deposit Amount</label>
+                                    <div class="input-wrap">
+                                        <span class="input-prefix">£</span>
+                                        <input type="number" id="m-deposit" value="45000">
+                                    </div>
+                                    <div class="slider-group">
+                                        <div class="slider-label-row">
+                                            <span>5%</span>
+                                            <span id="m-dep-perc">10%</span>
+                                            <span>50%</span>
+                                        </div>
+                                        <input type="range" min="5" max="50" step="1" value="10" class="premium-slider" id="m-deposit-s">
+                                    </div>
+                                </div>
+                                <div class="input-field">
+                                    <label>Interest Rate (%)</label>
+                                    <div class="input-wrap" style="padding-left:0">
+                                        <input type="number" id="m-rate" value="4.5" step="0.1" style="padding-left:16px">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-results">
+                                <div class="res-item">
+                                    <span class="res-label">Monthly Repayment</span>
+                                    <div id="m-res-monthly" class="res-value">£2,249</div>
+                                    <div class="res-sub">Based on a 25-year repayment term</div>
+                                </div>
+                                <div style="margin-top: 40px;">
+                                    <div class="cost-row"><span>Total Interest</span> <span id="m-res-interest">£224,700</span></div>
+                                    <div class="cost-row"><span>Total Repayable</span> <span id="m-res-total">£674,700</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. SDLT Tool -->
+                    <div class="tool-view" id="tool-sdlt">
+                        <div class="calc-header">
+                            <h2>Stamp Duty (SDLT)</h2>
+                            <p>Calculate the mandatory government tax for your property purchase.</p>
+                        </div>
+                        <div class="tool-layout">
+                            <div class="tool-inputs">
+                                <div class="input-field">
+                                    <label>Purchase Price</label>
+                                    <div class="input-wrap">
+                                        <span class="input-prefix">£</span>
+                                        <input type="number" id="s-price" value="450000">
+                                    </div>
+                                </div>
+                                <div class="input-field">
+                                    <label>Buyer Category</label>
+                                    <select id="s-type" style="width:100%; padding:16px; border-radius:12px; border:2px solid var(--border); font-weight:600;">
+                                        <option value="first">First Time Buyer</option>
+                                        <option value="next" selected>Moving Home</option>
+                                        <option value="investor">Second Home / Investment</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="tool-results">
+                                <div class="res-item">
+                                    <span class="res-label">Stamp Duty Payable</span>
+                                    <div id="s-res-val" class="res-value">£10,000</div>
+                                    <div class="res-sub" id="s-res-desc">Standard residential rate applied</div>
+                                </div>
+                                <div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;"><strong>Note:</strong> Rates are based on 2025/26 HMRC thresholds. For properties over £1.5M or corporate purchases, special rates may apply.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Total Cost Tool -->
+                    <div class="tool-view" id="tool-total">
+                        <div class="calc-header">
+                            <h2>Total Moving Costs</h2>
+                            <p>The "Invisible" costs. See exactly how much cash you need to complete.</p>
+                        </div>
+                        <div class="tool-layout">
+                            <div class="tool-inputs">
+                                <div class="input-field">
+                                    <label>Property Price</label>
+                                    <div class="input-wrap">
+                                        <span class="input-prefix">£</span>
+                                        <input type="number" id="t-price" value="450000">
+                                    </div>
+                                </div>
+                                <div class="input-field">
+                                    <label>Legal & Conveyancing</label>
+                                    <div class="input-wrap"><span class="input-prefix">£</span><input type="number" id="t-legal" value="1500"></div>
+                                </div>
+                                <div class="input-field">
+                                    <label>Survey & Valuations</label>
+                                    <div class="input-wrap"><span class="input-prefix">£</span><input type="number" id="t-survey" value="650"></div>
+                                </div>
+                            </div>
+                            <div class="tool-results">
+                                <div class="res-item">
+                                    <span class="res-label">Total Upfront Cash</span>
+                                    <div id="t-res-val" class="res-value">£57,150</div>
+                                    <div class="res-sub">Including 10% Deposit + SDLT + Fees</div>
+                                </div>
+                                <div style="margin-top: 20px;">
+                                    <div class="cost-row"><span>Deposit (10%)</span> <span id="t-res-dep">£45,000</span></div>
+                                    <div class="cost-row"><span>Stamp Duty</span> <span id="t-res-sdlt">£10,000</span></div>
+                                    <div class="cost-row"><span>Professional Fees</span> <span id="t-res-fees">£2,150</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Affordability Tool -->
+                    <div class="tool-view" id="tool-afford">
+                        <div class="calc-header">
+                            <h2>Affordability Check</h2>
+                            <p>How much can you realistically borrow based on your household income?</p>
+                        </div>
+                        <div class="tool-layout">
+                            <div class="tool-inputs">
+                                <div class="input-field">
+                                    <label>Annual Gross Income (Applicant 1)</label>
+                                    <div class="input-wrap"><span class="input-prefix">£</span><input type="number" id="a-inc1" value="45000"></div>
+                                </div>
+                                <div class="input-field">
+                                    <label>Annual Gross Income (Applicant 2)</label>
+                                    <div class="input-wrap"><span class="input-prefix">£</span><input type="number" id="a-inc2" value="0"></div>
+                                </div>
+                                <div class="input-field">
+                                    <label>Monthly Debt/Commitments</label>
+                                    <div class="input-wrap"><span class="input-prefix">£</span><input type="number" id="a-debt" value="200"></div>
+                                </div>
+                            </div>
+                            <div class="tool-results">
+                                <div class="res-item">
+                                    <span class="res-label">Estimated Borrowing</span>
+                                    <div id="a-res-val" class="res-value">£202,500</div>
+                                    <div class="res-sub">Based on a 4.5x income multiple</div>
+                                </div>
+                                <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                                    <p style="font-size: 0.85rem; opacity: 0.8;">Most lenders cap borrowing at 4-5 times your gross annual salary. Monthly debts (loans, car finance) will reduce this limit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="../js/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ── Sidebar Logic ─────────────────────────
+            const navItems = document.querySelectorAll('.calc-nav__item');
+            const toolViews = document.querySelectorAll('.tool-view');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    navItems.forEach(i => i.classList.remove('active'));
+                    toolViews.forEach(v => v.classList.remove('active'));
+                    
+                    item.classList.add('active');
+                    const tool = item.dataset.tool;
+                    document.getElementById('tool-' + tool).classList.add('active');
+                });
+            });
+
+            // ── Input Filtering (Strictly Numbers) ─────
+            const numericInputs = document.querySelectorAll('input[type="number"]');
+            numericInputs.forEach(input => {
+                input.addEventListener('keydown', (e) => {
+                    // Block 'e', 'E', '+', '-'
+                    if (['e', 'E', '+', '-'].includes(e.key)) {
+                        e.preventDefault();
+                    }
+                });
+                input.addEventListener('input', () => {
+                    if (input.value < 0) input.value = 0;
+                });
+            });
+
+            // ── Calculation Logic ─────────────────────
+            function format(num) {
+                return '£' + Math.round(num).toLocaleString();
+            }
+
+            function getSDLT(price, type) {
+                let tax = 0;
+                if (type === 'investor') {
+                    tax = price * 0.03; // Simple flat surcharge estimation
+                    if (price > 250000) tax += (price - 250000) * 0.05;
+                } else if (type === 'first') {
+                    if (price > 425000) tax = (price - 425000) * 0.05;
+                    if (price > 625000) tax = getSDLT(price, 'next'); // No relief over 625k
+                } else {
+                    if (price > 250000) tax += (Math.min(price, 925000) - 250000) * 0.05;
+                    if (price > 925000) tax += (Math.min(price, 1500000) - 925000) * 0.10;
+                    if (price > 1500000) tax += (price - 1500000) * 0.12;
+                }
+                return Math.max(0, tax);
+            }
+
+            // 1. Mortgage Logic
+            const mPrice = document.getElementById('m-price');
+            const mPriceS = document.getElementById('m-price-s');
+            const mDeposit = document.getElementById('m-deposit');
+            const mDepositS = document.getElementById('m-deposit-s');
+            const mRate = document.getElementById('m-rate');
+
+            function updateMortgage() {
+                const price = parseFloat(mPrice.value);
+                const depPerc = parseFloat(mDepositS.value);
+                const depAmt = price * (depPerc / 100);
+                mDeposit.value = Math.round(depAmt);
+                document.getElementById('m-dep-perc').innerText = depPerc + '%';
+                
+                const loan = price - depAmt;
+                const r = (parseFloat(mRate.value) / 100) / 12;
+                const n = 25 * 12;
+                const monthly = loan * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+                
+                document.getElementById('m-res-monthly').innerText = format(monthly);
+                document.getElementById('m-res-total').innerText = format(monthly * n);
+                document.getElementById('m-res-interest').innerText = format((monthly * n) - loan);
+            }
+
+            mPriceS.addEventListener('input', (e) => { mPrice.value = e.target.value; updateMortgage(); });
+            mPrice.addEventListener('input', (e) => { mPriceS.value = e.target.value; updateMortgage(); });
+            mDepositS.addEventListener('input', updateMortgage);
+            mRate.addEventListener('input', updateMortgage);
+            updateMortgage();
+
+            // 2. SDLT Logic
+            const sPrice = document.getElementById('s-price');
+            const sType = document.getElementById('s-type');
+            function updateSDLT() {
+                const tax = getSDLT(parseFloat(sPrice.value), sType.value);
+                document.getElementById('s-res-val').innerText = format(tax);
+                document.getElementById('s-res-desc').innerText = sType.options[sType.selectedIndex].text + ' rate applied';
+            }
+            sPrice.addEventListener('input', updateSDLT);
+            sType.addEventListener('change', updateSDLT);
+            updateSDLT();
+
+            // 3. Total Cost Logic
+            const tPrice = document.getElementById('t-price');
+            const tLegal = document.getElementById('t-legal');
+            const tSurvey = document.getElementById('t-survey');
+            function updateTotal() {
+                const price = parseFloat(tPrice.value);
+                const sdlt = getSDLT(price, 'next');
+                const dep = price * 0.10;
+                const total = dep + sdlt + parseFloat(tLegal.value) + parseFloat(tSurvey.value);
+                
+                document.getElementById('t-res-val').innerText = format(total);
+                document.getElementById('t-res-dep').innerText = format(dep);
+                document.getElementById('t-res-sdlt').innerText = format(sdlt);
+                document.getElementById('t-res-fees').innerText = format(parseFloat(tLegal.value) + parseFloat(tSurvey.value));
+            }
+            [tPrice, tLegal, tSurvey].forEach(el => el.addEventListener('input', updateTotal));
+            updateTotal();
+
+            // 4. Affordability Logic
+            const aInc1 = document.getElementById('a-inc1');
+            const aInc2 = document.getElementById('a-inc2');
+            const aDebt = document.getElementById('a-debt');
+            function updateAfford() {
+                const totalInc = parseFloat(aInc1.value) + parseFloat(aInc2.value);
+                const borrow = (totalInc * 4.5) - (parseFloat(aDebt.value) * 12 * 4.5);
+                document.getElementById('a-res-val').innerText = format(Math.max(0, borrow));
+            }
+            [aInc1, aInc2, aDebt].forEach(el => el.addEventListener('input', updateAfford));
+            updateAfford();
+        });
+    </script>
+</body>
+</html>

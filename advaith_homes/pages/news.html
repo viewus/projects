@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Housing Market News | Advaith Homes</title>
+  <meta name="description" content="Latest UK housing market news, mortgage rate updates, and property buying insights from Advaith Homes." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/commonstandard.css" />
+  <style>
+    .news-page { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+    .news-back  { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); text-decoration: none; font-size: .85rem; font-weight: 600; margin-bottom: 32px; transition: gap .2s; }
+    .news-back:hover { gap: 14px; }
+    .news-list  { display: flex; flex-direction: column; gap: 28px; }
+
+    .news-article {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
+      cursor: pointer;
+    }
+    .news-article:hover { box-shadow: 0 12px 40px rgba(109,40,217,.1); transform: translateY(-3px); }
+
+    .news-article__header { padding: 28px 28px 0; display: flex; align-items: flex-start; gap: 14px; }
+    .news-article__tag {
+      display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 5px; flex-shrink: 0;
+    }
+    .tag-red  { background: rgba(220,38,38,.1); color: #dc2626; border: 1px solid rgba(220,38,38,.2); }
+    .tag-gold { background: rgba(250,204,21,.12); color: #b45309; border: 1px solid rgba(250,204,21,.25); }
+    .tag-blue { background: rgba(59,130,246,.1); color: #2563eb; border: 1px solid rgba(59,130,246,.2); }
+
+    .news-article__date { font-size: .75rem; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
+    .news-article__body { padding: 16px 28px 28px; }
+    .news-article__title { font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; line-height: 1.4; }
+    .news-article__excerpt { font-size: .88rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 18px; }
+    .news-article__content { font-size: .9rem; color: var(--slate-800); line-height: 1.8; display: none; }
+    .news-article__content p { margin-bottom: 14px; }
+    .news-article__content ul { padding-left: 20px; margin-bottom: 14px; }
+    .news-article__content ul li { margin-bottom: 6px; }
+    .news-article.expanded .news-article__content { display: block; }
+    .news-article__cta { display: inline-flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 700; color: var(--accent); text-decoration: none; cursor: pointer; border: none; background: none; padding: 0; font-family: inherit; }
+    .news-article__footer { padding: 0 28px 24px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 20px; margin-top: 4px; }
+    .news-article__share { font-size: .78rem; color: var(--text-muted); }
+
+    .news-page__title { font-size: 2rem; font-weight: 800; color: var(--slate-900); margin-bottom: 8px; }
+    .news-page__sub   { font-size: 1rem; color: var(--text-muted); margin-bottom: 36px; }
+
+    .news-cta-box {
+      background: linear-gradient(135deg, var(--slate-900) 0%, #1e1b4b 100%);
+      border-radius: 20px; padding: 40px; text-align: center; margin-top: 48px; color: white;
+    }
+    .news-cta-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; }
+    .news-cta-box p  { color: rgba(255,255,255,.7); margin-bottom: 24px; font-size: .9rem; }
+  </style>
+</head>
+<body data-page="news" style="background:#f8fafc;">
+  <div id="nav-placeholder"></div>
+
+  <main class="news-page">
+    <a href="../index.html" class="news-back">← Back to Advaith Homes</a>
+
+    <h1 class="news-page__title">🏡 Housing Market News</h1>
+    <p class="news-page__sub">The latest UK property market updates, policy changes, and buyer insights — curated by our expert team.</p>
+
+    <div class="news-list" id="news-list">
+      <!-- Articles injected here -->
+      <div class="detail-loading">
+        <div class="detail-loading__brand">AH</div>
+        <div class="detail-loading__text">Fetching Latest <em>Market News</em>...</div>
+      </div>
+    </div>
+
+    <!-- CTA Box -->
+    <div class="news-cta-box">
+      <h3>Want Expert Guidance on These Market Changes?</h3>
+      <p>Book a free 30-minute call with our team. We'll explain exactly how current market conditions affect your search and what to do next.</p>
+      <a href="../free-consultation.html" class="btn btn-gold">Book Free Consultation →</a>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../js/components.js"></script>
+  <script src="../dailynews/news.js"></script>
+  <script>
+    function renderNews() {
+      const container = document.getElementById('news-list');
+      if (typeof NEWS_DATA === 'undefined' || NEWS_DATA.length === 0) {
+        container.innerHTML = '<p>No news available at the moment.</p>';
+        return;
+      }
+
+      container.innerHTML = NEWS_DATA.map(art => `
+        <article class="news-article" id="article-${art.id}">
+          <div class="news-article__header">
+            <span class="news-article__tag ${art.tagClass}">${art.tag}</span>
+            <span class="news-article__date">${art.date}</span>
+          </div>
+          <div class="news-article__body">
+            <h2 class="news-article__title">${art.title}</h2>
+            <p class="news-article__excerpt">${art.excerpt}</p>
+            <div class="news-article__content">
+              ${art.content}
+            </div>
+          </div>
+          <div class="news-article__footer">
+            <button class="news-article__cta" onclick="toggleArticle('article-${art.id}')">Read Full Article →</button>
+            <span class="news-article__share">Share: 📘 🐦 💼</span>
+          </div>
+        </article>
+      `).join('');
+
+      // Auto-open article based on URL ?id= param after rendering
+      const urlId = new URLSearchParams(window.location.search).get('id');
+      if (urlId) {
+        setTimeout(() => toggleArticle('article-' + urlId), 100);
+      }
+    }
+
+    function toggleArticle(id) {
+      const art = document.getElementById(id);
+      if (!art) return;
+
+      const isExpanded = art.classList.contains('expanded');
+      
+      // Collapse all first
+      document.querySelectorAll('.news-article').forEach(a => {
+        a.classList.remove('expanded');
+        const btn = a.querySelector('.news-article__cta');
+        if (btn) btn.textContent = 'Read Full Article →';
+      });
+
+      if (!isExpanded) {
+        art.classList.add('expanded');
+        const btn = art.querySelector('.news-article__cta');
+        if (btn) btn.textContent = 'Show Less ↑';
+        
+        // Use a small delay for smooth scroll after expansion
+        setTimeout(() => {
+          art.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+      }
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', renderNews);
+  </script>
+</body>
+
+

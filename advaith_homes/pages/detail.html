@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advaith Homes</title>
+  <meta name="description" content="Advaith Homes — UK's dedicated buyer's agent." />
+  <link rel="canonical" href="https://advaithhomes.co.uk/" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/commonstandard.css" />
+  <link rel="stylesheet" href="../css/detail.css" />
+</head>
+
+<body data-page="">
+  <div id="nav-placeholder"></div>
+
+  <!-- All content injected here -->
+  <div id="page-root">
+    <div class="detail-loading">
+      <div class="loading-progress"></div>
+      <div class="detail-loading__brand">
+        <div class="detail-loading__logo">AH</div>
+        <div class="detail-loading__pulse"></div>
+      </div>
+      <div class="detail-loading__text">Securing Your <em>Premium Data</em></div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script src="../js/components.js"></script>
+  <script>
+    // ── 1. Read ?page= from URL ───────────────────────────────
+    const params = new URLSearchParams(window.location.search);
+    const pageKey = params.get('page') || '';
+    const pageType = params.get('type') || 'data';
+
+    // ── 2. Load Data File Automatically ─────────────────────
+    const dataFolder = pageType === 'blog' ? 'blog' : 'data';
+    const dataFile = `../${dataFolder}/${pageKey}.js`;
+
+    if (!pageKey) {
+      // Unknown page — show 404
+      document.getElementById('page-root').innerHTML = `
+        <div class="detail-404">
+          <div style="font-size:3rem">🏠</div>
+          <h2>Page not found</h2>
+          <p>The page <strong>${pageKey || '(none)'}</strong> doesn't exist yet.</p>
+          <a href="../index.html" class="btn btn-primary" style="margin-top:12px">← Back to Home</a>
+        </div>`;
+    } else {
+      // ── 3. Load the data JS file then render ─────────────
+      const script = document.createElement('script');
+      script.src = dataFile;
+      script.onload = function () {
+        if (pageType === 'blog') {
+          renderBlog(window.BLOG_POST_DATA);
+        } else {
+          renderPage(pageKey);
+        }
+      };
+      script.onerror = function () {
+        document.getElementById('page-root').innerHTML =
+          `<div class="detail-404"><h2>No Data Found</h2><a href="../index.html" class="btn btn-primary">← Home</a></div>`;
+      };
+      document.head.appendChild(script);
+    }
+
+    // ── 4. Render — switch on pageKey ────────────────────────
+    // ── 4. Render — Dynamic Data Loader ──────────────────────
+    function renderPage(key) {
+      // Calculate the global variable name: 'why-us' -> 'WHY_US_DATA'
+      const varName = key.toUpperCase().replace(/-/g, '_') + '_DATA';
+      const d = window[varName];
+
+      if (!d) {
+        document.getElementById('page-root').innerHTML = `
+          <div class="detail-404">
+            <h2>⚠️ Data Variable Not Found</h2>
+            <p>Could not find <code>window.${varName}</code>.</p>
+            <p>Make sure <code>data/${key}.js</code> defines <code>var ${varName} = { ... }</code>.</p>
+            <a href="../index.html" class="btn btn-primary" style="margin-top:16px">← Back to Home</a>
+          </div>`;
+        return;
+      }
+
+      renderContent(d.page);
+    }
+
+    function renderContent(page) {
+      // Update head
+      document.title = page.title || 'Advaith Homes';
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.content = page.metaDescription || '';
+
+      // Build HTML
+      document.getElementById('page-root').innerHTML = `
+        <!-- Hero -->
+        <div class="detail-hero">
+          <div class="container">
+            <div class="detail-hero__inner">
+              <div class="eyebrow">${page.hero.eyebrow}</div>
+              <h1>${page.hero.headline}</h1>
+              <p>${page.hero.subtext}</p>
+
+              <!-- Stats -->
+              <div class="detail-stats">
+                ${(page.hero.stats || []).map(stat => `
+                  <div class="detail-stat">
+                    <span class="detail-stat__num">${stat.num}</span>
+                    <span class="detail-stat__label">${stat.label}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <!-- Banner (Optional) -->
+          ${page.banner ? `
+            <div class="detail-banner" style="background-image: url('${page.banner.image}')">
+              <div class="detail-banner__content">
+                <h2>${page.banner.title}</h2>
+                <p>${page.banner.text}</p>
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Challenges -->
+          <div class="detail-section">
+            <div class="detail-section__tag">${page.challengesTitle || 'Challenges'}</div>
+            <h2>${page.challengesHeadline || 'Common Obstacles'}</h2>
+            <div class="challenge-grid" id="challenge-grid"></div>
+          </div>
+
+          <!-- Comparison Table (Optional) -->
+          ${page.table ? `
+            <div class="detail-section">
+              <div class="detail-section__tag">${page.table.tag || 'Comparison'}</div>
+              <h2>${page.table.headline || 'Choose Your Report'}</h2>
+              <div class="comparison-container">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      ${page.table.columns.map(col => `<th>${col}</th>`).join('')}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${page.table.rows.map(row => `
+                      <tr class="table-category">
+                        <td colspan="${page.table.columns.length}">${row.category}</td>
+                      </tr>
+                      ${row.items.map(item => `
+                        <tr>
+                          <td>
+                            <strong>${item.name}</strong>
+                            ${item.desc ? `<div class="item-desc">${item.desc}</div>` : ''}
+                          </td>
+                          ${item.values.map(val => `
+                            <td class="table-check">
+                              ${val === true ? '<span class="table-icon table-icon--tick"></span>' : (val === false ? '<span class="table-icon table-icon--cross"></span>' : val)}
+                            </td>
+                          `).join('')}
+                        </tr>
+                      `).join('')}
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Process Timeline (Optional) -->
+          ${page.process ? `
+            <div class="detail-section">
+              <div class="detail-section__tag">${page.process.tag || 'Process'}</div>
+              <h2>${page.process.headline || 'How It Works'}</h2>
+              <div class="process-timeline">
+                ${page.process.steps.map(step => `
+                  <div class="process-step">
+                    <div class="process-dot"></div>
+                    <h4>${step.title}</h4>
+                    <p>${step.desc}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Testimonials (Optional) -->
+          ${page.testimonials ? `
+            <div class="detail-section">
+              <div class="detail-section__tag">Client Stories</div>
+              <h2>What Buyers Say</h2>
+              <div class="service-testimonials">
+                ${page.testimonials.map(t => `
+                  <div class="service-testi-card">
+                    <div class="service-testi-text">${t.text}</div>
+                    <div class="service-testi-author">
+                      <div class="service-testi-info">
+                        <div class="service-testi-name">${t.author}</div>
+                        <div class="service-testi-loc">${t.location}</div>
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Do / Don't -->
+          <div class="detail-section">
+            <div class="detail-section__tag">${page.commitmentTitle || 'Our Commitment'}</div>
+            <h2>${page.commitmentHeadline || "What We Do — and What We Don't"}</h2>
+            <div class="do-dont">
+              <div class="do-card">
+                <h3>✅ What We Do</h3>
+                <ul id="do-list"></ul>
+              </div>
+              <div class="dont-card">
+                <h3>❌ What We Don't Do</h3>
+                <ul id="dont-list"></ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Questions -->
+          <div class="detail-section">
+            <div class="detail-section__tag">${page.faqTitle || 'Buyer Concerns'}</div>
+            <h2>${page.faqHeadline || 'Common Questions'}</h2>
+            <div class="questions-list" id="questions-list"></div>
+          </div>
+
+
+        </div>
+                  <!-- CTA -->
+          <div class="detail-cta">
+            <div class="container">
+              <div class="detail-cta__eyebrow">Start Today</div>
+              <h2>${page.cta.headline}</h2>
+              <p>${page.cta.subtext}</p>
+              <div class="detail-cta__btns">
+                <a href="${page.cta.buttonUrl}" class="btn btn-gold">${page.cta.buttonText}</a>
+                <a href="../contact.html" class="btn btn-outline-white">Get In Touch</a>
+              </div>
+            </div>
+          </div>
+        `;
+
+      // Populate challenges
+      const cgrid = document.getElementById('challenge-grid');
+      page.challenges.forEach(function (ch) {
+        const el = document.createElement('div');
+        el.className = 'challenge-card';
+        el.innerHTML = `
+          <div class="challenge-card__header">
+            <div class="challenge-card__icon">${ch.icon}</div>
+            <div class="challenge-card__phase">${ch.phase}</div>
+          </div>
+          <ul>
+            ${ch.items.map(i => `<li>${i}</li>`).join('')}
+          </ul>`;
+        cgrid.appendChild(el);
+      });
+
+      // Do / Don't lists
+      document.getElementById('do-list').innerHTML = page.whatWeDo.do.map(i => `<li>${i}</li>`).join('');
+      document.getElementById('dont-list').innerHTML = page.whatWeDo.dont.map(i => `<li>${i}</li>`).join('');
+
+      // Questions accordion
+      const qlist = document.getElementById('questions-list');
+      page.commonQuestions.forEach(function (item, i) {
+        const el = document.createElement('div');
+        el.className = 'question-item';
+        el.id = 'qi-' + i;
+        el.innerHTML = `
+          <div class="question-q" onclick="toggleQ('qi-${i}')">
+            <span>${item.q}</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="question-a">${item.a}</div>`;
+        qlist.appendChild(el);
+      });
+    }
+
+    function toggleQ(id) {
+      const item = document.getElementById(id);
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.question-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    function renderBlog(d) {
+      if (!d) {
+        document.getElementById('page-root').innerHTML = `<div class="detail-404"><h2>⚠️ Blog Data Not Found</h2><p>Make sure window.BLOG_POST_DATA is defined.</p></div>`;
+        return;
+      }
+
+      document.title = d.title;
+      document.getElementById('page-root').innerHTML = `
+        <div class="detail-hero">
+          <div class="container">
+            <div class="detail-hero__inner">
+              <div class="eyebrow">Expert Insights</div>
+              <h1>${d.title}</h1>
+              <p>${d.description}</p>
+              <div class="detail-stats">
+                ${(d.stats || []).map(s => `
+                  <div class="detail-stat">
+                    <span class="detail-stat__num">${s.num}</span>
+                    <span class="detail-stat__label">${s.label}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="blog-content">
+            ${(d.sections || []).map(sec => `
+              <div class="detail-section">
+                <div class="detail-section__tag">${sec.tag}</div>
+                <h2>${sec.headline}</h2>
+                <div class="blog-text">${sec.content}</div>
+              </div>
+            `).join('')}
+
+            ${d.banner ? `
+              <div class="detail-banner" style="background-image: url('${d.banner.image}')">
+                <div class="detail-banner__content">
+                  <h2>${d.banner.title}</h2>
+                  <p>${d.banner.desc}</p>
+                </div>
+              </div>
+            ` : ''}
+
+          </div>
+        </div>
+
+        <div class="detail-cta">
+          <div class="container">
+            <div class="detail-cta__eyebrow">Keep Reading</div>
+            <h2>${d.cta.title}</h2>
+            <p>${d.cta.desc}</p>
+            <div class="detail-cta__btns">
+              <a href="${d.cta.primaryBtn.link}" class="btn btn-gold">${d.cta.primaryBtn.text}</a>
+              <a href="../news.html" class="btn btn-outline-white">Market News</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+
+</html>

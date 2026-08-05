@@ -1,0 +1,18 @@
+<article class="card cardBlog">
+  <a class="cardBlogLink" href="{{href}}">
+    <div class="cardMedia">
+      <img class="cardImage" src="{{heroImage}}" alt="{{heroImageAlt}}" loading="lazy">
+      <span class="cardBlogCategory">{{categoryLabel}}</span>
+    </div>
+    <div class="cardBodyWrap">
+      <p class="cardBlogMeta">
+        <time datetime="{{date}}">{{dateLabel}}</time>
+        <span class="cardBlogDot" aria-hidden="true">•</span>
+        <span>{{readingTime}}</span>
+      </p>
+      <h3 class="cardTitle">{{title}}</h3>
+      <p class="cardBody">{{excerpt}}</p>
+      <span class="cardBlogMore">Read article <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+    </div>
+  </a>
+</article>

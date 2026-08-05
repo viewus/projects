@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Consultation — Advaith Homes</title>
+  <meta name="description"
+    content="Book a free consultation with Advaith Homes. Find out how we can save you time, stress, and money on your next property purchase." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/commonstandard.css" />
+  <style>
+    .consultation-hero {
+      padding: calc(var(--nav-h) + 30px) 0 30px;
+      background: radial-gradient(ellipse 60% 80% at 70% 30%, rgba(245, 158, 11, .12) 0%, transparent 60%), var(--bg);
+      text-align: center;
+    }
+
+    .consultation-hero p {
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 16px auto 0;
+    }
+
+    .consultation-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .consultation-content {
+      padding-top: 20px;
+    }
+
+    .pain-points-list {
+      margin-top: 24px;
+    }
+
+    .pain-points-list li {
+      display: flex;
+      gap: 12px;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+      line-height: 1.6;
+    }
+
+    .pain-points-list li::before {
+      content: '❓';
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .consultation-form-box {
+      background: white;
+      border-radius: var(--r-xl);
+      padding: 40px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      position: sticky;
+      top: calc(var(--nav-h) + 40px);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--slate-800);
+      margin-bottom: 8px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      font-family: var(--font-body);
+      font-size: .95rem;
+      background: var(--slate-50);
+      transition: all .2s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--gold-400);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, .15);
+    }
+
+    @media(max-width: 768px) {
+      .consultation-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body data-page="consultation">
+  <div id="nav-placeholder"></div>
+
+  <section class="consultation-hero">
+    <div class="container">
+      <div class="eyebrow reveal" style="justify-content:center">Free Consultation</div>
+      <h1 class="reveal reveal-delay-1">Let's Discuss Your<br />Property Journey</h1>
+      <p class="reveal reveal-delay-2">Speak with our expert buyer's agents to discover how we can guide you, protect your interests, and secure your dream home.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="consultation-wrapper">
+        <div class="consultation-content reveal">
+          <h2>Are you facing these challenges?</h2>
+          <p style="margin-top: 12px; font-size: 1.05rem;">The home buying process is complex. Most buyers come to us asking the same critical questions:</p>
+          
+          <ul class="pain-points-list">
+            <li>What is the process of buying a house, and who will guide me through it?</li>
+            <li>I’ve paid a deposit — am I sure this is the right property for me?</li>
+            <li>Could I have offered less and still secured the home?</li>
+            <li>Why are Estate Agents, Solicitors, and Surveyors not responding?</li>
+            <li>Who will explain the issues raised by the chartered surveyor, electrician, or plumber?</li>
+            <li>I’ve spent a lot of ££££ on property searches but still haven’t secured a house. Can I recover these costs?</li>
+            <li>Why are my multiple offers rejected by Estate Agents?</li>
+          </ul>
+
+          <div style="margin-top: 40px; padding: 24px; background: var(--client-color-50); border-radius: var(--r-lg); border: 1px solid var(--client-color-200);">
+            <h4 style="color: var(--client-color-800); margin-bottom: 8px;">We Have the Answers</h4>
+            <p style="font-size: .9rem;">In your free 30-minute consultation, we'll listen to your specific situation, answer your immediate questions, and show you exactly how our representation gives you an unfair advantage in the market.</p>
+          </div>
+        </div>
+
+        <div class="consultation-form-box reveal reveal-delay-1">
+          <h3 style="margin-bottom: 8px;">Book Your Call</h3>
+          <p style="font-size: .9rem; color: var(--text-muted); margin-bottom: 24px;">Fill out the form below and our team will get back to you within 2 hours to schedule a time.</p>
+          
+          <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Consultation requested! We will contact you shortly.');">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="e.g. Sarah Mehta" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" placeholder="sarah@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" placeholder="+44 (0) 7..." required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">What are you looking to buy?</label>
+              <select class="form-input" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="first-time">First Home</option>
+                <option value="moving">Moving Home</option>
+                <option value="investment">Investment Property</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-top: 32px; margin-bottom: 0;">
+              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px;">Request Consultation</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
+</body>
+
+</html>
+
+

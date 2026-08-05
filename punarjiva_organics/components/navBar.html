@@ -1,0 +1,29 @@
+<!-- Structure only. Brand text, menu items and dropdowns are built from data/navBar.json
+     by initNavBar() in loadComponents.js — do not hardcode links here. -->
+<nav class="navbar navbar-expand-lg navBar" aria-label="Main navigation">
+  <div class="container navBarInner">
+
+    <a class="navbar-brand navBarBrand" id="navBarBrand" href="#">
+      <img class="navBarLogo" id="navBarLogo" src="" alt="Punarjiva Organics leaf emblem">
+      <span class="navBarBrandText">
+        <span class="navBarBrandName" data-content="brandLabel"></span>
+        <span class="navBarBrandTagline" data-content="brandTagline"></span>
+      </span>
+    </a>
+
+    <button class="navbar-toggler navBarToggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navBarCollapse"
+            aria-controls="navBarCollapse" aria-expanded="false"
+            aria-label="Toggle navigation menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse navBarCollapse" id="navBarCollapse">
+      <ul class="navbar-nav ms-auto navBarMenu" id="navBarMenu">
+        <!-- built from data/navBar.json -->
+      </ul>
+      <a class="btn navBarCta" id="navBarCta" href="#" target="_blank" rel="noopener"></a>
+    </div>
+
+  </div>
+</nav>

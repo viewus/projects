@@ -1,0 +1,1075 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Stories — Advaith Homes</title>
+  <meta name="description"
+    content="Read stories and reviews from previous clients who saved time, stress, and money buying a home with Advaith Homes." />
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/commonstandard.css" />
+  <style>
+    .clients-hero {
+      padding: calc(var(--nav-h) + 40px) 0 40px;
+      background: radial-gradient(ellipse 60% 80% at 70% 30%, rgba(139, 92, 246, .12) 0%, transparent 60%), var(--bg);
+      text-align: center;
+    }
+
+    .clients-hero p {
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 16px auto 0;
+    }
+
+    /* ── 3D COVERFLOW SLIDER ── */
+    .coverflow-section {
+      padding: 80px 0;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .coverflow-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      margin: 40px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1500px;
+    }
+
+    .coverflow-item {
+      position: absolute;
+      width: 320px;
+      height: 400px;
+      background: var(--slate-800);
+      border-radius: 20px;
+      padding: 40px;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .coverflow-item.active {
+      transform: translate3d(0, 0, 150px) rotateY(0deg);
+      z-index: 10;
+      opacity: 1;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--client-color-900) 100%);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .coverflow-item.prev {
+      transform: translate3d(-220px, 0, 0px) rotateY(35deg) scale(0.85);
+      z-index: 5;
+      opacity: 0.6;
+    }
+
+    .coverflow-item.next {
+      transform: translate3d(220px, 0, 0px) rotateY(-35deg) scale(0.85);
+      z-index: 5;
+      opacity: 0.6;
+    }
+
+    .coverflow-item.prev-hidden {
+      transform: translate3d(-450px, 0, -150px) rotateY(45deg) scale(0.7);
+      z-index: 1;
+      opacity: 0;
+    }
+
+    .coverflow-item.next-hidden {
+      transform: translate3d(450px, 0, -150px) rotateY(-45deg) scale(0.7);
+      z-index: 1;
+      opacity: 0;
+    }
+
+    .coverflow-item__avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+    }
+
+    .coverflow-item__avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .coverflow-item__quote {
+      color: white;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: auto;
+    }
+
+    .coverflow-item__author {
+      margin-top: 24px;
+    }
+
+    .coverflow-item__name {
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      display: block;
+    }
+
+    .coverflow-item__role {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .coverflow-controls {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .coverflow-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--slate-600);
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .coverflow-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      /* transform: scale(1); */
+    }
+
+    /* ── Review Masonry ── */
+    .review-masonry {
+      columns: 3;
+      column-gap: 24px;
+      margin-top: 60px;
+    }
+
+    .review-bubble {
+      break-inside: avoid;
+      background: var(--surface);
+      padding: 24px;
+      border-radius: var(--r-lg);
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease;
+    }
+
+    .review-bubble:hover {
+      transform: scale(1.02);
+    }
+
+    .review-bubble__text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .review-bubble__user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-bubble__avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .review-bubble__info h5 {
+      font-size: 0.9rem;
+      color: var(--slate-900);
+    }
+
+    @media (max-width: 991px) {
+      .review-masonry {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .review-masonry {
+        columns: 1;
+      }
+
+      .coverflow-item {
+        width: 280px;
+        height: 350px;
+        padding: 30px;
+      }
+    }
+
+    /* Story Cards */
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .story-card {
+      background: var(--surface);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--gold-300);
+    }
+
+    .story-card__image {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .story-card:hover .story-card__image img {
+      transform: scale(1.05);
+    }
+
+    .story-card__badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 6px 16px;
+      border-radius: var(--r-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .story-card__content {
+      padding: 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-card__title {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: var(--slate-900);
+    }
+
+    .story-card__location {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .story-card__quote {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .story-card__stats {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .story-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-stat__label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .story-stat__value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    /* Bento Gallery */
+    .bento-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 220px;
+      gap: 16px;
+      grid-auto-flow: dense;
+    }
+
+    .bento-item {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .bento-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+
+    .bento-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .bento-large {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .bento-tall {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    .bento-wide {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    /* ── Flip Cards ── */
+    .flip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .flip-card {
+      background: transparent;
+      perspective: 1500px;
+      height: 480px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      box-shadow: var(--shadow-lg);
+      border-radius: var(--r-xl);
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .flip-card-front {
+      background-color: var(--surface);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flip-card-back {
+      background: linear-gradient(135deg, var(--client-color-900) 0%, var(--accent) 100%);
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+      text-align: left;
+    }
+
+    .flip-card__img {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .flip-card__body {
+      padding: 30px;
+      text-align: left;
+      flex: 1;
+    }
+
+    .flip-card__title {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: var(--slate-900);
+    }
+
+    .flip-card__reveal-btn {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .flip-card-back h4 {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 15px;
+    }
+
+    .flip-card-back p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .flip-card-back .stats {
+      margin-top: 30px;
+      display: grid;
+      /* grid-template-columns: 1fr 1fr; */
+      gap: 20px;
+      border-radius: 16px;
+    }
+
+    .flip-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flip-stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* ── Split Featured Review ── */
+    .split-review-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .split-review__visual {
+      display: flex;
+      justify-content: center;
+      perspective: 2000px;
+    }
+
+    .split-review__card {
+      width: 380px;
+      height: 520px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--client-color-900) 100%);
+      border-radius: 30px;
+      padding: 50px;
+      color: white;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      transform: rotateY(-10deg) rotateX(5deg);
+      transition: all 0.5s ease;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .split-review__card:hover {
+      transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+    }
+
+    .split-review__avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      margin-bottom: 32px;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+    }
+
+    .split-review__avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .split-review__content h2 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: var(--slate-900);
+    }
+
+    .split-review__quote {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      font-style: italic;
+      position: relative;
+    }
+
+    .split-review__quote::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: -30px;
+      font-size: 5rem;
+      color: var(--accent);
+      opacity: 0.1;
+      font-family: serif;
+    }
+
+    .split-review__details {
+      padding-left: 24px;
+      border-left: 2px solid var(--accent);
+    }
+
+    .split-review__author {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--slate-900);
+    }
+
+    .split-review__loc {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* ── Story Content (Split Interactive) ── */
+    .story-content {
+      display: none;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .story-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .interactive-grid {
+      align-items: flex-start;
+    }
+
+    @media (max-width: 991px) {
+      .split-review-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .split-review__details {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .interactive-grid .coverflow-container {
+        height: 420px !important;
+        margin: 20px 0;
+      }
+
+      .coverflow-item {
+        width: 280px;
+        height: 360px;
+        padding: 25px;
+      }
+
+      .coverflow-item.active {
+        transform: translate3d(0, 0, 80px) rotateY(0deg);
+      }
+
+      .coverflow-item.prev {
+        transform: translate3d(-100px, 0, -50px) rotateY(25deg) scale(0.8);
+        opacity: 0.4;
+      }
+
+      .coverflow-item.next {
+        transform: translate3d(100px, 0, -50px) rotateY(-25deg) scale(0.8);
+        opacity: 0.4;
+      }
+
+      .split-review__content h2 {
+        font-size: 2.2rem;
+      }
+
+      .split-review__card {
+        width: 100%;
+        max-width: 320px;
+        height: 420px;
+        transform: none;
+        padding: 30px;
+      }
+
+      /* Bento Responsive */
+      .bento-gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+      }
+
+      .bento-wide,
+      .bento-tall,
+      .bento-large {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      /* Flip Cards Responsive */
+      .flip-card {
+        height: 440px;
+      }
+
+      /* Story Grid Responsive */
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .coverflow-item {
+        width: 240px;
+        height: 320px;
+      }
+
+      .interactive-grid .coverflow-container {
+        height: 360px !important;
+      }
+
+      .split-review__content h2 {
+        font-size: 1.8rem;
+      }
+
+      .flip-card {
+        height: 400px;
+      }
+
+      .flip-card__img {
+        height: 180px;
+      }
+
+      .flip-card-back h4 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body data-page="clients">
+  <div id="nav-placeholder"></div>
+
+  <section class="clients-hero">
+    <div class="container">
+      <div class="eyebrow reveal" style="justify-content:center">Success Stories</div>
+      <h1 class="reveal reveal-delay-1">Our Featured Client Outcomes</h1>
+      <p class="reveal reveal-delay-2">Discover how we help UK buyers navigate complex markets, secure off-market gems,
+        and save thousands on their dream homes.</p>
+    </div>
+  </section>
+
+  <section class="section interactive-stories" style="background:var(--bg)">
+    <div class="container">
+      <div style="text-align:center;max-width:640px;margin:0 auto 60px">
+        <div class="eyebrow reveal" style="justify-content:center">Interactive Journeys</div>
+        <h2 class="reveal reveal-delay-1">Explore Our Success Stories</h2>
+      </div>
+
+      <div class="split-review-grid interactive-grid">
+        <div class="split-review__visual reveal">
+          <div class="coverflow-container" style="height:450px; width:100%; margin:0">
+            <div class="coverflow-item active" data-story="1">
+              <div class="coverflow-item__avatar"><img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
+                  alt="Sarah & Raj"></div>
+              <blockquote class="coverflow-item__quote">"Saved us £27,500 and six months of stress."</blockquote>
+              <div class="coverflow-item__author">
+                <span class="coverflow-item__name">Sarah & Raj Mehta</span>
+              </div>
+            </div>
+            <div class="coverflow-item next" data-story="2">
+              <div class="coverflow-item__avatar"><img
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop"
+                  alt="Emma & Tom"></div>
+              <blockquote class="coverflow-item__quote">"The negotiation was flawless. Saved £40,000."</blockquote>
+              <div class="coverflow-item__author">
+                <span class="coverflow-item__name">Emma & Tom Wright</span>
+              </div>
+            </div>
+            <div class="coverflow-item prev" data-story="3">
+              <div class="coverflow-item__avatar"><img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop"
+                  alt="James Wilson"></div>
+              <blockquote class="coverflow-item__quote">"Sourced three off-market properties for me."</blockquote>
+              <div class="coverflow-item__author">
+                <span class="coverflow-item__name">James Wilson</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="split-review__content reveal reveal-delay-1">
+          <div id="story-content-1" class="story-content active">
+            <div class="eyebrow">Richmond, London</div>
+            <h3>The Mehta Family's First Home</h3>
+            <p class="split-review__quote">"We were struggling to get our offers accepted in Richmond. Advaith Homes
+              stepped in, analyzed the competition, and helped us secure our dream home £27.5k below what we were
+              prepared to pay."</p>
+            <div class="split-review__details">
+              <div class="split-review__author">Sarah & Raj Mehta</div>
+              <div class="split-review__loc">Negotiation Win: £27,500 Saved</div>
+            </div>
+          </div>
+          <div id="story-content-2" class="story-content">
+            <div class="eyebrow">Guildford, Surrey</div>
+            <h3>Emma & Tom's Surrey Retreat</h3>
+            <p class="split-review__quote">"Moving out of London was daunting. They didn't just find the house; they
+              managed the whole chain and saved us £40k on the final price."</p>
+            <div class="split-review__details">
+              <div class="split-review__author">Emma & Tom Wright</div>
+              <div class="split-review__loc">Negotiation Win: £40,000 Saved</div>
+            </div>
+          </div>
+          <div id="story-content-3" class="story-content">
+            <div class="eyebrow">Manchester</div>
+            <h3>James' Investment Portfolio</h3>
+            <p class="split-review__quote">"As a professional investor, I value speed and off-market access. Advaith
+              delivered three high-yield units before they even hit Rightmove."</p>
+            <div class="split-review__details">
+              <div class="split-review__author">James Wilson</div>
+              <div class="split-review__loc">Portfolio Growth: 3 Units Sourced</div>
+            </div>
+          </div>
+
+          <div class="coverflow-controls" style="margin-top:40px; justify-content: flex-start;">
+            <button class="coverflow-btn prev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg></button>
+            <button class="coverflow-btn next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container">
+      <div style="text-align:center;max-width:640px;margin:0 auto">
+        <div class="eyebrow reveal" style="justify-content:center">Detailed Stories</div>
+        <h2 class="reveal reveal-delay-1">Tap to Reveal the Journey</h2>
+        <p class="reveal reveal-delay-2">Click on any card to see the full outcome and specific savings we achieved for
+          these clients.</p>
+      </div>
+
+      <div class="flip-grid">
+        <!-- Flip Card 1 -->
+        <div class="flip-card reveal" onclick="toggleFlip(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&h=400&fit=crop" alt="London"
+                class="flip-card__img">
+              <div class="flip-card__body">
+                <h3 class="flip-card__title">The Battersea Loft</h3>
+                <p style="color:var(--text-secondary);font-size:0.9rem">A rare loft conversion in a competitive
+                  building. Secured against multiple bidders.</p>
+                <div class="flip-card__reveal-btn">Tap to see results →</div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h4>The Outcome</h4>
+              <p>"We managed to get our offer accepted despite being £15k lower than the highest bid, thanks to our
+                proof-of-funds packaging."</p>
+              <div class="stats">
+                <div class="flip-stat-item"><span class="flip-stat-label">Saved</span><span
+                    class="flip-stat-value">£15,000</span></div>
+                <div class="flip-stat-item"><span class="flip-stat-label">Competition</span><span
+                    class="flip-stat-value">5 Bidders</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip Card 2 -->
+        <div class="flip-card reveal reveal-delay-1" onclick="toggleFlip(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop"
+                alt="Cotswold" class="flip-card__img">
+              <div class="flip-card__body">
+                <h3 class="flip-card__title">The Cotswold Retreat</h3>
+                <p style="color:var(--text-secondary);font-size:0.9rem">Family relocation from Hong Kong. Full search
+                  and school catchment analysis.</p>
+                <div class="flip-card__reveal-btn">Tap to see results →</div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h4>The Outcome</h4>
+              <p>"Inspected 12 properties on their behalf and secured a home in the top-rated school catchment area
+                before the family arrived in the UK."</p>
+              <div class="stats">
+                <div class="flip-stat-item"><span class="flip-stat-label">Viewings</span><span
+                    class="flip-stat-value">12 Homes</span></div>
+                <div class="flip-stat-item"><span class="flip-stat-label">Result</span><span class="flip-stat-value">Top
+                    School</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip Card 3 -->
+        <div class="flip-card reveal reveal-delay-2" onclick="toggleFlip(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=600&h=400&fit=crop" alt="Oxford"
+                class="flip-card__img">
+              <div class="flip-card__body">
+                <h3 class="flip-card__title">The Oxford Townhouse</h3>
+                <p style="color:var(--text-secondary);font-size:0.9rem">Off-market acquisition in North Oxford. Secured
+                  for a professional couple.</p>
+                <div class="flip-card__reveal-btn">Tap to see results →</div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h4>The Outcome</h4>
+              <p>"Acquired before it reached the open market through our direct relationship with the seller's estate
+                agent."</p>
+              <div class="stats">
+                <div class="flip-stat-item"><span class="flip-stat-label">Access</span><span
+                    class="flip-stat-value">Off-Market</span></div>
+                <div class="flip-stat-item"><span class="flip-stat-label">Price</span><span class="flip-stat-value">-5%
+                    Under</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container">
+      <div style="text-align:center;max-width:640px;margin:0 auto">
+        <div class="eyebrow reveal" style="justify-content:center">Community Feedback</div>
+        <h2 class="reveal">What Our Clients Are Saying</h2>
+      </div>
+      <div class="review-masonry reveal reveal-delay-2">
+        <div class="review-bubble">
+          <p class="review-bubble__text">"Professional, dedicated and always one step ahead. They found things our own
+            surveyor missed."</p>
+          <div class="review-bubble__user">
+            <div class="review-bubble__avatar">AL</div>
+            <div class="review-bubble__info">
+              <h5>Alex Lowes</h5>
+            </div>
+          </div>
+        </div>
+        <div class="review-bubble">
+          <p class="review-bubble__text">"Saved me £30k on my first investment property. Worth every single penny of
+            their fee."</p>
+          <div class="review-bubble__user">
+            <div class="review-bubble__avatar">MK</div>
+            <div class="review-bubble__info">
+              <h5>Mark Knight</h5>
+            </div>
+          </div>
+        </div>
+        <div class="review-bubble">
+          <p class="review-bubble__text">"Buying from abroad was stressful until we found Advaith. They were our eyes
+            and ears on the ground."</p>
+          <div class="review-bubble__user">
+            <div class="review-bubble__avatar">JS</div>
+            <div class="review-bubble__info">
+              <h5>Julie Smith</h5>
+            </div>
+          </div>
+        </div>
+        <div class="review-bubble">
+          <p class="review-bubble__text">"A truly premium service for serious buyers. Highly recommended."</p>
+          <div class="review-bubble__user">
+            <div class="review-bubble__avatar">PC</div>
+            <div class="review-bubble__info">
+              <h5>Paul Collins</h5>
+            </div>
+          </div>
+        </div>
+        <div class="review-bubble">
+          <p class="review-bubble__text">"They treat your money like their own. Fierce negotiators!"</p>
+          <div class="review-bubble__user">
+            <div class="review-bubble__avatar">TM</div>
+            <div class="review-bubble__info">
+              <h5>Tina M.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <div class="eyebrow reveal" style="justify-content:center">Portfolio</div>
+        <h2 class="reveal">Secured Properties</h2>
+      </div>
+      <div class="bento-gallery">
+        <div class="bento-item bento-wide"><img
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+            alt="Home"></div>
+        <div class="bento-item bento-tall"><img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80"
+            alt="Interior"></div>
+        <div class="bento-item"><img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
+            alt="Kitchen"></div>
+        <div class="bento-item bento-large"><img
+            src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=800&q=80"
+            alt="Garden"></div>
+        <div class="bento-item"><img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80"
+            alt="Bedroom"></div>
+        <div class="bento-item bento-wide"><img
+            src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80"
+            alt="Luxury"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
+  <script>
+    // 3D Coverflow Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelectorAll('.coverflow-item');
+      const storyContents = document.querySelectorAll('.story-content');
+      if (!items.length) return;
+
+      let currentIndex = 0;
+      const totalItems = items.length;
+
+      function updateCoverflow() {
+        items.forEach((item, index) => {
+          item.classList.remove('active', 'prev', 'next', 'prev-hidden', 'next-hidden');
+          if (index === currentIndex) {
+            item.classList.add('active');
+            // Sync Story Content
+            const storyId = item.dataset.story;
+            storyContents.forEach(content => {
+              content.classList.remove('active');
+              if (content.id === `story-content-${storyId}`) {
+                content.classList.add('active');
+              }
+            });
+          }
+          else if (index === (currentIndex - 1 + totalItems) % totalItems) item.classList.add('prev');
+          else if (index === (currentIndex + 1) % totalItems) item.classList.add('next');
+          else if (index < currentIndex) item.classList.add('prev-hidden');
+          else item.classList.add('next-hidden');
+        });
+      }
+
+      document.querySelector('.coverflow-btn.prev')?.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCoverflow();
+      });
+      document.querySelector('.coverflow-btn.next')?.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCoverflow();
+      });
+      items.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          currentIndex = index;
+          updateCoverflow();
+        });
+      });
+
+      updateCoverflow();
+    });
+
+    // Flip Card Logic
+    function toggleFlip(element) {
+      element.classList.toggle('flipped');
+    }
+  </script>
+</body>
+
+</html>

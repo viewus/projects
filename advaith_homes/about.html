@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us — Advaith Homes</title>
+    <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/commonstandard.css" />
+    <style>
+        .about-hero {
+            padding: calc(var(--nav-h) + 30px) 0 30px;
+            background: linear-gradient(135deg, var(--client-color-900) 0%, var(--client-color-700) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .04) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .about-hero h1,
+        .about-hero p {
+            color: white;
+        }
+
+        .about-hero p {
+            color: rgba(255, 255, 255, .75);
+            max-width: 620px;
+            margin: 16px auto 0;
+            font-size: 1.1rem;
+        }
+
+        .story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+        }
+
+        .story__quote {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--slate-700);
+            line-height: 1.5;
+            border-left: 4px solid var(--accent);
+            padding-left: 24px;
+            margin: 28px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 56px;
+        }
+
+        .team-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            transition: box-shadow .3s, transform .3s;
+        }
+
+        .team-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+        }
+
+        .team-card__photo {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        .team-card__photo--1 {
+            background: linear-gradient(135deg, var(--client-color-200), var(--client-color-400));
+        }
+
+        .team-card__photo--2 {
+            background: linear-gradient(135deg, #c4b5fd, var(--client-color-300));
+        }
+
+        .team-card__photo--3 {
+            background: linear-gradient(135deg, #fcd34d, var(--gold-500));
+        }
+
+        .team-card__body {
+            padding: 24px;
+        }
+
+        .team-card__name {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .team-card__role {
+            font-size: .8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .team-card p {
+            font-size: .875rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 56px;
+        }
+
+        .value-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 28px;
+        }
+
+        .value-item__icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .value-item h4 {
+            margin-bottom: 8px;
+        }
+
+        @media(max-width:768px) {
+            .story {
+                grid-template-columns: 1fr
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body data-page="about">
+    <div id="nav-placeholder"></div>
+
+    <section class="about-hero">
+        <div class="container" style="position:relative">
+            <div class="eyebrow reveal" style="color:var(--gold-300);justify-content:center">Our Story</div>
+            <h1 class="reveal reveal-delay-1">We Started Advaith Homes<br />Because We Were Buyers Too</h1>
+            <p class="reveal reveal-delay-2">We experienced the frustration of trying to buy a home without anyone in
+                our corner. So we built the service we wished existed.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="story">
+                <div>
+                    <div class="eyebrow reveal">Our Story</div>
+                    <h2 class="reveal reveal-delay-1">Born from Frustration, Built with Purpose</h2>
+                    <div class="story__quote reveal reveal-delay-2">"We spent 14 months trying to buy our first home.
+                        Every estate agent we spoke to was working for the seller — not us. We knew there had to be a
+                        better way."</div>
+                    <p class="reveal reveal-delay-3">After experiencing the home-buying process firsthand — and
+                        witnessing hundreds of buyers overpay, miss red flags, and make decisions without proper
+                        information — our founder set out to build a truly buyer-centric service.</p>
+                    <p style="margin-top:16px" class="reveal reveal-delay-4">Today, Advaith Homes has helped over 500
+                        buyers across the UK save an average of £18,000 each — while reducing the stress, confusion, and
+                        wasted time that defines the traditional property purchase experience.</p>
+                    <a href="free-consultation.html" class="btn btn-primary reveal"
+                        style="margin-top:28px">Work With Us →</a>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div
+                        style="background:linear-gradient(135deg,var(--client-color-100),var(--client-color-50));border-radius:var(--r-xl);padding:48px 40px;border:1px solid var(--client-color-200)">
+                        <div style="font-size:4rem;text-align:center;margin-bottom:24px">🏡</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                            <div
+                                style="background:white;border-radius:var(--r-md);padding:20px;text-align:center;box-shadow:var(--shadow-sm)">
+                                <div
+                                    style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--accent)">
+                                    500+</div>
+                                <div style="font-size:.8rem;color:var(--text-muted);font-weight:600">Happy Buyers</div>
+                            </div>
+                            <div
+                                style="background:white;border-radius:var(--r-md);padding:20px;text-align:center;box-shadow:var(--shadow-sm)">
+                                <div
+                                    style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--accent)">
+                                    4.9★</div>
+                                <div style="font-size:.8rem;color:var(--text-muted);font-weight:600">Average Rating
+                                </div>
+                            </div>
+                            <div
+                                style="background:white;border-radius:var(--r-md);padding:20px;text-align:center;box-shadow:var(--shadow-sm)">
+                                <div
+                                    style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--accent)">
+                                    £18k+</div>
+                                <div style="font-size:.8rem;color:var(--text-muted);font-weight:600">Avg. Saving</div>
+                            </div>
+                            <div
+                                style="background:white;border-radius:var(--r-md);padding:20px;text-align:center;box-shadow:var(--shadow-sm)">
+                                <div
+                                    style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--accent)">
+                                    8 yrs</div>
+                                <div style="font-size:.8rem;color:var(--text-muted);font-weight:600">Of Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--alt">
+        <div class="container">
+            <div style="text-align:center;max-width:600px;margin:0 auto">
+                <div class="eyebrow reveal">The Team</div>
+                <h2 class="reveal reveal-delay-1">Experts Who've Been in Your Shoes</h2>
+                <p class="reveal reveal-delay-2">Our team combines decades of property, legal, and financial expertise —
+                    all dedicated entirely to buyer representation.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card reveal reveal-delay-1">
+                    <div class="team-card__photo team-card__photo--1">👨‍💼</div>
+                    <div class="team-card__body">
+                        <h3 class="team-card__name">Advaith Kumar</h3>
+                        <div class="team-card__role">Founder & Lead Buyer's Agent</div>
+                        <p>Former mortgage advisor and property investor with 12 years experience. Has personally
+                            completed over 200 acquisitions for buyers across London and the South East.</p>
+                    </div>
+                </div>
+                <div class="team-card reveal reveal-delay-2">
+                    <div class="team-card__photo team-card__photo--2">👩‍💼</div>
+                    <div class="team-card__body">
+                        <h3 class="team-card__name">Priya Sharma</h3>
+                        <div class="team-card__role">Head of Research & Due Diligence</div>
+                        <p>Former solicitor specialising in residential conveyancing. Leads our research and legal
+                            review function, ensuring nothing is missed before our clients commit.</p>
+                    </div>
+                </div>
+                <div class="team-card reveal reveal-delay-3">
+                    <div class="team-card__photo team-card__photo--3">👨‍💻</div>
+                    <div class="team-card__body">
+                        <h3 class="team-card__name">Marcus Thompson</h3>
+                        <div class="team-card__role">Senior Buyer's Agent — North England</div>
+                        <p>Covering Manchester, Leeds, Birmingham and surrounding areas. Former estate agent (now firmly
+                            on the buyer's side), with a reputation for tenacious negotiation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center;max-width:600px;margin:0 auto">
+                <div class="eyebrow reveal">Our Values</div>
+                <h2 class="reveal reveal-delay-1">What We Stand For</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-item reveal reveal-delay-1">
+                    <div class="value-item__icon">🎯</div>
+                    <h4>100% Buyer Loyalty</h4>
+                    <p>We never accept referral fees from estate agents, developers, or anyone else. Our only obligation
+                        is to you.</p>
+                </div>
+                <div class="value-item reveal reveal-delay-2">
+                    <div class="value-item__icon">🔍</div>
+                    <h4>Radical Transparency</h4>
+                    <p>We'll tell you when a property isn't worth it — even if that means recommending you don't buy.
+                    </p>
+                </div>
+                <div class="value-item reveal reveal-delay-3">
+                    <div class="value-item__icon">🧠</div>
+                    <h4>Genuine Expertise</h4>
+                    <p>Our team has real-world property, legal, and financial expertise — not just sales training.</p>
+                </div>
+                <div class="value-item reveal reveal-delay-4">
+                    <div class="value-item__icon">💬</div>
+                    <h4>Clear Communication</h4>
+                    <p>We explain every step in plain English. No jargon, no confusion — just clear, honest guidance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-inner reveal">
+                <h2>Ready to Meet the Team?</h2>
+                <p>Book a free, no-obligation consultation and see firsthand why 500+ buyers trusted Advaith Homes with
+                    their most important purchase.</p>
+                <div class="cta-actions">
+                    <a href="free-consultation.html" class="btn btn-gold btn-lg">Book Free Consultation
+                        →</a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/components.js"></script>
+</body>
+
+</html>
+

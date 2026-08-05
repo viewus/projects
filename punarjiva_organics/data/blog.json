@@ -1,0 +1,377 @@
+{
+  "_note": "Drafted marketing copy — this is YOUR text to edit freely. Body blocks use {type: p | h2 | ul | quote}. To add a post: append an entry here and copy any file in pages/blog/ as the new post page (change its <head> tags and data-post attribute), then add its URL to sitemap.xml. Deliberately contains no medical claims and no store-specific facts (prices, delivery, stock) that could go stale or misstate the business.",
+  "_backgroundNote": "Header background photograph. Swap for a real store photo by putting a file in assets/images/ and using a project-relative path like 'assets/images/storeFront.jpg'. backgroundTint controls readability over it: 'strong' (most legible), '' (default), or 'light' (photo shows through most). Remove backgroundImage entirely to fall back to the plain brand gradient.",
+  "backgroundImage": "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?auto=format&fit=crop&w=1600&q=80",
+  "backgroundTint": "strong",
+  "pageEyebrow": "The Journal",
+  "pageTitle": "Notes on Organic Living & Ayurveda",
+  "pageIntro": "Plain-language writing on the staples we stock — what they are, how they differ from the supermarket version, and how to actually use them. No miracle claims.",
+  "allLabel": "All Articles",
+  "emptyMessage": "No articles in this category yet.",
+  "relatedHeading": "Keep reading",
+  "backLabel": "← All articles",
+  "ctaHeading": "Shop the staples we write about",
+  "ctaText": "Millets, cold-pressed oils, Chyawanprash and natural skincare are all on the shelf in Proddatur. Send your list on WhatsApp or call the store.",
+  "categories": [
+    {
+      "slug": "ayurveda",
+      "label": "Ayurveda"
+    },
+    {
+      "slug": "organic-living",
+      "label": "Organic Living"
+    },
+    {
+      "slug": "recipes",
+      "label": "Recipes"
+    }
+  ],
+  "posts": [
+    {
+      "slug": "why-millets-matter",
+      "title": "Why Millets Matter in an Everyday Indian Kitchen",
+      "excerpt": "Millets fed this subcontinent long before rice and wheat took over the plate. Here is what they actually are, how they differ from one another, and how to bring them back without upending your kitchen.",
+      "category": "organic-living",
+      "categoryLabel": "Organic Living",
+      "date": "2026-07-22",
+      "dateLabel": "22 July 2026",
+      "readingTime": "6 min read",
+      "heroImage": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&q=80",
+      "heroImageAlt": "Several varieties of millet grains displayed in open bowls on a wooden surface",
+      "metaDescription": "What millets are, how ragi, jowar, bajra and the small millets differ, and a practical way to reintroduce them into everyday Indian cooking.",
+      "related": [
+        "cold-pressed-oils-explained",
+        "chyawanprash-daily-guide"
+      ],
+      "body": [
+        {
+          "type": "p",
+          "text": "For most of the last few thousand years, millets were not a health food. They were simply food — the everyday grain of the Deccan, grown on land that would not reliably hold rice, harvested by families who ate what the soil could actually give. Somewhere in the last sixty years they slipped off the daily plate and became something you buy deliberately, in a separate aisle, at a higher price."
+        },
+        {
+          "type": "p",
+          "text": "That is worth reversing, and not because millets are magic. They are not. They are a group of hardy small-seeded grains that happen to be well suited to this climate, need far less water than paddy, and bring a texture and flavour to the plate that rice cannot."
+        },
+        {
+          "type": "h2",
+          "text": "They are not one grain"
+        },
+        {
+          "type": "p",
+          "text": "The word covers a family, and the members behave very differently in a pot. Buying \"millets\" without knowing which one you have is the fastest way to end up disappointed with the result."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Ragi (finger millet) — deep reddish-brown, earthy, sets firm. The one for mudde, porridge, and roti for anyone who likes a dense chew.",
+            "Jowar (sorghum) — mild, pale, the most forgiving substitute for wheat in a roti. A sensible first millet if you are just starting.",
+            "Bajra (pearl millet) — nutty and noticeably warming, which is why it has always been a winter grain in the north and west.",
+            "Foxtail, little, kodo and barnyard millets — the small millets. Light, quick-cooking, and the ones to use where you would otherwise reach for rice.",
+            "Samai and varagu — regional names you will meet in Andhra and Tamil kitchens; the same small-millet family, different local naming."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Start with one meal, not the whole diet"
+        },
+        {
+          "type": "p",
+          "text": "The most common mistake is the ambitious one: replacing every grain at once, disliking the texture by day three, and abandoning the whole idea. Millets cook differently from rice, absorb more water, and want a longer rest after cooking. Give yourself one meal a week to learn a single millet properly."
+        },
+        {
+          "type": "p",
+          "text": "Foxtail millet in place of rice for a weekday lunch is the gentlest entry point. It cooks in roughly the same time, takes about two and a half parts water to one of grain, and sits well under sambar or rasam without announcing itself."
+        },
+        {
+          "type": "quote",
+          "text": "Soak, cook with more water than you think, then let it rest covered off the heat. Most complaints about millets being dry or gritty are complaints about skipping the rest."
+        },
+        {
+          "type": "h2",
+          "text": "Buy small, store cold"
+        },
+        {
+          "type": "p",
+          "text": "Whole millets keep well. Millet flours do not — the same intact bran and germ that make the grain worth eating also carry the oils that turn rancid. Buy flour in quantities you will finish within a few weeks, keep it airtight, and keep it in the fridge if your kitchen runs warm. If a flour smells sharp or faintly of paint, it has gone; do not try to cook through it."
+        },
+        {
+          "type": "p",
+          "text": "This is also the honest argument for buying grain whole and milling in smaller batches. It is slightly more work and considerably better food."
+        },
+        {
+          "type": "h2",
+          "text": "A reasonable expectation"
+        },
+        {
+          "type": "p",
+          "text": "Millets are whole grains with their bran intact, which is genuinely useful — they bring fibre and substance that heavily milled white rice has had removed. What they are not is a treatment for anything. If you are managing a health condition, the grain on your plate is one small input among many, and your doctor's advice outranks anything written on a shop's website, including ours."
+        },
+        {
+          "type": "p",
+          "text": "Come by the store and we will let you see and feel the difference between the varieties before you commit to a kilo. Choosing a grain is much easier with your hands in it."
+        }
+      ]
+    },
+    {
+      "slug": "cold-pressed-oils-explained",
+      "title": "Cold-Pressed vs Refined Oils, Explained",
+      "excerpt": "Why one oil tastes strongly of its seed and the other of almost nothing, what refining actually removes, and how to decide honestly which belongs in your kitchen.",
+      "category": "organic-living",
+      "categoryLabel": "Organic Living",
+      "date": "2026-07-08",
+      "dateLabel": "8 July 2026",
+      "readingTime": "5 min read",
+      "heroImage": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+      "heroImageAlt": "Glass bottles of cold-pressed oil beside sesame and groundnut seeds on a stone surface",
+      "metaDescription": "How cold-pressed oil differs from refined oil, what refining removes, smoke points, storage, and how to choose between them without the marketing noise.",
+      "related": [
+        "why-millets-matter",
+        "natural-skincare-basics"
+      ],
+      "body": [
+        {
+          "type": "p",
+          "text": "Two bottles of groundnut oil can sit side by side at very different prices. One smells unmistakably of roasted groundnut; the other smells of almost nothing. The difference is not branding. It is what happened between the seed and the bottle."
+        },
+        {
+          "type": "h2",
+          "text": "What cold-pressing actually is"
+        },
+        {
+          "type": "p",
+          "text": "Cold-pressed oil — the traditional chekku or ghani method, and its modern equivalents — is extracted by crushing the seed slowly under pressure, without adding heat. Friction alone raises the temperature somewhat, but nothing is deliberately heated and no solvent is used. What comes out is the oil the seed contained, carrying its colour, its aroma and its natural compounds."
+        },
+        {
+          "type": "p",
+          "text": "The yield is lower. That is the entire economic story behind the price difference, and it is worth knowing rather than assuming you are paying purely for a label."
+        },
+        {
+          "type": "h2",
+          "text": "What refining removes"
+        },
+        {
+          "type": "p",
+          "text": "Industrial refining typically involves solvent extraction to pull more oil from the seed, followed by degumming, neutralising, bleaching and deodorising. Each step is doing something real: raising the smoke point, extending shelf life, stripping colour, and removing the strong flavours many people do not want in a neutral cooking oil."
+        },
+        {
+          "type": "p",
+          "text": "It also removes much of the aroma and a portion of the minor compounds that came with the seed. Whether that trade is worth it depends entirely on what you are cooking."
+        },
+        {
+          "type": "h2",
+          "text": "Choosing between them, honestly"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Cold-pressed suits tempering, sautéing, dressings, pickles and anything where the oil's flavour is part of the dish.",
+            "Cold-pressed oils have lower smoke points. For repeated deep-frying at high heat, a refined oil is the more practical and less wasteful choice.",
+            "Sesame, groundnut, coconut and mustard each carry a distinct character — pick the one that belongs in your regional cooking rather than the one with the best packaging.",
+            "The strong smell of a fresh cold-pressed oil is the point, not a defect. If it has almost no smell, ask what it went through."
+          ]
+        },
+        {
+          "type": "quote",
+          "text": "There is no single best oil. There is the oil that suits the heat you are cooking at and the flavour you want on the plate."
+        },
+        {
+          "type": "h2",
+          "text": "Storage matters more than with refined oil"
+        },
+        {
+          "type": "p",
+          "text": "Without the deodorising and stabilising steps, cold-pressed oil is more sensitive to light, air and heat. Keep it in a dark bottle or a dark cupboard, close it properly, and keep it well away from the stove — the warm shelf above the hob is the worst place in the kitchen for it."
+        },
+        {
+          "type": "p",
+          "text": "Buy in a size you will finish in a couple of months rather than the largest tin available. A rancid oil smells sharp and faintly of old paint; once it does, it is not salvageable and should not be cooked with."
+        },
+        {
+          "type": "h2",
+          "text": "A note on health claims"
+        },
+        {
+          "type": "p",
+          "text": "Cold-pressed oils are still fats, and quantity matters more than which bottle it came from. They are worth choosing for flavour, for how they are made, and for keeping more of the seed intact — not because any oil is a remedy. Be sceptical of anyone, including a shop, telling you otherwise."
+        },
+        {
+          "type": "p",
+          "text": "We stock cold-pressed oils in the store and are happy to open a bottle for you to smell before you buy. It tells you more in two seconds than a label does."
+        }
+      ]
+    },
+    {
+      "slug": "chyawanprash-daily-guide",
+      "title": "A Daily Guide to Chyawanprash",
+      "excerpt": "One of the oldest preparations still in everyday Indian use. What goes into it, how it is traditionally taken, and what it is reasonable — and unreasonable — to expect from it.",
+      "category": "ayurveda",
+      "categoryLabel": "Ayurveda",
+      "date": "2026-06-18",
+      "dateLabel": "18 June 2026",
+      "readingTime": "5 min read",
+      "heroImage": "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?auto=format&fit=crop&w=1200&q=80",
+      "heroImageAlt": "Ayurvedic herbs, dried amla and a brass mortar and pestle arranged on a stone counter",
+      "metaDescription": "What Chyawanprash contains, how it is traditionally taken, how to read a label, and a realistic view of what this classical Ayurvedic preparation does and does not do.",
+      "related": [
+        "natural-skincare-basics",
+        "why-millets-matter"
+      ],
+      "body": [
+        {
+          "type": "p",
+          "text": "Chyawanprash is a lehyam — a cooked herbal jam — and one of the few classical Ayurvedic preparations that never left ordinary Indian kitchens. Most people who take it were given it as children, by a grandmother, off a steel spoon, without much explanation."
+        },
+        {
+          "type": "p",
+          "text": "It is worth understanding what is actually in the jar."
+        },
+        {
+          "type": "h2",
+          "text": "What goes into it"
+        },
+        {
+          "type": "p",
+          "text": "The base is amla — Indian gooseberry — cooked down with ghee, a sweetener, and a long list of supporting herbs and spices. Classical formulations run to forty or more ingredients, including pippali, cardamom, cinnamon, and various roots and barks, each added at a particular stage of the cooking."
+        },
+        {
+          "type": "p",
+          "text": "The amla is doing most of the work, and how it was handled matters. Long, hard cooking degrades what amla brings; carefully made Chyawanprash treats that stage with respect. This is a large part of why two jars at different prices are not the same product."
+        },
+        {
+          "type": "h2",
+          "text": "How it is traditionally taken"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "A small spoon in the morning, commonly on an empty stomach, is the usual practice.",
+            "Often followed with warm milk or warm water — this is customary, not a rule.",
+            "Adults typically take a teaspoon or so; children, less. Follow the dosage printed on the pack you have bought.",
+            "Traditionally taken through the cooler months, though many people take it year-round."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Reading the label properly"
+        },
+        {
+          "type": "p",
+          "text": "Turn the jar around before you buy. Amla should appear high in the ingredient list rather than trailing behind sugar. Check whether the base is ghee or a cheaper vegetable fat. Check the sugar content honestly — Chyawanprash is a sweet preparation, and if you are watching sugar intake, that spoonful is not free."
+        },
+        {
+          "type": "p",
+          "text": "Some makers publish the classical ingredient count and their sourcing; some do not. Neither proves quality on its own, but a maker willing to tell you what is inside is a better starting point than one who is not."
+        },
+        {
+          "type": "quote",
+          "text": "A preparation this old survives because people found it worth continuing — not because it does anything dramatic. Expect support, not a cure."
+        },
+        {
+          "type": "h2",
+          "text": "What it is reasonable to expect"
+        },
+        {
+          "type": "p",
+          "text": "Chyawanprash is a traditional daily tonic taken to support general vitality and resilience. That is the honest description. It is not a medicine, it does not treat illness, and it will not compensate for poor sleep, an unbalanced diet or an untreated health condition."
+        },
+        {
+          "type": "p",
+          "text": "If you are diabetic, pregnant, giving it to a young child, or taking prescribed medication, speak to a qualified practitioner before starting. The sugar content alone makes that a sensible conversation to have."
+        },
+        {
+          "type": "h2",
+          "text": "Storing it"
+        },
+        {
+          "type": "p",
+          "text": "Keep the jar tightly closed and use a clean, dry spoon every time — moisture is what spoils a lehyam. Store it somewhere cool and out of direct sunlight. Properly kept, an opened jar lasts comfortably, but the date printed on the pack is the one to follow."
+        },
+        {
+          "type": "p",
+          "text": "We stock Chyawanprash and other lehyams in the store, and we would rather talk you through which one suits you than sell you the most expensive jar on the shelf."
+        }
+      ]
+    },
+    {
+      "slug": "natural-skincare-basics",
+      "title": "Natural Skincare Basics: Reading an Ingredient List",
+      "excerpt": "\"Natural\" is not a regulated word. Here is how to read what is actually on the back of the pack, and what a short ingredient list really tells you.",
+      "category": "organic-living",
+      "categoryLabel": "Organic Living",
+      "date": "2026-05-30",
+      "dateLabel": "30 May 2026",
+      "readingTime": "5 min read",
+      "heroImage": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+      "heroImageAlt": "Handmade soap bars and natural skincare jars arranged beside dried flowers and botanicals",
+      "metaDescription": "How to read a skincare ingredient list, what 'natural' does and does not guarantee, why short ingredient lists shorten shelf life, and how to patch test properly.",
+      "related": [
+        "cold-pressed-oils-explained",
+        "chyawanprash-daily-guide"
+      ],
+      "body": [
+        {
+          "type": "p",
+          "text": "\"Natural\" on a cosmetic label is a marketing word, not a regulated one. Nobody has to meet a standard to print it. That does not make natural personal care a bad idea — it makes the ingredient list on the back the only part of the pack genuinely worth reading."
+        },
+        {
+          "type": "h2",
+          "text": "The order tells you most of the story"
+        },
+        {
+          "type": "p",
+          "text": "Ingredients are listed by descending quantity. Whatever appears in the first three or four positions makes up the bulk of the product. If a hair oil advertises a prized herb on the front but lists it eighth, after a base oil, a fragrance and two other things, you are mostly buying the base oil."
+        },
+        {
+          "type": "p",
+          "text": "This single habit — reading the top four, ignoring the front of the pack — will change what you buy more than any other advice here."
+        },
+        {
+          "type": "h2",
+          "text": "Short lists are honest, and they cost you shelf life"
+        },
+        {
+          "type": "p",
+          "text": "A product with five ingredients and no synthetic preservative is genuinely simpler. It is also more perishable. Anything containing water and no preservative can grow microbes, which is exactly why traditional preparations tend to be oil-based, dry, or made in small batches and used quickly."
+        },
+        {
+          "type": "p",
+          "text": "So take the dates seriously, buy smaller quantities, and keep lids closed. A preservative-free cream is not meant to sit half-used on a warm bathroom shelf for a year."
+        },
+        {
+          "type": "h2",
+          "text": "Things worth knowing"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Cold-pressed carrier oils — coconut, sesame, almond — are the backbone of most traditional hair and body care.",
+            "Essential oils are potent and belong diluted. Undiluted on skin, they are a common cause of irritation.",
+            "\"Chemical-free\" is meaningless; water is a chemical. What matters is which specific ingredients suit your skin.",
+            "Natural does not mean non-allergenic. Plant extracts cause plenty of reactions.",
+            "A pleasant smell can come from the botanicals or from added fragrance. The list will tell you which."
+          ]
+        },
+        {
+          "type": "quote",
+          "text": "Patch test anything new: a small amount on your inner forearm, left alone for a day. It is a minor inconvenience that saves a genuinely miserable week."
+        },
+        {
+          "type": "h2",
+          "text": "Adjusting your expectations"
+        },
+        {
+          "type": "p",
+          "text": "Natural skincare tends to work slowly and undramatically. A hair oil will not reverse hair loss, and a balm will not remove scarring. What plant-based care can reasonably offer is gentle, consistent upkeep with fewer synthetic additions — which is a modest claim, and the only one worth making."
+        },
+        {
+          "type": "p",
+          "text": "For anything persistent — ongoing acne, eczema, sudden hair loss, a reaction that will not settle — see a dermatologist. A shop is not the right place to get that advice, and we will say so."
+        },
+        {
+          "type": "p",
+          "text": "Bring a product you already use into the store and we will read the list with you. It is usually a more useful conversation than a recommendation made cold."
+        }
+      ]
+    }
+  ]
+}

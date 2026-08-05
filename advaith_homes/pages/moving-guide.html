@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Guide — Advaith Homes</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .guide-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .guide-content h2 {
+            margin-top: 60px;
+            margin-bottom: 24px;
+            font-size: 2.2rem;
+            color: var(--slate-900);
+        }
+        .guide-content h3 {
+            margin-top: 40px;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+            color: var(--gold-600);
+        }
+        .guide-content p {
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--slate-600);
+        }
+        .guide-content ul {
+            margin-bottom: 32px;
+            padding-left: 24px;
+            list-style-type: none;
+        }
+        .guide-content li {
+            position: relative;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--slate-600);
+            padding-left: 32px;
+        }
+        .guide-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--gold-500);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .guide-hero {
+            background: linear-gradient(to right, var(--slate-900), var(--slate-800));
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        .guide-hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+        }
+        .guide-hero p {
+            color: var(--slate-300);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .guide-callout {
+            background: var(--client-color-50);
+            border-left: 4px solid var(--gold-500);
+            padding: 32px;
+            border-radius: 0 var(--r-lg) var(--r-lg) 0;
+            margin: 40px 0;
+        }
+        .guide-callout p {
+            margin-bottom: 0;
+            color: var(--slate-800);
+            font-weight: 500;
+        }
+        .cost-item {
+            background: white;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--r-lg);
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .cost-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold-300);
+        }
+        .cost-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .cost-number {
+            background: var(--gold-100);
+            color: var(--gold-600);
+            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+        .cost-item h4 {
+            font-size: 1.3rem;
+            color: var(--slate-900);
+            margin: 0;
+        }
+        .example-box {
+            background: var(--slate-50);
+            padding: 16px;
+            border-radius: var(--r-md);
+            margin-top: 16px;
+            border: 1px solid var(--slate-100);
+        }
+        .example-box p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--slate-700);
+        }
+    </style>
+</head>
+<body data-page="moving-guide">
+    <div id="nav-placeholder"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <div class="eyebrow reveal" style="justify-content:center; color: var(--gold-400);">Ultimate Resource</div>
+            <h1 class="reveal reveal-delay-1">The Moving Guide</h1>
+            <p class="reveal reveal-delay-2">A breakdown of the 11 hidden costs of moving home in the UK to help you budget accurately.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container guide-content reveal">
+            <p class="lead" style="font-size: 1.25rem; font-weight: 500; color: var(--slate-800); margin-bottom: 40px;">When moving home in the UK, it’s crucial to budget for several hidden costs, from legal fees to removal expenses. Below is a detailed explanation of each cost, including examples where relevant.</p>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">1</div>
+                    <h4>Legal Fees (Conveyancing Costs)</h4>
+                </div>
+                <p>Conveyancing is the legal process of transferring property ownership. It typically costs between £800 and £1,500 depending on the complexity of the purchase and the solicitor’s fees.</p>
+                <ul>
+                    <li><strong>Property Searches:</strong> Ensuring there are no legal issues with the property (e.g., boundary disputes, planning permissions).</li>
+                    <li><strong>Land Registry Fees:</strong> These are required for registering the property in your name.</li>
+                </ul>
+                <div class="example-box">
+                    <p><strong>Example:</strong> On a £300,000 house, you may pay £1,200 for a solicitor to manage the entire conveyancing process.</p>
+                </div>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">2</div>
+                    <h4>Valuation & Mortgage Costs</h4>
+                </div>
+                <ul>
+                    <li><strong>Mortgage Valuation Fee:</strong> When you apply for a mortgage, your lender will arrange a valuation of the property to ensure it’s worth the price you’re paying. This can cost between £150 and £1,500. Some lenders waive this fee.</li>
+                    <li><strong>Mortgage Arrangement Fees:</strong> Some mortgages come with arrangement fees that can range from £500 to £1,500. It’s important to check if this is included in your offer.</li>
+                </ul>
+                <div class="example-box">
+                    <p><strong>Example:</strong> If your valuation fee is £300 and your arrangement fee is £500, your total cost for these services would be £800.</p>
+                </div>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">3</div>
+                    <h4>Survey Costs</h4>
+                </div>
+                <p>Property surveys are crucial to identify any structural issues.</p>
+                <ul>
+                    <li><strong>Homebuyer’s Report:</strong> A basic survey costing around £400-£500.</li>
+                    <li><strong>Full Structural Survey:</strong> Recommended for older or unique properties and costs between £600 and £1,500.</li>
+                </ul>
+                <div class="example-box">
+                    <p><strong>Example:</strong> For a 100-year-old cottage, a full structural survey could cost £1,200, ensuring there are no major issues like subsidence.</p>
+                </div>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">4</div>
+                    <h4>Buying Agent Fees</h4>
+                </div>
+                <p>Buying agents act on behalf of buyers to find properties and negotiate the best price. They usually charge either a fixed fee or a percentage of the purchase price. For instance, Advaith Homes charges a fixed fee offering end-to-end services, including property searches, negotiations, and advice.</p>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">5</div>
+                    <h4>Stamp Duty Land Tax (SDLT)</h4>
+                </div>
+                <p>Stamp duty is a tax paid when you buy a property. The amount you pay depends on the price of the property:</p>
+                <ul>
+                    <li><strong>Up to £250,000:</strong> No stamp duty (for main residence).</li>
+                    <li><strong>£250,001 to £925,000:</strong> 5%.</li>
+                    <li><strong>£925,001 to £1.5 million:</strong> 10%.</li>
+                    <li><strong>Above £1.5 million:</strong> 12%.</li>
+                </ul>
+                <div class="example-box">
+                    <p><strong>Example:</strong> If you buy a house worth £400,000, you will pay £7,500 in stamp duty (5% on £150,000, as the first £250,000 is exempt).</p>
+                </div>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">6</div>
+                    <h4>Deposit</h4>
+                </div>
+                <p>The deposit is usually 5% to 20% of the property’s value, depending on your mortgage agreement. Larger deposits often mean better mortgage rates.</p>
+                <div class="example-box">
+                    <p><strong>Example:</strong> For a house worth £300,000, a 10% deposit would be £30,000. A larger 20% deposit would be £60,000.</p>
+                </div>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">7</div>
+                    <h4>Insurance Costs</h4>
+                </div>
+                <ul>
+                    <li><strong>Building Insurance:</strong> Mandatory for anyone with a mortgage, covering the cost of rebuilding the property in case of damage. Costs range from £150 to £300 annually.</li>
+                    <li><strong>Contents Insurance:</strong> Covers your belongings within the home and typically costs between £50 and £200.</li>
+                </ul>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">8</div>
+                    <h4>Removals</h4>
+                </div>
+                <p>The cost of moving furniture and belongings depends on the amount and distance. Removal costs typically range from £300 to £1,500.</p>
+                <ul>
+                    <li><strong>Local Moves:</strong> Around £300 to £600.</li>
+                    <li><strong>Long-Distance Moves:</strong> £800 to £1,500.</li>
+                </ul>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">9</div>
+                    <h4>Cleaning Costs</h4>
+                </div>
+                <p>Professional cleaning services for your old or new property can range from £100 to £300, depending on the property size. This is especially useful if your tenancy agreement requires an end-of-tenancy clean.</p>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">10</div>
+                    <h4>Mail Redirection</h4>
+                </div>
+                <p>To avoid missing important letters, Royal Mail offers a mail redirection service. This ensures all post is forwarded to your new address.</p>
+                <div class="example-box">
+                    <p><strong>Example:</strong> Redirecting your mail for three months (approx. £33.99) will help avoid issues with unpaid bills or missed correspondence.</p>
+                </div>
+            </div>
+
+            <div class="cost-item">
+                <div class="cost-header">
+                    <div class="cost-number">11</div>
+                    <h4>Settling In Costs</h4>
+                </div>
+                <p>After moving, you may need to purchase furniture, appliances, and decor for your new home. These costs are highly variable but can add up quickly.</p>
+                <ul>
+                    <li><strong>Furniture:</strong> £2,000 to £5,000 for a three-bedroom home.</li>
+                    <li><strong>Appliances:</strong> £1,000 to £3,000 for new kitchen appliances.</li>
+                    <li><strong>Decorating:</strong> £500 to £1,500 for paint, wallpaper, etc.</li>
+                </ul>
+            </div>
+
+            <hr style="margin: 60px 0; border: none; border-top: 1px solid var(--slate-200);">
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="../free-consultation.html" class="btn btn-primary btn-lg">Need Help Buying? Let's Talk</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="../js/components.js"></script>
+</body>
+</html>
+
+

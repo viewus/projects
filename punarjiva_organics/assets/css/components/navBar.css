@@ -1,0 +1,183 @@
+/* navBar — a floating white "pill shell" sitting on the cream page, which is
+   how punarjiva.in presents its own navigation (.nav-shell, border-radius 999px,
+   soft shadow, 1px warm border). Everything is scoped under .navBar. */
+
+.navBar {
+  background: linear-gradient(to bottom,
+    rgba(250, 246, 239, .98) 0%,
+    rgba(250, 246, 239, .92) 70%,
+    rgba(250, 246, 239, 0) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: none;
+  padding: .75rem 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+/* The pill itself. */
+.navBar .navBarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spaceSm);
+  background: var(--colorWhite);
+  border: 1px solid var(--colorLine);
+  border-radius: var(--radiusPill);
+  box-shadow: var(--shadowSoft);
+  padding: .5rem .75rem .5rem 1rem;
+}
+
+/* --- brand ---------------------------------------------------------------- */
+
+.navBar .navBarBrand {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+/* The logo is a circular mark, so it is presented as one — white plate,
+   small inset, soft lift, exactly as on the source site. */
+.navBar .navBarLogo {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radiusPill);
+  object-fit: contain;
+  background: var(--colorWhite);
+  padding: 3px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .07);
+  flex: 0 0 auto;
+}
+
+.navBar .navBarBrandText { display: flex; flex-direction: column; line-height: 1.18; }
+
+.navBar .navBarBrandName {
+  font-family: var(--fontHeading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--colorPlum);
+}
+
+.navBar .navBarBrandTagline {
+  font-size: .68rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--colorInkSoft);
+}
+
+/* --- menu ----------------------------------------------------------------- */
+
+.navBar .navBarMenu { gap: .15rem; align-items: center; }
+
+.navBar .navBarLink {
+  color: var(--colorInkSoft);
+  font-size: .9rem;
+  font-weight: 500;
+  padding: .4rem .8rem;
+  border-radius: var(--radiusPill);
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.navBar .navBarLink:hover { background: var(--colorPlumSoft); color: var(--colorPlum); }
+
+.navBar .navBarLink.isActive {
+  background: var(--colorPlumSoft);
+  color: var(--colorPlum);
+  font-weight: 600;
+}
+
+/* Gold underline on the active item — picks up the mandala outline in the mark. */
+.navBar .navBarLink.isActive::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 18px;
+  margin: .18rem auto 0;
+  border-radius: 2px;
+  background: var(--colorClay);
+}
+
+.navBar .navBarLink.dropdown-toggle::after { margin-left: .3rem; vertical-align: .15em; }
+
+.navBar .navBarDropdown {
+  border: 1px solid var(--colorLine);
+  border-radius: var(--radiusMd);
+  box-shadow: var(--shadowLift);
+  padding: .4rem;
+  margin-top: .4rem;
+  background: var(--colorWhite);
+  min-width: 12rem;
+}
+
+.navBar .navBarDropdownItem {
+  border-radius: var(--radiusSm);
+  font-size: .92rem;
+  padding: .5rem .75rem;
+  color: var(--colorInkSoft);
+}
+
+.navBar .navBarDropdownItem:hover { background: var(--colorPlumSoft); color: var(--colorPlum); }
+
+.navBar .navBarDropdownItem.isActive {
+  background: var(--colorPlumSoft);
+  color: var(--colorPlum);
+  font-weight: 600;
+}
+
+/* --- CTA ------------------------------------------------------------------ */
+
+.navBar .navBarCta {
+  background: linear-gradient(135deg, var(--colorClaySoft) 0%, var(--colorClay) 38%, var(--colorPlum) 100%);
+  color: #2B1524;
+  border: 1px solid rgba(212, 166, 63, .7);
+  border-radius: var(--radiusPill);
+  padding: .48rem 1.15rem;
+  font-size: .88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: var(--shadowPlum);
+  flex: 0 0 auto;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.navBar .navBarCta:hover {
+  color: #2B1524;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(122, 37, 84, .30);
+}
+
+/* --- toggler -------------------------------------------------------------- */
+
+.navBar .navBarToggler {
+  border: 1px solid var(--colorLine);
+  border-radius: var(--radiusPill);
+  padding: .38rem .6rem;
+}
+.navBar .navBarToggler:focus { box-shadow: none; }
+
+/* --- collapsed (below lg) -------------------------------------------------- */
+
+@media (max-width: 991.98px) {
+  .navBar .navBarInner { flex-wrap: wrap; border-radius: var(--radiusLg); padding: .6rem .75rem; }
+  .navBar .navBarCollapse { flex-basis: 100%; padding-top: var(--spaceXs); }
+  .navBar .navBarMenu { align-items: stretch; }
+  .navBar .navBarLink { padding: .55rem .9rem; }
+  .navBar .navBarLink.isActive::after { margin-left: 0; }
+  .navBar .navBarCta { margin-top: var(--spaceXs); display: inline-flex; }
+  .navBar .navBarDropdown {
+    border: none;
+    box-shadow: none;
+    padding-left: var(--spaceSm);
+    margin-top: 0;
+    background: transparent;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navBar .navBarLogo { width: 42px; height: 42px; }
+  .navBar .navBarBrandName { font-size: 1rem; }
+}

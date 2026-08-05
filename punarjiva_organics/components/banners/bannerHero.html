@@ -1,0 +1,33 @@
+<!-- Home hero. Background image, tint strength and all copy come from
+     data/home.json — see backgroundImage / backgroundTint there.
+     The organicField layer is pure decoration and is hidden from screen
+     readers; it also stops animating under prefers-reduced-motion. -->
+<section class="bannerHero">
+  <div class="bannerHeroBg" {{bgStyleHtml}}></div>
+  <div class="bannerHeroTint"></div>
+
+  <div class="organicField" aria-hidden="true">
+    <span class="organicBlob organicBlobOne"></span>
+    <span class="organicBlob organicBlobTwo"></span>
+    <span class="organicBlob organicBlobThree"></span>
+    <img class="organicLeaf organicLeafOne" src="{{leafParticle}}" alt="">
+    <img class="organicLeaf organicLeafTwo" src="{{leafParticle}}" alt="">
+    <img class="organicLeaf organicLeafThree" src="{{leafParticle}}" alt="">
+    <img class="organicLeaf organicLeafFour" src="{{leafParticle}}" alt="">
+    <img class="organicLeaf organicLeafFive" src="{{leafParticle}}" alt="">
+  </div>
+
+  <div class="container bannerHeroInner">
+    <div class="bannerHeroContent">
+      <p class="bannerHeroEyebrow">{{eyebrow}}</p>
+      <h1 class="bannerHeroTitle">{{title}}</h1>
+      <p class="bannerHeroSubtitle">{{subtitle}}</p>
+      <div class="bannerHeroActions" id="heroActions"></div>
+    </div>
+
+    <div class="bannerHeroMedia">
+      <img class="bannerHeroImage" src="{{image}}" alt="{{imageAlt}}">
+      <img class="bannerHeroLeaf" src="{{leaf}}" alt="" aria-hidden="true">
+    </div>
+  </div>
+</section>
