@@ -5,7 +5,16 @@
   "items": [
     { "label": "Home", "href": "index.html", "key": "home" },
     { "label": "About", "href": "pages/about.html", "key": "about" },
-    { "label": "Products", "href": "pages/products.html", "key": "products" },
+    {
+      "label": "Products",
+      "key": "products",
+      "children": [
+        { "label": "All Products", "href": "pages/products.html", "key": "products" },
+        { "label": "Organic Groceries", "href": "pages/products.html?type=groceries", "key": "products" },
+        { "label": "Natural Cosmetics", "href": "pages/products.html?type=cosmetics", "key": "products" },
+        { "label": "Ayurvedic Boosters", "href": "pages/products.html?type=ayurveda", "key": "products" }
+      ]
+    },
     {
       "label": "Blog",
       "key": "blog",

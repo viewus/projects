@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="assets/css/components/button.css">
   <link rel="stylesheet" href="assets/css/components/card.css">
   <link rel="stylesheet" href="assets/css/components/banner.css">
+  <link rel="stylesheet" href="assets/css/components/product.css">
   <link rel="stylesheet" href="assets/css/components/ctaSection.css">
   <link rel="stylesheet" href="assets/css/components/hero.css">
 </head>
@@ -65,9 +66,17 @@
       </div>
     </section>
 
+    <!-- What the store actually claims about itself, in one honest row. No
+         certification badges: none have been verified. -->
+    <section class="pageSectionTight">
+      <div class="container">
+        <div class="purityStrip" id="homePurity" data-reveal></div>
+      </div>
+    </section>
+
     <section class="pageSection">
       <div class="container">
-        <div class="sectionHeaderCentered">
+        <div class="sectionHeaderCentered" data-reveal>
           <p class="sectionEyebrow">Our Story</p>
           <h2 data-content="aboutTeaserHeading"></h2>
           <p class="sectionIntroCentered" data-content="aboutTeaserText"></p>
@@ -78,26 +87,78 @@
 
     <section class="pageSection pageSectionAlt hasTrees">
       <div class="container">
-        <div class="sectionHeaderCentered">
+        <div class="sectionHeaderCentered" data-reveal>
           <p class="sectionEyebrow">What We Stock</p>
           <h2 data-content="productsHeading"></h2>
           <p class="sectionIntroCentered" data-content="productsIntro"></p>
         </div>
-        <div class="gridThree" id="homeCategories"></div>
+        <div class="gridThree" id="homeCategories" data-reveal></div>
         <p class="textCenter" style="margin-top: 2rem;">
           <a class="btn btnPrimary" data-link="pages/products.html" href="#" data-content="productsLinkLabel"></a>
         </p>
       </div>
     </section>
 
+    <!-- Featured banner. One product, full width, picked from whatever carries
+         the "featured" badge in data/products.json — so the shop can change
+         what gets this slot without anyone touching HTML. -->
+    <div id="homeSpotlight"></div>
+
+    <!-- Best sellers, as a ranked rail rather than a grid: a short ordered list
+         reads as a recommendation, a grid reads as more catalogue. -->
     <section class="pageSection">
       <div class="container">
-        <div class="sectionHeaderCentered">
+        <div class="sectionHeadRow" data-reveal>
+          <div class="sectionHeadText">
+            <p class="sectionEyebrow">Most asked for</p>
+            <h2 data-content="bestSellersHeading"></h2>
+            <p class="sectionHeadIntro" data-content="bestSellersIntro"></p>
+          </div>
+          <a class="sectionHeadLink" data-link="pages/products.html" href="#">
+            <span data-content="bestSellersLinkLabel"></span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="productRail" id="bestSellerRail" data-reveal>
+          <div class="productRailTrack" id="homeBestSellers"></div>
+          <div class="productRailNav">
+            <button class="productRailBtn productRailPrev" type="button" aria-label="Scroll best sellers left">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="productRailBtn productRailNext" type="button" aria-label="Scroll best sellers right">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pageSection pageSectionLeaf hasTrees">
+      <div class="container">
+        <div class="sectionHeadRow" data-reveal>
+          <div class="sectionHeadText">
+            <p class="sectionEyebrow">Just in</p>
+            <h2 data-content="freshHeading"></h2>
+            <p class="sectionHeadIntro" data-content="freshIntro"></p>
+          </div>
+          <a class="sectionHeadLink" data-link="pages/products.html" href="#">
+            <span data-content="freshLinkLabel"></span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="productGrid" id="homeFresh" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="pageSection">
+      <div class="container">
+        <div class="sectionHeaderCentered" data-reveal>
           <p class="sectionEyebrow">The Journal</p>
           <h2 data-content="blogTeaserHeading"></h2>
           <p class="sectionIntroCentered" data-content="blogTeaserIntro"></p>
         </div>
-        <div class="gridThree" id="homeBlogTeaser"></div>
+        <div class="gridThree" id="homeBlogTeaser" data-reveal></div>
         <p class="textCenter" style="margin-top: 2rem;">
           <a class="btn btnGhost" data-link="pages/blog.html" href="#" data-content="blogTeaserLinkLabel"></a>
         </p>
@@ -126,6 +187,7 @@
   <script src="assets/js/components/renderers/bannerRenderer.js"></script>
   <script src="assets/js/components/renderers/buttonRenderer.js"></script>
   <script src="assets/js/components/renderers/blogRenderer.js"></script>
+  <script src="assets/js/components/renderers/productRenderer.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

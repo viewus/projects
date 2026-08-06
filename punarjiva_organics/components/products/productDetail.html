@@ -1,0 +1,90 @@
+<!-- Product detail layout. Injected into pages/product.html by productRenderer.js
+     for whichever ?slug= is in the URL, so one HTML file serves the whole
+     catalogue. Every {{token}} is filled from that product's entry in
+     data/products.json. -->
+<div class="productDetail">
+
+  <!-- Gallery. The stage is a button in everything but name: click, Enter or
+       Space opens the lightbox at the current image. -->
+  <div class="productGallery">
+    <div class="galleryStage" id="galleryStage" role="button" tabindex="0"
+         aria-label="{{zoomAriaLabel}}">
+      <img class="galleryImage" id="galleryImage" src="{{image}}" alt="{{imageAlt}}">
+      <div class="galleryBadges">{{badgesHtml}}</div>
+      <span class="galleryZoomHint">
+        <i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> {{galleryHint}}
+      </span>
+    </div>
+    <div class="galleryThumbs" id="galleryThumbs" role="tablist"
+         aria-label="{{thumbsAriaLabel}}">{{thumbsHtml}}</div>
+
+    <!-- The hard facts live here rather than behind a tab: they are what a
+         customer is actually checking before they message the shop, and this
+         column has the room for them. It also stops the gallery leaving half a
+         screen of nothing beside the longer right-hand column. -->
+    <div class="productFacts">
+      <h2 class="productFactsHeading">{{specsHeading}}</h2>
+      <table class="productSpecs">
+        <caption class="visuallyHidden">{{specsHeading}}</caption>
+        <tbody>{{specsHtml}}</tbody>
+      </table>
+      <p class="productStorageNote"><strong>{{storageHeading}}:</strong> {{storage}}</p>
+    </div>
+  </div>
+
+  <div class="productInfo">
+    <p class="productInfoEyebrow">{{typeLabel}}</p>
+    <h1 class="productInfoTitle">{{name}}</h1>
+    <p class="productInfoTagline">{{tagline}}</p>
+    <p class="productInfoSummary">{{summary}}</p>
+
+    <div class="productInfoTags">{{tagsHtml}}</div>
+    <div class="productHighlights">{{highlightsHtml}}</div>
+
+    <div class="productOrder">
+      <h2 class="productOrderHeading">{{orderHeading}}</h2>
+      <p class="productOrderText">{{orderText}}</p>
+      <div class="productOrderActions">{{orderActionsHtml}}</div>
+      <p class="productPriceNote">{{priceNote}}</p>
+    </div>
+
+    <!-- The tabs sit INSIDE the info column on purpose. Placed full-width below
+         both columns, the sticky gallery runs out of content to sit beside and
+         leaves half the screen empty; here the gallery stays pinned while the
+         whole right-hand column scrolls past it.
+
+         Full ARIA tab semantics, and the panels are real siblings rather than
+         re-rendered content, so a keyboard user can arrow between them. -->
+    <div class="productTabs">
+      <div class="productTabList" role="tablist" aria-label="{{tabsAriaLabel}}">
+        <button class="productTabBtn isActive" role="tab" id="tabAbout"
+                aria-controls="panelAbout" aria-selected="true"
+                type="button">{{aboutHeading}}</button>
+        <button class="productTabBtn" role="tab" id="tabBenefits"
+                aria-controls="panelBenefits" aria-selected="false" tabindex="-1"
+                type="button">{{benefitsHeading}}</button>
+        <button class="productTabBtn" role="tab" id="tabUsage"
+                aria-controls="panelUsage" aria-selected="false" tabindex="-1"
+                type="button">{{usageHeading}}</button>
+      </div>
+
+      <div class="productTabPanel isActive" role="tabpanel" id="panelAbout"
+           aria-labelledby="tabAbout">{{aboutHtml}}</div>
+
+      <div class="productTabPanel" role="tabpanel" id="panelBenefits"
+           aria-labelledby="tabBenefits" hidden>
+        <ul class="productPointList">{{benefitsHtml}}</ul>
+      </div>
+
+      <div class="productTabPanel" role="tabpanel" id="panelUsage"
+           aria-labelledby="tabUsage" hidden>
+        <ol class="productStepList">{{usageHtml}}</ol>
+      </div>
+    </div>
+
+    <div class="productShare">
+      <p class="productShareHeading">{{shareHeading}}</p>
+      <div class="productShareRow">{{shareHtml}}</div>
+    </div>
+  </div>
+</div>

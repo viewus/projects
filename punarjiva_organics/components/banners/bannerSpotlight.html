@@ -1,0 +1,22 @@
+<!-- Featured-product spotlight, used on the home page. One product, given the
+     full width of a band, with the range it belongs to named above it. Copy
+     comes from the product's own entry in data/products.json — nothing here is
+     written twice. -->
+<section class="bannerSpotlight">
+  <span class="spotlightGlow" aria-hidden="true"></span>
+
+  <div class="container spotlightInner">
+    <div class="spotlightContent">
+      <p class="spotlightEyebrow">{{eyebrow}}</p>
+      <h2 class="spotlightTitle">{{title}}</h2>
+      <p class="spotlightTagline">{{tagline}}</p>
+      <p class="spotlightText">{{text}}</p>
+      <div class="spotlightMarks">{{marksHtml}}</div>
+      <div class="spotlightActions">{{actionsHtml}}</div>
+    </div>
+
+    <div class="spotlightMedia">
+      <img class="spotlightImage" src="{{image}}" alt="{{imageAlt}}" loading="lazy">
+    </div>
+  </div>
+</section>

@@ -19,6 +19,8 @@
     home:     "data/home.json",
     about:    "data/about.json",
     products: "data/products.json",
+    // One HTML file serves every product; ?slug= picks which.
+    product:  "data/products.json",
     gallery:  "data/gallery.json",
     blog:     "data/blog.json",
     blogPost: "data/blog.json",
@@ -195,6 +197,43 @@
       pjPath("assets/svg/illustrations/mandalaPetals.svg") + '" alt="" aria-hidden="true">');
   }
 
+  /**
+   * Reveal [data-reveal] elements as they first scroll into view, then stop
+   * watching them — this is a one-off entrance, not a scroll effect that
+   * replays every time the element passes the fold.
+   *
+   * The hidden state lives behind .hasReveal on <html>, which is only added
+   * here. If this script never runs, nothing is ever hidden, so a JS failure
+   * costs the animation rather than the content.
+   */
+  function startReveal() {
+    var $nodes = $("[data-reveal]");
+    if (!$nodes.length) return;
+
+    document.documentElement.classList.add("hasReveal");
+
+    if (!("IntersectionObserver" in window)) {
+      $nodes.addClass("isRevealed");
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("isRevealed");
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.06 });
+
+    $nodes.each(function () { observer.observe(this); });
+  }
+
+  /** Update a <meta> by name or property — used by the one-file product page. */
+  function setMeta(selector, value) {
+    var el = document.querySelector(selector);
+    if (el && value) el.setAttribute("content", value);
+  }
+
   /** Render the Call / WhatsApp / Directions buttons into a container. */
   function fillActions(selector, cfg) {
     var $target = $(selector);
@@ -207,11 +246,60 @@
     });
   }
 
+  /* ---------- catalogue helpers shared by home and products ------------------ */
+
+  /**
+   * The three ranges as whole-tile links into the filtered catalogue. Used on
+   * the home page, where the point is to get someone into the right range;
+   * the Products page shows the same three with their full item lists instead,
+   * because there the point is to say what is actually on the shelf.
+   */
+  function renderRangeCards(catalogue, copy) {
+    return renderCardGrid(catalogue.types.map(function (type) {
+      var count = pjProducts.filterProducts(catalogue, type.slug, "").length;
+      return {
+        variant: "category",
+        href: pjPath("pages/products.html?type=" + encodeURIComponent(type.slug)),
+        icon: type.icon,
+        title: type.label,
+        body: type.body,
+        countLabel: count + " products",
+        moreLabel: copy.rangeLinkLabel || "Browse the range"
+      };
+    }));
+  }
+
+  /**
+   * "New in" for the home page: anything flagged new, topped up with seasonal
+   * and then featured items so the row is never left half empty when nothing
+   * has been marked new for a while.
+   */
+  function freshPicks(catalogue, limit) {
+    var picks = [];
+
+    ["new", "seasonal", "featured"].forEach(function (badge) {
+      pjProducts.productsWithBadge(catalogue, badge).forEach(function (product) {
+        if (picks.length < limit && picks.indexOf(product) === -1) picks.push(product);
+      });
+    });
+
+    return picks;
+  }
+
   /* ---------- page renderers ------------------------------------------------ */
 
   var pages = {
 
     home: function (data, cfg) {
+      var catalogue;
+
+      $("#homePurity").html((data.purityMarks || []).map(function (mark) {
+        return '<div class="purityItem">' +
+          '<i class="purityIcon bi ' + pjEscape(mark.icon) + '" aria-hidden="true"></i>' +
+          "<span><span class=\"purityTitle\">" + pjEscape(mark.title) + "</span>" +
+          '<span class="purityText">' + pjEscape(mark.text) + "</span></span></div>";
+      }).join(""));
+
       return renderBanner(heroData(data), "hero").then(function (html) {
         $("#heroPlaceholder").html(html);
         applyTint("#heroPlaceholder .bannerHero", data.backgroundTint);
@@ -219,13 +307,27 @@
       }).then(function () {
         return pjJson("data/products.json");
       }).then(function (products) {
-        return renderCardGrid(products.categories.map(function (category) {
-          // Home shows the three categories without their full item lists —
-          // the Products page carries those.
-          return Object.assign({}, category, { items: null, variant: "outline" });
-        }));
+        catalogue = products;
+        return renderRangeCards(catalogue, data);
       }).then(function (html) {
         $("#homeCategories").html(html);
+        return pjProducts.renderSpotlight(catalogue, data.spotlightEyebrow);
+      }).then(function (html) {
+        $("#homeSpotlight").html(html);
+
+        // Ranked, and capped at eight — a "best sellers" list that runs to
+        // twenty is just the catalogue with a different heading.
+        return pjProducts.renderProductGrid(
+          catalogue,
+          pjProducts.productsWithBadge(catalogue, "bestseller").slice(0, 8),
+          { ranked: true }
+        );
+      }).then(function (html) {
+        $("#homeBestSellers").html(html);
+        pjProducts.initProductRail("#bestSellerRail");
+        return pjProducts.renderProductGrid(catalogue, freshPicks(catalogue, 3));
+      }).then(function (html) {
+        $("#homeFresh").html(html);
         return pjJson("data/blog.json");
       }).then(function (blog) {
         return renderPostGrid({
@@ -244,8 +346,84 @@
     },
 
     products: function (data) {
-      return renderCardGrid(data.categories).then(function (html) {
-        $("#productCategories").html(html);
+      // The three ranges keep their verbatim item lists here — this is the page
+      // that has to answer "what do you actually stock?" without a click.
+      return renderCardGrid(data.types.map(function (type) {
+        return Object.assign({}, type, { title: type.label });
+      })).then(function (html) {
+        $("#productRanges").html(html);
+        return pjProducts.initProductCatalogue(data);
+      });
+    },
+
+    product: function (data, cfg) {
+      var slug = new URLSearchParams(window.location.search).get("slug") || "";
+      var product = pjProducts.productBySlug(data, slug);
+
+      if (!product) {
+        $("#productDetailPlaceholder").html(
+          '<div class="productEmpty">' +
+          '<i class="productEmptyIcon bi bi-search" aria-hidden="true"></i>' +
+          "<p>" + pjEscape(data.detailNotFound) + "</p>" +
+          '<p><a class="btn btnGhost" href="' + pjEscape(pjPath("pages/products.html")) + '">' +
+          pjEscape(data.detailBackLabel) + "</a></p></div>"
+        );
+        $("#productRelatedSection").hide();
+        console.error("[main] No product in data/products.json with slug:", slug);
+        return Promise.resolve();
+      }
+
+      // One HTML file serves the whole catalogue, so the per-product <head>
+      // values have to be written here. Crawlers that do not run JS will see
+      // the generic fallbacks left in pages/product.html — which is the honest
+      // trade for not maintaining 26 near-identical HTML files by hand.
+      var image = pjProducts.productImage(product, 0);
+
+      document.title = product.name + " | " + cfg.siteName;
+      setMeta('meta[name="description"]', product.summary);
+      setMeta('meta[property="og:title"]', product.name + " | " + cfg.siteName);
+      setMeta('meta[property="og:description"]', product.summary);
+      setMeta('meta[property="og:url"]', window.location.href);
+      setMeta('meta[name="twitter:title"]', product.name);
+      setMeta('meta[name="twitter:description"]', product.summary);
+
+      if (image) {
+        setMeta("#ogImage", image.src);
+        setMeta("#twitterImage", image.src);
+      }
+
+      var canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) {
+        canonical.setAttribute("href", cfg.baseUrl + "pages/product.html?slug=" +
+          encodeURIComponent(product.slug));
+      }
+
+      renderBreadcrumbs([
+        { label: "Home", href: "index.html" },
+        { label: "Products", href: "pages/products.html" },
+        {
+          label: pjProducts.typeLabel(data, product.type),
+          href: "pages/products.html?type=" + encodeURIComponent(product.type)
+        },
+        { label: product.name }
+      ]);
+
+      return pjProducts.renderProductDetail(data, product, cfg).then(function (html) {
+        $("#productDetailPlaceholder").html(html);
+
+        pjProducts.initProductGallery(product);
+        pjProducts.initProductTabs();
+        pjProducts.initShareCopy();
+        appendSchema(pjProducts.productSchema(data, product, cfg));
+
+        $("#productRelatedHeading").text(data.detailRelatedHeading);
+        // .text() on the link itself would eat the arrow icon beside the label.
+        $("#productBackLabel").text(data.detailBackLabel);
+        $("#productBackLink").attr("href", pjPath("pages/products.html"));
+
+        return pjProducts.renderProductGrid(data, pjProducts.relatedProducts(data, product, 3));
+      }).then(function (html) {
+        $("#productRelatedGrid").html(html);
       });
     },
 
@@ -485,6 +663,9 @@
         });
       })
       .then(function () {
+        // After the page renderer, so sections built from JSON are observed
+        // too — not only the ones that were in the HTML to begin with.
+        startReveal();
         document.body.classList.add("isLoaded");
       })
       .catch(function (err) {

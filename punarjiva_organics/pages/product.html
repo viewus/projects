@@ -4,17 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Products | Organic Groceries, Cosmetics &amp; Ayurvedic Boosters</title>
-  <meta name="description" content="Millets, pulses, cold-pressed oils, flours, spices and natural sweeteners, plus natural cosmetics and Ayurvedic energy boosters at Punarjiva Organics, Proddatur.">
+  <!-- This one file serves every product in data/products.json, chosen by the
+       ?slug= parameter. The values below are the FALLBACKS a crawler that does
+       not run scripts will see; main.js overwrites title, description, canonical
+       and the og:/twitter: pair with the real product's values on load. -->
+  <title>Product | Punarjiva Organics</title>
+  <meta name="description" content="Organic groceries, natural cosmetics and Ayurvedic energy boosters at Punarjiva Organics, Proddatur. Ask us about stock and today's rate on WhatsApp.">
   <link rel="canonical" href="https://projects1.akhileshravuri.online/punarjiva_organics/pages/products.html">
 
-  <meta property="og:title" content="Our Organic & Natural Offerings | Punarjiva Organics">
-  <meta property="og:description" content="Organic groceries, natural cosmetics and Ayurvedic energy boosters — a focused selection, curated with care.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://projects1.akhileshravuri.online/punarjiva_organics/pages/products.html">
+  <meta property="og:title" content="Product | Punarjiva Organics">
+  <meta property="og:description" content="Organic, natural and Ayurvedic staples — curated with care in Proddatur.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://projects1.akhileshravuri.online/punarjiva_organics/pages/product.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Our Organic & Natural Offerings">
-  <meta name="twitter:description" content="Millets, cold-pressed oils, natural cosmetics and Ayurvedic energy boosters in Proddatur.">
+  <meta name="twitter:title" content="Product | Punarjiva Organics">
+  <meta name="twitter:description" content="Organic, natural and Ayurvedic staples — curated with care in Proddatur.">
 
   <meta name="theme-color" id="themeColorMeta" content="">
   <link rel="icon" type="image/svg+xml" id="faviconLink" href="../assets/svg/logos/logoPunarjivaMark.svg">
@@ -40,10 +44,9 @@
   <link rel="stylesheet" href="../assets/css/components/card.css">
   <link rel="stylesheet" href="../assets/css/components/product.css">
   <link rel="stylesheet" href="../assets/css/components/ctaSection.css">
-  <link rel="stylesheet" href="../assets/css/components/hero.css">
 </head>
 
-<body data-page="products">
+<body data-page="product" data-nav="products">
 
   <a class="skipLink" href="#mainContent">Skip to main content</a>
 
@@ -52,60 +55,29 @@
 
   <main id="mainContent">
 
-    <div id="pageHeaderPlaceholder"></div>
+    <!-- breadcrumbs.html brings its own .container — do not wrap it in another. -->
+    <div id="breadCrumbsPlaceholder"></div>
 
-
-    <!-- The catalogue. Two filter levels: the RANGE, then the SHELF within it.
-         Both rows are built by productRenderer.js from data/products.json and
-         mirrored into ?type= and ?tag=, so any filtered view can be linked to. -->
-    <section class="pageSection">
+    <!-- The gallery IS this page's hero, so there is no page banner above it. -->
+    <section class="pageSectionTight">
       <div class="container">
-
-        <div class="productFilter" id="productFilter">
-          <div class="filterLevel">
-            <p class="filterLabel" id="filterTypeLabel">
-              <span data-content="filterTypeLabel"></span>
-              <span class="filterLabelHint" data-content="filterHintLabel"></span>
-            </p>
-            <div class="filterTypes" id="filterTypes" role="group" aria-labelledby="filterTypeLabel"></div>
-          </div>
-
-          <div class="filterLevel">
-            <p class="filterLabel" id="filterTagLabel" data-content="filterTagLabel"></p>
-            <div class="filterTags" id="filterTags" role="group" aria-labelledby="filterTagLabel"></div>
-          </div>
-
-          <div class="filterFoot">
-            <p class="filterCount" id="filterCount" aria-live="polite"></p>
-            <button class="filterClear" id="filterClear" type="button">
-              <i class="bi bi-x-circle" aria-hidden="true"></i>
-              <span data-content="filterClearLabel"></span>
-            </button>
-          </div>
-        </div>
-
-        <div class="productGrid" id="productGrid"></div>
+        <div id="productDetailPlaceholder"></div>
       </div>
     </section>
 
-    <!-- The three ranges, with the item lists exactly as punarjiva.in publishes
-         them. This section answers "what do you stock?" without a single click. -->
-    <section class="pageSection pageSectionAlt hasTrees">
+    <section class="pageSection pageSectionAlt hasTrees" id="productRelatedSection">
       <div class="container">
-        <div class="sectionHeaderCentered" data-reveal>
-          <p class="sectionEyebrow">The three ranges</p>
-          <h2 data-content="rangesHeading"></h2>
-          <p class="sectionIntroCentered" data-content="rangesIntro"></p>
+        <div class="sectionHeadRow">
+          <div class="sectionHeadText">
+            <p class="sectionEyebrow">Keep looking</p>
+            <h2 id="productRelatedHeading"></h2>
+          </div>
+          <a class="sectionHeadLink isBack" id="productBackLink" href="products.html">
+            <i class="bi bi-arrow-left" aria-hidden="true"></i>
+            <span id="productBackLabel"></span>
+          </a>
         </div>
-        <div class="gridThree" id="productRanges" data-reveal></div>
-      </div>
-    </section>
-
-    <section class="pageSection">
-      <div class="container prose" data-reveal>
-        <h2 data-content="availabilityHeading"></h2>
-        <p data-content="availabilityText"></p>
-        <p class="formEndpointNotice" data-content="disclaimer"></p>
+        <div class="productGrid" id="productRelatedGrid"></div>
       </div>
     </section>
 

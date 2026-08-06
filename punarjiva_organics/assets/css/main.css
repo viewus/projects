@@ -277,7 +277,81 @@ textarea:focus-visible {
 .breadCrumbsLink { color: var(--colorInkSoft); }
 .breadCrumbsCurrent { color: var(--colorForestDark); font-weight: 500; }
 
-/* ---------- 8. Utilities -------------------------------------------------- */
+/* ---------- 8. Section head row ------------------------------------------- */
+
+/* Heading on the left, "see everything" on the right. Used wherever a section
+   is a shelf rather than a destination — the link has to be reachable without
+   scrolling past the whole rail first. */
+
+.sectionHeadRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--spaceSm);
+  flex-wrap: wrap;
+  margin-bottom: var(--spaceMd);
+}
+
+.sectionHeadRow .sectionHeadText { max-width: 56ch; }
+.sectionHeadRow h2 { margin-bottom: .2rem; }
+.sectionHeadRow .sectionHeadIntro { color: var(--colorInkSoft); margin: 0; }
+
+.sectionHeadRow .sectionHeadLink {
+  font-weight: 600;
+  font-size: .92rem;
+  text-decoration: none;
+  color: var(--colorPlum);
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  white-space: nowrap;
+}
+
+.sectionHeadRow .sectionHeadLink .bi { transition: transform .2s ease; }
+.sectionHeadRow .sectionHeadLink:hover { color: var(--colorPlumDark); }
+.sectionHeadRow .sectionHeadLink:hover .bi { transform: translateX(4px); }
+
+/* A back link's arrow points the other way, so it should lean the other way. */
+.sectionHeadRow .sectionHeadLink.isBack:hover .bi { transform: translateX(-4px); }
+
+/* ---------- 9. Scroll reveal ---------------------------------------------- */
+
+/* Anything marked [data-reveal] starts just below its resting place and rises
+   into it when it first scrolls into view. main.js adds .isRevealed via an
+   IntersectionObserver and then stops watching the element — this fires once
+   per element, not every time it passes the fold.
+
+   The no-JS case matters: if the observer never runs, the CSS below would
+   leave the whole page invisible. So the hidden state is applied by a class
+   main.js sets on <html> at the very start, and never by [data-reveal] alone. */
+
+.hasReveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .6s ease, transform .6s cubic-bezier(.22, .68, .36, 1);
+  transition-delay: calc(var(--revealIndex, 0) * 90ms);
+}
+
+.hasReveal [data-reveal].isRevealed { opacity: 1; transform: none; }
+
+/* Variants, for when a straight rise is the wrong gesture. */
+.hasReveal [data-reveal="left"]  { transform: translateX(-28px); }
+.hasReveal [data-reveal="right"] { transform: translateX(28px); }
+.hasReveal [data-reveal="zoom"]  { transform: scale(.94); }
+
+.hasReveal [data-reveal="left"].isRevealed,
+.hasReveal [data-reveal="right"].isRevealed,
+.hasReveal [data-reveal="zoom"].isRevealed { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hasReveal [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- 10. Utilities -------------------------------------------------- */
 
 .textCenter { text-align: center; }
 .visuallyHidden {

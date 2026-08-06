@@ -272,17 +272,20 @@ body > div > .siteFooter { position: relative; z-index: 1; }
   display: flex;
   align-items: flex-start;
   gap: .7rem;
-  padding: .9rem 1rem;
+  padding: .9rem 1.1rem;
   background: var(--colorWhite);
   border: 1px solid var(--colorLine);
-  border-radius: var(--radiusPill) 14px var(--radiusPill) 14px;
+  /* A hint of the leaf silhouette, not the full pill. At this box height a
+     999px corner cuts a 45px arc straight through the second line of text —
+     22px keeps the gesture and leaves the words alone. */
+  border-radius: 22px 8px 22px 8px;
   box-shadow: var(--shadowSoft);
   transition: transform .2s ease, border-radius .35s ease;
 }
 
 .purityItem:hover {
   transform: translateY(-3px);
-  border-radius: 14px var(--radiusPill) 14px var(--radiusPill);
+  border-radius: 8px 22px 8px 22px;
 }
 
 .purityItem .purityIcon {

@@ -1,7 +1,7 @@
 {
   "_note": "READ THIS BEFORE LAUNCH. Every entry below is SAMPLE data with placeholder:true. These are NOT real customer reviews and must never be presented as such — publishing invented testimonials under invented names would deceive your customers. While any entry has placeholder:true, the page renders a visible amber warning banner. Replace the entries with real reviews (copy them from your Google Business listing or ask customers directly), delete the placeholder and sampleWarning flags, and the banner disappears on its own.",
   "_backgroundNote": "Header background photograph. Swap for a real store photo by putting a file in assets/images/ and using a project-relative path like 'assets/images/storeFront.jpg'. backgroundTint controls readability over it: 'strong' (most legible), '' (default), or 'light' (photo shows through most). Remove backgroundImage entirely to fall back to the plain brand gradient.",
-  "backgroundImage": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80",
+  "backgroundImage": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=1600&q=80",
   "backgroundTint": "strong",
   "pageEyebrow": "What People Say",
   "pageTitle": "Customer Reviews",

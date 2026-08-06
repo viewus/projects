@@ -8,7 +8,10 @@
     hero:   "components/banners/bannerHero.html",
     page:   "components/banners/bannerPage.html",
     promo:  "components/banners/bannerPromo.html",
-    notice: "components/banners/bannerNotice.html"
+    notice: "components/banners/bannerNotice.html",
+    // Rendered by productRenderer.renderSpotlight(), which supplies the tokens
+    // from a product entry. Listed here for the same reason as above.
+    spotlight: "components/banners/bannerSpotlight.html"
   };
 
   function renderBanner(banner, variant) {

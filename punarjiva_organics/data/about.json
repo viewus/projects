@@ -1,7 +1,7 @@
 {
   "_note": "punarjiva.in publishes exactly one About paragraph and no statistics, founder bios or 'why choose us' block. Nothing beyond the source paragraph has been invented. The 'pillars' below are a restatement of the three product categories the site DOES publish — not new claims.",
   "_backgroundNote": "Header background photograph. Swap for a real store photo by putting a file in assets/images/ and using a project-relative path like 'assets/images/storeFront.jpg'. backgroundTint controls readability over it: 'strong' (most legible), '' (default), or 'light' (photo shows through most). Remove backgroundImage entirely to fall back to the plain brand gradient.",
-  "backgroundImage": "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?auto=format&fit=crop&w=1600&q=80",
+  "backgroundImage": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=1600&q=80",
   "backgroundTint": "strong",
   "pageEyebrow": "Our Story",
   "pageTitle": "About Punarjiva Organics",
@@ -31,8 +31,8 @@
   ],
   "storeHeading": "A store you can take your time in",
   "storeText": "Step into a space crafted to feel serene, grounded and close to nature. Explore, ask and choose at your own pace — and if you would rather send your list ahead, WhatsApp works just as well.",
-  "storeImage": "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?auto=format&fit=crop&w=800&q=80",
-  "storeImageAlt": "Glass jars of grains, lentils and dried herbs lined up neatly on wooden shelves",
+  "storeImage": "https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1200&q=80",
+  "storeImageAlt": "A jute sack spilling dark whole beans",
   "ctaHeading": "Have a question before you visit?",
   "ctaText": "Call the store or send your list on WhatsApp — we will confirm availability and guide you with care."
 }

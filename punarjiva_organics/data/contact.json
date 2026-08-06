@@ -1,7 +1,7 @@
 {
   "_note": "Heading and intro are VERBATIM from punarjiva.in. The form itself is new — the live site has no form, only Call and WhatsApp. Those two CTAs are kept prominent here; the form is an addition, not a replacement.",
   "_backgroundNote": "Header background photograph. Swap for a real store photo by putting a file in assets/images/ and using a project-relative path like 'assets/images/storeFront.jpg'. backgroundTint controls readability over it: 'strong' (most legible), '' (default), or 'light' (photo shows through most). Remove backgroundImage entirely to fall back to the plain brand gradient.",
-  "backgroundImage": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80",
+  "backgroundImage": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80",
   "backgroundTint": "strong",
   "pageEyebrow": "Get In Touch",
   "pageTitle": "Contact & Orders",

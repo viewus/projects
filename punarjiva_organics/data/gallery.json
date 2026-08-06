@@ -1,7 +1,7 @@
 {
   "_note": "punarjiva.in supplies NO captions — only three photographs. The alt text and captions below describe what each photo actually shows. All three images are the same Unsplash URLs the live site already hotlinks. REPLACE THESE with real photographs of the Proddatur store: drop files into assets/images/ and change the 'image' values here. No HTML edit needed.",
   "_backgroundNote": "Header background photograph. Swap for a real store photo by putting a file in assets/images/ and using a project-relative path like 'assets/images/storeFront.jpg'. backgroundTint controls readability over it: 'strong' (most legible), '' (default), or 'light' (photo shows through most). Remove backgroundImage entirely to fall back to the plain brand gradient.",
-  "backgroundImage": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80",
+  "backgroundImage": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=1600&q=80",
   "backgroundTint": "strong",
   "pageEyebrow": "Inside the Store",
   "pageTitle": "Gallery",
@@ -10,20 +10,20 @@
   "placeholderNotice": "Stock photography — replace with real photographs of the Proddatur store before launch.",
   "images": [
     {
-      "image": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1000&q=80",
-      "alt": "Open bowls of millets, lentils and whole spices arranged on a rustic wooden surface",
-      "caption": "Millets, pulses and whole spices",
+      "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=80",
+      "alt": "An open market hall with produce stacked in wooden crates",
+      "caption": "Produce, stacked and sorted",
       "variant": "minimal"
     },
     {
-      "image": "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?auto=format&fit=crop&w=1000&q=80",
-      "alt": "Glass storage jars filled with grains and dried herbs lined up on wooden shelving",
-      "caption": "Shelves of everyday staples",
+      "image": "https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80",
+      "alt": "A jute sack spilling dark whole beans",
+      "caption": "Whole grains and pulses, by weight",
       "variant": "minimal"
     },
     {
-      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=80",
-      "alt": "Handmade soap and natural skincare jars resting beside dried flowers and botanicals",
+      "image": "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&w=1000&q=80",
+      "alt": "Handmade soap bars wrapped in paper, resting on wood beside dried lavender",
       "caption": "Natural cosmetics and bath essentials",
       "variant": "minimal"
     }

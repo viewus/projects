@@ -15,7 +15,12 @@
     outline:  "components/cards/cardOutline.html",
     minimal:  "components/cards/cardMinimal.html",
     blog:     "components/cards/cardBlog.html",
-    review:   "components/cards/cardReview.html"
+    review:   "components/cards/cardReview.html",
+    category: "components/cards/cardCategory.html",
+    // Filled by productRenderer.js rather than renderCard() — it needs the
+    // catalogue's own lookups for badges and tag labels. Listed here so the
+    // variant map stays the one place that answers "what cards exist?".
+    product:  "components/cards/cardProduct.html"
   };
 
   /** Build the <li> markup for a card's bullet list, if it has one. */

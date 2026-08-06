@@ -81,6 +81,91 @@
   color: var(--colorInkSoft);
 }
 
+/* --- cardCategory (a whole range, as one clickable tile) ------------------ */
+
+.cardCategory {
+  position: relative;
+  padding: var(--spaceMd);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadowSoft);
+  border-color: transparent;
+  overflow: hidden;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+/* A quiet wash that rises from the foot of the tile on hover. Drawn as a
+   pseudo-element rather than a background swap so the text never has to
+   change colour to stay legible. */
+.cardCategory::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 0;
+  background: linear-gradient(to top, var(--colorLeafSoft), transparent);
+  transition: height .35s ease;
+  z-index: 0;
+}
+
+.cardCategory > * { position: relative; z-index: 1; }
+
+.cardCategory:hover,
+.cardCategory:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: var(--shadowLift);
+  color: inherit;
+}
+
+.cardCategory:hover::before { height: 100%; }
+
+.cardCategory .cardCategoryGlyph {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--colorForest);
+  background: var(--colorLeafSoft);
+  border-radius: var(--radiusPill) 14px var(--radiusPill) 14px;
+  margin-bottom: var(--spaceSm);
+  transition: border-radius .4s ease, background-color .25s ease, color .25s ease;
+}
+
+.cardCategory:hover .cardCategoryGlyph {
+  border-radius: 14px var(--radiusPill) 14px var(--radiusPill);
+  background: var(--colorClaySoft);
+  color: var(--colorGoldDeep);
+}
+
+.cardCategory .cardCategoryCount {
+  display: block;
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--colorClay);
+  font-weight: 600;
+  margin-bottom: var(--spaceSm);
+}
+
+.cardCategory .cardCategoryMore {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: .92rem;
+  color: var(--colorForest);
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.cardCategory .cardCategoryMore .bi { transition: transform .22s ease; }
+.cardCategory:hover .cardCategoryMore { color: var(--colorPlum); }
+.cardCategory:hover .cardCategoryMore .bi { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cardCategory:hover { transform: none; }
+}
+
 /* --- cardBlog ------------------------------------------------------------- */
 
 .cardBlog { box-shadow: var(--shadowSoft); border-color: transparent; }
