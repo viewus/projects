@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse Kalakriti's gallery of premium handmade crafts — Kondapalli dolls, wooden toys, painted figurines, and bespoke artisan creations." />
+  <title>Gallery — Kalakriti Artisan Crafts</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏺</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-script">Kalakriti</span>
+        <span class="logo-sub">Artisan Crafts</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <div class="section-eyebrow" style="justify-content:center;">
+          <span>Our Collection</span>
+        </div>
+        <h1>An <em>Gallery</em> of<br/>Living Craft</h1>
+        <p>Each piece is a window into centuries of tradition — explore our artisan collections below.</p>
+        <nav class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span>/</span>
+          <span>Gallery</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery-full">
+      <div class="section-inner">
+
+        <!-- Filters -->
+        <div class="gallery-filters reveal">
+          <button class="filter-btn active" data-filter="all">All Collections</button>
+          <button class="filter-btn" data-filter="kondapalli">Kondapalli Dolls</button>
+          <button class="filter-btn" data-filter="rural">Rural Scenes</button>
+          <button class="filter-btn" data-filter="mythological">Mythological</button>
+          <button class="filter-btn" data-filter="contemporary">Contemporary</button>
+          <button class="filter-btn" data-filter="gifting">Gifting Sets</button>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="gallery-masonry">
+
+          <div class="gallery-masonry-item tall reveal delay-1"
+               data-category="kondapalli"
+               data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop"
+               data-caption="Kondapalli Bridal Doll Set — Hand-painted in traditional colours">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop" alt="Kondapalli Bridal Doll Set" loading="lazy" />
+            <div class="gallery-masonry-overlay">
+              <p class="gallery-overlay-title">Kondapalli Bridal Set</p>
+              <span class="gallery-overlay-cat">Kondapalli Dolls</span>
+              <div class="gallery-overlay-zoom">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-masonry-item reveal delay-2"
+               data-category="rural"
+               data-src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900&auto=format&fit=crop"
+               data-caption="Village Market Scene — Miniature tableau of everyday rural life">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&auto=format&fit=crop" alt="Village Market Scene" loading="lazy" />
+            <div class="gallery-masonry-overlay">
+              <p class="gallery-overlay-title">Village Market Scene</p>
+              <span class="gallery-overlay-cat">Rural Scenes</span>
+              <div class="gallery-overlay-zoom">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-masonry-item reveal delay-3"
+               data-category="mythological"
+               data-src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=900&auto=format&fit=crop"
+               data-caption="Krishna Leela Series — Episodes from the divine childhood of Lord Krishna">
+            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600&auto=format&fit=crop" alt="Krishna Leela Series" loading="lazy" />
+            <div class="gallery-masonry-overlay">
+              <p class="gallery-overlay-title">Krishna Leela Series</p>
+              <span class="gallery-overlay-cat">Mythological</span>
+              <div class="gallery-overlay-zoom">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-masonry-item reveal delay-1"
+               data-category="contemporary"
+               data-src="https://images.unsplash.com/photo-1622126807280-a47d9c6fb5aa?w=900&auto=format&fit=crop"
+               data-caption="Abstract Flora Collection — Modern interpretations of South Indian flora in wood">
+            <img src="https://images.unsplash.com/photo-1622126807280-a47d9c6fb5aa?w=600&auto=format&fit=crop" alt="Abstract Flora Collection" loading="lazy" />
+            <div class="gallery-masonry-overlay">
+              <p class="gallery-overlay-title">Abstract Flora Collection</p>
+              <span class="gallery-overlay-cat">Contemporary</span>
+              <div class="gallery-overlay-zoom">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-masonry-item tall reveal delay-2"
+               data-category="gifting"
+               data-src="https://images.unsplash.com/photo-1613896640137-bb5b31496315?w=900&auto=format&fit=crop"
+               data-caption="Heritage Gift Set — Curated collection of five miniatures in premium wooden box">
+            <img src="https://images.unsplash.com/photo-1613896640137-bb5b31496315?w=600&auto=format&fit=crop" alt="Heritage Gift Set" loading="lazy" />
+            <div class="gallery-masonry-overlay">
+              <p class="gallery-overlay-title">Heritage Gift Set</p>
+              <span class="gallery-overlay-cat">Gifting Sets</span>
+              <div class="gallery-overlay-zoom">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-masonry-item reveal delay-3"
+               data-category="kondapalli"
+               data-src="https://images.unsplash.com/photo-1604999333679-b86d54738315?w=900&auto=format&fit=crop"
+               data-caption="Artisan at Work — A master craftsman carving the Tella Poniki wood">
+            <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600&auto=format&fit=crop" alt="Artisan at Work" loading="lazy" />
+            <div class="gallery-masonry-overlay">
+              <p class="gallery-overlay-title">Artisan at Work</p>
+              <span class="gallery-overlay-cat">Behind the Scenes</span>
+              <div class="gallery-overlay-zoom">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-masonry-item reveal delay-1"
+               data-category="rural"
+               data-src="https://images.unsplash.com/photo-1551913902-c92e7b5b6090?w=900&auto=format&fit=crop"
+               data-caption="Bullock Cart & Farmer — A timeless rural tableau in natural wood tones">
+            <img src="https://images.unsplash.com/photo-1551913902-c92e7b5b6090?w=600&auto=format&fit=crop" alt="Bullock Cart tableau" loading="lazy" />
+            <div class="gallery-masonry-overlay">
+              <p class="gallery-overlay-title">Bullock Cart & Farmer</p>
+              <span class="gallery-overlay-cat">Rural Scenes</span>
+              <div class="gallery-overlay-zoom">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-masonry-item reveal delay-2"
+               data-category="mythological"
+               data-src="https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?w=900&auto=format&fit=crop"
+               data-caption="Ramayana Tableau — Scenes from the epic rendered in miniature wooden craft">
+            <img src="https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?w=600&auto=format&fit=crop" alt="Ramayana Tableau" loading="lazy" />
+            <div class="gallery-masonry-overlay">
+              <p class="gallery-overlay-title">Ramayana Tableau</p>
+              <span class="gallery-overlay-cat">Mythological</span>
+              <div class="gallery-overlay-zoom">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-masonry-item reveal delay-3"
+               data-category="contemporary"
+               data-src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=900&auto=format&fit=crop"
+               data-caption="Geometric Mandala Series — A contemporary reimagining of traditional mandala art in wood">
+            <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&auto=format&fit=crop" alt="Geometric Mandala Series" loading="lazy" />
+            <div class="gallery-masonry-overlay">
+              <p class="gallery-overlay-title">Geometric Mandala Series</p>
+              <span class="gallery-overlay-cat">Contemporary</span>
+              <div class="gallery-overlay-zoom">🔍</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="section-inner">
+        <div class="cta-eyebrow reveal">
+          <span>Commission a Piece</span>
+        </div>
+        <h2 class="cta-title reveal">
+          See Something That<br/>
+          <em>Speaks to You?</em>
+        </h2>
+        <p class="cta-desc reveal">Reach out and we'll create a similar piece — or something entirely new — just for you.</p>
+        <div class="cta-buttons reveal">
+          <a href="contact.html" class="btn-primary">Make an Enquiry →</a>
+          <a href="services.html" class="btn-outline">View Services</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-script">Kalakriti</span>
+        <p>A celebration of India's living craft traditions.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Custom Crafts</a></li>
+          <li><a href="services.html">Bulk Orders</a></li>
+          <li><a href="services.html">Corporate Gifting</a></li>
+          <li><a href="services.html">Interior Décor</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <span>42, Craft Heritage Lane, Kondapalli, AP</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <span>+91 98765 43210</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉</span>
+          <span>hello@kalakriti.in</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Kalakriti Artisan Crafts. Celebrating the art of human hands.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

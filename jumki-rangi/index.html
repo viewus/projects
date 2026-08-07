@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rangi — Handmade Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#1A0A00;
+  --rust:#B5451B;
+  --gold:#C9922A;
+  --blush:#F2D5C0;
+  --rose:#E8B49A;
+  --sand:#FAF0E6;
+  --deep:#2C0F05;
+  --marigold:#E8A020;
+  --jade:#2D6B4A;
+  --cream:#FFFAF5;
+  --muted:#8A5E4A;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;cursor:none;}
+
+/* CURSOR */
+.cur{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s;}
+.cur-r{position:fixed;width:30px;height:30px;border:1px solid var(--rust);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .35s ease;opacity:.7;}
+a:hover~.cur,.btn:hover~.cur{transform:translate(-50%,-50%) scale(3);}
+
+/* LOADER */
+.loader{position:fixed;inset:0;background:var(--ink);z-index:9990;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;transition:opacity .8s ease,visibility .8s ease;}
+.loader.hide{opacity:0;visibility:hidden;}
+.loader-ring{width:80px;height:80px;border-radius:50%;border:1px solid rgba(201,146,42,.15);border-top-color:var(--gold);animation:spin 1.2s linear infinite;position:relative;}
+.loader-ring::before{content:'◈';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--gold);animation:spin 1.2s linear infinite reverse;border:none;}
+.loader p{color:rgba(250,240,230,.4);font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .4s;}
+nav.solid{background:rgba(255,250,245,.93);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(26,10,0,.06);}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--ink);text-decoration:none;letter-spacing:.08em;font-style:italic;}
+.nav-brand span{color:var(--rust);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--ink);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;position:relative;padding-bottom:2px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--rust);transition:width .35s;}
+.nav-links a:hover::after{width:100%;}
+.nav-wa{display:flex;align-items:center;gap:7px;background:var(--rust);color:#fff;padding:.55rem 1.3rem;text-decoration:none;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;transition:all .3s;}
+.nav-wa:hover{background:var(--deep);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:600;}
+.hamburger span{width:22px;height:1px;background:var(--ink);display:block;transition:all .3s;}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero-bg-pattern{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.hero-bg-pattern svg{width:100%;height:100%;opacity:.06;}
+
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:9rem 4rem 5rem 6rem;position:relative;z-index:2;}
+.h-eyebrow{display:flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:1.8rem;opacity:0;animation:up .8s .4s ease forwards;}
+.h-eyebrow::before{content:'';width:35px;height:1px;background:var(--rust);}
+.hero-left h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,5.5vw,6.5rem);line-height:1.02;color:var(--ink);margin-bottom:1.8rem;opacity:0;animation:up .9s .55s ease forwards;font-weight:300;}
+.hero-left h1 em{color:var(--rust);font-style:italic;display:block;}
+.hero-left h1 strong{font-weight:600;}
+.hero-sub{font-size:1rem;line-height:1.85;color:var(--muted);max-width:400px;margin-bottom:2.8rem;opacity:0;animation:up .9s .7s ease forwards;font-weight:300;}
+.hero-actions{display:flex;gap:1rem;opacity:0;animation:up .9s .85s ease forwards;flex-wrap:wrap;}
+.btn-rust{display:inline-flex;align-items:center;gap:8px;background:var(--rust);color:#fff;padding:.9rem 2.2rem;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .35s;border:none;cursor:pointer;font-family:'Outfit',sans-serif;position:relative;overflow:hidden;}
+.btn-rust::before{content:'';position:absolute;inset:0;background:var(--deep);transform:translateX(-100%);transition:transform .35s;}
+.btn-rust:hover::before{transform:translateX(0);}
+.btn-rust span{position:relative;z-index:1;}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);padding:.9rem 2.2rem;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .35s;border:1px solid var(--ink);cursor:pointer;font-family:'Outfit',sans-serif;}
+.btn-ghost:hover{background:var(--ink);color:var(--cream);}
+
+.hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;opacity:0;animation:up .9s 1.05s ease forwards;}
+.h-stat strong{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--rust);display:block;font-weight:400;line-height:1;}
+.h-stat span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+
+.hero-right{background:var(--blush);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.hero-right-inner{position:relative;width:100%;height:100%;}
+.big-jhumki{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:sway 4s ease-in-out infinite;}
+.jhumki-svg{width:min(320px,55vw);height:auto;filter:drop-shadow(0 30px 60px rgba(181,69,27,.25));}
+
+.sparkles{position:absolute;inset:0;pointer-events:none;}
+.sparkle{position:absolute;width:6px;height:6px;background:var(--gold);border-radius:50%;animation:sparkle var(--dur,3s) ease-in-out infinite;animation-delay:var(--del,0s);}
+
+.hero-badge{position:absolute;background:var(--ink);color:var(--cream);padding:1rem 1.5rem;bottom:10%;right:8%;font-family:'Cormorant Garamond',serif;}
+.hero-badge strong{font-size:1.6rem;display:block;color:var(--gold);font-weight:400;}
+.hero-badge span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;opacity:.6;}
+
+.scroll-cue{position:absolute;bottom:2.5rem;left:6rem;display:flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);opacity:0;animation:up 1s 1.3s forwards;}
+.scroll-line{width:50px;height:1px;background:var(--rose);position:relative;overflow:hidden;}
+.scroll-line::after{content:'';position:absolute;inset:0;background:var(--rust);animation:scan 2s linear infinite;}
+
+/* TICKER */
+.ticker{background:var(--ink);padding:1rem 0;overflow:hidden;}
+.ticker-track{display:flex;gap:2.5rem;width:max-content;animation:ticker 25s linear infinite;}
+.ticker-item{display:flex;align-items:center;gap:1rem;color:var(--sand);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;font-weight:200;}
+.ticker-gem{color:var(--gold);font-size:.9rem;}
+
+/* FEATURED */
+.featured{padding:7rem 5rem;position:relative;}
+.section-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:4rem;}
+.si-left .eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
+.si-left .eyebrow::before{content:'';width:25px;height:1px;background:var(--rust);}
+.si-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4rem);line-height:1.1;font-weight:300;color:var(--ink);}
+.si-left h2 em{color:var(--rust);font-style:italic;}
+.si-right p{color:var(--muted);line-height:1.85;font-size:.95rem;font-weight:300;}
+
+.jewel-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:1.2rem;}
+.jewel-card{position:relative;overflow:hidden;cursor:pointer;group:;}
+.jewel-card:nth-child(1){grid-row:1/3;}
+.jc-visual{position:relative;overflow:hidden;background:var(--blush);}
+.jc-visual.dark{background:#1A0A00;}
+.jc-visual.sage{background:#DCE8D8;}
+.jc-visual.rose{background:#F0D8D0;}
+.jc-visual.navy{background:#0D1B2A;}
+.jc-visual.marigold-bg{background:#FFF0C0;}
+.jh-1{height:520px;}
+.jh-2{height:250px;}
+
+.jc-visual-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.jewel-emoji{font-size:5rem;animation:float 5s ease-in-out infinite;filter:drop-shadow(0 10px 30px rgba(0,0,0,.2));}
+.je-delay{animation-delay:1.5s;}
+.je-delay2{animation-delay:3s;}
+
+/* Decorative SVG jewellery illustrations in cards */
+.jc-decor{position:absolute;pointer-events:none;}
+
+.jc-overlay{position:absolute;inset:0;background:rgba(26,10,0,0);transition:background .4s ease;display:flex;align-items:flex-end;padding:1.8rem;}
+.jewel-card:hover .jc-overlay{background:rgba(26,10,0,.55);}
+.jc-overlay-content{transform:translateY(20px);opacity:0;transition:all .4s ease;color:white;}
+.jewel-card:hover .jc-overlay-content{transform:translateY(0);opacity:1;}
+.jc-overlay-content h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:.4rem;font-weight:400;}
+.jc-overlay-content p{font-size:.78rem;opacity:.75;line-height:1.5;margin-bottom:.8rem;}
+.jc-wa-btn{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--gold);padding:.4rem .9rem;text-decoration:none;transition:all .3s;}
+.jc-wa-btn:hover{background:var(--gold);color:var(--ink);}
+
+.jc-tag{position:absolute;top:1.2rem;left:1.2rem;background:var(--rust);color:#fff;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;}
+.jc-tag.gold-tag{background:var(--gold);color:var(--ink);}
+.jc-tag.jade-tag{background:var(--jade);color:#fff;}
+
+/* BANGLE SECTION */
+.bangle-section{background:var(--ink);color:var(--sand);padding:7rem 5rem;position:relative;overflow:hidden;}
+.bangle-bg-rings{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;opacity:.04;}
+.bangle-bg-rings circle{fill:none;stroke:var(--gold);stroke-width:1;}
+
+.bangle-section .eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
+.bangle-section .eyebrow::before{content:'';width:25px;height:1px;background:var(--gold);}
+.bangle-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4.5rem);line-height:1.1;font-weight:300;margin-bottom:1rem;}
+.bangle-section h2 em{color:var(--gold);font-style:italic;}
+.bangle-section > p{color:rgba(250,240,230,.5);max-width:500px;margin-bottom:4rem;line-height:1.85;font-weight:300;font-size:.95rem;}
+
+.bangle-stack{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center;}
+.bangle-rings-visual{position:relative;height:420px;display:flex;align-items:center;justify-content:center;}
+.ring-layer{position:absolute;border-radius:50%;animation:rotateSlow linear infinite;}
+.rl1{width:320px;height:320px;border:2px solid rgba(201,146,42,.5);animation-duration:20s;}
+.rl2{width:260px;height:260px;border:1.5px solid rgba(201,146,42,.3);animation-duration:15s;animation-direction:reverse;}
+.rl3{width:200px;height:200px;border:1px solid rgba(201,146,42,.2);animation-duration:10s;}
+.ring-center{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(201,146,42,.2),transparent);border:1px solid rgba(201,146,42,.4);display:flex;align-items:center;justify-content:center;font-size:2.5rem;animation:pulse 3s ease-in-out infinite;}
+.bangle-dots{position:absolute;inset:0;pointer-events:none;}
+.b-dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gold);opacity:.8;}
+
+.bangle-items{display:flex;flex-direction:column;gap:1.5rem;}
+.bangle-item{display:flex;align-items:center;gap:1.5rem;padding:1.4rem 1.8rem;border:1px solid rgba(250,240,230,.08);transition:all .3s;cursor:pointer;}
+.bangle-item:hover{background:rgba(201,146,42,.05);border-color:rgba(201,146,42,.25);transform:translateX(8px);}
+.bi-icon{width:56px;height:56px;border-radius:50%;background:rgba(201,146,42,.1);border:1px solid rgba(201,146,42,.2);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;}
+.bi-text h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:.3rem;font-weight:400;}
+.bi-text p{font-size:.8rem;color:rgba(250,240,230,.45);line-height:1.5;}
+.bi-arrow{margin-left:auto;color:var(--gold);font-size:1.2rem;opacity:0;transform:translateX(-10px);transition:all .3s;}
+.bangle-item:hover .bi-arrow{opacity:1;transform:translateX(0);}
+
+/* PROCESS */
+.process{padding:7rem 5rem;background:var(--sand);}
+.process-head{text-align:center;margin-bottom:5rem;}
+.process-head .eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);display:inline-flex;align-items:center;gap:10px;margin-bottom:1rem;}
+.process-head .eyebrow::before,.process-head .eyebrow::after{content:'';width:25px;height:1px;background:var(--rust);display:block;}
+.process-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;color:var(--ink);}
+.process-head h2 em{color:var(--rust);font-style:italic;}
+
+.process-timeline{display:grid;grid-template-columns:repeat(4,1fr);position:relative;gap:2rem;}
+.process-timeline::before{content:'';position:absolute;top:44px;left:12%;right:12%;height:1px;background:var(--rose);}
+.pt-step{text-align:center;position:relative;z-index:1;}
+.pt-num{width:88px;height:88px;border-radius:50%;border:1.5px solid var(--rose);display:flex;align-items:center;justify-content:center;margin:0 auto 1.8rem;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--rust);background:var(--sand);transition:all .4s;font-style:italic;font-weight:300;}
+.pt-step:hover .pt-num{background:var(--rust);color:#fff;border-color:var(--rust);transform:scale(1.08);}
+.pt-step h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:.5rem;font-weight:400;color:var(--ink);}
+.pt-step p{font-size:.82rem;color:var(--muted);line-height:1.7;}
+
+/* GALLERY strip */
+.gallery-strip{padding:4rem 0;background:var(--cream);overflow:hidden;}
+.gallery-track{display:flex;gap:1.2rem;width:max-content;animation:ticker 30s linear infinite;}
+.gallery-item{width:220px;height:280px;flex-shrink:0;overflow:hidden;position:relative;}
+.gi-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;transition:transform .4s ease;}
+.gallery-item:hover .gi-inner{transform:scale(1.08);}
+.gi-c1{background:#F9E8DC;}
+.gi-c2{background:#E8F0E5;}
+.gi-c3{background:#FFF0C8;}
+.gi-c4{background:#E8DCF0;}
+.gi-c5{background:#DCE8F0;}
+.gi-c6{background:#F5E8DC;}
+.gi-c7{background:#E5F0DC;}
+.gi-c8{background:#F0DCE8;}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1fr;background:var(--cream);}
+.contact-left{background:var(--rust);color:#fff;padding:6rem 4rem;position:relative;overflow:hidden;}
+.contact-left::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(255,255,255,.1);top:-100px;right:-100px;}
+.contact-left::after{content:'';position:absolute;width:250px;height:250px;border-radius:50%;border:1px solid rgba(255,255,255,.08);bottom:-50px;left:-50px;}
+.contact-left .eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;position:relative;z-index:1;}
+.contact-left .eyebrow::before{content:'';width:25px;height:1px;background:rgba(255,255,255,.6);}
+.contact-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.15;font-weight:300;margin-bottom:1.2rem;position:relative;z-index:1;}
+.contact-left p{color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:3rem;font-size:.95rem;font-weight:300;position:relative;z-index:1;}
+
+.contact-channels{display:flex;flex-direction:column;gap:1rem;position:relative;z-index:1;}
+.channel{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;border:1px solid rgba(255,255,255,.15);text-decoration:none;color:white;transition:all .3s;}
+.channel:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.35);transform:translateX(6px);}
+.ch-icon{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.ch-text h5{font-size:.88rem;font-weight:500;margin-bottom:2px;}
+.ch-text p{font-size:.75rem;opacity:.6;}
+.ch-arrow{margin-left:auto;opacity:.5;}
+
+.contact-right{padding:6rem 4rem;background:var(--sand);}
+.contact-right h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:.4rem;font-weight:400;}
+.contact-right > p{font-size:.85rem;color:var(--muted);margin-bottom:2.5rem;}
+.fg{margin-bottom:1.2rem;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+label{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-weight:400;}
+input,textarea,select{width:100%;padding:.8rem 1rem;border:1px solid rgba(26,10,0,.1);background:#fff;font-family:'Outfit',sans-serif;font-size:.9rem;color:var(--ink);outline:none;transition:border-color .3s;border-radius:0;-webkit-appearance:none;}
+input:focus,textarea:focus,select:focus{border-color:var(--rust);}
+textarea{resize:vertical;min-height:110px;}
+.submit-row{display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem;flex-wrap:wrap;gap:1rem;}
+.submit-row small{font-size:.75rem;color:var(--muted);}
+.success-note{display:none;color:var(--jade);font-size:.85rem;margin-top:.8rem;align-items:center;gap:6px;}
+
+/* FOOTER */
+footer{background:var(--deep);color:var(--sand);padding:4rem 5rem 2rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(250,240,230,.08);}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--sand);text-decoration:none;font-style:italic;display:block;margin-bottom:1rem;}
+.footer-brand span{color:var(--gold);}
+.footer-desc{font-size:.85rem;color:rgba(250,240,230,.4);line-height:1.85;max-width:280px;font-weight:300;}
+.footer-col h5{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:.55rem;}
+.footer-col a{color:rgba(250,240,230,.45);text-decoration:none;font-size:.85rem;transition:color .3s;}
+.footer-col a:hover{color:var(--sand);}
+.footer-bottom{padding-top:1.8rem;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:rgba(250,240,230,.25);}
+.footer-bottom a{color:var(--gold);text-decoration:none;}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:2rem;right:2rem;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:400;text-decoration:none;animation:waPulse 3s ease-in-out infinite;box-shadow:0 4px 25px rgba(37,211,102,.4);}
+.wa-float:hover{transform:scale(1.12);}
+.wa-float svg{width:28px;height:28px;}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
+.rv.in{opacity:1;transform:none;}
+.rv-l{opacity:0;transform:translateX(-28px);transition:opacity .75s ease,transform .75s ease;}
+.rv-l.in{opacity:1;transform:none;}
+.rv-r{opacity:0;transform:translateX(28px);transition:opacity .75s ease,transform .75s ease;}
+.rv-r.in{opacity:1;transform:none;}
+
+/* KEYFRAMES */
+@keyframes up{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+@keyframes sway{0%,100%{transform:translate(-50%,-50%) rotate(-3deg);}50%{transform:translate(-50%,-50%) rotate(3deg);}}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(0);}50%{opacity:1;transform:scale(1);}}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes scan{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
+@keyframes rotateSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,146,42,.3);}50%{box-shadow:0 0 0 18px rgba(201,146,42,0);}}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 25px rgba(37,211,102,.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,.7),0 0 0 10px rgba(37,211,102,.08);}}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links,.nav-wa{display:none;}
+  .hamburger{display:flex;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--cream);z-index:550;align-items:center;justify-content:center;gap:2.5rem;}
+  .nav-links.open a{font-size:1.2rem;}
+  .hero{grid-template-columns:1fr;}
+  .hero-left{padding:7rem 1.5rem 3rem;}
+  .hero-right{height:60vw;min-height:280px;}
+  .featured{padding:4rem 1.5rem;}
+  .section-intro{grid-template-columns:1fr;gap:1.5rem;}
+  .jewel-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .jewel-card:nth-child(1){grid-row:auto;}
+  .jh-1,.jh-2{height:220px;}
+  .bangle-section{padding:4rem 1.5rem;}
+  .bangle-stack{grid-template-columns:1fr;gap:3rem;}
+  .bangle-rings-visual{height:280px;}
+  .process{padding:4rem 1.5rem;}
+  .process-timeline{grid-template-columns:1fr 1fr;gap:2.5rem;}
+  .process-timeline::before{display:none;}
+  .contact{grid-template-columns:1fr;}
+  .contact-left{padding:4rem 1.5rem;}
+  .contact-right{padding:4rem 1.5rem;}
+  footer{padding:3rem 1.5rem 2rem;}
+  .footer-grid{grid-template-columns:1fr;gap:2rem;}
+  .footer-bottom{flex-direction:column;gap:.8rem;text-align:center;}
+  body{cursor:auto;}
+  .cur,.cur-r{display:none;}
+  .fg-row{grid-template-columns:1fr;}
+  .scroll-cue{left:1.5rem;}
+}
+@media(max-width:500px){
+  .jewel-grid{grid-template-columns:1fr;}
+  .jh-1,.jh-2{height:260px;}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-ring"></div>
+  <p>Crafting magic...</p>
+</div>
+
+<!-- CURSOR -->
+<div class="cur" id="cur"></div>
+<div class="cur-r" id="curR"></div>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/919876543210?text=Hello!%20I%20love%20your%20jewellery%20and%20want%20to%20order!" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.138.564 4.139 1.541 5.868L0 24l6.313-1.517A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.036-1.385l-.361-.214-3.742.9.942-3.638-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-brand"><em>Rangi</em><span>✦</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#featured">Jhumki</a></li>
+    <li><a href="#bangles">Bangles</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Order</a></li>
+  </ul>
+  <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20order%20jewellery!" class="nav-wa" target="_blank">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.138.564 4.139 1.541 5.868L0 24l6.313-1.517A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.036-1.385l-.361-.214-3.742.9.942-3.638-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+    Order Now
+  </a>
+  <div class="hamburger" id="ham" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- SVG BG PATTERN -->
+  <div class="hero-bg-pattern">
+    <svg viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="pat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="20" cy="20" r="1" fill="#B5451B"/>
+          <path d="M10 20 Q20 10 30 20 Q20 30 10 20Z" fill="none" stroke="#C9922A" stroke-width=".5"/>
+        </pattern>
+      </defs>
+      <rect width="800" height="800" fill="url(#pat)"/>
+    </svg>
+  </div>
+
+  <div class="hero-left">
+    <div class="h-eyebrow">Handmade Jewellery · Est. 2020</div>
+    <h1>
+      <em>Jhumki &amp;</em>
+      <strong>Bangle</strong><br>Creations
+    </h1>
+    <p class="hero-sub">Each piece is born from tradition and reimagined by hand — no molds, no machines. Just thread, beads, wire, and a whole lot of love shaped into wearable art.</p>
+    <div class="hero-actions">
+      <a href="#featured" class="btn-rust"><span>See Collection →</span></a>
+      <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20a%20custom%20jhumki%20or%20bangle!" class="btn-ghost" target="_blank">Custom Order</a>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat"><strong>200+</strong><span>Pieces Made</span></div>
+      <div class="h-stat"><strong>100%</strong><span>Handmade</span></div>
+      <div class="h-stat"><strong>∞</strong><span>Customizable</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!-- Sparkles -->
+    <div class="sparkles">
+      <div class="sparkle" style="top:15%;left:20%;--dur:2.5s;--del:0s;"></div>
+      <div class="sparkle" style="top:30%;left:75%;--dur:3s;--del:.5s;"></div>
+      <div class="sparkle" style="top:65%;left:15%;--dur:2s;--del:1s;"></div>
+      <div class="sparkle" style="top:80%;left:70%;--dur:3.5s;--del:.3s;"></div>
+      <div class="sparkle" style="top:50%;left:85%;--dur:2.8s;--del:.8s;"></div>
+      <div class="sparkle" style="top:10%;left:55%;--dur:2.2s;--del:1.2s;"></div>
+    </div>
+
+    <div class="big-jhumki">
+      <!-- Jhumki SVG illustration -->
+      <svg class="jhumki-svg" viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hook top -->
+        <path d="M100 10 Q120 10 120 30 Q120 50 100 50" fill="none" stroke="#C9922A" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="100" cy="52" r="5" fill="#C9922A"/>
+        <!-- Main disc -->
+        <ellipse cx="100" cy="90" rx="55" ry="18" fill="#B5451B"/>
+        <ellipse cx="100" cy="88" rx="55" ry="18" fill="#C9922A"/>
+        <ellipse cx="100" cy="86" rx="48" ry="14" fill="#B5451B"/>
+        <!-- Decorative dots on disc -->
+        <circle cx="70" cy="86" r="4" fill="#FAF0E6"/>
+        <circle cx="84" cy="86" r="4" fill="#FAF0E6"/>
+        <circle cx="100" cy="86" r="5" fill="#FAF0E6"/>
+        <circle cx="116" cy="86" r="4" fill="#FAF0E6"/>
+        <circle cx="130" cy="86" r="4" fill="#FAF0E6"/>
+        <!-- Dome body -->
+        <path d="M52 95 Q52 170 100 195 Q148 170 148 95Z" fill="#C9922A"/>
+        <path d="M60 100 Q60 165 100 188 Q140 165 140 100Z" fill="#B5451B"/>
+        <!-- Filigree lines -->
+        <line x1="100" y1="100" x2="100" y2="185" stroke="#C9922A" stroke-width="1.5" opacity=".5"/>
+        <line x1="80" y1="105" x2="80" y2="175" stroke="#C9922A" stroke-width="1" opacity=".4"/>
+        <line x1="120" y1="105" x2="120" y2="175" stroke="#C9922A" stroke-width="1" opacity=".4"/>
+        <!-- Curved filigree -->
+        <path d="M70 130 Q100 120 130 130" fill="none" stroke="#FAF0E6" stroke-width="1" opacity=".4"/>
+        <path d="M65 150 Q100 140 135 150" fill="none" stroke="#FAF0E6" stroke-width="1" opacity=".35"/>
+        <path d="M68 168 Q100 158 132 168" fill="none" stroke="#FAF0E6" stroke-width="1" opacity=".3"/>
+        <!-- Gem center -->
+        <circle cx="100" cy="140" r="10" fill="#2D6B4A"/>
+        <circle cx="100" cy="140" r="7" fill="#4A9B6A"/>
+        <circle cx="97" cy="137" r="2.5" fill="rgba(255,255,255,.5)"/>
+        <!-- Bottom fringe base -->
+        <ellipse cx="100" cy="193" rx="48" ry="10" fill="#B5451B"/>
+        <ellipse cx="100" cy="191" rx="48" ry="10" fill="#C9922A"/>
+        <!-- Fringe drops -->
+        <g fill="#C9922A">
+          <line x1="58" y1="196" x2="55" y2="240" stroke="#C9922A" stroke-width="1.2"/>
+          <line x1="68" y1="200" x2="65" y2="250" stroke="#C9922A" stroke-width="1.2"/>
+          <line x1="79" y1="202" x2="77" y2="258" stroke="#C9922A" stroke-width="1.2"/>
+          <line x1="90" y1="203" x2="89" y2="263" stroke="#C9922A" stroke-width="1.2"/>
+          <line x1="100" y1="203" x2="100" y2="265" stroke="#C9922A" stroke-width="1.2"/>
+          <line x1="110" y1="203" x2="111" y2="263" stroke="#C9922A" stroke-width="1.2"/>
+          <line x1="121" y1="202" x2="123" y2="258" stroke="#C9922A" stroke-width="1.2"/>
+          <line x1="132" y1="200" x2="135" y2="250" stroke="#C9922A" stroke-width="1.2"/>
+          <line x1="142" y1="196" x2="145" y2="240" stroke="#C9922A" stroke-width="1.2"/>
+        </g>
+        <!-- Fringe end beads -->
+        <circle cx="55" cy="243" r="4" fill="#B5451B"/>
+        <circle cx="65" cy="253" r="4" fill="#2D6B4A"/>
+        <circle cx="77" cy="261" r="4" fill="#B5451B"/>
+        <circle cx="89" cy="266" r="4" fill="#2D6B4A"/>
+        <circle cx="100" cy="268" r="5" fill="#B5451B"/>
+        <circle cx="111" cy="266" r="4" fill="#2D6B4A"/>
+        <circle cx="123" cy="261" r="4" fill="#B5451B"/>
+        <circle cx="135" cy="253" r="4" fill="#2D6B4A"/>
+        <circle cx="145" cy="243" r="4" fill="#B5451B"/>
+        <!-- Small gems on fringe beads -->
+        <circle cx="100" cy="267" r="2" fill="#FAF0E6" opacity=".7"/>
+      </svg>
+    </div>
+
+    <div class="hero-badge">
+      <strong>♡ Custom</strong>
+      <span>Made for you</span>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <div class="scroll-line"></div>
+    Explore
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Handmade Jhumki</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Glass Bangles</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Beaded Creations</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Thread Work</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Custom Orders Welcome</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Oxidised Silver Finish</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Meenakari Style</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Festive Collections</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Handmade Jhumki</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Glass Bangles</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Beaded Creations</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Thread Work</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Custom Orders Welcome</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Oxidised Silver Finish</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Meenakari Style</div>
+    <div class="ticker-item"><span class="ticker-gem">◈</span> Festive Collections</div>
+  </div>
+</div>
+
+<!-- FEATURED JHUMKI -->
+<section class="featured" id="featured">
+  <div class="section-intro rv">
+    <div class="si-left">
+      <div class="eyebrow">The Collection</div>
+      <h2>Handcrafted<br><em>Jhumki</em> Earrings</h2>
+    </div>
+    <div class="si-right">
+      <p>Every jhumki is shaped by hand — the wire bent, the beads threaded one by one, the fringe hung with care. No two pieces are exactly the same. That's the magic of handmade.</p>
+    </div>
+  </div>
+
+  <div class="jewel-grid rv">
+    <!-- CARD 1 - TALL -->
+    <div class="jewel-card">
+      <div class="jc-visual dark jh-1">
+        <div class="jc-visual-inner">
+          <!-- Pair of jhumkis illustration -->
+          <svg width="200" height="380" viewBox="0 0 200 380" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left jhumki -->
+            <path d="M60 20 Q75 20 75 38 Q75 55 60 55" fill="none" stroke="#C9922A" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="60" cy="72" rx="35" ry="11" fill="#C9922A"/>
+            <ellipse cx="60" cy="70" rx="30" ry="9" fill="#B5451B"/>
+            <path d="M28 78 Q28 130 60 148 Q92 130 92 78Z" fill="#C9922A"/>
+            <path d="M34 82 Q34 124 60 140 Q86 124 86 82Z" fill="#B5451B"/>
+            <circle cx="60" cy="110" r="8" fill="#2D6B4A"/>
+            <circle cx="60" cy="110" r="5" fill="#4A9B6A"/>
+            <ellipse cx="60" cy="146" rx="32" ry="7" fill="#C9922A"/>
+            <line x1="36" y1="150" x2="34" y2="188" stroke="#C9922A" stroke-width="1"/>
+            <line x1="44" y1="152" x2="42" y2="196" stroke="#C9922A" stroke-width="1"/>
+            <line x1="52" y1="153" x2="51" y2="200" stroke="#C9922A" stroke-width="1"/>
+            <line x1="60" y1="153" x2="60" y2="202" stroke="#C9922A" stroke-width="1"/>
+            <line x1="68" y1="153" x2="69" y2="200" stroke="#C9922A" stroke-width="1"/>
+            <line x1="76" y1="152" x2="78" y2="196" stroke="#C9922A" stroke-width="1"/>
+            <line x1="84" y1="150" x2="86" y2="188" stroke="#C9922A" stroke-width="1"/>
+            <circle cx="34" cy="191" r="3.5" fill="#B5451B"/>
+            <circle cx="42" cy="199" r="3.5" fill="#C9922A"/>
+            <circle cx="51" cy="203" r="3.5" fill="#B5451B"/>
+            <circle cx="60" cy="205" r="4" fill="#C9922A"/>
+            <circle cx="69" cy="203" r="3.5" fill="#B5451B"/>
+            <circle cx="78" cy="199" r="3.5" fill="#C9922A"/>
+            <circle cx="86" cy="191" r="3.5" fill="#B5451B"/>
+            <!-- Right jhumki -->
+            <path d="M140 20 Q155 20 155 38 Q155 55 140 55" fill="none" stroke="#C9922A" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="140" cy="72" rx="35" ry="11" fill="#C9922A"/>
+            <ellipse cx="140" cy="70" rx="30" ry="9" fill="#B5451B"/>
+            <path d="M108 78 Q108 130 140 148 Q172 130 172 78Z" fill="#C9922A"/>
+            <path d="M114 82 Q114 124 140 140 Q166 124 166 82Z" fill="#B5451B"/>
+            <circle cx="140" cy="110" r="8" fill="#B5451B"/>
+            <circle cx="140" cy="110" r="5" fill="#C9922A"/>
+            <ellipse cx="140" cy="146" rx="32" ry="7" fill="#C9922A"/>
+            <line x1="116" y1="150" x2="114" y2="190" stroke="#C9922A" stroke-width="1"/>
+            <line x1="124" y1="152" x2="122" y2="198" stroke="#C9922A" stroke-width="1"/>
+            <line x1="132" y1="153" x2="131" y2="202" stroke="#C9922A" stroke-width="1"/>
+            <line x1="140" y1="153" x2="140" y2="204" stroke="#C9922A" stroke-width="1"/>
+            <line x1="148" y1="153" x2="149" y2="202" stroke="#C9922A" stroke-width="1"/>
+            <line x1="156" y1="152" x2="158" y2="198" stroke="#C9922A" stroke-width="1"/>
+            <line x1="164" y1="150" x2="166" y2="190" stroke="#C9922A" stroke-width="1"/>
+            <circle cx="114" cy="193" r="3.5" fill="#B5451B"/>
+            <circle cx="122" cy="201" r="3.5" fill="#C9922A"/>
+            <circle cx="131" cy="205" r="3.5" fill="#B5451B"/>
+            <circle cx="140" cy="207" r="4" fill="#C9922A"/>
+            <circle cx="149" cy="205" r="3.5" fill="#B5451B"/>
+            <circle cx="158" cy="201" r="3.5" fill="#C9922A"/>
+            <circle cx="166" cy="193" r="3.5" fill="#B5451B"/>
+          </svg>
+        </div>
+        <div class="jc-tag">Bestseller</div>
+        <div class="jc-overlay">
+          <div class="jc-overlay-content">
+            <h4>Classic Jhumki Pair</h4>
+            <p>Gold-toned finish with jade green center gem &amp; hanging fringe beads</p>
+            <a href="https://wa.me/919876543210?text=I%20want%20to%20order%20the%20Classic%20Jhumki%20Pair!" class="jc-wa-btn" target="_blank">Order on WhatsApp ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="jewel-card">
+      <div class="jc-visual rose jh-2">
+        <div class="jc-visual-inner">
+          <svg width="120" height="160" viewBox="0 0 120 160">
+            <!-- Chandbali style -->
+            <path d="M60 10 Q75 10 75 25 Q75 40 60 40" fill="none" stroke="#B5451B" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M20 65 Q60 35 100 65 Q100 110 60 130 Q20 110 20 65Z" fill="#C9922A"/>
+            <path d="M26 68 Q60 42 94 68 Q94 105 60 122 Q26 105 26 68Z" fill="#B5451B"/>
+            <ellipse cx="60" cy="85" rx="16" ry="10" fill="#FAF0E6" opacity=".15"/>
+            <circle cx="60" cy="85" r="8" fill="#2D6B4A"/>
+            <circle cx="60" cy="85" r="5" fill="#4A9B6A"/>
+            <circle cx="58" cy="83" r="2" fill="rgba(255,255,255,.5)"/>
+            <!-- Moon arch detail -->
+            <path d="M30 72 Q60 58 90 72" fill="none" stroke="#FAF0E6" stroke-width="1" opacity=".4"/>
+            <circle cx="30" cy="72" r="3" fill="#FAF0E6" opacity=".6"/>
+            <circle cx="90" cy="72" r="3" fill="#FAF0E6" opacity=".6"/>
+            <line x1="38" y1="122" x2="37" y2="150" stroke="#B5451B" stroke-width="1"/>
+            <line x1="52" y1="128" x2="51" y2="155" stroke="#B5451B" stroke-width="1"/>
+            <line x1="60" y1="130" x2="60" y2="157" stroke="#B5451B" stroke-width="1.2"/>
+            <line x1="68" y1="128" x2="69" y2="155" stroke="#B5451B" stroke-width="1"/>
+            <line x1="82" y1="122" x2="83" y2="150" stroke="#B5451B" stroke-width="1"/>
+            <circle cx="37" cy="153" r="3" fill="#C9922A"/>
+            <circle cx="51" cy="158" r="3" fill="#B5451B"/>
+            <circle cx="60" cy="160" r="3.5" fill="#C9922A"/>
+            <circle cx="69" cy="158" r="3" fill="#B5451B"/>
+            <circle cx="83" cy="153" r="3" fill="#C9922A"/>
+          </svg>
+        </div>
+        <div class="jc-tag gold-tag">Chandbali</div>
+        <div class="jc-overlay">
+          <div class="jc-overlay-content">
+            <h4>Chandbali Style</h4>
+            <p>Moon-arch jhumki with jade stone center</p>
+            <a href="https://wa.me/919876543210?text=I%20want%20Chandbali%20earrings!" class="jc-wa-btn" target="_blank">Order ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="jewel-card">
+      <div class="jc-visual sage jh-2">
+        <div class="jc-visual-inner">
+          <svg width="140" height="120" viewBox="0 0 140 120">
+            <!-- Cluster jhumki - smaller, wider -->
+            <circle cx="50" cy="35" r="28" fill="#C9922A"/>
+            <circle cx="50" cy="33" r="24" fill="#B5451B"/>
+            <circle cx="50" cy="33" r="10" fill="#2D6B4A"/>
+            <circle cx="50" cy="33" r="7" fill="#4A9B6A"/>
+            <circle cx="46" cy="29" r="2.5" fill="rgba(255,255,255,.45)"/>
+            <circle cx="30" cy="25" r="5" fill="#C9922A"/>
+            <circle cx="70" cy="25" r="5" fill="#C9922A"/>
+            <circle cx="24" cy="40" r="4" fill="#B5451B"/>
+            <circle cx="76" cy="40" r="4" fill="#B5451B"/>
+            <line x1="38" y1="60" x2="36" y2="90" stroke="#C9922A" stroke-width="1"/>
+            <line x1="46" y1="62" x2="45" y2="95" stroke="#C9922A" stroke-width="1.2"/>
+            <line x1="54" y1="62" x2="55" y2="95" stroke="#C9922A" stroke-width="1.2"/>
+            <line x1="62" y1="60" x2="64" y2="90" stroke="#C9922A" stroke-width="1"/>
+            <circle cx="36" cy="93" r="4" fill="#B5451B"/>
+            <circle cx="45" cy="98" r="4" fill="#C9922A"/>
+            <circle cx="55" cy="98" r="4" fill="#B5451B"/>
+            <circle cx="64" cy="93" r="4" fill="#C9922A"/>
+            <!-- Second jhumki on right -->
+            <circle cx="100" cy="35" r="28" fill="#C9922A"/>
+            <circle cx="100" cy="33" r="24" fill="#B5451B"/>
+            <circle cx="100" cy="33" r="10" fill="#B5451B"/>
+            <circle cx="100" cy="33" r="7" fill="#C9922A"/>
+            <circle cx="96" cy="29" r="2.5" fill="rgba(255,255,255,.45)"/>
+            <line x1="88" y1="60" x2="86" y2="90" stroke="#C9922A" stroke-width="1"/>
+            <line x1="96" y1="62" x2="95" y2="95" stroke="#C9922A" stroke-width="1.2"/>
+            <line x1="104" y1="62" x2="105" y2="95" stroke="#C9922A" stroke-width="1.2"/>
+            <line x1="112" y1="60" x2="114" y2="90" stroke="#C9922A" stroke-width="1"/>
+            <circle cx="86" cy="93" r="4" fill="#C9922A"/>
+            <circle cx="95" cy="98" r="4" fill="#B5451B"/>
+            <circle cx="105" cy="98" r="4" fill="#C9922A"/>
+            <circle cx="114" cy="93" r="4" fill="#B5451B"/>
+          </svg>
+        </div>
+        <div class="jc-tag jade-tag">Cluster</div>
+        <div class="jc-overlay">
+          <div class="jc-overlay-content">
+            <h4>Cluster Jhumki Set</h4>
+            <p>Bold dome style with multi-bead fringe</p>
+            <a href="https://wa.me/919876543210?text=I%20love%20the%20Cluster%20Jhumki!" class="jc-wa-btn" target="_blank">Order ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="jewel-card">
+      <div class="jc-visual navy jh-2">
+        <div class="jc-visual-inner">
+          <svg width="150" height="140" viewBox="0 0 150 140">
+            <!-- Thread work jhumki - tassel style -->
+            <ellipse cx="75" cy="30" rx="38" ry="14" fill="#C9922A"/>
+            <ellipse cx="75" cy="28" rx="34" ry="11" fill="#B5451B"/>
+            <circle cx="55" cy="28" r="4" fill="#FAF0E6" opacity=".7"/>
+            <circle cx="68" cy="28" r="4" fill="#FAF0E6" opacity=".7"/>
+            <circle cx="75" cy="28" r="5" fill="#FAF0E6"/>
+            <circle cx="82" cy="28" r="4" fill="#FAF0E6" opacity=".7"/>
+            <circle cx="95" cy="28" r="4" fill="#FAF0E6" opacity=".7"/>
+            <path d="M40 38 Q40 80 75 95 Q110 80 110 38Z" fill="#C9922A"/>
+            <path d="M46 42 Q46 76 75 88 Q104 76 104 42Z" fill="#B5451B"/>
+            <circle cx="75" cy="65" r="10" fill="#C9922A"/>
+            <circle cx="75" cy="65" r="7" fill="#B5451B"/>
+            <circle cx="75" cy="65" r="4" fill="#FAF0E6"/>
+            <!-- Thread tassels hanging -->
+            <g stroke="#C9922A" stroke-width="1.5" opacity=".9">
+              <line x1="50" y1="92" x2="46" y2="130"/>
+              <line x1="57" y1="94" x2="54" y2="134"/>
+              <line x1="64" y1="95" x2="62" y2="136"/>
+              <line x1="75" y1="96" x2="75" y2="138"/>
+              <line x1="86" y1="95" x2="88" y2="136"/>
+              <line x1="93" y1="94" x2="96" y2="134"/>
+              <line x1="100" y1="92" x2="104" y2="130"/>
+            </g>
+            <!-- Thread ends -->
+            <ellipse cx="46" cy="131" rx="3" ry="5" fill="#B5451B"/>
+            <ellipse cx="54" cy="135" rx="3" ry="5" fill="#C9922A"/>
+            <ellipse cx="62" cy="137" rx="3" ry="5" fill="#B5451B"/>
+            <ellipse cx="75" cy="139" rx="3.5" ry="5" fill="#2D6B4A"/>
+            <ellipse cx="88" cy="137" rx="3" ry="5" fill="#B5451B"/>
+            <ellipse cx="96" cy="135" rx="3" ry="5" fill="#C9922A"/>
+            <ellipse cx="104" cy="131" rx="3" ry="5" fill="#B5451B"/>
+          </svg>
+        </div>
+        <div class="jc-tag">Thread Tassel</div>
+        <div class="jc-overlay">
+          <div class="jc-overlay-content">
+            <h4>Thread Tassel Jhumki</h4>
+            <p>Long silk thread fringe — festive &amp; dramatic</p>
+            <a href="https://wa.me/919876543210?text=I%20want%20Thread%20Tassel%20Jhumki!" class="jc-wa-btn" target="_blank">Order ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5 - Custom CTA -->
+    <div class="jewel-card">
+      <div class="jc-visual marigold-bg jh-2" style="display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;padding:2rem;z-index:1;position:relative;">
+          <div style="font-size:3rem;margin-bottom:1rem;animation:float 4s ease-in-out infinite;">✦</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--ink);font-weight:300;margin-bottom:.6rem;">Your Design,<br><em style="color:var(--rust);">My Hands</em></h3>
+          <p style="font-size:.8rem;color:var(--muted);margin-bottom:1.3rem;line-height:1.6;">Tell me your colour, style, size — I'll create it just for you</p>
+          <a href="https://wa.me/919876543210?text=I%20want%20a%20custom%20jhumki!" class="btn-rust" target="_blank" style="font-size:.74rem;padding:.7rem 1.4rem;"><span>Custom Order →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANGLE SECTION -->
+<section class="bangle-section" id="bangles">
+  <svg class="bangle-bg-rings" width="700" height="700" viewBox="0 0 700 700">
+    <circle cx="350" cy="350" r="320"/>
+    <circle cx="350" cy="350" r="260"/>
+    <circle cx="350" cy="350" r="200"/>
+    <circle cx="350" cy="350" r="140"/>
+    <circle cx="350" cy="350" r="80"/>
+  </svg>
+
+  <div class="eyebrow rv">The Wrist Collection</div>
+  <h2 class="rv">Handmade<br><em>Bangles</em> &amp; Sets</h2>
+  <p class="rv">Stacked, mixed, matched — bangles that tell your story. Each bangle is handcrafted, threaded, or painted by hand in small batches.</p>
+
+  <div class="bangle-stack">
+    <div class="bangle-rings-visual rv-l">
+      <!-- Animated concentric rings representing bangle stack -->
+      <div class="ring-layer rl1"></div>
+      <div class="ring-layer rl2"></div>
+      <div class="ring-layer rl3"></div>
+      <!-- Dots on rings -->
+      <div class="bangle-dots">
+        <div class="b-dot" style="top:15%;left:50%;"></div>
+        <div class="b-dot" style="top:85%;left:50%;"></div>
+        <div class="b-dot" style="top:50%;left:6%;background:#B5451B;"></div>
+        <div class="b-dot" style="top:50%;left:91%;background:#B5451B;"></div>
+        <div class="b-dot" style="top:22%;left:22%;background:#FAF0E6;width:5px;height:5px;"></div>
+        <div class="b-dot" style="top:22%;left:75%;background:#FAF0E6;width:5px;height:5px;"></div>
+        <div class="b-dot" style="top:75%;left:22%;background:#FAF0E6;width:5px;height:5px;"></div>
+        <div class="b-dot" style="top:75%;left:75%;background:#FAF0E6;width:5px;height:5px;"></div>
+      </div>
+      <div class="ring-center">💛</div>
+    </div>
+
+    <div class="bangle-items rv-r">
+      <div class="bangle-item" onclick="window.open('https://wa.me/919876543210?text=I%20want%20Glass%20Bangles!','_blank')">
+        <div class="bi-icon">🌈</div>
+        <div class="bi-text">
+          <h4>Glass Bangles</h4>
+          <p>Classic coloured glass sets — mix and match your rainbow</p>
+        </div>
+        <div class="bi-arrow">→</div>
+      </div>
+      <div class="bangle-item" onclick="window.open('https://wa.me/919876543210?text=I%20want%20Thread%20Bangles!','_blank')">
+        <div class="bi-icon">🎀</div>
+        <div class="bi-text">
+          <h4>Thread Wrapped Bangles</h4>
+          <p>Handwrapped with silk thread in any colour you choose</p>
+        </div>
+        <div class="bi-arrow">→</div>
+      </div>
+      <div class="bangle-item" onclick="window.open('https://wa.me/919876543210?text=I%20want%20Oxidised%20Bangles!','_blank')">
+        <div class="bi-icon">⚙️</div>
+        <div class="bi-text">
+          <h4>Oxidised Silver Bangles</h4>
+          <p>Bold antique-finish bangles — statement and stunning</p>
+        </div>
+        <div class="bi-arrow">→</div>
+      </div>
+      <div class="bangle-item" onclick="window.open('https://wa.me/919876543210?text=I%20want%20Beaded%20Bangles!','_blank')">
+        <div class="bi-icon">📿</div>
+        <div class="bi-text">
+          <h4>Beaded Bangles</h4>
+          <p>Tiny seed beads strung into beautiful patterns by hand</p>
+        </div>
+        <div class="bi-arrow">→</div>
+      </div>
+      <div class="bangle-item" onclick="window.open('https://wa.me/919876543210?text=I%20want%20a%20custom%20bridal%20set!','_blank')">
+        <div class="bi-icon">👰</div>
+        <div class="bi-text">
+          <h4>Bridal &amp; Festival Sets</h4>
+          <p>Full sets crafted for your special day — fully customised</p>
+        </div>
+        <div class="bi-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<div class="gallery-strip">
+  <div class="gallery-track" id="galleryTrack">
+    <div class="gallery-item gi-c1"><div class="gi-inner">💍</div></div>
+    <div class="gallery-item gi-c2"><div class="gi-inner">📿</div></div>
+    <div class="gallery-item gi-c3"><div class="gi-inner">✨</div></div>
+    <div class="gallery-item gi-c4"><div class="gi-inner">💛</div></div>
+    <div class="gallery-item gi-c5"><div class="gi-inner">🪬</div></div>
+    <div class="gallery-item gi-c6"><div class="gi-inner">🌸</div></div>
+    <div class="gallery-item gi-c7"><div class="gi-inner">🔮</div></div>
+    <div class="gallery-item gi-c8"><div class="gi-inner">💎</div></div>
+    <div class="gallery-item gi-c1"><div class="gi-inner">💍</div></div>
+    <div class="gallery-item gi-c2"><div class="gi-inner">📿</div></div>
+    <div class="gallery-item gi-c3"><div class="gi-inner">✨</div></div>
+    <div class="gallery-item gi-c4"><div class="gi-inner">💛</div></div>
+    <div class="gallery-item gi-c5"><div class="gi-inner">🪬</div></div>
+    <div class="gallery-item gi-c6"><div class="gi-inner">🌸</div></div>
+    <div class="gallery-item gi-c7"><div class="gi-inner">🔮</div></div>
+    <div class="gallery-item gi-c8"><div class="gi-inner">💎</div></div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-head">
+    <div class="eyebrow">How It Works</div>
+    <h2>From Your Idea<br>to Your <em>Ears &amp; Wrists</em></h2>
+  </div>
+  <div class="process-timeline">
+    <div class="pt-step rv">
+      <div class="pt-num">I</div>
+      <h4>You Reach Out</h4>
+      <p>WhatsApp me or fill the form — tell me what style, colour, and occasion you have in mind.</p>
+    </div>
+    <div class="pt-step rv" style="transition-delay:.15s">
+      <div class="pt-num">II</div>
+      <h4>We Design Together</h4>
+      <p>I'll share sketches or mood boards so we're aligned on exactly what you want.</p>
+    </div>
+    <div class="pt-step rv" style="transition-delay:.3s">
+      <div class="pt-num">III</div>
+      <h4>I Handcraft It</h4>
+      <p>Your jhumki or bangle comes to life — each wire bent, each bead placed, with love.</p>
+    </div>
+    <div class="pt-step rv" style="transition-delay:.45s">
+      <div class="pt-num">IV</div>
+      <h4>You Glow ✦</h4>
+      <p>Your unique creation is delivered — wear it, gift it, treasure it forever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-left rv-l">
+    <div class="eyebrow">Let's Connect</div>
+    <h2>Order Your Dream<br>Jewellery Piece</h2>
+    <p>Whether it's a custom jhumki for a wedding, a stack of bangles for a festival, or a tiny gift for someone special — I'm just a message away.</p>
+    <div class="contact-channels">
+      <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20order%20handmade%20jewellery!" class="channel" target="_blank">
+        <div class="ch-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.138.564 4.139 1.541 5.868L0 24l6.313-1.517A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.036-1.385l-.361-.214-3.742.9.942-3.638-.235-.374A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        </div>
+        <div class="ch-text"><h5>WhatsApp (Fastest!)</h5><p>+91 98765 43210</p></div>
+        <span class="ch-arrow">→</span>
+      </a>
+      <a href="mailto:rangi.jewels@gmail.com" class="channel">
+        <div class="ch-icon">✉️</div>
+        <div class="ch-text"><h5>Email</h5><p>rangi.jewels@gmail.com</p></div>
+        <span class="ch-arrow">→</span>
+      </a>
+    </div>
+  </div>
+  <div class="contact-right rv-r">
+    <h3>Send an Enquiry</h3>
+    <p>Tell me what you'd like — I'll reply within 12 hours!</p>
+    <div class="fg-row fg">
+      <div>
+        <label>Your Name</label>
+        <input type="text" id="cname" placeholder="Ananya">
+      </div>
+      <div>
+        <label>WhatsApp Number</label>
+        <input type="tel" id="cphone" placeholder="+91 98765 43210">
+      </div>
+    </div>
+    <div class="fg">
+      <label>What do you want?</label>
+      <select id="citem">
+        <option value="">Choose a piece...</option>
+        <option>Jhumki — Classic Dome Style</option>
+        <option>Jhumki — Chandbali Style</option>
+        <option>Jhumki — Thread Tassel</option>
+        <option>Glass Bangles Set</option>
+        <option>Thread Wrapped Bangles</option>
+        <option>Oxidised Silver Bangles</option>
+        <option>Beaded Bangles</option>
+        <option>Bridal / Festival Set</option>
+        <option>Something Else (Custom)</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Colour / Style Preference</label>
+      <input type="text" id="ccolor" placeholder="e.g. Deep red with gold, or matching my lehenga…">
+    </div>
+    <div class="fg">
+      <label>More Details</label>
+      <textarea id="cmsg" placeholder="Occasion, quantity, any special requirements, deadline…"></textarea>
+    </div>
+    <div class="submit-row">
+      <small>💌 I'll reply on WhatsApp!</small>
+      <button class="btn-rust" onclick="doSubmit()"><span>Send Enquiry ✦</span></button>
+    </div>
+    <div class="success-note" id="successNote">✅ Sent! I'll message you on WhatsApp soon ✨</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="#" class="footer-brand"><em>Rangi</em> <span>✦</span></a>
+      <p class="footer-desc">Handmade jewellery born from tradition — jhumkis, bangles, and little wearable wonders, each crafted by hand with love.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Collections</h5>
+      <ul>
+        <li><a href="#featured">Jhumki Earrings</a></li>
+        <li><a href="#bangles">Glass Bangles</a></li>
+        <li><a href="#bangles">Thread Bangles</a></li>
+        <li><a href="#bangles">Oxidised Silver</a></li>
+        <li><a href="#contact">Custom Orders</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#featured">Our Story</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://wa.me/919876543210" target="_blank">WhatsApp Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Rangi Jewellery · Handmade in India with ♡</p>
+    <p>Crafted with soul · <a href="https://wa.me/919876543210" target="_blank">Order on WhatsApp</a></p>
+  </div>
+</footer>
+
+<script>
+// LOADER
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('hide'),800);
+});
+
+// CURSOR
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+});
+(function anim(){
+  rx+=(mx-rx)*.1;ry+=(my-ry)*.1;
+  curR.style.left=rx+'px';curR.style.top=ry+'px';
+  requestAnimationFrame(anim);
+})();
+document.querySelectorAll('a,button,.jewel-card,.bangle-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{curR.style.width='55px';curR.style.height='55px';curR.style.borderColor='var(--gold)';});
+  el.addEventListener('mouseleave',()=>{curR.style.width='30px';curR.style.height='30px';curR.style.borderColor='var(--rust)';});
+});
+
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('solid',window.scrollY>60);
+});
+
+// NAV MOBILE
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+// REVEAL
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:.12});
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>obs.observe(el));
+
+// STAGGER jewel cards
+document.querySelectorAll('.jewel-card').forEach((c,i)=>{c.style.transitionDelay=(i*.07)+'s';});
+
+// PARALLAX on hero
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  const j=document.querySelector('.big-jhumki');
+  if(j)j.style.transform=`translate(-50%,-50%) translateY(${y*.12}px)`;
+});
+
+// FORM SUBMIT
+function doSubmit(){
+  const n=document.getElementById('cname').value;
+  const p=document.getElementById('cphone').value;
+  const item=document.getElementById('citem').value;
+  const color=document.getElementById('ccolor').value;
+  const msg=document.getElementById('cmsg').value;
+  if(!n||!p){alert('Please enter your name and WhatsApp number!');return;}
+  const text=encodeURIComponent(`Hi! I'm ${n} 👋\n\nI want: ${item||'Custom jewellery'}\nColour/Style: ${color||'Not specified'}\n\n${msg}`);
+  window.open(`https://wa.me/919876543210?text=${text}`,'_blank');
+  document.getElementById('successNote').style.display='flex';
+}
+</script>
+</body>
+</html>

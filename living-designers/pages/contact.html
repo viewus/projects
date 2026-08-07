@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Artisano Premium Custom Furniture</title>
+  <meta name="description" content="Get in touch with Artisano — request a bespoke furniture quote, book a design consultation, or visit our Bengaluru showroom." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Artisan<span>o</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active nav-cta btn btn-primary">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero contact-hero" aria-label="Contact hero">
+    <div class="container page-hero-content">
+      <span class="section-label">Get In Touch</span>
+      <h1>Let's Craft Something<br>Extraordinary Together</h1>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <i class="fas fa-chevron-right" style="font-size:.6rem"></i>
+        <span>Contact</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-page" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="contact-info reveal-left">
+          <span class="section-label">Contact Details</span>
+          <h3 id="contact-heading">We'd Love to Hear From You</h3>
+          <p>Whether you have a fully formed brief or just an idea, our design consultants are ready to listen, inspire, and create. Reach out by any of the methods below or simply fill in the form.</p>
+
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h5>Visit Our Studio</h5>
+              <p>42 Craft Street, Indiranagar<br>Bengaluru, Karnataka — 560038</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <h5>Call Us</h5>
+              <p><a href="tel:+919876543210">+91 98765 43210</a><br>Mon – Sat, 10 AM – 7 PM IST</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h5>Email Us</h5>
+              <p><a href="mailto:hello@artisano.in">hello@artisano.in</a><br><a href="mailto:corporate@artisano.in">corporate@artisano.in</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h5>WhatsApp</h5>
+              <p><a href="https://wa.me/919876543210" target="_blank" rel="noopener">+91 98765 43210</a><br>Quick enquiries &amp; photo shares</p>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="#" class="contact-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="contact-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="contact-social" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="contact-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919876543210" class="contact-social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+
+          <!-- Map -->
+          <div class="map-wrap reveal">
+            <iframe
+              title="Artisano Studio location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8427193571773!2d77.6408!3d12.9784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16c3f7a6c5c1%3A0x8e5a9c6ffb3d4e2!2sIndiranagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form reveal-right">
+          <h4>Send Us a Message</h4>
+          <form id="contactForm" novalidate aria-label="Contact form">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required />
+                <span class="form-error" role="alert">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required />
+                <span class="form-error" role="alert">Please enter a valid email.</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" required />
+                <span class="form-error" role="alert">Please enter a valid phone number.</span>
+              </div>
+              <div class="form-group">
+                <label for="service">Service Interested In</label>
+                <select id="service" name="service">
+                  <option value="">Select a service…</option>
+                  <option value="custom-furniture">Custom Furniture Design</option>
+                  <option value="interior-woodwork">Interior Woodwork</option>
+                  <option value="corporate">Corporate / Bulk Orders</option>
+                  <option value="restoration">Restoration &amp; Refinishing</option>
+                  <option value="other">Other / Not Sure Yet</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="query">Your Message <span aria-hidden="true">*</span></label>
+              <textarea id="query" name="query" placeholder="Tell us about your project — dimensions, style, timeline, budget range…" required></textarea>
+              <span class="form-error" role="alert">Please describe your project or enquiry.</span>
+            </div>
+
+            <button type="submit" class="submit-btn" aria-live="polite">
+              <div class="spinner" aria-hidden="true"></div>
+              <span class="btn-text">Send My Enquiry</span>
+            </button>
+
+            <div class="form-success" role="alert">
+              <i class="fas fa-check-circle" style="color:#4caf82;font-size:1.3rem;margin-bottom:.4rem"></i><br>
+              Thank you! Your message has been received. We'll be in touch within 24 hours.
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Strip -->
+  <section style="padding:5rem 0;background:var(--white)" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head text-center reveal">
+        <span class="section-label">Quick Answers</span>
+        <h2 id="faq-heading" class="section-title" style="font-size:clamp(1.5rem,3vw,2.2rem)">Common Questions</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2.5rem">
+        <div style="background:var(--cream);border-radius:var(--radius);padding:1.8rem;box-shadow:0 4px 20px var(--shadow)" class="reveal delay-1">
+          <h4 style="font-size:1rem;margin-bottom:.6rem">How long does a custom piece take?</h4>
+          <p style="font-size:.88rem">Typically 4–8 weeks from approved design to delivery, depending on complexity and materials. Corporate projects are scoped individually.</p>
+        </div>
+        <div style="background:var(--cream);border-radius:var(--radius);padding:1.8rem;box-shadow:0 4px 20px var(--shadow)" class="reveal delay-2">
+          <h4 style="font-size:1rem;margin-bottom:.6rem">Do you deliver outside Bengaluru?</h4>
+          <p style="font-size:.88rem">Yes — we deliver and install across India. Delivery charges vary by location. International shipping is available for select projects.</p>
+        </div>
+        <div style="background:var(--cream);border-radius:var(--radius);padding:1.8rem;box-shadow:0 4px 20px var(--shadow)" class="reveal delay-3">
+          <h4 style="font-size:1rem;margin-bottom:.6rem">Is a consultation free?</h4>
+          <p style="font-size:.88rem">Yes — your first design consultation (in-studio or virtual) is fully complimentary with no obligation to proceed.</p>
+        </div>
+        <div style="background:var(--cream);border-radius:var(--radius);padding:1.8rem;box-shadow:0 4px 20px var(--shadow)" class="reveal delay-4">
+          <h4 style="font-size:1rem;margin-bottom:.6rem">What warranty do you provide?</h4>
+          <p style="font-size:.88rem">We offer a 10-year structural warranty on all bespoke furniture and a 2-year warranty on upholstery and finishes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Artisan<span>o</span></a>
+          <p>Premium custom furniture crafted in Bengaluru. Tailored to your vision, built to last generations.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">Custom Sofas</a></li>
+            <li><a href="services.html">Wooden Tables</a></li>
+            <li><a href="services.html">Designer Boards</a></li>
+            <li><a href="services.html">Interior Woodwork</a></li>
+            <li><a href="services.html">Restoration</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:hello@artisano.in">hello@artisano.in</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><a href="#">42 Craft Street, Indiranagar<br>Bengaluru 560038</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Artisano. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

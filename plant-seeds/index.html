@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AR Plants & Seeds — Premium indoor, outdoor, and rare plants with expert gardening solutions." />
+  <title>AR Plants & Seeds | Bringing Life to Plants, Strength to Nature</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-ar">AR</span>
+        <span class="logo-text">Plants &amp; Seeds</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/services.html">Services</a></li>
+        <li><a href="pages/portfolio.html">Portfolio</a></li>
+        <li><a href="pages/gallery.html">Gallery</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1800&auto=format&fit=crop" alt="Lush indoor plants" class="hero-img" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-leaves">
+      <span class="leaf leaf-1">🌿</span>
+      <span class="leaf leaf-2">🍃</span>
+      <span class="leaf leaf-3">🌱</span>
+    </div>
+    <div class="hero-content fade-in">
+      <p class="hero-eyebrow">Premium Plant &amp; Seed Brand</p>
+      <h1 class="hero-title">Bringing Life to Plants,<br /><em>Strength to Nature</em></h1>
+      <p class="hero-sub">Curated indoor plants, rare botanical specimens, heirloom seeds &amp; expert gardening solutions — rooted in quality, grown with passion.</p>
+      <div class="hero-cta">
+        <a href="pages/portfolio.html" class="btn btn-primary">Explore Our Plants</a>
+        <a href="pages/contact.html" class="btn btn-outline">Get Consultation</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to discover</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="about-preview section-pad reveal">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <div class="img-stack">
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&auto=format&fit=crop" alt="Nursery plants" class="img-main" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=400&auto=format&fit=crop" alt="Rare plants" class="img-accent" loading="lazy" />
+          </div>
+          <div class="badge-float">
+            <span class="badge-num">15+</span>
+            <span class="badge-label">Years of Green Excellence</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-eyebrow">Our Story</p>
+          <h2 class="section-title">Nature is Our Greatest Teacher</h2>
+          <p class="body-text">AR Plants &amp; Seeds was born from a deep reverence for the natural world. We source, cultivate, and deliver the finest plants and seeds — from everyday indoor greenery to rare botanical treasures that transform any space.</p>
+          <p class="body-text">Every plant we offer is nurtured with intention, every seed selected for vitality. We believe living spaces deserve living beauty.</p>
+          <a href="pages/about.html" class="btn btn-primary mt-1">Discover Our Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PLANTS & SEEDS -->
+  <section class="featured section-pad reveal" id="featured">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Our Collection</p>
+        <h2 class="section-title">Featured Plants &amp; Seeds</h2>
+        <p class="section-sub">Handpicked for quality, beauty, and your living environment.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="plant-card reveal-item">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=500&auto=format&fit=crop" alt="Monstera Deliciosa" loading="lazy" />
+            <div class="card-overlay"><span>Indoor Plants</span></div>
+          </div>
+          <div class="card-body">
+            <h3>Monstera Deliciosa</h3>
+            <p>Iconic split-leaf beauty that thrives in bright indirect light. A statement plant for modern interiors.</p>
+            <span class="card-tag">Indoor</span>
+          </div>
+        </div>
+        <div class="plant-card reveal-item">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1604762524889-3e2fcc145683?w=500&auto=format&fit=crop" alt="Rare Orchid" loading="lazy" />
+            <div class="card-overlay"><span>Rare Plants</span></div>
+          </div>
+          <div class="card-body">
+            <h3>Blue Vanda Orchid</h3>
+            <p>An extraordinarily rare orchid with vibrant blue blooms — for collectors and connoisseurs of nature.</p>
+            <span class="card-tag">Rare</span>
+          </div>
+        </div>
+        <div class="plant-card reveal-item">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1592422166504-3a09e06d6430?w=500&auto=format&fit=crop" alt="Heirloom Seeds" loading="lazy" />
+            <div class="card-overlay"><span>Seeds</span></div>
+          </div>
+          <div class="card-body">
+            <h3>Heirloom Seed Collection</h3>
+            <p>Vegetable, flower and herbal seed varieties — organically preserved and tested for germination.</p>
+            <span class="card-tag">Seeds</span>
+          </div>
+        </div>
+        <div class="plant-card reveal-item">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop" alt="Outdoor Garden" loading="lazy" />
+            <div class="card-overlay"><span>Outdoor Plants</span></div>
+          </div>
+          <div class="card-body">
+            <h3>Bougainvillea Cascade</h3>
+            <p>Vibrant and resilient, perfect for trellises, fences and garden colour all year round.</p>
+            <span class="card-tag">Outdoor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO HIGHLIGHT -->
+  <section class="portfolio-highlight section-pad reveal">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Our Work</p>
+        <h2 class="section-title">Garden Projects &amp; Plant Setups</h2>
+      </div>
+      <div class="portfolio-mosaic">
+        <div class="mosaic-item large reveal-item">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&auto=format&fit=crop" alt="Garden project" loading="lazy" />
+          <div class="mosaic-overlay">
+            <h3>Zen Garden Retreat</h3>
+            <p>Residential landscaping</p>
+          </div>
+        </div>
+        <div class="mosaic-item reveal-item">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=500&auto=format&fit=crop" alt="Indoor setup" loading="lazy" />
+          <div class="mosaic-overlay">
+            <h3>Urban Indoor Jungle</h3>
+            <p>Office plant curation</p>
+          </div>
+        </div>
+        <div class="mosaic-item reveal-item">
+          <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=500&auto=format&fit=crop" alt="Balcony setup" loading="lazy" />
+          <div class="mosaic-overlay">
+            <h3>Balcony Garden</h3>
+            <p>Compact garden design</p>
+          </div>
+        </div>
+      </div>
+      <div class="center mt-2">
+        <a href="pages/portfolio.html" class="btn btn-primary">View Full Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-us section-pad reveal">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Why AR Plants</p>
+        <h2 class="section-title">Rooted in Values That Matter</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal-item">
+          <div class="why-icon">🌱</div>
+          <h3>100% Organic</h3>
+          <p>All plants are grown without harmful pesticides, nurtured through natural and sustainable farming practices.</p>
+        </div>
+        <div class="why-card reveal-item">
+          <div class="why-icon">🌍</div>
+          <h3>Eco-Conscious</h3>
+          <p>From packaging to sourcing, every decision we make considers the planet's future and reduces our carbon footprint.</p>
+        </div>
+        <div class="why-card reveal-item">
+          <div class="why-icon">🏆</div>
+          <h3>Premium Quality</h3>
+          <p>Only the healthiest, most vibrant specimens leave our nursery — curated by expert botanists and horticulturists.</p>
+        </div>
+        <div class="why-card reveal-item">
+          <div class="why-icon">🤝</div>
+          <h3>Expert Guidance</h3>
+          <p>Our team of plant specialists offers personalised consultation to help every plant thrive in its new home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section-pad reveal">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Voices from Our Garden</p>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal-item">
+          <div class="testi-quote">"</div>
+          <p>AR Plants completely transformed our office space. The plants are thriving six months later — the team's aftercare advice was invaluable.</p>
+          <div class="testi-author">
+            <div class="author-avatar">RK</div>
+            <div>
+              <strong>Rajesh Kumar</strong>
+              <span>Founder, TechVerde Pvt. Ltd.</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal-item">
+          <div class="testi-quote">"</div>
+          <p>The rare orchid collection is unlike anything I've seen in India. Genuinely premium — from packaging to the plants themselves. Absolutely stunning.</p>
+          <div class="testi-author">
+            <div class="author-avatar">SM</div>
+            <div>
+              <strong>Sneha Mehta</strong>
+              <span>Interior Designer, Bangalore</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal-item">
+          <div class="testi-quote">"</div>
+          <p>We hired AR for our terrace garden and they exceeded every expectation. Thoughtful, beautiful, and completely maintenance-friendly design.</p>
+          <div class="testi-author">
+            <div class="author-avatar">AP</div>
+            <div>
+              <strong>Arjun Pillai</strong>
+              <span>Homeowner, Koramangala</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECHARTS ANALYTICS -->
+  <section class="analytics section-pad reveal" id="analytics">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Our Growth Story</p>
+        <h2 class="section-title">Rooted in Numbers</h2>
+        <p class="section-sub">A decade of green milestones and growing trust.</p>
+      </div>
+      <div class="stats-band reveal-item">
+        <div class="stat-pill"><span class="stat-n">500+</span><span>Plants Sold</span></div>
+        <div class="stat-pill"><span class="stat-n">200+</span><span>Happy Clients</span></div>
+        <div class="stat-pill"><span class="stat-n">75</span><span>Garden Projects</span></div>
+        <div class="stat-pill"><span class="stat-n">120</span><span>Seed Varieties</span></div>
+      </div>
+      <div class="charts-row">
+        <div class="chart-wrap reveal-item">
+          <h3 class="chart-title">Annual Plant Growth</h3>
+          <div id="barChart" class="chart-canvas"></div>
+        </div>
+        <div class="chart-wrap reveal-item">
+          <h3 class="chart-title">Plant Category Breakdown</h3>
+          <div id="pieChart" class="chart-canvas"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner reveal">
+    <div class="cta-bg">
+      <img src="https://images.unsplash.com/photo-1534710961216-75c88202f43e?w=1800&auto=format&fit=crop" alt="Garden" loading="lazy" />
+      <div class="cta-overlay"></div>
+    </div>
+    <div class="cta-content">
+      <h2>Ready to Grow Something Beautiful?</h2>
+      <p>Let our experts guide you toward the perfect plants for your space, lifestyle and vision.</p>
+      <a href="pages/contact.html" class="btn btn-light">Start Your Journey</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-ar">AR</span>
+            <span class="logo-text">Plants &amp; Seeds</span>
+          </a>
+          <p>Bringing Life to Plants,<br />Strength to Nature.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Facebook">👍</a>
+            <a href="#" aria-label="YouTube">▶️</a>
+            <a href="#" aria-label="Pinterest">📌</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/about.html">About Us</a></li>
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/portfolio.html">Portfolio</a></li>
+            <li><a href="pages/gallery.html">Gallery</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Specialties</h4>
+          <ul>
+            <li><a href="#">Indoor Plants</a></li>
+            <li><a href="#">Outdoor Plants</a></li>
+            <li><a href="#">Rare &amp; Exotic Plants</a></li>
+            <li><a href="#">Vegetable Seeds</a></li>
+            <li><a href="#">Herbal Seeds</a></li>
+            <li><a href="#">Garden Landscaping</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get in Touch</h4>
+          <ul class="footer-contact">
+            <li>📍 123 Green Lane, Bangalore, India</li>
+            <li>📞 +91 98765 43210</li>
+            <li>✉️ hello@arplants.in</li>
+            <li>⏰ Mon–Sat: 9am – 7pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AR Plants &amp; Seeds. All rights reserved. | Crafted with 🌿 in Bangalore.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/charts.js"></script>
+</body>
+</html>

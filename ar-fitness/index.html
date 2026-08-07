@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AR Fitness Hub – Premium gym and fitness center. Transform your body with elite training programs, expert coaches, and state-of-the-art equipment." />
+  <meta name="keywords" content="gym, fitness, AR Fitness Hub, weight training, personal training, CrossFit, Bengaluru" />
+  <meta property="og:title" content="AR Fitness Hub | Train. Evolve. Dominate." />
+  <meta property="og:description" content="Premium fitness experience with elite training programs and expert coaches." />
+  <title>AR Fitness Hub | Train. Evolve. Dominate.</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <img src="assets/images/logo.png" alt="AR Fitness Hub" onerror="this.style.display='none'" />
+          <div class="nav-logo-text">
+            <span class="brand">AR FITNESS</span>
+            <span class="sub">Hub</span>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="pages/programs.html" class="nav-link">Programs</a></li>
+          <li><a href="pages/trainers.html" class="nav-link">Trainers</a></li>
+          <li><a href="pages/about.html" class="nav-link">About</a></li>
+          <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="pages/contact.html" class="btn btn-primary">Join Now</a>
+        </div>
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="pages/programs.html" class="nav-link">Programs</a>
+    <a href="pages/trainers.html" class="nav-link">Trainers</a>
+    <a href="pages/about.html" class="nav-link">About</a>
+    <a href="pages/contact.html" class="nav-link">Contact</a>
+    <a href="pages/contact.html" class="btn btn-primary">Join Now</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-noise"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-left">
+          <div class="hero-eyebrow">🔥 Premium Fitness Experience</div>
+          <h1 class="hero-title">
+            Train<br />
+            <span class="accent-line">Harder.</span><br />
+            Evolve<br />
+            Faster.
+          </h1>
+          <p class="hero-desc">
+            Welcome to AR Fitness Hub — where discipline meets transformation. 
+            Elite coaching, cutting-edge equipment, and a community that pushes you beyond your limits.
+          </p>
+          <div class="hero-cta">
+            <a href="pages/programs.html" class="btn btn-primary">
+              Explore Programs
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="pages/contact.html" class="btn btn-outline">Free Trial</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">500<span>+</span></div>
+              <div class="stat-label">Active Members</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">15<span>+</span></div>
+              <div class="stat-label">Elite Trainers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">8<span>yr</span></div>
+              <div class="stat-label">Experience</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-visual">
+            <div class="hero-ring hero-ring-1"></div>
+            <div class="hero-ring hero-ring-2"></div>
+            <div class="hero-ring hero-ring-3"></div>
+            <div class="hero-logo-display">
+              <img src="assets/images/logo.png" alt="AR Fitness Hub" 
+                   onerror="this.outerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:300px;font-size:8rem;\'>🏋️</div>'" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span class="hero-scroll-text">Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item"><span class="ticker-dot"></span> Weight Training</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Cardio Blast</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> CrossFit</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Personal Training</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Nutrition Plans</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Transformation</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> AR Fitness Hub</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Train. Evolve. Dominate.</span>
+    </div>
+  </div>
+
+  <!-- PROGRAMS SECTION -->
+  <section class="section programs" id="programs">
+    <div class="container">
+      <div class="programs-header">
+        <div>
+          <div class="section-label reveal">Our Programs</div>
+          <h2 class="section-title reveal">Built to <span>Challenge.</span><br />Designed to Win.</h2>
+        </div>
+        <a href="pages/programs.html" class="btn btn-outline reveal">View All Programs</a>
+      </div>
+
+      <div class="programs-grid">
+        <div class="program-card reveal">
+          <span class="program-number">01</span>
+          <div class="program-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5h11M12 6.5V20M8 9h8M7 17h10"/><circle cx="4" cy="6.5" r="1.5"/><circle cx="20" cy="6.5" r="1.5"/></svg>
+          </div>
+          <h3 class="program-title">Weight Training</h3>
+          <p class="program-desc">Build raw strength and lean muscle mass with structured progressive overload programs guided by our elite coaches.</p>
+          <span class="program-tag">⚡ Strength & Muscle</span>
+        </div>
+
+        <div class="program-card reveal reveal-delay-1">
+          <span class="program-number">02</span>
+          <div class="program-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="program-title">Cardio Blast</h3>
+          <p class="program-desc">High-energy cardio sessions designed to torch calories, boost endurance, and accelerate fat loss fast.</p>
+          <span class="program-tag">🔥 Burn & Endure</span>
+        </div>
+
+        <div class="program-card reveal reveal-delay-2">
+          <span class="program-number">03</span>
+          <div class="program-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="program-title">CrossFit</h3>
+          <p class="program-desc">Functional movements at high intensity. Forge athletic performance and mental toughness through elite CrossFit methodology.</p>
+          <span class="program-tag">💥 Functional Power</span>
+        </div>
+
+        <div class="program-card reveal reveal-delay-3">
+          <span class="program-number">04</span>
+          <div class="program-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="program-title">Personal Training</h3>
+          <p class="program-desc">1-on-1 attention with certified experts. Customized plans, real accountability, and measurable results — your journey, your pace.</p>
+          <span class="program-tag">🎯 Custom Results</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US SECTION -->
+  <section class="section why-us" id="why-us">
+    <div class="why-us-bg"></div>
+    <div class="container">
+      <div class="why-us-grid">
+        <div>
+          <div class="section-label reveal-left">Why AR Fitness Hub</div>
+          <h2 class="section-title reveal-left">The Difference<br />Is <span>Commitment.</span></h2>
+          <p class="section-subtitle reveal-left">We don't just build bodies — we build champions. Every program, every session, every rep is crafted with one goal: your transformation.</p>
+
+          <div class="why-us-features" style="margin-top: 2.5rem;">
+            <div class="feature-item reveal-left reveal-delay-1">
+              <div class="feature-icon-wrap">🏆</div>
+              <div class="feature-text">
+                <div class="feature-title">Certified Elite Trainers</div>
+                <div class="feature-desc">Every coach holds advanced certifications and brings real competitive experience to each session.</div>
+              </div>
+            </div>
+            <div class="feature-item reveal-left reveal-delay-2">
+              <div class="feature-icon-wrap">⚙️</div>
+              <div class="feature-text">
+                <div class="feature-title">World-Class Equipment</div>
+                <div class="feature-desc">Premium machines, free weights, and functional rigs — everything you need to perform at your best.</div>
+              </div>
+            </div>
+            <div class="feature-item reveal-left reveal-delay-3">
+              <div class="feature-icon-wrap">📊</div>
+              <div class="feature-text">
+                <div class="feature-title">Progress Tracking</div>
+                <div class="feature-desc">Data-driven approach to fitness. We measure, adapt, and optimize every step of your journey.</div>
+              </div>
+            </div>
+            <div class="feature-item reveal-left reveal-delay-4">
+              <div class="feature-icon-wrap">🍎</div>
+              <div class="feature-text">
+                <div class="feature-title">Nutrition Guidance</div>
+                <div class="feature-desc">Fueling your performance with tailored nutrition plans that complement your training regime.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-us-visual reveal-right">
+          <div class="counter-grid">
+            <div class="counter-card">
+              <div class="counter-number">500+</div>
+              <div class="counter-label">Happy Members</div>
+            </div>
+            <div class="counter-card">
+              <div class="counter-number">15+</div>
+              <div class="counter-label">Expert Trainers</div>
+            </div>
+            <div class="counter-card">
+              <div class="counter-number">20+</div>
+              <div class="counter-label">Programs</div>
+            </div>
+            <div class="counter-card">
+              <div class="counter-number">98%</div>
+              <div class="counter-label">Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINERS PREVIEW -->
+  <section class="section trainers" id="trainers">
+    <div class="container">
+      <div class="trainers-header">
+        <div>
+          <div class="section-label reveal">Meet Our Team</div>
+          <h2 class="section-title reveal">Coached by <span>The Best.</span></h2>
+        </div>
+        <a href="pages/trainers.html" class="btn btn-outline reveal">All Trainers</a>
+      </div>
+
+      <div class="trainers-grid">
+        <div class="trainer-card reveal">
+          <div class="trainer-img">
+            <div class="trainer-img-placeholder">🧑‍🏋️</div>
+            <div class="trainer-overlay"></div>
+            <span class="trainer-badge">Head Coach</span>
+          </div>
+          <div class="trainer-info">
+            <div class="trainer-name">Arjun Rao</div>
+            <div class="trainer-spec">Strength & Conditioning</div>
+            <div class="trainer-bio">8 years of competitive powerlifting. NSCA-certified with a track record of 200+ successful transformations.</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a>
+              <a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="trainer-card reveal reveal-delay-1">
+          <div class="trainer-img">
+            <div class="trainer-img-placeholder">👩‍🏋️</div>
+            <div class="trainer-overlay"></div>
+            <span class="trainer-badge">CrossFit L3</span>
+          </div>
+          <div class="trainer-info">
+            <div class="trainer-name">Priya Sharma</div>
+            <div class="trainer-spec">CrossFit & HIIT</div>
+            <div class="trainer-bio">CrossFit Games competitor. Brings elite athletic intensity to every class she leads.</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a>
+              <a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="trainer-card reveal reveal-delay-2">
+          <div class="trainer-img">
+            <div class="trainer-img-placeholder">🧔‍♂️</div>
+            <div class="trainer-overlay"></div>
+            <span class="trainer-badge">Nutrition Pro</span>
+          </div>
+          <div class="trainer-info">
+            <div class="trainer-name">Rahul Menon</div>
+            <div class="trainer-spec">Nutrition & Fat Loss</div>
+            <div class="trainer-bio">Certified nutritionist and personal trainer. Specializes in body recomposition and sustainable fat loss.</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a>
+              <a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="trainer-card reveal reveal-delay-3">
+          <div class="trainer-img">
+            <div class="trainer-img-placeholder">👩‍🦱</div>
+            <div class="trainer-overlay"></div>
+            <span class="trainer-badge">Cardio Expert</span>
+          </div>
+          <div class="trainer-info">
+            <div class="trainer-name">Sneha Kapoor</div>
+            <div class="trainer-spec">Cardio & Endurance</div>
+            <div class="trainer-bio">Marathon champion turned coach. Builds cardio foundations that carry members to life-long fitness.</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a>
+              <a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMATION SECTION -->
+  <section class="section transformation" id="transformation">
+    <div class="container">
+      <div class="transformation-inner">
+        <div class="transformation-visual reveal-left">
+          <div class="before-after-container">
+            <div class="before-after-labels">
+              <div class="ba-label before">Before</div>
+              <div class="ba-label after">After</div>
+            </div>
+            <div class="ba-visual">
+              <div class="ba-side before-side">
+                <span>😓</span>
+                <span class="ba-tag">Day 1</span>
+              </div>
+              <div class="ba-side after-side">
+                <span>💪</span>
+                <span class="ba-tag">90 Days</span>
+              </div>
+            </div>
+            <div class="transformation-stats">
+              <div class="t-stat">
+                <div class="t-stat-num">-18kg</div>
+                <div class="t-stat-text">Fat Lost</div>
+              </div>
+              <div class="t-stat">
+                <div class="t-stat-num">+12kg</div>
+                <div class="t-stat-text">Muscle Gained</div>
+              </div>
+              <div class="t-stat">
+                <div class="t-stat-num">90</div>
+                <div class="t-stat-text">Days</div>
+              </div>
+              <div class="t-stat">
+                <div class="t-stat-num">100%</div>
+                <div class="t-stat-text">Committed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="transformation-content reveal-right">
+          <div class="section-label">Real Results</div>
+          <h2 class="section-title">Your <span>Transformation</span><br />Starts Today.</h2>
+          <p class="section-subtitle">Every champion was once a beginner. At AR Fitness Hub, we've helped hundreds of individuals completely redefine their bodies and their lives.</p>
+
+          <div class="transformation-points">
+            <div class="t-point">
+              <div class="t-point-num">01</div>
+              <div class="t-point-text">
+                <div class="t-point-title">Personalized Assessment</div>
+                <div class="t-point-desc">We start with a full body composition analysis to understand exactly where you are.</div>
+              </div>
+            </div>
+            <div class="t-point">
+              <div class="t-point-num">02</div>
+              <div class="t-point-text">
+                <div class="t-point-title">Custom Training Plan</div>
+                <div class="t-point-desc">Your program is built specifically for your goals, schedule, and current fitness level.</div>
+              </div>
+            </div>
+            <div class="t-point">
+              <div class="t-point-num">03</div>
+              <div class="t-point-text">
+                <div class="t-point-title">Nutrition & Recovery</div>
+                <div class="t-point-desc">Train hard, eat right, recover smart. We guide you through every phase of the process.</div>
+              </div>
+            </div>
+            <div class="t-point">
+              <div class="t-point-num">04</div>
+              <div class="t-point-text">
+                <div class="t-point-title">Results & Accountability</div>
+                <div class="t-point-desc">Weekly check-ins and progress reviews keep you on track and motivated throughout.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 2.5rem;">
+            <a href="pages/contact.html" class="btn btn-primary">Start My Transformation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="section-label reveal">Success Stories</div>
+        <h2 class="section-title reveal">Members Who <span>Transformed.</span></h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"AR Fitness Hub changed my life completely. In 3 months I lost 20kg and built more confidence than I've ever had. The coaches are absolutely world-class."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">🧔</div>
+            <div>
+              <div class="author-name">Vikram Singh</div>
+              <div class="author-tag">Lost 20kg — 90 Days</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"I've tried many gyms but nothing compares to AR Fitness Hub. The personal attention, the quality of equipment, and the community here is on another level entirely."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👩</div>
+            <div>
+              <div class="author-name">Aisha Patel</div>
+              <div class="author-tag">Muscle Gain Transformation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"Coach Arjun's programming is brilliant. I went from barely benching 60kg to competing at 120kg in under a year. The results speak for themselves."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">💪</div>
+            <div>
+              <div class="author-name">Kiran Reddy</div>
+              <div class="author-tag">Powerlifting Champion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-banner-inner">
+        <div class="cta-banner-text">
+          <div class="cta-banner-label">Limited Spots Available</div>
+          <div class="cta-banner-title">Ready to Dominate?<br />Join AR Fitness Hub.</div>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="pages/contact.html" class="btn btn-dark">
+            Get Free Trial
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="pages/programs.html" class="btn" style="background:rgba(0,0,0,0.1);color:#0B0B0B;border:1.5px solid rgba(0,0,0,0.2);">View Programs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="AR Fitness Hub" onerror="this.style.display='none'" />
+            <div class="nav-logo-text">
+              <span class="brand">AR FITNESS</span>
+              <span class="sub">Hub</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Transforming lives through elite fitness. Premium equipment, world-class coaching, and a community that drives results.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Instagram">ig</a>
+            <a href="#" class="footer-social" aria-label="Facebook">fb</a>
+            <a href="#" class="footer-social" aria-label="YouTube">yt</a>
+            <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="pages/programs.html" class="footer-link">Programs</a></li>
+            <li><a href="pages/trainers.html" class="footer-link">Trainers</a></li>
+            <li><a href="pages/about.html" class="footer-link">About Us</a></li>
+            <li><a href="pages/contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Programs</div>
+          <ul class="footer-links">
+            <li><a href="pages/programs.html" class="footer-link">Weight Training</a></li>
+            <li><a href="pages/programs.html" class="footer-link">Cardio Blast</a></li>
+            <li><a href="pages/programs.html" class="footer-link">CrossFit</a></li>
+            <li><a href="pages/programs.html" class="footer-link">Personal Training</a></li>
+            <li><a href="pages/programs.html" class="footer-link">Nutrition Plans</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>AR Fitness Hub, Koramangala, Bengaluru, Karnataka 560034</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <span>+91 98765 43210</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <span>hello@arfitnesshub.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">🕐</span>
+            <span>Mon–Sat: 5:00 AM – 10:00 PM<br />Sunday: 6:00 AM – 8:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 <span>AR Fitness Hub</span>. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

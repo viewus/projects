@@ -1,0 +1,148 @@
+/* ===== TRAINERS PAGE CSS ===== */
+
+.trainers-full-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.trainer-full-card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 3rem;
+  padding: 3rem;
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: var(--radius-lg);
+  align-items: start;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.trainer-full-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.trainer-full-card:hover::after { transform: scaleX(1); }
+
+.trainer-full-card:hover {
+  border-color: rgba(170, 255, 0, 0.1);
+  box-shadow: var(--shadow-card);
+}
+
+.tfc-avatar {
+  width: 160px;
+  height: 160px;
+  background: var(--dark-3);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  border: 1px solid rgba(170, 255, 0, 0.15);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.trainer-full-card:hover .tfc-avatar {
+  border-color: rgba(170, 255, 0, 0.4);
+  box-shadow: 0 0 30px rgba(170, 255, 0, 0.1);
+}
+
+.tfc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tfc-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.tfc-spec {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 0.25rem;
+}
+
+.tfc-rating { display: flex; align-items: center; }
+
+.tfc-bio {
+  font-size: 0.88rem;
+  color: var(--grey);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.tfc-certifications {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.tfc-cert {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid rgba(170, 255, 0, 0.3);
+  color: var(--accent);
+  border-radius: 2px;
+  background: var(--accent-dim);
+}
+
+.tfc-stats {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.tfc-stat {
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+.tfc-stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+  .trainer-full-card {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+  }
+  .tfc-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+  .tfc-stats { gap: 1.5rem; flex-wrap: wrap; }
+}

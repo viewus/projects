@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Artisano Premium Custom Furniture</title>
+  <meta name="description" content="Explore Artisano's portfolio of bespoke sofas, wooden tables, designer boards and full interior woodwork projects across India." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Artisan<span>o</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="nav-cta btn btn-primary">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero portfolio-hero" aria-label="Portfolio hero">
+    <div class="container page-hero-content">
+      <span class="section-label">Our Work</span>
+      <h1>Masterpieces Crafted<br>for Discerning Clients</h1>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <i class="fas fa-chevron-right" style="font-size:.6rem"></i>
+        <span>Portfolio</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio-page" aria-labelledby="portfolio-heading">
+    <div class="container">
+      <div class="section-head text-center reveal" style="margin-bottom:2.5rem">
+        <span class="section-label">Browse by Category</span>
+        <h2 id="portfolio-heading" class="section-title">120+ Projects. Zero Compromises.</h2>
+        <p class="section-subtitle">Filter by category to find the work most relevant to your project.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="portfolio-filters reveal" role="group" aria-label="Portfolio filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="sofas">Sofas</button>
+        <button class="filter-btn" data-filter="tables">Tables</button>
+        <button class="filter-btn" data-filter="boards">Wooden Boards</button>
+        <button class="filter-btn" data-filter="interior">Interior Projects</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="portfolio-masonry">
+
+        <article class="port-item" data-cat="sofas" style="height:380px">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=85" alt="Heritage sofa in walnut" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>The Heritage Collection</h4>
+            <p>Walnut frame sofa, hand-tufted velvet — Private villa, Bengaluru 2024</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="tables">
+          <img src="https://images.unsplash.com/photo-1549187774-b4e9b0445b41?w=700&q=85" alt="Live edge dining table" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Live-Edge Slab Table</h4>
+            <p>8-seater teak dining table — Whitefield residence 2024</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="interior">
+          <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=700&q=85" alt="Office woodwork" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Nexus HQ Fit-Out</h4>
+            <p>3,200 sq ft office interior — Pune 2023</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="boards" style="height:300px">
+          <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=700&q=85" alt="Fluted wall board" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Fluted Teak Backdrop</h4>
+            <p>TV unit &amp; feature wall — Koramangala flat 2023</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="interior">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&q=85" alt="Luxury living room" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Whitfield Villa Living Room</h4>
+            <p>Complete furniture &amp; woodwork — Bengaluru 2024</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="sofas">
+          <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=700&q=85" alt="Sectional sofa" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>L-Shape Sectional</h4>
+            <p>Custom 6-seater sectional, cream boucle — Mumbai 2024</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="tables" style="height:340px">
+          <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=700&q=85" alt="Centre table" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Sculptural Centre Table</h4>
+            <p>Solid sheesham with tempered glass — Delhi 2023</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="boards">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=700&q=85" alt="Geometric wall panel" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Geometric Oak Panel</h4>
+            <p>Full wall geometric pattern — Hyderabad bungalow 2023</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="interior">
+          <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=700&q=85" alt="Bedroom suite" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Master Bedroom Suite</h4>
+            <p>Custom bed, wardrobes &amp; dressing — Chennai villa 2024</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="sofas" style="height:360px">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=85" alt="Chesterfield sofa" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Chesterfield Chaise</h4>
+            <p>Leather chesterfield, rosewood legs — Pune penthouse 2023</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="tables">
+          <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=700&q=85" alt="Console table" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Entrance Console</h4>
+            <p>Hairpin-leg walnut console — Bengaluru apartment 2024</p>
+          </div>
+        </article>
+
+        <article class="port-item" data-cat="interior">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=85" alt="Restaurant interior" loading="lazy" />
+          <div class="port-item-overlay">
+            <h4>Spice Garden Restaurant</h4>
+            <p>Complete interior woodwork — Bengaluru 2022</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="section-label reveal">Commission a Piece</span>
+      <h2 class="reveal">Have a Project in Mind?</h2>
+      <p class="reveal">Share your brief and we'll come back with a bespoke design proposal within 48 hours.</p>
+      <div class="reveal">
+        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Artisan<span>o</span></a>
+          <p>Premium custom furniture crafted in Bengaluru. Tailored to your vision, built to last generations.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">Custom Sofas</a></li>
+            <li><a href="services.html">Wooden Tables</a></li>
+            <li><a href="services.html">Designer Boards</a></li>
+            <li><a href="services.html">Interior Woodwork</a></li>
+            <li><a href="services.html">Restoration</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:hello@artisano.in">hello@artisano.in</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><a href="#">42 Craft Street, Indiranagar, Bengaluru</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Artisano. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
