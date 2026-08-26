@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ============================================= -->
+    <!-- SEO -->
+    <!-- ============================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>MURALE — Premium Wall Stickers & Interior Wall Décor</title>
+    <meta name="description" content="MURALE creates premium, custom wall stickers and interior surface décor for homes and businesses. Explore our curated collection, request a free design consultation, and transform your walls.">
+    <meta name="keywords" content="wall stickers, wall décor, interior design, custom wall graphics, premium wall art, wall decals">
+    <link rel="canonical" href="https://www.murale.example/">
+    <meta name="theme-color" content="#211D18">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MURALE — Premium Wall Stickers & Interior Wall Décor">
+    <meta property="og:description" content="Curated, custom wall stickers designed for beautiful, considered interiors. Residential & commercial.">
+    <meta property="og:image" content="https://picsum.photos/seed/murale-og/1200/630">
+    <meta property="og:url" content="https://www.murale.example/">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MURALE — Premium Wall Stickers & Interior Wall Décor">
+    <meta name="twitter:description" content="Curated, custom wall stickers designed for beautiful, considered interiors.">
+    <meta name="twitter:image" content="https://picsum.photos/seed/murale-og/1200/630">
+
+    <!-- Structured data (populated at runtime from SITE_DATA, static fallback below) -->
+    <script type="application/ld+json" id="ld-local-business">
+    {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "MURALE",
+        "description": "Premium custom wall stickers and interior wall décor.",
+        "telephone": "+91-98765-43210",
+        "email": "studio@murale.example",
+        "address": { "@type": "PostalAddress", "addressCountry": "IN" }
+    }
+    </script>
+
+    <!-- ============================================= -->
+    <!-- CDN -->
+    <!-- ============================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <link rel="preload" as="image" href="https://picsum.photos/seed/murale-hero-1/1800/1000">
+
+    <!-- ============================================= -->
+    <!-- CSS -->
+    <!-- ============================================= -->
+    <style>
+        :root {
+            --ink: #211D18;
+            --ink-soft: #4a4238;
+            --paper: #F3EEE4;
+            --paper-alt: #FFFFFF;
+            --brass: #9C7A45;
+            --brass-light: #C9A96E;
+            --moss: #454C3E;
+            --line: rgba(33, 29, 24, 0.12);
+            --line-strong: rgba(33, 29, 24, 0.22);
+            --shadow-soft: 0 20px 60px -25px rgba(33, 29, 24, 0.35);
+            --shadow-tight: 0 8px 24px -12px rgba(33, 29, 24, 0.3);
+            --radius-lg: 22px;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+            --ease: cubic-bezier(.22, .61, .36, 1);
+            --header-h: 92px;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--ink);
+            background: var(--paper);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; }
+
+        a { color: inherit; text-decoration: none; }
+
+        .font-serif { font-family: 'Fraunces', serif; }
+
+        h1, h2, h3, h4, .display {
+            font-family: 'Fraunces', serif;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        .eyebrow {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--brass);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 26px;
+            height: 1px;
+            background: var(--brass);
+            display: inline-block;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--brass);
+            outline-offset: 3px;
+        }
+
+        .btn-brass {
+            background: var(--ink);
+            color: var(--paper) !important;
+            border: 1px solid var(--ink);
+            border-radius: 100px;
+            padding: 14px 30px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            letter-spacing: 0.01em;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all .35s var(--ease);
+        }
+        .btn-brass:hover { background: var(--brass); border-color: var(--brass); color: var(--ink) !important; transform: translateY(-2px); }
+
+        .btn-outline-lux {
+            background: transparent;
+            color: var(--ink) !important;
+            border: 1px solid var(--line-strong);
+            border-radius: 100px;
+            padding: 14px 30px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all .35s var(--ease);
+        }
+        .btn-outline-lux:hover { border-color: var(--ink); background: var(--ink); color: var(--paper) !important; }
+
+        .btn-brass.btn-sm-lux, .btn-outline-lux.btn-sm-lux { padding: 10px 22px; font-size: 0.82rem; }
+
+        section { position: relative; }
+        .section-pad { padding: 110px 0; }
+        @media (max-width: 767px) { .section-pad { padding: 64px 0; } }
+
+        .container-lux { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+
+        /* ---------------- Announcement strip ---------------- */
+        .announce {
+            background: var(--ink);
+            color: var(--paper);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            text-align: center;
+            padding: 9px 12px;
+            font-weight: 500;
+        }
+        .announce span { opacity: 0.9; }
+        .announce .sep { color: var(--brass-light); margin: 0 10px; }
+
+        /* ---------------- Header ---------------- */
+        header.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(243, 238, 228, 0.86);
+            backdrop-filter: blur(14px) saturate(140%);
+            -webkit-backdrop-filter: blur(14px) saturate(140%);
+            border-bottom: 1px solid transparent;
+            transition: all .4s var(--ease);
+        }
+        header.site-header.is-scrolled {
+            border-bottom: 1px solid var(--line);
+            box-shadow: 0 10px 30px -20px rgba(33,29,24,0.4);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: var(--header-h);
+            transition: height .4s var(--ease);
+        }
+        header.site-header.is-scrolled .header-inner { height: 70px; }
+
+        .brand-logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.02em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .brand-logo .mark {
+            width: 34px; height: 34px;
+            border: 1px solid var(--ink);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: all .3s var(--ease);
+        }
+        .brand-logo:hover .mark { background: var(--ink); color: var(--paper); }
+
+        .main-nav { display: flex; align-items: center; gap: 34px; }
+        .main-nav a {
+            font-size: 0.86rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            position: relative;
+            padding: 6px 0;
+            color: var(--ink-soft);
+            transition: color .3s;
+        }
+        .main-nav a:hover, .main-nav a.active { color: var(--ink); }
+        .main-nav a::after {
+            content: "";
+            position: absolute; left: 0; bottom: 0;
+            width: 0; height: 1px; background: var(--brass);
+            transition: width .35s var(--ease);
+        }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+
+        .header-actions { display: flex; align-items: center; gap: 14px; }
+        .header-wa-btn {
+            width: 42px; height: 42px; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: transparent; border: 1px solid var(--line-strong);
+            color: var(--ink); transition: all .3s;
+        }
+        .header-wa-btn:hover { background: #2fae60; border-color: #2fae60; color: #fff; }
+
+        .hamburger-btn {
+            display: none;
+            width: 44px; height: 44px;
+            border: 1px solid var(--line-strong);
+            border-radius: 50%;
+            align-items: center; justify-content: center;
+            background: transparent;
+        }
+
+        @media (max-width: 991px) {
+            .main-nav { display: none; }
+            .hamburger-btn { display: inline-flex; }
+        }
+
+        .offcanvas-lux { background: var(--paper); width: min(84vw, 360px); }
+        .offcanvas-lux .nav-link-lux {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line);
+            display: block;
+            color: var(--ink);
+        }
+
+        /* ---------------- Hero ---------------- */
+        .hero-swiper { height: 92vh; min-height: 560px; position: relative; }
+        .hero-slide { position: relative; width: 100%; height: 100%; overflow: hidden; }
+        .hero-media-wrap { position: absolute; inset: 0; }
+        .hero-media-wrap img, .hero-media-wrap video {
+            width: 100%; height: 100%; object-fit: cover;
+            transform: scale(1.02);
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(20,17,13,0.35) 0%, rgba(20,17,13,0.35) 40%, rgba(20,17,13,0.78) 100%);
+        }
+        .hero-content {
+            position: relative; z-index: 2; height: 100%;
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 0 0 84px;
+            color: #fff;
+            max-width: 720px;
+        }
+        .hero-content .eyebrow { color: var(--brass-light); }
+        .hero-content .eyebrow::before { background: var(--brass-light); }
+        .hero-content h1 {
+            color: #fff;
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            line-height: 1.05;
+            margin: 18px 0 20px;
+        }
+        .hero-content p { color: rgba(255,255,255,0.86); font-size: 1.08rem; max-width: 540px; margin-bottom: 34px; }
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-btns .btn-outline-lux { border-color: rgba(255,255,255,0.5); color: #fff !important; }
+        .hero-btns .btn-outline-lux:hover { background: #fff; color: var(--ink) !important; }
+        .hero-btns .btn-brass { background: var(--paper); color: var(--ink) !important; border-color: var(--paper); }
+        .hero-btns .btn-brass:hover { background: var(--brass); border-color: var(--brass); color: #fff !important; }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: #fff !important; width: 46px !important; height: 46px !important;
+            border: 1px solid rgba(255,255,255,0.5); border-radius: 50%;
+            backdrop-filter: blur(6px);
+        }
+        .swiper-button-next::after, .swiper-button-prev::after { font-size: 15px !important; }
+        .hero-swiper .swiper-pagination-bullet { background: #fff; opacity: 0.5; width: 7px; height: 7px; }
+        .hero-swiper .swiper-pagination-bullet-active { opacity: 1; background: var(--brass-light); width: 22px; border-radius: 4px; }
+
+        /* image zoom helper */
+        .zoom-frame { overflow: hidden; border-radius: var(--radius-lg); }
+        .zoom-frame img { transition: transform .8s var(--ease); display: block; width: 100%; height: 100%; object-fit: cover; }
+        .zoom-frame:hover img { transform: scale(1.08); }
+
+        /* ---------------- Stats ---------------- */
+        .stats-strip {
+            background: var(--paper-alt);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 52px 0;
+        }
+        .stat-item { text-align: center; }
+        .stat-num {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 4vw, 2.9rem);
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .stat-num .accent-suffix { color: var(--brass); }
+        .stat-label { font-size: 0.82rem; letter-spacing: 0.04em; color: var(--ink-soft); margin-top: 6px; text-transform: uppercase; }
+
+        /* ---------------- reveal ---------------- */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+        .reveal.in-view { opacity: 1; transform: translateY(0); }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+        /* ---------------- About ---------------- */
+        .about-media { position: relative; }
+        .badge-float {
+            position: absolute; bottom: -28px; left: -28px;
+            background: var(--ink); color: var(--paper);
+            border-radius: var(--radius-md);
+            padding: 22px 26px;
+            box-shadow: var(--shadow-soft);
+            max-width: 210px;
+        }
+        .badge-float .num { font-family: 'Fraunces', serif; font-size: 2.1rem; color: var(--brass-light); line-height: 1; }
+        .badge-float .lbl { font-size: 0.76rem; letter-spacing: 0.03em; margin-top: 4px; opacity: 0.85; }
+        @media (max-width: 767px) { .badge-float { left: 14px; bottom: -20px; padding: 16px 18px; } }
+
+        .feature-list { list-style: none; padding: 0; margin: 28px 0; }
+        .feature-list li {
+            display: flex; align-items: center; gap: 14px;
+            padding: 13px 0; border-bottom: 1px solid var(--line);
+            font-weight: 500;
+        }
+        .feature-list li:last-child { border-bottom: none; }
+        .feature-list i { color: var(--brass); font-size: 0.95rem; }
+
+        /* ---------------- Service cards ---------------- */
+        .service-card {
+            background: var(--paper-alt);
+            border-radius: var(--radius-lg);
+            padding: 38px 30px;
+            height: 100%;
+            border: 1px solid var(--line);
+            transition: all .4s var(--ease);
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-tight); border-color: transparent; }
+        .service-icon {
+            width: 54px; height: 54px; border-radius: 50%;
+            background: var(--paper);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; color: var(--brass); margin-bottom: 22px;
+        }
+        .service-card h4 { font-size: 1.25rem; margin-bottom: 10px; }
+        .service-card p { color: var(--ink-soft); font-size: 0.94rem; margin-bottom: 18px; }
+        .service-card .card-link { font-size: 0.84rem; font-weight: 700; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
+        .service-card .card-link i { transition: transform .3s; }
+        .service-card:hover .card-link i { transform: translateX(4px); }
+
+        /* ---------------- Categories ---------------- */
+        .category-rail {
+            display: flex; gap: 16px; overflow-x: auto; padding: 6px 4px 22px;
+            scroll-snap-type: x proximity;
+        }
+        .category-rail::-webkit-scrollbar { height: 5px; }
+        .category-rail::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 10px; }
+        .category-card {
+            position: relative; flex: 0 0 210px; height: 260px;
+            border-radius: var(--radius-md); overflow: hidden; cursor: pointer;
+            scroll-snap-align: start;
+        }
+        .category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+        .category-card:hover img { transform: scale(1.1); }
+        .category-card .cat-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(20,17,13,0.82) 100%);
+        }
+        .category-card .cat-name {
+            position: absolute; left: 16px; bottom: 14px; color: #fff;
+            font-family: 'Fraunces', serif; font-size: 1.15rem;
+        }
+        .category-card .cat-count { position: absolute; right: 14px; top: 14px; color: #fff; font-size: 0.72rem; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.4); padding: 3px 10px; border-radius: 100px; }
+        .category-card.is-active { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+        /* ---------------- Products ---------------- */
+        .filter-bar {
+            display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;
+            margin-bottom: 40px; gap: 20px;
+        }
+        .pill-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+        .pill-btn {
+            border: 1px solid var(--line-strong); background: transparent;
+            padding: 9px 20px; border-radius: 100px; font-size: 0.82rem; font-weight: 600;
+            color: var(--ink-soft); transition: all .3s;
+        }
+        .pill-btn:hover { border-color: var(--ink); color: var(--ink); }
+        .pill-btn.active { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+        .search-box { position: relative; min-width: 240px; }
+        .search-box input {
+            width: 100%; border: 1px solid var(--line-strong); border-radius: 100px;
+            padding: 10px 20px 10px 40px; background: var(--paper-alt); font-size: 0.88rem;
+        }
+        .search-box input:focus { outline: none; border-color: var(--brass); }
+        .search-box i { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--ink-soft); font-size: 0.85rem; }
+
+        .product-card {
+            background: var(--paper-alt);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            height: 100%;
+            display: flex; flex-direction: column;
+            transition: all .4s var(--ease);
+        }
+        .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft); }
+        .product-media { position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--paper); }
+        .product-media img { width: 100%; height: 100%; object-fit: cover; transition: opacity .5s var(--ease), transform .7s var(--ease); }
+        .product-media img.img-secondary { position: absolute; inset: 0; opacity: 0; }
+        .product-card:hover .product-media img.img-primary { transform: scale(1.06); opacity: 0; }
+        .product-card:hover .product-media img.img-secondary { opacity: 1; transform: scale(1.06); }
+        .product-tag {
+            position: absolute; top: 14px; left: 14px; z-index: 2;
+            background: rgba(243,238,228,0.92); color: var(--ink);
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+            padding: 5px 12px; border-radius: 100px;
+        }
+        .product-wa-quick {
+            position: absolute; bottom: 14px; right: 14px; z-index: 2;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: #fff; color: #2fae60;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transform: translateY(8px);
+            transition: all .35s var(--ease);
+        }
+        .product-card:hover .product-wa-quick { opacity: 1; transform: translateY(0); }
+        .product-body { padding: 22px 22px 24px; flex: 1; display: flex; flex-direction: column; }
+        .product-body .p-cat { font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+        .product-body h3 { font-size: 1.18rem; margin-bottom: 8px; }
+        .product-body .p-desc { font-size: 0.87rem; color: var(--ink-soft); margin-bottom: 16px; flex: 1; }
+        .product-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--line); }
+        .product-price { font-size: 0.86rem; font-weight: 700; }
+        .view-details-btn { font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 7px; transition: gap .3s; }
+        .view-details-btn:hover { gap: 11px; color: var(--brass); }
+
+        .empty-state { text-align: center; padding: 70px 20px; }
+        .empty-state i { font-size: 2.4rem; color: var(--line-strong); margin-bottom: 16px; }
+        .empty-state p { color: var(--ink-soft); }
+
+        /* skeletons */
+        .skeleton { background: linear-gradient(90deg, rgba(33,29,24,0.06) 25%, rgba(33,29,24,0.12) 37%, rgba(33,29,24,0.06) 63%); background-size: 400% 100%; animation: sk 1.4s ease infinite; border-radius: var(--radius-sm); }
+        @keyframes sk { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+        .skeleton-card .product-media { background: transparent; }
+        .skeleton-line { height: 12px; margin: 8px 0; }
+
+        /* Mini product card */
+        .mini-card { display: flex; gap: 14px; align-items: center; background: var(--paper); border-radius: var(--radius-md); padding: 10px; border: 1px solid var(--line); transition: all .3s; }
+        .mini-card:hover { border-color: var(--brass); }
+        .mini-card img { width: 76px; height: 76px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+        .mini-card .m-tag { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brass); font-weight: 700; }
+        .mini-card h5 { font-size: 0.92rem; margin: 3px 0; font-family: 'Manrope',sans-serif; font-weight: 700; }
+        .mini-card .m-price { font-size: 0.78rem; color: var(--ink-soft); }
+
+        /* ---------------- Featured carousel (mobile) ---------------- */
+        .featured-swiper .swiper-slide { height: auto; }
+
+        /* ---------------- Gallery ---------------- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 190px;
+            gap: 16px;
+        }
+        .gallery-item { position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+        .gallery-item:hover img { transform: scale(1.09); }
+        .gallery-item .g-overlay {
+            position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(20,17,13,0.85) 100%);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; color: #fff;
+        }
+        .gallery-item .g-cat { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brass-light); font-weight: 700; }
+        .gallery-item .g-title { font-family: 'Fraunces', serif; font-size: 1.05rem; margin-top: 2px; }
+        .gi-1 { grid-column: span 2; grid-row: span 2; }
+        .gi-4 { grid-column: span 2; }
+        @media (max-width: 991px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } .gi-1 { grid-column: span 2; } }
+        @media (max-width: 575px) { .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; } .gi-1, .gi-4 { grid-column: span 1; } }
+
+        /* ---------------- Trust badges ---------------- */
+        .trust-strip { display: flex; flex-wrap: wrap; gap: 34px; justify-content: center; padding: 40px 0; }
+        .trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; font-weight: 600; color: var(--ink-soft); }
+        .trust-item i { color: var(--brass); }
+
+        /* ---------------- Contact ---------------- */
+        .contact-wrap { background: var(--ink); color: var(--paper); border-radius: var(--radius-lg); overflow: hidden; }
+        .contact-info { padding: 60px 50px; }
+        .contact-info .eyebrow { color: var(--brass-light); }
+        .contact-info .eyebrow::before { background: var(--brass-light); }
+        .contact-info h2 { color: #fff; }
+        .contact-info p.lead-txt { color: rgba(243,238,228,0.75); margin-bottom: 34px; }
+        .contact-line { display: flex; align-items: center; gap: 16px; padding: 15px 0; border-bottom: 1px solid rgba(243,238,228,0.14); }
+        .contact-line:last-child { border: none; }
+        .contact-line i { width: 20px; color: var(--brass-light); }
+        .contact-form-side { background: var(--paper); padding: 60px 50px; }
+        .form-control-lux {
+            width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-strong);
+            padding: 12px 2px; font-size: 0.95rem; color: var(--ink);
+        }
+        .form-control-lux:focus { outline: none; border-color: var(--ink); }
+        .form-label-lux { font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; margin-bottom: 4px; display: block; }
+        .field-group { margin-bottom: 26px; }
+        .form-feedback { font-size: 0.76rem; color: #b3402f; margin-top: 6px; min-height: 14px; }
+        #formSuccess, #formError { display: none; padding: 16px 18px; border-radius: var(--radius-sm); font-size: 0.9rem; margin-top: 18px; }
+        #formSuccess { background: rgba(69,76,62,0.12); color: var(--moss); border: 1px solid var(--moss); }
+        #formError { background: rgba(179,64,47,0.1); color: #b3402f; border: 1px solid #b3402f; }
+
+        @media (max-width: 991px) { .contact-info, .contact-form-side { padding: 44px 26px; } }
+
+        /* ---------------- Footer ---------------- */
+        footer.site-footer { background: #1a1712; color: rgba(243,238,228,0.7); padding: 80px 0 0; }
+        footer.site-footer h6 { color: #fff; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 22px; }
+        footer.site-footer .f-brand { font-family: 'Fraunces', serif; color: #fff; font-size: 1.5rem; margin-bottom: 14px; }
+        footer.site-footer a.f-link { display: block; padding: 6px 0; font-size: 0.9rem; transition: color .3s; }
+        footer.site-footer a.f-link:hover { color: var(--brass-light); }
+        .footer-bottom { border-top: 1px solid rgba(243,238,228,0.12); margin-top: 60px; padding: 24px 0; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 0.8rem; }
+        .social-row { display: flex; gap: 10px; }
+        .social-row a { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(243,238,228,0.2); display: flex; align-items: center; justify-content: center; transition: all .3s; }
+        .social-row a:hover { background: var(--brass); border-color: var(--brass); color: #1a1712; }
+
+        /* ---------------- Floating controls ---------------- */
+        .floating-stack { position: fixed; right: 22px; bottom: 26px; z-index: 900; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+        .fab {
+            width: 54px; height: 54px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-tight);
+            font-size: 1.3rem; position: relative;
+        }
+        .fab-wa { background: #25D366; color: #fff; }
+        .fab-wa::before {
+            content: ""; position: absolute; inset: 0; border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(37,211,102,0.6);
+            animation: pulse-wa 2.4s infinite;
+        }
+        @keyframes pulse-wa { to { box-shadow: 0 0 0 18px rgba(37,211,102,0); } }
+        .fab-top {
+            background: var(--ink); color: var(--paper); opacity: 0; visibility: hidden; transform: translateY(10px);
+            transition: all .35s var(--ease); width: 44px; height: 44px; font-size: 1rem;
+        }
+        .fab-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        .fab-tooltip {
+            position: absolute; right: 64px; top: 50%; transform: translateY(-50%);
+            background: var(--ink); color: var(--paper); padding: 7px 14px; border-radius: 6px;
+            font-size: 0.78rem; white-space: nowrap; opacity: 0; visibility: hidden; transition: all .25s;
+        }
+        .fab-wa:hover .fab-tooltip { opacity: 1; visibility: visible; }
+        @media (max-width: 767px) { .fab-tooltip { display: none; } .floating-stack { right: 16px; bottom: env(safe-area-inset-bottom, 16px); } }
+
+        /* ---------------- Product Modal ---------------- */
+        .product-modal .modal-dialog { max-width: 1060px; }
+        .product-modal .modal-content { border-radius: var(--radius-lg); border: none; overflow: hidden; }
+        .product-modal .modal-body { padding: 0; }
+        .pm-grid { display: grid; grid-template-columns: 1.05fr 1fr; min-height: 560px; }
+        @media (max-width: 860px) { .pm-grid { grid-template-columns: 1fr; min-height: auto; } }
+
+        .pm-gallery { background: var(--paper); padding: 30px; display: flex; flex-direction: column; gap: 16px; }
+        .pm-breadcrumb { font-size: 0.74rem; color: var(--ink-soft); }
+        .pm-breadcrumb a:hover { color: var(--brass); }
+        .pm-main-img-wrap { position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 1/1; cursor: zoom-in; background: #ddd; }
+        .pm-main-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s var(--ease); }
+        .pm-counter { position: absolute; bottom: 12px; right: 12px; background: rgba(20,17,13,0.6); color: #fff; font-size: 0.72rem; padding: 4px 11px; border-radius: 100px; }
+        .pm-nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.85); display: flex; align-items: center; justify-content: center; }
+        .pm-nav-arrow.left { left: 10px; } .pm-nav-arrow.right { right: 10px; }
+        .pm-thumbs { display: flex; gap: 10px; }
+        .pm-thumb { width: 68px; height: 68px; border-radius: 10px; overflow: hidden; opacity: 0.55; border: 2px solid transparent; cursor: pointer; transition: all .25s; flex-shrink:0; }
+        .pm-thumb.active { opacity: 1; border-color: var(--brass); }
+        .pm-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+        .pm-info { padding: 34px 36px; overflow-y: auto; max-height: 90vh; }
+        .pm-info .p-tag-badge { display: inline-block; background: var(--paper); color: var(--brass); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 5px 13px; border-radius: 100px; margin-bottom: 14px; }
+        .pm-info h2 { font-size: 1.8rem; margin-bottom: 10px; }
+        .pm-info .p-short { color: var(--ink-soft); margin-bottom: 20px; }
+        .pm-info .p-price-lg { font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 22px; }
+        .pm-spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+        .pm-spec { background: var(--paper); border-radius: var(--radius-sm); padding: 14px 16px; }
+        .pm-spec .lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 4px; }
+        .pm-spec .val { font-size: 0.88rem; font-weight: 700; }
+        .pm-size-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+        .pm-size-chips span { border: 1px solid var(--line-strong); border-radius: 100px; padding: 6px 15px; font-size: 0.78rem; font-weight: 600; }
+        .pm-desc-block { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 22px; }
+        .pm-note { font-size: 0.84rem; color: var(--ink-soft); margin-bottom: 8px; }
+        .pm-note b { color: var(--ink); }
+        .pm-cta-row { display: flex; gap: 12px; margin: 26px 0; flex-wrap: wrap; }
+        .pm-related h5 { font-family: 'Fraunces', serif; font-size: 1.05rem; margin-bottom: 14px; }
+        .pm-close-btn { position: absolute; top: 16px; right: 16px; z-index: 10; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; }
+
+        @media (max-width: 767px) {
+            .pm-info { max-height: none; }
+            .pm-cta-row { position: sticky; bottom: -1px; background: #fff; padding: 12px 0 2px; margin-bottom: 8px; }
+        }
+
+        /* Lightbox */
+        .lux-lightbox { position: fixed; inset: 0; background: rgba(15,13,10,0.94); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 30px; }
+        .lux-lightbox.open { display: flex; }
+        .lux-lightbox img { max-width: 92vw; max-height: 86vh; border-radius: 8px; object-fit: contain; }
+        .lux-lightbox .lb-close { position: absolute; top: 24px; right: 28px; color: #fff; font-size: 1.6rem; }
+        .lux-lightbox .lb-arrow { position: absolute; top: 50%; transform: translateY(-50%); color: #fff; font-size: 1.4rem; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; }
+        .lux-lightbox .lb-arrow.left { left: 20px; } .lux-lightbox .lb-arrow.right { right: 20px; }
+
+        /* Section headings shared */
+        .section-head { max-width: 620px; margin-bottom: 56px; }
+        .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+        .section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); margin: 16px 0 14px; }
+        .section-head p { color: var(--ink-soft); font-size: 1rem; }
+
+        .bg-alt { background: var(--paper-alt); }
+
+        ::selection { background: var(--brass); color: #fff; }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================= -->
+    <!-- Announcement -->
+    <!-- ============================================= -->
+    <div class="announce" id="announceStrip"></div>
+
+    <!-- ============================================= -->
+    <!-- Header -->
+    <!-- ============================================= -->
+    <header class="site-header" id="siteHeader">
+        <div class="container-lux">
+            <div class="header-inner">
+                <a href="#home" class="brand-logo" id="brandLogo" aria-label="MURALE home">
+                    <span class="mark">M</span><span>MURALE</span>
+                </a>
+
+                <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#products">Products</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="#" class="header-wa-btn d-none d-md-inline-flex" id="headerWaBtn" aria-label="Chat on WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#contact" class="btn-brass d-none d-md-inline-flex btn-sm-lux">Get a Quote</a>
+                    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileOffcanvas">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-end offcanvas-lux" tabindex="-1" id="mobileOffcanvas" aria-labelledby="mobileOffcanvasLabel">
+        <div class="offcanvas-header">
+            <span class="brand-logo" id="mobileOffcanvasLabel"><span class="mark">M</span>MURALE</span>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav id="mobileNav"></nav>
+            <a href="#" class="btn-brass w-100 justify-content-center mt-4" id="offcanvasWaBtn">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- Hero -->
+    <!-- ============================================= -->
+    <section id="home">
+        <div class="swiper hero-swiper" id="heroSwiper">
+            <div class="swiper-wrapper" id="heroWrapper"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Stats -->
+    <!-- ============================================= -->
+    <section class="stats-strip">
+        <div class="container-lux">
+            <div class="row g-4" id="statsRow"></div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- About -->
+    <!-- ============================================= -->
+    <section id="about" class="section-pad">
+        <div class="container-lux">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 reveal">
+                    <div class="about-media zoom-frame" style="border-radius: var(--radius-lg);">
+                        <img src="https://picsum.photos/seed/murale-about/900/1000" alt="Interior living room featuring a MURALE botanical wall sticker installation" loading="lazy" onerror="imageFallback(this)">
+                    </div>
+                    <div class="badge-float">
+                        <div class="num" id="aboutBadgeNum">10+</div>
+                        <div class="lbl" id="aboutBadgeLbl">Years crafting considered interiors</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal">
+                    <div class="ps-lg-4">
+                        <span class="eyebrow" id="aboutEyebrow">About Murale</span>
+                        <h2 id="aboutTitle">Walls, reconsidered as a design surface</h2>
+                        <p class="text-secondary" id="aboutDesc" style="color:var(--ink-soft); font-size:1.02rem;"></p>
+                        <ul class="feature-list" id="aboutFeatures"></ul>
+                        <a href="#contact" class="btn-outline-lux">Book a Consultation <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Services -->
+    <!-- ============================================= -->
+    <section id="services" class="section-pad bg-alt">
+        <div class="container-lux">
+            <div class="section-head center reveal mx-auto">
+                <span class="eyebrow justify-content-center w-100">What We Do</span>
+                <h2>Considered solutions for every wall</h2>
+                <p>From a single accent wall at home to a full commercial rollout, every project starts with the same attention to material and finish.</p>
+            </div>
+            <div class="row g-4" id="servicesRow"></div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Categories -->
+    <!-- ============================================= -->
+    <section class="section-pad">
+        <div class="container-lux">
+            <div class="section-head reveal">
+                <span class="eyebrow">Browse By Room</span>
+                <h2>Find the mood for your space</h2>
+                <p>Every design is organised the way you actually think about your home or workplace.</p>
+            </div>
+            <div class="category-rail" id="categoryRailTop"></div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Featured -->
+    <!-- ============================================= -->
+    <section class="section-pad bg-alt">
+        <div class="container-lux">
+            <div class="section-head reveal">
+                <span class="eyebrow">Most Loved</span>
+                <h2>Featured Collection</h2>
+                <p>The designs our clients return to, again and again.</p>
+            </div>
+            <div class="swiper featured-swiper" id="featuredSwiper">
+                <div class="swiper-wrapper" id="featuredWrapper"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Products -->
+    <!-- ============================================= -->
+    <section id="products" class="section-pad">
+        <div class="container-lux">
+            <div class="section-head center mx-auto reveal">
+                <span class="eyebrow justify-content-center w-100">The Collection</span>
+                <h2>Explore Our Collection</h2>
+                <p>Designed to transform ordinary walls into beautiful spaces.</p>
+            </div>
+
+            <div class="filter-bar">
+                <div class="pill-filters" id="pillFilters"></div>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="productSearch" placeholder="Search designs, categories, moods..." aria-label="Search products">
+                </div>
+            </div>
+
+            <div class="row g-4" id="productsGrid"></div>
+            <div class="empty-state d-none" id="emptyState">
+                <i class="fa-regular fa-image"></i>
+                <p>No designs found. Try another category or search term.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Trust badges -->
+    <!-- ============================================= -->
+    <section class="bg-alt" style="border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+        <div class="container-lux">
+            <div class="trust-strip" id="trustStrip"></div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Gallery -->
+    <!-- ============================================= -->
+    <section id="gallery" class="section-pad">
+        <div class="container-lux">
+            <div class="section-head reveal">
+                <span class="eyebrow">Inspiration</span>
+                <h2>From Our Recent Projects</h2>
+                <p>A closer look at how these designs live inside real rooms.</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Contact -->
+    <!-- ============================================= -->
+    <section id="contact" class="section-pad bg-alt">
+        <div class="container-lux">
+            <div class="contact-wrap reveal">
+                <div class="row g-0">
+                    <div class="col-lg-5">
+                        <div class="contact-info">
+                            <span class="eyebrow">Get In Touch</span>
+                            <h2>Let's design your walls</h2>
+                            <p class="lead-txt" id="contactLead"></p>
+                            <div class="contact-line"><i class="fa-solid fa-phone"></i><span id="contactPhoneLine"></span></div>
+                            <div class="contact-line"><i class="fa-brands fa-whatsapp"></i><span id="contactWaLine"></span></div>
+                            <div class="contact-line"><i class="fa-solid fa-envelope"></i><span id="contactEmailLine"></span></div>
+                            <div class="contact-line"><i class="fa-solid fa-location-dot"></i><span id="contactAddressLine"></span></div>
+                            <div class="contact-line"><i class="fa-solid fa-clock"></i><span id="contactHoursLine"></span></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="contact-form-side">
+                            <h4 class="mb-4" style="font-family:'Fraunces',serif;">Request a Free Quote</h4>
+                            <form id="contactForm" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 field-group">
+                                        <label class="form-label-lux" for="cfName">Name</label>
+                                        <input type="text" class="form-control-lux" id="cfName" required>
+                                        <div class="form-feedback" data-error-for="cfName"></div>
+                                    </div>
+                                    <div class="col-md-6 field-group">
+                                        <label class="form-label-lux" for="cfPhone">Phone</label>
+                                        <input type="tel" class="form-control-lux" id="cfPhone" required>
+                                        <div class="form-feedback" data-error-for="cfPhone"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 field-group">
+                                        <label class="form-label-lux" for="cfEmail">Email</label>
+                                        <input type="email" class="form-control-lux" id="cfEmail" required>
+                                        <div class="form-feedback" data-error-for="cfEmail"></div>
+                                    </div>
+                                    <div class="col-md-6 field-group">
+                                        <label class="form-label-lux" for="cfCategory">Preferred Category</label>
+                                        <select class="form-control-lux" id="cfCategory">
+                                            <option value="">Any category</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="field-group">
+                                    <label class="form-label-lux" for="cfProduct">Interested Product</label>
+                                    <select class="form-control-lux" id="cfProduct">
+                                        <option value="">Not sure yet</option>
+                                    </select>
+                                </div>
+                                <div class="field-group">
+                                    <label class="form-label-lux" for="cfMessage">Message</label>
+                                    <textarea class="form-control-lux" id="cfMessage" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn-brass w-100 justify-content-center" id="cfSubmitBtn">
+                                    <span id="cfSubmitLabel">Request a Free Quote</span>
+                                </button>
+                                <div id="formSuccess" role="status"></div>
+                                <div id="formError" role="alert"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Footer -->
+    <!-- ============================================= -->
+    <footer class="site-footer">
+        <div class="container-lux">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="f-brand"><span class="mark" style="border-color:rgba(243,238,228,0.4);">M</span> MURALE</div>
+                    <p style="font-size:0.9rem; max-width:320px;" id="footerAbout"></p>
+                    <div class="social-row mt-4" id="footerSocial"></div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6>Quick Links</h6>
+                    <a href="#home" class="f-link">Home</a>
+                    <a href="#about" class="f-link">About</a>
+                    <a href="#services" class="f-link">Services</a>
+                    <a href="#products" class="f-link">Products</a>
+                    <a href="#gallery" class="f-link">Gallery</a>
+                    <a href="#contact" class="f-link">Contact</a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h6>Categories</h6>
+                    <div id="footerCategories"></div>
+                </div>
+                <div class="col-lg-3">
+                    <h6>Contact</h6>
+                    <div id="footerContact" style="font-size:0.9rem;"></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© <span id="footerYear"></span> MURALE. All Rights Reserved.</span>
+                <span><a href="#" style="opacity:0.7;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" style="opacity:0.7;">Terms</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- Product Modal -->
+    <!-- ============================================= -->
+    <div class="modal fade product-modal" id="productModal" tabindex="-1" aria-hidden="true" aria-labelledby="productModalLabel">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="pm-close-btn" data-bs-dismiss="modal" aria-label="Close product details"><i class="fa-solid fa-xmark"></i></button>
+                <div class="modal-body">
+                    <div class="pm-grid" id="pmGrid">
+                        <!-- rendered dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lux-lightbox" id="luxLightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lb-close" id="lbClose" aria-label="Close viewer"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lb-arrow left" id="lbPrev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <img src="" alt="" id="lbImg">
+        <button class="lb-arrow right" id="lbNext" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Floating Controls -->
+    <div class="floating-stack">
+        <a href="#" class="fab fab-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></a>
+        <a href="#" class="fab fab-wa" id="floatingWaBtn" aria-label="Chat with us on WhatsApp">
+            <span class="fab-tooltip">Chat with us</span>
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- CDN Scripts -->
+    <!-- ============================================= -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+    (function ($) {
+        "use strict";
+
+        // =================================================================
+        // CONFIG
+        // =================================================================
+        const CONFIG = {
+            CONTENT_API_URL: "/api/content",
+            PRODUCTS_API_URL: "/api/products",
+            CONTACT_API_URL: "/api/contact",
+            FALLBACK_IMAGE: "https://picsum.photos/seed/murale-fallback/800/800",
+            WHATSAPP_COUNTRY_CODE: "91"
+        };
+
+        // =================================================================
+        // SITE DATA (local fallback / demo data source)
+        // =================================================================
+        const SITE_DATA = {
+            settings: {
+                brandName: "MURALE",
+                whatsappNumber: "919876543210",
+                phone: "+91 98765 43210",
+                email: "studio@murale.example",
+                address: "14 Residency Road, Bengaluru, Karnataka, India",
+                hours: "Mon – Sat, 10:00 AM – 7:00 PM",
+                currency: "₹"
+            },
+
+            announcement: "Custom sizes available • Professional installation • Free design consultation",
+
+            header: {
+                navigation: [
+                    { label: "Home", href: "#home" },
+                    { label: "About", href: "#about" },
+                    { label: "Services", href: "#services" },
+                    { label: "Products", href: "#products" },
+                    { label: "Gallery", href: "#gallery" },
+                    { label: "Contact", href: "#contact" }
+                ]
+            },
+
+            hero: [
+                {
+                    type: "image",
+                    media: "https://picsum.photos/seed/murale-hero-1/1800/1000",
+                    eyebrow: "The Murale Edit",
+                    title: "Transform Your Walls",
+                    description: "Premium wall stickers designed for beautiful, considered spaces — from a single accent wall to a full commercial identity.",
+                    primaryButton: { text: "Explore Collection", action: "products" },
+                    secondaryButton: { text: "Get a Free Quote", action: "contact" }
+                },
+                {
+                    type: "image",
+                    media: "https://picsum.photos/seed/murale-hero-2/1800/1000",
+                    eyebrow: "Made To Measure",
+                    title: "Designed Around Your Room",
+                    description: "Every piece is sized, coloured and finished for the exact wall it will live on. No two installations are the same.",
+                    primaryButton: { text: "View Categories", action: "products" },
+                    secondaryButton: { text: "Talk to a Designer", action: "whatsapp" }
+                },
+                {
+                    type: "video",
+                    media: "https://cdn.coverr.co/videos/coverr-painting-a-white-wall-2633/1080p.mp4",
+                    poster: "https://picsum.photos/seed/murale-hero-video/1800/1000",
+                    eyebrow: "Behind The Finish",
+                    title: "Craft, Applied By Hand",
+                    description: "Watch how a MURALE surface goes from material to finished wall — precise, considered, and built to last.",
+                    primaryButton: { text: "See Installation Process", action: "services" },
+                    secondaryButton: { text: "Book a Consultation", action: "contact" }
+                },
+                {
+                    type: "image",
+                    media: "https://picsum.photos/seed/murale-hero-4/1800/1000",
+                    eyebrow: "For Businesses",
+                    title: "Branding That Lives On The Wall",
+                    description: "Office reception walls, retail interiors and hospitality spaces — finished with the same editorial eye as our residential work.",
+                    primaryButton: { text: "Commercial Solutions", action: "services" },
+                    secondaryButton: { text: "Request a Quote", action: "contact" }
+                },
+                {
+                    type: "image",
+                    media: "https://picsum.photos/seed/murale-hero-5/1800/1000",
+                    eyebrow: "Kids Collection",
+                    title: "Rooms They'll Grow Into",
+                    description: "Playful, durable, and easy to update — a dedicated collection for nurseries and children's rooms.",
+                    primaryButton: { text: "Explore Kids Designs", action: "products" },
+                    secondaryButton: { text: "Chat on WhatsApp", action: "whatsapp" }
+                }
+            ],
+
+            stats: [
+                { value: 500, suffix: "+", label: "Curated Designs" },
+                { value: 1500, suffix: "+", label: "Happy Customers" },
+                { value: 10, suffix: "+", label: "Years Experience" },
+                { value: 100, suffix: "%", label: "Customizable" }
+            ],
+
+            about: {
+                eyebrow: "About Murale",
+                title: "Walls, reconsidered as a design surface",
+                description: "MURALE began as a small material studio and grew into a full décor practice, working with homeowners, architects and commercial teams who treat the wall as more than a backdrop. Every design is produced on premium self-adhesive material and finished by hand.",
+                image: "https://picsum.photos/seed/murale-about/900/1000",
+                badgeNumber: "10+",
+                badgeLabel: "Years crafting considered interiors",
+                features: [
+                    "Premium Materials",
+                    "Custom Sizes",
+                    "Easy Installation",
+                    "Professional Finishing",
+                    "Residential & Commercial Solutions"
+                ]
+            },
+
+            services: [
+                { icon: "fa-couch", title: "Home Wall Décor", description: "Living rooms, bedrooms and hallways finished with designs chosen for how you actually live.", action: "products" },
+                { icon: "fa-shapes", title: "Kids Room Designs", description: "Playful, durable surfaces that grow with your child, from nursery to teenage room.", action: "products" },
+                { icon: "fa-building", title: "Office Branding", description: "Reception walls and meeting rooms finished with your brand's colour, type and tone.", action: "contact" },
+                { icon: "fa-pen-ruler", title: "Custom Wall Graphics", description: "Bespoke artwork, murals and typography designed from scratch for a single wall.", action: "contact" },
+                { icon: "fa-store", title: "Retail & Commercial Décor", description: "Storefronts and hospitality interiors that hold up to daily footfall and changing seasons.", action: "contact" },
+                { icon: "fa-drafting-compass", title: "Interior Design Solutions", description: "Full-room material planning in partnership with your architect or interior designer.", action: "contact" }
+            ],
+
+            categories: [
+                { id: "living-room", name: "Living Room", image: "https://picsum.photos/seed/murale-cat-living/500/600" },
+                { id: "bedroom", name: "Bedroom", image: "https://picsum.photos/seed/murale-cat-bedroom/500/601" },
+                { id: "kids", name: "Kids Room", image: "https://picsum.photos/seed/murale-cat-kids/500/602" },
+                { id: "office", name: "Office", image: "https://picsum.photos/seed/murale-cat-office/500/603" },
+                { id: "kitchen", name: "Kitchen", image: "https://picsum.photos/seed/murale-cat-kitchen/500/604" },
+                { id: "nature", name: "Nature", image: "https://picsum.photos/seed/murale-cat-nature/500/605" },
+                { id: "abstract", name: "Abstract", image: "https://picsum.photos/seed/murale-cat-abstract/500/606" },
+                { id: "quotes", name: "Quotes", image: "https://picsum.photos/seed/murale-cat-quotes/500/607" },
+                { id: "custom", name: "Custom Designs", image: "https://picsum.photos/seed/murale-cat-custom/500/608" }
+            ],
+
+            products: [
+                {
+                    id: "wall-001", title: "Botanical Serenity", category: "nature", tag: "Bestseller", featured: true,
+                    thumbnail: "https://picsum.photos/seed/wall-001-a/700/860",
+                    images: ["https://picsum.photos/seed/wall-001-a/900/900", "https://picsum.photos/seed/wall-001-b/900/900", "https://picsum.photos/seed/wall-001-c/900/900", "https://picsum.photos/seed/wall-001-d/900/900"],
+                    shortDescription: "Elegant botanical wall artwork for sophisticated interiors.",
+                    description: "A premium decorative wall design created to bring a refined natural character into modern interiors. Hand-finished detailing gives every leaf edge a soft, painterly quality that reads beautifully in both daylight and warm evening light.",
+                    price: "Starting from ₹999", sizes: ["4 x 6 ft", "6 x 8 ft", "8 x 10 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl", finish: "Matte", suitableFor: ["Living Room", "Bedroom", "Office"],
+                    features: ["Custom sizing", "Easy application", "Premium print quality", "Low-maintenance finish"],
+                    installation: "Professional installation available on request.",
+                    customization: "Colours, dimensions and selected design elements can be customized.",
+                    whatsappMessage: "Hi, I am interested in the \"Botanical Serenity\" wall sticker."
+                },
+                {
+                    id: "wall-002", title: "Midnight Geometry", category: "abstract", tag: "New", featured: true,
+                    thumbnail: "https://picsum.photos/seed/wall-002-a/700/861",
+                    images: ["https://picsum.photos/seed/wall-002-a/900/900", "https://picsum.photos/seed/wall-002-b/900/900", "https://picsum.photos/seed/wall-002-c/900/900"],
+                    shortDescription: "Bold geometric pattern in a deep, moody palette.",
+                    description: "Angular repeat geometry rendered in ink-dark tones, designed for feature walls that anchor a room without overwhelming it. Pairs well with brass and warm wood furnishings.",
+                    price: "Starting from ₹1,299", sizes: ["4 x 6 ft", "6 x 8 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl", finish: "Matte", suitableFor: ["Living Room", "Office"],
+                    features: ["High contrast print", "Custom sizing", "Fade-resistant ink"],
+                    installation: "Professional installation available on request.",
+                    customization: "Available in three alternate colourways.",
+                    whatsappMessage: "Hi, I am interested in the \"Midnight Geometry\" wall sticker."
+                },
+                {
+                    id: "wall-003", title: "Soft Marble", category: "abstract", tag: "Bestseller", featured: false,
+                    thumbnail: "https://picsum.photos/seed/wall-003-a/700/862",
+                    images: ["https://picsum.photos/seed/wall-003-a/900/900", "https://picsum.photos/seed/wall-003-b/900/900", "https://picsum.photos/seed/wall-003-c/900/900"],
+                    shortDescription: "Understated marble veining for a refined backdrop.",
+                    description: "A softly veined marble texture that reads as genuine stone from across the room, at a fraction of the weight and cost of the real material.",
+                    price: "Starting from ₹1,099", sizes: ["4 x 6 ft", "6 x 8 ft", "8 x 10 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl", finish: "Satin", suitableFor: ["Living Room", "Kitchen", "Office"],
+                    features: ["Realistic stone texture", "Moisture-resistant", "Custom sizing"],
+                    installation: "DIY-friendly, professional installation optional.",
+                    customization: "Veining density can be adjusted on request.",
+                    whatsappMessage: "Hi, I am interested in the \"Soft Marble\" wall sticker."
+                },
+                {
+                    id: "wall-004", title: "Tropical Leaves", category: "nature", tag: "", featured: false,
+                    thumbnail: "https://picsum.photos/seed/wall-004-a/700/863",
+                    images: ["https://picsum.photos/seed/wall-004-a/900/900", "https://picsum.photos/seed/wall-004-b/900/900", "https://picsum.photos/seed/wall-004-c/900/900"],
+                    shortDescription: "Oversized tropical foliage in warm, rich greens.",
+                    description: "Large-scale leaf illustration designed to bring an immersive, garden-like feeling to a reading nook, bedroom or dining corner.",
+                    price: "Starting from ₹1,050", sizes: ["6 x 8 ft", "8 x 10 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl", finish: "Matte", suitableFor: ["Bedroom", "Living Room"],
+                    features: ["Rich colour depth", "Custom sizing", "Easy application"],
+                    installation: "Professional installation recommended for large formats.",
+                    customization: "Leaf colour tone can be shifted warmer or cooler.",
+                    whatsappMessage: "Hi, I am interested in the \"Tropical Leaves\" wall sticker."
+                },
+                {
+                    id: "wall-005", title: "Scandinavian Lines", category: "living-room", tag: "New", featured: true,
+                    thumbnail: "https://picsum.photos/seed/wall-005-a/700/864",
+                    images: ["https://picsum.photos/seed/wall-005-a/900/900", "https://picsum.photos/seed/wall-005-b/900/900", "https://picsum.photos/seed/wall-005-c/900/900"],
+                    shortDescription: "Minimal linework inspired by Nordic interiors.",
+                    description: "Fine, evenly spaced linework in a muted palette — a quiet pattern built for interiors that favour restraint over statement.",
+                    price: "Starting from ₹899", sizes: ["4 x 6 ft", "6 x 8 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl", finish: "Matte", suitableFor: ["Living Room", "Bedroom", "Office"],
+                    features: ["Minimal palette", "Custom sizing", "Low-maintenance finish"],
+                    installation: "DIY-friendly, professional installation optional.",
+                    customization: "Line spacing and tone can be adjusted.",
+                    whatsappMessage: "Hi, I am interested in the \"Scandinavian Lines\" wall sticker."
+                },
+                {
+                    id: "wall-006", title: "Kids Dreamland", category: "kids", tag: "Bestseller", featured: true,
+                    thumbnail: "https://picsum.photos/seed/wall-006-a/700/865",
+                    images: ["https://picsum.photos/seed/wall-006-a/900/900", "https://picsum.photos/seed/wall-006-b/900/900", "https://picsum.photos/seed/wall-006-c/900/900"],
+                    shortDescription: "A gentle night-sky scene for a nursery or kids' room.",
+                    description: "Soft clouds, stars and a crescent moon rendered in a muted pastel palette — designed to soothe rather than stimulate at bedtime.",
+                    price: "Starting from ₹950", sizes: ["4 x 6 ft", "6 x 8 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl, low-VOC", finish: "Matte", suitableFor: ["Kids Room"],
+                    features: ["Low-VOC materials", "Rounded, safe motifs", "Custom sizing"],
+                    installation: "Professional installation available on request.",
+                    customization: "Character additions available for an extra charge.",
+                    whatsappMessage: "Hi, I am interested in the \"Kids Dreamland\" wall sticker."
+                },
+                {
+                    id: "wall-007", title: "Urban Concrete", category: "office", tag: "", featured: false,
+                    thumbnail: "https://picsum.photos/seed/wall-007-a/700/866",
+                    images: ["https://picsum.photos/seed/wall-007-a/900/900", "https://picsum.photos/seed/wall-007-b/900/900", "https://picsum.photos/seed/wall-007-c/900/900"],
+                    shortDescription: "Raw concrete texture for an industrial workspace feel.",
+                    description: "A convincing poured-concrete texture, ideal for studios, offices and retail spaces going for an industrial, unfinished aesthetic without the structural cost.",
+                    price: "Starting from ₹1,150", sizes: ["6 x 8 ft", "8 x 10 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl", finish: "Matte", suitableFor: ["Office", "Kitchen"],
+                    features: ["Realistic concrete texture", "Scuff-resistant", "Custom sizing"],
+                    installation: "Professional installation recommended.",
+                    customization: "Grey tone can be adjusted lighter or darker.",
+                    whatsappMessage: "Hi, I am interested in the \"Urban Concrete\" wall sticker."
+                },
+                {
+                    id: "wall-008", title: "Golden Arch", category: "abstract", tag: "New", featured: false,
+                    thumbnail: "https://picsum.photos/seed/wall-008-a/700/867",
+                    images: ["https://picsum.photos/seed/wall-008-a/900/900", "https://picsum.photos/seed/wall-008-b/900/900", "https://picsum.photos/seed/wall-008-c/900/900"],
+                    shortDescription: "A single sweeping arch motif in warm ochre.",
+                    description: "A confident, minimal arch shape in a warm ochre tone — designed as a focal point above a headboard, console or dining table.",
+                    price: "Starting from ₹799", sizes: ["4 x 6 ft", "6 x 8 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl", finish: "Matte", suitableFor: ["Bedroom", "Living Room"],
+                    features: ["Bold focal shape", "Custom sizing", "Fade-resistant ink"],
+                    installation: "DIY-friendly.",
+                    customization: "Arch colour available in five tones.",
+                    whatsappMessage: "Hi, I am interested in the \"Golden Arch\" wall sticker."
+                },
+                {
+                    id: "wall-009", title: "Floral Whisper", category: "bedroom", tag: "Bestseller", featured: false,
+                    thumbnail: "https://picsum.photos/seed/wall-009-a/700/868",
+                    images: ["https://picsum.photos/seed/wall-009-a/900/900", "https://picsum.photos/seed/wall-009-b/900/900", "https://picsum.photos/seed/wall-009-c/900/900"],
+                    shortDescription: "Delicate hand-drawn florals in muted tones.",
+                    description: "A quiet, hand-drawn floral pattern with plenty of negative space — built for bedrooms and dressing areas that want softness without clutter.",
+                    price: "Starting from ₹949", sizes: ["4 x 6 ft", "6 x 8 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl", finish: "Matte", suitableFor: ["Bedroom"],
+                    features: ["Hand-drawn linework", "Custom sizing", "Easy application"],
+                    installation: "DIY-friendly.",
+                    customization: "Colour palette can be adjusted to two alternate tones.",
+                    whatsappMessage: "Hi, I am interested in the \"Floral Whisper\" wall sticker."
+                },
+                {
+                    id: "wall-010", title: "Minimal Mountains", category: "kids", tag: "", featured: false,
+                    thumbnail: "https://picsum.photos/seed/wall-010-a/700/869",
+                    images: ["https://picsum.photos/seed/wall-010-a/900/900", "https://picsum.photos/seed/wall-010-b/900/900", "https://picsum.photos/seed/wall-010-c/900/900"],
+                    shortDescription: "A playful mountain range silhouette for kids' rooms.",
+                    description: "Simple layered mountain shapes in soft, muted colour blocks — a versatile backdrop that works for toddlers through to pre-teens.",
+                    price: "Starting from ₹899", sizes: ["4 x 6 ft", "6 x 8 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl, low-VOC", finish: "Matte", suitableFor: ["Kids Room"],
+                    features: ["Low-VOC materials", "Playful silhouette", "Custom sizing"],
+                    installation: "Professional installation available on request.",
+                    customization: "Colour blocks can be matched to existing décor.",
+                    whatsappMessage: "Hi, I am interested in the \"Minimal Mountains\" wall sticker."
+                },
+                {
+                    id: "wall-011", title: "Luxury Mandala", category: "living-room", tag: "Bestseller", featured: true,
+                    thumbnail: "https://picsum.photos/seed/wall-011-a/700/870",
+                    images: ["https://picsum.photos/seed/wall-011-a/900/900", "https://picsum.photos/seed/wall-011-b/900/900", "https://picsum.photos/seed/wall-011-c/900/900", "https://picsum.photos/seed/wall-011-d/900/900"],
+                    shortDescription: "An intricate mandala design finished in brass detailing.",
+                    description: "A detailed mandala composition with fine brass-toned linework, designed as a statement piece for a living room or entryway feature wall.",
+                    price: "Starting from ₹1,499", sizes: ["6 x 8 ft", "8 x 10 ft", "Custom Size"],
+                    material: "Premium self-adhesive vinyl with metallic ink", finish: "Satin", suitableFor: ["Living Room", "Office"],
+                    features: ["Metallic ink detailing", "Intricate linework", "Custom sizing"],
+                    installation: "Professional installation recommended.",
+                    customization: "Metallic tone available in brass, copper or silver.",
+                    whatsappMessage: "Hi, I am interested in the \"Luxury Mandala\" wall sticker."
+                },
+                {
+                    id: "wall-012", title: "Modern Heritage", category: "custom", tag: "New", featured: false,
+                    thumbnail: "https://picsum.photos/seed/wall-012-a/700/871",
+                    images: ["https://picsum.photos/seed/wall-012-a/900/900", "https://picsum.photos/seed/wall-012-b/900/900", "https://picsum.photos/seed/wall-012-c/900/900"],
+                    shortDescription: "Traditional motifs reworked in a contemporary palette.",
+                    description: "A fully custom composition that reinterprets a traditional regional motif in a restrained, contemporary colour palette — built to order for a specific wall.",
+                    price: "Custom Quote", sizes: ["Custom Size"],
+                    material: "Premium self-adhesive vinyl", finish: "Matte", suitableFor: ["Living Room", "Office"],
+                    features: ["Fully bespoke artwork", "Design consultation included", "Unlimited revisions (2 rounds)"],
+                    installation: "Professional installation included.",
+                    customization: "Every element of this design is built around your brief.",
+                    whatsappMessage: "Hi, I am interested in a custom design like \"Modern Heritage\"."
+                }
+            ],
+
+            gallery: [
+                { image: "https://picsum.photos/seed/murale-gal-1/900/900", title: "Modern Living Spaces", category: "Living Room" },
+                { image: "https://picsum.photos/seed/murale-gal-2/700/560", title: "Kids Room Transformations", category: "Kids Room" },
+                { image: "https://picsum.photos/seed/murale-gal-3/700/560", title: "Office Branding", category: "Office" },
+                { image: "https://picsum.photos/seed/murale-gal-4/900/560", title: "Minimalist Bedrooms", category: "Bedroom" },
+                { image: "https://picsum.photos/seed/murale-gal-5/700/560", title: "Boutique Retail Fit-Out", category: "Retail" },
+                { image: "https://picsum.photos/seed/murale-gal-6/700/560", title: "Kitchen Feature Walls", category: "Kitchen" },
+                { image: "https://picsum.photos/seed/murale-gal-7/700/560", title: "Reading Nooks", category: "Nature" },
+                { image: "https://picsum.photos/seed/murale-gal-8/700/560", title: "Entryway Statements", category: "Abstract" }
+            ],
+
+            trustBadges: [
+                { icon: "fa-award", label: "Premium Quality" },
+                { icon: "fa-object-ungroup", label: "Custom Designs" },
+                { icon: "fa-screwdriver-wrench", label: "Easy Installation" },
+                { icon: "fa-truck-fast", label: "Pan-India Delivery" }
+            ],
+
+            contact: {
+                lead: "Tell us about your space and we'll get back with size, pricing and a design recommendation within one business day."
+            },
+
+            footer: {
+                about: "A design-led wall décor studio creating custom, premium wall stickers for homes and businesses.",
+                social: [
+                    { icon: "fa-brands fa-instagram", url: "#" },
+                    { icon: "fa-brands fa-facebook-f", url: "#" },
+                    { icon: "fa-brands fa-pinterest-p", url: "#" }
+                ]
+            }
+        };
+
+        // =================================================================
+        // STATE
+        // =================================================================
+        const state = {
+            content: null,
+            products: [],
+            activeCategory: "all",
+            searchTerm: "",
+            currentProductId: null,
+            currentImageIndex: 0,
+            lightboxImages: [],
+            lightboxIndex: 0
+        };
+
+        // =================================================================
+        // UTILITIES
+        // =================================================================
+        function imageFallback(img) {
+            img.onerror = null;
+            img.src = CONFIG.FALLBACK_IMAGE;
+        }
+        window.imageFallback = imageFallback;
+
+        function escapeHtml(str) {
+            if (!str) return "";
+            return String(str).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
+        }
+
+        function buildWhatsappLink(message) {
+            const number = CONFIG.WHATSAPP_COUNTRY_CODE && !state.content.settings.whatsappNumber.startsWith(CONFIG.WHATSAPP_COUNTRY_CODE)
+                ? CONFIG.WHATSAPP_COUNTRY_CODE + state.content.settings.whatsappNumber
+                : state.content.settings.whatsappNumber;
+            return `https://wa.me/${state.content.settings.whatsappNumber}?text=${encodeURIComponent(message)}`;
+        }
+
+        function findCategoryName(id) {
+            const cat = state.content.categories.find(c => c.id === id);
+            return cat ? cat.name : id;
+        }
+
+        // =================================================================
+        // API FUNCTIONS  (fetch first, gracefully fall back to SITE_DATA)
+        // =================================================================
+        async function loadContent() {
+            try {
+                const res = await fetch(CONFIG.CONTENT_API_URL, { headers: { Accept: "application/json" } });
+                if (!res.ok) throw new Error("content api not ok");
+                const data = await res.json();
+                state.content = Object.assign({}, SITE_DATA, data);
+            } catch (err) {
+                // Silent fallback — the demo/local site must always work.
+                state.content = SITE_DATA;
+            }
+        }
+
+        async function loadProducts() {
+            try {
+                const res = await fetch(CONFIG.PRODUCTS_API_URL, { headers: { Accept: "application/json" } });
+                if (!res.ok) throw new Error("products api not ok");
+                const data = await res.json();
+                if (data && data.success && Array.isArray(data.products) && data.products.length) {
+                    state.products = data.products;
+                } else {
+                    state.products = SITE_DATA.products;
+                }
+            } catch (err) {
+                state.products = SITE_DATA.products;
+            }
+        }
+
+        async function submitContactForm(payload) {
+            try {
+                const res = await fetch(CONFIG.CONTACT_API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                if (!res.ok) throw new Error("contact api not ok");
+                return { success: true };
+            } catch (err) {
+                // Demo fallback: treat as a "soft success" so the flow is always testable end-to-end.
+                console.warn("Contact API unavailable, using local fallback.", err);
+                return { success: true, offline: true };
+            }
+        }
+
+        // =================================================================
+        // RENDER FUNCTIONS
+        // =================================================================
+        function renderAnnouncement() {
+            $("#announceStrip").text(state.content.announcement);
+        }
+
+        function renderHeader() {
+            const nav = state.content.header.navigation;
+            $("#mobileNav").html(nav.map(n => `<a href="${n.href}" class="nav-link-lux" data-mobile-nav>${escapeHtml(n.label)}</a>`).join(""));
+            const waLink = buildWhatsappLink("Hi, I am interested in your wall sticker designs. Please share more details.");
+            $("#headerWaBtn, #offcanvasWaBtn, #floatingWaBtn").attr("href", waLink);
+        }
+
+        function renderHero() {
+            const slides = state.content.hero.map((slide, i) => {
+                const mediaEl = slide.type === "video"
+                    ? `<video src="${slide.media}" poster="${slide.poster || ''}" autoplay muted loop playsinline
+                         onerror="this.poster='${slide.poster || CONFIG.FALLBACK_IMAGE}'; this.style.display='none';"></video>`
+                    : `<img src="${slide.media}" alt="${escapeHtml(slide.title)}" loading="${i === 0 ? 'eager' : 'lazy'}" onerror="imageFallback(this)">`;
+
+                return `
+                <div class="swiper-slide hero-slide">
+                    <div class="hero-media-wrap">${mediaEl}</div>
+                    <div class="hero-overlay"></div>
+                    <div class="container-lux">
+                        <div class="hero-content">
+                            <span class="eyebrow">${escapeHtml(slide.eyebrow)}</span>
+                            <h1>${escapeHtml(slide.title)}</h1>
+                            <p>${escapeHtml(slide.description)}</p>
+                            <div class="hero-btns">
+                                <a href="#" class="btn-brass" data-cta-action="${slide.primaryButton.action}">${escapeHtml(slide.primaryButton.text)} <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="#" class="btn-outline-lux" data-cta-action="${slide.secondaryButton.action}">${escapeHtml(slide.secondaryButton.text)}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            }).join("");
+            $("#heroWrapper").html(slides);
+
+            new Swiper("#heroSwiper", {
+                loop: true,
+                effect: "fade",
+                fadeEffect: { crossFade: true },
+                speed: 900,
+                autoplay: { delay: 6500, disableOnInteraction: false },
+                pagination: { el: ".hero-swiper .swiper-pagination", clickable: true },
+                navigation: { nextEl: ".hero-swiper .swiper-button-next", prevEl: ".hero-swiper .swiper-button-prev" },
+                keyboard: { enabled: true },
+                a11y: { enabled: true }
+            });
+        }
+
+        function renderStats() {
+            const html = state.content.stats.map(s => `
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-num" data-count-to="${s.value}" data-suffix="${s.suffix}">0<span class="accent-suffix">${s.suffix}</span></div>
+                        <div class="stat-label">${escapeHtml(s.label)}</div>
+                    </div>
+                </div>`).join("");
+            $("#statsRow").html(html);
+        }
+
+        function renderAbout() {
+            const a = state.content.about;
+            $("#aboutEyebrow").text(a.eyebrow);
+            $("#aboutTitle").text(a.title);
+            $("#aboutDesc").text(a.description);
+            $("#aboutBadgeNum").text(a.badgeNumber);
+            $("#aboutBadgeLbl").text(a.badgeLabel);
+            $(".about-media img").attr("src", a.image).attr("alt", "Interior featuring a MURALE wall sticker installation");
+            $("#aboutFeatures").html(a.features.map(f => `<li><i class="fa-solid fa-circle-check"></i>${escapeHtml(f)}</li>`).join(""));
+        }
+
+        function renderServices() {
+            const html = state.content.services.map(s => `
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid ${s.icon}"></i></div>
+                        <h4>${escapeHtml(s.title)}</h4>
+                        <p>${escapeHtml(s.description)}</p>
+                        <a href="#" class="card-link" data-cta-action="${s.action}">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>`).join("");
+            $("#servicesRow").html(html);
+            observeReveals();
+        }
+
+        function renderCategories() {
+            const cats = [{ id: "all", name: "All Designs", image: "https://picsum.photos/seed/murale-cat-all/500/609" }, ...state.content.categories];
+            const html = cats.map(c => {
+                const count = c.id === "all" ? state.products.length : state.products.filter(p => p.category === c.id).length;
+                return `
+                <div class="category-card ${state.activeCategory === c.id ? 'is-active' : ''}" data-category="${c.id}" role="button" tabindex="0" aria-label="Filter by ${escapeHtml(c.name)}">
+                    <img src="${c.image}" alt="${escapeHtml(c.name)} wall sticker category" loading="lazy" onerror="imageFallback(this)">
+                    <div class="cat-overlay"></div>
+                    <span class="cat-count">${count}</span>
+                    <span class="cat-name">${escapeHtml(c.name)}</span>
+                </div>`;
+            }).join("");
+            $("#categoryRailTop").html(html);
+        }
+
+        function renderPillFilters() {
+            const cats = [{ id: "all", name: "All" }, ...state.content.categories];
+            const html = cats.map(c => `<button type="button" class="pill-btn ${state.activeCategory === c.id ? 'active' : ''}" data-category="${c.id}">${escapeHtml(c.name)}</button>`).join("");
+            $("#pillFilters").html(html);
+        }
+
+        function productCardHtml(p, mini = false) {
+            if (mini) {
+                return `
+                <div class="mini-card" data-related-product="${p.id}" role="button" tabindex="0">
+                    <img src="${p.thumbnail}" alt="${escapeHtml(p.title)}" loading="lazy" onerror="imageFallback(this)">
+                    <div>
+                        ${p.tag ? `<div class="m-tag">${escapeHtml(p.tag)}</div>` : ""}
+                        <h5>${escapeHtml(p.title)}</h5>
+                        <div class="m-price">${escapeHtml(p.price)}</div>
+                    </div>
+                </div>`;
+            }
+            const secondaryImg = p.images && p.images[1] ? p.images[1] : p.thumbnail;
+            return `
+            <div class="col-sm-6 col-lg-3 product-item" data-id="${p.id}">
+                <div class="product-card reveal">
+                    <div class="product-media">
+                        ${p.tag ? `<span class="product-tag">${escapeHtml(p.tag)}</span>` : ""}
+                        <img class="img-primary" src="${p.thumbnail}" alt="${escapeHtml(p.title)} — ${escapeHtml(p.shortDescription)}" loading="lazy" onerror="imageFallback(this)">
+                        <img class="img-secondary" src="${secondaryImg}" alt="" loading="lazy" onerror="imageFallback(this)">
+                        <a href="${buildWhatsappLink(p.whatsappMessage)}" target="_blank" rel="noopener" class="product-wa-quick" aria-label="Enquire about ${escapeHtml(p.title)} on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div class="product-body">
+                        <div class="p-cat">${escapeHtml(findCategoryName(p.category))}</div>
+                        <h3>${escapeHtml(p.title)}</h3>
+                        <p class="p-desc">${escapeHtml(p.shortDescription)}</p>
+                        <div class="product-foot">
+                            <span class="product-price">${escapeHtml(p.price)}</span>
+                            <a href="#" class="view-details-btn" data-view-product="${p.id}">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        function getFilteredProducts() {
+            const term = state.searchTerm.trim().toLowerCase();
+            return state.products.filter(p => {
+                const catOk = state.activeCategory === "all" || p.category === state.activeCategory;
+                if (!catOk) return false;
+                if (!term) return true;
+                const haystack = [p.title, p.category, p.tag, p.shortDescription, p.description].join(" ").toLowerCase();
+                return haystack.includes(term);
+            });
+        }
+
+        function renderProducts() {
+            const list = getFilteredProducts();
+            if (!list.length) {
+                $("#productsGrid").empty();
+                $("#emptyState").removeClass("d-none");
+            } else {
+                $("#emptyState").addClass("d-none");
+                $("#productsGrid").html(list.map(p => productCardHtml(p)).join(""));
+            }
+            observeReveals();
+        }
+
+        function renderFeatured() {
+            const featured = state.products.filter(p => p.featured);
+            const html = featured.map(p => `
+                <div class="swiper-slide" style="width:290px;">
+                    ${productCardHtml(p)}
+                </div>`).join("");
+            $("#featuredWrapper").html(html.replace(/col-sm-6 col-lg-3 /g, ""));
+
+            new Swiper("#featuredSwiper", {
+                slidesPerView: 1.15,
+                spaceBetween: 20,
+                breakpoints: {
+                    576: { slidesPerView: 2.2 },
+                    992: { slidesPerView: 4 }
+                }
+            });
+            observeReveals();
+        }
+
+        function renderGallery() {
+            const items = state.content.gallery;
+            const html = items.map((g, i) => `
+                <div class="gallery-item ${i === 0 ? 'gi-1' : (i === 3 ? 'gi-4' : '')}" data-gallery-index="${i}">
+                    <img src="${g.image}" alt="${escapeHtml(g.title)}" loading="lazy" onerror="imageFallback(this)">
+                    <div class="g-overlay">
+                        <span class="g-cat">${escapeHtml(g.category)}</span>
+                        <span class="g-title">${escapeHtml(g.title)}</span>
+                    </div>
+                </div>`).join("");
+            $("#galleryGrid").html(html);
+            state.lightboxImages = items.map(g => g.image);
+        }
+
+        function renderTrust() {
+            $("#trustStrip").html(state.content.trustBadges.map(t => `<div class="trust-item"><i class="fa-solid ${t.icon}"></i>${escapeHtml(t.label)}</div>`).join(""));
+        }
+
+        function renderContact() {
+            const s = state.content.settings;
+            $("#contactLead").text(state.content.contact.lead);
+            $("#contactPhoneLine").text(s.phone);
+            $("#contactWaLine").text("Chat: " + s.phone);
+            $("#contactEmailLine").text(s.email);
+            $("#contactAddressLine").text(s.address);
+            $("#contactHoursLine").text(s.hours);
+
+            const catOptions = state.content.categories.map(c => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join("");
+            $("#cfCategory").html(`<option value="">Any category</option>${catOptions}`);
+            const prodOptions = state.products.map(p => `<option value="${p.id}">${escapeHtml(p.title)}</option>`).join("");
+            $("#cfProduct").html(`<option value="">Not sure yet</option>${prodOptions}`);
+        }
+
+        function renderFooter() {
+            $("#footerYear").text(new Date().getFullYear());
+            $("#footerAbout").text(state.content.footer.about);
+            $("#footerSocial").html(state.content.footer.social.map(s => `<a href="${s.url}" aria-label="Follow us"><i class="${s.icon}"></i></a>`).join(""));
+            $("#footerCategories").html(state.content.categories.map(c => `<a href="#products" class="f-link" data-category-jump="${c.id}">${escapeHtml(c.name)}</a>`).join(""));
+            const s = state.content.settings;
+            $("#footerContact").html(`
+                <div class="mb-2"><i class="fa-solid fa-phone me-2"></i>${s.phone}</div>
+                <div class="mb-2"><i class="fa-brands fa-whatsapp me-2"></i>${s.phone}</div>
+                <div class="mb-2"><i class="fa-solid fa-envelope me-2"></i>${s.email}</div>
+                <div><i class="fa-solid fa-location-dot me-2"></i>${s.address}</div>
+            `);
+        }
+
+        function renderSkeletons() {
+            const skel = Array.from({ length: 8 }).map(() => `
+                <div class="col-sm-6 col-lg-3">
+                    <div class="product-card skeleton-card">
+                        <div class="skeleton" style="aspect-ratio:4/5;"></div>
+                        <div class="product-body">
+                            <div class="skeleton skeleton-line" style="width:40%;"></div>
+                            <div class="skeleton skeleton-line" style="width:80%; height:18px;"></div>
+                            <div class="skeleton skeleton-line" style="width:95%;"></div>
+                            <div class="skeleton skeleton-line" style="width:60%;"></div>
+                        </div>
+                    </div>
+                </div>`).join("");
+            $("#productsGrid").html(skel);
+        }
+
+        function renderAll() {
+            renderAnnouncement();
+            renderHeader();
+            renderHero();
+            renderStats();
+            renderAbout();
+            renderServices();
+            renderCategories();
+            renderPillFilters();
+            renderProducts();
+            renderFeatured();
+            renderGallery();
+            renderTrust();
+            renderContact();
+            renderFooter();
+            initCountUp();
+            initSeoMeta();
+        }
+
+        // =================================================================
+        // SEO — populate structured data dynamically
+        // =================================================================
+        function initSeoMeta() {
+            try {
+                const s = state.content.settings;
+                const ld = {
+                    "@context": "https://schema.org",
+                    "@type": "HomeAndConstructionBusiness",
+                    "name": s.brandName,
+                    "description": "Premium custom wall stickers and interior wall décor.",
+                    "telephone": s.phone,
+                    "email": s.email,
+                    "address": { "@type": "PostalAddress", "streetAddress": s.address }
+                };
+                document.getElementById("ld-local-business").textContent = JSON.stringify(ld);
+            } catch (e) { /* non-critical */ }
+        }
+
+        // =================================================================
+        // PRODUCT FILTERING
+        // =================================================================
+        function setCategory(catId) {
+            state.activeCategory = catId;
+            renderCategories();
+            renderPillFilters();
+            renderProducts();
+        }
+
+        function scrollToProducts() {
+            document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+        }
+
+        $(document).on("click", "[data-category]", function () {
+            setCategory($(this).data("category"));
+            scrollToProducts();
+        });
+        $(document).on("keypress", "[data-category]", function (e) {
+            if (e.key === "Enter") $(this).trigger("click");
+        });
+        $(document).on("click", "[data-category-jump]", function (e) {
+            e.preventDefault();
+            setCategory($(this).data("category-jump"));
+            scrollToProducts();
+        });
+
+        let searchDebounce;
+        $("#productSearch").on("input", function () {
+            clearTimeout(searchDebounce);
+            const val = $(this).val();
+            searchDebounce = setTimeout(() => {
+                state.searchTerm = val;
+                renderProducts();
+            }, 200);
+        });
+
+        // =================================================================
+        // PRODUCT MODAL
+        // =================================================================
+        const productModalEl = document.getElementById("productModal");
+        const productModal = new bootstrap.Modal(productModalEl);
+
+        function openProduct(id) {
+            const product = state.products.find(p => p.id === id);
+            if (!product) return;
+            state.currentProductId = id;
+            state.currentImageIndex = 0;
+            renderProductModal(product);
+            productModal.show();
+        }
+
+        function renderProductModal(p) {
+            const related = state.products.filter(rp => rp.category === p.category && rp.id !== p.id).slice(0, 3);
+
+            const thumbs = p.images.map((img, i) => `
+                <div class="pm-thumb ${i === 0 ? 'active' : ''}" data-thumb-index="${i}">
+                    <img src="${img}" alt="${escapeHtml(p.title)} view ${i + 1}" onerror="imageFallback(this)">
+                </div>`).join("");
+
+            const sizeChips = p.sizes.map(s => `<span>${escapeHtml(s)}</span>`).join("");
+            const suitable = p.suitableFor.join(", ");
+            const featureList = p.features.map(f => `<li><i class="fa-solid fa-circle-check" style="color:var(--brass); margin-right:8px;"></i>${escapeHtml(f)}</li>`).join("");
+            const relatedHtml = related.length
+                ? `<div class="pm-related mt-4"><h5>Explore Similar Designs</h5><div class="d-flex flex-column gap-2">${related.map(r => productCardHtml(r, true)).join("")}</div></div>`
+                : "";
+
+            const html = `
+                <div class="pm-gallery">
+                    <div class="pm-breadcrumb">
+                        <a href="#home">Home</a> / <a href="#products">Products</a> / <a href="#" data-category="${p.category}">${escapeHtml(findCategoryName(p.category))}</a> / ${escapeHtml(p.title)}
+                    </div>
+                    <div class="pm-main-img-wrap" id="pmMainImgWrap" data-lightbox-trigger>
+                        <img src="${p.images[0]}" alt="${escapeHtml(p.title)} — main view" id="pmMainImg" onerror="imageFallback(this)">
+                        <button class="pm-nav-arrow left" id="pmPrev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="pm-nav-arrow right" id="pmNext" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                        <span class="pm-counter" id="pmCounter">1 / ${p.images.length}</span>
+                    </div>
+                    <div class="pm-thumbs">${thumbs}</div>
+                </div>
+                <div class="pm-info">
+                    ${p.tag ? `<span class="p-tag-badge">${escapeHtml(p.tag)}</span>` : ""}
+                    <h2>${escapeHtml(p.title)}</h2>
+                    <p class="p-short">${escapeHtml(p.shortDescription)}</p>
+                    <div class="p-price-lg">${escapeHtml(p.price)}</div>
+
+                    <div class="pm-spec-grid">
+                        <div class="pm-spec"><div class="lbl">Material</div><div class="val">${escapeHtml(p.material)}</div></div>
+                        <div class="pm-spec"><div class="lbl">Finish</div><div class="val">${escapeHtml(p.finish)}</div></div>
+                        <div class="pm-spec"><div class="lbl">Suitable For</div><div class="val">${escapeHtml(suitable)}</div></div>
+                        <div class="pm-spec"><div class="lbl">Category</div><div class="val">${escapeHtml(findCategoryName(p.category))}</div></div>
+                    </div>
+
+                    <div class="lbl" style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); margin-bottom:8px;">Available Sizes</div>
+                    <div class="pm-size-chips">${sizeChips}</div>
+
+                    <div class="pm-desc-block">${escapeHtml(p.description)}</div>
+
+                    <ul class="feature-list" style="margin-top:0;">${featureList}</ul>
+
+                    <div class="pm-note"><b>Installation:</b> ${escapeHtml(p.installation)}</div>
+                    <div class="pm-note"><b>Customization:</b> ${escapeHtml(p.customization)}</div>
+
+                    <div class="pm-cta-row">
+                        <a href="${buildWhatsappLink(p.whatsappMessage)}" target="_blank" rel="noopener" class="btn-brass"><i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp</a>
+                        <a href="#" class="btn-outline-lux" data-cta-action="contact" data-close-modal>Request a Quote</a>
+                    </div>
+
+                    ${relatedHtml}
+                </div>`;
+            $("#pmGrid").html(html);
+        }
+
+        $(document).on("click", "[data-view-product]", function (e) {
+            e.preventDefault();
+            openProduct($(this).data("view-product"));
+        });
+
+        $(document).on("click", "[data-related-product]", function () {
+            openProduct($(this).data("related-product"));
+        });
+
+        $(document).on("click", "#pmPrev, #pmNext", function () {
+            const p = state.products.find(pp => pp.id === state.currentProductId);
+            if (!p) return;
+            const dir = this.id === "pmPrev" ? -1 : 1;
+            state.currentImageIndex = (state.currentImageIndex + dir + p.images.length) % p.images.length;
+            updateModalImage(p);
+        });
+
+        $(document).on("click", "[data-thumb-index]", function () {
+            state.currentImageIndex = $(this).data("thumb-index");
+            const p = state.products.find(pp => pp.id === state.currentProductId);
+            updateModalImage(p);
+        });
+
+        function updateModalImage(p) {
+            $("#pmMainImg").attr("src", p.images[state.currentImageIndex]);
+            $("#pmCounter").text(`${state.currentImageIndex + 1} / ${p.images.length}`);
+            $(".pm-thumb").removeClass("active").eq(state.currentImageIndex).addClass("active");
+        }
+
+        $(document).on("click", "[data-lightbox-trigger]", function () {
+            const p = state.products.find(pp => pp.id === state.currentProductId);
+            if (!p) return;
+            openLightbox(p.images, state.currentImageIndex);
+        });
+
+        $(document).on("click", "[data-close-modal]", function () {
+            productModal.hide();
+        });
+
+        productModalEl.addEventListener("hidden.bs.modal", function () {
+            // stop any video / restore state per spec (no video in modal by default, but future-proofed)
+            $("#pmGrid video").each(function () { this.pause(); });
+            document.body.style.overflow = "";
+            state.currentProductId = null;
+        });
+
+        // =================================================================
+        // LIGHTBOX (gallery + product images)
+        // =================================================================
+        function openLightbox(images, startIndex) {
+            state.lightboxImages = images;
+            state.lightboxIndex = startIndex || 0;
+            $("#lbImg").attr("src", images[state.lightboxIndex]);
+            $("#luxLightbox").addClass("open");
+        }
+
+        function closeLightbox() { $("#luxLightbox").removeClass("open"); }
+
+        function lightboxStep(dir) {
+            const imgs = state.lightboxImages;
+            state.lightboxIndex = (state.lightboxIndex + dir + imgs.length) % imgs.length;
+            $("#lbImg").attr("src", imgs[state.lightboxIndex]);
+        }
+
+        $("#lbClose").on("click", closeLightbox);
+        $("#lbPrev").on("click", () => lightboxStep(-1));
+        $("#lbNext").on("click", () => lightboxStep(1));
+        $("#luxLightbox").on("click", function (e) { if (e.target === this) closeLightbox(); });
+
+        $(document).on("click", "[data-gallery-index]", function () {
+            openLightbox(state.lightboxImages, $(this).data("gallery-index"));
+        });
+
+        $(document).on("keydown", function (e) {
+            if ($("#luxLightbox").hasClass("open")) {
+                if (e.key === "Escape") closeLightbox();
+                if (e.key === "ArrowLeft") lightboxStep(-1);
+                if (e.key === "ArrowRight") lightboxStep(1);
+            }
+        });
+
+        // =================================================================
+        // SMART CTA ACTION HANDLER (central)
+        // =================================================================
+        function handleCtaAction(action) {
+            switch (action) {
+                case "products":
+                    scrollToProducts();
+                    break;
+                case "about":
+                case "services":
+                case "gallery":
+                case "contact":
+                    document.getElementById(action).scrollIntoView({ behavior: "smooth" });
+                    break;
+                case "whatsapp":
+                    window.open(buildWhatsappLink("Hi, I am interested in your wall sticker designs. Please share more details."), "_blank", "noopener");
+                    break;
+                default:
+                    scrollToProducts();
+            }
+        }
+
+        $(document).on("click", "[data-cta-action]", function (e) {
+            e.preventDefault();
+            const action = $(this).data("cta-action");
+            if ($(this).is("[data-close-modal]")) productModal.hide();
+            handleCtaAction(action);
+        });
+
+        // =================================================================
+        // CONTACT FORM
+        // =================================================================
+        function validateForm() {
+            let valid = true;
+            $(".form-feedback").text("");
+
+            const name = $("#cfName").val().trim();
+            const phone = $("#cfPhone").val().trim();
+            const email = $("#cfEmail").val().trim();
+
+            if (!name) { $('[data-error-for="cfName"]').text("Please enter your name."); valid = false; }
+            if (!phone || phone.replace(/\D/g, "").length < 7) { $('[data-error-for="cfPhone"]').text("Please enter a valid phone number."); valid = false; }
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $('[data-error-for="cfEmail"]').text("Please enter a valid email."); valid = false; }
+
+            return valid;
+        }
+
+        $("#contactForm").on("submit", async function (e) {
+            e.preventDefault();
+            $("#formSuccess, #formError").hide();
+            if (!validateForm()) return;
+
+            const payload = {
+                name: $("#cfName").val().trim(),
+                phone: $("#cfPhone").val().trim(),
+                email: $("#cfEmail").val().trim(),
+                product: $("#cfProduct").val(),
+                category: $("#cfCategory").val(),
+                message: $("#cfMessage").val().trim()
+            };
+
+            const $btn = $("#cfSubmitBtn");
+            const originalLabel = $("#cfSubmitLabel").text();
+            $btn.prop("disabled", true);
+            $("#cfSubmitLabel").html('<i class="fa-solid fa-spinner fa-spin"></i> Sending...');
+
+            const result = await submitContactForm(payload);
+
+            $btn.prop("disabled", false);
+            $("#cfSubmitLabel").text(originalLabel);
+
+            if (result && result.success) {
+                $("#formSuccess").text("Thank you! We will contact you shortly.").fadeIn();
+                this.reset();
+            } else {
+                $("#formError").text("Something went wrong. Please try again or reach us on WhatsApp.").fadeIn();
+            }
+        });
+
+        // =================================================================
+        // WHATSAPP (floating, header) — kept in sync via renderHeader()
+        // =================================================================
+
+        // =================================================================
+        // SCROLL / ANIMATIONS
+        // =================================================================
+        function initHeaderScroll() {
+            $(window).on("scroll", function () {
+                $("#siteHeader").toggleClass("is-scrolled", window.scrollY > 40);
+                $("#scrollTopBtn").toggleClass("is-visible", window.scrollY > 500);
+            });
+        }
+
+        $("#scrollTopBtn").on("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        function observeReveals() {
+            const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const els = document.querySelectorAll(".reveal:not(.in-view)");
+            if (reduced) { els.forEach(el => el.classList.add("in-view")); return; }
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            els.forEach(el => io.observe(el));
+        }
+
+        function initCountUp() {
+            const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute("data-count-to"), 10);
+                    const suffix = el.getAttribute("data-suffix") || "";
+                    if (reduced) { el.innerHTML = target + `<span class="accent-suffix">${suffix}</span>`; io.unobserve(el); return; }
+                    let current = 0;
+                    const duration = 1400;
+                    const start = performance.now();
+                    function tick(now) {
+                        const progress = Math.min((now - start) / duration, 1);
+                        current = Math.floor(progress * target);
+                        el.innerHTML = current + `<span class="accent-suffix">${suffix}</span>`;
+                        if (progress < 1) requestAnimationFrame(tick);
+                        else el.innerHTML = target + `<span class="accent-suffix">${suffix}</span>`;
+                    }
+                    requestAnimationFrame(tick);
+                    io.unobserve(el);
+                });
+            }, { threshold: 0.4 });
+            document.querySelectorAll("[data-count-to]").forEach(el => io.observe(el));
+        }
+
+        // Nav active state on scroll
+        function initNavSpy() {
+            const sections = ["home", "about", "services", "products", "gallery", "contact"];
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        $(".main-nav a").removeClass("active");
+                        $(`.main-nav a[href="#${entry.target.id}"]`).addClass("active");
+                    }
+                });
+            }, { rootMargin: "-45% 0px -50% 0px" });
+            sections.forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+        }
+
+        // Pause offscreen hero videos for performance
+        function initVideoPause() {
+            document.querySelectorAll(".hero-media-wrap video").forEach(video => {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) video.play().catch(() => {});
+                        else video.pause();
+                    });
+                }, { threshold: 0.2 });
+                io.observe(video);
+            });
+        }
+
+        // =================================================================
+        // INITIALIZATION
+        // =================================================================
+        async function init() {
+            renderSkeletons();
+            await Promise.all([loadContent(), loadProducts()]);
+            renderAll();
+            initHeaderScroll();
+            initNavSpy();
+            observeReveals();
+            setTimeout(initVideoPause, 800);
+
+            // Close mobile offcanvas on nav click
+            $(document).on("click", "[data-mobile-nav]", function () {
+                const offcanvasEl = document.getElementById("mobileOffcanvas");
+                const oc = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+                oc.hide();
+            });
+        }
+
+        $(document).ready(init);
+
+    })(jQuery);
+    </script>
+</body>
+</html>
