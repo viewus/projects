@@ -1,0 +1,24 @@
+/* ============================================================
+   offerRenderer.js — reusable renderer for promotional offer
+   cards. Skips (does not render) any offer with enabled:false.
+   ============================================================ */
+
+function renderOfferCard(offer) {
+  return (
+    '<article class="offerCard" data-reveal>' +
+      '<img src="' + escapeHtml(offer.image) + '" alt="' + escapeHtml(offer.title) + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + IMAGE_FALLBACK_PATH + '\';">' +
+      '<div class="offerCardBody">' +
+        '<span class="offerDiscount">' + escapeHtml(offer.discount) + "</span>" +
+        '<h3 class="offerTitle">' + escapeHtml(offer.title) + "</h3>" +
+        '<p class="offerDesc">' + escapeHtml(offer.description) + "</p>" +
+        '<a href="' + escapeHtml(offer.buttonHref || "#menu") + '" class="btn btnPrimary">' + escapeHtml(offer.buttonText) + "</a>" +
+      "</div>" +
+    "</article>"
+  );
+}
+
+function renderOffers(offers) {
+  const enabled = (offers || []).filter((o) => o.enabled);
+  if (!enabled.length) return "";
+  return enabled.map(renderOfferCard).join("");
+}

@@ -1,0 +1,301 @@
+{
+  "restaurant": {
+    "name": "Spice Route Kitchen",
+    "logo": "assets/svg/logos/logo.svg",
+    "tagline": "A Culinary Journey Across Continents",
+    "description": "Freshly prepared Chinese, Indian, Italian and global favourites — bold flavours, premium ingredients, made fresh every single day.",
+    "phone": "+91 9876543210",
+    "email": "demo@gmail.com",
+    "address": "123, Demo Location, 123456",
+    "rating": 4.8,
+    "reviewCount": 2450
+  },
+
+  "sections": {
+    "announcement": true,
+    "hero": true,
+    "categories": true,
+    "menu": true,
+    "featured": true,
+    "offers": true,
+    "features": true,
+    "about": true,
+    "process": true,
+    "gallery": true,
+    "testimonials": true,
+    "faq": true,
+    "contact": true,
+    "footer": true
+  },
+
+  "announcement": {
+    "enabled": true,
+    "messages": [
+      "20% OFF on your first order — use code WELCOME20",
+      "Free delivery on orders above ₹499",
+      "Open today: 11:00 AM – 11:00 PM"
+    ]
+  },
+
+  "navigation": [
+    { "id": "home", "label": "Home", "href": "#home" },
+    { "id": "menu", "label": "Menu", "href": "#menu" },
+    { "id": "about", "label": "About", "href": "#about" },
+    { "id": "offers", "label": "Offers", "href": "#offers" },
+    { "id": "gallery", "label": "Gallery", "href": "#gallery" },
+    { "id": "testimonials", "label": "Reviews", "href": "#testimonials" },
+    { "id": "contact", "label": "Contact", "href": "#contact" }
+  ],
+
+  "sectionHeadings": {
+    "menu": { "eyebrow": "Our Menu", "title": "Handpicked Dishes, Every Cuisine", "subtitle": "Filter by category, search by name, or browse it all — freshly made, every time." },
+    "featured": { "eyebrow": "Loved By Regulars", "title": "Customer Favourites" },
+    "offers": { "eyebrow": "Don't Miss Out", "title": "Special Offers" },
+    "features": { "eyebrow": "Why Choose Us", "title": "What Makes Us Different" },
+    "gallery": { "eyebrow": "A Peek Inside", "title": "Our Gallery" },
+    "testimonials": { "eyebrow": "Testimonials", "title": "What Our Customers Say" },
+    "faq": { "eyebrow": "FAQ", "title": "Frequently Asked Questions" }
+  },
+
+  "hero": {
+    "eyebrow": "Multi-Cuisine · Dine-in & Delivery",
+    "title": "Taste the World,",
+    "titleHighlight": "One Plate at a Time.",
+    "subtitle": "Fresh Chinese, Indian, Italian & global favourites prepared with bold flavours and premium ingredients — delivered hot to your door.",
+    "primaryCta": { "text": "Explore Menu", "href": "#menu" },
+    "secondaryCta": { "text": "Order Now", "href": "#contact" },
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=900&q=80", "alt": "Signature dish spread at Spice Route Kitchen" },
+      { "src": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80", "alt": "Freshly baked pizza" },
+      { "src": "https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=700&q=80", "alt": "Grilled main course plate" }
+    ],
+    "badges": [
+      { "icon": "fa-solid fa-leaf", "text": "Fresh Daily" },
+      { "icon": "fa-solid fa-motorcycle", "text": "30 Min Delivery" },
+      { "icon": "fa-solid fa-fire", "text": "Live Kitchen" }
+    ],
+    "deliveryInfo": "Delivering across Bengaluru · 11 AM – 11 PM"
+  },
+
+  "categories": [
+    { "id": "chinese", "name": "Chinese", "icon": "fa-solid fa-bowl-rice" },
+    { "id": "indian", "name": "Indian", "icon": "fa-solid fa-pepper-hot" },
+    { "id": "italian", "name": "Italian", "icon": "fa-solid fa-pizza-slice" },
+    { "id": "fastfood", "name": "Fast Food", "icon": "fa-solid fa-drumstick-bite" },
+    { "id": "burgers", "name": "Burgers", "icon": "fa-solid fa-burger" },
+    { "id": "pizza", "name": "Pizza", "icon": "fa-solid fa-pizza-slice" },
+    { "id": "noodles", "name": "Noodles", "icon": "fa-solid fa-bowl-food" },
+    { "id": "friedrice", "name": "Fried Rice", "icon": "fa-solid fa-bowl-rice" },
+    { "id": "starters", "name": "Starters", "icon": "fa-solid fa-utensils" },
+    { "id": "maincourse", "name": "Main Course", "icon": "fa-solid fa-plate-wheat" },
+    { "id": "desserts", "name": "Desserts", "icon": "fa-solid fa-ice-cream" },
+    { "id": "beverages", "name": "Beverages", "icon": "fa-solid fa-mug-saucer" }
+  ],
+
+  "menuItems": [
+    { "id": "chinese-001", "categoryId": "chinese", "name": "Schezwan Chicken Noodles", "description": "Wok-tossed noodles with chicken, vegetables and fiery Schezwan sauce.", "image": "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=700&q=80", "price": 249, "discountPrice": 199, "isVeg": false, "isBestseller": true, "spiceLevel": 2, "rating": 4.8, "preparationTime": "15 min", "dietary": ["non-vegetarian", "spicy"], "ingredients": ["Egg noodles", "Chicken", "Bell peppers", "Schezwan sauce", "Spring onion"], "addOns": [{ "name": "Extra chicken", "price": 60 }, { "name": "Extra spicy", "price": 0 }] },
+    { "id": "chinese-002", "categoryId": "chinese", "name": "Veg Manchurian Gravy", "description": "Crisp vegetable dumplings simmered in a tangy Indo-Chinese gravy.", "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=700&q=80", "price": 219, "discountPrice": 189, "isVeg": true, "isBestseller": false, "spiceLevel": 1, "rating": 4.5, "preparationTime": "18 min", "dietary": ["vegetarian"], "ingredients": ["Mixed vegetables", "Corn flour", "Soy sauce", "Garlic", "Ginger"], "addOns": [{ "name": "Extra gravy", "price": 40 }] },
+    { "id": "chinese-003", "categoryId": "chinese", "name": "Chilli Garlic Chicken", "description": "Crispy fried chicken tossed in a fiery garlic-chilli glaze.", "image": "https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&w=700&q=80", "price": 279, "discountPrice": null, "isVeg": false, "isBestseller": true, "spiceLevel": 3, "rating": 4.7, "preparationTime": "16 min", "dietary": ["non-vegetarian", "spicy"], "ingredients": ["Chicken", "Garlic", "Dry red chilli", "Capsicum", "Soy sauce"], "addOns": [] },
+
+    { "id": "indian-001", "categoryId": "indian", "name": "Butter Chicken", "description": "Tandoor-roasted chicken simmered in a velvety tomato-butter curry.", "image": "https://images.unsplash.com/photo-1601924582970-9238bcb495d9?auto=format&fit=crop&w=700&q=80", "price": 349, "discountPrice": 299, "isVeg": false, "isBestseller": true, "spiceLevel": 1, "rating": 4.9, "preparationTime": "20 min", "dietary": ["non-vegetarian"], "ingredients": ["Chicken", "Tomato", "Butter", "Cream", "Kasuri methi"], "addOns": [{ "name": "Extra gravy", "price": 50 }, { "name": "Butter naan", "price": 45 }] },
+    { "id": "indian-002", "categoryId": "indian", "name": "Paneer Tikka Masala", "description": "Chargrilled cottage cheese cubes in a rich, spiced onion-tomato masala.", "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80", "price": 289, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 2, "rating": 4.6, "preparationTime": "18 min", "dietary": ["vegetarian", "gluten-free"], "ingredients": ["Paneer", "Bell peppers", "Onion", "Tomato gravy"], "addOns": [{ "name": "Extra paneer", "price": 55 }] },
+    { "id": "indian-003", "categoryId": "indian", "name": "Dal Makhani", "description": "Black lentils slow-cooked overnight with cream and a hint of smoke.", "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80", "price": 219, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 1, "rating": 4.7, "preparationTime": "12 min", "dietary": ["vegetarian", "gluten-free"], "ingredients": ["Black lentils", "Kidney beans", "Cream", "Butter", "Tomato"], "addOns": [] },
+
+    { "id": "italian-001", "categoryId": "italian", "name": "Creamy Alfredo Pasta", "description": "Penne tossed in a rich parmesan-cream sauce with herbs.", "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80", "price": 279, "discountPrice": 249, "isVeg": true, "isBestseller": false, "spiceLevel": 0, "rating": 4.5, "preparationTime": "17 min", "dietary": ["vegetarian"], "ingredients": ["Penne", "Parmesan", "Cream", "Garlic", "Basil"], "addOns": [{ "name": "Grilled chicken", "price": 70 }] },
+    { "id": "italian-002", "categoryId": "italian", "name": "Spaghetti Aglio Olio", "description": "Classic Italian spaghetti with garlic, olive oil and red chilli flakes.", "image": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=700&q=80", "price": 259, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 1, "rating": 4.4, "preparationTime": "15 min", "dietary": ["vegetarian", "vegan"], "ingredients": ["Spaghetti", "Garlic", "Olive oil", "Chilli flakes", "Parsley"], "addOns": [] },
+    { "id": "italian-003", "categoryId": "italian", "name": "Chicken Lasagna", "description": "Layered pasta baked with spiced chicken, cheese and tomato sauce.", "image": "https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=700&q=80", "price": 329, "discountPrice": 299, "isVeg": false, "isBestseller": true, "spiceLevel": 1, "rating": 4.8, "preparationTime": "25 min", "dietary": ["non-vegetarian"], "ingredients": ["Lasagna sheets", "Chicken", "Mozzarella", "Bechamel", "Tomato sauce"], "addOns": [] },
+
+    { "id": "fastfood-001", "categoryId": "fastfood", "name": "Crispy Fried Chicken Wings", "description": "Golden fried wings tossed in a smoky house spice rub.", "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=700&q=80", "price": 229, "discountPrice": 199, "isVeg": false, "isBestseller": true, "spiceLevel": 2, "rating": 4.7, "preparationTime": "14 min", "dietary": ["non-vegetarian", "spicy"], "ingredients": ["Chicken wings", "House spice rub", "Buttermilk batter"], "addOns": [{ "name": "Dip sauce", "price": 25 }] },
+    { "id": "fastfood-002", "categoryId": "fastfood", "name": "Loaded Nachos", "description": "Crunchy nachos piled with cheese sauce, salsa, jalapeños and sour cream.", "image": "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=700&q=80", "price": 199, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 1, "rating": 4.3, "preparationTime": "10 min", "dietary": ["vegetarian"], "ingredients": ["Corn nachos", "Cheese sauce", "Salsa", "Jalapeños", "Sour cream"], "addOns": [] },
+    { "id": "fastfood-003", "categoryId": "fastfood", "name": "Peri Peri French Fries", "description": "Crispy golden fries tossed in tangy peri peri seasoning.", "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=700&q=80", "price": 129, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 2, "rating": 4.5, "preparationTime": "10 min", "dietary": ["vegetarian", "vegan"], "ingredients": ["Potato", "Peri peri seasoning"], "addOns": [{ "name": "Cheese dip", "price": 30 }] },
+
+    { "id": "burgers-001", "categoryId": "burgers", "name": "Smoky BBQ Chicken Burger", "description": "Grilled chicken patty, smoky BBQ sauce, cheddar and crunchy slaw.", "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80", "price": 219, "discountPrice": 189, "isVeg": false, "isBestseller": true, "spiceLevel": 1, "rating": 4.7, "preparationTime": "13 min", "dietary": ["non-vegetarian"], "ingredients": ["Chicken patty", "BBQ sauce", "Cheddar", "Slaw", "Brioche bun"], "addOns": [{ "name": "Extra cheese", "price": 30 }, { "name": "Regular fries", "price": 60 }] },
+    { "id": "burgers-002", "categoryId": "burgers", "name": "Crispy Veg Burger", "description": "Crunchy vegetable patty with lettuce, tomato and house mayo.", "image": "https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=700&q=80", "price": 159, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 1, "rating": 4.3, "preparationTime": "12 min", "dietary": ["vegetarian"], "ingredients": ["Vegetable patty", "Lettuce", "Tomato", "House mayo", "Sesame bun"], "addOns": [] },
+    { "id": "burgers-003", "categoryId": "burgers", "name": "Double Cheese Burger", "description": "Two juicy patties layered with double melted cheddar cheese.", "image": "https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=700&q=80", "price": 249, "discountPrice": 219, "isVeg": false, "isBestseller": false, "spiceLevel": 0, "rating": 4.6, "preparationTime": "14 min", "dietary": ["non-vegetarian"], "ingredients": ["Chicken patty x2", "Cheddar", "Onion", "Pickles"], "addOns": [] },
+
+    { "id": "pizza-001", "categoryId": "pizza", "name": "Margherita Pizza", "description": "Classic wood-fired pizza with tomato, fresh mozzarella and basil.", "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80", "price": 249, "discountPrice": 219, "isVeg": true, "isBestseller": true, "spiceLevel": 0, "rating": 4.8, "preparationTime": "18 min", "dietary": ["vegetarian"], "ingredients": ["Pizza dough", "Tomato sauce", "Mozzarella", "Basil"], "addOns": [{ "name": "Extra cheese", "price": 40 }] },
+    { "id": "pizza-002", "categoryId": "pizza", "name": "Farmhouse Pizza", "description": "Loaded with onion, capsicum, tomato, mushroom and olives.", "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=700&q=80", "price": 299, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 0, "rating": 4.5, "preparationTime": "18 min", "dietary": ["vegetarian"], "ingredients": ["Onion", "Capsicum", "Tomato", "Mushroom", "Olives", "Mozzarella"], "addOns": [] },
+    { "id": "pizza-003", "categoryId": "pizza", "name": "Peri Peri Chicken Pizza", "description": "Spicy peri peri marinated chicken with bell peppers and mozzarella.", "image": "https://images.unsplash.com/photo-1548365328-8b849e6c7756?auto=format&fit=crop&w=700&q=80", "price": 349, "discountPrice": 319, "isVeg": false, "isBestseller": true, "spiceLevel": 2, "rating": 4.7, "preparationTime": "20 min", "dietary": ["non-vegetarian", "spicy"], "ingredients": ["Chicken", "Peri peri sauce", "Bell peppers", "Mozzarella"], "addOns": [] },
+
+    { "id": "noodles-001", "categoryId": "noodles", "name": "Hakka Noodles", "description": "Stir-fried noodles with crunchy julienne vegetables and soy.", "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=80", "price": 189, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 1, "rating": 4.4, "preparationTime": "14 min", "dietary": ["vegetarian", "vegan"], "ingredients": ["Noodles", "Cabbage", "Carrot", "Capsicum", "Soy sauce"], "addOns": [] },
+    { "id": "noodles-002", "categoryId": "noodles", "name": "Singapore Rice Noodles", "description": "Thin rice noodles wok-tossed with curry powder, egg and prawns.", "image": "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=700&q=80", "price": 259, "discountPrice": null, "isVeg": false, "isBestseller": false, "spiceLevel": 2, "rating": 4.5, "preparationTime": "16 min", "dietary": ["non-vegetarian", "spicy"], "ingredients": ["Rice noodles", "Prawns", "Egg", "Curry powder"], "addOns": [] },
+    { "id": "noodles-003", "categoryId": "noodles", "name": "Thai Basil Noodles", "description": "Aromatic noodles tossed with Thai basil, chilli and vegetables.", "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=80", "price": 209, "discountPrice": 189, "isVeg": true, "isBestseller": false, "spiceLevel": 2, "rating": 4.4, "preparationTime": "15 min", "dietary": ["vegetarian", "vegan", "spicy"], "ingredients": ["Noodles", "Thai basil", "Chilli", "Garlic"], "addOns": [] },
+
+    { "id": "friedrice-001", "categoryId": "friedrice", "name": "Veg Fried Rice", "description": "Wok-tossed rice with finely diced vegetables and soy sauce.", "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80", "price": 179, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 1, "rating": 4.3, "preparationTime": "13 min", "dietary": ["vegetarian", "vegan"], "ingredients": ["Rice", "Carrot", "Beans", "Spring onion", "Soy sauce"], "addOns": [] },
+    { "id": "friedrice-002", "categoryId": "friedrice", "name": "Chicken Schezwan Fried Rice", "description": "Spicy Schezwan-tossed rice with tender chicken pieces.", "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80", "price": 219, "discountPrice": 199, "isVeg": false, "isBestseller": true, "spiceLevel": 2, "rating": 4.7, "preparationTime": "15 min", "dietary": ["non-vegetarian", "spicy"], "ingredients": ["Rice", "Chicken", "Schezwan sauce", "Spring onion"], "addOns": [] },
+    { "id": "friedrice-003", "categoryId": "friedrice", "name": "Egg Fried Rice", "description": "Classic wok-fried rice with scrambled egg and spring onion.", "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80", "price": 189, "discountPrice": null, "isVeg": false, "isBestseller": false, "spiceLevel": 1, "rating": 4.4, "preparationTime": "12 min", "dietary": ["egg"], "ingredients": ["Rice", "Egg", "Spring onion", "Soy sauce"], "addOns": [] },
+
+    { "id": "starters-001", "categoryId": "starters", "name": "Crispy Corn Chaat", "description": "Golden fried corn tossed in tangy chaat masala and herbs.", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80", "price": 169, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 1, "rating": 4.3, "preparationTime": "10 min", "dietary": ["vegetarian", "gluten-free"], "ingredients": ["Sweet corn", "Chaat masala", "Onion", "Coriander"], "addOns": [] },
+    { "id": "starters-002", "categoryId": "starters", "name": "Chicken 65", "description": "Deep-fried spicy chicken bites tempered with curry leaves.", "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=700&q=80", "price": 249, "discountPrice": 219, "isVeg": false, "isBestseller": true, "spiceLevel": 3, "rating": 4.8, "preparationTime": "15 min", "dietary": ["non-vegetarian", "spicy"], "ingredients": ["Chicken", "Curry leaves", "Red chilli", "Yogurt marinade"], "addOns": [] },
+    { "id": "starters-003", "categoryId": "starters", "name": "Paneer 65", "description": "Crispy fried paneer cubes in a spicy South Indian style glaze.", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80", "price": 219, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 2, "rating": 4.5, "preparationTime": "14 min", "dietary": ["vegetarian", "spicy"], "ingredients": ["Paneer", "Curry leaves", "Red chilli", "Yogurt marinade"], "addOns": [] },
+
+    { "id": "maincourse-001", "categoryId": "maincourse", "name": "Butter Garlic Prawns", "description": "Jumbo prawns tossed in a rich butter-garlic sauce.", "image": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=700&q=80", "price": 449, "discountPrice": null, "isVeg": false, "isBestseller": false, "spiceLevel": 1, "rating": 4.7, "preparationTime": "20 min", "dietary": ["non-vegetarian"], "ingredients": ["Prawns", "Butter", "Garlic", "Parsley"], "addOns": [] },
+    { "id": "maincourse-002", "categoryId": "maincourse", "name": "Kadai Paneer", "description": "Paneer and bell peppers cooked in a coarsely ground kadai masala.", "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=700&q=80", "price": 279, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 2, "rating": 4.5, "preparationTime": "18 min", "dietary": ["vegetarian", "gluten-free"], "ingredients": ["Paneer", "Bell peppers", "Onion", "Kadai masala"], "addOns": [] },
+    { "id": "maincourse-003", "categoryId": "maincourse", "name": "Grilled Chicken Steak", "description": "Herb-marinated chicken steak grilled and served with pepper sauce.", "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80", "price": 399, "discountPrice": 359, "isVeg": false, "isBestseller": true, "spiceLevel": 1, "rating": 4.8, "preparationTime": "22 min", "dietary": ["non-vegetarian", "gluten-free"], "ingredients": ["Chicken breast", "Herbs", "Pepper sauce", "Grilled vegetables"], "addOns": [] },
+
+    { "id": "desserts-001", "categoryId": "desserts", "name": "Molten Chocolate Lava Cake", "description": "Warm chocolate cake with a gooey molten centre, served with ice cream.", "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80", "price": 179, "discountPrice": null, "isVeg": true, "isBestseller": true, "spiceLevel": 0, "rating": 4.9, "preparationTime": "12 min", "dietary": ["vegetarian"], "ingredients": ["Dark chocolate", "Butter", "Flour", "Vanilla ice cream"], "addOns": [] },
+    { "id": "desserts-002", "categoryId": "desserts", "name": "Belgian Waffle with Ice Cream", "description": "Crisp golden waffle topped with vanilla ice cream and chocolate sauce.", "image": "https://images.unsplash.com/photo-1541833618-fd28b0dc4dd6?auto=format&fit=crop&w=700&q=80", "price": 199, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 0, "rating": 4.6, "preparationTime": "10 min", "dietary": ["vegetarian"], "ingredients": ["Waffle batter", "Vanilla ice cream", "Chocolate sauce"], "addOns": [] },
+    { "id": "desserts-003", "categoryId": "desserts", "name": "Gulab Jamun (2 pcs)", "description": "Soft milk-solid dumplings soaked in warm cardamom sugar syrup.", "image": "https://images.unsplash.com/photo-1519996409144-56c88c9aa612?auto=format&fit=crop&w=700&q=80", "price": 99, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 0, "rating": 4.5, "preparationTime": "8 min", "dietary": ["vegetarian"], "ingredients": ["Milk solids", "Sugar syrup", "Cardamom"], "addOns": [] },
+
+    { "id": "beverages-001", "categoryId": "beverages", "name": "Fresh Lime Soda", "description": "Refreshing lime soda, sweet or salted, served chilled.", "image": "https://images.unsplash.com/photo-1541544181051-e46607bc22a4?auto=format&fit=crop&w=700&q=80", "price": 79, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 0, "rating": 4.3, "preparationTime": "5 min", "dietary": ["vegetarian", "vegan", "gluten-free"], "ingredients": ["Lime", "Soda", "Sugar/salt"], "addOns": [] },
+    { "id": "beverages-002", "categoryId": "beverages", "name": "Cold Coffee with Ice Cream", "description": "Chilled coffee blended with milk and topped with ice cream.", "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=80", "price": 129, "discountPrice": null, "isVeg": true, "isBestseller": true, "spiceLevel": 0, "rating": 4.7, "preparationTime": "6 min", "dietary": ["vegetarian"], "ingredients": ["Coffee", "Milk", "Vanilla ice cream"], "addOns": [] },
+    { "id": "beverages-003", "categoryId": "beverages", "name": "Virgin Mojito", "description": "Fresh mint and lime muddled with soda over crushed ice.", "image": "https://images.unsplash.com/photo-1541544181051-e46607bc22a4?auto=format&fit=crop&w=700&q=80", "price": 119, "discountPrice": null, "isVeg": true, "isBestseller": false, "spiceLevel": 0, "rating": 4.4, "preparationTime": "5 min", "dietary": ["vegetarian", "vegan", "gluten-free"], "ingredients": ["Mint", "Lime", "Soda", "Crushed ice"], "addOns": [] }
+  ],
+
+  "offers": [
+    { "id": "offer-001", "title": "Weekend Special", "description": "Get 20% OFF on selected family meal combos, every Saturday & Sunday.", "discount": "20% OFF", "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=900&q=80", "buttonText": "Order Now", "buttonHref": "#menu", "enabled": true },
+    { "id": "offer-002", "title": "First Order Discount", "description": "New here? Enjoy flat ₹150 OFF on your very first order with us.", "discount": "₹150 OFF", "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80", "buttonText": "Claim Offer", "buttonHref": "#contact", "enabled": true },
+    { "id": "offer-003", "title": "Combo Feast", "description": "Any main course + starter + dessert at a special bundled price.", "discount": "SAVE ₹100", "image": "https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=900&q=80", "buttonText": "View Combos", "buttonHref": "#menu", "enabled": false }
+  ],
+
+  "features": [
+    { "icon": "fa-solid fa-seedling", "title": "Fresh Ingredients", "description": "Sourced daily from trusted local farms and suppliers." },
+    { "icon": "fa-solid fa-fire-burner", "title": "Authentic Flavours", "description": "Recipes rooted in tradition, perfected over the years." },
+    { "icon": "fa-solid fa-motorcycle", "title": "Fast Delivery", "description": "Hot, fresh food delivered right to your doorstep, quickly." },
+    { "icon": "fa-solid fa-shield-heart", "title": "Hygienic Kitchen", "description": "High food-safety standards maintained across every step." },
+    { "icon": "fa-solid fa-award", "title": "Premium Quality", "description": "Only the finest, carefully selected ingredients make the cut." },
+    { "icon": "fa-solid fa-headset", "title": "24/7 Support", "description": "Our team is always ready to help with your order." }
+  ],
+
+  "about": {
+    "title": "Our Story",
+    "subtitle": "About Spice Route Kitchen",
+    "description": "Founded with a single mission — to bring the world's favourite flavours to one table. From wok-tossed Chinese classics to slow-cooked Indian curries, oven-fresh Italian pizzas to indulgent desserts, every dish is crafted by chefs who care deeply about quality, freshness and authenticity. We use premium ingredients, traditional techniques and a whole lot of passion in every plate we serve.",
+    "image": "https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&fit=crop&w=900&q=80",
+    "imageAlt": "Chef preparing a fresh dish in the kitchen",
+    "stats": [
+      { "value": "10+", "label": "Years Experience" },
+      { "value": "50+", "label": "Menu Items" },
+      { "value": "25K+", "label": "Orders Served" },
+      { "value": "4.8", "label": "Average Rating" }
+    ],
+    "cta": { "text": "View Full Menu", "href": "#menu" }
+  },
+
+  "process": {
+    "title": "How We Prepare Your Food",
+    "subtitle": "From kitchen to doorstep, every step is done with care",
+    "steps": [
+      { "number": "01", "title": "Fresh Ingredients", "description": "Handpicked daily for maximum flavour and quality.", "icon": "fa-solid fa-carrot" },
+      { "number": "02", "title": "Expert Preparation", "description": "Prepped by experienced chefs following authentic recipes.", "icon": "fa-solid fa-user-chef" },
+      { "number": "03", "title": "Wok / Oven / Grill", "description": "Cooked fresh to order over high-heat live stations.", "icon": "fa-solid fa-fire" },
+      { "number": "04", "title": "Packed Fresh", "description": "Sealed in leak-proof, eco-friendly packaging to lock in heat.", "icon": "fa-solid fa-box-open" },
+      { "number": "05", "title": "Delivered Hot", "description": "Rushed to your door by our dedicated delivery riders.", "icon": "fa-solid fa-motorcycle" }
+    ]
+  },
+
+  "gallery": [
+    { "image": "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80", "alt": "Freshly prepared Schezwan noodles", "category": "food" },
+    { "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80", "alt": "Wood-fired Margherita pizza", "category": "food" },
+    { "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80", "alt": "Warm and inviting restaurant interior", "category": "restaurant" },
+    { "image": "https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&fit=crop&w=800&q=80", "alt": "Chef plating a signature dish", "category": "chefs" },
+    { "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80", "alt": "Smoky BBQ chicken burger close-up", "category": "food" },
+    { "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80", "alt": "Cozy dining area with ambient lighting", "category": "dining" },
+    { "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80", "alt": "Molten chocolate lava cake dessert", "category": "food" },
+    { "image": "https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?auto=format&fit=crop&w=800&q=80", "alt": "Table spread with a variety of dishes", "category": "food" },
+    { "image": "https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&w=800&q=80", "alt": "Wok tossed noodles being prepared", "category": "kitchen" },
+    { "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80", "alt": "Grilled chicken steak main course", "category": "food" },
+    { "image": "https://images.unsplash.com/photo-1519996409144-56c88c9aa612?auto=format&fit=crop&w=800&q=80", "alt": "Assorted desserts on display", "category": "food" },
+    { "image": "https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=800&q=80", "alt": "Happy customers enjoying their meal", "category": "customers" }
+  ],
+
+  "testimonials": [
+    { "name": "Rahul Sharma", "role": "Verified Customer", "rating": 5, "review": "The Schezwan noodles were absolutely excellent and arrived piping hot. Best Chinese food I've had delivered in Bengaluru!", "avatar": "https://randomuser.me/api/portraits/men/32.jpg" },
+    { "name": "Priya Nair", "role": "Verified Customer", "rating": 5, "review": "Butter chicken tastes just like home-cooked comfort food. Packaging was neat and delivery was super fast.", "avatar": "https://randomuser.me/api/portraits/women/44.jpg" },
+    { "name": "Arjun Mehta", "role": "Verified Customer", "rating": 4, "review": "Loved the Margherita pizza — thin crust, fresh basil, perfectly cheesy. Will definitely order again.", "avatar": "https://randomuser.me/api/portraits/men/65.jpg" },
+    { "name": "Sneha Kulkarni", "role": "Verified Customer", "rating": 5, "review": "Ordered the family combo for a weekend get-together, everyone loved it. Great value and consistent quality.", "avatar": "https://randomuser.me/api/portraits/women/68.jpg" },
+    { "name": "Vikram Singh", "role": "Verified Customer", "rating": 5, "review": "The lava cake is unreal — gooey, warm, and paired perfectly with the ice cream. My go-to dessert now.", "avatar": "https://randomuser.me/api/portraits/men/22.jpg" },
+    { "name": "Ananya Iyer", "role": "Verified Customer", "rating": 4, "review": "Great variety across cuisines on one menu. The app made it easy to find vegetarian options too.", "avatar": "https://randomuser.me/api/portraits/women/21.jpg" }
+  ],
+
+  "faq": [
+    { "question": "Do you offer home delivery?", "answer": "Yes, we deliver across Bengaluru within a 10 km radius. Delivery is free on orders above ₹499." },
+    { "question": "What are your opening hours?", "answer": "We are open every day from 11:00 AM to 11:00 PM, including weekends and public holidays." },
+    { "question": "Do you have vegetarian options?", "answer": "Absolutely — over 40% of our menu is vegetarian, and we clearly mark vegan and gluten-free items as well." },
+    { "question": "Can I customize my order?", "answer": "Yes, most dishes support add-ons and spice-level customization. Special requests can be added at checkout." },
+    { "question": "Do you accept bulk orders?", "answer": "Yes, we cater bulk and party orders with 24 hours advance notice. Contact us directly to plan your order." },
+    { "question": "Do you provide catering for events?", "answer": "We offer full catering services for birthdays, corporate events and celebrations. Reach out via phone or email for a custom quote." }
+  ],
+
+  "contact": {
+    "title": "Hungry Yet?",
+    "subtitle": "Order your favourite meal today — fresh, fast and delivered with care.",
+    "address": "123, Demo Location, 123456",
+    "phone": "+91 9876543210",
+    "email": "demo@gmail.com",
+    "hours": [
+      { "day": "Monday – Friday", "time": "11:00 AM – 11:00 PM" },
+      { "day": "Saturday – Sunday", "time": "10:00 AM – 11:30 PM" }
+    ],
+    "deliveryInfo": "Free delivery above ₹499 · Avg. delivery time 30 minutes · Delivering within 10 km"
+  },
+
+  "ordering": {
+    "enabled": true,
+    "type": "whatsapp",
+    "url": "https://example.com/order",
+    "buttonText": "Order Now"
+  },
+
+  "quickActions": {
+    "whatsapp": { "enabled": true, "number": "+919876543210", "message": "Hi! I'd like to place an order at Spice Route Kitchen." },
+    "call": { "enabled": true, "number": "+919876543210" }
+  },
+
+  "floatingOrderButton": {
+    "enabled": true,
+    "label": "Order Now",
+    "icon": "fa-solid fa-bag-shopping"
+  },
+
+  "footer": {
+    "description": "Freshly prepared Chinese, Indian, Italian and global favourites — bold flavours, premium ingredients, made fresh every single day.",
+    "copyrightText": "© 2026 Spice Route Kitchen. All rights reserved.",
+    "socialLinks": [
+      { "platform": "Instagram", "url": "https://instagram.com", "icon": "fa-brands fa-instagram" },
+      { "platform": "Facebook", "url": "https://facebook.com", "icon": "fa-brands fa-facebook" },
+      { "platform": "Twitter", "url": "https://twitter.com", "icon": "fa-brands fa-twitter" },
+      { "platform": "WhatsApp", "url": "https://wa.me/919876543210", "icon": "fa-brands fa-whatsapp" }
+    ]
+  },
+
+  "seo": {
+    "title": "Spice Route Kitchen | Multi-Cuisine Restaurant & Food Delivery in Bengaluru",
+    "description": "Order fresh Chinese, Indian, Italian, pizza, burgers and more from Spice Route Kitchen. Fast delivery across Bengaluru, open 11 AM – 11 PM daily.",
+    "keywords": ["multi-cuisine restaurant", "food delivery Bengaluru", "Chinese food", "Indian food", "pizza", "burgers", "noodles", "restaurant near me"],
+    "ogImage": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&q=80",
+    "siteUrl": "https://REPLACE-WITH-YOUR-DOMAIN.com/"
+  },
+
+  "theme": {
+    "primaryColor": "#C62828",
+    "primaryColorDark": "#8E1B1B",
+    "secondaryColor": "#111111",
+    "accentColor": "#F5A623",
+    "backgroundColor": "#FFFFFF",
+    "surfaceColor": "#FAF7F2",
+    "textColor": "#181818",
+    "mutedTextColor": "#6B6B6B",
+    "borderColor": "#EAE4DA",
+    "borderRadius": "14px",
+    "borderRadiusSmall": "8px",
+    "fontHeading": "'Playfair Display', serif",
+    "fontBody": "'Poppins', sans-serif"
+  },
+
+  "animations": {
+    "enabled": true,
+    "hero": "fade-up",
+    "cards": "fade-up",
+    "gallery": "zoom",
+    "duration": 600,
+    "stagger": 100
+  },
+
+  "settings": {
+    "currencySymbol": "₹",
+    "search": { "enabled": true, "placeholder": "Search for pizza, noodles, chicken, dessert..." },
+    "filters": { "veg": true, "nonVeg": true, "bestsellers": true },
+    "orderingUiEnabled": true
+  }
+}

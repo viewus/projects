@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -486,13 +486,22 @@ nav.desktop-nav a:hover::after{width:100%;}
   transition:margin-top .4s ease;
 }
 .hero-slide{
-  position:absolute;inset:0;
+  position:absolute;inset:-6%;
   opacity:0;
   transition:opacity 1.4s ease;
   background-size:cover;
   background-position:center;
+  transform:scale(1);
+  will-change:transform, opacity;
 }
-.hero-slide.active{opacity:1;}
+.hero-slide.active{
+  opacity:1;
+  animation:heroSlowZoomWall 10s ease-in-out infinite alternate;
+}
+@keyframes heroSlowZoomWall {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
 .hero-slide::after{
   content:'';
   position:absolute;inset:0;

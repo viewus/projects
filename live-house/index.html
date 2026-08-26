@@ -67,12 +67,25 @@
   /* ── HERO ── */
   #home {
     min-height: 100vh;
-    background:
-      linear-gradient(to right, rgba(58,31,5,0.88) 0%, rgba(58,31,5,0.4) 60%, transparent 100%),
-      url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&q=80') center/cover no-repeat;
     display: flex; align-items: center;
     padding: 0 8%;
     position: relative;
+    overflow: hidden;
+  }
+  #home::before {
+    content: '';
+    position: absolute;
+    inset: -6%;
+    background:
+      linear-gradient(to right, rgba(58,31,5,0.88) 0%, rgba(58,31,5,0.4) 60%, transparent 100%),
+      url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&q=80') center/cover no-repeat;
+    animation: slowZoomBanner 24s ease-in-out infinite alternate;
+    z-index: 1;
+    will-change: transform;
+  }
+  @keyframes slowZoomBanner {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
   }
   .hero-badge {
     display: inline-block;
@@ -83,7 +96,7 @@
     text-transform: uppercase; padding: 6px 16px; border-radius: 20px;
     margin-bottom: 24px;
   }
-  .hero-content { max-width: 600px; animation: fadeUp 1s ease both; }
+  .hero-content { max-width: 600px; animation: fadeUp 1s ease both; position: relative; z-index: 2; }
   .hero-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(42px, 6vw, 72px);
@@ -115,6 +128,7 @@
     display: flex; flex-direction: column; align-items: center; gap: 8px;
     color: rgba(255,253,248,0.5); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
     animation: bounce 2s infinite;
+    z-index: 2;
   }
   .scroll-line {
     width: 1px; height: 40px; background: linear-gradient(to bottom, transparent, rgba(200,146,42,0.6));

@@ -1,0 +1,89 @@
+/* ============================================================
+   animations.js — JSON-controlled animation system.
+   Reads restaurant.animations from JSON (enabled/duration/stagger)
+   and drives scroll-reveal + stat count-up. No restaurant content.
+   ============================================================ */
+
+const AnimationSystem = (function () {
+  let config = { enabled: true, duration: 600, stagger: 100 };
+
+  function applyConfig(animationsJson) {
+    config = Object.assign({}, config, animationsJson || {});
+    document.documentElement.style.setProperty("--anim-duration", config.duration + "ms");
+    document.documentElement.style.setProperty("--anim-stagger", config.stagger + "ms");
+    document.body.classList.toggle("animationsDisabled", !config.enabled);
+  }
+
+  /** Observe every [data-reveal] element currently in the DOM and fade/slide it up on scroll. */
+  function observeReveals(root) {
+    const scope = root || document;
+    const items = Array.from(scope.querySelectorAll("[data-reveal]"));
+    if (!config.enabled) {
+      items.forEach((el) => el.classList.add("isVisible"));
+      return;
+    }
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((el) => el.classList.add("isVisible"));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            const delay = (i % 8) * config.stagger;
+            setTimeout(() => entry.target.classList.add("isVisible"), delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    items.forEach((el) => {
+      if (!el.classList.contains("isVisible")) observer.observe(el);
+    });
+  }
+
+  /** Animate numeric prefix of stat values (e.g. "25K+", "4.8", "10+") counting up once visible. */
+  function countUpStats(selector) {
+    const els = document.querySelectorAll(selector);
+    if (!els.length) return;
+
+    const animateEl = (el) => {
+      const raw = el.textContent.trim();
+      const match = raw.match(/^([\d.]+)(.*)$/);
+      if (!match) return;
+      const target = parseFloat(match[1]);
+      const suffix = match[2] || "";
+      const isDecimal = match[1].includes(".");
+      const duration = config.enabled ? 1200 : 0;
+      const start = performance.now();
+
+      function tick(now) {
+        const progress = duration ? Math.min((now - start) / duration, 1) : 1;
+        const current = target * progress;
+        el.textContent = (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    };
+
+    if (!config.enabled || !("IntersectionObserver" in window)) {
+      els.forEach(animateEl);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateEl(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    els.forEach((el) => observer.observe(el));
+  }
+
+  return { applyConfig, observeReveals, countUpStats };
+})();

@@ -1,0 +1,669 @@
+/* ============================================================
+   main.js — DATA LOADER + SINGLE PAGE RENDERER
+   JSON DATA (data/restaurant.json)
+       -> DATA LOADER (loadRestaurantData)
+       -> REUSABLE COMPONENTS (renderer functions in components/)
+       -> SINGLE PAGE RENDERER (renderSite, orchestrated here)
+   No restaurant-specific text/prices/images are hardcoded below —
+   everything comes from the fetched JSON object `data`.
+   ============================================================ */
+
+const SECTION_ELEMENT_IDS = {
+  hero: "home",
+  categories: "categoryNavSection",
+  menu: "menu",
+  featured: "featured",
+  offers: "offers",
+  features: "features",
+  about: "about",
+  process: "process",
+  gallery: "gallery",
+  testimonials: "testimonials",
+  faq: "faq",
+  contact: "contact"
+};
+
+let siteData = null;
+let currentCategory = "all";
+let currentDietFilter = "all"; // all | veg | nonveg | bestsellers
+let currentSearchTerm = "";
+let cart = {}; // itemId -> qty (lightweight client-side, no backend)
+
+$(function () {
+  loadRestaurantData()
+    .then((data) => {
+      const errors = validateRestaurantData(data);
+      if (errors.length) {
+        console.warn("restaurant.json validation warnings:", errors);
+      }
+      siteData = data;
+      renderSite(data);
+    })
+    .catch((err) => {
+      console.error("Failed to load restaurant data:", err);
+      $("#mainContent").html('<p style="padding:80px 24px;text-align:center;color:#6B6B6B;">We could not load the menu right now. Please refresh the page.</p>');
+    });
+});
+
+/* ---------------- DATA LOADER ---------------- */
+
+function loadRestaurantData() {
+  if (window.SPICE_DATA) {
+    return Promise.resolve(window.SPICE_DATA);
+  }
+  return $.ajax({ url: "data/restaurant.json", dataType: "json", cache: false })
+    .catch(function () {
+      if (window.SPICE_DATA) return window.SPICE_DATA;
+      throw new Error("Unable to load restaurant data");
+    });
+}
+
+/** Minimal shape validation so a malformed JSON edit fails loudly, not silently. */
+function validateRestaurantData(data) {
+  const errors = [];
+  if (!data || typeof data !== "object") errors.push("Root JSON is not an object");
+  ["restaurant", "navigation", "hero", "categories", "menuItems", "theme", "sections"].forEach((key) => {
+    if (!(key in (data || {}))) errors.push("Missing top-level key: " + key);
+  });
+  return errors;
+}
+
+/* ---------------- SINGLE PAGE RENDERER ---------------- */
+
+function renderSite(data) {
+  applyTheme(data.theme);
+  AnimationSystem.applyConfig(data.animations);
+  applySeo(data.seo, data.restaurant);
+  applySectionVisibility(data.sections || {});
+
+  renderSectionHeadings(data.sectionHeadings);
+  renderAnnouncementBar(data.announcement);
+  renderHeader(data.restaurant, data.navigation, data.ordering);
+  renderHero(data.hero, data.restaurant);
+  renderCategoryNav(data.categories);
+  renderMenu(data);
+  renderFeatured(data.menuItems, data.settings);
+  renderOffersSection(data.offers);
+  renderFeaturesSection(data.features);
+  renderAbout(data.about);
+  renderProcess(data.process);
+  renderGallerySection(data.gallery);
+  renderTestimonialsSection(data.testimonials);
+  renderFaqSection(data.faq);
+  renderContact(data.contact, data.ordering, data.quickActions);
+  renderFooter(data);
+  renderFloatingOrderButton(data.floatingOrderButton, data.ordering);
+
+  wireGlobalInteractions(data);
+  AnimationSystem.observeReveals(document);
+  AnimationSystem.countUpStats(".statValue");
+}
+
+/* ---------------- THEME ---------------- */
+
+function applyTheme(theme) {
+  if (!theme) return;
+  const root = document.documentElement.style;
+  const map = {
+    primaryColor: "--color-primary",
+    primaryColorDark: "--color-primary-dark",
+    secondaryColor: "--color-secondary",
+    accentColor: "--color-accent",
+    backgroundColor: "--color-bg",
+    surfaceColor: "--color-surface",
+    textColor: "--color-text",
+    mutedTextColor: "--color-muted",
+    borderColor: "--color-border",
+    borderRadius: "--radius",
+    borderRadiusSmall: "--radius-sm",
+    fontHeading: "--font-heading",
+    fontBody: "--font-body"
+  };
+  Object.keys(map).forEach((key) => {
+    if (theme[key]) root.setProperty(map[key], theme[key]);
+  });
+}
+
+/* ---------------- SEO ---------------- */
+
+function applySeo(seo, restaurant) {
+  if (!seo) return;
+  document.title = seo.title || (restaurant && restaurant.name) || document.title;
+  $('meta[data-seo="description"]').attr("content", seo.description || "");
+  $('meta[data-seo="keywords"]').attr("content", (seo.keywords || []).join(", "));
+  $('meta[data-seo="ogTitle"]').attr("content", seo.title || "");
+  $('meta[data-seo="ogDescription"]').attr("content", seo.description || "");
+  $('meta[data-seo="ogImage"]').attr("content", seo.ogImage || "");
+  $('title[data-seo="title"]').text(seo.title || "");
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    name: get(restaurant, "name", ""),
+    image: seo.ogImage || "",
+    telephone: get(restaurant, "phone", ""),
+    address: { "@type": "PostalAddress", streetAddress: get(restaurant, "address", "") },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: get(restaurant, "rating", ""),
+      reviewCount: get(restaurant, "reviewCount", "")
+    },
+    servesCuisine: (siteDataCategoriesSafe() || []).map((c) => c.name)
+  };
+  document.getElementById("structuredData").textContent = JSON.stringify(structuredData);
+}
+
+function siteDataCategoriesSafe() {
+  return siteData ? siteData.categories : null;
+}
+
+/* ---------------- SECTION VISIBILITY ---------------- */
+
+function applySectionVisibility(sections) {
+  Object.keys(SECTION_ELEMENT_IDS).forEach((key) => {
+    const el = document.getElementById(SECTION_ELEMENT_IDS[key]);
+    if (!el) return;
+    const visible = sections[key] !== false; // default visible if key absent
+    el.style.display = visible ? "" : "none";
+  });
+}
+
+/* ---------------- REUSABLE SECTION HEADINGS ---------------- */
+
+/** Fills every [data-heading] block (eyebrow/title/subtitle) from JSON. Removes the subtitle line if none is provided. */
+function renderSectionHeadings(headings) {
+  const map = headings || {};
+  $("[data-heading]").each(function () {
+    const key = $(this).data("heading");
+    const h = map[key];
+    if (!h) return;
+    $(this).find(".sectionEyebrow").text(h.eyebrow || "");
+    $(this).find(".sectionTitle").text(h.title || "");
+    const $sub = $(this).find(".sectionSubtitle");
+    if ($sub.length) {
+      if (h.subtitle) $sub.text(h.subtitle);
+      else $sub.remove();
+    }
+  });
+}
+
+/* ---------------- ANNOUNCEMENT BAR ---------------- */
+
+function renderAnnouncementBar(announcement) {
+  const $bar = $("#announcementBar");
+  if (!announcement || !announcement.enabled || !(announcement.messages || []).length) {
+    $bar.prop("hidden", true);
+    return;
+  }
+  $bar.prop("hidden", false);
+  const messages = announcement.messages;
+  let index = 0;
+  const $track = $("#announcementTrack");
+
+  function show(i) {
+    $track.html('<i class="fa-solid fa-circle-info"></i><span>' + escapeHtml(messages[i]) + "</span>");
+  }
+  show(index);
+  if (messages.length > 1) {
+    setInterval(() => {
+      index = (index + 1) % messages.length;
+      $track.css("opacity", 0);
+      setTimeout(() => {
+        show(index);
+        $track.css("opacity", 1);
+      }, 220);
+    }, 4200);
+  }
+}
+
+/* ---------------- HEADER / NAV ---------------- */
+
+function renderHeader(restaurant, navigation, ordering) {
+  $("#brandName").text(get(restaurant, "name", ""));
+  $("#brandLogo").attr("alt", get(restaurant, "name", "") + " logo").attr("src", get(restaurant, "logo", "assets/svg/logos/logo.svg"));
+  $("#footerLogo").attr("alt", get(restaurant, "name", "") + " logo").attr("src", get(restaurant, "logo", "assets/svg/logos/logo.svg"));
+
+  const navHtml = (navigation || []).map((item) => '<li><a href="' + escapeHtml(item.href) + '" data-nav-id="' + escapeHtml(item.id) + '">' + escapeHtml(item.label) + "</a></li>").join("");
+  $("#navList").html(navHtml);
+  $("#mobileNavList").html(navHtml);
+  $("#footerNavList").html((navigation || []).map((item) => '<li><a href="' + escapeHtml(item.href) + '">' + escapeHtml(item.label) + "</a></li>").join(""));
+
+  applyOrderLink($("#headerOrderBtn"), ordering);
+  applyOrderLink($("#mobileOrderBtn"), ordering);
+}
+
+/* ---------------- ORDERING BEHAVIOUR ---------------- */
+
+function resolveOrderLink(ordering, quickActions) {
+  if (!ordering || !ordering.enabled || ordering.type === "disabled") {
+    return { href: "#", target: "_self", disabled: true };
+  }
+  switch (ordering.type) {
+    case "external":
+      return { href: ordering.url, target: "_blank" };
+    case "phone": {
+      const num = get(quickActions, "call.number", ordering.url || "");
+      return { href: "tel:" + num.replace(/\s+/g, ""), target: "_self" };
+    }
+    case "whatsapp": {
+      const num = get(quickActions, "whatsapp.number", "").replace(/[^\d+]/g, "");
+      const msg = encodeURIComponent(get(quickActions, "whatsapp.message", "Hi! I'd like to place an order."));
+      return { href: "https://wa.me/" + num.replace("+", "") + "?text=" + msg, target: "_blank" };
+    }
+    case "internal":
+      return { href: "#menu", target: "_self" };
+    default:
+      return { href: ordering.url || "#menu", target: "_self" };
+  }
+}
+
+function applyOrderLink($el, ordering, quickActions) {
+  const qa = quickActions || get(siteData, "quickActions", {});
+  const resolved = resolveOrderLink(ordering, qa);
+  $el.text(get(ordering, "buttonText", "Order Now"));
+  if (resolved.disabled) {
+    $el.attr("href", "#").addClass("isDisabled").on("click", (e) => e.preventDefault());
+  } else {
+    $el.attr("href", resolved.href).attr("target", resolved.target === "_blank" ? "_blank" : null).attr("rel", resolved.target === "_blank" ? "noopener" : null);
+  }
+}
+
+/* ---------------- HERO ---------------- */
+
+function renderHero(hero, restaurant) {
+  if (!hero) return;
+  $("#heroEyebrow").text(hero.eyebrow || "");
+  $("#heroTitleMain").text(hero.title || "");
+  $("#heroTitleHighlight").text(hero.titleHighlight || "");
+  $("#heroSubtitle").text(hero.subtitle || "");
+
+  const ctas = [];
+  if (hero.primaryCta) ctas.push('<a href="' + escapeHtml(hero.primaryCta.href) + '" class="btn btnPrimary">' + escapeHtml(hero.primaryCta.text) + "</a>");
+  if (hero.secondaryCta) ctas.push('<a href="' + escapeHtml(hero.secondaryCta.href) + '" class="btn btnOutline">' + escapeHtml(hero.secondaryCta.text) + "</a>");
+  $("#heroCtas").html(ctas.join(""));
+
+  const rating = get(restaurant, "rating", 0);
+  const reviewCount = get(restaurant, "reviewCount", 0);
+  $("#heroRating").html(
+    '<span class="stars">' + starMarkup(rating) + "</span>" +
+    "<span>" + Number(rating).toFixed(1) + "</span>" +
+    '<span class="reviewCount">' + Number(reviewCount).toLocaleString("en-IN") + "+ happy customers</span>"
+  );
+
+  const badges = (hero.badges || []).map((b) => '<span class="heroBadge"><i class="' + escapeHtml(b.icon) + '"></i>' + escapeHtml(b.text) + "</span>").join("");
+  $("#heroBadges").html(badges);
+  $("#heroDeliveryInfo").text(hero.deliveryInfo || "");
+
+  const images = hero.images || [];
+  const classes = ["imgMain", "imgSecondary", "imgTertiary"];
+  const visualHtml = images
+    .slice(0, 3)
+    .map((img, i) => '<img class="heroImg ' + classes[i] + '" src="' + escapeHtml(img.src) + '" alt="' + escapeHtml(img.alt) + '" onerror="this.onerror=null;this.src=\'' + IMAGE_FALLBACK_PATH + '\';">')
+    .join("");
+  $("#heroVisual").html(visualHtml);
+}
+
+/* ---------------- CATEGORY NAVIGATION ---------------- */
+
+function renderCategoryNav(categories) {
+  const all = [{ id: "all", name: "All", icon: "fa-solid fa-utensils" }].concat(categories || []);
+  const html = all
+    .map(
+      (cat) =>
+        '<button type="button" class="categoryPill' + (cat.id === "all" ? " active" : "") + '" data-category-id="' + escapeHtml(cat.id) + '" role="tab" aria-selected="' + (cat.id === "all") + '">' +
+          '<i class="' + escapeHtml(cat.icon || "fa-solid fa-utensils") + '"></i><span>' + escapeHtml(cat.name) + "</span>" +
+        "</button>"
+    )
+    .join("");
+  $("#categoryScroller").html(html);
+}
+
+/* ---------------- MENU ---------------- */
+
+function renderMenu(data) {
+  const settings = data.settings || {};
+  renderMenuFilterChips(settings.filters || {});
+  $("#inlineMenuSearch, #menuSearchInput").attr("placeholder", get(settings, "search.placeholder", "Search the menu..."));
+  refreshMenuGrid();
+}
+
+function renderMenuFilterChips(filters) {
+  const chips = [];
+  if (filters.veg !== false) chips.push({ id: "veg", label: "Veg", icon: "fa-solid fa-leaf" });
+  if (filters.nonVeg !== false) chips.push({ id: "nonveg", label: "Non-Veg", icon: "fa-solid fa-drumstick-bite" });
+  if (filters.bestsellers !== false) chips.push({ id: "bestsellers", label: "Bestsellers", icon: "fa-solid fa-star" });
+  const html = chips
+    .map((c) => '<button type="button" class="filterChip" data-diet-filter="' + c.id + '"><i class="' + c.icon + '"></i>' + c.label + "</button>")
+    .join("");
+  $("#menuFilters").html('<button type="button" class="filterChip active" data-diet-filter="all">All</button>' + html);
+}
+
+function getFilteredMenuItems() {
+  const items = get(siteData, "menuItems", []);
+  return items.filter((item) => {
+    if (currentCategory !== "all" && item.categoryId !== currentCategory) return false;
+    if (currentDietFilter === "veg" && !item.isVeg) return false;
+    if (currentDietFilter === "nonveg" && item.isVeg) return false;
+    if (currentDietFilter === "bestsellers" && !item.isBestseller) return false;
+    if (currentSearchTerm) {
+      const haystack = (item.name + " " + item.description + " " + item.categoryId).toLowerCase();
+      if (!haystack.includes(currentSearchTerm.toLowerCase())) return false;
+    }
+    return true;
+  });
+}
+
+function refreshMenuGrid() {
+  const settings = get(siteData, "settings", {});
+  const filtered = getFilteredMenuItems();
+  const $grid = $("#menuGrid");
+
+  $grid.css("opacity", 0);
+  setTimeout(() => {
+    $grid.html(renderFoodCards(filtered, settings));
+    $grid.css("opacity", 1);
+    $("#menuEmptyState").prop("hidden", filtered.length !== 0);
+    $("#menuResultsCount").text(filtered.length + (filtered.length === 1 ? " dish" : " dishes") + " available");
+    syncCartButtons();
+    AnimationSystem.observeReveals($grid[0]);
+  }, siteData && siteData.animations && siteData.animations.enabled ? 180 : 0);
+}
+
+/* ---------------- FEATURED / BESTSELLERS ---------------- */
+
+function renderFeatured(menuItems, settings) {
+  const bestsellers = (menuItems || []).filter((i) => i.isBestseller);
+  $("#featuredScroller").html(renderFoodCards(bestsellers, settings));
+  if (!bestsellers.length) $("#featured").hide();
+}
+
+/* ---------------- OFFERS ---------------- */
+
+function renderOffersSection(offers) {
+  const html = renderOffers(offers);
+  $("#offersGrid").html(html);
+  if (!html) $("#offers").hide();
+}
+
+/* ---------------- FEATURES ---------------- */
+
+function renderFeaturesSection(features) {
+  $("#featureGrid").html(renderFeatures(features));
+}
+
+/* ---------------- ABOUT ---------------- */
+
+function renderAbout(about) {
+  if (!about) return;
+  $("#aboutSubtitle").text(about.subtitle || "");
+  $("#aboutTitle").text(about.title || "");
+  $("#aboutDescription").text(about.description || "");
+  $("#aboutImage")
+    .attr("alt", about.imageAlt || "")
+    .attr("onerror", "this.onerror=null;this.src='" + IMAGE_FALLBACK_PATH + "';")
+    .attr("src", about.image || IMAGE_FALLBACK_PATH);
+  const statsHtml = (about.stats || [])
+    .map((s) => '<div class="statBlock"><div class="statValue" data-counted="false">' + escapeHtml(s.value) + '</div><div class="statLabel">' + escapeHtml(s.label) + "</div></div>")
+    .join("");
+  $("#aboutStats").html(statsHtml);
+  if (about.cta) $("#aboutCta").text(about.cta.text).attr("href", about.cta.href || "#menu");
+}
+
+/* ---------------- PROCESS ---------------- */
+
+function renderProcess(process) {
+  if (!process) return;
+  $("#processTitle").text(process.title || "");
+  $("#processSubtitle").text(process.subtitle || "");
+  const html = (process.steps || [])
+    .map(
+      (step) =>
+        '<div class="processStep" data-reveal>' +
+          '<div class="processIconWrap"><i class="' + escapeHtml(step.icon || "fa-solid fa-utensils") + '"></i></div>' +
+          '<div class="processNumber">' + escapeHtml(step.number) + "</div>" +
+          "<h3>" + escapeHtml(step.title) + "</h3>" +
+          "<p>" + escapeHtml(step.description) + "</p>" +
+        "</div>"
+    )
+    .join("");
+  $("#processTimeline").html(html);
+}
+
+/* ---------------- GALLERY ---------------- */
+
+function renderGallerySection(gallery) {
+  $("#galleryGrid").html(renderGallery(gallery));
+  initLightbox(gallery || []);
+}
+
+/* ---------------- TESTIMONIALS ---------------- */
+
+function renderTestimonialsSection(testimonials) {
+  $("#testimonialsGrid").html(renderTestimonials(testimonials));
+}
+
+/* ---------------- FAQ ---------------- */
+
+function renderFaqSection(faq) {
+  $("#faqAccordion").html(renderFaq(faq));
+  initFaqAccordion();
+}
+
+/* ---------------- CONTACT ---------------- */
+
+function renderContact(contact, ordering, quickActions) {
+  if (!contact) return;
+  $("#contactTitle").text(contact.title || "");
+  $("#contactSubtitle").text(contact.subtitle || "");
+
+  const buttons = [];
+  const orderResolved = resolveOrderLink(ordering, quickActions);
+  if (ordering && ordering.enabled) {
+    buttons.push('<a href="' + escapeHtml(orderResolved.href) + '" class="btn btnPrimary"' + (orderResolved.target === "_blank" ? ' target="_blank" rel="noopener"' : "") + ">" + escapeHtml(ordering.buttonText || "Order Now") + "</a>");
+  }
+  if (get(quickActions, "call.enabled", false)) {
+    buttons.push('<a href="tel:' + escapeHtml(get(quickActions, "call.number", "").replace(/\s+/g, "")) + '" class="btn btnOutline"><i class="fa-solid fa-phone"></i> Call Us</a>');
+  }
+  $("#contactCtaButtons").html(buttons.join(""));
+
+  const details = [];
+  details.push({ icon: "fa-solid fa-location-dot", title: "Address", value: contact.address });
+  details.push({ icon: "fa-solid fa-phone", title: "Phone", value: '<a href="tel:' + contact.phone.replace(/\s+/g, "") + '">' + escapeHtml(contact.phone) + "</a>" });
+  details.push({ icon: "fa-solid fa-envelope", title: "Email", value: '<a href="mailto:' + contact.email + '">' + escapeHtml(contact.email) + "</a>" });
+  const hoursValue = (contact.hours || []).map((h) => escapeHtml(h.day) + ": " + escapeHtml(h.time)).join("<br>");
+  details.push({ icon: "fa-solid fa-clock", title: "Opening Hours", value: hoursValue });
+  details.push({ icon: "fa-solid fa-motorcycle", title: "Delivery Information", value: escapeHtml(contact.deliveryInfo || "") });
+
+  const html = details
+    .map(
+      (d) =>
+        '<div class="contactDetailItem"><i class="' + d.icon + '"></i><div><h4>' + d.title + "</h4><p>" + d.value + "</p></div></div>"
+    )
+    .join("");
+  $("#contactDetails").html(html);
+}
+
+/* ---------------- FOOTER ---------------- */
+
+function renderFooter(data) {
+  const restaurant = data.restaurant || {};
+  const footer = data.footer || {};
+  const contact = data.contact || {};
+
+  $("#footerBrandName").text(restaurant.name || "");
+  $("#footerDescription").text(footer.description || restaurant.description || "");
+  $("#footerCopyright").text(footer.copyrightText || "");
+
+  const social = (footer.socialLinks || [])
+    .map((s) => '<a href="' + escapeHtml(s.url) + '" target="_blank" rel="noopener" aria-label="' + escapeHtml(s.platform) + '"><i class="' + escapeHtml(s.icon) + '"></i></a>')
+    .join("");
+  $("#footerSocial").html(social);
+
+  const contactList = [
+    '<li><i class="fa-solid fa-location-dot"></i><span>' + escapeHtml(contact.address || "") + "</span></li>",
+    '<li><i class="fa-solid fa-phone"></i><a href="tel:' + (contact.phone || "").replace(/\s+/g, "") + '">' + escapeHtml(contact.phone || "") + "</a></li>",
+    '<li><i class="fa-solid fa-envelope"></i><a href="mailto:' + (contact.email || "") + '">' + escapeHtml(contact.email || "") + "</a></li>"
+  ].join("");
+  $("#footerContactList").html(contactList);
+
+  const hoursList = (contact.hours || []).map((h) => "<li><span>" + escapeHtml(h.day) + "</span><span>" + escapeHtml(h.time) + "</span></li>").join("");
+  $("#footerHoursList").html(hoursList);
+
+  applyOrderLink($("#footerOrderBtn"), data.ordering, data.quickActions);
+}
+
+/* ---------------- FLOATING ORDER BUTTON ---------------- */
+
+function renderFloatingOrderButton(config, ordering) {
+  const $btn = $("#floatingOrderBtn");
+  if (!config || !config.enabled) {
+    $btn.prop("hidden", true);
+    return;
+  }
+  $("#floatingOrderLabel").text(config.label || "Order Now");
+  const resolved = resolveOrderLink(ordering, get(siteData, "quickActions", {}));
+  $btn.attr("href", resolved.href).attr("target", resolved.target === "_blank" ? "_blank" : null);
+  $btn.prop("hidden", false);
+  $btn.css("opacity", 0).css("pointer-events", "none");
+}
+
+/* ---------------- GLOBAL INTERACTIONS ---------------- */
+
+function wireGlobalInteractions(data) {
+  // Sticky header shadow on scroll
+  $(window).on("scroll", function () {
+    $("#siteHeader").toggleClass("scrolled", $(window).scrollTop() > 8);
+    const $floating = $("#floatingOrderBtn");
+    if (!$floating.prop("hidden")) {
+      const show = $(window).scrollTop() > 420;
+      $floating.css({ opacity: show ? 1 : 0, pointerEvents: show ? "auto" : "none" });
+    }
+    updateActiveNavOnScroll();
+  });
+
+  // Category filter
+  $("#categoryScroller").on("click", ".categoryPill", function () {
+    $(".categoryPill").removeClass("active").attr("aria-selected", "false");
+    $(this).addClass("active").attr("aria-selected", "true");
+    currentCategory = $(this).data("category-id");
+    refreshMenuGrid();
+    if (window.innerWidth < 640) {
+      document.getElementById("menu").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+
+  // Diet / bestseller filter chips
+  $("#menuFilters").on("click", ".filterChip", function () {
+    $(".filterChip").removeClass("active");
+    $(this).addClass("active");
+    currentDietFilter = $(this).data("diet-filter");
+    refreshMenuGrid();
+  });
+
+  // Search (header panel + inline menu search) kept in sync
+  const debouncedSearch = debounce(function (term) {
+    currentSearchTerm = term;
+    if (term && $("#menu").is(":visible") === false) return;
+    // Jump to menu on active search so results are visible
+    refreshMenuGrid();
+  }, 220);
+
+  $("#menuSearchInput, #inlineMenuSearch").on("input", function () {
+    const val = $(this).val();
+    $("#menuSearchInput, #inlineMenuSearch").not(this).val(val);
+    debouncedSearch(val);
+  });
+
+  // Header search toggle
+  $("#searchToggle").on("click", function () {
+    const isHidden = $("#searchPanel").prop("hidden");
+    $("#searchPanel").prop("hidden", !isHidden);
+    $(this).attr("aria-expanded", isHidden);
+    if (isHidden) $("#menuSearchInput").trigger("focus");
+  });
+  $("#searchClose").on("click", function () {
+    $("#searchPanel").prop("hidden", true);
+    $("#searchToggle").attr("aria-expanded", "false");
+  });
+
+  // Mobile menu
+  $("#hamburgerBtn").on("click", function () {
+    const isOpen = $(this).attr("aria-expanded") === "true";
+    $(this).attr("aria-expanded", String(!isOpen));
+    $("#mobileMenu, #mobileMenuOverlay").prop("hidden", isOpen);
+    $("body").css("overflow", isOpen ? "" : "hidden");
+  });
+  $("#mobileMenuOverlay").on("click", closeMobileMenu);
+  $("#mobileNavList").on("click", "a", closeMobileMenu);
+
+  function closeMobileMenu() {
+    $("#hamburgerBtn").attr("aria-expanded", "false");
+    $("#mobileMenu, #mobileMenuOverlay").prop("hidden", true);
+    $("body").css("overflow", "");
+  }
+
+  // Add-to-order buttons -> quantity stepper (client-side only demo, no backend cart)
+  $(document).on("click", "[data-add-item]", function () {
+    const id = $(this).data("add-item");
+    cart[id] = (cart[id] || 0) + 1;
+    syncCartButtons();
+  });
+  $(document).on("click", "[data-qty-increase]", function () {
+    const id = $(this).data("qty-increase");
+    cart[id] = (cart[id] || 0) + 1;
+    syncCartButtons();
+  });
+  $(document).on("click", "[data-qty-decrease]", function () {
+    const id = $(this).data("qty-decrease");
+    cart[id] = Math.max(0, (cart[id] || 0) - 1);
+    if (cart[id] === 0) delete cart[id];
+    syncCartButtons();
+  });
+
+  // Smooth scroll for in-page anchors (native CSS scroll-behavior covers most;
+  // this offsets for the sticky header + closes mobile menu on click).
+  $(document).on("click", 'a[href^="#"]', function (e) {
+    const targetId = $(this).attr("href");
+    if (targetId.length < 2) return;
+    const $target = $(targetId);
+    if (!$target.length) return;
+    e.preventDefault();
+    closeMobileMenu();
+    const headerOffset = $("#siteHeader").outerHeight() || 0;
+    $("html, body").animate({ scrollTop: $target.offset().top - headerOffset + 1 }, 500);
+  });
+}
+
+/** Render Add button as a +/- quantity stepper once an item is in the cart, only if orderingUiEnabled. */
+function syncCartButtons() {
+  const orderingUiEnabled = get(siteData, "settings.orderingUiEnabled", true);
+  $(".foodCard").each(function () {
+    const id = $(this).data("item-id");
+    const qty = cart[id] || 0;
+    const $slot = $(this).find(".addBtn, .qtyControl");
+    if (!orderingUiEnabled) return;
+    if (qty > 0) {
+      const html =
+        '<div class="qtyControl"><button type="button" data-qty-decrease="' + id + '" aria-label="Decrease quantity">−</button>' +
+        '<span class="qtyValue">' + qty + "</span>" +
+        '<button type="button" data-qty-increase="' + id + '" aria-label="Increase quantity">+</button></div>';
+      $slot.replaceWith(html);
+    } else if ($slot.hasClass("qtyControl")) {
+      const html = '<button type="button" class="addBtn" data-add-item="' + id + '"><i class="fa-solid fa-plus"></i><span>Add</span></button>';
+      $slot.replaceWith(html);
+    }
+  });
+}
+
+/** Highlight the nav link matching the section currently in view. */
+function updateActiveNavOnScroll() {
+  const scrollPos = $(window).scrollTop() + ($("#siteHeader").outerHeight() || 0) + 30;
+  let currentId = null;
+  $("main > section, #home").each(function () {
+    if (this.style.display === "none") return;
+    if ($(this).offset().top <= scrollPos) currentId = this.id;
+  });
+  if (!currentId) return;
+  $(".navList a, .mobileNavList a").removeClass("active");
+  $('.navList a[href="#' + currentId + '"], .mobileNavList a[href="#' + currentId + '"]').addClass("active");
+}
