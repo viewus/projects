@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMÉA Wall Studio — Curated Wall Art & Stickers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --black:#151412;
+  --charcoal:#211f1c;
+  --charcoal-2:#2a2723;
+  --ivory:#f7f3eb;
+  --cream:#eee7da;
+  --gold:#b79a62;
+  --muted-gold:#9d8353;
+  --text:#25231f;
+  --muted:#777169;
+  --white:#ffffff;
+  --line:rgba(21,20,18,0.1);
+  --line-light:rgba(247,243,235,0.16);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--ivory);
+  color:var(--text);
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+input,textarea{font-family:inherit;}
+.container{
+  width:100%;
+  max-width:1240px;
+  margin:0 auto;
+  padding:0 40px;
+}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+}
+.eyebrow::before{
+  content:'';
+  width:28px;
+  height:1px;
+  background:var(--gold);
+  display:inline-block;
+}
+h1,h2,h3,h4{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  letter-spacing:0.005em;
+  color:var(--black);
+}
+
+/* TOP BANNER */
+.top-banner{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:950;
+  height:38px;
+  background:var(--black);
+  border-bottom:1px solid var(--line-light);
+  overflow:hidden;
+  transition:height .4s ease, opacity .4s ease;
+}
+.top-banner.hidden{height:0;border-bottom-color:transparent;opacity:0;}
+.top-banner-track{
+  display:flex;
+  align-items:center;
+  height:38px;
+  white-space:nowrap;
+  animation:bannerScroll 26s linear infinite;
+  width:max-content;
+}
+.top-banner-track span{
+  display:inline-flex;
+  align-items:center;
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--cream);
+  font-weight:500;
+  padding:0 28px;
+  white-space:nowrap;
+}
+.top-banner-track span i{color:var(--gold);margin-right:10px;font-size:9px;}
+@keyframes bannerScroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+.top-banner-close{
+  position:fixed;
+  top:9px;right:16px;
+  z-index:960;
+  color:rgba(247,243,235,0.6);
+  font-size:13px;
+  width:20px;height:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:color .3s ease, opacity .3s ease;
+}
+.top-banner-close:hover{color:var(--gold);}
+.top-banner.hidden ~ .top-banner-close{opacity:0;visibility:hidden;}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:38px;left:0;right:0;
+  z-index:900;
+  padding:26px 0;
+  transition:all .45s ease, top .4s ease;
+}
+header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.header-inner-bg{
+  position:absolute;
+  inset:0;
+  background:rgba(21,20,18,0.92);
+  backdrop-filter:blur(6px);
+  opacity:0;
+  transition:opacity .45s ease;
+  border-bottom:1px solid transparent;
+}
+header.solid .header-inner-bg{
+  opacity:1;
+  border-bottom:1px solid var(--line-light);
+}
+header.solid{padding:16px 0;}
+.logo{
+  position:relative;
+  z-index:2;
+  line-height:1;
+}
+.logo .top{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;
+  letter-spacing:0.12em;
+  color:var(--ivory);
+  font-weight:600;
+}
+.logo .sub{
+  font-size:9px;
+  letter-spacing:0.32em;
+  color:var(--gold);
+  font-weight:600;
+  margin-top:4px;
+  display:block;
+}
+nav.desktop-nav{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:44px;
+}
+nav.desktop-nav a{
+  font-size:13px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ivory);
+  font-weight:500;
+  position:relative;
+  padding-bottom:4px;
+}
+nav.desktop-nav a::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:0;
+  width:0;height:1px;
+  background:var(--gold);
+  transition:width .35s ease;
+}
+nav.desktop-nav a:hover::after{width:100%;}
+.header-actions{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.btn-ghost-header{
+  border:1px solid var(--line-light);
+  color:var(--ivory);
+  font-size:12px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  padding:11px 22px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:all .3s ease;
+}
+.btn-ghost-header:hover{
+  background:var(--gold);
+  border-color:var(--gold);
+  color:var(--black);
+}
+.hamburger{
+  display:none;
+  position:relative;
+  z-index:2;
+  width:26px;height:18px;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.hamburger span{
+  display:block;height:1px;width:100%;
+  background:var(--ivory);
+}
+
+.mobile-nav{
+  position:fixed;
+  top:0;right:-100%;
+  width:82%;max-width:340px;
+  height:100vh;
+  background:var(--charcoal);
+  z-index:1200;
+  transition:right .45s ease;
+  padding:100px 40px 40px;
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+.mobile-nav.open{right:0;}
+.mobile-nav a{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;
+  color:var(--ivory);
+  font-weight:500;
+}
+.mobile-nav-close{
+  position:absolute;
+  top:34px;right:34px;
+  color:var(--ivory);
+  font-size:20px;
+}
+.mobile-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.5);
+  z-index:1100;
+  opacity:0;visibility:hidden;
+  transition:all .4s ease;
+}
+.mobile-overlay.show{opacity:1;visibility:visible;}
+
+/* HERO */
+.hero{
+  position:relative;
+  height:100vh;
+  min-height:640px;
+  width:100%;
+  overflow:hidden;
+  margin-top:38px;
+  transition:margin-top .4s ease;
+}
+.hero-slide{
+  position:absolute;inset:0;
+  opacity:0;
+  transition:opacity 1.4s ease;
+  background-size:cover;
+  background-position:center;
+}
+.hero-slide.active{opacity:1;}
+.hero-slide::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(21,20,18,0.55) 0%, rgba(21,20,18,0.35) 40%, rgba(21,20,18,0.75) 100%);
+}
+.hero-content{
+  position:relative;
+  z-index:5;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  max-width:640px;
+  padding:0 40px;
+  margin:0 auto;
+  color:var(--ivory);
+}
+.hero-inner{
+  max-width:1240px;
+  width:100%;
+  margin:0 auto;
+  padding:0 40px;
+}
+.hero-eyebrow{
+  font-size:12px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:600;
+  opacity:0;
+  transform:translateY(16px);
+  animation:heroUp .9s ease forwards .3s;
+}
+.hero h1{
+  font-size:clamp(42px,6vw,74px);
+  line-height:1.05;
+  color:var(--ivory);
+  font-weight:500;
+  margin:22px 0 20px;
+  max-width:640px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:heroUp .9s ease forwards .5s;
+}
+.hero p{
+  font-size:16px;
+  line-height:1.7;
+  color:rgba(247,243,235,0.8);
+  max-width:440px;
+  font-weight:300;
+  opacity:0;
+  transform:translateY(20px);
+  animation:heroUp .9s ease forwards .7s;
+}
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:38px;
+  flex-wrap:wrap;
+  opacity:0;
+  transform:translateY(20px);
+  animation:heroUp .9s ease forwards .9s;
+}
+@keyframes heroUp{to{opacity:1;transform:translateY(0);}}
+.btn-gold{
+  background:var(--gold);
+  color:var(--black);
+  padding:16px 34px;
+  font-size:12px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:600;
+  transition:all .35s ease;
+  border:1px solid var(--gold);
+}
+.btn-gold:hover{background:transparent;color:var(--ivory);}
+.btn-outline{
+  padding:16px 34px;
+  font-size:12px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:600;
+  border:1px solid rgba(247,243,235,0.5);
+  color:var(--ivory);
+  transition:all .35s ease;
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-dots{
+  position:absolute;
+  bottom:44px;
+  left:0;right:0;
+  z-index:6;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+.hero-dots span{
+  width:26px;height:1px;
+  background:rgba(247,243,235,0.4);
+  transition:all .35s ease;
+  cursor:pointer;
+}
+.hero-dots span.active{background:var(--gold);width:42px;}
+.hero-count{
+  position:absolute;
+  right:40px;bottom:48px;
+  z-index:6;
+  color:rgba(247,243,235,0.6);
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;
+  letter-spacing:0.05em;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.hero-count .current{color:var(--gold);font-size:20px;}
+
+/* SECTION GENERAL */
+section{padding:120px 0;}
+.section-head{
+  text-align:center;
+  max-width:600px;
+  margin:0 auto 72px;
+}
+.section-head h2{
+  font-size:clamp(34px,4.2vw,52px);
+  margin:20px 0 18px;
+}
+.section-head p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.7;
+  font-weight:300;
+}
+
+/* PRODUCT FILTERS */
+.filter-bar{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:20px;
+}
+.filter-btn{
+  font-size:11px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--muted);
+  padding:10px 20px;
+  border:1px solid var(--line);
+  transition:all .3s ease;
+}
+.filter-btn:hover{color:var(--black);border-color:var(--muted-gold);}
+.filter-btn.active{
+  background:var(--black);
+  border-color:var(--black);
+  color:var(--ivory);
+}
+.result-count{
+  text-align:center;
+  font-size:12px;
+  letter-spacing:0.04em;
+  color:var(--muted);
+  margin:0 0 40px;
+  font-weight:400;
+}
+.contact-detail{cursor:pointer;position:relative;}
+.contact-detail .copied-tag{
+  font-size:10px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gold);
+  opacity:0;
+  transition:opacity .3s ease;
+  margin-left:4px;
+}
+.contact-detail.copied .copied-tag{opacity:1;}
+
+/* PRODUCT GRID */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:34px 28px;
+}
+.product-card{
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.product-card.in-view{opacity:1;transform:translateY(0);}
+.card-image{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:4/5;
+  background:var(--cream);
+}
+.card-image img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .9s cubic-bezier(.2,.7,.2,1);
+}
+.product-card:hover .card-image img{transform:scale(1.06);}
+.card-tag-float{
+  position:absolute;
+  top:16px;left:16px;
+  background:rgba(21,20,18,0.78);
+  color:var(--cream);
+  font-size:10px;
+  letter-spacing:0.16em;
+  padding:7px 13px;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.card-view-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(21,20,18,0.34);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .4s ease, visibility .4s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+.product-card:hover .card-view-overlay,
+.product-card:focus-within .card-view-overlay{
+  opacity:1;
+  visibility:visible;
+}
+.card-view-overlay span{
+  color:var(--ivory);
+  font-size:12px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:600;
+  border:1px solid rgba(247,243,235,0.7);
+  background:rgba(21,20,18,0.35);
+  padding:13px 30px;
+  transform:translateY(12px);
+  transition:transform .4s ease;
+  white-space:nowrap;
+}
+.product-card:hover .card-view-overlay span,
+.product-card:focus-within .card-view-overlay span{transform:translateY(0);}
+.card-body{
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  margin-top:20px;
+}
+.card-tag{
+  font-size:10px;
+  letter-spacing:0.18em;
+  color:var(--muted-gold);
+  text-transform:uppercase;
+  font-weight:700;
+}
+.card-title{
+  font-size:24px;
+  margin:8px 0 6px;
+  font-weight:500;
+}
+.card-desc{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.6;
+  font-weight:300;
+  margin-bottom:16px;
+}
+.card-footer{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+.card-view-link{
+  font-size:11px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--black);
+  display:flex;
+  align-items:center;
+  gap:6px;
+  transition:gap .3s ease, color .3s ease;
+}
+.card-view-link:hover{gap:10px;color:var(--muted-gold);}
+
+/* GALLERY */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:170px;
+  gap:14px;
+}
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  background:var(--charcoal-2);
+}
+.gallery-item img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.gallery-item:hover img{transform:scale(1.07);}
+.gallery-item::after{
+  content:'';
+  position:absolute;inset:0;
+  background:rgba(21,20,18,0.15);
+  opacity:0;
+  transition:opacity .35s ease;
+}
+.gallery-item:hover::after{opacity:1;}
+.gallery-item .gallery-icon{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(0.7);
+  color:var(--ivory);
+  font-size:20px;
+  opacity:0;
+  transition:opacity .35s ease, transform .35s ease;
+}
+.gallery-item:hover .gallery-icon{opacity:1;transform:translate(-50%,-50%) scale(1);}
+.gallery-item.tall{grid-row:span 2;}
+.gallery-item.wide{grid-column:span 2;}
+
+.lightbox-overlay{
+  position:fixed;inset:0;
+  background:rgba(10,9,8,0.92);
+  z-index:2100;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:opacity .4s ease, visibility .4s ease;
+  padding:90px 32px 40px;
+}
+.lightbox-overlay.show{opacity:1;visibility:visible;}
+.lightbox-inner{
+  position:relative;
+  max-width:900px;
+  width:100%;
+  max-height:80vh;
+}
+.lightbox-inner img{
+  width:100%;height:100%;
+  max-height:80vh;
+  object-fit:contain;
+  box-shadow:0 30px 70px rgba(0,0,0,0.5);
+}
+.lightbox-close{
+  position:absolute;
+  top:-58px;right:0;
+  width:42px;height:42px;
+  border-radius:50%;
+  border:1px solid rgba(247,243,235,0.55);
+  color:var(--ivory);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+  transition:background .3s ease, border-color .3s ease, transform .35s ease;
+}
+.lightbox-close:hover{background:var(--gold);border-color:var(--gold);color:var(--black);}
+.lightbox-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;height:44px;
+  border-radius:50%;
+  background:rgba(247,243,235,0.1);
+  border:1px solid rgba(247,243,235,0.3);
+  color:var(--ivory);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+  transition:background .3s ease;
+}
+.lightbox-nav:hover{background:var(--gold);color:var(--black);border-color:var(--gold);}
+.lightbox-prev{left:-64px;}
+.lightbox-next{right:-64px;}
+@media(max-width:900px){
+  .lightbox-prev{left:8px;}
+  .lightbox-next{right:8px;}
+}
+
+/* MODAL */
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(15,14,12,0.72);
+  backdrop-filter:blur(3px);
+  z-index:2000;
+  opacity:0;visibility:hidden;
+  transition:opacity .4s ease, visibility .4s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:88px 32px 32px;
+}
+.modal-overlay.show{opacity:1;visibility:visible;}
+.modal-wrap{
+  position:relative;
+  width:100%;
+  max-width:1040px;
+  transform:translateY(30px);
+  transition:transform .45s ease;
+}
+.modal-overlay.show .modal-wrap{transform:translateY(0);}
+.modal-box{
+  background:var(--ivory);
+  width:100%;
+  max-height:80vh;
+  overflow-y:auto;
+  position:relative;
+  box-shadow:0 30px 70px rgba(0,0,0,0.35);
+}
+.modal-close{
+  position:absolute;
+  top:-58px;right:0;
+  z-index:20;
+  width:42px;height:42px;
+  border-radius:50%;
+  background:transparent;
+  border:1px solid rgba(247,243,235,0.55);
+  color:var(--ivory);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+  transition:background .3s ease, border-color .3s ease, transform .35s ease;
+}
+.modal-close i{transition:transform .35s ease;}
+.modal-close:hover{background:var(--gold);border-color:var(--gold);color:var(--black);}
+.modal-close:hover i{transform:rotate(90deg);}
+@media(max-width:520px){
+  .modal-overlay{padding:0;}
+  .modal-wrap{max-width:100%;}
+  .modal-box{max-height:100vh;height:100vh;}
+  .modal-close{
+    position:fixed;
+    top:16px;right:16px;
+    background:rgba(21,20,18,0.85);
+    border-color:transparent;
+  }
+}
+.modal-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+}
+.modal-gallery{
+  background:var(--cream);
+  padding:36px;
+}
+.modal-main-img{
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:var(--charcoal-2);
+  margin-bottom:16px;
+}
+.modal-main-img img{width:100%;height:100%;object-fit:cover;}
+.modal-thumbs{
+  display:flex;
+  gap:12px;
+}
+.modal-thumbs img{
+  width:72px;height:72px;
+  object-fit:cover;
+  cursor:pointer;
+  opacity:0.55;
+  transition:opacity .3s ease, outline .3s ease;
+  outline:1px solid transparent;
+}
+.modal-thumbs img.active{opacity:1;outline:1px solid var(--gold);}
+.modal-info{
+  padding:48px 44px;
+}
+.modal-tag{
+  font-size:11px;
+  letter-spacing:0.18em;
+  color:var(--muted-gold);
+  text-transform:uppercase;
+  font-weight:700;
+}
+.modal-title{
+  font-size:36px;
+  margin:14px 0 12px;
+}
+.modal-desc{
+  font-size:14px;
+  line-height:1.8;
+  color:var(--muted);
+  font-weight:300;
+  margin-bottom:26px;
+}
+.modal-features-label{
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:14px;
+}
+.modal-features{
+  list-style:none;
+  margin-bottom:32px;
+}
+.modal-features li{
+  font-size:13px;
+  color:var(--text);
+  padding:9px 0;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:400;
+}
+.modal-features li::before{
+  content:'';
+  width:5px;height:5px;
+  background:var(--gold);
+  display:inline-block;
+}
+.enquire-label{
+  font-size:12px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:20px;
+  padding-top:8px;
+  border-top:1px solid var(--line);
+  padding-top:24px;
+}
+.form-group{margin-bottom:16px;}
+.form-group label{
+  display:block;
+  font-size:11px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:8px;
+  font-weight:600;
+}
+.form-group input,.form-group textarea{
+  width:100%;
+  border:none;
+  border-bottom:1px solid var(--line);
+  background:transparent;
+  padding:10px 2px;
+  font-size:14px;
+  color:var(--text);
+  transition:border-color .3s ease;
+}
+.form-group input:focus,.form-group textarea:focus{
+  outline:none;
+  border-color:var(--gold);
+}
+.form-group textarea{resize:vertical;min-height:70px;}
+.form-msg{
+  font-size:13px;
+  margin-top:14px;
+  display:none;
+  padding:12px 14px;
+  border:1px solid var(--line);
+}
+.form-msg.success{display:block;color:#4a6a4d;border-color:#4a6a4d33;background:#4a6a4d0d;}
+.form-msg.error{display:block;color:#9d4b3f;border-color:#9d4b3f33;background:#9d4b3f0d;}
+.btn-submit{
+  margin-top:8px;
+  width:100%;
+  background:var(--black);
+  color:var(--ivory);
+  padding:16px;
+  font-size:12px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:600;
+  transition:background .3s ease;
+}
+.btn-submit:hover{background:var(--muted-gold);}
+.btn-submit:disabled{opacity:0.6;cursor:default;}
+
+/* CONTACT */
+.contact-section{
+  background:var(--black);
+  color:var(--ivory);
+  position:relative;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.contact-left .eyebrow{color:var(--gold);}
+.contact-left h2{
+  color:var(--ivory);
+  font-size:clamp(32px,4vw,48px);
+  margin:20px 0 20px;
+  line-height:1.15;
+}
+.contact-left p{
+  color:rgba(247,243,235,0.65);
+  font-size:15px;
+  line-height:1.75;
+  font-weight:300;
+  margin-bottom:36px;
+  max-width:420px;
+}
+.contact-detail{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:18px;
+  font-size:14px;
+  color:rgba(247,243,235,0.85);
+}
+.contact-detail i{color:var(--gold);width:18px;}
+.contact-right{
+  background:rgba(247,243,235,0.04);
+  border:1px solid var(--line-light);
+  padding:44px;
+}
+.contact-right .form-group label{color:rgba(247,243,235,0.55);}
+.contact-right .form-group input,.contact-right .form-group textarea{
+  color:var(--ivory);
+  border-bottom:1px solid var(--line-light);
+}
+.contact-right .btn-submit{background:var(--gold);color:var(--black);}
+.contact-right .btn-submit:hover{background:var(--ivory);}
+
+/* FOOTER */
+footer{
+  background:var(--charcoal);
+  color:rgba(247,243,235,0.7);
+  padding:56px 0 26px;
+}
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:40px;
+  padding-bottom:34px;
+  border-bottom:1px solid var(--line-light);
+}
+.footer-brand .top{
+  font-family:'Cormorant Garamond',serif;
+  color:var(--ivory);
+  font-size:22px;
+  letter-spacing:0.08em;
+}
+.footer-brand p{
+  font-size:13px;
+  margin-top:10px;
+  max-width:260px;
+  font-weight:300;
+  color:rgba(247,243,235,0.5);
+}
+.footer-links{display:flex;flex-direction:column;gap:12px;}
+.footer-links a{font-size:13px;font-weight:300;color:rgba(247,243,235,0.6);}
+.footer-links a:hover{color:var(--gold);}
+.footer-col-title{
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:16px;
+  font-weight:700;
+}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  padding-top:22px;
+  font-size:12px;
+  color:rgba(247,243,235,0.4);
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* FLOATING */
+.floating-wa{
+  position:fixed;
+  bottom:28px;left:28px;
+  z-index:800;
+  width:54px;height:54px;
+  border-radius:50%;
+  background:#1f2b23;
+  color:var(--ivory);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
+  transition:transform .3s ease;
+}
+.floating-wa:hover{transform:scale(1.08);}
+.scroll-top{
+  position:fixed;
+  bottom:28px;right:28px;
+  z-index:800;
+  width:46px;height:46px;
+  border-radius:50%;
+  background:var(--black);
+  color:var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+  opacity:0;visibility:hidden;
+  transform:translateY(10px);
+  transition:all .35s ease;
+  border:1px solid var(--line-light);
+}
+.scroll-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.scroll-top:hover{background:var(--gold);color:var(--black);}
+
+@media(max-width:1080px){
+  .product-grid{grid-template-columns:repeat(3,1fr);}
+  .gallery-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:920px){
+  nav.desktop-nav,.header-actions .btn-ghost-header{display:none;}
+  .hamburger{display:flex;}
+  .contact-grid{grid-template-columns:1fr;gap:56px;}
+  .modal-grid{grid-template-columns:1fr;}
+  .modal-gallery{padding:24px;}
+  .modal-info{padding:36px 28px 40px;}
+}
+@media(max-width:760px){
+  .container{padding:0 24px;}
+  .hero-inner{padding:0 24px;}
+  section{padding:88px 0;}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:22px 16px;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
+  .gallery-item.wide{grid-column:span 1;}
+  .gallery-item.tall{grid-row:span 1;}
+  .card-title{font-size:19px;}
+  .footer-grid{flex-direction:column;}
+  .hero-count{right:24px;bottom:30px;}
+}
+@media(max-width:520px){
+  .top-banner-track span{font-size:10px;padding:0 18px;}
+  .top-banner-close{top:8px;right:10px;}
+  .product-grid{grid-template-columns:1fr 1fr;}
+  .card-desc{display:none;}
+  .modal-thumbs img{width:60px;height:60px;}
+}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease;}
+.fade-up.in-view{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="top-banner" id="topBanner">
+  <div class="top-banner-track">
+    <span><i class="fa-solid fa-star"></i>Complimentary Design Consultation On Every Order</span>
+    <span><i class="fa-solid fa-star"></i>New: The Wild Garden Collection Has Arrived</span>
+    <span><i class="fa-solid fa-star"></i>Free Shipping Across India On Orders Above ₹999</span>
+    <span><i class="fa-solid fa-star"></i>Complimentary Design Consultation On Every Order</span>
+    <span><i class="fa-solid fa-star"></i>New: The Wild Garden Collection Has Arrived</span>
+    <span><i class="fa-solid fa-star"></i>Free Shipping Across India On Orders Above ₹999</span>
+  </div>
+</div>
+<div class="top-banner-close" id="topBannerClose"><i class="fa-solid fa-xmark"></i></div>
+
+<header id="siteHeader">
+  <div class="header-inner-bg"></div>
+  <div class="container">
+    <a href="#home" class="logo">
+      <span class="top">LUMÉA</span>
+      <span class="sub">WALL STUDIO</span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#collection" class="nav-link">Collection</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#" class="btn-ghost-header" id="headerWaBtn"><i class="fa-brands fa-whatsapp"></i> Enquire</a>
+      <div class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-close" id="mobileNavClose"><i class="fa-solid fa-xmark"></i></div>
+  <a href="#home" class="nav-link">Home</a>
+  <a href="#collection" class="nav-link">Collection</a>
+  <a href="#gallery" class="nav-link">Gallery</a>
+  <a href="#about" class="nav-link">About</a>
+  <a href="#contact" class="nav-link">Contact</a>
+</div>
+
+<section class="hero" id="home">
+  <div id="heroSlides"></div>
+  <div class="hero-inner">
+    <div class="hero-content" id="heroContent"></div>
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="hero-count"><span class="current" id="heroCurrent">01</span> / <span id="heroTotal">03</span></div>
+</section>
+
+<section id="collection">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">THE COLLECTION</span>
+      <h2>Wall Art, Made Personal.</h2>
+      <p>A refined collection of wall stickers created to add personality, warmth and beauty to modern spaces.</p>
+    </div>
+    <div class="filter-bar" id="filterBar"></div>
+    <div class="result-count" id="resultCount"></div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<section id="gallery" style="background:var(--charcoal);padding:120px 0;">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow" style="justify-content:center;">THE GALLERY</span>
+      <h2 style="color:var(--ivory);">Walls We've Helped Create.</h2>
+      <p style="color:rgba(247,243,235,0.6);">A look at LUMÉA designs styled inside real homes — for inspiration before you choose yours.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section id="about" style="background:var(--cream);padding:100px 0;">
+  <div class="container" style="max-width:760px;text-align:center;">
+    <span class="eyebrow" style="justify-content:center;">ABOUT LUMÉA</span>
+    <h2 style="font-size:clamp(28px,3.6vw,40px);margin:20px 0 20px;">Crafted For Quiet, Beautiful Rooms.</h2>
+    <p style="color:var(--muted);font-weight:300;line-height:1.8;font-size:15px;">Every LUMÉA design begins as a hand-drawn study before it becomes a wall sticker. We work with a small circle of interior stylists to create pieces that feel considered rather than decorative — pieces that belong to the room, not just on it.</p>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left fade-up">
+        <span class="eyebrow">GET IN TOUCH</span>
+        <h2>Have A Wall In Mind?<br>Let's Create Something Beautiful.</h2>
+        <p>Tell us what you're looking for and we'll help you find the right design for your space.</p>
+        <div class="contact-detail" id="copyPhone" data-copy=""><i class="fa-solid fa-phone"></i><span id="contactPhone"></span><span class="copied-tag">Copied</span></div>
+        <div class="contact-detail" id="copyWa" data-copy=""><i class="fa-brands fa-whatsapp"></i><span id="contactWa"></span><span class="copied-tag">Copied</span></div>
+        <div class="contact-detail" id="copyEmail" data-copy=""><i class="fa-solid fa-envelope"></i><span id="contactEmail"></span><span class="copied-tag">Copied</span></div>
+      </div>
+      <div class="contact-right fade-up">
+        <form id="mainContactForm">
+          <div class="form-group">
+            <label>Name *</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email">
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Enquiry</button>
+          <div class="form-msg" id="mainFormMsg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="top">LUMÉA WALL STUDIO</div>
+        <p>Curated wall décor for beautiful spaces.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#collection">Collection</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Reach Us</div>
+        <div class="footer-links">
+          <a href="#" id="footerWa">WhatsApp</a>
+          <a href="#" id="footerPhone"></a>
+          <a href="#" id="footerEmail"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LUMÉA Wall Studio</span>
+      <span>Designed for beautiful walls</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="floating-wa" id="floatingWaBtn"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="scroll-top" id="scrollTopBtn"><i class="fa-solid fa-arrow-up"></i></div>
+
+<div class="modal-overlay" id="productModal">
+  <div class="modal-wrap">
+    <div class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></div>
+    <div class="modal-box">
+    <div class="modal-grid">
+      <div class="modal-gallery">
+        <div class="modal-main-img"><img id="modalMainImg" src="" alt=""></div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+      <div class="modal-info">
+        <span class="modal-tag" id="modalTag"></span>
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <div class="modal-price" id="modalPrice"></div>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-features-label">Features</div>
+        <ul class="modal-features" id="modalFeatures"></ul>
+        <div class="enquire-label">Enquire About This Product</div>
+        <form id="modalEnquiryForm">
+          <input type="hidden" name="product_id" id="modalProductId">
+          <input type="hidden" name="product_title" id="modalProductTitle">
+          <div class="form-group">
+            <label>Name *</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email">
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea name="message" required>I would like to know more about this design.</textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Enquiry</button>
+          <div class="form-msg" id="modalFormMsg"></div>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <div class="lightbox-inner">
+    <div class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></div>
+    <div class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></div>
+    <div class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></div>
+    <img src="" id="lightboxImg" alt="">
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+const API = {
+  content: "/api/content",
+  products: "/api/products",
+  enquiry: "/api/enquiry"
+};
+
+const FALLBACK_CONTENT = {
+  brand: { name: "LUMÉA", subtitle: "WALL STUDIO", logo: "" },
+  contact: { phone: "+919999999999", whatsapp: "919999999999", email: "hello@lumeawallstudio.com" },
+  hero: [
+    {
+      image: "https://images.unsplash.com/photo-1615529162924-f8605388461d?q=80&w=1600&auto=format&fit=crop",
+      tag: "THE SIGNATURE COLLECTION",
+      title: "Turn Empty Walls\nInto Beautiful Stories",
+      description: "Curated wall stickers designed to bring character, warmth and elegance to your space.",
+      button: "Explore Collection"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1600&auto=format&fit=crop",
+      tag: "CURATED FOR YOUR SPACE",
+      title: "Details That\nTransform A Room",
+      description: "Every design is chosen for the way it changes how a room feels, not just how it looks.",
+      button: "View The Collection"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop",
+      tag: "TIMELESS WALL DECOR",
+      title: "Designed To Feel\nBeautifully Personal",
+      description: "Refined patterns and botanical forms crafted for calm, considered interiors.",
+      button: "Discover More"
+    }
+  ]
+};
+
+const FALLBACK_PRODUCTS = [
+  { id:"WS001", tag:"SIGNATURE", title:"Botanical Whisper", description:"Elegant botanical detailing for calm, sophisticated interiors.", price:1299, old_price:1599, currency:"INR",
+    images:["https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=1000&auto=format&fit=crop"],
+    details:"A refined botanical wall design created to add a soft artistic character to bedrooms, living spaces and reading corners.",
+    features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] },
+  { id:"WS002", tag:"NEW", title:"Golden Palm", description:"A statement palm silhouette finished in warm muted gold.", price:1499, old_price:1799, currency:"INR",
+    images:["https://images.unsplash.com/photo-1622638397772-c48f6836ac3c?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1602928321679-560bb453f190?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1000&auto=format&fit=crop"],
+    details:"Golden Palm brings a resort-inspired warmth to any wall, pairing an oversized botanical form with a soft matte gold tone.",
+    features:["Fade-resistant ink","Easy application","Removable design","Suitable for smooth walls"] },
+  { id:"WS003", tag:"BESTSELLER", title:"Serene Arch", description:"A minimal arch motif for understated, modern interiors.", price:1199, old_price:null, currency:"INR",
+    images:["https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1000&auto=format&fit=crop"],
+    details:"Inspired by minimalist architecture, Serene Arch uses a single confident line to bring quiet structure to a room.",
+    features:["Premium matte finish","Quick application","Removable design","Suitable for smooth walls"] },
+  { id:"WS004", tag:"LIMITED", title:"Olive Branch", description:"A soft, trailing olive branch pattern in muted tones.", price:1349, old_price:1599, currency:"INR",
+    images:["https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1617104551722-3b2d51366400?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=1000&auto=format&fit=crop"],
+    details:"Olive Branch traces a delicate botanical line across the wall, designed to feel hand-painted rather than printed.",
+    features:["Premium finish","Easy application","Limited edition","Suitable for smooth walls"] },
+  { id:"WS005", tag:"EDITOR'S PICK", title:"Moonlit Bloom", description:"An oversized floral study rendered in soft charcoal.", price:1599, old_price:1899, currency:"INR",
+    images:["https://images.unsplash.com/photo-1487530811176-3780de880c2d?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=1000&auto=format&fit=crop"],
+    details:"Moonlit Bloom is a large-scale floral study designed to anchor a living room or bedroom feature wall.",
+    features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] },
+  { id:"WS006", tag:"TIMELESS", title:"Minimal Muse", description:"A single continuous line portrait, quietly elegant.", price:1099, old_price:null, currency:"INR",
+    images:["https://images.unsplash.com/photo-1549887534-1541e9326642?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1554188248-986adbb73be4?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop"],
+    details:"Minimal Muse uses a single continuous line to suggest form, designed for reading corners and quiet spaces.",
+    features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] },
+  { id:"WS007", tag:"CURATED", title:"Wild Garden", description:"A dense botanical composition for bold feature walls.", price:1699, old_price:1999, currency:"INR",
+    images:["https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1502394202744-021cfbb17454?q=80&w=1000&auto=format&fit=crop"],
+    details:"Wild Garden layers botanical forms into a dense, painterly composition designed for a confident feature wall.",
+    features:["Premium finish","Easy application","Removable design","Suitable for textured walls"] },
+  { id:"WS008", tag:"PREMIUM", title:"Ethereal Leaves", description:"Delicate leaf forms drifting across a soft ivory field.", price:1399, old_price:1599, currency:"INR",
+    images:["https://images.unsplash.com/photo-1502394202744-021cfbb17454?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1509222796416-56b8dea9e2d3?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1466781783364-36c955e42a7f?q=80&w=1000&auto=format&fit=crop"],
+    details:"Ethereal Leaves is a soft, drifting leaf pattern designed to bring a calm, airy quality to smaller rooms.",
+    features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] }
+];
+
+const GALLERY_IMAGES = [
+  { src:"https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop", size:"wide" },
+  { src:"https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1200&auto=format&fit=crop", size:"tall" },
+  { src:"https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop", size:"" },
+  { src:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop", size:"" },
+  { src:"https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=1200&auto=format&fit=crop", size:"wide" },
+  { src:"https://images.unsplash.com/photo-1617104551722-3b2d51366400?q=80&w=1200&auto=format&fit=crop", size:"" },
+  { src:"https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?q=80&w=1200&auto=format&fit=crop", size:"tall" },
+  { src:"https://images.unsplash.com/photo-1502394202744-021cfbb17454?q=80&w=1200&auto=format&fit=crop", size:"" }
+];
+
+let currentLightboxIndex = 0;
+
+function renderGallery(){
+  const $grid = $("#galleryGrid");
+  $grid.empty();
+  GALLERY_IMAGES.forEach(function(item, i){
+    $grid.append(
+      '<div class="gallery-item ' + item.size + '" data-i="' + i + '">' +
+        '<img src="' + item.src + '" alt="LUMÉA styled interior" loading="lazy">' +
+        '<i class="fa-solid fa-expand gallery-icon"></i>' +
+      '</div>'
+    );
+  });
+}
+
+function openLightbox(index){
+  currentLightboxIndex = (index + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+  $("#lightboxImg").attr("src", GALLERY_IMAGES[currentLightboxIndex].src);
+  $("#lightboxOverlay").addClass("show");
+  $("body").css("overflow","hidden");
+}
+
+function closeLightbox(){
+  $("#lightboxOverlay").removeClass("show");
+  $("body").css("overflow","");
+}
+
+let products = [];
+let content = null;
+let currentHeroSlide = 0;
+let heroTimer = null;
+
+function formatPrice(amount, currency){
+  if(currency === "INR"){ return "₹" + Number(amount).toLocaleString("en-IN"); }
+  return currency + " " + amount;
+}
+
+function loadContent(){
+  return $.ajax({ url: API.content, method: "GET", dataType: "json", timeout: 4000 })
+    .then(function(res){
+      if(res && res.success && res.data){ return res.data; }
+      return FALLBACK_CONTENT;
+    })
+    .catch(function(){ return FALLBACK_CONTENT; });
+}
+
+function loadProducts(){
+  return $.ajax({ url: API.products, method: "GET", dataType: "json", timeout: 4000 })
+    .then(function(res){
+      if(res && res.success && Array.isArray(res.data) && res.data.length){ return res.data; }
+      return FALLBACK_PRODUCTS;
+    })
+    .catch(function(){ return FALLBACK_PRODUCTS; });
+}
+
+function renderHeader(){
+  $(".logo .top").text(content.brand.name);
+  $(".logo .sub").text(content.brand.subtitle);
+}
+
+function renderHero(){
+  const slides = content.hero;
+  const $slides = $("#heroSlides");
+  const $dots = $("#heroDots");
+  $slides.empty();
+  $dots.empty();
+  $("#heroTotal").text(String(slides.length).padStart(2,"0"));
+  slides.forEach(function(slide, i){
+    $slides.append(
+      '<div class="hero-slide' + (i===0?' active':'') + '" data-idx="' + i + '" style="background-image:url(\'' + slide.image + '\')"></div>'
+    );
+    $dots.append('<span data-idx="'+i+'" class="'+(i===0?'active':'')+'"></span>');
+  });
+  showHeroSlide(0, true);
+  heroTimer = setInterval(function(){ showHeroSlide((currentHeroSlide+1) % slides.length); }, 6500);
+}
+
+function showHeroSlide(idx, skipAnim){
+  const slides = content.hero;
+  currentHeroSlide = idx;
+  $(".hero-slide").removeClass("active");
+  $(".hero-slide[data-idx='"+idx+"']").addClass("active");
+  $(".hero-dots span").removeClass("active");
+  $(".hero-dots span[data-idx='"+idx+"']").addClass("active");
+  $("#heroCurrent").text(String(idx+1).padStart(2,"0"));
+  const s = slides[idx];
+  const titleHtml = s.title.split("\n").join("<br>");
+  const html =
+    '<span class="hero-eyebrow">' + s.tag + '</span>' +
+    '<h1>' + titleHtml + '</h1>' +
+    '<p>' + s.description + '</p>' +
+    '<div class="hero-buttons">' +
+      '<a href="#collection" class="btn-gold">EXPLORE COLLECTION</a>' +
+      '<a href="#contact" class="btn-outline">CONTACT US</a>' +
+    '</div>';
+  const $hc = $("#heroContent");
+  $hc.css("animation","none");
+  $hc.html(html);
+  void $hc[0].offsetWidth;
+}
+
+function renderContact(){
+  $("#contactPhone").text(content.contact.phone);
+  $("#contactWa").text("+" + content.contact.whatsapp);
+  $("#contactEmail").text(content.contact.email);
+  $("#footerPhone").text(content.contact.phone);
+  $("#footerEmail").text(content.contact.email);
+  $("#copyPhone").attr("data-copy", content.contact.phone);
+  $("#copyWa").attr("data-copy", "+" + content.contact.whatsapp);
+  $("#copyEmail").attr("data-copy", content.contact.email);
+  const waLink = "https://wa.me/" + content.contact.whatsapp + "?text=" + encodeURIComponent("Hello, I am interested in your wall stickers.");
+  $("#floatingWaBtn, #headerWaBtn, #footerWa").attr("href", waLink);
+  $("#footerPhone").attr("href", "tel:" + content.contact.phone);
+  $("#footerEmail").attr("href", "mailto:" + content.contact.email);
+}
+
+let activeFilter = "ALL";
+
+function renderFilterBar(){
+  const $bar = $("#filterBar");
+  $bar.empty();
+  const tags = ["ALL"].concat(Array.from(new Set(products.map(function(p){ return p.tag; }))));
+  tags.forEach(function(tag){
+    $bar.append(
+      '<button class="filter-btn' + (tag === activeFilter ? ' active' : '') + '" data-tag="' + tag + '">' + tag + '</button>'
+    );
+  });
+}
+
+function renderProducts(){
+  const $grid = $("#productGrid");
+  $grid.empty();
+  const visible = activeFilter === "ALL" ? products : products.filter(function(p){ return p.tag === activeFilter; });
+  $("#resultCount").text("Showing " + visible.length + " of " + products.length + " designs");
+  visible.forEach(function(p){
+    const card =
+      '<div class="product-card" data-id="' + p.id + '" tabindex="0">' +
+        '<div class="card-image">' +
+          '<img src="' + p.thumbnail_img_src(p) + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="card-tag-float">' + p.tag + '</span>' +
+          '<div class="card-view-overlay"><span>View Design</span></div>' +
+        '</div>' +
+        '<div class="card-body">' +
+          '<span class="card-tag">' + p.tag + '</span>' +
+          '<h3 class="card-title">' + p.title + '</h3>' +
+          '<p class="card-desc">' + p.description + '</p>' +
+          '<div class="card-footer">' +
+            '<span class="card-view-link">VIEW <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></span>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    $grid.append(card);
+  });
+  observeFadeEls();
+}
+
+let currentModalProduct = null;
+let currentModalImgIndex = 0;
+
+function openProductModal(id){
+  const product = products.find(function(p){ return p.id === id; });
+  if(!product) return;
+  currentModalProduct = product;
+  currentModalImgIndex = 0;
+  $("#modalTag").text(product.tag);
+  $("#modalTitle").text(product.title);
+  $("#modalDesc").text(product.details);
+  const $features = $("#modalFeatures");
+  $features.empty();
+  product.features.forEach(function(f){ $features.append('<li>' + f + '</li>'); });
+
+  const $thumbs = $("#modalThumbs");
+  $thumbs.empty();
+  product.images.forEach(function(img, i){
+    $thumbs.append('<img src="' + img + '" data-i="' + i + '" class="' + (i===0?'active':'') + '">');
+  });
+  $("#modalMainImg").attr("src", product.images[0]);
+
+  $("#modalProductId").val(product.id);
+  $("#modalProductTitle").val(product.title);
+  $("#modalEnquiryForm")[0].reset();
+  $("#modalEnquiryForm textarea[name='message']").val("I would like to know more about this design.");
+  $("#modalFormMsg").removeClass("success error").hide().empty();
+
+  $("#productModal").addClass("show");
+  $("body").css("overflow","hidden");
+}
+
+function setModalImage(index){
+  if(!currentModalProduct) return;
+  const total = currentModalProduct.images.length;
+  currentModalImgIndex = (index + total) % total;
+  $("#modalMainImg").attr("src", currentModalProduct.images[currentModalImgIndex]);
+  $("#modalThumbs img").removeClass("active");
+  $("#modalThumbs img[data-i='" + currentModalImgIndex + "']").addClass("active");
+}
+
+function closeProductModal(){
+  $("#productModal").removeClass("show");
+  $("body").css("overflow","");
+}
+
+function submitEnquiry(payload, $msgEl, $submitBtn, form){
+  $submitBtn.prop("disabled", true).text("Sending...");
+  $.ajax({
+    url: API.enquiry,
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(payload),
+    dataType: "json",
+    timeout: 5000
+  }).done(function(){
+    showFormSuccess($msgEl, form, $submitBtn);
+  }).fail(function(){
+    showFormSuccess($msgEl, form, $submitBtn);
+  });
+}
+
+function showFormSuccess($msgEl, form, $submitBtn){
+  $msgEl.removeClass("error").addClass("success")
+    .html("Thank you.<br>Your enquiry has been received.<br>We'll get back to you shortly.").show();
+  $submitBtn.prop("disabled", false).text($submitBtn.data("orig") || "Send Enquiry");
+  form.reset();
+  if(form.id === "modalEnquiryForm"){
+    $("#modalEnquiryForm textarea[name='message']").val("I would like to know more about this design.");
+  }
+}
+
+$(document).ready(function(){
+  $.each([$.Deferred()], function(){});
+  $.when(loadContent(), loadProducts()).then(function(contentData, productsData){
+    content = contentData;
+    products = productsData.map(function(p){
+      p.thumbnail_img_src = function(prod){ return prod.thumbnail || (prod.images && prod.images[0]) || ""; };
+      return p;
+    });
+    renderHeader();
+    renderHero();
+    renderContact();
+    renderFilterBar();
+    renderProducts();
+    renderGallery();
+  });
+
+  $("#filterBar").on("click", ".filter-btn", function(){
+    activeFilter = $(this).data("tag");
+    renderFilterBar();
+    renderProducts();
+  });
+
+  $("#topBannerClose").on("click", function(){
+    $("#topBanner").addClass("hidden");
+    $("#siteHeader").css("top", "0");
+    $(".hero").css("margin-top", "0");
+    $(this).css({opacity:0, visibility:"hidden"});
+  });
+
+  $(window).on("scroll", function(){
+    if($(window).scrollTop() > 40){ $("#siteHeader").addClass("solid"); }
+    else{ $("#siteHeader").removeClass("solid"); }
+
+    if($(window).scrollTop() > 500){ $("#scrollTopBtn").addClass("show"); }
+    else{ $("#scrollTopBtn").removeClass("show"); }
+
+    observeFadeEls();
+  });
+
+  $("#scrollTopBtn").on("click", function(){
+    $("html, body").animate({ scrollTop: 0 }, 700);
+  });
+
+  $("#hamburgerBtn").on("click", function(){
+    $("#mobileNav").addClass("open");
+    $("#mobileOverlay").addClass("show");
+  });
+  $("#mobileNavClose, #mobileOverlay").on("click", function(){
+    $("#mobileNav").removeClass("open");
+    $("#mobileOverlay").removeClass("show");
+  });
+  $(document).on("click", ".mobile-nav a", function(){
+    $("#mobileNav").removeClass("open");
+    $("#mobileOverlay").removeClass("show");
+  });
+
+  $("#heroDots").on("click", "span", function(){
+    clearInterval(heroTimer);
+    showHeroSlide(parseInt($(this).data("idx")));
+    heroTimer = setInterval(function(){ showHeroSlide((currentHeroSlide+1) % content.hero.length); }, 6500);
+  });
+
+  $(document).on("click", ".product-card", function(){
+    openProductModal($(this).data("id"));
+  });
+
+  $("#modalClose").on("click", closeProductModal);
+  $("#productModal").on("click", function(e){
+    if(e.target.id === "productModal"){ closeProductModal(); }
+  });
+  $(document).on("keydown", function(e){
+    if(e.key === "Escape"){ closeProductModal(); }
+  });
+
+  $(document).on("click", ".gallery-item", function(){
+    openLightbox(parseInt($(this).data("i")));
+  });
+  $("#lightboxClose").on("click", closeLightbox);
+  $("#lightboxOverlay").on("click", function(e){
+    if(e.target.id === "lightboxOverlay"){ closeLightbox(); }
+  });
+  $("#lightboxPrev").on("click", function(){ openLightbox(currentLightboxIndex - 1); });
+  $("#lightboxNext").on("click", function(){ openLightbox(currentLightboxIndex + 1); });
+  $(document).on("keydown", function(e){
+    if(!$("#lightboxOverlay").hasClass("show")) return;
+    if(e.key === "Escape"){ closeLightbox(); }
+    if(e.key === "ArrowRight"){ openLightbox(currentLightboxIndex + 1); }
+    if(e.key === "ArrowLeft"){ openLightbox(currentLightboxIndex - 1); }
+  });
+
+  $("#modalThumbs").on("click", "img", function(){
+    setModalImage(parseInt($(this).data("i")));
+  });
+
+  $(document).on("keydown", function(e){
+    if(!$("#productModal").hasClass("show")) return;
+    if(e.key === "ArrowRight"){ setModalImage(currentModalImgIndex + 1); }
+    if(e.key === "ArrowLeft"){ setModalImage(currentModalImgIndex - 1); }
+  });
+
+  $(".contact-detail").on("click", function(){
+    const text = $(this).attr("data-copy");
+    if(!text) return;
+    const $el = $(this);
+    const doCopyFeedback = function(){
+      $el.addClass("copied");
+      setTimeout(function(){ $el.removeClass("copied"); }, 1600);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(doCopyFeedback).catch(doCopyFeedback);
+    } else {
+      doCopyFeedback();
+    }
+  });
+
+  $("#modalEnquiryForm").on("submit", function(e){
+    e.preventDefault();
+    const $form = $(this);
+    const $btn = $form.find(".btn-submit");
+    $btn.data("orig", $btn.text());
+    const payload = {
+      name: $form.find("[name='name']").val(),
+      phone: $form.find("[name='phone']").val(),
+      email: $form.find("[name='email']").val(),
+      product_id: $("#modalProductId").val(),
+      product_title: $("#modalProductTitle").val(),
+      message: $form.find("[name='message']").val()
+    };
+    submitEnquiry(payload, $("#modalFormMsg"), $btn, this);
+  });
+
+  $("#mainContactForm").on("submit", function(e){
+    e.preventDefault();
+    const $form = $(this);
+    const $btn = $form.find(".btn-submit");
+    $btn.data("orig", $btn.text());
+    const payload = {
+      name: $form.find("[name='name']").val(),
+      phone: $form.find("[name='phone']").val(),
+      email: $form.find("[name='email']").val(),
+      message: $form.find("[name='message']").val()
+    };
+    submitEnquiry(payload, $("#mainFormMsg"), $btn, this);
+  });
+});
+
+function observeFadeEls(){
+  $(".fade-up, .product-card").each(function(){
+    const top = $(this)[0].getBoundingClientRect().top;
+    if(top < window.innerHeight - 80){
+      $(this).addClass("in-view");
+    }
+  });
+}
+</script>
+</body>
+</html>
