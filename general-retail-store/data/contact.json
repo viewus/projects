@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Get in touch",
   "intro": "Ring the store for anything urgent — we answer during opening hours. For everything else, the form below reaches us by email.",
 
@@ -10,7 +10,7 @@
     "errorMessage": "Could not send that just now. Please ring the store instead.",
     "fields": [
       { "name": "name", "label": "Your name", "type": "text", "required": true, "pattern": "name", "placeholder": "Full name", "autocomplete": "name", "width": "half" },
-      { "name": "phone", "label": "Phone", "type": "tel", "required": true, "pattern": "phone", "placeholder": "+91 90000 00000", "autocomplete": "tel", "width": "half" },
+      { "name": "phone", "label": "Phone", "type": "tel", "required": true, "pattern": "phone", "placeholder": "+91 9876543210", "autocomplete": "tel", "width": "half" },
       { "name": "email", "label": "Email", "type": "email", "required": false, "pattern": "email", "placeholder": "you@example.com", "autocomplete": "email", "width": "full" },
       { "name": "subject", "label": "What is it about?", "type": "select", "required": true, "width": "full",
         "options": ["General enquiry", "Delivery question", "Bulk or wholesale order", "Festival hamper", "Feedback or complaint", "Something else"] },

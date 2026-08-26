@@ -1,4 +1,4 @@
-/* ---------------------------------------------------------------------------
+﻿/* ---------------------------------------------------------------------------
  * helpers.js — pure utility functions. No DOM writes, no fetching.
  *
  * Everything here is deliberately side-effect free so it can be called from any
@@ -28,7 +28,7 @@
 
   /**
    * Read a dotted key out of a nested object without throwing on gaps.
-   * RS.get(cfg, "contact.phone") -> "+91 90000 00000"
+   * RS.get(cfg, "contact.phone") -> "+91 9876543210"
    */
   RS.get = function (obj, dottedKey) {
     if (!dottedKey) return undefined;

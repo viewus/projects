@@ -1,4 +1,4 @@
-const BLOG_LINKS = [
+﻿const BLOG_LINKS = [
   { id: 'london-hotspots-2026', icon: '📍', title: 'London Hotspots', desc: 'Top 5 growth areas' },
   { id: 'negotiation-secrets', icon: '💰', title: 'Negotiation Secrets', desc: 'Save £20k+ easily' },
   { id: 'property-rules-2026', icon: '⚖️', title: 'Property Rules', desc: 'Law changes for 2026' },
@@ -121,7 +121,7 @@ const NAV_HTML = `
       </ul>
 
       <div class="nav__actions">
-        <a href="tel:+447747223762" class="btn btn-secondary btn-sm">📞 Call Us</a>
+        <a href="tel:+919876543210" class="btn btn-secondary btn-sm">📞 Call Us</a>
         <a href="free-consultation.html" class="btn btn-primary btn-sm">Free Consultation</a>
         <button class="nav__hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -231,7 +231,7 @@ const FOOTER_HTML = `
         <div class="footer__contact-item">
           <span class="footer__contact-icon">✉️</span>
           <div>
-            <div style="color:white;font-weight:600">contact@advaithhomes.co.uk</div>
+            <div style="color:white;font-weight:600">demo@gmail.com</div>
             <div style="font-size:.78rem;margin-top:2px">We reply within 2 hours</div>
           </div>
         </div>
@@ -301,7 +301,7 @@ function initComponents() {
   if (!waFloat) {
     waFloat = document.createElement('a');
     waFloat.className = 'floating-chat';
-    waFloat.href = 'https://wa.me/447747223762?text=Hi%20Advaith%20Homes,%20I%20would%20like%20to%20learn%20more%20about%20your%20services...';
+    waFloat.href = 'https://wa.me/919876543210?text=Hi%20Advaith%20Homes,%20I%20would%20like%20to%20learn%20more%20about%20your%20services...';
     waFloat.target = '_blank';
     waFloat.rel = 'noopener noreferrer';
     waFloat.innerHTML = `

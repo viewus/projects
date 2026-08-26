@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Blog Post Data: New Build vs Period
  */
 var BLOG_POST_DATA = {
@@ -10,6 +10,6 @@ var BLOG_POST_DATA = {
     headline: "The Hidden Premium of Character",
     content: "<p>While new builds offer 'turnkey' living and lower bills, period properties in established conservation areas often see better long-term capital appreciation. We break down the math.</p>"
   }],
-  banner: { title: "Your Style, Our Expert", desc: "Finding the best of both worlds.", image: "https://images.unsplash.com/photo-1448630360428-6e23438f7ae4?w=1600&h=600&fit=crop" },
+  banner: { title: "Your Style, Our Expert", desc: "Finding the best of both worlds.", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&h=600&fit=crop" },
   cta: { title: "Compare Your Options", desc: "Talk to an advisor about your lifestyle needs.", primaryBtn: { text: "Book Call", link: "../free-consultation.html" } }
 };

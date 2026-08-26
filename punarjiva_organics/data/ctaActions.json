@@ -1,6 +1,0 @@
-{
-  "_note": "Wording for the three standing action buttons. They appear in the hero, in every closing CTA section and on the contact page, so they live here ONCE rather than being repeated in all 13 pages' JSON — change a label here and it updates everywhere. Labels are verbatim from punarjiva.in. The phone number and links themselves are settings, not wording — those live in config/config.json.",
-  "ctaCallLabel": "📞 Call Store",
-  "ctaWhatsappLabel": "💬 WhatsApp Order",
-  "ctaDirectionsLabel": "📍 Get Directions"
-}

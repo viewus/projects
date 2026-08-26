@@ -1,4 +1,4 @@
-{
+﻿{
   "_note": "Identity and contact details. This is the first file to edit when re-skinning the template for a new client.",
 
   "siteName": "FreshCart",
@@ -22,11 +22,11 @@
   },
 
   "contact": {
-    "phone": "+91 90000 12345",
-    "phoneHref": "tel:+919000012345",
-    "whatsapp": "https://wa.me/919000012345",
-    "email": "hello@freshcart.example",
-    "supportEmail": "support@freshcart.example",
+    "phone": "+91 9876543210",
+    "phoneHref": "tel:+919876543210",
+    "whatsapp": "https://wa.me/919876543210",
+    "email": "demo@gmail.com",
+    "supportEmail": "demo@gmail.com",
     "addressLine1": "Shop 12, Market Road",
     "addressLine2": "Gandhi Nagar",
     "city": "Proddatur",
