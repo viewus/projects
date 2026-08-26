@@ -67,6 +67,42 @@ h1,h2,h3,h4{
   color:var(--black);
 }
 
+/* SERVICES */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:26px;
+  margin-top:56px;
+  text-align:left;
+}
+.service-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  padding:32px 26px;
+}
+.service-icon{
+  width:44px;height:44px;
+  border-radius:50%;
+  background:var(--black);
+  color:var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  margin-bottom:20px;
+}
+.service-card h4{
+  font-size:18px;
+  margin-bottom:10px;
+  font-weight:500;
+}
+.service-card p{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.65;
+  font-weight:300;
+}
+
 /* STATS STRIP */
 .stats-strip{
   background:var(--black);
@@ -243,59 +279,6 @@ h1,h2,h3,h4{
   transition:opacity .35s ease;
 }
 .insta-item:hover::after{opacity:1;}
-
-/* NEWSLETTER */
-.newsletter-section{
-  background:var(--charcoal);
-  padding:80px 0;
-  text-align:center;
-}
-.newsletter-section h2{
-  color:var(--ivory);
-  font-size:clamp(28px,3.4vw,38px);
-  margin:18px 0 14px;
-}
-.newsletter-section p{
-  color:rgba(247,243,235,0.6);
-  font-size:14px;
-  font-weight:300;
-  max-width:440px;
-  margin:0 auto 32px;
-}
-.newsletter-form{
-  display:flex;
-  max-width:460px;
-  margin:0 auto;
-  border-bottom:1px solid rgba(247,243,235,0.35);
-  padding-bottom:6px;
-}
-.newsletter-form input{
-  flex:1;
-  background:transparent;
-  border:none;
-  color:var(--ivory);
-  font-size:14px;
-  padding:10px 4px;
-}
-.newsletter-form input::placeholder{color:rgba(247,243,235,0.4);}
-.newsletter-form input:focus{outline:none;}
-.newsletter-form button{
-  color:var(--gold);
-  font-size:12px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  font-weight:600;
-  padding:10px 6px;
-  white-space:nowrap;
-  transition:color .3s ease;
-}
-.newsletter-form button:hover{color:var(--ivory);}
-.newsletter-msg{
-  font-size:12px;
-  color:var(--gold);
-  margin-top:16px;
-  min-height:16px;
-}
 
 /* TOP BANNER */
 .top-banner{
@@ -1248,6 +1231,7 @@ footer{
   .process-step{border-left:none;padding-left:0;}
   .testimonial-grid{grid-template-columns:1fr;gap:20px;}
   .insta-grid{grid-template-columns:repeat(3,1fr);}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
 }
 @media(max-width:760px){
   .container{padding:0 24px;}
@@ -1260,8 +1244,6 @@ footer{
   .card-title{font-size:19px;}
   .footer-grid{flex-direction:column;}
   .hero-count{right:24px;bottom:30px;}
-  .newsletter-form{flex-direction:column;gap:12px;border-bottom:none;}
-  .newsletter-form input{border-bottom:1px solid rgba(247,243,235,0.35);text-align:center;}
 }
 @media(max-width:520px){
   .top-banner-track span{font-size:10px;padding:0 18px;}
@@ -1269,6 +1251,7 @@ footer{
   .product-grid{grid-template-columns:1fr 1fr;}
   .card-desc{display:none;}
   .modal-thumbs img{width:60px;height:60px;}
+  .services-grid{grid-template-columns:1fr;}
 }
 .fade-up{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease;}
 .fade-up.in-view{opacity:1;transform:translateY(0);}
@@ -1426,10 +1409,32 @@ footer{
 </section>
 
 <section id="about" style="background:var(--cream);padding:100px 0;">
-  <div class="container" style="max-width:760px;text-align:center;">
+  <div class="container" style="max-width:900px;text-align:center;">
     <span class="eyebrow" style="justify-content:center;">ABOUT LUMÉA</span>
     <h2 style="font-size:clamp(28px,3.6vw,40px);margin:20px 0 20px;">Crafted For Quiet, Beautiful Rooms.</h2>
-    <p style="color:var(--muted);font-weight:300;line-height:1.8;font-size:15px;">Every LUMÉA design begins as a hand-drawn study before it becomes a wall sticker. We work with a small circle of interior stylists to create pieces that feel considered rather than decorative — pieces that belong to the room, not just on it.</p>
+    <p style="color:var(--muted);font-weight:300;line-height:1.8;font-size:15px;max-width:700px;margin:0 auto;">Every LUMÉA design begins as a hand-drawn study before it becomes a wall sticker. We work with a small circle of interior stylists to create pieces that feel considered rather than decorative — pieces that belong to the room, not just on it.</p>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
+        <h4>Design Consultation</h4>
+        <p>Complimentary guidance on choosing and placing the right design for your room.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+        <h4>Custom Sizing</h4>
+        <p>Every piece is scaled to your exact wall dimensions at no extra cost.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <h4>Pan-India Shipping</h4>
+        <p>Carefully packed and dispatched to your doorstep within 72 hours.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+        <h4>Application Support</h4>
+        <p>A step-by-step guide and video walkthrough for a flawless finish.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1489,19 +1494,6 @@ footer{
         </form>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="newsletter-section">
-  <div class="container fade-up">
-    <span class="eyebrow" style="justify-content:center;">STAY IN THE LOOP</span>
-    <h2>Be First To See New Designs.</h2>
-    <p>Occasional notes on new collections and styling ideas. No clutter, ever.</p>
-    <form class="newsletter-form" id="newsletterForm">
-      <input type="email" placeholder="Enter your email address" required>
-      <button type="submit">Subscribe</button>
-    </form>
-    <div class="newsletter-msg" id="newsletterMsg"></div>
   </div>
 </section>
 
@@ -1606,21 +1598,21 @@ const FALLBACK_CONTENT = {
   contact: { phone: "+919999999999", whatsapp: "919999999999", email: "hello@lumeawallstudio.com" },
   hero: [
     {
-      image: "https://images.unsplash.com/photo-1615529162924-f8605388461d?q=80&w=1600&auto=format&fit=crop",
+      image: "https://picsum.photos/seed/lumea-hero-1/1600/1000",
       tag: "THE SIGNATURE COLLECTION",
       title: "Turn Empty Walls\nInto Beautiful Stories",
       description: "Curated wall stickers designed to bring character, warmth and elegance to your space.",
       button: "Explore Collection"
     },
     {
-      image: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1600&auto=format&fit=crop",
+      image: "https://picsum.photos/seed/lumea-hero-2/1600/1000",
       tag: "CURATED FOR YOUR SPACE",
       title: "Details That\nTransform A Room",
       description: "Every design is chosen for the way it changes how a room feels, not just how it looks.",
       button: "View The Collection"
     },
     {
-      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop",
+      image: "https://picsum.photos/seed/lumea-hero-3/1600/1000",
       tag: "TIMELESS WALL DECOR",
       title: "Designed To Feel\nBeautifully Personal",
       description: "Refined patterns and botanical forms crafted for calm, considered interiors.",
@@ -1630,36 +1622,38 @@ const FALLBACK_CONTENT = {
 };
 
 const FALLBACK_PRODUCTS = [
-  { id:"WS001", tag:"SIGNATURE", title:"Botanical Whisper", description:"Elegant botanical detailing for calm, sophisticated interiors.", price:1299, old_price:1599, currency:"INR",
-    images:["https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=1000&auto=format&fit=crop"],
+  { id:"WS001", tag:"SIGNATURE", title:"Botanical Whisper", description:"Elegant botanical detailing for calm, sophisticated interiors.", price:1299, old_price:1599, currency:"INR", size:"24 × 36 in", rating:4.9,
+    images:["https://picsum.photos/seed/lumea-ws001-a/1000/1250","https://picsum.photos/seed/lumea-ws001-b/1000/1250","https://picsum.photos/seed/lumea-ws001-c/1000/1250"],
+    video:"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
     details:"A refined botanical wall design created to add a soft artistic character to bedrooms, living spaces and reading corners.",
     features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] },
-  { id:"WS002", tag:"NEW", title:"Golden Palm", description:"A statement palm silhouette finished in warm muted gold.", price:1499, old_price:1799, currency:"INR",
-    images:["https://images.unsplash.com/photo-1622638397772-c48f6836ac3c?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1602928321679-560bb453f190?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1000&auto=format&fit=crop"],
+  { id:"WS002", tag:"NEW", title:"Golden Palm", description:"A statement palm silhouette finished in warm muted gold.", price:1499, old_price:1799, currency:"INR", size:"30 × 40 in", rating:4.7,
+    images:["https://picsum.photos/seed/lumea-ws002-a/1000/1250","https://picsum.photos/seed/lumea-ws002-b/1000/1250","https://picsum.photos/seed/lumea-ws002-c/1000/1250"],
     details:"Golden Palm brings a resort-inspired warmth to any wall, pairing an oversized botanical form with a soft matte gold tone.",
     features:["Fade-resistant ink","Easy application","Removable design","Suitable for smooth walls"] },
-  { id:"WS003", tag:"BESTSELLER", title:"Serene Arch", description:"A minimal arch motif for understated, modern interiors.", price:1199, old_price:null, currency:"INR",
-    images:["https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1000&auto=format&fit=crop"],
+  { id:"WS003", tag:"BESTSELLER", title:"Serene Arch", description:"A minimal arch motif for understated, modern interiors.", price:1199, old_price:null, currency:"INR", size:"20 × 30 in", rating:4.8,
+    images:["https://picsum.photos/seed/lumea-ws003-a/1000/1250","https://picsum.photos/seed/lumea-ws003-b/1000/1250","https://picsum.photos/seed/lumea-ws003-c/1000/1250"],
+    video:"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
     details:"Inspired by minimalist architecture, Serene Arch uses a single confident line to bring quiet structure to a room.",
     features:["Premium matte finish","Quick application","Removable design","Suitable for smooth walls"] },
-  { id:"WS004", tag:"LIMITED", title:"Olive Branch", description:"A soft, trailing olive branch pattern in muted tones.", price:1349, old_price:1599, currency:"INR",
-    images:["https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1617104551722-3b2d51366400?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=1000&auto=format&fit=crop"],
+  { id:"WS004", tag:"LIMITED", title:"Olive Branch", description:"A soft, trailing olive branch pattern in muted tones.", price:1349, old_price:1599, currency:"INR", size:"24 × 34 in", rating:4.6,
+    images:["https://picsum.photos/seed/lumea-ws004-a/1000/1250","https://picsum.photos/seed/lumea-ws004-b/1000/1250","https://picsum.photos/seed/lumea-ws004-c/1000/1250"],
     details:"Olive Branch traces a delicate botanical line across the wall, designed to feel hand-painted rather than printed.",
     features:["Premium finish","Easy application","Limited edition","Suitable for smooth walls"] },
-  { id:"WS005", tag:"EDITOR'S PICK", title:"Moonlit Bloom", description:"An oversized floral study rendered in soft charcoal.", price:1599, old_price:1899, currency:"INR",
-    images:["https://images.unsplash.com/photo-1487530811176-3780de880c2d?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=1000&auto=format&fit=crop"],
+  { id:"WS005", tag:"EDITOR'S PICK", title:"Moonlit Bloom", description:"An oversized floral study rendered in soft charcoal.", price:1599, old_price:1899, currency:"INR", size:"32 × 44 in", rating:4.9,
+    images:["https://picsum.photos/seed/lumea-ws005-a/1000/1250","https://picsum.photos/seed/lumea-ws005-b/1000/1250","https://picsum.photos/seed/lumea-ws005-c/1000/1250"],
     details:"Moonlit Bloom is a large-scale floral study designed to anchor a living room or bedroom feature wall.",
     features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] },
-  { id:"WS006", tag:"TIMELESS", title:"Minimal Muse", description:"A single continuous line portrait, quietly elegant.", price:1099, old_price:null, currency:"INR",
-    images:["https://images.unsplash.com/photo-1549887534-1541e9326642?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1554188248-986adbb73be4?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop"],
+  { id:"WS006", tag:"TIMELESS", title:"Minimal Muse", description:"A single continuous line portrait, quietly elegant.", price:1099, old_price:null, currency:"INR", size:"18 × 24 in", rating:4.7,
+    images:["https://picsum.photos/seed/lumea-ws006-a/1000/1250","https://picsum.photos/seed/lumea-ws006-b/1000/1250","https://picsum.photos/seed/lumea-ws006-c/1000/1250"],
     details:"Minimal Muse uses a single continuous line to suggest form, designed for reading corners and quiet spaces.",
     features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] },
-  { id:"WS007", tag:"CURATED", title:"Wild Garden", description:"A dense botanical composition for bold feature walls.", price:1699, old_price:1999, currency:"INR",
-    images:["https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1502394202744-021cfbb17454?q=80&w=1000&auto=format&fit=crop"],
+  { id:"WS007", tag:"CURATED", title:"Wild Garden", description:"A dense botanical composition for bold feature walls.", price:1699, old_price:1999, currency:"INR", size:"36 × 48 in", rating:4.8,
+    images:["https://picsum.photos/seed/lumea-ws007-a/1000/1250","https://picsum.photos/seed/lumea-ws007-b/1000/1250","https://picsum.photos/seed/lumea-ws007-c/1000/1250"],
     details:"Wild Garden layers botanical forms into a dense, painterly composition designed for a confident feature wall.",
     features:["Premium finish","Easy application","Removable design","Suitable for textured walls"] },
-  { id:"WS008", tag:"PREMIUM", title:"Ethereal Leaves", description:"Delicate leaf forms drifting across a soft ivory field.", price:1399, old_price:1599, currency:"INR",
-    images:["https://images.unsplash.com/photo-1502394202744-021cfbb17454?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1509222796416-56b8dea9e2d3?q=80&w=1000&auto=format&fit=crop","https://images.unsplash.com/photo-1466781783364-36c955e42a7f?q=80&w=1000&auto=format&fit=crop"],
+  { id:"WS008", tag:"PREMIUM", title:"Ethereal Leaves", description:"Delicate leaf forms drifting across a soft ivory field.", price:1399, old_price:1599, currency:"INR", size:"26 × 36 in", rating:4.6,
+    images:["https://picsum.photos/seed/lumea-ws008-a/1000/1250","https://picsum.photos/seed/lumea-ws008-b/1000/1250","https://picsum.photos/seed/lumea-ws008-c/1000/1250"],
     details:"Ethereal Leaves is a soft, drifting leaf pattern designed to bring a calm, airy quality to smaller rooms.",
     features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] }
 ];
@@ -1673,12 +1667,12 @@ const FAQ_ITEMS = [
 ];
 
 const INSTA_IMAGES = [
-  "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=500&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=500&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=500&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?q=80&w=500&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=500&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1502394202744-021cfbb17454?q=80&w=500&auto=format&fit=crop"
+  "https://picsum.photos/seed/lumea-insta-1/500/500",
+  "https://picsum.photos/seed/lumea-insta-2/500/500",
+  "https://picsum.photos/seed/lumea-insta-3/500/500",
+  "https://picsum.photos/seed/lumea-insta-4/500/500",
+  "https://picsum.photos/seed/lumea-insta-5/500/500",
+  "https://picsum.photos/seed/lumea-insta-6/500/500"
 ];
 
 function renderFaq(){
@@ -1703,14 +1697,14 @@ function renderInsta(){
 }
 
 const GALLERY_IMAGES = [
-  { src:"https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop", size:"wide" },
-  { src:"https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1200&auto=format&fit=crop", size:"tall" },
-  { src:"https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop", size:"" },
-  { src:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop", size:"" },
-  { src:"https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=1200&auto=format&fit=crop", size:"wide" },
-  { src:"https://images.unsplash.com/photo-1617104551722-3b2d51366400?q=80&w=1200&auto=format&fit=crop", size:"" },
-  { src:"https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?q=80&w=1200&auto=format&fit=crop", size:"tall" },
-  { src:"https://images.unsplash.com/photo-1502394202744-021cfbb17454?q=80&w=1200&auto=format&fit=crop", size:"" }
+  { src:"https://picsum.photos/seed/lumea-gallery-1/1200/900", size:"wide" },
+  { src:"https://picsum.photos/seed/lumea-gallery-2/1200/900", size:"tall" },
+  { src:"https://picsum.photos/seed/lumea-gallery-3/1200/900", size:"" },
+  { src:"https://picsum.photos/seed/lumea-gallery-4/1200/900", size:"" },
+  { src:"https://picsum.photos/seed/lumea-gallery-5/1200/900", size:"wide" },
+  { src:"https://picsum.photos/seed/lumea-gallery-6/1200/900", size:"" },
+  { src:"https://picsum.photos/seed/lumea-gallery-7/1200/900", size:"tall" },
+  { src:"https://picsum.photos/seed/lumea-gallery-8/1200/900", size:"" }
 ];
 
 let currentLightboxIndex = 0;
@@ -1974,19 +1968,6 @@ $(document).ready(function(){
       $item.addClass("open");
       $answer.css("max-height", $answer[0].scrollHeight + "px");
     }
-  });
-
-  $("#newsletterForm").on("submit", function(e){
-    e.preventDefault();
-    const $form = $(this);
-    const $btn = $form.find("button");
-    const origText = $btn.text();
-    $btn.prop("disabled", true).text("...");
-    setTimeout(function(){
-      $btn.prop("disabled", false).text(origText);
-      $("#newsletterMsg").text("Thank you — you're on the list.");
-      $form[0].reset();
-    }, 500);
   });
 
   $("#topBannerClose").on("click", function(){
