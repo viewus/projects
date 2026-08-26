@@ -1,0 +1,36 @@
+{
+  "_note": "Build-level configuration, separate from the content in data/. Editing this is a developer task; editing data/ is a client task.",
+
+  "version": "1.0.0",
+  "templateName": "General Retail Store",
+
+  "dataFiles": {
+    "_note": "Every JSON file the app knows about. The link-integrity check in the README walks this list.",
+    "site": "data/site.json",
+    "settings": "data/settings.json",
+    "theme": "data/theme.json",
+    "navigation": "data/navigation.json",
+    "footer": "data/footer.json",
+    "sections": "data/sections.json",
+    "homepage": "data/homepage.json",
+    "categories": "data/categories.json",
+    "products": "data/products.json",
+    "brands": "data/brands.json",
+    "offers": "data/offers.json",
+    "shoppingLists": "data/shopping-lists.json",
+    "recipes": "data/recipes.json",
+    "blogs": "data/blogs.json",
+    "faq": "data/faq.json",
+    "testimonials": "data/testimonials.json",
+    "gallery": "data/gallery.json",
+    "seo": "data/seo.json",
+    "contact": "data/contact.json"
+  },
+
+  "cdn": {
+    "_note": "Pinned versions. Keep the integrity hashes in the page <head> in step with any version change here, or the browser will refuse to load the file.",
+    "jquery": "3.7.1",
+    "bootstrap": "5.3.3",
+    "bootstrapIcons": "1.11.3"
+  }
+}

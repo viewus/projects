@@ -1,0 +1,44 @@
+{
+  "title": "Questions we get asked",
+  "intro": "Delivery, payment, returns and the practical details. If your question isn't here, ring the store.",
+  "linkLabel": "See all questions",
+  "linkRoute": "faq",
+  "previewCount": 5,
+
+  "groups": [
+    {
+      "name": "Ordering & delivery",
+      "items": [
+        { "question": "Do you deliver, and how far?", "answer": "Yes — within 8 km of the store. Orders placed before 6 pm are delivered the same evening; anything later goes out the next morning. Delivery is free above ₹499 and ₹39 below that." },
+        { "question": "How do I place an order?", "answer": "Call or WhatsApp us with your list, or build one using the Shopping Planner on this site and send it across. We confirm the total before we pack." },
+        { "question": "Can I change an order after placing it?", "answer": "Until it has been packed, yes. Ring the store rather than sending a message — once a delivery run leaves we cannot alter it." },
+        { "question": "What if something I ordered is out of stock?", "answer": "We call and ask before substituting anything. We will never swap a brand or a size without checking with you first." }
+      ]
+    },
+    {
+      "name": "Payment & pricing",
+      "items": [
+        { "question": "Which payment methods do you accept?", "answer": "Cash, UPI, and all major debit and credit cards in store. For deliveries, UPI on confirmation or cash on delivery." },
+        { "question": "Are the prices on this site current?", "answer": "They are updated weekly. Fresh produce moves with the market, so the price at the counter can differ slightly — we will always tell you before billing." },
+        { "question": "Do you price match?", "answer": "Not formally. If you have seen something cheaper locally, tell us — on staples we can usually do something." }
+      ]
+    },
+    {
+      "name": "Returns & quality",
+      "items": [
+        { "question": "Can I return something?", "answer": "Unopened, non-perishable items within 7 days with the bill. Fresh produce, dairy and bakery cannot be returned once they have left the store, for food safety reasons." },
+        { "question": "What if produce arrives in poor condition?", "answer": "Tell us the same day and we replace it or refund it, no questions asked. Send a photo on WhatsApp if it is easier than coming in." },
+        { "question": "How fresh is the fresh produce, really?", "answer": "Fruit and vegetables are delivered to us each morning from growers within the district. Anything unsold after two days is marked down, and after three it comes off the shelf." }
+      ]
+    },
+    {
+      "name": "Store & services",
+      "items": [
+        { "question": "What are your opening hours?", "answer": "Monday to Saturday, 7:00 am to 9:30 pm. Sunday, 8:00 am to 8:00 pm. We open on all public holidays except Sankranti." },
+        { "question": "Is there parking?", "answer": "Yes, free customer parking for about 20 vehicles behind the store, accessed from the side lane." },
+        { "question": "Do you make up festival hampers?", "answer": "We do, from ₹899, built to order from our dry fruits, sweets and gifting range. Give us three days' notice for larger orders." },
+        { "question": "Can you break bulk packs?", "answer": "For most staples, yes. If you want two kilos out of a five kilo bag of rice or dal, ask at the counter." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "default": true,
+
+  "MD013": false,
+  "MD033": {
+    "allowed_elements": ["br", "img", "a", "details", "summary", "kbd", "sub", "sup", "div", "span"]
+  },
+  "MD024": { "siblings_only": true },
+  "MD029": { "style": "ordered" },
+  "MD041": false,
+  "MD046": { "style": "fenced" },
+  "MD048": { "style": "backtick" },
+  "MD049": { "style": "asterisk" },
+  "MD050": { "style": "asterisk" }
+}

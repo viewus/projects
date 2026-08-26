@@ -1,0 +1,24 @@
+<!-- Primary navigation. The menu items, CTA and brand are all rendered by
+     chrome.js from data/navigation.json and data/site.json. -->
+<nav class="siteNav" aria-label="Primary">
+  <div class="wrap siteNavIn">
+    <a class="navBrand" id="navBrand" href="#">
+      <img class="navBrandLogo" id="navBrandLogo" src="" alt="" width="38" height="38">
+      <span id="navBrandName"></span>
+    </a>
+
+    <button class="navToggle" id="navToggle" type="button"
+            aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+
+    <ul class="navMenu" id="navMenu"></ul>
+
+    <div class="navActions" id="navActions">
+      <button class="btnIcon" type="button" data-theme-toggle aria-label="Toggle dark mode">
+        <i class="bi bi-moon-stars" aria-hidden="true"></i>
+      </button>
+      <a class="btn btnPrimary btnSm" id="navCta" href="#"></a>
+    </div>
+  </div>
+</nav>

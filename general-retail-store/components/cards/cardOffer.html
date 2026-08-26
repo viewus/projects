@@ -1,0 +1,15 @@
+<!-- Offer card. Filled by renderers/product.js from data/offers.json.
+     --offerColor comes from the JSON so each deal keeps its own accent. -->
+<article class="offerCard staggerItem" style="--cardIndex: {{index}}; border-left: 4px solid {{color}}">
+  <div>
+    <p class="offerCardTag" style="color: {{color}}">{{tag}}</p>
+    <h3 class="offerCardTitle">{{title}}</h3>
+    <p class="offerCardText">{{text}}</p>
+  </div>
+
+  <div class="stack">
+    {{codeHtml}}
+    {{validHtml}}
+    <a class="linkArrow" href="{{href}}">{{ctaLabel}} <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+  </div>
+</article>

@@ -1,0 +1,17 @@
+{
+  "title": "Brands we stock",
+  "intro": "Everyday names you already trust, alongside local producers we buy from directly.",
+
+  "_imageNote": "Logos are text-based SVG placeholders generated at render time — a client swaps in real logo files by setting 'logo' to a path under assets/images/.",
+
+  "items": [
+    { "slug": "aashirvaad", "name": "Aashirvaad", "logo": "", "category": "staples-grains", "featured": true },
+    { "slug": "amul", "name": "Amul", "logo": "", "category": "dairy-eggs", "featured": true },
+    { "slug": "tata", "name": "Tata", "logo": "", "category": "staples-grains", "featured": true },
+    { "slug": "fortune", "name": "Fortune", "logo": "", "category": "staples-grains", "featured": true },
+    { "slug": "britannia", "name": "Britannia", "logo": "", "category": "bakery", "featured": true },
+    { "slug": "surf-excel", "name": "Surf Excel", "logo": "", "category": "household", "featured": true },
+    { "slug": "dabur", "name": "Dabur", "logo": "", "category": "personal-care", "featured": false },
+    { "slug": "local-farms", "name": "Local Farms Co-op", "logo": "", "category": "fruits-vegetables", "featured": true }
+  ]
+}

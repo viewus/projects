@@ -1,0 +1,767 @@
+/* ---------------------------------------------------------------------------
+ * banners.css — announcement bar, hero carousel, trust bar, promo banner,
+ * deal of the day, category pills, step row, newsletter and the expandable
+ * checklist rows.
+ *
+ * Loads after components.css and before responsive.css.
+ * ------------------------------------------------------------------------- */
+
+/* ============================ ANNOUNCEMENT BAR ==========================
+ * Pale band rather than the solid dark green it used to be — it sits above
+ * the nav all day, so it should recede rather than compete with the brand.
+ * ======================================================================== */
+
+.siteHeader {
+  background: var(--brandLight);
+  color: var(--brandDark);
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fsSm);
+}
+
+[data-theme="dark"] .siteHeader {
+  background: var(--bgAlt);
+  color: var(--textMid);
+}
+
+.siteHeaderIn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  min-height: 42px;
+  flex-wrap: wrap;
+}
+
+/* The viewport is a fixed-height window; messages cross-fade inside it, so
+   the bar never changes height as the text length changes. */
+.announceViewport {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 24px;
+  overflow: hidden;
+}
+
+.announceTrack {
+  position: relative;
+  height: 100%;
+}
+
+.announceMsg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--normal) var(--ease), transform var(--normal) var(--ease);
+  pointer-events: none;
+}
+
+.announceMsg.isActive {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.announceEmoji {
+  font-size: 1.05rem;
+  line-height: 1;
+  /* Emoji render as colour glyphs; this stops them inheriting the text
+     colour transition and flickering during the cross-fade. */
+  transition: none;
+}
+
+.announceItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  flex-wrap: wrap;
+  flex: none;
+}
+
+.headerLink {
+  color: var(--brandDark);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+  font-weight: 500;
+}
+
+.headerLink:hover {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+[data-theme="dark"] .headerLink {
+  color: var(--textMid);
+}
+
+[data-theme="dark"] .headerLink:hover {
+  color: var(--text);
+}
+
+/* ============================ HERO CAROUSEL ============================= */
+
+.carousel {
+  position: relative;
+  background: var(--brandLight);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .carousel {
+  background: var(--bgAlt);
+}
+
+.carouselTrack {
+  position: relative;
+}
+
+/* Slides stack; only the active one is laid out, so the carousel is exactly
+   as tall as its tallest visible slide with no reflow between transitions. */
+.carouselSlide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--slow) var(--ease);
+}
+
+.carouselSlide.isActive {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+
+.carouselSlide .heroIn {
+  padding-block: var(--s8);
+}
+
+.carouselCopy {
+  animation: rsFadeUp var(--slow) var(--ease) both;
+}
+
+.carouselMedia {
+  animation: rsScaleIn var(--slow) var(--ease) both;
+  animation-delay: .1s;
+}
+
+.carouselArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 1.1rem;
+  box-shadow: var(--shadowMd);
+  opacity: .85;
+  transition: opacity var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+
+.carouselArrow:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.06);
+}
+
+.carouselPrev { left: var(--s4); }
+.carouselNext { right: var(--s4); }
+
+.carouselDots {
+  position: absolute;
+  bottom: var(--s4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: var(--s2);
+}
+
+.carouselDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--textDim);
+  opacity: .45;
+  transition: all var(--fast) var(--ease);
+}
+
+.carouselDot:hover { opacity: .8; }
+
+.carouselDot.isActive {
+  width: 26px;
+  border-radius: var(--radiusPill);
+  background: var(--brand);
+  opacity: 1;
+}
+
+/* ============================ TRUST BAR ================================= */
+
+.trustBar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: var(--s4);
+  padding: var(--s5);
+  border: 1px solid var(--line);
+  border-radius: var(--radiusLg);
+  background: var(--surface);
+  box-shadow: var(--shadowSm);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  min-width: 0;
+}
+
+/* Divider between items, but not before the first — and it must disappear
+   when the grid wraps, which is why it is on the item not a pseudo-row. */
+.trustItem + .trustItem {
+  border-left: 1px solid var(--lineSoft);
+  padding-left: var(--s4);
+}
+
+.trustIcon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--brandLight);
+  color: var(--brand);
+  font-size: 1.25rem;
+}
+
+.trustTitle {
+  display: block;
+  font-size: var(--fsSm);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.trustText {
+  display: block;
+  font-size: var(--fsXs);
+  color: var(--textDim);
+  line-height: 1.4;
+}
+
+/* ============================ PROMO BANNER ============================== */
+
+.promoBanner {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: var(--s6);
+  align-items: center;
+  padding: var(--s7);
+  border-radius: var(--radiusLg);
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--promoColor) 14%, var(--surface)),
+      var(--surface));
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.promoBannerTag {
+  display: inline-block;
+  padding: .25rem .7rem;
+  border-radius: var(--radiusPill);
+  background: var(--promoColor);
+  color: #fff;
+  font-size: var(--fsXs);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: var(--s3);
+}
+
+.promoBannerTitle {
+  font-size: var(--fs2xl);
+  margin-bottom: var(--s2);
+}
+
+.promoBannerText {
+  color: var(--textMid);
+  margin-bottom: var(--s4);
+  max-width: 48ch;
+}
+
+.promoBannerMedia img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadowMd);
+}
+
+/* ============================ DEAL OF THE DAY =========================== */
+
+.dealCard {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: var(--s6);
+  align-items: center;
+  padding: var(--s6);
+  border-radius: var(--radiusLg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadowMd);
+}
+
+.dealMedia {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.dealMedia img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.dealBadge {
+  position: absolute;
+  top: var(--s3);
+  left: var(--s3);
+  padding: .3rem .75rem;
+  border-radius: var(--radiusPill);
+  background: var(--danger);
+  color: #fff;
+  font-size: var(--fsXs);
+  font-weight: 700;
+}
+
+.dealBody > * + * { margin-top: var(--s3); }
+
+.dealTimer {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  flex-wrap: wrap;
+  padding: var(--s3) var(--s4);
+  border-radius: var(--radius);
+  background: var(--bgSunk);
+}
+
+.dealTimerLabel {
+  font-size: var(--fsXs);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--textDim);
+  margin-right: var(--s2);
+}
+
+.dealTimerUnit {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 48px;
+  padding: var(--s2);
+  border-radius: var(--radiusSm);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: var(--fontHeading);
+  font-size: var(--fsLg);
+  font-weight: 600;
+  line-height: 1;
+  /* Tabular figures stop the countdown jittering as digits change width. */
+  font-variant-numeric: tabular-nums;
+}
+
+.dealTimerUnit small {
+  font-family: var(--fontBody);
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--textDim);
+  margin-top: 2px;
+}
+
+.dealTimerOver { color: var(--textDim); font-size: var(--fsSm); }
+
+/* ============================ CATEGORY PILLS ============================ */
+
+.catPillRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--s3);
+}
+
+.catPill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s4) var(--s2);
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-align: center;
+  transition: transform var(--fast) var(--ease), border-color var(--fast) var(--ease);
+}
+
+.catPill:hover {
+  transform: translateY(-3px);
+  border-color: var(--pillColor);
+  color: var(--text);
+}
+
+.catPillIcon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--pillColor) 16%, transparent);
+  color: var(--pillColor);
+  font-size: 1.35rem;
+}
+
+.catPillName {
+  font-size: var(--fsSm);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* ============================ HOW IT WORKS ============================== */
+
+.stepRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--s5);
+}
+
+.stepCard {
+  position: relative;
+  padding: var(--s6) var(--s5) var(--s5);
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+.stepNumber {
+  position: absolute;
+  top: calc(var(--s5) * -1 + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--textOnBrand);
+  font-family: var(--fontHeading);
+  font-size: var(--fsLg);
+  font-weight: 600;
+  box-shadow: var(--shadowSm);
+}
+
+.stepIcon {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--brand);
+  margin-block: var(--s3) var(--s2);
+}
+
+/* ============================ NEWSLETTER ================================ */
+
+.newsletterSection { padding-block: var(--s7); }
+
+.newsletterCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s6);
+  align-items: center;
+  padding: var(--s7);
+  border-radius: var(--radiusLg);
+  background: linear-gradient(135deg, var(--brandDark), var(--brand));
+  color: #fff;
+  box-shadow: var(--shadowLg);
+}
+
+.newsletterIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .16);
+  font-size: 1.5rem;
+  margin-bottom: var(--s3);
+}
+
+.newsletterTitle {
+  color: #fff;
+  font-size: var(--fs2xl);
+  margin-bottom: var(--s2);
+}
+
+.newsletterText {
+  color: rgba(255, 255, 255, .85);
+  margin: 0;
+  max-width: 46ch;
+}
+
+.newsletterForm {
+  display: grid;
+  gap: var(--s3);
+}
+
+/* The input sits on the brand gradient, so it needs its own solid ground —
+   a translucent field on a gradient fails contrast at both ends. */
+.newsletterForm .formControl {
+  background: #fff;
+  color: #16201a;
+  border-color: transparent;
+  border-radius: var(--radiusPill);
+  padding: .85rem var(--s5);
+}
+
+.newsletterForm .formControl:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, .3);
+}
+
+.newsletterForm .formControl.isInvalid {
+  border-color: #ffd0cb;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, .25);
+}
+
+.newsletterForm .formError {
+  color: #ffe0dc;
+  font-weight: 500;
+}
+
+.newsletterSmall {
+  font-size: var(--fsXs);
+  color: rgba(255, 255, 255, .7);
+  margin: 0;
+}
+
+/* ============================ CHECKLIST DETAIL ========================== */
+
+.checklistGroupTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-top: var(--s5);
+  margin-bottom: var(--s2);
+  font-family: var(--fontBody);
+  font-size: var(--fsSm);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--textDim);
+}
+
+.checklistGroupCount {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radiusPill);
+  background: var(--bgSunk);
+  color: var(--textMid);
+  font-size: var(--fsXs);
+  letter-spacing: 0;
+}
+
+.checklistRow {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color var(--fast) var(--ease);
+}
+
+.checklistRow + .checklistRow { margin-top: var(--s2); }
+.checklistRow:hover { border-color: var(--textDim); }
+.checklistRow.isChecked { opacity: .6; }
+.checklistRow.isChecked .checklistName { text-decoration: line-through; }
+
+/* The row itself no longer carries the border — the wrapper does — so the
+   detail panel reads as part of the same card. */
+.checklistRow .checklistItem {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.checklistExpand {
+  color: var(--textDim);
+  font-size: .95rem;
+  padding: var(--s1) var(--s2);
+  border-radius: var(--radiusSm);
+  transition: color var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+
+.checklistExpand:hover { color: var(--brand); background: var(--bgAlt); }
+
+.checklistNoteFlag { color: var(--accent); font-size: .85em; margin-left: var(--s1); }
+
+.checklistDetail {
+  padding: var(--s4);
+  border-top: 1px dashed var(--line);
+  background: var(--bgAlt);
+}
+
+.checklistDetailMain {
+  display: flex;
+  gap: var(--s4);
+  align-items: flex-start;
+}
+
+.checklistThumb {
+  flex: none;
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--radiusSm);
+  background: var(--bgSunk);
+}
+
+.checklistPrices {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+  flex-wrap: wrap;
+  margin: var(--s2) 0;
+}
+
+.checklistLineTotal {
+  margin-left: auto;
+  font-size: var(--fsSm);
+  color: var(--textMid);
+}
+
+.checklistNote {
+  display: block;
+  margin-top: var(--s3);
+}
+
+.checklistNote .formLabel {
+  display: block;
+  margin-bottom: var(--s1);
+  font-size: var(--fsXs);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--textDim);
+}
+
+.checklistSummary {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s4);
+  flex-wrap: wrap;
+  padding: var(--s3) var(--s4);
+  margin-bottom: var(--s4);
+  border-radius: var(--radius);
+  background: var(--brandLight);
+  color: var(--brandDark);
+  font-size: var(--fsSm);
+}
+
+[data-theme="dark"] .checklistSummary {
+  background: var(--bgAlt);
+  color: var(--text);
+}
+
+/* ============================ MAP CARD ==================================
+ * Stand-in for the map embed on pages that do not load the iframe.
+ * ======================================================================== */
+
+.mapCard {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  padding: var(--s5);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--bgAlt);
+  color: var(--text);
+  transition: border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+
+.mapCard:hover {
+  border-color: var(--brand);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.mapCard > i:first-child {
+  font-size: 1.8rem;
+  color: var(--brand);
+  flex: none;
+}
+
+.mapCard span { flex: 1; min-width: 0; }
+.mapCard small { display: block; color: var(--textDim); font-size: var(--fsXs); margin-top: 2px; }
+.mapCard > i:last-child { color: var(--textDim); flex: none; }
+
+/* ============================ RESPONSIVE ================================
+ * Kept beside the components they belong to rather than in responsive.css,
+ * so a new section only ever needs one file opened.
+ * ======================================================================== */
+
+@media (max-width: 991.98px) {
+  .carouselSlide .heroIn { padding-block: var(--s7); }
+  .carouselArrow { display: none; }   /* swipe and dots cover it on touch */
+
+  .promoBanner,
+  .dealCard { grid-template-columns: 1fr; padding: var(--s5); }
+
+  .promoBannerMedia { order: -1; }
+
+  .newsletterCard { grid-template-columns: 1fr; padding: var(--s6); gap: var(--s5); }
+
+  .trustItem + .trustItem { border-left: 0; padding-left: 0; }
+}
+
+@media (max-width: 767.98px) {
+  .siteHeaderIn { justify-content: center; gap: var(--s2); min-height: 38px; }
+  .announceViewport { flex: 1 1 100%; text-align: center; }
+  .announceMsg { justify-content: center; white-space: normal; font-size: var(--fsXs); }
+  .headerLinks { display: none; }   /* the same links are in the nav and footer */
+
+  .trustBar { padding: var(--s4); gap: var(--s3); }
+  .newsletterCard { padding: var(--s5); }
+  .newsletterTitle { font-size: var(--fsXl); }
+
+  .dealTimerUnit { min-width: 42px; }
+
+  .checklistDetailMain { flex-direction: column; }
+  .checklistThumb { width: 100%; height: 120px; }
+  .checklistLineTotal { margin-left: 0; }
+}
+
+@media (max-width: 575.98px) {
+  .catPillRow { grid-template-columns: repeat(3, 1fr); }
+  .catPillIcon { width: 40px; height: 40px; font-size: 1.1rem; }
+  .catPillName { font-size: var(--fsXs); }
+
+  .stepRow { gap: var(--s6); }
+  .carouselDots { bottom: var(--s3); }
+}

@@ -1,0 +1,81 @@
+{
+  "title": "Shop by category",
+  "intro": "Eight aisles covering the weekly shop — from the fresh counter to household refills.",
+  "linkLabel": "Browse all categories",
+  "linkRoute": "categories",
+
+  "items": [
+    {
+      "slug": "fruits-vegetables",
+      "name": "Fruits & Vegetables",
+      "description": "Picked daily from local growers — leafy greens, seasonal fruit and everyday vegetables.",
+      "icon": "bi-basket",
+      "color": "#4a9d5f",
+      "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=600&q=80",
+      "featured": true
+    },
+    {
+      "slug": "dairy-eggs",
+      "name": "Dairy & Eggs",
+      "description": "Milk, curd, paneer, butter and farm eggs, restocked every morning.",
+      "icon": "bi-cup-straw",
+      "color": "#e8b04b",
+      "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
+      "featured": true
+    },
+    {
+      "slug": "staples-grains",
+      "name": "Staples & Grains",
+      "description": "Rice, atta, dals, millets and cooking oils in family and bulk packs.",
+      "icon": "bi-box-seam",
+      "color": "#c98b3a",
+      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+      "featured": true
+    },
+    {
+      "slug": "snacks-beverages",
+      "name": "Snacks & Beverages",
+      "description": "Tea, coffee, juices, biscuits and namkeen for the pantry shelf.",
+      "icon": "bi-cup-hot",
+      "color": "#d4644a",
+      "image": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&w=600&q=80",
+      "featured": true
+    },
+    {
+      "slug": "bakery",
+      "name": "Bakery",
+      "description": "Bread, buns and cakes baked fresh each morning.",
+      "icon": "bi-basket3",
+      "color": "#b8763f",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+      "featured": false
+    },
+    {
+      "slug": "household",
+      "name": "Household",
+      "description": "Cleaning, laundry, kitchen roll and everything under the sink.",
+      "icon": "bi-house-gear",
+      "color": "#5b8fb9",
+      "image": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
+      "featured": false
+    },
+    {
+      "slug": "personal-care",
+      "name": "Personal Care",
+      "description": "Bath, hair, oral and skincare from trusted everyday brands.",
+      "icon": "bi-droplet",
+      "color": "#a06bb5",
+      "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80",
+      "featured": false
+    },
+    {
+      "slug": "baby-care",
+      "name": "Baby Care",
+      "description": "Nappies, wipes, baby food and gentle cleansers.",
+      "icon": "bi-emoji-smile",
+      "color": "#e08fa8",
+      "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=600&q=80",
+      "featured": false
+    }
+  ]
+}

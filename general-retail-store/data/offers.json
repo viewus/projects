@@ -1,0 +1,75 @@
+{
+  "title": "Today's offers",
+  "intro": "Running deals, refreshed every Friday morning.",
+  "linkLabel": "See all offers",
+  "linkRoute": "offers",
+
+  "items": [
+    {
+      "slug": "weekend-staples",
+      "tag": "Weekend deal",
+      "title": "20% off staples over ₹500",
+      "text": "Rice, atta, dals and cooking oil. Stock the month in one trip.",
+      "code": "STAPLE20",
+      "validUntil": "2026-09-30",
+      "route": "products?category=staples-grains",
+      "ctaLabel": "Shop staples",
+      "color": "#c98b3a"
+    },
+    {
+      "slug": "fresh-first-hour",
+      "tag": "Every morning",
+      "title": "10% off fresh produce before 9 am",
+      "text": "The first hour of trading, on everything from the fresh counter.",
+      "code": "EARLY10",
+      "validUntil": "2026-12-31",
+      "route": "products?category=fruits-vegetables",
+      "ctaLabel": "Shop fresh",
+      "color": "#4a9d5f"
+    },
+    {
+      "slug": "free-delivery",
+      "tag": "Always on",
+      "title": "Free delivery above ₹499",
+      "text": "Within 8 km of the store. Order before 6 pm for same-day.",
+      "code": "",
+      "validUntil": "",
+      "route": "products",
+      "ctaLabel": "Start shopping",
+      "color": "#1f7a4d"
+    },
+    {
+      "slug": "baby-care-bundle",
+      "tag": "Bundle",
+      "title": "15% off baby care bundles",
+      "text": "Nappies, wipes and cereal bought together.",
+      "code": "BABY15",
+      "validUntil": "2026-10-15",
+      "route": "products?category=baby-care",
+      "ctaLabel": "Shop baby care",
+      "color": "#e08fa8"
+    },
+    {
+      "slug": "household-refill",
+      "tag": "Bulk saving",
+      "title": "Save on household refills",
+      "text": "Detergent, dishwash and floor cleaner in large packs.",
+      "code": "HOME19",
+      "validUntil": "2026-11-01",
+      "route": "products?category=household",
+      "ctaLabel": "Shop household",
+      "color": "#5b8fb9"
+    },
+    {
+      "slug": "festival-hamper",
+      "tag": "Seasonal",
+      "title": "Festival hampers from ₹899",
+      "text": "Built to order from our dry fruits, sweets and gifting range.",
+      "code": "",
+      "validUntil": "2026-11-20",
+      "route": "contact",
+      "ctaLabel": "Enquire",
+      "color": "#d4a017"
+    }
+  ]
+}

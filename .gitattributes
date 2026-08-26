@@ -1,0 +1,41 @@
+# Normalise line endings: LF in the repo, native on checkout.
+* text=auto eol=lf
+
+# Explicit text types
+*.html   text eol=lf
+*.css    text eol=lf
+*.js     text eol=lf
+*.json   text eol=lf
+*.md     text eol=lf
+*.svg    text eol=lf
+*.xml    text eol=lf
+*.txt    text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+
+# Windows-only files keep CRLF
+*.bat    text eol=crlf
+*.cmd    text eol=crlf
+
+# Binary assets — never diff or convert
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.webp   binary
+*.avif   binary
+*.ico    binary
+*.pdf    binary
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.otf    binary
+*.eot    binary
+*.mp4    binary
+*.webm   binary
+*.mp3    binary
+
+# Language stats: count only hand-written source
+*.min.js   linguist-vendored
+*.min.css  linguist-vendored
+docs/*     linguist-documentation

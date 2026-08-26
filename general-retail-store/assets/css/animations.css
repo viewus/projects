@@ -1,0 +1,115 @@
+/* ---------------------------------------------------------------------------
+ * animations.css — entrance and attention motion.
+ *
+ * Every animation here is decoration. Content is always readable without it,
+ * and the reduced-motion block at the bottom disables the lot — so nothing on
+ * this page depends on movement to make sense.
+ * ------------------------------------------------------------------------- */
+
+@keyframes rsFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes rsFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes rsScaleIn {
+  from { opacity: 0; transform: scale(.96); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes rsPulse {
+  70%  { box-shadow: 0 0 0 10px rgba(31, 122, 77, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(31, 122, 77, 0); }
+}
+
+@keyframes rsShimmer {
+  from { background-position: -600px 0; }
+  to   { background-position: 600px 0; }
+}
+
+/* ---- scroll reveal --------------------------------------------------------
+ * lazyload.js adds .isVisible as the element scrolls in.
+ * -------------------------------------------------------------------------- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--slow) var(--ease), transform var(--slow) var(--ease);
+}
+
+[data-reveal].isVisible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Staggered children — --cardIndex is set inline by the renderers, so a grid
+   unfolds in reading order instead of snapping in all at once. */
+[data-reveal] > * {
+  transition-delay: calc(var(--cardIndex, 0) * 60ms);
+}
+
+.staggerItem {
+  animation: rsFadeUp var(--slow) var(--ease) both;
+  animation-delay: calc(var(--cardIndex, 0) * 55ms);
+}
+
+/* ---- attention -------------------------------------------------------------- */
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 0 rgba(31, 122, 77, .5);
+  animation: rsPulse 2.4s infinite;
+}
+
+/* ---- loading skeleton -------------------------------------------------------- */
+
+.skeleton {
+  background: linear-gradient(90deg,
+      var(--bgSunk) 25%,
+      var(--bgAlt) 37%,
+      var(--bgSunk) 63%);
+  background-size: 1200px 100%;
+  animation: rsShimmer 1.4s linear infinite;
+  border-radius: var(--radiusSm);
+  color: transparent;
+  user-select: none;
+}
+
+.skeletonCard { height: 300px; border-radius: var(--radius); }
+.skeletonLine { height: 12px; margin-bottom: var(--s2); }
+.skeletonLine.isShort { width: 60%; }
+
+/* Page fades in once app.js has finished rendering, which hides the moment
+   where chrome exists but sections do not. */
+body { opacity: 0; transition: opacity var(--normal) var(--ease); }
+body.isReady { opacity: 1; }
+
+/* ---- reduced motion -----------------------------------------------------------
+ * A visitor who has asked for less motion gets none of the above. The reveal
+ * elements must be forced visible, or opting out would hide the page content.
+ * ------------------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body { opacity: 1; }
+}

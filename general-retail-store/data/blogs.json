@@ -1,0 +1,124 @@
+{
+  "title": "From the shop floor",
+  "intro": "Shopping tips, storage advice and seasonal buying notes from the people who stock the shelves.",
+  "linkLabel": "Read the blog",
+  "linkRoute": "blogs",
+  "readMoreLabel": "Read article",
+
+  "categories": [
+    "Shopping Tips", "Healthy Living", "Kitchen Tips", "Food Storage",
+    "Budget Planning", "Festival Shopping", "Cleaning Tips", "Kids Nutrition",
+    "Seasonal Buying", "Recipes"
+  ],
+
+  "items": [
+    {
+      "slug": "monthly-grocery-without-overspending",
+      "title": "How to do a month's grocery shop without overspending",
+      "category": "Budget Planning",
+      "date": "2026-07-28",
+      "author": "Store team",
+      "readTime": "6 min",
+      "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80",
+      "excerpt": "Buying for a month costs less per kilo but needs a plan. Here's the order we recommend shopping in, and where bulk stops paying.",
+      "body": [
+        { "type": "p", "text": "Buying monthly nearly always beats buying weekly on price — but only if what you buy actually gets used. The waste is where the saving disappears." },
+        { "type": "h", "text": "Start with what does not spoil" },
+        { "type": "p", "text": "Rice, atta, dal, oil and sugar keep for months in a sealed container. Buy those in the largest pack your storage allows, because the per-kilo price drops sharply above 5 kg." },
+        { "type": "h", "text": "Then work backwards through the fridge" },
+        { "type": "p", "text": "Milk, curd and greens are the opposite: buy them weekly, or you throw money away. Our monthly lists split the two groups for exactly this reason." },
+        { "type": "h", "text": "Where bulk stops paying" },
+        { "type": "p", "text": "Spices lose their aroma after about six months. Cooking oil goes rancid. Biscuits go soft. For those, the mid-size pack is the honest answer, whatever the shelf label says." }
+      ]
+    },
+    {
+      "slug": "storing-vegetables-so-they-last",
+      "title": "Storing vegetables so they last twice as long",
+      "category": "Food Storage",
+      "date": "2026-07-14",
+      "author": "Store team",
+      "readTime": "5 min",
+      "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80",
+      "excerpt": "Most vegetables are thrown away because of how they were stored, not how old they were. Six changes that make the difference.",
+      "body": [
+        { "type": "p", "text": "The single biggest cause of waste in a home kitchen is putting everything in the same drawer." },
+        { "type": "h", "text": "Keep onions and potatoes apart" },
+        { "type": "p", "text": "Onions give off moisture and gas that sprouts potatoes early. Store them in separate baskets, both somewhere dark and airy — never in the fridge." },
+        { "type": "h", "text": "Greens want a damp cloth, not a bag" },
+        { "type": "p", "text": "Wrap spinach and coriander in a lightly damp cotton cloth before refrigerating. A sealed plastic bag traps condensation and rots them from the leaf tips inward." },
+        { "type": "h", "text": "Tomatoes are not a fridge item" },
+        { "type": "p", "text": "Below about 12°C the texture goes mealy and the flavour flattens. Keep them on the counter, stem side down." }
+      ]
+    },
+    {
+      "slug": "reading-food-labels",
+      "title": "Reading a food label properly takes ten seconds",
+      "category": "Healthy Living",
+      "date": "2026-06-30",
+      "author": "Store team",
+      "readTime": "4 min",
+      "image": "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=800&q=80",
+      "excerpt": "Ignore the front of the pack. Three things on the back tell you almost everything worth knowing.",
+      "body": [
+        { "type": "p", "text": "The front of a packet is marketing. The back is regulated. Only one of them is worth your time." },
+        { "type": "h", "text": "Ingredients are listed by weight" },
+        { "type": "p", "text": "Whatever comes first is what there is most of. If sugar is in the first three on a breakfast product, it is a dessert." },
+        { "type": "h", "text": "Check per 100 g, not per serving" },
+        { "type": "p", "text": "Serving sizes are chosen by the manufacturer and are often unrealistically small. The per-100 g column is the only way to compare two brands fairly." },
+        { "type": "h", "text": "\"No added sugar\" is not \"no sugar\"" },
+        { "type": "p", "text": "Fruit juice concentrate is still sugar. The nutrition table settles the question in a way the claim on the front never does." }
+      ]
+    },
+    {
+      "slug": "festival-shopping-early",
+      "title": "Why we tell people to do festival shopping three weeks early",
+      "category": "Festival Shopping",
+      "date": "2026-06-16",
+      "author": "Store team",
+      "readTime": "5 min",
+      "image": "https://images.unsplash.com/photo-1605007493699-af65834f8a00?auto=format&fit=crop&w=800&q=80",
+      "excerpt": "Prices on dry fruits, oil and ghee climb steadily in the fortnight before any major festival. Here's how to get ahead of it.",
+      "body": [
+        { "type": "p", "text": "It is not that shops raise prices out of greed. Wholesale rates genuinely climb as demand concentrates into two weeks, and we pay those rates too." },
+        { "type": "h", "text": "Buy the keepers early" },
+        { "type": "p", "text": "Dry fruits, ghee, oil and sugar all store well. Buying them three weeks out routinely saves 15–20% against festival-week prices." },
+        { "type": "h", "text": "Leave the perishables late" },
+        { "type": "p", "text": "Flowers, sweets and fresh produce should be bought as close to the day as possible, regardless of price. Buying those early costs you more in waste than you save." }
+      ]
+    },
+    {
+      "slug": "lunchbox-ideas-that-survive",
+      "title": "Lunchbox ideas that survive until lunchtime",
+      "category": "Kids Nutrition",
+      "date": "2026-05-29",
+      "author": "Store team",
+      "readTime": "4 min",
+      "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80",
+      "excerpt": "A packed lunch has to still be good four hours later. That rules more out than most parents expect.",
+      "body": [
+        { "type": "p", "text": "The test is not whether it tastes good at 7 am. It is whether it tastes good at 1 pm, unrefrigerated, after being carried in a bag." },
+        { "type": "h", "text": "What holds up" },
+        { "type": "p", "text": "Parathas, idlis, lemon rice, besan chilla and anything with a dry rather than wet masala. These are still pleasant at room temperature." },
+        { "type": "h", "text": "What does not" },
+        { "type": "p", "text": "Anything with fresh curd stirred through, cut apple, or a thin gravy. They separate, brown, or leak." }
+      ]
+    },
+    {
+      "slug": "cleaning-cupboard-essentials",
+      "title": "You only need four things in the cleaning cupboard",
+      "category": "Cleaning Tips",
+      "date": "2026-05-12",
+      "author": "Store team",
+      "readTime": "4 min",
+      "image": "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=800&q=80",
+      "excerpt": "Most households own nine cleaning products and use three. Here's the short list that actually covers a home.",
+      "body": [
+        { "type": "p", "text": "Specialist cleaners are mostly the same surfactants at different dilutions, sold in different bottles." },
+        { "type": "h", "text": "The four" },
+        { "type": "p", "text": "A dishwash gel, a floor disinfectant, a laundry detergent and a general surface spray will handle everything in a normal home. Add a scouring powder if you cook a lot." },
+        { "type": "h", "text": "Buy concentrate where you can" },
+        { "type": "p", "text": "Floor cleaner in particular is sold ready-diluted at a large markup. The concentrate costs less per wash and takes up a quarter of the shelf." }
+      ]
+    }
+  ]
+}

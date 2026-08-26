@@ -1,0 +1,27 @@
+<!-- Newsletter signup. Copy comes from data/footer.json; submission goes through
+     RS.callApi("newsletter") -> config/apiEndpoints.json.
+
+     chrome.js removes this entirely on pages where it does not belong (404 and
+     the legal pages) — see newsletter.hideOn in data/footer.json. -->
+<section class="section newsletterSection noPrint">
+  <div class="wrap">
+    <div class="newsletterCard">
+      <div class="newsletterCopy">
+        <span class="newsletterIcon"><i class="bi bi-envelope-paper" aria-hidden="true"></i></span>
+        <h2 class="newsletterTitle" id="newsletterTitle"></h2>
+        <p class="newsletterText" id="newsletterText"></p>
+      </div>
+
+      <form class="newsletterForm" id="newsletterForm" novalidate>
+        <div class="formGroup">
+          <label class="srOnly" for="newsletterEmail">Email address</label>
+          <input class="formControl" type="email" id="newsletterEmail" name="email"
+                 autocomplete="email" required>
+          <p class="formError" role="alert" id="newsletterError" hidden></p>
+        </div>
+        <button class="btn btnAccent btnLg" type="submit" id="newsletterSubmit"></button>
+        <p class="newsletterSmall" id="newsletterSmall"></p>
+      </form>
+    </div>
+  </div>
+</section>

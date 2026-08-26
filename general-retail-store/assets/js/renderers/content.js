@@ -1,0 +1,340 @@
+/* ---------------------------------------------------------------------------
+ * renderers/content.js — blogs, recipes, reviews, FAQ and the contact form.
+ * ------------------------------------------------------------------------- */
+(function (window, $) {
+  "use strict";
+
+  var RS = window.RS || (window.RS = {});
+  var reg = RS.registerComponent;
+
+  /* ---------- blogs ----------------------------------------------------------- */
+
+  function blogCards(items, meta, cfg) {
+    return RS.renderList("components/cards/cardBlog.html", items, function (post, i) {
+      return {
+        index: i,
+        href: RS.detailHref("blog", post.slug),
+        title: post.title,
+        category: post.category,
+        readTime: post.readTime || "",
+        excerpt: post.excerpt,
+        imageAlt: post.title,
+        imgAttrsHtml: RS.imgAttrs(post.image, post.title, "#5b8fb9"),
+        readMoreLabel: (meta && meta.readMoreLabel) || "Read article"
+      };
+    });
+  }
+
+  /** Home-page row: the newest few posts. */
+  reg("blogRow", function (spec, cfg) {
+    if (!spec) return "";
+
+    return RS.json("data/blogs.json").then(function (data) {
+      var posts = RS.sortBy(data.items || [], function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      }).slice(0, spec.limit || 3);
+
+      return blogCards(posts, data, cfg).then(function (cards) {
+        return '<div class="wrap" data-reveal>' + RS.sectionHeadRow(spec) +
+          '<div class="grid gridAutoLg">' + cards + "</div></div>";
+      });
+    });
+  });
+
+  /** Blog index: category chips + full list. */
+  reg("blogGrid", function (data, cfg) {
+    if (!data || !data.items) return "";
+
+    var used = RS.unique(data.items.map(function (p) { return p.category; })).sort();
+
+    var chips = ['<button class="chip isActive" type="button" data-blog-cat="">All</button>']
+      .concat(used.map(function (cat) {
+        return '<button class="chip" type="button" data-blog-cat="' + RS.escape(cat) + '">' +
+          RS.escape(cat) + "</button>";
+      })).join("");
+
+    var posts = RS.sortBy(data.items, function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+
+    return blogCards(posts, data, cfg).then(function (cards) {
+      return '<div class="wrap">' +
+        '<div class="chipRow" style="margin-bottom:var(--s6)">' + chips + "</div>" +
+        '<div class="grid gridAutoLg" id="blogGrid">' + cards + "</div></div>";
+    });
+  });
+
+  /* ---------- recipes ----------------------------------------------------------- */
+
+  function recipeCards(items, meta) {
+    return RS.renderList("components/cards/cardRecipe.html", items, function (recipe, i) {
+      return {
+        index: i,
+        slug: recipe.slug,
+        name: recipe.name,
+        href: RS.detailHref("recipe", recipe.slug),
+        serves: recipe.serves,
+        time: recipe.time,
+        difficulty: recipe.difficulty,
+        description: recipe.description,
+        imageAlt: recipe.name,
+        imgAttrsHtml: RS.imgAttrs(recipe.image, recipe.name, "#d4644a"),
+        addLabel: (meta && meta.addAllLabel) || "Add ingredients"
+      };
+    });
+  }
+
+  reg("recipeRow", function (spec) {
+    if (!spec) return "";
+
+    return RS.json("data/recipes.json").then(function (data) {
+      var chosen = (data.items || []).slice(0, spec.limit || 3);
+
+      return recipeCards(chosen, data).then(function (cards) {
+        return '<div class="wrap" data-reveal>' + RS.sectionHeadRow(spec) +
+          '<div class="grid gridAutoLg">' + cards + "</div></div>";
+      });
+    });
+  });
+
+  reg("recipeGrid", function (data) {
+    if (!data || !data.items) return "";
+
+    return recipeCards(data.items, data).then(function (cards) {
+      return '<div class="wrap">' + RS.sectionHeadRow(data) +
+        '<div class="grid gridAutoLg">' + cards + "</div></div>";
+    });
+  });
+
+  /**
+   * "Add all ingredients" — the recipe-to-shopping-list feature.
+   * Delegated so it works from the row, the grid and the detail page alike.
+   */
+  $(document).on("click", "[data-add-recipe]", function () {
+    var slug = $(this).attr("data-add-recipe");
+
+    RS.json("data/recipes.json").then(function (data) {
+      var recipe = (data.items || []).filter(function (r) { return r.slug === slug; })[0];
+      if (!recipe) return;
+
+      RS.checklist.addMany((recipe.ingredients || []).map(function (ing) {
+        return {
+          id: ing.slug || RS.slugify(ing.name),
+          name: ing.name,
+          qty: ing.qty || 1,
+          unit: ing.unit || "",
+          category: ing.category || ""
+        };
+      }));
+
+      RS.toast(
+        (recipe.ingredients || []).length + " ingredients for " + recipe.name + " added to your list",
+        "success"
+      );
+      RS.track("add_recipe_to_list", { recipe: recipe.name });
+    });
+  });
+
+  /* ---------- reviews ------------------------------------------------------------- */
+
+  reg("reviewGrid", function (data) {
+    if (!data || !data.items) return "";
+
+    return RS.renderList("components/cards/cardReview.html", data.items, function (review, i) {
+      var rating = Math.round(review.rating || 5);
+      var stars = "";
+      for (var s = 0; s < 5; s++) {
+        stars += '<i class="bi ' + (s < rating ? "bi-star-fill" : "bi-star") + '" aria-hidden="true"></i>';
+      }
+
+      return {
+        index: i,
+        name: review.name,
+        role: review.role || "",
+        text: review.text,
+        rating: rating,
+        starsHtml: stars,
+        imgAttrsHtml: RS.imgAttrs(review.avatar, review.name, "#1f7a4d")
+      };
+    }).then(function (cards) {
+      return '<div class="wrap" data-reveal>' + RS.sectionHead(data, true) +
+        '<div class="grid gridAuto">' + cards + "</div></div>";
+    });
+  });
+
+  /* ---------- FAQ ------------------------------------------------------------------ */
+
+  function accordionItems(items, startIndex) {
+    return items.map(function (item, i) {
+      var id = "faqPanel" + (startIndex + i);
+
+      return '<div class="accordionItem">' +
+        '<button class="accordionTrigger" type="button" aria-expanded="false" aria-controls="' + id + '">' +
+        "<span>" + RS.escape(item.question) + "</span>" +
+        '<i class="bi bi-chevron-down" aria-hidden="true"></i></button>' +
+        '<div class="accordionPanel" id="' + id + '"><p>' + RS.escape(item.answer) + "</p></div></div>";
+    }).join("");
+  }
+
+  /** Home page: a handful of the most common questions. */
+  reg("faqPreview", function (data) {
+    if (!data || !data.groups) return "";
+
+    var flat = [];
+    data.groups.forEach(function (group) {
+      (group.items || []).forEach(function (item) { flat.push(item); });
+    });
+
+    var chosen = flat.slice(0, data.previewCount || 5);
+
+    return '<div class="wrap wrapNarrow" data-reveal>' + RS.sectionHead(data, true) +
+      '<div class="accordion isSingle">' + accordionItems(chosen, 0) + "</div>" +
+      '<p class="textCenter" style="margin-top:var(--s5)">' +
+      '<a class="linkArrow" href="' + RS.escape(RS.href(data.linkRoute || "faq")) + '">' +
+      RS.escape(data.linkLabel || "See all questions") +
+      ' <i class="bi bi-arrow-right" aria-hidden="true"></i></a></p></div>';
+  });
+
+  /** FAQ page: every question, grouped. */
+  reg("faqFull", function (data) {
+    if (!data || !data.groups) return "";
+
+    var offset = 0;
+
+    var groups = data.groups.map(function (group) {
+      var html = '<div style="margin-bottom:var(--s7)">' +
+        "<h2>" + RS.escape(group.name) + "</h2>" +
+        '<div class="accordion isSingle">' + accordionItems(group.items || [], offset) + "</div></div>";
+      offset += (group.items || []).length;
+      return html;
+    }).join("");
+
+    return '<div class="wrap wrapNarrow">' + groups + "</div>";
+  });
+
+  /* ---------- contact form ----------------------------------------------------------- */
+
+  reg("contactApp", function (data, cfg) {
+    if (!data || !data.form) return "";
+
+    var form = data.form;
+
+    var fields = (form.fields || []).map(function (field) {
+      var required = field.required ? ' <span class="req" aria-hidden="true">*</span>' : "";
+      var reqAttr = field.required ? " required" : "";
+      var span = field.width === "half" ? "" : ' style="grid-column:1/-1"';
+      var control;
+
+      if (field.type === "textarea") {
+        control = '<textarea class="formControl" id="f_' + field.name + '" name="' + field.name +
+          '" placeholder="' + RS.escape(field.placeholder || "") + '"' + reqAttr + "></textarea>";
+      } else if (field.type === "select") {
+        control = '<select class="formControl" id="f_' + field.name + '" name="' + field.name + '"' +
+          reqAttr + '><option value="">Please choose…</option>' +
+          (field.options || []).map(function (opt) {
+            return "<option>" + RS.escape(opt) + "</option>";
+          }).join("") + "</select>";
+      } else if (field.type === "checkbox") {
+        return '<div class="formGroup"' + span + '><label class="formCheck">' +
+          '<input type="checkbox" id="f_' + field.name + '" name="' + field.name + '"' + reqAttr + ">" +
+          "<span>" + RS.escape(field.label) + required + "</span></label></div>";
+      } else {
+        control = '<input class="formControl" type="' + RS.escape(field.type || "text") +
+          '" id="f_' + field.name + '" name="' + field.name +
+          '" placeholder="' + RS.escape(field.placeholder || "") + '"' +
+          (field.autocomplete ? ' autocomplete="' + RS.escape(field.autocomplete) + '"' : "") +
+          reqAttr + ">";
+      }
+
+      return '<div class="formGroup"' + span + '>' +
+        '<label class="formLabel" for="f_' + field.name + '">' +
+        RS.escape(field.label) + required + "</label>" + control + "</div>";
+    }).join("");
+
+    return '<div class="wrap"><div class="grid grid2" style="align-items:start;gap:var(--s7)">' +
+      "<div>" + RS.sectionHead(data) +
+      '<div class="stack">' +
+      '<p class="cardText"><i class="bi bi-telephone" aria-hidden="true"></i> ' +
+      '<a href="tel:' + RS.escape(String(RS.get(cfg, "contact.phone") || "").replace(/[^\d+]/g, "")) +
+      '">' + RS.escape(RS.get(cfg, "contact.phone") || "") + "</a></p>" +
+      '<p class="cardText"><i class="bi bi-envelope" aria-hidden="true"></i> ' +
+      '<a href="mailto:' + RS.escape(RS.get(cfg, "contact.email") || "") + '">' +
+      RS.escape(RS.get(cfg, "contact.email") || "") + "</a></p>" +
+      '<p class="cardText"><i class="bi bi-whatsapp" aria-hidden="true"></i> ' +
+      '<a href="' + RS.escape(RS.get(cfg, "contact.whatsapp") || "#") +
+      '" target="_blank" rel="noopener">Message us on WhatsApp</a></p>' +
+      "</div></div>" +
+
+      '<form class="form formCard" id="contactForm" novalidate style="grid-template-columns:1fr 1fr">' +
+      '<h2 class="formCardTitle">' + RS.escape(form.title) + "</h2>" +
+      fields +
+      '<div class="formGroup" style="grid-column:1/-1;margin-top:var(--s2)">' +
+      '<button class="btn btnPrimary btnLg btnBlock" type="submit" id="contactSubmit">' +
+      RS.escape(form.submitLabel || "Send message") + "</button></div>" +
+      "</form></div></div>";
+  });
+
+  /** Wire the contact form once its markup exists. */
+  $(document).on("rs:sectionsRendered", function () {
+    var $form = $("#contactForm");
+    if (!$form.length || $form.data("bound")) return;
+    $form.data("bound", true);
+
+    RS.json("data/contact.json").then(function (data) {
+      var form = data.form || {};
+      var fields = form.fields || [];
+
+      RS.bindLiveValidation("#contactForm", fields);
+
+      $form.on("submit", function (e) {
+        e.preventDefault();
+
+        var result = RS.validateForm("#contactForm", fields);
+        if (!result.valid) {
+          RS.toast("Please check the highlighted fields.", "error");
+          return;
+        }
+
+        RS.submitForm({
+          form: $form,
+          button: "#contactSubmit",
+          endpoint: "contactForm",
+          payload: result.values,
+          labels: {
+            sending: form.sendingLabel,
+            success: form.successMessage,
+            error: form.errorMessage
+          }
+        });
+      });
+    });
+  });
+
+  /* ---------- blog category filter ------------------------------------------------------ */
+
+  $(document).on("click", "[data-blog-cat]", function () {
+    var cat = $(this).attr("data-blog-cat");
+
+    $("[data-blog-cat]").removeClass("isActive");
+    $(this).addClass("isActive");
+
+    RS.json("data/blogs.json").then(function (data) {
+      var posts = RS.sortBy(data.items || [], function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      }).filter(function (post) {
+        return !cat || post.category === cat;
+      });
+
+      if (!posts.length) {
+        $("#blogGrid").html(RS.emptyState("No articles in this category yet",
+          "Try another topic.", "bi-journal"));
+        return;
+      }
+
+      blogCards(posts, data).then(function (cards) {
+        $("#blogGrid").html(cards);
+      });
+    });
+  });
+
+})(window, jQuery);

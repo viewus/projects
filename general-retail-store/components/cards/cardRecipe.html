@@ -1,0 +1,22 @@
+<!-- Recipe card. Filled by renderers/content.js from data/recipes.json.
+     The "add all" button is outside the link so it does not trigger navigation. -->
+<article class="blogCard staggerItem" style="--cardIndex: {{index}}">
+  <a class="blogCardMedia" href="{{href}}" aria-label="{{name}}">
+    <img class="blogCardImage" {{imgAttrsHtml}} alt="{{imageAlt}}" loading="lazy" width="600" height="450">
+  </a>
+
+  <div class="blogCardBody">
+    <div class="blogCardMeta">
+      <span><i class="bi bi-people" aria-hidden="true"></i> Serves {{serves}}</span>
+      <span><i class="bi bi-clock" aria-hidden="true"></i> {{time}}</span>
+      <span><i class="bi bi-bar-chart" aria-hidden="true"></i> {{difficulty}}</span>
+    </div>
+
+    <h3 class="blogCardTitle"><a href="{{href}}">{{name}}</a></h3>
+    <p class="blogCardExcerpt">{{description}}</p>
+
+    <button class="btn btnOutline btnSm" type="button" data-add-recipe="{{slug}}">
+      <i class="bi bi-basket" aria-hidden="true"></i> {{addLabel}}
+    </button>
+  </div>
+</article>

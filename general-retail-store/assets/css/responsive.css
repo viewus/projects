@@ -1,0 +1,146 @@
+/* ---------------------------------------------------------------------------
+ * responsive.css — mobile-first overrides. Loads LAST so it wins.
+ *
+ * Breakpoints match Bootstrap's so the two never disagree:
+ *   lg  992px   nav collapses below this
+ *   md  768px
+ *   sm  576px
+ * ------------------------------------------------------------------------- */
+
+/* ============================ < 1200px =================================== */
+
+@media (max-width: 1199.98px) {
+  .footerTop { grid-template-columns: 1.4fr repeat(3, 1fr); gap: var(--s5); }
+  .gridSidebar { grid-template-columns: 230px minmax(0, 1fr); gap: var(--s5); }
+}
+
+/* ============================ < 992px ==================================== */
+
+@media (max-width: 991.98px) {
+  :root { --s8: 3rem; --s9: 4rem; }
+
+  /* ---- nav collapses to a drawer ---- */
+  .navToggle { display: grid; place-items: center; margin-left: auto; }
+
+  .navMenu {
+    position: fixed;
+    inset: var(--navH) 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: var(--s4);
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadowLg);
+    max-height: calc(100vh - var(--navH));
+    overflow-y: auto;
+    display: none;
+  }
+
+  .navMenu.isOpen { display: flex; }
+
+  .navLink {
+    padding: var(--s3) var(--s4);
+    font-size: var(--fsBase);
+    border-radius: var(--radiusSm);
+  }
+
+  .navDropdown {
+    position: static;
+    box-shadow: none;
+    border: 0;
+    border-left: 2px solid var(--line);
+    border-radius: 0;
+    margin-left: var(--s4);
+    padding-left: var(--s2);
+  }
+
+  .navActions { margin: var(--s4) 0 0; padding-top: var(--s4); border-top: 1px solid var(--line); }
+
+  /* ---- layout ---- */
+  .heroIn { grid-template-columns: 1fr; gap: var(--s6); }
+  .heroMedia { order: -1; }
+
+  .gridSidebar { grid-template-columns: 1fr; }
+
+  .filterRail {
+    position: static;
+    /* On mobile the rail becomes a collapsible block above the grid rather
+       than a sticky column, which would eat the whole screen. */
+    margin-bottom: var(--s5);
+  }
+
+  .grid4 { grid-template-columns: repeat(2, 1fr); }
+  .grid3 { grid-template-columns: repeat(2, 1fr); }
+
+  .footerTop { grid-template-columns: repeat(2, 1fr); gap: var(--s6); }
+}
+
+/* ============================ < 768px ==================================== */
+
+@media (max-width: 767.98px) {
+  :root { --gutter: 1rem; --s7: 2rem; --s8: 2.5rem; --s9: 3rem; }
+
+  h1 { font-size: clamp(2rem, 8vw, 2.6rem); }
+  h2 { font-size: var(--fs2xl); }
+
+  .siteHeaderIn { justify-content: center; text-align: center; }
+  .headerLinks { justify-content: center; gap: var(--s3); font-size: var(--fsXs); }
+
+  .formRow { grid-template-columns: 1fr; }
+
+  .newsletter { grid-template-columns: 1fr; }
+
+  .toolbar { flex-direction: column; align-items: stretch; }
+
+  .sectionHeadRow { flex-direction: column; align-items: flex-start; }
+
+  .heroStats { gap: var(--s5); }
+
+  .checklistItem { flex-wrap: wrap; }
+  .checklistName { flex: 1 1 100%; order: -1; }
+
+  .modalPanel { max-height: 92vh; }
+
+  .toastStack { bottom: var(--s3); }
+}
+
+/* ============================ < 576px ==================================== */
+
+@media (max-width: 575.98px) {
+  .grid, .gridAuto, .gridAutoLg { grid-template-columns: 1fr; }
+  .gridAutoSm, .grid2, .grid3, .grid4 { grid-template-columns: repeat(2, 1fr); gap: var(--s3); }
+
+  .footerTop { grid-template-columns: 1fr; }
+  .footerBottom { flex-direction: column; text-align: center; gap: var(--s3); }
+
+  .brandStrip { gap: var(--s5); }
+  .brandLogo { height: 34px; }
+
+  .heroActions { flex-direction: column; }
+  .heroActions .btn { width: 100%; }
+
+  .floatingActions { right: var(--s3); bottom: var(--s3); }
+  .floatBtn { width: 46px; height: 46px; font-size: 1.15rem; }
+
+  .searchBoxKey { display: none; }
+
+  .productCardBody { padding: var(--s3); }
+  .productCardTitle { font-size: var(--fsSm); }
+}
+
+/* ============================ hover-capable only =========================
+ * Lift-on-hover feels broken on touch, where :hover sticks after a tap.
+ * ========================================================================= */
+
+@media (hover: none) {
+  .card:hover,
+  .productCard:hover,
+  .blogCard:hover,
+  .btn:hover:not(:disabled),
+  .floatBtn:hover {
+    transform: none;
+    box-shadow: var(--shadowSm);
+  }
+}

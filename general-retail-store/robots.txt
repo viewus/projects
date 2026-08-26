@@ -1,0 +1,13 @@
+# FreshCart — General Retail Store template
+
+User-agent: *
+Allow: /
+
+# Detail pages are rendered from a ?slug= parameter. The canonical content is
+# reachable from the listing pages, so crawling every parameter combination
+# adds nothing.
+Disallow: /general-retail-store/pages/product.html
+Disallow: /general-retail-store/pages/recipe.html
+Disallow: /general-retail-store/pages/blog.html
+
+Sitemap: https://projects.akhileshravuri.online/general-retail-store/sitemap.xml

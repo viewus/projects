@@ -1,0 +1,126 @@
+/* ---------------------------------------------------------------------------
+ * theme.css — per-brand presets and Bootstrap reconciliation.
+ *
+ * TWO JOBS:
+ *
+ * 1. Bootstrap ships its own colours for the components we borrow (nav collapse,
+ *    dropdown). Those are re-pointed at our tokens here, so the framework never
+ *    contradicts the theme.
+ *
+ * 2. Ready-made brand presets. data/theme.json is the normal way to re-skin —
+ *    app.js writes its tokens onto :root at boot and they beat everything here.
+ *    These presets exist for the case where you want to switch look without
+ *    editing JSON: put data-preset="citrus" on <html>.
+ * ------------------------------------------------------------------------- */
+
+/* ============================ BOOTSTRAP BRIDGE =========================== */
+
+:root {
+  --bs-body-font-family: var(--fontBody);
+  --bs-body-color: var(--text);
+  --bs-body-bg: var(--bg);
+  --bs-primary: var(--brand);
+  --bs-link-color: var(--brand);
+  --bs-link-hover-color: var(--brandDark);
+  --bs-border-color: var(--line);
+  --bs-border-radius: var(--radius);
+}
+
+/* Bootstrap's dropdown menu, wearing our surface tokens. */
+.dropdown-menu {
+  --bs-dropdown-bg: var(--surface);
+  --bs-dropdown-border-color: var(--line);
+  --bs-dropdown-link-color: var(--textMid);
+  --bs-dropdown-link-hover-bg: var(--bgAlt);
+  --bs-dropdown-link-hover-color: var(--text);
+  --bs-dropdown-link-active-bg: var(--brandLight);
+  --bs-dropdown-link-active-color: var(--brand);
+}
+
+/* Bootstrap sets its own focus ring colour; ours is token-driven. */
+.btn:focus-visible,
+.form-control:focus {
+  box-shadow: 0 0 0 4px var(--ring) !important;
+}
+
+/* ============================ BRAND PRESETS ==============================
+ * Each preset only redefines the tokens whose ROLE differs from the default
+ * green. Everything else keeps inheriting, so a preset stays a handful of
+ * lines rather than a second copy of variables.css.
+ * ========================================================================= */
+
+/* ---- Citrus — bright supermarket / mini mart ---- */
+[data-preset="citrus"] {
+  --brand: #e07b23;
+  --brandDark: #b85f14;
+  --brandLight: #fdf1e3;
+  --accent: #2f9e6f;
+  --accentDark: #227a55;
+  --bgDark: #2a1a0c;
+  --ring: rgba(224, 123, 35, .2);
+}
+
+[data-preset="citrus"][data-theme="dark"] {
+  --brand: #f4a259;
+  --brandDark: #e07b23;
+  --brandLight: #3a2611;
+  --bg: #17110b;
+  --bgAlt: #1f1710;
+  --surface: #241b13;
+}
+
+/* ---- Berry — premium department store ---- */
+[data-preset="berry"] {
+  --brand: #7d2b52;
+  --brandDark: #5d1c3c;
+  --brandLight: #f7e9f0;
+  --accent: #d4a017;
+  --accentDark: #b0850f;
+  --bgDark: #23101a;
+  --ring: rgba(125, 43, 82, .2);
+}
+
+[data-preset="berry"][data-theme="dark"] {
+  --brand: #d97ba5;
+  --brandDark: #b85c85;
+  --brandLight: #3a1a29;
+  --bg: #150c11;
+  --bgAlt: #1d1218;
+  --surface: #22151c;
+}
+
+/* ---- Ocean — convenience / general store ---- */
+[data-preset="ocean"] {
+  --brand: #1b6ca8;
+  --brandDark: #12507e;
+  --brandLight: #e6f1f9;
+  --accent: #f2994a;
+  --accentDark: #d47c2e;
+  --bgDark: #0d1c28;
+  --ring: rgba(27, 108, 168, .2);
+}
+
+[data-preset="ocean"][data-theme="dark"] {
+  --brand: #58a9dc;
+  --brandDark: #3d8cbf;
+  --brandLight: #12293a;
+  --bg: #0b1319;
+  --bgAlt: #101a22;
+  --surface: #142029;
+}
+
+/* ============================ HIGH CONTRAST ==============================
+ * Honours a system request for more contrast: firmer lines, no soft greys.
+ * ========================================================================= */
+
+@media (prefers-contrast: more) {
+  :root {
+    --textMid: var(--text);
+    --textDim: #3d4742;
+    --line: #9aa5a0;
+  }
+
+  .card,
+  .productCard,
+  .blogCard { border-width: 2px; }
+}

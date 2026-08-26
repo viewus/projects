@@ -1,0 +1,33 @@
+{
+  "_note": "Behaviour flags. Nothing here is visible copy — that lives in the other data files.",
+
+  "darkMode": true,
+  "defaultColorScheme": "auto",
+
+  "productsPerPage": 12,
+  "blogsPerPage": 6,
+  "recipesPerPage": 9,
+  "relatedCount": 4,
+
+  "search": {
+    "minChars": 2,
+    "debounceMs": 180,
+    "maxSuggestions": 8
+  },
+
+  "features": {
+    "wishlist": false,
+    "storeLocator": true,
+    "shoppingChecklist": true,
+    "budgetCalculator": true,
+    "recipeShopping": true,
+    "festivalShopping": true
+  },
+
+  "analytics": {
+    "_note": "Nothing is loaded and nothing is sent while enabled is false. Set a provider and id, then flip enabled, to switch tracking on.",
+    "provider": "ga4",
+    "id": "",
+    "enabled": false
+  }
+}

@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verdant Valley Resort | Luxury Countryside Resort & Nature Retreat</title>
+<meta name="description" content="Escape the city at Verdant Valley Resort — luxury villas, family activities, adventure experiences, wellness, dining, weddings and unforgettable stays surrounded by nature.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.verdantvalley.com/">
+<meta property="og:title" content="Verdant Valley Resort | Luxury Countryside Resort & Nature Retreat">
+<meta property="og:description" content="Escape the city at Verdant Valley Resort — luxury villas, family activities, adventure experiences, wellness, dining, weddings and unforgettable stays surrounded by nature.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1600&auto=format&fit=crop">
+<meta property="og:url" content="https://www.verdantvalley.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Verdant Valley Resort | Luxury Countryside Resort & Nature Retreat">
+<meta name="twitter:description" content="A World Away. A Place To Call Home. Luxury villas, dining, wellness and adventure surrounded by nature.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1600&auto=format&fit=crop">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Resort",
+  "name": "Verdant Valley",
+  "description": "A luxury countryside resort surrounded by hills, farmland and lakes, offering villas, dining, wellness, adventure and events.",
+  "url": "https://www.verdantvalley.com/",
+  "telephone": "+91-90000-00000",
+  "email": "stay@verdantvalley.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Valley Road",
+    "addressLocality": "Countryside District",
+    "addressCountry": "IN"
+  },
+  "priceRange": "₹₹₹",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "2800"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+:root{
+  --forest:#18382D;
+  --deep-green:#102A21;
+  --sage:#718675;
+  --cream:#F7F4EC;
+  --sand:#D9C9A8;
+  --gold:#B89A5A;
+  --charcoal:#252522;
+  --white:#FFFFFF;
+  --serif:'Playfair Display', serif;
+  --serif-alt:'Cormorant Garamond', serif;
+  --sans:'Montserrat', sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--charcoal);
+  background:var(--cream);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;margin:0;padding:0;}
+button{font-family:var(--sans);cursor:pointer;}
+.container-xl{max-width:1360px;margin:0 auto;padding:0 32px;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;color:var(--forest);}
+.eyebrow{
+  font-family:var(--sans);
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  font-size:.72rem;
+  font-weight:600;
+  color:var(--gold);
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);display:inline-block;}
+.section-pad{padding:120px 0;}
+@media(max-width:768px){.section-pad{padding:72px 0;} .container-xl{padding:0 20px;}}
+
+.btn-gold{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:var(--white);
+  padding:16px 34px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:600;border:1px solid var(--gold);transition:.35s;
+}
+.btn-gold:hover{background:transparent;color:var(--gold);}
+.btn-outline-cream{
+  display:inline-flex;align-items:center;gap:10px;
+  background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.6);
+  padding:16px 34px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:.35s;
+}
+.btn-outline-cream:hover{background:var(--white);color:var(--forest);}
+.btn-line{
+  display:inline-flex;align-items:center;gap:10px;
+  background:transparent;color:var(--forest);border-bottom:1px solid var(--forest);
+  padding:4px 0;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+}
+
+/* ===== HEADER ===== */
+#siteHeader{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  padding:26px 0;transition:.4s ease;
+  background:transparent;
+}
+#siteHeader.scrolled{
+  padding:14px 0;background:rgba(16,42,33,.96);box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+#siteHeader .header-inner{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:var(--serif);font-size:1.4rem;letter-spacing:.08em;color:var(--white);}
+.main-nav{display:flex;gap:34px;align-items:center;}
+.main-nav a{
+  color:var(--white);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;
+  position:relative;padding-bottom:4px;
+}
+.main-nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.3s;}
+.main-nav a:hover::after{width:100%;}
+.header-cta{
+  background:var(--gold);color:var(--white);padding:12px 26px;font-size:.74rem;
+  letter-spacing:.12em;text-transform:uppercase;font-weight:600;border:1px solid var(--gold);transition:.3s;
+}
+.header-cta:hover{background:transparent;color:var(--white);}
+.hamburger{display:none;background:none;border:none;color:var(--white);font-size:1.6rem;}
+@media(max-width:991px){
+  .main-nav{display:none;}
+  .header-cta{display:none;}
+  .hamburger{display:block;}
+}
+
+.mobile-nav{
+  position:fixed;inset:0;background:var(--deep-green);z-index:1100;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+  transform:translateY(-100%);transition:transform .5s cubic-bezier(.77,0,.18,1);
+}
+.mobile-nav.open{transform:translateY(0);}
+.mobile-nav a{color:var(--white);font-family:var(--serif);font-size:1.5rem;}
+.mobile-nav .close-mobile{position:absolute;top:26px;right:28px;background:none;border:none;color:var(--white);font-size:1.8rem;}
+.mobile-nav .header-cta{margin-top:10px;}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;height:100vh;min-height:640px;display:flex;align-items:flex-end;
+  background:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(16,42,33,.25) 0%, rgba(16,42,33,.35) 55%, rgba(16,42,33,.85) 100%);
+}
+.hero-content{position:relative;z-index:2;width:100%;padding-bottom:110px;}
+.hero-content h1{
+  color:var(--white);font-size:clamp(2.6rem,6vw,5rem);line-height:1.05;font-weight:600;
+}
+.hero-content .eyebrow{color:var(--sand);}
+.hero-content p.desc{
+  color:rgba(255,255,255,.85);max-width:560px;margin-top:22px;font-size:1.02rem;line-height:1.75;font-weight:300;
+}
+.hero-btns{display:flex;gap:18px;margin-top:36px;flex-wrap:wrap;}
+.hero-stats{
+  position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.25);
+  margin-top:70px;padding-top:30px;display:flex;flex-wrap:wrap;gap:40px;
+}
+.hero-stats .stat{color:var(--white);}
+.hero-stats .stat b{display:block;font-family:var(--serif);font-size:2rem;color:var(--sand);}
+.hero-stats .stat span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8;}
+.scroll-indicator{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;
+  color:var(--white);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.scroll-indicator .line{width:1px;height:36px;background:rgba(255,255,255,.6);position:relative;overflow:hidden;}
+.scroll-indicator .line::after{
+  content:"";position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--gold);
+  animation:scrollLine 2s infinite;
+}
+@keyframes scrollLine{0%{top:-100%;}100%{top:100%;}}
+
+/* ===== WELCOME ===== */
+.welcome-section{background:var(--cream);}
+.welcome-img{position:relative;overflow:hidden;}
+.welcome-img img{width:100%;height:100%;object-fit:cover;min-height:460px;}
+.welcome-img .frame{
+  position:absolute;top:22px;left:22px;right:-22px;bottom:-22px;border:1px solid var(--gold);z-index:-1;
+}
+.welcome-text{padding-left:20px;}
+.welcome-text h2{font-size:clamp(2rem,3.4vw,2.9rem);margin-top:14px;line-height:1.2;}
+.welcome-text p{margin-top:22px;color:var(--charcoal);opacity:.8;line-height:1.85;font-size:1.02rem;font-weight:300;}
+@media(max-width:991px){.welcome-text{padding-left:0;margin-top:40px;}}
+
+/* ===== EXPERIENCE GRID ===== */
+.experience-section{background:var(--forest);color:var(--white);}
+.experience-section .eyebrow{color:var(--sand);}
+.experience-section h2{color:var(--white);font-size:clamp(2rem,3.6vw,3rem);margin-top:14px;max-width:640px;}
+.exp-grid{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.12);}
+.exp-card{
+  position:relative;min-height:340px;overflow:hidden;background:var(--deep-green);
+}
+.exp-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:1s ease;}
+.exp-card:hover img{transform:scale(1.08);opacity:.7;}
+.exp-card-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;}
+.exp-card-content span.num{font-family:var(--serif-alt);font-style:italic;color:var(--sand);font-size:1.1rem;}
+.exp-card-content h3{color:var(--white);font-size:1.6rem;margin-top:8px;}
+.exp-card-content p{color:rgba(255,255,255,.75);font-size:.88rem;margin-top:8px;font-weight:300;}
+@media(max-width:991px){.exp-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:576px){.exp-grid{grid-template-columns:1fr;}}
+
+/* ===== SECTION HEADINGS GENERIC ===== */
+.head-center{text-align:center;max-width:680px;margin:0 auto 60px;}
+.head-center h2{font-size:clamp(2rem,3.6vw,3rem);margin-top:14px;}
+.head-center p.sub{margin-top:16px;color:var(--charcoal);opacity:.72;font-weight:300;font-size:1.02rem;}
+
+/* ===== ACCOMMODATION ===== */
+.room-card{
+  background:var(--white);border:1px solid rgba(0,0,0,.06);overflow:hidden;height:100%;
+  transition:.4s;
+}
+.room-card:hover{box-shadow:0 24px 50px rgba(24,56,45,.15);transform:translateY(-6px);}
+.room-img{position:relative;height:280px;overflow:hidden;}
+.room-img img{width:100%;height:100%;object-fit:cover;transition:1s;}
+.room-card:hover .room-img img{transform:scale(1.09);}
+.room-price-tag{
+  position:absolute;bottom:0;left:0;background:var(--forest);color:var(--white);
+  padding:10px 20px;font-family:var(--serif);font-size:.95rem;
+}
+.room-price-tag small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sand);}
+.room-body{padding:28px;}
+.room-body h3{font-size:1.35rem;}
+.room-meta{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap;}
+.room-meta span{font-size:.78rem;color:var(--sage);display:flex;align-items:center;gap:6px;}
+.room-desc{margin-top:14px;font-size:.88rem;color:var(--charcoal);opacity:.75;line-height:1.7;font-weight:300;}
+.room-actions{display:flex;justify-content:space-between;align-items:center;margin-top:22px;border-top:1px solid rgba(0,0,0,.06);padding-top:18px;}
+.link-view{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--forest);border-bottom:1px solid var(--forest);}
+.btn-book-sm{background:var(--gold);color:var(--white);padding:10px 20px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:none;}
+
+/* ===== POOL ===== */
+.pool-section{
+  position:relative;min-height:640px;display:flex;align-items:center;
+  background:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1920&auto=format&fit=crop') center/cover;
+}
+.pool-section::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(16,42,33,.88) 30%, rgba(16,42,33,.15) 100%);}
+.pool-content{position:relative;z-index:2;color:var(--white);max-width:520px;}
+.pool-content h2{color:var(--white);font-size:clamp(2rem,3.6vw,3rem);margin-top:14px;}
+.pool-content p{margin-top:20px;color:rgba(255,255,255,.8);font-weight:300;line-height:1.8;}
+.pool-thumbs{display:flex;gap:14px;margin-top:34px;}
+.pool-thumbs img{width:84px;height:84px;object-fit:cover;border:2px solid rgba(255,255,255,.5);}
+
+/* ===== ACTIVITIES ===== */
+.activity-filters{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:50px;}
+.activity-filters button{
+  background:transparent;border:1px solid var(--sage);color:var(--forest);padding:10px 24px;
+  font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;transition:.3s;
+}
+.activity-filters button.active,.activity-filters button:hover{background:var(--forest);border-color:var(--forest);color:var(--white);}
+.activity-card{position:relative;overflow:hidden;height:320px;}
+.activity-card img{width:100%;height:100%;object-fit:cover;transition:.8s;}
+.activity-card:hover img{transform:scale(1.1);}
+.activity-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(16,42,33,.9) 100%);}
+.activity-card-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:24px;color:var(--white);}
+.activity-card-body i{color:var(--gold);font-size:1.3rem;}
+.activity-card-body h4{color:var(--white);font-size:1.15rem;margin-top:8px;}
+.activity-card-body p{font-size:.8rem;color:rgba(255,255,255,.75);margin-top:6px;font-weight:300;}
+
+/* ===== PLAYGROUND ===== */
+.playground-section{background:var(--sand);}
+
+/* ===== GAMES ===== */
+.games-col h3{font-size:1.6rem;margin-bottom:26px;}
+.game-item{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.08);}
+.game-item img{width:64px;height:64px;object-fit:cover;flex-shrink:0;}
+.game-item span{font-weight:500;font-size:.98rem;}
+
+/* ===== NATURE ===== */
+.nature-section{
+  position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+}
+.nature-section::before{content:"";position:absolute;inset:0;background:rgba(16,42,33,.55);}
+.nature-content{position:relative;z-index:2;color:var(--white);}
+.nature-content h2{color:var(--white);font-size:clamp(2.2rem,5vw,4rem);}
+.nature-strip{display:flex;gap:10px;margin-top:44px;justify-content:center;flex-wrap:wrap;}
+.nature-strip img{width:110px;height:140px;object-fit:cover;}
+
+/* ===== DINING ===== */
+.dine-card{position:relative;height:420px;overflow:hidden;}
+.dine-card img{width:100%;height:100%;object-fit:cover;transition:1s;}
+.dine-card:hover img{transform:scale(1.08);}
+.dine-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(16,42,33,.92) 100%);}
+.dine-card-body{position:absolute;left:0;bottom:0;z-index:2;padding:28px;color:var(--white);}
+.dine-card-body span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);}
+.dine-card-body h3{color:var(--white);margin-top:8px;font-size:1.4rem;}
+
+/* ===== SPA ===== */
+.spa-section{background:var(--deep-green);color:var(--white);}
+.spa-section h2{color:var(--white);}
+.spa-section .eyebrow{color:var(--sand);}
+.spa-item{border-top:1px solid rgba(255,255,255,.15);padding:22px 0;display:flex;justify-content:space-between;align-items:center;}
+.spa-item h4{color:var(--white);font-size:1.05rem;font-weight:500;}
+.spa-item span{color:var(--sand);font-size:.8rem;}
+.spa-img{height:100%;min-height:520px;background-size:cover;background-position:center;}
+
+/* ===== EVENTS ===== */
+.events-section{
+  position:relative;background:url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+}
+.events-section::before{content:"";position:absolute;inset:0;background:rgba(16,42,33,.82);}
+.events-content{position:relative;z-index:2;color:var(--white);text-align:center;}
+.events-content h2{color:var(--white);font-size:clamp(2.2rem,4.4vw,3.6rem);}
+.events-stats{display:flex;justify-content:center;gap:70px;margin-top:60px;flex-wrap:wrap;}
+.events-stats .stat b{font-family:var(--serif);font-size:2.4rem;color:var(--sand);display:block;}
+.events-stats .stat span{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.venue-card{position:relative;overflow:hidden;height:300px;}
+.venue-card img{width:100%;height:100%;object-fit:cover;transition:.8s;}
+.venue-card:hover img{transform:scale(1.1);}
+.venue-card-body{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(16,42,33,.88));display:flex;flex-direction:column;justify-content:flex-end;padding:22px;color:#fff;}
+.venue-card-body h4{color:#fff;font-size:1.15rem;}
+.venue-card-body span{color:var(--sand);font-size:.78rem;}
+
+/* ===== GALLERY ===== */
+.gallery-filters{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
+.gallery-filters button{background:none;border:none;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--sage);padding:8px 6px;border-bottom:2px solid transparent;}
+.gallery-filters button.active{color:var(--forest);border-color:var(--gold);}
+.gallery-grid{column-count:4;column-gap:10px;}
+.gallery-grid .g-item{margin-bottom:10px;break-inside:avoid;position:relative;overflow:hidden;cursor:pointer;}
+.gallery-grid .g-item img{width:100%;display:block;transition:.6s;}
+.gallery-grid .g-item:hover img{transform:scale(1.06);}
+.gallery-grid .g-item::after{content:"\f003";font-family:"bootstrap-icons";position:absolute;inset:0;background:rgba(16,42,33,.45);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;opacity:0;transition:.3s;}
+.gallery-grid .g-item:hover::after{opacity:1;}
+@media(max-width:991px){.gallery-grid{column-count:3;}}
+@media(max-width:576px){.gallery-grid{column-count:2;}}
+
+/* ===== RESORT MAP ===== */
+.resort-map{
+  position:relative;background:var(--sage);height:560px;overflow:hidden;
+  background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop') center/cover;
+}
+.resort-map::before{content:"";position:absolute;inset:0;background:rgba(16,42,33,.55);}
+.map-pin{
+  position:absolute;width:16px;height:16px;background:var(--gold);border-radius:50%;border:3px solid #fff;
+  cursor:pointer;z-index:3;box-shadow:0 0 0 6px rgba(184,154,90,.25);
+}
+.map-pin .pin-label{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);background:var(--white);color:var(--forest);
+  padding:6px 14px;font-size:.76rem;white-space:nowrap;font-weight:600;opacity:0;pointer-events:none;transition:.25s;
+}
+.map-pin:hover .pin-label{opacity:1;}
+
+/* ===== JOURNEY ===== */
+.journey-section{background:var(--cream);}
+.journey-timeline{position:relative;margin-top:60px;padding-left:26px;border-left:1px solid rgba(0,0,0,.15);}
+.journey-item{position:relative;padding:0 0 46px 34px;}
+.journey-item::before{content:"";position:absolute;left:-42px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:3px solid var(--cream);box-shadow:0 0 0 1px var(--gold);}
+.journey-item time{font-family:var(--serif);font-size:1.3rem;color:var(--forest);display:block;}
+.journey-item h4{margin-top:6px;font-size:1.1rem;font-weight:600;color:var(--charcoal);}
+
+/* ===== REVIEWS ===== */
+.reviews-section{background:var(--forest);color:#fff;}
+.review-card{background:var(--deep-green);padding:36px;height:100%;border:1px solid rgba(255,255,255,.08);}
+.review-stars{color:var(--gold);font-size:.85rem;margin-bottom:16px;}
+.review-text{font-family:var(--serif-alt);font-style:italic;font-size:1.15rem;line-height:1.7;color:rgba(255,255,255,.9);}
+.review-user{display:flex;align-items:center;gap:14px;margin-top:26px;}
+.review-user img{width:48px;height:48px;border-radius:50%;object-fit:cover;}
+.review-user h5{color:#fff;font-size:.95rem;margin:0;font-family:var(--sans);font-weight:600;}
+.review-user span{font-size:.76rem;color:var(--sand);}
+.review-rating-badge{text-align:center;margin-top:60px;}
+.review-rating-badge b{font-family:var(--serif);font-size:3rem;color:var(--sand);}
+.review-rating-badge p{color:rgba(255,255,255,.7);font-size:.85rem;}
+
+/* ===== ATTRACTIONS ===== */
+.attraction-card{background:#fff;border:1px solid rgba(0,0,0,.06);overflow:hidden;}
+.attraction-card img{height:200px;width:100%;object-fit:cover;}
+.attraction-card .body{padding:22px;}
+.attraction-card h4{font-size:1.1rem;}
+.attraction-card .dist{color:var(--gold);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;}
+.attraction-card p{font-size:.85rem;opacity:.72;margin-top:10px;font-weight:300;}
+
+/* ===== OFFERS ===== */
+.offer-card{background:#fff;border:1px solid rgba(0,0,0,.07);padding:34px;height:100%;position:relative;}
+.offer-card .tag{position:absolute;top:0;right:0;background:var(--gold);color:#fff;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;}
+.offer-card h4{font-size:1.3rem;margin-top:20px;}
+.offer-card p{opacity:.72;font-size:.88rem;margin-top:10px;font-weight:300;}
+
+/* ===== BOOKING ===== */
+.booking-section{background:var(--deep-green);color:#fff;}
+.booking-section h2{color:#fff;}
+.booking-box{background:var(--white);color:var(--charcoal);padding:44px;margin-top:50px;box-shadow:0 30px 60px rgba(0,0,0,.35);}
+.booking-box label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--sage);margin-bottom:8px;display:block;}
+.booking-box .form-control,.booking-box .form-select{
+  border:none;border-bottom:1px solid rgba(0,0,0,.15);border-radius:0;padding:10px 0;font-size:.95rem;background:transparent;
+}
+.booking-box .form-control:focus,.booking-box .form-select:focus{box-shadow:none;border-color:var(--gold);}
+.booking-result{margin-top:30px;border-top:1px solid rgba(0,0,0,.08);padding-top:24px;display:none;}
+.booking-result.show{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.booking-result .price{font-family:var(--serif);font-size:2rem;color:var(--forest);}
+
+/* ===== CONTACT ===== */
+.contact-section{background:var(--cream);}
+.contact-info-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid rgba(0,0,0,.08);}
+.contact-info-item i{font-size:1.2rem;color:var(--gold);}
+.social-row{display:flex;gap:14px;margin-top:26px;}
+.social-row a{width:42px;height:42px;border:1px solid var(--forest);display:flex;align-items:center;justify-content:center;color:var(--forest);transition:.3s;}
+.social-row a:hover{background:var(--forest);color:#fff;}
+.contact-form .form-control{border-radius:0;border:1px solid rgba(0,0,0,.15);padding:14px 16px;font-size:.92rem;}
+.contact-form .form-control:focus{box-shadow:none;border-color:var(--gold);}
+.form-success{display:none;background:var(--forest);color:#fff;padding:16px 20px;margin-top:16px;font-size:.9rem;}
+.form-success.show{display:block;}
+
+/* ===== FAQ ===== */
+.faq-item{border-bottom:1px solid rgba(0,0,0,.1);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;font-weight:500;font-size:1rem;}
+.faq-q i{transition:.3s;color:var(--gold);}
+.faq-item.open .faq-q i{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;font-size:.9rem;opacity:.75;font-weight:300;line-height:1.7;}
+.faq-a-inner{padding-bottom:20px;}
+
+/* ===== NEWSLETTER ===== */
+.newsletter-section{background:var(--forest);color:#fff;text-align:center;}
+.newsletter-section h2{color:#fff;}
+.newsletter-form{max-width:460px;margin:34px auto 0;display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.4);}
+.newsletter-form input{flex:1;background:transparent;border:none;color:#fff;padding:14px 0;font-size:.95rem;}
+.newsletter-form input:focus{outline:none;}
+.newsletter-form input::placeholder{color:rgba(255,255,255,.55);}
+.newsletter-form button{background:none;border:none;color:var(--sand);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;}
+.newsletter-msg{margin-top:14px;font-size:.82rem;color:var(--sand);display:none;}
+.newsletter-msg.show{display:block;}
+
+/* ===== FOOTER ===== */
+footer{background:var(--deep-green);color:rgba(255,255,255,.75);padding:90px 0 30px;}
+footer .logo{margin-bottom:14px;}
+footer p.tag{font-family:var(--serif-alt);font-style:italic;color:var(--sand);font-size:1.05rem;}
+footer h5{color:#fff;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;}
+footer li{margin-bottom:12px;font-size:.88rem;}
+footer li a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:60px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;}
+
+/* ===== MODAL ===== */
+.vv-modal-backdrop{
+  position:fixed;inset:0;background:rgba(16,42,33,.85);z-index:2000;display:none;align-items:center;justify-content:center;padding:26px;
+  opacity:0;transition:opacity .3s;
+}
+.vv-modal-backdrop.show{display:flex;opacity:1;}
+.vv-modal{
+  background:var(--cream);max-width:960px;width:100%;max-height:90vh;overflow-y:auto;position:relative;
+  transform:translateY(30px);transition:.4s;
+}
+.vv-modal-backdrop.show .vv-modal{transform:translateY(0);}
+.vv-modal-close{position:absolute;top:18px;right:18px;z-index:5;width:42px;height:42px;background:rgba(16,42,33,.7);color:#fff;border:none;font-size:1.2rem;}
+.vv-modal-img{width:100%;height:380px;object-fit:cover;}
+.vv-modal-gallery{display:flex;gap:8px;padding:10px 36px;overflow-x:auto;}
+.vv-modal-gallery img{width:90px;height:64px;object-fit:cover;flex-shrink:0;cursor:pointer;opacity:.65;}
+.vv-modal-gallery img.active{opacity:1;outline:2px solid var(--gold);}
+.vv-modal-body{padding:20px 36px 40px;}
+.vv-modal-body h3{font-size:1.9rem;}
+.vv-modal-price{font-family:var(--serif);color:var(--gold);font-size:1.4rem;margin-top:8px;}
+.vv-modal-meta{display:flex;gap:24px;margin:20px 0;flex-wrap:wrap;}
+.vv-modal-meta div{font-size:.82rem;color:var(--sage);}
+.vv-modal-meta div b{display:block;color:var(--forest);font-size:1rem;}
+.vv-modal-body p.desc{opacity:.78;line-height:1.8;font-weight:300;}
+.vv-amenity-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.vv-amenity-list span{border:1px solid rgba(0,0,0,.12);padding:8px 16px;font-size:.78rem;}
+.vv-modal-actions{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;}
+
+.lightbox-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:2100;display:none;align-items:center;justify-content:center;}
+.lightbox-backdrop.show{display:flex;}
+.lightbox-backdrop img{max-width:88vw;max-height:86vh;object-fit:contain;}
+.lightbox-close,.lightbox-nav{position:fixed;background:none;border:none;color:#fff;font-size:2rem;z-index:5;}
+.lightbox-close{top:24px;right:30px;}
+.lightbox-nav.prev{left:24px;top:50%;transform:translateY(-50%);}
+.lightbox-nav.next{right:24px;top:50%;transform:translateY(-50%);}
+
+.counter{transition:.3s;}
+
+/* Swiper custom */
+.testi-swiper .swiper-pagination-bullet{background:var(--sand);opacity:.5;}
+.testi-swiper .swiper-pagination-bullet-active{opacity:1;background:var(--gold);}
+.swiper-button-next,.swiper-button-prev{color:var(--gold) !important;}
+
+@media(max-width:576px){
+  .booking-box{padding:26px;}
+  .vv-modal-body{padding:16px 20px 30px;}
+  .vv-modal-gallery{padding:10px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header id="siteHeader">
+  <div class="container-xl header-inner">
+    <a href="#home" class="logo">VERDANT VALLEY</a>
+    <nav class="main-nav">
+      <a href="#home">Home</a>
+      <a href="#stay">Stay</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#dining">Dining</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#events">Events</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#booking" class="header-cta">Book Your Stay</a>
+    <button class="hamburger" id="openMobileNav"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-mobile" id="closeMobileNav"><i class="bi bi-x"></i></button>
+  <a href="#home">Home</a>
+  <a href="#stay">Stay</a>
+  <a href="#experiences">Experiences</a>
+  <a href="#dining">Dining</a>
+  <a href="#facilities">Facilities</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#events">Events</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
+  <a href="#booking" class="header-cta">Book Your Stay</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
+  <div class="container-xl hero-content">
+    <span class="eyebrow">A Luxury Nature Retreat</span>
+    <h1 style="margin-top:18px;">A World Away.<br>A Place To Call Home.</h1>
+    <p class="desc">Escape the city and discover a private world of luxury rooms, peaceful gardens, unforgettable experiences and endless ways to spend time together.</p>
+    <div class="hero-btns">
+      <a href="#experiences" class="btn-outline-cream">Explore The Resort</a>
+      <a href="#booking" class="btn-gold">Book Your Stay</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>20 Acres</b><span>Of Nature</span></div>
+      <div class="stat"><b>80+</b><span>Rooms & Villas</span></div>
+      <div class="stat"><b>40+</b><span>Experiences</span></div>
+      <div class="stat"><b>100K+</b><span>Happy Guests</span></div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<!-- ===================== WELCOME ===================== -->
+<section class="welcome-section section-pad" id="welcome">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="welcome-img">
+          <img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=1200&auto=format&fit=crop" alt="Verdant Valley resort grounds surrounded by nature">
+          <div class="frame"></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="welcome-text">
+          <span class="eyebrow">Welcome To Verdant Valley</span>
+          <h2>Stay. Explore.<br>Unwind.</h2>
+          <p>Verdant Valley is a complete countryside escape designed for families, couples, friends, corporate groups and celebrations. Set among hills, farmland and open skies, every corner of the resort has been shaped around one idea — that a holiday should feel unhurried.</p>
+          <p>Guests can stay, eat, play, relax, explore and celebrate without ever leaving the property. From sunrise walks to bonfire evenings, the valley holds something for every hour of the day.</p>
+          <a href="#stay" class="btn-line" style="margin-top:20px;display:inline-block;">Discover Our Story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESORT EXPERIENCE ===================== -->
+<section class="experience-section section-pad" id="experiences">
+  <div class="container-xl">
+    <span class="eyebrow">The Resort Experience</span>
+    <h2>Everything You Need.<br>All In One Place.</h2>
+    <div class="exp-grid" id="experienceGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== ACCOMMODATION ===================== -->
+<section class="section-pad" id="stay">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">Accommodation</span>
+      <h2>Your Private Escape</h2>
+      <p class="sub">Choose a stay designed around the way you want to spend your time.</p>
+    </div>
+    <div class="row g-4" id="roomsGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== POOL ===================== -->
+<section class="pool-section">
+  <div class="container-xl">
+    <div class="pool-content" data-aos="fade-right">
+      <span class="eyebrow">Swimming Pool</span>
+      <h2>Slow Down.<br>Stay Awhile.</h2>
+      <p>An infinity pool overlooking the hills, a dedicated children's pool, shaded loungers and a poolside bar that stays open into the evening — the pool deck is where the valley slows to its own pace.</p>
+      <a href="#facilities" class="btn-gold" style="margin-top:20px;display:inline-flex;">Explore Pool</a>
+      <div class="pool-thumbs">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=300&auto=format&fit=crop" alt="Poolside loungers" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=300&auto=format&fit=crop" alt="Evening pool lighting" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=300&auto=format&fit=crop" alt="Children's pool" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACTIVITIES ===================== -->
+<section class="section-pad" id="facilities" style="background:var(--cream);">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">Activities</span>
+      <h2>There Is Always Something To Do</h2>
+    </div>
+    <div class="activity-filters" id="activityFilters"></div>
+    <div class="row g-3" id="activityGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== PLAYGROUND ===================== -->
+<section class="playground-section section-pad">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="eyebrow">For Families</span>
+        <h2>Childhood, Reimagined.</h2>
+        <p style="margin-top:20px;opacity:.78;font-weight:300;line-height:1.8;">A sprawling outdoor playground with slides, swings, climbing structures and a sand play area, alongside an air-conditioned indoor play zone for rainy afternoons and quiet hours.</p>
+        <a href="#booking" class="btn-line" style="margin-top:10px;display:inline-block;">Plan A Family Stay</a>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="row g-3">
+          <div class="col-6"><img src="https://images.unsplash.com/photo-1680795620428-1719dd643f68?q=80&w=700&auto=format&fit=crop" alt="Outdoor playground slides" style="height:220px;object-fit:cover;" loading="lazy"></div>
+          <div class="col-6"><img src="https://images.unsplash.com/photo-1594394489098-73652dc9c8ba?q=80&w=700&auto=format&fit=crop" alt="Kids climbing structure" style="height:220px;object-fit:cover;" loading="lazy"></div>
+          <div class="col-12"><img src="https://images.unsplash.com/photo-1603311230425-476b47d94908?q=80&w=1000&auto=format&fit=crop" alt="Indoor play zone for children" style="height:200px;width:100%;object-fit:cover;" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GAMES ===================== -->
+<section class="section-pad">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">Games</span>
+      <h2>Indoor &amp; Outdoor Games</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-6 games-col" data-aos="fade-up">
+        <h3>Indoor Games</h3>
+        <div id="indoorGames"></div>
+      </div>
+      <div class="col-lg-6 games-col" data-aos="fade-up" data-aos-delay="100">
+        <h3>Outdoor Games</h3>
+        <div id="outdoorGames"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NATURE ===================== -->
+<section class="nature-section">
+  <div class="container-xl nature-content" data-aos="fade-up">
+    <span class="eyebrow">The Grounds</span>
+    <h2 style="margin-top:16px;">Nature Is Part<br>Of The Stay</h2>
+    <a href="#experiences" class="btn-outline-cream" style="margin-top:30px;display:inline-flex;">Explore The Grounds</a>
+    <div class="nature-strip">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=300&auto=format&fit=crop" alt="Forest trail" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=300&auto=format&fit=crop" alt="Hills at Verdant Valley" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=300&auto=format&fit=crop" alt="Lake at sunrise" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=300&auto=format&fit=crop" alt="Gardens in bloom" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=300&auto=format&fit=crop" alt="Sunset over the valley" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DINING ===================== -->
+<section class="section-pad" id="dining">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">Dining</span>
+      <h2>Gather Around The Table</h2>
+    </div>
+    <div class="row g-3" id="diningGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== SPA ===================== -->
+<section class="spa-section">
+  <div class="row g-0 align-items-stretch">
+    <div class="col-lg-6">
+      <div class="spa-img" style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop');" role="img" aria-label="Luxury spa treatment room"></div>
+    </div>
+    <div class="col-lg-6 d-flex align-items-center">
+      <div class="section-pad" style="padding-left:60px;padding-right:60px;" data-aos="fade-left">
+        <span class="eyebrow">Spa &amp; Wellness</span>
+        <h2>Rest. Reset.<br>Reconnect.</h2>
+        <div id="spaList" style="margin-top:20px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EVENTS & WEDDINGS ===================== -->
+<section class="events-section section-pad" id="events">
+  <div class="container-xl events-content">
+    <span class="eyebrow" style="color:var(--sand);">Events &amp; Weddings</span>
+    <h2 style="margin-top:16px;">Celebrate Somewhere Extraordinary</h2>
+    <p style="max-width:600px;margin:22px auto 0;opacity:.82;font-weight:300;">From destination weddings on the lawn to corporate retreats by the lake, Verdant Valley turns every occasion into a memory shaped by nature.</p>
+    <a href="#contact" class="btn-gold" style="margin-top:30px;display:inline-flex;">Plan Your Event</a>
+    <div class="events-stats">
+      <div class="stat"><b class="counter" data-count="500">0</b><span>Events Hosted</span></div>
+      <div class="stat"><b class="counter" data-count="50000">0</b><span>Guests Celebrated</span></div>
+      <div class="stat"><b class="counter" data-count="20">0</b><span>Event Spaces</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container-xl">
+    <div class="row g-3" id="venueGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section class="section-pad" id="gallery" style="background:var(--cream);">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">Gallery</span>
+      <h2>Moments From The Valley</h2>
+    </div>
+    <div class="gallery-filters" id="galleryFilters"></div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== RESORT MAP ===================== -->
+<section class="section-pad">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">Find Your Way</span>
+      <h2>The Resort Map</h2>
+    </div>
+    <div class="resort-map" id="resortMap"></div>
+  </div>
+</section>
+
+<!-- ===================== JOURNEY ===================== -->
+<section class="journey-section section-pad">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">A Day At The Valley</span>
+      <h2>One Day At Verdant Valley</h2>
+    </div>
+    <div class="journey-timeline" id="journeyTimeline" style="max-width:640px;margin:0 auto;"></div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="reviews-section section-pad" id="reviews">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow" style="color:var(--sand);">Guest Reviews</span>
+      <h2 style="color:#fff;">Stories From Our Guests</h2>
+    </div>
+    <div class="swiper testi-swiper">
+      <div class="swiper-wrapper" id="reviewsWrapper"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="review-rating-badge">
+      <b>4.9 / 5</b>
+      <p>2,800+ Guest Reviews</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ATTRACTIONS ===================== -->
+<section class="section-pad">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">Beyond The Resort</span>
+      <h2>Explore Beyond The Resort</h2>
+    </div>
+    <div class="row g-4" id="attractionsGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== OFFERS ===================== -->
+<section class="section-pad" style="background:var(--cream);">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">Offers</span>
+      <h2>Curated Stay Packages</h2>
+    </div>
+    <div class="row g-4" id="offersGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== BOOKING ===================== -->
+<section class="booking-section section-pad" id="booking">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow" style="color:var(--sand);">Reservations</span>
+      <h2>Check Availability</h2>
+    </div>
+    <div class="booking-box" data-aos="fade-up">
+      <div class="row g-4">
+        <div class="col-md-3 col-6">
+          <label>Check-in</label>
+          <input type="date" id="bkCheckin" class="form-control">
+        </div>
+        <div class="col-md-3 col-6">
+          <label>Check-out</label>
+          <input type="date" id="bkCheckout" class="form-control">
+        </div>
+        <div class="col-md-2 col-6">
+          <label>Adults</label>
+          <select id="bkAdults" class="form-select">
+            <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+          </select>
+        </div>
+        <div class="col-md-2 col-6">
+          <label>Children</label>
+          <select id="bkChildren" class="form-select">
+            <option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label>Package</label>
+          <select id="bkPackage" class="form-select">
+            <option value="0">Room Only</option>
+            <option value="1500">With Breakfast</option>
+            <option value="3200">All Meals + Activities</option>
+          </select>
+        </div>
+        <div class="col-md-9">
+          <label>Accommodation</label>
+          <select id="bkRoom" class="form-select"></select>
+        </div>
+        <div class="col-md-3 d-flex align-items-end">
+          <button class="btn-gold w-100" id="bkCheckBtn">Check Availability</button>
+        </div>
+      </div>
+      <div class="booking-result" id="bookingResult">
+        <div>
+          <div id="bkNightsSummary" style="font-size:.85rem;color:var(--sage);"></div>
+        </div>
+        <div>
+          <span style="font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--sage);">Estimated Stay</span>
+          <div class="price" id="bkEstimatedPrice">₹0</div>
+        </div>
+        <a href="#contact" class="btn-gold">Confirm Enquiry</a>
+      </div>
+      <p style="font-size:.72rem;opacity:.5;margin-top:20px;margin-bottom:0;">This is a front-end demonstration only. Our team will confirm final availability and pricing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact-section section-pad" id="contact">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <span class="eyebrow">Contact</span>
+        <h2 style="margin-top:14px;">VERDANT VALLEY</h2>
+        <div class="contact-info-item">
+          <i class="bi bi-geo-alt"></i>
+          <div><b>Address</b><br><span style="opacity:.75;font-size:.92rem;">Valley Road, Countryside District, India</span></div>
+        </div>
+        <div class="contact-info-item">
+          <i class="bi bi-telephone"></i>
+          <div><b>Phone</b><br><span style="opacity:.75;font-size:.92rem;">+91 90000 00000</span></div>
+        </div>
+        <div class="contact-info-item">
+          <i class="bi bi-envelope"></i>
+          <div><b>Email</b><br><span style="opacity:.75;font-size:.92rem;">stay@verdantvalley.com</span></div>
+        </div>
+        <div class="social-row">
+          <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6"><input type="text" class="form-control" id="cfName" placeholder="Full Name" required></div>
+            <div class="col-md-6"><input type="email" class="form-control" id="cfEmail" placeholder="Email Address" required></div>
+            <div class="col-md-6"><input type="tel" class="form-control" id="cfPhone" placeholder="Phone Number" required></div>
+            <div class="col-md-6"><input type="text" class="form-control" id="cfSubject" placeholder="Subject" required></div>
+            <div class="col-12"><textarea class="form-control" id="cfMessage" rows="5" placeholder="Your Message" required></textarea></div>
+            <div class="col-12"><button type="submit" class="btn-gold">Send Message</button></div>
+          </div>
+          <div class="form-success" id="cfSuccess">Thank you — your message has been received. Our team will reach out shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section-pad" style="background:var(--cream);">
+  <div class="container-xl">
+    <div class="head-center" data-aos="fade-up">
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div style="max-width:820px;margin:0 auto;" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ===================== NEWSLETTER ===================== -->
+<section class="newsletter-section section-pad">
+  <div class="container-xl">
+    <span class="eyebrow" style="color:var(--sand);">Newsletter</span>
+    <h2 style="margin-top:14px;">Bring The Valley To Your Inbox</h2>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" id="nlEmail" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="newsletter-msg" id="nlMsg">You're subscribed — welcome to the valley.</div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="logo" style="color:#fff;">VERDANT VALLEY</div>
+        <p class="tag">"A World Away. A Place To Call Home."</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#home">Resort</a></li>
+          <li><a href="#stay">Rooms</a></li>
+          <li><a href="#facilities">Activities</a></li>
+          <li><a href="#dining">Dining</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h5>Stay</h5>
+        <ul>
+          <li><a href="#stay">Accommodation</a></li>
+          <li><a href="#booking">Offers</a></li>
+          <li><a href="#booking">Packages</a></li>
+          <li><a href="#booking">Booking</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h5>Events</h5>
+        <ul>
+          <li><a href="#events">Weddings</a></li>
+          <li><a href="#events">Corporate</a></li>
+          <li><a href="#events">Celebrations</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h5>Contact</h5>
+        <ul>
+          <li>+91 90000 00000</li>
+          <li>stay@verdantvalley.com</li>
+          <li>Valley Road, Countryside District</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Verdant Valley. All Rights Reserved.</span>
+      <span>Designed for those who need a world away.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== REUSABLE MODAL ===================== -->
+<div class="vv-modal-backdrop" id="vvModalBackdrop">
+  <div class="vv-modal" id="vvModal">
+    <button class="vv-modal-close" id="vvModalClose"><i class="bi bi-x"></i></button>
+    <div id="vvModalContent"></div>
+  </div>
+</div>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lightbox-backdrop" id="lightboxBackdrop">
+  <button class="lightbox-close" id="lightboxClose"><i class="bi bi-x"></i></button>
+  <button class="lightbox-nav prev" id="lightboxPrev"><i class="bi bi-chevron-left"></i></button>
+  <img src="" alt="Gallery image enlarged view" id="lightboxImg">
+  <button class="lightbox-nav next" id="lightboxNext"><i class="bi bi-chevron-right"></i></button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+/* ================================================================
+   DATA
+================================================================= */
+const rooms = [
+  { id:1, name:"Valley View Room", image:"https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop",
+    gallery:["https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1200&auto=format&fit=crop"],
+    price:8500, guests:2, beds:"King Bed", bathrooms:1, area:"420 sq ft",
+    description:"A serene room overlooking the valley, dressed in natural linens and warm wood tones, with a private sit-out framing the hills.",
+    highlights:["Uninterrupted valley views","Private sit-out","Rain shower bathroom"],
+    amenities:["King Bed","Valley View","Wi-Fi","Breakfast","Air Conditioning","Mini Bar"] },
+  { id:2, name:"Garden Cottage", image:"https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=1200&auto=format&fit=crop",
+    gallery:["https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1592229505726-ca121723b8ef?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=1200&auto=format&fit=crop"],
+    price:12500, guests:4, beds:"2 Queen Beds", bathrooms:2, area:"650 sq ft",
+    description:"A standalone cottage opening onto a private garden — ideal for families who want their own patch of green.",
+    highlights:["Private walled garden","Outdoor breakfast nook","Separate living area"],
+    amenities:["Private Garden","Wi-Fi","Breakfast","Air Conditioning","Kitchenette","Bathtub"] },
+  { id:3, name:"Family Villa", image:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop",
+    gallery:["https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop"],
+    price:18500, guests:6, beds:"3 Beds", bathrooms:2, area:"1,100 sq ft",
+    description:"Two bedrooms, a shared living space and a wraparound veranda make this villa a natural gathering point for family holidays.",
+    highlights:["Two bedrooms","Wraparound veranda","Board game lounge"],
+    amenities:["2 Bedrooms","Wi-Fi","Breakfast","Air Conditioning","Living Room","Balcony"] },
+  { id:4, name:"Lake View Suite", image:"https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop",
+    gallery:["https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1200&auto=format&fit=crop"],
+    price:15000, guests:2, beds:"King Bed", bathrooms:1, area:"750 sq ft",
+    description:"A romantic suite with a private balcony facing the lake, best enjoyed with morning coffee in hand.",
+    highlights:["Private lake-facing balcony","Soaking tub","Turn-down service"],
+    amenities:["Private Balcony","Wi-Fi","Breakfast","Air Conditioning","Soaking Tub","Mini Bar"] },
+  { id:5, name:"Private Pool Villa", image:"https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=1200&auto=format&fit=crop",
+    gallery:["https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1200&auto=format&fit=crop"],
+    price:25000, guests:4, beds:"2 King Beds", bathrooms:2, area:"1,400 sq ft",
+    description:"Your own plunge pool, a sundeck and total privacy — this villa is built for slow, uninterrupted days.",
+    highlights:["Private plunge pool","Outdoor sundeck","Dedicated host on call"],
+    amenities:["Private Pool","Wi-Fi","Breakfast","Air Conditioning","Sundeck","Butler On Call"] },
+  { id:6, name:"Forest House", image:"https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1200&auto=format&fit=crop",
+    gallery:["https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1587061949409-02df41d5e562?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?q=80&w=1200&auto=format&fit=crop"],
+    price:28000, guests:6, beds:"3 Bedrooms", bathrooms:3, area:"1,600 sq ft",
+    description:"Tucked against the treeline, this house offers three bedrooms and a private deck for evenings under the canopy.",
+    highlights:["Treeline setting","Private deck","Outdoor fireplace"],
+    amenities:["3 Bedrooms","Wi-Fi","Breakfast","Air Conditioning","Fireplace","Private Deck"] },
+  { id:7, name:"Royal Estate", image:"https://images.unsplash.com/photo-1613977257592-4871e5fcbf0f?q=80&w=1200&auto=format&fit=crop",
+    gallery:["https://images.unsplash.com/photo-1613977257592-4871e5fcbf0f?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop"],
+    price:45000, guests:8, beds:"4 Bedrooms", bathrooms:4, area:"2,500 sq ft",
+    description:"A grand estate with a private pool and manicured garden, made for milestone gatherings and family reunions.",
+    highlights:["Private pool and garden","Dedicated event lawn access","Full estate staff"],
+    amenities:["Private Pool + Garden","Wi-Fi","All Meals","Air Conditioning","Event Lawn Access","Estate Staff"] },
+  { id:8, name:"Presidential Villa", image:"https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop",
+    gallery:["https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1602002418082-a4443e081dd1?q=80&w=1200&auto=format&fit=crop","https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1200&auto=format&fit=crop"],
+    price:65000, guests:10, beds:"5 Bedrooms", bathrooms:5, area:"3,200 sq ft",
+    description:"The valley's most exclusive address, with a private pool, dedicated butler service and uninterrupted hill views from every room.",
+    highlights:["Private pool with hill views","Dedicated butler service","Private dining terrace"],
+    amenities:["Private Pool","Butler Service","All Meals","Air Conditioning","Private Terrace","Helipad Access"] }
+];
+
+const experiences = [
+  { title:"Stay", desc:"Luxury rooms, villas and private cottages.", image:"https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=900&auto=format&fit=crop" },
+  { title:"Play", desc:"Indoor and outdoor games for every age.", image:"https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=900&auto=format&fit=crop" },
+  { title:"Explore", desc:"Nature trails, cycling and adventure activities.", image:"https://images.unsplash.com/photo-1533130061792-64b345e4a833?q=80&w=900&auto=format&fit=crop" },
+  { title:"Relax", desc:"Spa, wellness, gardens and peaceful spaces.", image:"https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=900&auto=format&fit=crop" },
+  { title:"Taste", desc:"Restaurants, cafes and private dining.", image:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=900&auto=format&fit=crop" },
+  { title:"Celebrate", desc:"Weddings, parties, corporate events and special occasions.", image:"https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=900&auto=format&fit=crop" }
+];
+
+const activities = [
+  { cat:"adventure", title:"Zipline", desc:"Fly across the valley canopy.", icon:"bi-signpost-split", image:"https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=800&auto=format&fit=crop" },
+  { cat:"adventure", title:"Rope Course", desc:"A high-ropes challenge among the trees.", icon:"bi-diagram-3", image:"https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800&auto=format&fit=crop" },
+  { cat:"adventure", title:"ATV Trails", desc:"Off-road trails through farmland.", icon:"bi-truck", image:"https://images.unsplash.com/photo-1533111321419-a52e6d6c8a15?q=80&w=800&auto=format&fit=crop" },
+  { cat:"adventure", title:"Archery", desc:"Guided archery sessions for all levels.", icon:"bi-bullseye", image:"https://images.unsplash.com/photo-1521731978332-9e9e714bdd20?q=80&w=800&auto=format&fit=crop" },
+  { cat:"adventure", title:"Rock Climbing", desc:"A climbing wall set against the hills.", icon:"bi-mountain", image:"https://images.unsplash.com/photo-1522163182402-834f871fd851?q=80&w=800&auto=format&fit=crop" },
+  { cat:"adventure", title:"Trekking", desc:"Guided treks through the countryside.", icon:"bi-signpost", image:"https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800&auto=format&fit=crop" },
+  { cat:"family", title:"Cycling", desc:"Cycle trails through gardens and farmland.", icon:"bi-bicycle", image:"https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?q=80&w=800&auto=format&fit=crop" },
+  { cat:"family", title:"Nature Walk", desc:"Guided walks through the resort grounds.", icon:"bi-tree", image:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop" },
+  { cat:"family", title:"Fishing", desc:"A quiet afternoon by the lake.", icon:"bi-water", image:"https://images.unsplash.com/photo-1445988270129-89369c2fc5d0?q=80&w=800&auto=format&fit=crop" },
+  { cat:"family", title:"Picnic", desc:"Curated picnic baskets on the lawn.", icon:"bi-basket", image:"https://images.unsplash.com/photo-1526401485004-46910ecc8e51?q=80&w=800&auto=format&fit=crop" },
+  { cat:"family", title:"Bonfire", desc:"Evenings by the fire under open skies.", icon:"bi-fire", image:"https://images.unsplash.com/photo-1523905330026-b8bd1f5f320e?q=80&w=800&auto=format&fit=crop" },
+  { cat:"family", title:"Outdoor Games", desc:"Lawn games for the whole group.", icon:"bi-dice-5", image:"https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop" },
+  { cat:"kids", title:"Kids Playground", desc:"A large outdoor play area for children.", icon:"bi-emoji-smile", image:"https://images.unsplash.com/photo-1680795620428-1719dd643f68?q=80&w=800&auto=format&fit=crop" },
+  { cat:"kids", title:"Mini Adventure Park", desc:"A scaled-down adventure course for kids.", icon:"bi-stars", image:"https://images.unsplash.com/photo-1594394489098-73652dc9c8ba?q=80&w=800&auto=format&fit=crop" },
+  { cat:"kids", title:"Indoor Play Zone", desc:"Climate-controlled indoor play area.", icon:"bi-house-heart", image:"https://images.unsplash.com/photo-1603311230425-476b47d94908?q=80&w=800&auto=format&fit=crop" },
+  { cat:"kids", title:"Treasure Hunt", desc:"A resort-wide treasure hunt for young guests.", icon:"bi-map", image:"https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop" },
+  { cat:"kids", title:"Art & Craft", desc:"Daily craft workshops for children.", icon:"bi-palette", image:"https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop" },
+  { cat:"kids", title:"Movie Nights", desc:"Open-air movie screenings on the lawn.", icon:"bi-film", image:"https://images.unsplash.com/photo-1489599162946-7e40427ab0bf?q=80&w=800&auto=format&fit=crop" },
+  { cat:"wellness", title:"Yoga", desc:"Sunrise yoga sessions on the lawn.", icon:"bi-flower1", image:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop" },
+  { cat:"wellness", title:"Meditation", desc:"Guided meditation in the gardens.", icon:"bi-moon-stars", image:"https://images.unsplash.com/photo-1470137237906-d8a308b5da7f?q=80&w=800&auto=format&fit=crop" },
+  { cat:"wellness", title:"Spa", desc:"Holistic treatments inspired by nature.", icon:"bi-droplet", image:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" },
+  { cat:"wellness", title:"Nature Therapy", desc:"Forest bathing walks and breathing sessions.", icon:"bi-tree-fill", image:"https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=800&auto=format&fit=crop" }
+];
+
+const indoorGames = ["Pool Table","Table Tennis","Carrom","Chess","Foosball","Board Games","Gaming Zone"];
+const indoorGameImgs = [
+  "https://images.unsplash.com/photo-1615147342761-9738f9233874?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1611251126866-4e88a8a3a1e5?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1611578938942-eb3f38e3e2a0?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1580541631950-7282082b53ce?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1518133683791-0b9de5a055f0?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=200&auto=format&fit=crop"
+];
+const outdoorGames = ["Cricket","Football","Volleyball","Badminton","Basketball","Lawn Games"];
+const outdoorGameImgs = [
+  "https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1592656094267-764a45160876?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1546519638-68e109498ffd?q=80&w=200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=200&auto=format&fit=crop"
+];
+
+const dining = [
+  { name:"The Valley Kitchen", tag:"All-Day Restaurant", image:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1000&auto=format&fit=crop" },
+  { name:"The Garden Café", tag:"Coffee, Tea & Light Meals", image:"https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1000&auto=format&fit=crop" },
+  { name:"The Lake Deck", tag:"Outdoor Dining By The Water", image:"https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1000&auto=format&fit=crop" },
+  { name:"The Firepit", tag:"BBQ & Evening Dining", image:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1000&auto=format&fit=crop" }
+];
+
+const spaItems = [
+  { name:"Signature Massage", dur:"60 / 90 min" },
+  { name:"Deep Tissue Therapy", dur:"60 min" },
+  { name:"Sunrise Yoga", dur:"45 min" },
+  { name:"Guided Meditation", dur:"30 min" },
+  { name:"Steam & Sauna", dur:"Open Access" },
+  { name:"Wellness Lounge", dur:"All Day" }
+];
+
+const venues = [
+  { name:"The Grand Lawn", capacity:"500", image:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=900&auto=format&fit=crop" },
+  { name:"Valley Ballroom", capacity:"300", image:"https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=900&auto=format&fit=crop" },
+  { name:"Lake Pavilion", capacity:"150", image:"https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=900&auto=format&fit=crop" },
+  { name:"Forest Deck", capacity:"80", image:"https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=900&auto=format&fit=crop" }
+];
+
+const gallery = [
+  { cat:"resort", image:"https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=800&auto=format&fit=crop" },
+  { cat:"rooms", image:"https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=800&auto=format&fit=crop" },
+  { cat:"villas", image:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop" },
+  { cat:"pool", image:"https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format&fit=crop" },
+  { cat:"activities", image:"https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=800&auto=format&fit=crop" },
+  { cat:"dining", image:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop" },
+  { cat:"nature", image:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop" },
+  { cat:"events", image:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800&auto=format&fit=crop" },
+  { cat:"villas", image:"https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop" },
+  { cat:"pool", image:"https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=800&auto=format&fit=crop" },
+  { cat:"rooms", image:"https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800&auto=format&fit=crop" },
+  { cat:"nature", image:"https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=800&auto=format&fit=crop" },
+  { cat:"activities", image:"https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?q=80&w=800&auto=format&fit=crop" },
+  { cat:"dining", image:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop" },
+  { cat:"events", image:"https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=800&auto=format&fit=crop" },
+  { cat:"resort", image:"https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=800&auto=format&fit=crop" }
+];
+
+const journey = [
+  { time:"07:00", title:"Sunrise Walk" },
+  { time:"08:30", title:"Breakfast" },
+  { time:"10:00", title:"Adventure Activities" },
+  { time:"13:00", title:"Lunch" },
+  { time:"15:00", title:"Pool & Relaxation" },
+  { time:"17:30", title:"Nature Walk" },
+  { time:"19:00", title:"Bonfire" },
+  { time:"20:00", title:"Dinner" },
+  { time:"22:00", title:"Under The Stars" }
+];
+
+const testimonials = [
+  { name:"Ananya R.", city:"Bengaluru", rating:5, stay:"Family Villa", text:"Everything was thoughtfully designed. Our children had activities all day while we finally had time to relax.", photo:"https://randomuser.me/api/portraits/women/68.jpg" },
+  { name:"Karan M.", city:"Mumbai", rating:5, stay:"Private Pool Villa", text:"The private pool villa felt like our own world. Waking up to the hills every morning was worth the trip alone.", photo:"https://randomuser.me/api/portraits/men/32.jpg" },
+  { name:"Meera S.", city:"Delhi", rating:5, stay:"Lake View Suite", text:"Quiet, unhurried, beautifully staffed. The lake view suite balcony became our favourite corner of the resort.", photo:"https://randomuser.me/api/portraits/women/44.jpg" },
+  { name:"Rohan K.", city:"Pune", rating:4, stay:"Garden Cottage", text:"Our corporate offsite here worked better than any conference room could — the team actually connected.", photo:"https://randomuser.me/api/portraits/men/54.jpg" },
+  { name:"Priya D.", city:"Hyderabad", rating:5, stay:"Family Villa", text:"The bonfire evenings and the treasure hunt kept our kids talking about the trip for weeks afterward.", photo:"https://randomuser.me/api/portraits/women/21.jpg" },
+  { name:"Aditya V.", city:"Chennai", rating:5, stay:"Royal Estate", text:"We hosted our anniversary celebration on the lawn and every detail, from lighting to service, was flawless.", photo:"https://randomuser.me/api/portraits/men/76.jpg" },
+  { name:"Sneha P.", city:"Jaipur", rating:5, stay:"Valley View Room", text:"Simple, elegant and peaceful. The valley view from our room was the best part of waking up each day.", photo:"https://randomuser.me/api/portraits/women/12.jpg" },
+  { name:"Vikram T.", city:"Ahmedabad", rating:4, stay:"Forest House", text:"The forest house gave us the privacy we wanted, and the spa treatments were the perfect way to unwind.", photo:"https://randomuser.me/api/portraits/men/15.jpg" }
+];
+
+const attractions = [
+  { name:"Waterfall", dist:"18 km", desc:"A seasonal waterfall tucked in the neighbouring hills.", image:"https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800&auto=format&fit=crop" },
+  { name:"Hill Viewpoint", dist:"12 km", desc:"Panoramic sunset views over the surrounding valley.", image:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop" },
+  { name:"Forest Trail", dist:"5 km", desc:"A marked trail through pine and deodar forest.", image:"https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=800&auto=format&fit=crop" },
+  { name:"Lake", dist:"3 km", desc:"A calm freshwater lake popular for boating.", image:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop" },
+  { name:"Heritage Temple", dist:"22 km", desc:"A centuries-old temple known for its stone carvings.", image:"https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=800&auto=format&fit=crop" }
+];
+
+const offers = [
+  { tag:"Popular", title:"Weekend Escape", desc:"2 Nights stay with daily breakfast included, best suited for a short countryside break.", details:"Includes 2 nights accommodation, daily breakfast for two, and late checkout subject to availability." },
+  { tag:"Family", title:"Family Retreat", desc:"Room, unlimited activities and dinner bundled for a complete family holiday.", details:"Includes accommodation, full activity access for all guests, and dinner each evening at The Valley Kitchen." },
+  { tag:"Romance", title:"Romantic Escape", desc:"A private villa stay with a candlelit private dinner under the stars.", details:"Includes villa accommodation, a private candlelit dinner, and a couple's spa session." },
+  { tag:"Adventure", title:"Adventure Package", desc:"Stay bundled with unlimited access to all adventure activities.", details:"Includes accommodation, access to zipline, rope course, ATV trails, archery and rock climbing." }
+];
+
+const faqs = [
+  { q:"What time is check-in and check-out?", a:"Check-in begins at 2:00 PM and check-out is by 11:00 AM. Early check-in and late check-out can be arranged subject to availability." },
+  { q:"Are children welcome at the resort?", a:"Yes, children of all ages are welcome. We offer a dedicated kids playground, indoor play zone and supervised activities." },
+  { q:"Is the resort pet-friendly?", a:"Select cottages and villas are pet-friendly. Please inform us at the time of booking so we can prepare accordingly." },
+  { q:"Is the swimming pool open to all guests?", a:"Yes, the infinity pool and children's pool are open to all in-house guests from 6:00 AM to 8:00 PM." },
+  { q:"What activities are included in the stay?", a:"Access to lawn games, nature walks, cycling and the kids playground is included. Adventure activities like ziplining and ATV trails carry a nominal charge." },
+  { q:"What dining options are available?", a:"Guests can choose between The Valley Kitchen, The Garden Café, The Lake Deck and The Firepit, each offering a different setting and menu." },
+  { q:"Is parking available on-site?", a:"Yes, complimentary secured parking is available for all in-house guests." },
+  { q:"Is Wi-Fi available across the resort?", a:"Complimentary Wi-Fi is available in all rooms, villas and common areas across the property." },
+  { q:"What is the cancellation policy?", a:"Bookings can be cancelled free of charge up to 7 days before check-in. Cancellations within 7 days are subject to a partial charge." },
+  { q:"Can extra beds be arranged?", a:"Yes, extra beds and cots can be arranged in most room categories for an additional charge." },
+  { q:"Does the resort host weddings?", a:"Yes, we host destination weddings across four venues including The Grand Lawn and Valley Ballroom, with dedicated event planning support." },
+  { q:"Can we book the resort for corporate events?", a:"Yes, we offer dedicated spaces and packages for corporate retreats, conferences and team offsites." },
+  { q:"How do I reach the resort?", a:"The resort is accessible by road and is a scenic drive from the nearest city. Airport and railway pickups can be arranged on request." },
+  { q:"Are nearby attractions accessible from the resort?", a:"Yes, attractions such as the lake, forest trail and hill viewpoint are all within a short drive and can be arranged through our concierge." },
+  { q:"Is the resort suitable for a solo traveller?", a:"Absolutely — many of our guests visit solo for the wellness programs, nature walks and quiet workspaces around the property." }
+];
+
+/* ================================================================
+   RENDER FUNCTIONS
+================================================================= */
+function renderExperiences(){
+  const html = experiences.map((e,i)=>`
+    <div class="exp-card" data-aos="fade-up" data-aos-delay="${i*60}">
+      <img src="${e.image}" alt="${e.title} at Verdant Valley" loading="lazy">
+      <div class="exp-card-content">
+        <span class="num">0${i+1}</span>
+        <h3>${e.title}</h3>
+        <p>${e.desc}</p>
+      </div>
+    </div>`).join('');
+  $('#experienceGrid').html(html);
+}
+
+function renderRooms(){
+  const html = rooms.map((r,i)=>`
+    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="${(i%4)*80}">
+      <div class="room-card">
+        <div class="room-img">
+          <img src="${r.image}" alt="${r.name} at Verdant Valley" loading="lazy">
+          <div class="room-price-tag"><small>From</small>₹${r.price.toLocaleString('en-IN')} / night</div>
+        </div>
+        <div class="room-body">
+          <h3>${r.name}</h3>
+          <div class="room-meta">
+            <span><i class="bi bi-people"></i> ${r.guests} Guests</span>
+            <span><i class="bi bi-arrows-angle-expand"></i> ${r.area}</span>
+          </div>
+          <p class="room-desc">${r.description.slice(0,90)}...</p>
+          <div class="room-actions">
+            <span class="link-view" role="button" onclick="openRoomModal(${r.id})">View Details</span>
+            <button class="btn-book-sm" onclick="quickBook(${r.id})">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+  $('#roomsGrid').html(html);
+
+  // booking select options
+  $('#bkRoom').html(rooms.map(r=>`<option value="${r.id}">${r.name} — ₹${r.price.toLocaleString('en-IN')}/night</option>`).join(''));
+}
+
+function openRoomModal(id){
+  const r = rooms.find(x=>x.id===id);
+  const galleryHtml = r.gallery.map((g,i)=>`<img src="${g}" class="${i===0?'active':''}" data-full="${g}" alt="${r.name} view ${i+1}">`).join('');
+  const amenityHtml = r.amenities.map(a=>`<span>${a}</span>`).join('');
+  const highlightHtml = r.highlights.map(h=>`<li style="margin-bottom:8px;"><i class="bi bi-check2" style="color:var(--gold);margin-right:8px;"></i>${h}</li>`).join('');
+  const content = `
+    <img src="${r.image}" class="vv-modal-img" id="vvModalMainImg" alt="${r.name}">
+    <div class="vv-modal-gallery">${galleryHtml}</div>
+    <div class="vv-modal-body">
+      <h3>${r.name}</h3>
+      <div class="vv-modal-price">₹${r.price.toLocaleString('en-IN')} <span style="font-size:.9rem;color:var(--sage);font-family:var(--sans);">/ night</span></div>
+      <div class="vv-modal-meta">
+        <div><b>${r.guests}</b>Guests</div>
+        <div><b>${r.beds.match(/\\d+/)?r.beds:'1'}</b>${r.beds.replace(/^\\d+\\s/,'')}</div>
+        <div><b>${r.bathrooms}</b>Bathrooms</div>
+        <div><b>${r.area}</b>Area</div>
+      </div>
+      <p class="desc">${r.description}</p>
+      <h4 style="font-size:1.05rem;margin-top:24px;">Room Highlights</h4>
+      <ul style="margin-top:12px;padding-left:0;list-style:none;">${highlightHtml}</ul>
+      <h4 style="font-size:1.05rem;margin-top:24px;">Amenities</h4>
+      <div class="vv-amenity-list">${amenityHtml}</div>
+      <div class="vv-modal-actions">
+        <button class="btn-gold" onclick="quickBook(${r.id});closeVVModal();">Book Now</button>
+        <a href="#contact" class="btn-line" onclick="closeVVModal();">Check Availability</a>
+      </div>
+    </div>`;
+  $('#vvModalContent').html(content);
+  $('#vvModalBackdrop').addClass('show');
+}
+
+function quickBook(id){
+  $('#bkRoom').val(id);
+  closeVVModal();
+  document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+}
+
+function closeVVModal(){ $('#vvModalBackdrop').removeClass('show'); }
+
+const activityCats = [
+  {id:'all', label:'All'}, {id:'adventure', label:'Adventure'}, {id:'family', label:'Family'}, {id:'kids', label:'Kids'}, {id:'wellness', label:'Wellness'}
+];
+function renderActivityFilters(){
+  $('#activityFilters').html(activityCats.map(c=>`<button data-cat="${c.id}" class="${c.id==='all'?'active':''}">${c.label}</button>`).join(''));
+}
+function renderActivities(filter='all'){
+  const list = filter==='all' ? activities : activities.filter(a=>a.cat===filter);
+  const html = list.map((a,i)=>`
+    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="${(i%4)*70}">
+      <div class="activity-card">
+        <img src="${a.image}" alt="${a.title} at Verdant Valley" loading="lazy">
+        <div class="activity-card-body">
+          <i class="bi ${a.icon}"></i>
+          <h4>${a.title}</h4>
+          <p>${a.desc}</p>
+        </div>
+      </div>
+    </div>`).join('');
+  $('#activityGrid').html(html);
+}
+
+function renderGames(){
+  $('#indoorGames').html(indoorGames.map((g,i)=>`
+    <div class="game-item"><img src="${indoorGameImgs[i]}" alt="${g}" loading="lazy"><span>${g}</span></div>`).join(''));
+  $('#outdoorGames').html(outdoorGames.map((g,i)=>`
+    <div class="game-item"><img src="${outdoorGameImgs[i]}" alt="${g}" loading="lazy"><span>${g}</span></div>`).join(''));
+}
+
+function renderDining(){
+  const html = dining.map((d,i)=>`
+    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="${i*80}">
+      <div class="dine-card">
+        <img src="${d.image}" alt="${d.name}" loading="lazy">
+        <div class="dine-card-body">
+          <span>${d.tag}</span>
+          <h3>${d.name}</h3>
+        </div>
+      </div>
+    </div>`).join('');
+  $('#diningGrid').html(html);
+}
+
+function renderSpa(){
+  $('#spaList').html(spaItems.map(s=>`
+    <div class="spa-item"><h4>${s.name}</h4><span>${s.dur}</span></div>`).join(''));
+}
+
+function renderVenues(){
+  const html = venues.map((v,i)=>`
+    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="${i*80}">
+      <div class="venue-card">
+        <img src="${v.image}" alt="${v.name}" loading="lazy">
+        <div class="venue-card-body">
+          <span>Capacity: ${v.capacity}</span>
+          <h4>${v.name}</h4>
+        </div>
+      </div>
+    </div>`).join('');
+  $('#venueGrid').html(html);
+}
+
+const galleryCats = ['all','resort','rooms','villas','pool','activities','dining','nature','events'];
+function renderGalleryFilters(){
+  $('#galleryFilters').html(galleryCats.map(c=>`<button data-cat="${c}" class="${c==='all'?'active':''}">${c.charAt(0).toUpperCase()+c.slice(1)}</button>`).join(''));
+}
+let currentGalleryList = gallery;
+function renderGallery(filter='all'){
+  currentGalleryList = filter==='all' ? gallery : gallery.filter(g=>g.cat===filter);
+  const html = currentGalleryList.map((g,i)=>`
+    <div class="g-item" data-aos="fade-up" data-aos-delay="${(i%6)*40}" onclick="openLightbox(${i})">
+      <img src="${g.image}" alt="Verdant Valley ${g.cat} gallery photo" loading="lazy">
+    </div>`).join('');
+  $('#galleryGrid').html(html);
+}
+
+let lightboxIndex = 0;
+function openLightbox(i){
+  lightboxIndex = i;
+  $('#lightboxImg').attr('src', currentGalleryList[i].image);
+  $('#lightboxBackdrop').addClass('show');
+}
+function moveLightbox(dir){
+  lightboxIndex = (lightboxIndex + dir + currentGalleryList.length) % currentGalleryList.length;
+  $('#lightboxImg').attr('src', currentGalleryList[lightboxIndex].image);
+}
+
+const mapPins = [
+  {name:"Reception", top:"12%", left:"48%"},
+  {name:"Rooms", top:"28%", left:"20%"},
+  {name:"Villas", top:"22%", left:"70%"},
+  {name:"Pool", top:"48%", left:"38%"},
+  {name:"Restaurant", top:"55%", left:"62%"},
+  {name:"Spa", top:"38%", left:"80%"},
+  {name:"Playground", top:"70%", left:"25%"},
+  {name:"Adventure Zone", top:"78%", left:"55%"},
+  {name:"Lake", top:"65%", left:"85%"},
+  {name:"Event Lawn", top:"85%", left:"75%"},
+  {name:"Gardens", top:"15%", left:"85%"}
+];
+function renderMap(){
+  $('#resortMap').html(mapPins.map(p=>`
+    <div class="map-pin" style="top:${p.top};left:${p.left};">
+      <div class="pin-label">${p.name}</div>
+    </div>`).join(''));
+}
+
+function renderJourney(){
+  $('#journeyTimeline').html(journey.map((j,i)=>`
+    <div class="journey-item" data-aos="fade-up" data-aos-delay="${i*40}">
+      <time>${j.time}</time>
+      <h4>${j.title}</h4>
+    </div>`).join(''));
+}
+
+function renderReviews(){
+  const html = testimonials.map(t=>`
+    <div class="swiper-slide">
+      <div class="review-card">
+        <div class="review-stars">${'<i class="bi bi-star-fill"></i>'.repeat(t.rating)}${'<i class="bi bi-star"></i>'.repeat(5-t.rating)}</div>
+        <p class="review-text">"${t.text}"</p>
+        <div class="review-user">
+          <img src="${t.photo}" alt="${t.name}">
+          <div><h5>${t.name}</h5><span>${t.city} · ${t.stay}</span></div>
+        </div>
+      </div>
+    </div>`).join('');
+  $('#reviewsWrapper').html(html);
+}
+
+function renderAttractions(){
+  const html = attractions.map((a,i)=>`
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${i*60}">
+      <div class="attraction-card">
+        <img src="${a.image}" alt="${a.name}" loading="lazy">
+        <div class="body">
+          <span class="dist">${a.dist} Away</span>
+          <h4 style="margin-top:8px;">${a.name}</h4>
+          <p>${a.desc}</p>
+        </div>
+      </div>
+    </div>`).join('');
+  $('#attractionsGrid').html(html);
+}
+
+function renderOffers(){
+  const html = offers.map((o,i)=>`
+    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="${i*70}">
+      <div class="offer-card">
+        <span class="tag">${o.tag}</span>
+        <h4>${o.title}</h4>
+        <p>${o.desc}</p>
+        <button class="btn-line" style="margin-top:20px;" onclick="openOfferModal(${i})">View Offer</button>
+      </div>
+    </div>`).join('');
+  $('#offersGrid').html(html);
+}
+
+function openOfferModal(i){
+  const o = offers[i];
+  const content = `
+    <div class="vv-modal-body" style="padding-top:50px;">
+      <span class="eyebrow">${o.tag} Package</span>
+      <h3 style="margin-top:14px;">${o.title}</h3>
+      <p class="desc" style="margin-top:18px;">${o.details}</p>
+      <div class="vv-modal-actions">
+        <a href="#booking" class="btn-gold" onclick="closeVVModal();">Book This Offer</a>
+        <a href="#contact" class="btn-line" onclick="closeVVModal();">Ask A Question</a>
+      </div>
+    </div>`;
+  $('#vvModalContent').html(content);
+  $('#vvModalBackdrop').addClass('show');
+}
+
+function renderFaq(){
+  const html = faqs.map((f,i)=>`
+    <div class="faq-item">
+      <div class="faq-q" data-index="${i}">${f.q} <i class="bi bi-plus"></i></div>
+      <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+    </div>`).join('');
+  $('#faqList').html(html);
+}
+
+/* ================================================================
+   INTERACTIONS
+================================================================= */
+$(document).ready(function(){
+  renderExperiences();
+  renderRooms();
+  renderActivityFilters();
+  renderActivities();
+  renderGames();
+  renderDining();
+  renderSpa();
+  renderVenues();
+  renderGalleryFilters();
+  renderGallery();
+  renderMap();
+  renderJourney();
+  renderReviews();
+  renderAttractions();
+  renderOffers();
+  renderFaq();
+
+  AOS.init({ duration:800, once:true, offset:60 });
+
+  new Swiper('.testi-swiper', {
+    slidesPerView:1,
+    spaceBetween:24,
+    loop:true,
+    autoplay:{ delay:5000, disableOnInteraction:false },
+    pagination:{ el:'.swiper-pagination', clickable:true },
+    breakpoints:{ 768:{ slidesPerView:2 }, 1200:{ slidesPerView:3 } }
+  });
+
+  // header scroll state
+  $(window).on('scroll', function(){
+    if($(window).scrollTop() > 60){ $('#siteHeader').addClass('scrolled'); }
+    else { $('#siteHeader').removeClass('scrolled'); }
+  });
+
+  // mobile nav
+  $('#openMobileNav').on('click', ()=> $('#mobileNav').addClass('open'));
+  $('#closeMobileNav').on('click', ()=> $('#mobileNav').removeClass('open'));
+  $('.mobile-nav a').on('click', ()=> $('#mobileNav').removeClass('open'));
+
+  // activity filter (event delegation)
+  $('#activityFilters').on('click', 'button', function(){
+    $('#activityFilters button').removeClass('active');
+    $(this).addClass('active');
+    renderActivities($(this).data('cat'));
+    AOS.refreshHard();
+  });
+
+  // gallery filter
+  $('#galleryFilters').on('click', 'button', function(){
+    $('#galleryFilters button').removeClass('active');
+    $(this).addClass('active');
+    renderGallery($(this).data('cat'));
+    AOS.refreshHard();
+  });
+
+  // modal close
+  $('#vvModalClose, #vvModalBackdrop').on('click', function(e){
+    if(e.target === this) closeVVModal();
+  });
+  $('#vvModal').on('click', function(e){ e.stopPropagation(); });
+
+  // modal gallery thumbnail swap (event delegation)
+  $('#vvModalContent').on('click', '.vv-modal-gallery img', function(){
+    $('.vv-modal-gallery img').removeClass('active');
+    $(this).addClass('active');
+    $('#vvModalMainImg').attr('src', $(this).data('full'));
+  });
+
+  // lightbox
+  $('#lightboxClose, #lightboxBackdrop').on('click', function(e){
+    if(e.target === this || e.target.closest('#lightboxClose')) $('#lightboxBackdrop').removeClass('show');
+  });
+  $('#lightboxPrev').on('click', ()=> moveLightbox(-1));
+  $('#lightboxNext').on('click', ()=> moveLightbox(1));
+  $(document).on('keydown', function(e){
+    if($('#lightboxBackdrop').hasClass('show')){
+      if(e.key==='Escape') $('#lightboxBackdrop').removeClass('show');
+      if(e.key==='ArrowLeft') moveLightbox(-1);
+      if(e.key==='ArrowRight') moveLightbox(1);
+    }
+    if(e.key==='Escape') closeVVModal();
+  });
+
+  // faq accordion
+  $('#faqList').on('click', '.faq-q', function(){
+    const item = $(this).closest('.faq-item');
+    const isOpen = item.hasClass('open');
+    $('.faq-item').removeClass('open').find('.faq-a').css('max-height','0');
+    if(!isOpen){
+      item.addClass('open');
+      const inner = item.find('.faq-a-inner')[0];
+      item.find('.faq-a').css('max-height', inner.scrollHeight+'px');
+    }
+  });
+
+  // booking calculation
+  const today = new Date();
+  const inDate = new Date(today); inDate.setDate(today.getDate()+7);
+  const outDate = new Date(today); outDate.setDate(today.getDate()+9);
+  $('#bkCheckin').val(inDate.toISOString().split('T')[0]);
+  $('#bkCheckout').val(outDate.toISOString().split('T')[0]);
+
+  $('#bkCheckBtn').on('click', function(){
+    const ci = new Date($('#bkCheckin').val());
+    const co = new Date($('#bkCheckout').val());
+    let nights = Math.round((co-ci)/(1000*60*60*24));
+    if(isNaN(nights) || nights < 1){ nights = 1; }
+    const roomId = parseInt($('#bkRoom').val());
+    const room = rooms.find(r=>r.id===roomId) || rooms[0];
+    const pkg = parseInt($('#bkPackage').val());
+    const adults = parseInt($('#bkAdults').val());
+    const total = (room.price + pkg) * nights;
+    $('#bkNightsSummary').html(`${nights} Night${nights>1?'s':''} &middot; ${adults} Guest${adults>1?'s':''} &middot; ${room.name}`);
+    $('#bkEstimatedPrice').text('₹' + total.toLocaleString('en-IN'));
+    $('#bookingResult').addClass('show');
+  });
+
+  // contact form validation
+  $('#contactForm').on('submit', function(e){
+    e.preventDefault();
+    let valid = true;
+    $(this).find('input,textarea').each(function(){
+      if(!$(this).val().trim()){ valid = false; $(this).css('border-color','#c0392b'); }
+      else { $(this).css('border-color','rgba(0,0,0,.15)'); }
+    });
+    const email = $('#cfEmail').val();
+    if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)){ valid = false; $('#cfEmail').css('border-color','#c0392b'); }
+    if(valid){
+      $('#cfSuccess').addClass('show');
+      this.reset();
+      setTimeout(()=> $('#cfSuccess').removeClass('show'), 6000);
+    }
+  });
+
+  // newsletter
+  $('#newsletterForm').on('submit', function(e){
+    e.preventDefault();
+    const email = $('#nlEmail').val();
+    if(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)){
+      $('#nlMsg').addClass('show');
+      this.reset();
+    }
+  });
+
+  // counter animation on scroll into view
+  const counters = document.querySelectorAll('.counter');
+  const counterObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.dataset.count);
+        let cur = 0;
+        const step = Math.max(1, Math.ceil(target/60));
+        const timer = setInterval(()=>{
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(timer); }
+          el.textContent = cur.toLocaleString('en-IN');
+        }, 25);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold:0.5 });
+  counters.forEach(c=>counterObserver.observe(c));
+});
+</script>
+</body>
+</html>

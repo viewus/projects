@@ -1,0 +1,32 @@
+# Version control & tooling
+.git/
+.claude/
+node_modules/
+
+# Already-minified or vendored code
+*.min.js
+*.min.css
+**/vendor/
+**/lib/
+
+# Binary & generated assets
+**/assets/images/
+**/images/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.avif
+*.ico
+*.pdf
+
+# Generated / machine-authored files
+sitemap.xml
+robots.txt
+CNAME
+
+# Lockfiles
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

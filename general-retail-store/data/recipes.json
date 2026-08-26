@@ -1,0 +1,108 @@
+{
+  "title": "Cook it, shop for it",
+  "intro": "Pick a dish and we'll turn it into a shopping list — every ingredient added in one tap.",
+  "linkLabel": "All recipes",
+  "linkRoute": "recipes",
+  "addAllLabel": "Add all ingredients to my list",
+
+  "items": [
+    {
+      "slug": "chicken-biryani",
+      "name": "Chicken Biryani",
+      "serves": 4,
+      "time": "75 min",
+      "difficulty": "Medium",
+      "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80",
+      "tags": ["family", "festival", "non-veg"],
+      "description": "The weekend dish. Long-grain basmati, layered and sealed so the steam does the work.",
+      "ingredients": [
+        { "name": "Basmati Rice", "slug": "basmati-rice", "qty": 1, "unit": "500 g", "category": "staples-grains" },
+        { "name": "Red Onions", "slug": "onions-red", "qty": 1, "unit": "500 g", "category": "fruits-vegetables" },
+        { "name": "Fresh Curd", "slug": "curd-cup", "qty": 1, "unit": "400 g", "category": "dairy-eggs" },
+        { "name": "Sunflower Oil", "slug": "sunflower-oil", "qty": 1, "unit": "200 ml", "category": "staples-grains" },
+        { "name": "Hybrid Tomatoes", "slug": "tomatoes-hybrid", "qty": 1, "unit": "250 g", "category": "fruits-vegetables" }
+      ]
+    },
+    {
+      "slug": "palak-paneer",
+      "name": "Palak Paneer",
+      "serves": 3,
+      "time": "35 min",
+      "difficulty": "Easy",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=80",
+      "tags": ["vegetarian", "protein-rich", "everyday"],
+      "description": "Spinach cooked down hard, blended smooth, and paneer folded in at the very end.",
+      "ingredients": [
+        { "name": "Spinach (Palak)", "slug": "spinach-palak", "qty": 2, "unit": "250 g bunch", "category": "fruits-vegetables" },
+        { "name": "Fresh Paneer", "slug": "paneer-fresh", "qty": 1, "unit": "200 g", "category": "dairy-eggs" },
+        { "name": "Red Onions", "slug": "onions-red", "qty": 1, "unit": "250 g", "category": "fruits-vegetables" },
+        { "name": "Hybrid Tomatoes", "slug": "tomatoes-hybrid", "qty": 1, "unit": "250 g", "category": "fruits-vegetables" },
+        { "name": "Salted Butter", "slug": "butter-salted", "qty": 1, "unit": "100 g", "category": "dairy-eggs" }
+      ]
+    },
+    {
+      "slug": "dal-tadka",
+      "name": "Dal Tadka",
+      "serves": 4,
+      "time": "40 min",
+      "difficulty": "Easy",
+      "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80",
+      "tags": ["vegetarian", "protein-rich", "everyday", "budget"],
+      "description": "Weeknight dal. The tempering at the end is what makes it, so don't rush that bit.",
+      "ingredients": [
+        { "name": "Toor Dal", "slug": "toor-dal", "qty": 1, "unit": "250 g", "category": "staples-grains" },
+        { "name": "Red Onions", "slug": "onions-red", "qty": 1, "unit": "250 g", "category": "fruits-vegetables" },
+        { "name": "Hybrid Tomatoes", "slug": "tomatoes-hybrid", "qty": 1, "unit": "250 g", "category": "fruits-vegetables" },
+        { "name": "Sunflower Oil", "slug": "sunflower-oil", "qty": 1, "unit": "50 ml", "category": "staples-grains" }
+      ]
+    },
+    {
+      "slug": "ragi-porridge",
+      "name": "Ragi Porridge",
+      "serves": 2,
+      "time": "15 min",
+      "difficulty": "Easy",
+      "image": "https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=600&q=80",
+      "tags": ["healthy", "seniors", "kids", "low-sugar"],
+      "description": "Fifteen minutes, four ingredients, and it keeps you going until lunch.",
+      "ingredients": [
+        { "name": "Ragi (Finger Millet)", "slug": "ragi-millet", "qty": 1, "unit": "100 g", "category": "staples-grains" },
+        { "name": "Full Cream Milk", "slug": "milk-full-cream", "qty": 1, "unit": "500 ml", "category": "dairy-eggs" },
+        { "name": "Refined Sugar", "slug": "sugar-refined", "qty": 1, "unit": "50 g", "category": "staples-grains" },
+        { "name": "Robusta Bananas", "slug": "bananas-robusta", "qty": 1, "unit": "2 pieces", "category": "fruits-vegetables" }
+      ]
+    },
+    {
+      "slug": "veg-pulao",
+      "name": "Vegetable Pulao",
+      "serves": 4,
+      "time": "30 min",
+      "difficulty": "Easy",
+      "image": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
+      "tags": ["vegetarian", "everyday", "kids"],
+      "description": "One pot, whatever vegetables are in the fridge. Good the next day too.",
+      "ingredients": [
+        { "name": "Basmati Rice", "slug": "basmati-rice", "qty": 1, "unit": "500 g", "category": "staples-grains" },
+        { "name": "Red Onions", "slug": "onions-red", "qty": 1, "unit": "250 g", "category": "fruits-vegetables" },
+        { "name": "Sunflower Oil", "slug": "sunflower-oil", "qty": 1, "unit": "50 ml", "category": "staples-grains" },
+        { "name": "Hybrid Tomatoes", "slug": "tomatoes-hybrid", "qty": 1, "unit": "250 g", "category": "fruits-vegetables" }
+      ]
+    },
+    {
+      "slug": "masala-omelette",
+      "name": "Masala Omelette",
+      "serves": 2,
+      "time": "10 min",
+      "difficulty": "Easy",
+      "image": "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=600&q=80",
+      "tags": ["protein-rich", "breakfast", "budget"],
+      "description": "Breakfast in ten minutes. Onion, tomato, green chilli, done.",
+      "ingredients": [
+        { "name": "Farm Eggs", "slug": "eggs-farm", "qty": 1, "unit": "6 pieces", "category": "dairy-eggs" },
+        { "name": "Red Onions", "slug": "onions-red", "qty": 1, "unit": "100 g", "category": "fruits-vegetables" },
+        { "name": "Hybrid Tomatoes", "slug": "tomatoes-hybrid", "qty": 1, "unit": "100 g", "category": "fruits-vegetables" },
+        { "name": "Brown Bread", "slug": "brown-bread", "qty": 1, "unit": "400 g", "category": "bakery" }
+      ]
+    }
+  ]
+}

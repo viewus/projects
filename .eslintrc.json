@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "script"
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-unused-vars": ["warn", { "args": "none", "varsIgnorePattern": "^[A-Z_]+$" }],
+    "no-undef": "error",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "eqeqeq": ["warn", "smart"],
+    "curly": ["warn", "multi-line"],
+    "no-var": "off",
+    "prefer-const": "off",
+    "semi": ["warn", "always"],
+    "quotes": ["warn", "double", { "avoidEscape": true }]
+  },
+  "ignorePatterns": ["node_modules/", "*.min.js", "**/vendor/", "**/lib/"]
+}

@@ -1,0 +1,55 @@
+{
+  "about": "A neighbourhood store stocking everyday groceries, fresh produce and household essentials — fairly priced, honestly labelled, and delivered to your door.",
+
+  "shop": {
+    "title": "Shop",
+    "links": [
+      { "label": "All products", "route": "products" },
+      { "label": "Categories", "route": "categories" },
+      { "label": "Today's offers", "route": "offers" },
+      { "label": "Recipes", "route": "recipes" },
+      { "label": "Monthly grocery", "route": "monthlyGrocery" }
+    ]
+  },
+
+  "help": {
+    "title": "Help",
+    "links": [
+      { "label": "About us", "route": "about" },
+      { "label": "Contact", "route": "contact" },
+      { "label": "FAQ", "route": "faq" },
+      { "label": "Blog", "route": "blogs" },
+      { "label": "Healthy shopping", "route": "healthyShopping" }
+    ]
+  },
+
+  "reach": {
+    "title": "Reach us",
+    "items": [
+      { "type": "text", "icon": "bi-geo-alt", "configKey": "contact.addressFull" },
+      { "type": "tel", "icon": "bi-telephone", "configKey": "contact.phone", "hrefKey": "contact.phone" },
+      { "type": "mailto", "icon": "bi-envelope", "configKey": "contact.email" },
+      { "type": "text", "icon": "bi-clock", "label": "Mon – Sat: 7:00 am – 9:30 pm" }
+    ]
+  },
+
+  "newsletter": {
+    "title": "Weekly offers, straight to your inbox",
+    "text": "One email a week with the current deals and a seasonal shopping list.",
+    "placeholder": "you@example.com",
+    "buttonLabel": "Subscribe",
+    "smallPrint": "No spam, and one click to unsubscribe. We never share your address.",
+    "sendingLabel": "Subscribing…",
+    "successMessage": "You're on the list. Look out for Friday's offers.",
+    "errorMessage": "Could not subscribe just now. Please try again.",
+    "_hideOnNote": "Pages where a signup pitch is inappropriate. Add or remove page keys freely.",
+    "hideOn": ["notFound", "privacy", "terms", "contact"]
+  },
+
+  "legalLinks": [
+    { "label": "Privacy policy", "route": "privacy" },
+    { "label": "Terms of use", "route": "terms" }
+  ],
+
+  "copyright": "© {year} {siteName}. All rights reserved."
+}

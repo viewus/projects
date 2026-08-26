@@ -1,0 +1,408 @@
+/* ---------------------------------------------------------------------------
+ * chrome.js — fills the shared header, nav, footer, breadcrumb and floating
+ * actions from JSON.
+ *
+ * app.js injects the empty component shells first, then calls these. Nothing
+ * here runs on its own, because every function below touches markup that only
+ * exists after that injection has finished.
+ * ------------------------------------------------------------------------- */
+(function (window, $) {
+  "use strict";
+
+  var RS = window.RS || (window.RS = {});
+
+  /* ---------- header --------------------------------------------------------- */
+
+  /**
+   * Build one contact/utility line. The JSON names a key in site.json rather
+   * than carrying the value, which is what lets the same phone number appear in
+   * the header, footer and floating button without being typed three times.
+   */
+  function fieldLine(item, cfg, opts) {
+    var text = item.label != null ? item.label : RS.get(cfg, item.configKey);
+    if (text == null || text === "") return "";
+
+    var icon = item.icon
+      ? '<i class="bi ' + RS.escape(item.icon) + '" aria-hidden="true"></i>'
+      : "";
+
+    var href = null;
+    if (item.type === "mailto") {
+      var address = RS.get(cfg, item.configKey);
+      href = address ? "mailto:" + address : null;
+    } else if (item.type === "tel") {
+      var phone = RS.get(cfg, item.hrefKey || item.configKey);
+      href = phone ? "tel:" + String(phone).replace(/[^\d+]/g, "") : null;
+    } else if (item.hrefKey) {
+      href = RS.get(cfg, item.hrefKey);
+    } else if (item.route) {
+      href = RS.href(item.route);
+    }
+
+    var inner = (item.type === "text" || !href)
+      ? RS.escape(text)
+      : '<a class="' + opts.linkClass + '" href="' + RS.escape(href) + '"' +
+        (item.type === "external" ? ' target="_blank" rel="noopener"' : "") + ">" +
+        RS.escape(text) + "</a>";
+
+    return "<" + opts.tag + ' class="' + opts.lineClass + '">' + icon + inner + "</" + opts.tag + ">";
+  }
+
+  function fieldList(items, cfg, opts) {
+    return (items || []).map(function (item) {
+      return fieldLine(item, cfg, opts);
+    }).join("");
+  }
+
+  RS.initHeader = function (cfg) {
+    if (!$(".siteHeader").length) return $.when();
+
+    return RS.json("data/navigation.json").then(function (nav) {
+      var header = nav.header || {};
+      var messages = header.messages || [];
+
+      $("#headerLinks").html(fieldList(header.items, cfg, {
+        tag: "span", lineClass: "announceItem", linkClass: "headerLink"
+      }));
+
+      if (!messages.length) {
+        $(".announceViewport").remove();
+        return;
+      }
+
+      $("#announceTrack").html(messages.map(function (msg, i) {
+        return '<span class="announceMsg' + (i === 0 ? " isActive" : "") + '">' +
+          '<span class="announceEmoji" aria-hidden="true">' + RS.escape(msg.emoji || "") + "</span>" +
+          RS.escape(msg.text) + "</span>";
+      }).join(""));
+
+      rotateAnnouncements(messages.length, header.rotateMs || 4200);
+    });
+  };
+
+  /**
+   * Cycle the announcement messages.
+   *
+   * Deliberately a cross-fade rather than a marquee: a continuously scrolling
+   * strip is hard to read, impossible to click reliably, and is one of the
+   * patterns reduced-motion exists to stop. With reduced motion requested we
+   * show the first message and leave it alone.
+   */
+  function rotateAnnouncements(count, delay) {
+    if (count < 2 || RS.reducedMotion()) return;
+
+    var index = 0;
+    var timer = setInterval(step, delay);
+
+    function step() {
+      var $msgs = $(".announceMsg");
+      if (!$msgs.length) { clearInterval(timer); return; }
+
+      $msgs.eq(index).removeClass("isActive");
+      index = (index + 1) % count;
+      $msgs.eq(index).addClass("isActive");
+    }
+
+    // Do not animate a tab nobody is looking at.
+    $(document).on("visibilitychange.rsAnnounce", function () {
+      if (document.hidden) clearInterval(timer);
+      else timer = setInterval(step, delay);
+    });
+  }
+
+  /* ---------- nav ------------------------------------------------------------ */
+
+  function navItemHtml(item) {
+    if (!item.children) {
+      return '<li class="navItem">' +
+        '<a class="navLink" data-route="' + RS.escape(item.route || "") + '" href="' +
+        RS.escape(RS.href(item.route || item.href)) + '">' +
+        (item.icon ? '<i class="bi ' + RS.escape(item.icon) + '" aria-hidden="true"></i>' : "") +
+        RS.escape(item.label) + "</a></li>";
+    }
+
+    var id = "navDrop" + RS.slugify(item.label);
+
+    var children = item.children.map(function (child) {
+      return '<li><a class="navDropdownItem" data-route="' + RS.escape(child.route || "") +
+        '" href="' + RS.escape(RS.href(child.route || child.href)) + '">' +
+        RS.escape(child.label) + "</a></li>";
+    }).join("");
+
+    return '<li class="navItem dropdown">' +
+      '<a class="navLink dropdown-toggle" href="#" id="' + id + '" role="button"' +
+      ' data-bs-toggle="dropdown" aria-expanded="false">' + RS.escape(item.label) + "</a>" +
+      '<ul class="dropdown-menu navDropdown" aria-labelledby="' + id + '">' + children + "</ul></li>";
+  }
+
+  RS.initNav = function (cfg) {
+    if (!$(".siteNav").length) return $.when();
+
+    return RS.json("data/navigation.json").then(function (nav) {
+      $("#navMenu").html((nav.items || []).map(navItemHtml).join(""));
+
+      var logo = RS.path((cfg.logo && cfg.logo.mark) || "assets/images/logo.svg");
+      $("#navBrand").attr("href", RS.href("home"));
+      $("#navBrandLogo").attr({ src: logo, alt: cfg.siteName + " logo" });
+      $("#navBrandName").text(cfg.siteName);
+
+      if (nav.cta) {
+        $("#navCta").text(nav.cta.label).attr("href", RS.href(nav.cta.route || nav.cta.href));
+      } else {
+        $("#navCta").remove();
+      }
+
+      // Mobile drawer. Bootstrap's collapse expects its own markup, so the
+      // drawer is toggled directly — one class, and CSS does the rest.
+      $("#navToggle").on("click", function () {
+        var $menu = $("#navMenu");
+        var open = $menu.toggleClass("isOpen").hasClass("isOpen");
+        $(this).attr("aria-expanded", String(open))
+          .find("i").attr("class", open ? "bi bi-x-lg" : "bi bi-list");
+      });
+
+      // Any navigation closes the drawer, including in-page anchors.
+      $("#navMenu").on("click", "a", function () {
+        $("#navMenu").removeClass("isOpen");
+        $("#navToggle").attr("aria-expanded", "false").find("i").attr("class", "bi bi-list");
+      });
+    });
+  };
+
+  /* ---------- breadcrumb ------------------------------------------------------ */
+
+  RS.initBreadcrumb = function (leafLabel) {
+    var $list = $("#breadcrumbList");
+    if (!$list.length) return $.when();
+
+    // The home page is its own root — a one-item trail is noise.
+    if (RS.currentPage() === "home") {
+      $(".breadcrumb").remove();
+      return $.when();
+    }
+
+    return RS.json("data/navigation.json").then(function (nav) {
+      var trail = RS.breadcrumbTrail(nav, leafLabel || document.title.split("|")[0].trim());
+
+      $list.html(trail.map(function (crumb, i) {
+        var isLast = i === trail.length - 1;
+        var sep = i > 0 ? '<li class="breadcrumbSep" aria-hidden="true">/</li>' : "";
+
+        return sep + "<li>" + (isLast || !crumb.href
+          ? '<span class="breadcrumbCurrent" aria-current="page">' + RS.escape(crumb.label) + "</span>"
+          : '<a class="breadcrumbLink" href="' + RS.escape(crumb.href) + '">' +
+            RS.escape(crumb.label) + "</a>") + "</li>";
+      }).join(""));
+    });
+  };
+
+  /* ---------- footer ---------------------------------------------------------- */
+
+  function linkList(links) {
+    return (links || []).map(function (link) {
+      return '<li><a class="footerLink" href="' + RS.escape(RS.href(link.route || link.href)) +
+        '">' + RS.escape(link.label) + "</a></li>";
+    }).join("");
+  }
+
+  RS.initFooter = function (cfg) {
+    if (!$(".siteFooter").length) return $.when();
+
+    return RS.json("data/footer.json").then(function (footer) {
+      var logo = RS.path((cfg.logo && cfg.logo.mark) || "assets/images/logo.svg");
+
+      $("#footerBrand").attr("href", RS.href("home"));
+      $("#footerLogo").attr({ src: logo, alt: "" });
+      $("#footerBrandName").text(cfg.siteName);
+      $("#footerAbout").text(footer.about || cfg.tagline || "");
+
+      $("#footerShopTitle").text((footer.shop && footer.shop.title) || "Shop");
+      $("#footerShopLinks").html(linkList(footer.shop && footer.shop.links));
+
+      $("#footerHelpTitle").text((footer.help && footer.help.title) || "Help");
+      $("#footerHelpLinks").html(linkList(footer.help && footer.help.links));
+
+      $("#footerReachTitle").text((footer.reach && footer.reach.title) || "Reach us");
+      $("#footerReachList").html(fieldList(footer.reach && footer.reach.items, cfg, {
+        tag: "p", lineClass: "footerContactLine", linkClass: "footerContactLink"
+      }));
+
+      $("#footerLegalLinks").html((footer.legalLinks || []).map(function (link) {
+        return '<a class="footerLink" href="' + RS.escape(RS.href(link.route || link.href)) +
+          '">' + RS.escape(link.label) + "</a>";
+      }).join(""));
+
+      $("#footerCopyright").text(
+        String(footer.copyright || "© {year} {siteName}")
+          .replace("{year}", new Date().getFullYear())
+          .replace("{siteName}", cfg.legalName || cfg.siteName)
+      );
+
+      // Only render social icons whose URL is actually filled in — an empty
+      // value in site.json means "no profile yet", not "link to nowhere".
+      var icons = {
+        facebook: "bi-facebook", instagram: "bi-instagram",
+        youtube: "bi-youtube", twitter: "bi-twitter-x", linkedin: "bi-linkedin"
+      };
+      var social = cfg.social || {};
+
+      $("#footerSocial").html(Object.keys(icons).filter(function (key) {
+        return social[key];
+      }).map(function (key) {
+        return '<a class="footerSocialLink" href="' + RS.escape(social[key]) +
+          '" target="_blank" rel="noopener" aria-label="' + key + '">' +
+          '<i class="bi ' + icons[key] + '" aria-hidden="true"></i></a>';
+      }).join(""));
+    });
+  };
+
+  /* ---------- newsletter ------------------------------------------------------ */
+
+  RS.initNewsletter = function (cfg) {
+    var $form = $("#newsletterForm");
+    if (!$form.length) return $.when();
+
+    return RS.json("data/footer.json").then(function (footer) {
+      var n = footer.newsletter || {};
+
+      // A signup pitch does not belong on a 404, a privacy policy or the terms.
+      // Which pages it skips is a JSON decision, not a code one.
+      if ((n.hideOn || []).indexOf(RS.currentPage()) > -1) {
+        $(".newsletterSection").remove();
+        return;
+      }
+
+      $("#newsletterTitle").text(n.title || "Stay in the loop");
+      $("#newsletterText").text(n.text || "");
+      $("#newsletterSubmit").text(n.buttonLabel || "Subscribe");
+      $("#newsletterSmall").text(n.smallPrint || "");
+      $("#newsletterEmail").attr("placeholder", n.placeholder || "you@example.com");
+
+      var $error = $("#newsletterError");
+
+      function showError(message) {
+        $("#newsletterEmail").toggleClass("isInvalid", !!message)
+          .attr("aria-invalid", message ? "true" : "false");
+        $error.text(message || "").prop("hidden", !message);
+      }
+
+      // Clear the error as soon as they start correcting it, rather than
+      // leaving a red field while they are visibly fixing the problem.
+      $("#newsletterEmail").on("input", function () {
+        if ($(this).hasClass("isInvalid")) showError(null);
+      });
+
+      $form.on("submit", function (e) {
+        e.preventDefault();
+
+        var email = $("#newsletterEmail").val().trim();
+        var error = RS.validateField(
+          { name: "email", label: "Email address", required: true, pattern: "email" }, email
+        );
+
+        if (error) {
+          showError(error);
+          $("#newsletterEmail").trigger("focus");
+          return;
+        }
+
+        showError(null);
+
+        RS.submitForm({
+          form: $form,
+          button: "#newsletterSubmit",
+          endpoint: "newsletter",
+          payload: { email: email, source: RS.currentPage() },
+          labels: {
+            sending: n.sendingLabel || "Subscribing…",
+            success: n.successMessage || "You're on the list. Thank you!",
+            error: n.errorMessage || "Could not subscribe just now. Please try again."
+          }
+        });
+      });
+    });
+  };
+
+  /* ---------- floating actions ------------------------------------------------- */
+
+  RS.initFloating = function (cfg) {
+    if (!$(".floatingActions").length) return $.when();
+
+    var contact = cfg.contact || {};
+    $("#floatWhatsapp").attr("href", contact.whatsapp || "#");
+    $("#floatList").attr("href", RS.href("planner"));
+
+    function syncCount() {
+      var n = RS.checklist.count();
+      $("#floatCount").text(n || "").attr("data-count", n);
+    }
+
+    $(document).on("rs:checklistChanged", syncCount);
+    syncCount();
+
+    return $.when();
+  };
+
+  /* ---------- global search box -------------------------------------------------- */
+
+  /**
+   * Suggestion dropdown for the nav search, when a page includes one.
+   * Searches products and recipes together, because a shopper looking for
+   * "biryani" wants the recipe as readily as the rice.
+   */
+  RS.initSearchBox = function () {
+    var $input = $("#globalSearch");
+    if (!$input.length) return $.when();
+
+    var $suggest = $("#globalSuggest");
+
+    return $.when(RS.json("data/products.json"), RS.json("data/recipes.json"))
+      .then(function (productData, recipeData) {
+        var products = (productData[0] || productData).items || [];
+        var recipes = (recipeData[0] || recipeData).items || [];
+
+        RS.bindSearch("#globalSearch", function (query) {
+          if (!query || query.length < 2) {
+            $suggest.removeClass("isOpen").empty();
+            return;
+          }
+
+          var hits = RS.searchRanked(products, query, ["name", "brand", "tags", "category"])
+            .slice(0, 5)
+            .map(function (p) {
+              return { name: p.name, image: p.image, href: RS.detailHref("product", p.slug), kind: p.category };
+            });
+
+          var recipeHits = RS.searchRanked(recipes, query, ["name", "tags"])
+            .slice(0, 3)
+            .map(function (r) {
+              return { name: r.name, image: r.image, href: RS.detailHref("recipe", r.slug), kind: "Recipe" };
+            });
+
+          var all = hits.concat(recipeHits);
+
+          if (!all.length) {
+            $suggest.html('<p class="searchSuggestItem textDim">No matches found</p>').addClass("isOpen");
+            return;
+          }
+
+          $suggest.html(all.map(function (row) {
+            return '<a class="searchSuggestItem" href="' + RS.escape(row.href) + '">' +
+              '<img class="searchSuggestThumb" ' + RS.imgAttrs(row.image, row.name) +
+              ' alt="" loading="lazy">' +
+              "<span>" + RS.escape(row.name) +
+              '<br><small class="textDim">' + RS.escape(row.kind) + "</small></span></a>";
+          }).join("")).addClass("isOpen");
+        });
+
+        RS.bindSearchHotkey("#globalSearch");
+
+        // Clicking away closes the dropdown; it must not swallow the click that
+        // is navigating to a suggestion, hence the small delay on blur.
+        $(document).on("click", function (e) {
+          if (!$(e.target).closest(".searchBox").length) $suggest.removeClass("isOpen");
+        });
+      });
+  };
+
+})(window, jQuery);
