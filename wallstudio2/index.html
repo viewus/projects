@@ -68,9 +68,9 @@
             --line-strong: rgba(33, 29, 24, 0.22);
             --shadow-soft: 0 20px 60px -25px rgba(33, 29, 24, 0.35);
             --shadow-tight: 0 8px 24px -12px rgba(33, 29, 24, 0.3);
-            --radius-lg: 22px;
-            --radius-md: 14px;
-            --radius-sm: 8px;
+            --radius-lg: 4px;
+            --radius-md: 4px;
+            --radius-sm: 4px;
             --ease: cubic-bezier(.22, .61, .36, 1);
             --header-h: 92px;
         }
@@ -139,7 +139,7 @@
             background: var(--ink);
             color: var(--paper) !important;
             border: 1px solid var(--ink);
-            border-radius: 100px;
+            border-radius: var(--radius-sm);
             padding: 14px 30px;
             font-weight: 600;
             font-size: 0.92rem;
@@ -155,7 +155,7 @@
             background: transparent;
             color: var(--ink) !important;
             border: 1px solid var(--line-strong);
-            border-radius: 100px;
+            border-radius: var(--radius-sm);
             padding: 14px 30px;
             font-weight: 600;
             font-size: 0.92rem;
@@ -174,31 +174,57 @@
 
         .container-lux { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
 
-        /* ---------------- Announcement strip ---------------- */
+        /* ---------------- Fixed top bar (announcement + header, blended over hero) ---------------- */
+        .topbar-fixed {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+        }
+
         .announce {
-            background: var(--ink);
-            color: var(--paper);
-            font-size: 0.78rem;
-            letter-spacing: 0.04em;
+            background: transparent;
+            color: rgba(255,255,255,0.88);
+            font-size: 0.76rem;
+            letter-spacing: 0.06em;
             text-align: center;
             padding: 9px 12px;
             font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255,0.16);
+            max-height: 40px;
+            overflow: hidden;
+            transition: max-height .5s var(--ease), opacity .4s var(--ease), padding .5s var(--ease), border-color .4s;
         }
         .announce span { opacity: 0.9; }
         .announce .sep { color: var(--brass-light); margin: 0 10px; }
+        .topbar-fixed.is-scrolled .announce {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0; padding-bottom: 0;
+            border-bottom-color: transparent;
+        }
+        @media (max-width: 575px) {
+            .announce {
+                font-size: 0.66rem;
+                letter-spacing: 0.02em;
+                padding: 8px 34px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
 
         /* ---------------- Header ---------------- */
         header.site-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(243, 238, 228, 0.86);
-            backdrop-filter: blur(14px) saturate(140%);
-            -webkit-backdrop-filter: blur(14px) saturate(140%);
+            position: relative;
+            background: transparent;
             border-bottom: 1px solid transparent;
-            transition: all .4s var(--ease);
+            box-shadow: none;
+            transition: all .45s var(--ease);
         }
-        header.site-header.is-scrolled {
+        .topbar-fixed.is-scrolled header.site-header {
+            background: rgba(243, 238, 228, 0.78);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
             border-bottom: 1px solid var(--line);
             box-shadow: 0 10px 30px -20px rgba(33,29,24,0.4);
         }
@@ -209,46 +235,72 @@
             height: var(--header-h);
             transition: height .4s var(--ease);
         }
-        header.site-header.is-scrolled .header-inner { height: 70px; }
+        .topbar-fixed.is-scrolled .header-inner { height: 72px; }
 
         .brand-logo {
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
-            letter-spacing: 0.02em;
-            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .brand-logo .mark {
-            width: 34px; height: 34px;
+            width: 36px; height: 36px;
             border: 1px solid var(--ink);
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            font-family: 'Fraunces', serif;
+            font-size: 0.9rem;
+            color: var(--ink);
             transition: all .3s var(--ease);
+            flex-shrink: 0;
         }
+        .topbar-fixed:not(.is-scrolled) .brand-logo .mark { border-color: rgba(255,255,255,0.6); color: #fff; }
         .brand-logo:hover .mark { background: var(--ink); color: var(--paper); }
+        .topbar-fixed:not(.is-scrolled) .brand-logo:hover .mark { background: #fff; color: var(--ink); }
+
+        .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+        .brand-name {
+            font-family: 'Fraunces', serif;
+            font-size: 1.4rem;
+            letter-spacing: 0.03em;
+            font-weight: 500;
+            color: var(--ink);
+            transition: color .4s var(--ease);
+        }
+        .topbar-fixed:not(.is-scrolled) .brand-name { color: #fff; }
+        .brand-tagline {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--brass);
+            margin-top: 3px;
+            transition: color .4s var(--ease);
+        }
+        .topbar-fixed:not(.is-scrolled) .brand-tagline { color: var(--brass-light); }
 
         .main-nav { display: flex; align-items: center; gap: 34px; }
         .main-nav a {
-            font-size: 0.86rem;
+            font-size: 0.78rem;
             font-weight: 600;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
             position: relative;
             padding: 6px 0;
             color: var(--ink-soft);
             transition: color .3s;
         }
+        .topbar-fixed:not(.is-scrolled) .main-nav a { color: rgba(255,255,255,0.85); }
         .main-nav a:hover, .main-nav a.active { color: var(--ink); }
+        .topbar-fixed:not(.is-scrolled) .main-nav a:hover, .topbar-fixed:not(.is-scrolled) .main-nav a.active { color: #fff; }
         .main-nav a::after {
             content: "";
             position: absolute; left: 0; bottom: 0;
             width: 0; height: 1px; background: var(--brass);
             transition: width .35s var(--ease);
         }
+        .topbar-fixed:not(.is-scrolled) .main-nav a::after { background: var(--brass-light); }
         .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
 
         .header-actions { display: flex; align-items: center; gap: 14px; }
@@ -258,7 +310,19 @@
             background: transparent; border: 1px solid var(--line-strong);
             color: var(--ink); transition: all .3s;
         }
+        .topbar-fixed:not(.is-scrolled) .header-wa-btn { border-color: rgba(255,255,255,0.5); color: #fff; }
         .header-wa-btn:hover { background: #2fae60; border-color: #2fae60; color: #fff; }
+
+        .btn-header-cta {
+            border-color: var(--line-strong) !important;
+            color: var(--ink) !important;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.74rem !important;
+        }
+        .btn-header-cta:hover { background: var(--ink) !important; color: var(--paper) !important; }
+        .topbar-fixed:not(.is-scrolled) .btn-header-cta { border-color: rgba(255,255,255,0.55) !important; color: #fff !important; }
+        .topbar-fixed:not(.is-scrolled) .btn-header-cta:hover { background: #fff !important; color: var(--ink) !important; }
 
         .hamburger-btn {
             display: none;
@@ -267,12 +331,18 @@
             border-radius: 50%;
             align-items: center; justify-content: center;
             background: transparent;
+            color: var(--ink);
+            transition: all .3s;
         }
+        .topbar-fixed:not(.is-scrolled) .hamburger-btn { border-color: rgba(255,255,255,0.5); color: #fff; }
 
         @media (max-width: 991px) {
             .main-nav { display: none; }
             .hamburger-btn { display: inline-flex; }
         }
+
+        /* Sections need breathing room so the fixed header never covers anchor targets */
+        section[id] { scroll-margin-top: 100px; }
 
         .offcanvas-lux { background: var(--paper); width: min(84vw, 360px); }
         .offcanvas-lux .nav-link-lux {
@@ -285,45 +355,54 @@
         }
 
         /* ---------------- Hero ---------------- */
-        .hero-swiper { height: 92vh; min-height: 560px; position: relative; }
+        .hero-swiper { height: 100vh; min-height: 640px; position: relative; }
         .hero-slide { position: relative; width: 100%; height: 100%; overflow: hidden; }
-        .hero-media-wrap { position: absolute; inset: 0; }
+        /* Sized taller than the slide so the parallax translate never reveals an edge */
+        .hero-media-wrap { position: absolute; left: 0; right: 0; top: -10%; height: 120%; will-change: transform; }
         .hero-media-wrap img, .hero-media-wrap video {
-            width: 100%; height: 100%; object-fit: cover;
-            transform: scale(1.02);
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            transform: scale(1);
+            animation: heroKenBurns 10s var(--ease) forwards;
+        }
+        @keyframes heroKenBurns {
+            from { transform: scale(1); }
+            to { transform: scale(1.08); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-media-wrap img, .hero-media-wrap video { animation: none; }
         }
         .hero-overlay {
             position: absolute; inset: 0;
-            background: linear-gradient(180deg, rgba(20,17,13,0.35) 0%, rgba(20,17,13,0.35) 40%, rgba(20,17,13,0.78) 100%);
+            background: linear-gradient(180deg, rgba(20,17,13,0.42) 0%, rgba(20,17,13,0.28) 32%, rgba(20,17,13,0.85) 100%);
         }
+        /* Ensure the container fills the slide so hero-content's flex-end
+           actually anchors to the bottom of the hero, not the top (was
+           collapsing to auto-height and sitting under the fixed header). */
+        .hero-slide .container-lux { position: relative; height: 100%; }
         .hero-content {
             position: relative; z-index: 2; height: 100%;
-            display: flex; flex-direction: column; justify-content: flex-end;
-            padding: 0 0 84px;
+            display: flex; flex-direction: column; justify-content: center;
+            padding: calc(var(--header-h) + 40px) 0 40px;
             color: #fff;
-            max-width: 720px;
+            max-width: 820px;
         }
         .hero-content .eyebrow { color: var(--brass-light); }
         .hero-content .eyebrow::before { background: var(--brass-light); }
         .hero-content h1 {
             color: #fff;
-            font-size: clamp(2.4rem, 5vw, 4.2rem);
-            line-height: 1.05;
+            font-size: clamp(2.4rem, 4.6vw, 4rem);
+            line-height: 1.1;
             margin: 18px 0 20px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.35);
+            text-wrap: balance;
         }
-        .hero-content p { color: rgba(255,255,255,0.86); font-size: 1.08rem; max-width: 540px; margin-bottom: 34px; }
+        .hero-content p { color: rgba(255,255,255,0.86); font-size: 1.08rem; max-width: 560px; margin-bottom: 34px; }
         .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
         .hero-btns .btn-outline-lux { border-color: rgba(255,255,255,0.5); color: #fff !important; }
         .hero-btns .btn-outline-lux:hover { background: #fff; color: var(--ink) !important; }
         .hero-btns .btn-brass { background: var(--paper); color: var(--ink) !important; border-color: var(--paper); }
         .hero-btns .btn-brass:hover { background: var(--brass); border-color: var(--brass); color: #fff !important; }
 
-        .swiper-button-next, .swiper-button-prev {
-            color: #fff !important; width: 46px !important; height: 46px !important;
-            border: 1px solid rgba(255,255,255,0.5); border-radius: 50%;
-            backdrop-filter: blur(6px);
-        }
-        .swiper-button-next::after, .swiper-button-prev::after { font-size: 15px !important; }
         .hero-swiper .swiper-pagination-bullet { background: #fff; opacity: 0.5; width: 7px; height: 7px; }
         .hero-swiper .swiper-pagination-bullet-active { opacity: 1; background: var(--brass-light); width: 22px; border-radius: 4px; }
 
@@ -405,7 +484,7 @@
             scroll-snap-type: x proximity;
         }
         .category-rail::-webkit-scrollbar { height: 5px; }
-        .category-rail::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 10px; }
+        .category-rail::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 4px; }
         .category-card {
             position: relative; flex: 0 0 210px; height: 260px;
             border-radius: var(--radius-md); overflow: hidden; cursor: pointer;
@@ -421,7 +500,7 @@
             position: absolute; left: 16px; bottom: 14px; color: #fff;
             font-family: 'Fraunces', serif; font-size: 1.15rem;
         }
-        .category-card .cat-count { position: absolute; right: 14px; top: 14px; color: #fff; font-size: 0.72rem; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.4); padding: 3px 10px; border-radius: 100px; }
+        .category-card .cat-count { position: absolute; right: 14px; top: 14px; color: #fff; font-size: 0.72rem; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.4); padding: 3px 10px; border-radius: var(--radius-sm); }
         .category-card.is-active { outline: 2px solid var(--brass); outline-offset: 3px; }
 
         /* ---------------- Products ---------------- */
@@ -432,7 +511,7 @@
         .pill-filters { display: flex; flex-wrap: wrap; gap: 8px; }
         .pill-btn {
             border: 1px solid var(--line-strong); background: transparent;
-            padding: 9px 20px; border-radius: 100px; font-size: 0.82rem; font-weight: 600;
+            padding: 9px 20px; border-radius: var(--radius-sm); font-size: 0.82rem; font-weight: 600;
             color: var(--ink-soft); transition: all .3s;
         }
         .pill-btn:hover { border-color: var(--ink); color: var(--ink); }
@@ -440,7 +519,7 @@
 
         .search-box { position: relative; min-width: 240px; }
         .search-box input {
-            width: 100%; border: 1px solid var(--line-strong); border-radius: 100px;
+            width: 100%; border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
             padding: 10px 20px 10px 40px; background: var(--paper-alt); font-size: 0.88rem;
         }
         .search-box input:focus { outline: none; border-color: var(--brass); }
@@ -465,7 +544,7 @@
             position: absolute; top: 14px; left: 14px; z-index: 2;
             background: rgba(243,238,228,0.92); color: var(--ink);
             font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
-            padding: 5px 12px; border-radius: 100px;
+            padding: 5px 12px; border-radius: var(--radius-sm);
         }
         .product-wa-quick {
             position: absolute; bottom: 14px; right: 14px; z-index: 2;
@@ -498,7 +577,7 @@
         /* Mini product card */
         .mini-card { display: flex; gap: 14px; align-items: center; background: var(--paper); border-radius: var(--radius-md); padding: 10px; border: 1px solid var(--line); transition: all .3s; }
         .mini-card:hover { border-color: var(--brass); }
-        .mini-card img { width: 76px; height: 76px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+        .mini-card img { width: 76px; height: 76px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
         .mini-card .m-tag { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brass); font-weight: 700; }
         .mini-card h5 { font-size: 0.92rem; margin: 3px 0; font-family: 'Manrope',sans-serif; font-weight: 700; }
         .mini-card .m-price { font-size: 0.78rem; color: var(--ink-soft); }
@@ -590,7 +669,7 @@
         .fab-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
         .fab-tooltip {
             position: absolute; right: 64px; top: 50%; transform: translateY(-50%);
-            background: var(--ink); color: var(--paper); padding: 7px 14px; border-radius: 6px;
+            background: var(--ink); color: var(--paper); padding: 7px 14px; border-radius: 4px;
             font-size: 0.78rem; white-space: nowrap; opacity: 0; visibility: hidden; transition: all .25s;
         }
         .fab-wa:hover .fab-tooltip { opacity: 1; visibility: visible; }
@@ -603,21 +682,32 @@
         .pm-grid { display: grid; grid-template-columns: 1.05fr 1fr; min-height: 560px; }
         @media (max-width: 860px) { .pm-grid { grid-template-columns: 1fr; min-height: auto; } }
 
-        .pm-gallery { background: var(--paper); padding: 30px; display: flex; flex-direction: column; gap: 16px; }
-        .pm-breadcrumb { font-size: 0.74rem; color: var(--ink-soft); }
+        .pm-gallery { background: var(--paper); padding: 30px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+        .pm-breadcrumb { font-size: 0.74rem; color: var(--ink-soft); padding-right: 44px; }
         .pm-breadcrumb a:hover { color: var(--brass); }
         .pm-main-img-wrap { position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 1/1; cursor: zoom-in; background: #ddd; }
         .pm-main-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s var(--ease); }
-        .pm-counter { position: absolute; bottom: 12px; right: 12px; background: rgba(20,17,13,0.6); color: #fff; font-size: 0.72rem; padding: 4px 11px; border-radius: 100px; }
-        .pm-nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.85); display: flex; align-items: center; justify-content: center; }
+        .pm-counter { position: absolute; bottom: 12px; right: 12px; background: rgba(20,17,13,0.6); color: #fff; font-size: 0.72rem; padding: 4px 11px; border-radius: var(--radius-sm); }
+        .pm-nav-arrow {
+            appearance: none; -webkit-appearance: none;
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 38px; height: 38px; border-radius: 50%;
+            background: var(--paper); border: 1px solid var(--brass-light); padding: 0; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--brass); font-size: 0.85rem;
+            box-shadow: 0 4px 14px -6px rgba(0,0,0,0.35);
+            transition: all .25s var(--ease);
+            z-index: 3;
+        }
+        .pm-nav-arrow:hover { background: var(--brass); border-color: var(--brass); color: #fff; }
         .pm-nav-arrow.left { left: 10px; } .pm-nav-arrow.right { right: 10px; }
         .pm-thumbs { display: flex; gap: 10px; }
-        .pm-thumb { width: 68px; height: 68px; border-radius: 10px; overflow: hidden; opacity: 0.55; border: 2px solid transparent; cursor: pointer; transition: all .25s; flex-shrink:0; }
+        .pm-thumb { width: 68px; height: 68px; border-radius: 4px; overflow: hidden; opacity: 0.55; border: 2px solid transparent; cursor: pointer; transition: all .25s; flex-shrink:0; }
         .pm-thumb.active { opacity: 1; border-color: var(--brass); }
         .pm-thumb img { width: 100%; height: 100%; object-fit: cover; }
 
         .pm-info { padding: 34px 36px; overflow-y: auto; max-height: 90vh; }
-        .pm-info .p-tag-badge { display: inline-block; background: var(--paper); color: var(--brass); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 5px 13px; border-radius: 100px; margin-bottom: 14px; }
+        .pm-info .p-tag-badge { display: inline-block; background: var(--paper); color: var(--brass); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 5px 13px; border-radius: var(--radius-sm); margin-bottom: 14px; }
         .pm-info h2 { font-size: 1.8rem; margin-bottom: 10px; }
         .pm-info .p-short { color: var(--ink-soft); margin-bottom: 20px; }
         .pm-info .p-price-lg { font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 22px; }
@@ -626,13 +716,22 @@
         .pm-spec .lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 4px; }
         .pm-spec .val { font-size: 0.88rem; font-weight: 700; }
         .pm-size-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
-        .pm-size-chips span { border: 1px solid var(--line-strong); border-radius: 100px; padding: 6px 15px; font-size: 0.78rem; font-weight: 600; }
+        .pm-size-chips span { border: 1px solid var(--line-strong); border-radius: var(--radius-sm); padding: 6px 15px; font-size: 0.78rem; font-weight: 600; }
         .pm-desc-block { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 22px; }
         .pm-note { font-size: 0.84rem; color: var(--ink-soft); margin-bottom: 8px; }
         .pm-note b { color: var(--ink); }
         .pm-cta-row { display: flex; gap: 12px; margin: 26px 0; flex-wrap: wrap; }
         .pm-related h5 { font-family: 'Fraunces', serif; font-size: 1.05rem; margin-bottom: 14px; }
-        .pm-close-btn { position: absolute; top: 16px; right: 16px; z-index: 10; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; }
+        .pm-close-btn {
+            appearance: none; -webkit-appearance: none;
+            position: absolute; top: 16px; right: 16px; z-index: 10;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--paper); border: 1px solid var(--brass-light); padding: 0; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--brass); box-shadow: 0 4px 14px -6px rgba(0,0,0,0.35);
+            transition: all .25s var(--ease);
+        }
+        .pm-close-btn:hover { background: var(--brass); border-color: var(--brass); color: #fff; }
 
         @media (max-width: 767px) {
             .pm-info { max-height: none; }
@@ -642,10 +741,31 @@
         /* Lightbox */
         .lux-lightbox { position: fixed; inset: 0; background: rgba(15,13,10,0.94); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 30px; }
         .lux-lightbox.open { display: flex; }
-        .lux-lightbox img { max-width: 92vw; max-height: 86vh; border-radius: 8px; object-fit: contain; }
-        .lux-lightbox .lb-close { position: absolute; top: 24px; right: 28px; color: #fff; font-size: 1.6rem; }
-        .lux-lightbox .lb-arrow { position: absolute; top: 50%; transform: translateY(-50%); color: #fff; font-size: 1.4rem; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; }
+        .lux-lightbox img { max-width: 92vw; max-height: 86vh; border-radius: 4px; object-fit: contain; }
+        .lux-lightbox .lb-close,
+        .lux-lightbox .lb-arrow {
+            appearance: none; -webkit-appearance: none;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--brass-light);
+            border-radius: 50%;
+            color: var(--brass-light);
+            padding: 0;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all .3s var(--ease);
+        }
+        .lux-lightbox .lb-close:hover,
+        .lux-lightbox .lb-arrow:hover { background: var(--brass); border-color: var(--brass); color: #fff; }
+        .lux-lightbox .lb-close { position: absolute; top: 24px; right: 28px; width: 44px; height: 44px; font-size: 1.05rem; }
+        .lux-lightbox .lb-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; font-size: 1.05rem; }
         .lux-lightbox .lb-arrow.left { left: 20px; } .lux-lightbox .lb-arrow.right { right: 20px; }
+        @media (max-width: 575px) {
+            .lux-lightbox .lb-close { top: 14px; right: 14px; width: 38px; height: 38px; }
+            .lux-lightbox .lb-arrow { width: 40px; height: 40px; }
+            .lux-lightbox .lb-arrow.left { left: 10px; } .lux-lightbox .lb-arrow.right { right: 10px; }
+        }
 
         /* Section headings shared */
         .section-head { max-width: 620px; margin-bottom: 56px; }
@@ -662,46 +782,55 @@
 <body>
 
     <!-- ============================================= -->
-    <!-- Announcement -->
+    <!-- Fixed transparent-to-glass top bar (Announcement + Header) -->
     <!-- ============================================= -->
-    <div class="announce" id="announceStrip"></div>
+    <div class="topbar-fixed" id="topbarFixed">
+        <div class="announce" id="announceStrip"></div>
 
-    <!-- ============================================= -->
-    <!-- Header -->
-    <!-- ============================================= -->
-    <header class="site-header" id="siteHeader">
-        <div class="container-lux">
-            <div class="header-inner">
-                <a href="#home" class="brand-logo" id="brandLogo" aria-label="MURALE home">
-                    <span class="mark">M</span><span>MURALE</span>
-                </a>
-
-                <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
-                    <a href="#home" class="active">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#products">Products</a>
-                    <a href="#gallery">Gallery</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-
-                <div class="header-actions">
-                    <a href="#" class="header-wa-btn d-none d-md-inline-flex" id="headerWaBtn" aria-label="Chat on WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
+        <header class="site-header" id="siteHeader">
+            <div class="container-lux">
+                <div class="header-inner">
+                    <a href="#home" class="brand-logo" id="brandLogo" aria-label="MURALE home">
+                        <span class="mark">M</span>
+                        <span class="brand-text">
+                            <span class="brand-name">MURALE</span>
+                            <span class="brand-tagline">Wall Studio</span>
+                        </span>
                     </a>
-                    <a href="#contact" class="btn-brass d-none d-md-inline-flex btn-sm-lux">Get a Quote</a>
-                    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileOffcanvas">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
+
+                    <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+                        <a href="#home" class="active">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#products">Products</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+
+                    <div class="header-actions">
+                        <a href="#" class="header-wa-btn d-none d-md-inline-flex" id="headerWaBtn" aria-label="Chat on WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#contact" class="btn-outline-lux btn-header-cta d-none d-md-inline-flex btn-sm-lux"><i class="fa-brands fa-whatsapp"></i> Enquire</a>
+                        <button class="hamburger-btn" id="hamburgerBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileOffcanvas" aria-label="Open menu" aria-expanded="false" aria-controls="mobileOffcanvas">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
+    </div>
 
     <!-- Mobile Offcanvas -->
     <div class="offcanvas offcanvas-end offcanvas-lux" tabindex="-1" id="mobileOffcanvas" aria-labelledby="mobileOffcanvasLabel">
         <div class="offcanvas-header">
-            <span class="brand-logo" id="mobileOffcanvasLabel"><span class="mark">M</span>MURALE</span>
+            <span class="brand-logo" id="mobileOffcanvasLabel">
+                <span class="mark">M</span>
+                <span class="brand-text">
+                    <span class="brand-name">MURALE</span>
+                    <span class="brand-tagline">Wall Studio</span>
+                </span>
+            </span>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -719,8 +848,6 @@
         <div class="swiper hero-swiper" id="heroSwiper">
             <div class="swiper-wrapper" id="heroWrapper"></div>
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
@@ -1049,47 +1176,10 @@
                     type: "image",
                     media: "https://picsum.photos/seed/murale-hero-1/1800/1000",
                     eyebrow: "The Murale Edit",
-                    title: "Transform Your Walls",
-                    description: "Premium wall stickers designed for beautiful, considered spaces — from a single accent wall to a full commercial identity.",
+                    title: "Premium Wall Stickers For Every Room",
+                    description: "Custom-designed, self-adhesive wall stickers for homes and businesses — made to measure and professionally finished, from a single accent wall to a full commercial rollout.",
                     primaryButton: { text: "Explore Collection", action: "products" },
                     secondaryButton: { text: "Get a Free Quote", action: "contact" }
-                },
-                {
-                    type: "image",
-                    media: "https://picsum.photos/seed/murale-hero-2/1800/1000",
-                    eyebrow: "Made To Measure",
-                    title: "Designed Around Your Room",
-                    description: "Every piece is sized, coloured and finished for the exact wall it will live on. No two installations are the same.",
-                    primaryButton: { text: "View Categories", action: "products" },
-                    secondaryButton: { text: "Talk to a Designer", action: "whatsapp" }
-                },
-                {
-                    type: "video",
-                    media: "https://cdn.coverr.co/videos/coverr-painting-a-white-wall-2633/1080p.mp4",
-                    poster: "https://picsum.photos/seed/murale-hero-video/1800/1000",
-                    eyebrow: "Behind The Finish",
-                    title: "Craft, Applied By Hand",
-                    description: "Watch how a MURALE surface goes from material to finished wall — precise, considered, and built to last.",
-                    primaryButton: { text: "See Installation Process", action: "services" },
-                    secondaryButton: { text: "Book a Consultation", action: "contact" }
-                },
-                {
-                    type: "image",
-                    media: "https://picsum.photos/seed/murale-hero-4/1800/1000",
-                    eyebrow: "For Businesses",
-                    title: "Branding That Lives On The Wall",
-                    description: "Office reception walls, retail interiors and hospitality spaces — finished with the same editorial eye as our residential work.",
-                    primaryButton: { text: "Commercial Solutions", action: "services" },
-                    secondaryButton: { text: "Request a Quote", action: "contact" }
-                },
-                {
-                    type: "image",
-                    media: "https://picsum.photos/seed/murale-hero-5/1800/1000",
-                    eyebrow: "Kids Collection",
-                    title: "Rooms They'll Grow Into",
-                    description: "Playful, durable, and easy to update — a dedicated collection for nurseries and children's rooms.",
-                    primaryButton: { text: "Explore Kids Designs", action: "products" },
-                    secondaryButton: { text: "Chat on WhatsApp", action: "whatsapp" }
                 }
             ],
 
@@ -1454,14 +1544,14 @@
             }).join("");
             $("#heroWrapper").html(slides);
 
+            const multiSlide = state.content.hero.length > 1;
             new Swiper("#heroSwiper", {
-                loop: true,
+                loop: multiSlide,
                 effect: "fade",
                 fadeEffect: { crossFade: true },
                 speed: 900,
-                autoplay: { delay: 6500, disableOnInteraction: false },
-                pagination: { el: ".hero-swiper .swiper-pagination", clickable: true },
-                navigation: { nextEl: ".hero-swiper .swiper-button-next", prevEl: ".hero-swiper .swiper-button-prev" },
+                autoplay: multiSlide ? { delay: 6500, disableOnInteraction: false } : false,
+                pagination: multiSlide ? { el: ".hero-swiper .swiper-pagination", clickable: true } : false,
                 keyboard: { enabled: true },
                 a11y: { enabled: true }
             });
@@ -1824,7 +1914,9 @@
             openProduct($(this).data("related-product"));
         });
 
-        $(document).on("click", "#pmPrev, #pmNext", function () {
+        $(document).on("click", "#pmPrev, #pmNext", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
             const p = state.products.find(pp => pp.id === state.currentProductId);
             if (!p) return;
             const dir = this.id === "pmPrev" ? -1 : 1;
@@ -1832,7 +1924,8 @@
             updateModalImage(p);
         });
 
-        $(document).on("click", "[data-thumb-index]", function () {
+        $(document).on("click", "[data-thumb-index]", function (e) {
+            e.stopPropagation();
             state.currentImageIndex = $(this).data("thumb-index");
             const p = state.products.find(pp => pp.id === state.currentProductId);
             updateModalImage(p);
@@ -1984,9 +2077,30 @@
         // =================================================================
         function initHeaderScroll() {
             $(window).on("scroll", function () {
-                $("#siteHeader").toggleClass("is-scrolled", window.scrollY > 40);
+                $("#topbarFixed").toggleClass("is-scrolled", window.scrollY > 40);
                 $("#scrollTopBtn").toggleClass("is-visible", window.scrollY > 500);
             });
+        }
+
+        // Subtle parallax on the hero background image — moves slower than the
+        // page scroll for a premium, layered feel.
+        function initHeroParallax() {
+            const heroEl = document.getElementById("heroSwiper");
+            if (!heroEl || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+            let ticking = false;
+            function update() {
+                ticking = false;
+                const rect = heroEl.getBoundingClientRect();
+                if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+                const offset = window.scrollY * 0.25;
+                heroEl.querySelectorAll(".hero-media-wrap").forEach(el => {
+                    el.style.transform = `translateY(${offset}px)`;
+                });
+            }
+            window.addEventListener("scroll", () => {
+                if (!ticking) { requestAnimationFrame(update); ticking = true; }
+            }, { passive: true });
         }
 
         $("#scrollTopBtn").on("click", function (e) {
@@ -2070,6 +2184,7 @@
             await Promise.all([loadContent(), loadProducts()]);
             renderAll();
             initHeaderScroll();
+            initHeroParallax();
             initNavSpy();
             observeReveals();
             setTimeout(initVideoPause, 800);
