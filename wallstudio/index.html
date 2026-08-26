@@ -1604,24 +1604,24 @@ const API = {
 
 const FALLBACK_CONTENT = {
   brand: { name: "LUMÉA", subtitle: "WALL STUDIO", logo: "" },
-  contact: { phone: "+91 9876543210", whatsapp: "919999999999", email: "demo@gmail.com" },
+  contact: { phone: "+91 9876543210", whatsapp: "919876543210", email: "demo@gmail.com" },
   hero: [
     {
-      image: "https://picsum.photos/seed/lumea-hero-1/1600/1000",
+      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80",
       tag: "THE SIGNATURE COLLECTION",
       title: "Turn Empty Walls\nInto Beautiful Stories",
       description: "Curated wall stickers designed to bring character, warmth and elegance to your space.",
       button: "Explore Collection"
     },
     {
-      image: "https://picsum.photos/seed/lumea-hero-2/1600/1000",
+      image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1600&q=80",
       tag: "CURATED FOR YOUR SPACE",
       title: "Details That\nTransform A Room",
       description: "Every design is chosen for the way it changes how a room feels, not just how it looks.",
       button: "View The Collection"
     },
     {
-      image: "https://picsum.photos/seed/lumea-hero-3/1600/1000",
+      image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1600&q=80",
       tag: "TIMELESS WALL DECOR",
       title: "Designed To Feel\nBeautifully Personal",
       description: "Refined patterns and botanical forms crafted for calm, considered interiors.",
@@ -1631,38 +1631,61 @@ const FALLBACK_CONTENT = {
 };
 
 const FALLBACK_PRODUCTS = [
-  { id:"WS001", tag:"SIGNATURE", title:"Botanical Whisper", description:"Elegant botanical detailing for calm, sophisticated interiors.", price:1299, old_price:1599, currency:"INR", size:"24 × 36 in", rating:4.9,
-    images:["https://picsum.photos/seed/lumea-ws001-a/1000/1250","https://picsum.photos/seed/lumea-ws001-b/1000/1250","https://picsum.photos/seed/lumea-ws001-c/1000/1250"],
-    video:"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-    details:"A refined botanical wall design created to add a soft artistic character to bedrooms, living spaces and reading corners.",
-    features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] },
   { id:"WS002", tag:"NEW", title:"Golden Palm", description:"A statement palm silhouette finished in warm muted gold.", price:1499, old_price:1799, currency:"INR", size:"30 × 40 in", rating:4.7,
-    images:["https://picsum.photos/seed/lumea-ws002-a/1000/1250","https://picsum.photos/seed/lumea-ws002-b/1000/1250","https://picsum.photos/seed/lumea-ws002-c/1000/1250"],
+    images:[
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=80"
+    ],
     details:"Golden Palm brings a resort-inspired warmth to any wall, pairing an oversized botanical form with a soft matte gold tone.",
     features:["Fade-resistant ink","Easy application","Removable design","Suitable for smooth walls"] },
   { id:"WS003", tag:"BESTSELLER", title:"Serene Arch", description:"A minimal arch motif for understated, modern interiors.", price:1199, old_price:null, currency:"INR", size:"20 × 30 in", rating:4.8,
-    images:["https://picsum.photos/seed/lumea-ws003-a/1000/1250","https://picsum.photos/seed/lumea-ws003-b/1000/1250","https://picsum.photos/seed/lumea-ws003-c/1000/1250"],
+    images:[
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1000&q=80"
+    ],
     video:"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
     details:"Inspired by minimalist architecture, Serene Arch uses a single confident line to bring quiet structure to a room.",
     features:["Premium matte finish","Quick application","Removable design","Suitable for smooth walls"] },
   { id:"WS004", tag:"LIMITED", title:"Olive Branch", description:"A soft, trailing olive branch pattern in muted tones.", price:1349, old_price:1599, currency:"INR", size:"24 × 34 in", rating:4.6,
-    images:["https://picsum.photos/seed/lumea-ws004-a/1000/1250","https://picsum.photos/seed/lumea-ws004-b/1000/1250","https://picsum.photos/seed/lumea-ws004-c/1000/1250"],
+    images:[
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=1000&q=80"
+    ],
     details:"Olive Branch traces a delicate botanical line across the wall, designed to feel hand-painted rather than printed.",
     features:["Premium finish","Easy application","Limited edition","Suitable for smooth walls"] },
   { id:"WS005", tag:"EDITOR'S PICK", title:"Moonlit Bloom", description:"An oversized floral study rendered in soft charcoal.", price:1599, old_price:1899, currency:"INR", size:"32 × 44 in", rating:4.9,
-    images:["https://picsum.photos/seed/lumea-ws005-a/1000/1250","https://picsum.photos/seed/lumea-ws005-b/1000/1250","https://picsum.photos/seed/lumea-ws005-c/1000/1250"],
+    images:[
+      "https://images.unsplash.com/photo-1578301978018-3005759f48f7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=80"
+    ],
     details:"Moonlit Bloom is a large-scale floral study designed to anchor a living room or bedroom feature wall.",
     features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] },
   { id:"WS006", tag:"TIMELESS", title:"Minimal Muse", description:"A single continuous line portrait, quietly elegant.", price:1099, old_price:null, currency:"INR", size:"18 × 24 in", rating:4.7,
-    images:["https://picsum.photos/seed/lumea-ws006-a/1000/1250","https://picsum.photos/seed/lumea-ws006-b/1000/1250","https://picsum.photos/seed/lumea-ws006-c/1000/1250"],
+    images:[
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=80"
+    ],
     details:"Minimal Muse uses a single continuous line to suggest form, designed for reading corners and quiet spaces.",
     features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] },
   { id:"WS007", tag:"CURATED", title:"Wild Garden", description:"A dense botanical composition for bold feature walls.", price:1699, old_price:1999, currency:"INR", size:"36 × 48 in", rating:4.8,
-    images:["https://picsum.photos/seed/lumea-ws007-a/1000/1250","https://picsum.photos/seed/lumea-ws007-b/1000/1250","https://picsum.photos/seed/lumea-ws007-c/1000/1250"],
+    images:[
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80"
+    ],
     details:"Wild Garden layers botanical forms into a dense, painterly composition designed for a confident feature wall.",
     features:["Premium finish","Easy application","Removable design","Suitable for textured walls"] },
   { id:"WS008", tag:"PREMIUM", title:"Ethereal Leaves", description:"Delicate leaf forms drifting across a soft ivory field.", price:1399, old_price:1599, currency:"INR", size:"26 × 36 in", rating:4.6,
-    images:["https://picsum.photos/seed/lumea-ws008-a/1000/1250","https://picsum.photos/seed/lumea-ws008-b/1000/1250","https://picsum.photos/seed/lumea-ws008-c/1000/1250"],
+    images:[
+      "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=80"
+    ],
     details:"Ethereal Leaves is a soft, drifting leaf pattern designed to bring a calm, airy quality to smaller rooms.",
     features:["Premium finish","Easy application","Removable design","Suitable for smooth walls"] }
 ];
@@ -1676,12 +1699,12 @@ const FAQ_ITEMS = [
 ];
 
 const INSTA_IMAGES = [
-  "https://picsum.photos/seed/lumea-insta-1/500/500",
-  "https://picsum.photos/seed/lumea-insta-2/500/500",
-  "https://picsum.photos/seed/lumea-insta-3/500/500",
-  "https://picsum.photos/seed/lumea-insta-4/500/500",
-  "https://picsum.photos/seed/lumea-insta-5/500/500",
-  "https://picsum.photos/seed/lumea-insta-6/500/500"
+  "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80"
 ];
 
 function renderFaq(){
@@ -1706,14 +1729,17 @@ function renderInsta(){
 }
 
 const GALLERY_IMAGES = [
-  { src:"https://picsum.photos/seed/lumea-gallery-1/1200/900", size:"wide" },
-  { src:"https://picsum.photos/seed/lumea-gallery-2/1200/900", size:"tall" },
-  { src:"https://picsum.photos/seed/lumea-gallery-3/1200/900", size:"" },
-  { src:"https://picsum.photos/seed/lumea-gallery-4/1200/900", size:"" },
-  { src:"https://picsum.photos/seed/lumea-gallery-5/1200/900", size:"wide" },
-  { src:"https://picsum.photos/seed/lumea-gallery-6/1200/900", size:"" },
-  { src:"https://picsum.photos/seed/lumea-gallery-7/1200/900", size:"tall" },
-  { src:"https://picsum.photos/seed/lumea-gallery-8/1200/900", size:"" }
+  { src:"https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80", size:"wide" },
+  { src:"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=80", size:"tall" },
+  { src:"https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80", size:"" },
+  { src:"https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&q=80", size:"wide" },
+  { src:"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80", size:"" },
+  { src:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", size:"tall" },
+  { src:"https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=1200&q=80", size:"" },
+  { src:"https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80", size:"wide" },
+  { src:"https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80", size:"wide" },
+    { src:"https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80", size:"" }
+
 ];
 
 let currentLightboxIndex = 0;
