@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRAMEHOUSE — Give Your Memories A Place To Live</title>
+<meta name="description" content="Premium handcrafted photo frames, custom framing and archival art prints. FRAMEHOUSE turns your favourite photographs into pieces you'll want to live with.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+/* ============ TOKENS ============ */
+:root{
+  --cream:#F3EDE2;
+  --paper:#EAE1CF;
+  --paper-deep:#E1D5BC;
+  --ink:#231F1A;
+  --ink-soft:#4A443C;
+  --walnut:#3B2A20;
+  --walnut-deep:#241811;
+  --clay:#A85A38;
+  --clay-deep:#8B4529;
+  --wood:#C89968;
+  --brass:#AD8C55;
+  --line:rgba(35,31,26,0.14);
+  --line-soft:rgba(35,31,26,0.08);
+  --shadow-soft: 0 20px 50px rgba(35,25,15,0.12);
+  --shadow-deep: 0 30px 70px rgba(20,14,8,0.35);
+  --radius-s: 3px;
+  --radius-m: 6px;
+  --ff-display:'Fraunces', serif;
+  --ff-body:'Inter', sans-serif;
+  --ff-mono:'Space Mono', monospace;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--ff-body);
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* film grain overlay */
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none;
+  z-index:9999;
+  opacity:0.045;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+button{font-family:inherit; cursor:pointer; border:none; background:none;}
+ul{list-style:none;}
+
+.eyebrow{
+  font-family:var(--ff-mono);
+  font-size:0.72rem;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--clay-deep);
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  margin-bottom:1rem;
+}
+.eyebrow::before{
+  content:"";
+  width:22px; height:1px;
+  background:var(--clay-deep);
+}
+
+.section{ padding:7rem 6vw; position:relative; }
+@media (max-width:960px){ .section{ padding:4.5rem 6vw; } }
+
+.section-head{ max-width:640px; margin-bottom:3.5rem; }
+.section-head h2{
+  font-family:var(--ff-display);
+  font-weight:500;
+  font-size:clamp(2rem, 4vw, 3rem);
+  line-height:1.08;
+  letter-spacing:-0.01em;
+}
+.section-head p{
+  margin-top:1rem;
+  color:var(--ink-soft);
+  font-size:1.02rem;
+  max-width:520px;
+}
+
+.btn{
+  display:inline-flex; align-items:center; gap:0.6rem;
+  font-family:var(--ff-body); font-weight:600; font-size:0.92rem;
+  padding:0.95rem 1.7rem;
+  border-radius:2px;
+  transition:transform 0.35s cubic-bezier(.2,.9,.25,1), background 0.3s, color 0.3s, box-shadow .3s;
+  white-space:nowrap;
+}
+.btn-primary{ background:var(--walnut); color:var(--cream); box-shadow:0 10px 26px rgba(59,42,32,0.28); }
+.btn-primary:hover{ background:var(--ink); transform:translateY(-2px); }
+.btn-outline{ background:transparent; color:var(--walnut); border:1px solid var(--line); }
+.btn-outline:hover{ border-color:var(--walnut); background:rgba(59,42,32,0.05); transform:translateY(-2px); }
+.btn-ghost{ color:var(--walnut); font-weight:600; font-size:0.92rem; border-bottom:1px solid var(--walnut); padding-bottom:2px; border-radius:0;}
+
+/* fade-up reveal */
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1); }
+.reveal.visible{ opacity:1; transform:none; }
+
+/* ============ NAV ============ */
+#main-nav{
+  position:fixed; top:0; left:0; right:0; z-index:500;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.5rem 4rem;
+  transition:padding 0.35s ease, background 0.35s ease, box-shadow 0.35s ease, backdrop-filter .35s ease;
+}
+#main-nav.scrolled{
+  padding:0.9rem 4rem;
+  background:rgba(243,237,226,0.82);
+  backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:0 4px 30px rgba(20,14,8,0.08);
+  border-bottom:1px solid var(--line-soft);
+}
+@media (max-width:960px){
+  #main-nav, #main-nav.scrolled{ padding:1rem 1.4rem; }
+}
+.logo{
+  font-family:var(--ff-display); font-weight:600; font-size:1.4rem;
+  letter-spacing:-0.01em;
+}
+.logo span{ color:var(--clay-deep); font-style:italic; font-weight:400; }
+.nav-links{ display:flex; gap:2.3rem; }
+.nav-links a{
+  font-size:0.9rem; font-weight:500; position:relative; padding-bottom:4px;
+}
+.nav-links a::after{
+  content:""; position:absolute; left:0; bottom:0; width:0; height:1px;
+  background:var(--clay-deep); transition:width .3s ease;
+}
+.nav-links a:hover::after{ width:100%; }
+.nav-right{ display:flex; align-items:center; gap:1.4rem; }
+.icon-btn{ position:relative; width:20px; height:20px; }
+.icon-btn svg{ width:20px; height:20px; stroke:var(--ink); }
+#cart-count{
+  position:absolute; top:-8px; right:-10px;
+  background:var(--clay); color:#fff; font-family:var(--ff-mono);
+  font-size:0.62rem; width:16px; height:16px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+}
+.nav-toggle{ display:none; flex-direction:column; gap:5px; width:26px; }
+.nav-toggle span{ height:2px; background:var(--ink); border-radius:2px; transition:.3s; }
+@media (max-width:960px){
+  .nav-links{
+    position:fixed; top:0; right:-100%; height:100vh; width:78%; max-width:340px;
+    background:var(--walnut); flex-direction:column; justify-content:center; align-items:flex-start;
+    padding:4rem; gap:1.7rem; transition:right .45s cubic-bezier(.2,.8,.2,1); z-index:400;
+  }
+  .nav-links.open{ right:0; }
+  .nav-links a{ color:var(--cream); font-size:1.2rem; font-family:var(--ff-display); }
+  .nav-toggle{ display:flex; z-index:600; }
+}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100vh; display:flex; align-items:flex-end;
+  position:relative; padding:0 6vw 6rem;
+  background:
+    linear-gradient(180deg, rgba(243,237,226,0.35) 0%, rgba(243,237,226,0.55) 55%, var(--cream) 96%),
+    url('https://picsum.photos/seed/framehouse-hero/1800/1100') center/cover no-repeat;
+}
+.hero-inner{ max-width:760px; position:relative; z-index:2; }
+.hero-badge{
+  position:absolute; top:8rem; right:6vw; z-index:3;
+  width:118px; height:118px; border-radius:50%;
+  background:var(--clay); color:var(--cream);
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  font-family:var(--ff-mono); font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase;
+  line-height:1.5; box-shadow:var(--shadow-soft);
+  animation:spin 22s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+.hero-badge b{ font-family:var(--ff-mono); }
+@media (max-width:960px){ .hero-badge{ display:none; } }
+
+.hero h1{
+  font-family:var(--ff-display); font-weight:500;
+  font-size:clamp(2.6rem, 6.4vw, 5.2rem);
+  line-height:0.98; letter-spacing:-0.02em;
+  color:var(--walnut-deep);
+}
+.hero h1 em{ font-style:italic; font-weight:400; color:var(--clay-deep); }
+.hero .sub{
+  font-family:var(--ff-display); font-style:italic; font-size:1.3rem; color:var(--ink-soft);
+  margin-top:1.3rem;
+}
+.hero p.desc{ margin-top:1.2rem; max-width:460px; color:var(--ink-soft); font-size:1.02rem; }
+.hero-ctas{ display:flex; gap:1rem; margin-top:2.3rem; flex-wrap:wrap; }
+.scroll-cue{
+  position:absolute; bottom:2.3rem; left:6vw; z-index:2;
+  font-family:var(--ff-mono); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase;
+  display:flex; align-items:center; gap:0.6rem; color:var(--ink-soft);
+}
+.scroll-cue .line{ width:36px; height:1px; background:var(--ink-soft); position:relative; overflow:hidden; }
+.scroll-cue .line::after{ content:""; position:absolute; left:-100%; top:0; width:100%; height:100%; background:var(--clay); animation:cue 2.6s ease-in-out infinite; }
+@keyframes cue{ 0%{left:-100%;} 50%{left:0;} 100%{left:100%;} }
+@media (max-width:960px){ .scroll-cue{ display:none; } }
+
+/* ============ PRODUCT GRID ============ */
+.frame-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem;
+}
+@media (max-width:1100px){ .frame-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px){ .frame-grid{ grid-template-columns:1fr; } }
+
+.frame-card{
+  background:var(--paper); border-radius:var(--radius-m); overflow:hidden;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+  border:1px solid var(--line-soft);
+}
+.frame-card:hover{ transform:translateY(-8px); box-shadow:var(--shadow-soft); }
+.frame-thumb{ position:relative; aspect-ratio:4/5; overflow:hidden; background:var(--paper-deep); }
+.frame-thumb img{ width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.8,.2,1); }
+.frame-card:hover .frame-thumb img{ transform:scale(1.08); }
+.frame-swatch{
+  position:absolute; top:0.9rem; left:0.9rem; width:26px; height:26px; border-radius:50%;
+  border:2px solid rgba(255,255,255,0.85); box-shadow:0 2px 8px rgba(0,0,0,0.25);
+}
+.frame-body{ padding:1.4rem 1.5rem 1.6rem; }
+.frame-body .name{ font-family:var(--ff-display); font-size:1.25rem; font-weight:500; }
+.frame-body .desc{ color:var(--ink-soft); font-size:0.88rem; margin-top:0.35rem; }
+.frame-meta{ display:flex; justify-content:space-between; align-items:center; margin-top:1rem; font-size:0.82rem; color:var(--ink-soft); }
+.frame-meta .rating{ font-family:var(--ff-mono); color:var(--clay-deep); }
+.frame-foot{ display:flex; justify-content:space-between; align-items:center; margin-top:1.2rem; }
+.frame-price{ font-family:var(--ff-mono); font-size:1.02rem; font-weight:700; }
+.add-cart{
+  font-size:0.78rem; font-weight:600; letter-spacing:0.03em; text-transform:uppercase;
+  padding:0.6rem 1rem; background:var(--walnut); color:var(--cream); border-radius:2px;
+  transition:background .3s, transform .3s;
+}
+.add-cart:hover{ background:var(--clay-deep); transform:translateY(-2px); }
+
+/* ============ SIZES ============ */
+.sizes-wrap{ background:var(--walnut); color:var(--cream); }
+.sizes-wrap .section-head h2{ color:var(--cream); }
+.sizes-wrap .section-head p{ color:rgba(243,237,226,0.66); }
+.sizes-wrap .eyebrow{ color:var(--wood); }
+.sizes-wrap .eyebrow::before{ background:var(--wood); }
+.size-grid{ display:flex; gap:1.1rem; flex-wrap:wrap; align-items:flex-end; }
+.size-card{
+  flex:1 1 120px; text-align:center; cursor:pointer;
+  border:1px solid rgba(243,237,226,0.18); border-radius:2px;
+  padding:1.2rem 0.8rem; transition:.3s;
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+}
+.size-card:hover, .size-card.active{ background:rgba(243,237,226,0.08); border-color:var(--wood); }
+.size-box{ background:rgba(243,237,226,0.1); border:1px solid rgba(243,237,226,0.3); margin-bottom:1rem; }
+.size-card .label{ font-family:var(--ff-mono); font-size:0.85rem; }
+.sizes-cta{ margin-top:3rem; }
+
+/* ============ BUILD YOUR FRAME ============ */
+.build-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+@media (max-width:960px){ .build-wrap{ grid-template-columns:1fr; gap:3rem; } }
+.build-steps{ counter-reset:step; }
+.build-step{
+  display:flex; gap:1.3rem; padding:1.3rem 0; border-top:1px solid var(--line);
+  cursor:pointer; transition:.3s;
+}
+.build-step:last-child{ border-bottom:1px solid var(--line); }
+.build-step .num{ font-family:var(--ff-mono); font-size:0.85rem; color:var(--clay-deep); padding-top:0.15rem; }
+.build-step h4{ font-family:var(--ff-display); font-size:1.15rem; font-weight:500; }
+.build-step p{ color:var(--ink-soft); font-size:0.88rem; margin-top:0.3rem; }
+.build-step.active{ background:rgba(168,90,56,0.06); }
+.build-step.active h4{ color:var(--clay-deep); }
+
+.build-preview{
+  aspect-ratio:1/1; background:var(--paper); border-radius:var(--radius-m);
+  display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+  border:1px solid var(--line-soft);
+}
+#preview-frame{
+  width:64%; padding:14px; background:#C89968; box-shadow:var(--shadow-deep);
+  transition: background .4s ease, padding .4s ease;
+}
+#preview-frame img{ width:100%; height:100%; object-fit:cover; aspect-ratio:4/5; }
+.build-cta{ margin-top:2.2rem; }
+
+/* ============ STATS ============ */
+.stats-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:2rem; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:3.5rem 0; }
+@media (max-width:960px){ .stats-grid{ grid-template-columns:repeat(2,1fr); } }
+.stat b{
+  display:block; font-family:var(--ff-display); font-weight:500; font-size:clamp(2rem,4vw,3rem); color:var(--walnut);
+  letter-spacing:-0.02em;
+}
+.stat span{ font-family:var(--ff-mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-soft); }
+
+/* ============ LOGO CLOUD ============ */
+.logo-cloud{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding:3rem 0 0; }
+.logo-cloud span{
+  font-family:var(--ff-mono); font-size:0.95rem; letter-spacing:0.08em; color:var(--ink-soft); opacity:0.55;
+  transition:opacity .3s;
+}
+.logo-cloud span:hover{ opacity:1; color:var(--clay-deep); }
+
+/* ============ WHY CHOOSE ============ */
+.why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+@media (max-width:900px){ .why-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:600px){ .why-grid{ grid-template-columns:1fr; } }
+.why-card{ background:var(--cream); padding:2.3rem 2rem; transition:background .3s; }
+.why-card:hover{ background:var(--paper); }
+.why-card .ico{ font-family:var(--ff-display); font-style:italic; font-size:1.6rem; color:var(--clay-deep); margin-bottom:1rem; }
+.why-card h4{ font-family:var(--ff-display); font-size:1.15rem; font-weight:500; margin-bottom:0.5rem; }
+.why-card p{ font-size:0.88rem; color:var(--ink-soft); }
+
+/* ============ STUDIO GALLERY (editorial) ============ */
+.studio-grid{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  grid-auto-rows:120px;
+  gap:0.9rem;
+}
+.g-item{ position:relative; overflow:hidden; border-radius:2px; cursor:zoom-in; }
+.g-item img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.g-item:hover img{ transform:scale(1.06); }
+.g-cap{
+  position:absolute; left:0.8rem; bottom:0.7rem; font-family:var(--ff-mono); font-size:0.68rem;
+  letter-spacing:0.06em; color:#fff; background:rgba(20,14,8,0.55); padding:0.3rem 0.6rem; border-radius:2px;
+}
+.g1{ grid-column:span 2; grid-row:span 4; }
+.g2{ grid-column:span 2; grid-row:span 2; }
+.g3{ grid-column:span 2; grid-row:span 2; }
+.g4{ grid-column:span 3; grid-row:span 2; }
+.g5{ grid-column:span 1; grid-row:span 2; }
+.g6{ grid-column:span 2; grid-row:span 3; }
+@media (max-width:900px){
+  .studio-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:150px; }
+  .g1,.g2,.g3,.g4,.g5,.g6{ grid-column:span 1; grid-row:span 2; }
+}
+
+/* ============ GALLERY WALL BUILDER ============ */
+.wall-wrap{ background:var(--paper); }
+.wall-controls{ display:flex; gap:0.8rem; margin-bottom:2.5rem; flex-wrap:wrap; }
+.wall-btn{
+  padding:0.7rem 1.4rem; border:1px solid var(--line); border-radius:20px; font-size:0.85rem; font-weight:600;
+  transition:.3s;
+}
+.wall-btn.active, .wall-btn:hover{ background:var(--walnut); color:var(--cream); border-color:var(--walnut); }
+.wall-stage{
+  position:relative; background:var(--cream); border:1px solid var(--line); border-radius:var(--radius-m);
+  min-height:420px; overflow:hidden;
+}
+.wall-layout{
+  position:absolute; inset:0; display:none; padding:3rem; gap:1.2rem;
+}
+.wall-layout.active{ display:flex; align-items:center; }
+.wframe{ box-shadow:0 14px 34px rgba(20,14,8,0.2); overflow:hidden; border-radius:1px; }
+.wframe img{ width:100%; height:100%; object-fit:cover; }
+
+/* ============ FRAME SHOP SHOWCASE ============ */
+.shop-wrap{ background:var(--walnut-deep); color:var(--cream); overflow:hidden; }
+.shop-inner{ display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+@media (max-width:960px){ .shop-inner{ grid-template-columns:1fr; } }
+.shop-copy .eyebrow{ color:var(--wood); }
+.shop-copy .eyebrow::before{ background:var(--wood); }
+.shop-copy h2{ font-family:var(--ff-display); font-style:italic; font-weight:400; font-size:clamp(1.9rem,3.4vw,2.7rem); line-height:1.2; }
+.shop-copy p{ color:rgba(243,237,226,0.65); margin-top:1.3rem; max-width:420px; }
+.shop-stack{ position:relative; height:420px; }
+.stack-frame{
+  position:absolute; width:230px; box-shadow:var(--shadow-deep); border-radius:1px; overflow:hidden;
+  transition:transform .5s ease;
+}
+.stack-frame img{ width:100%; height:100%; object-fit:cover; }
+.sf1{ width:260px; top:10px; left:10%; transform:rotate(-7deg); z-index:2; padding:16px; background:#EDE7DC;}
+.sf2{ width:210px; top:70px; left:38%; transform:rotate(5deg); z-index:3; padding:12px; background:#1c1c1c;}
+.sf3{ width:190px; top:170px; left:2%; transform:rotate(4deg); z-index:1; padding:10px; background:var(--brass);}
+.sf4{ width:190px; top:200px; left:52%; transform:rotate(-4deg); z-index:4; padding:12px; background:#6B4A34;}
+.shop-stack:hover .sf1{ transform:rotate(-10deg) translateY(-6px); }
+.shop-stack:hover .sf2{ transform:rotate(8deg) translateY(-6px); }
+.shop-stack:hover .sf3{ transform:rotate(7deg) translateY(-6px); }
+.shop-stack:hover .sf4{ transform:rotate(-7deg) translateY(-6px); }
+@media (max-width:600px){ .shop-stack{ height:340px; } .sf1{width:190px;} .sf2{width:150px;} .sf3{width:140px;} .sf4{width:140px;} }
+
+/* ============ ART PRINTS ============ */
+.filter-row{ display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+.filter-chip{
+  font-family:var(--ff-mono); font-size:0.74rem; text-transform:uppercase; letter-spacing:0.06em;
+  padding:0.5rem 1rem; border:1px solid var(--line); border-radius:20px; transition:.3s;
+}
+.filter-chip.active, .filter-chip:hover{ background:var(--clay); color:#fff; border-color:var(--clay); }
+.art-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.6rem; }
+@media (max-width:1100px){ .art-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:600px){ .art-grid{ grid-template-columns:1fr; } }
+.art-card{ display:none; }
+.art-card.show{ display:block; }
+.art-thumb{ aspect-ratio:3/4; overflow:hidden; border-radius:2px; background:var(--paper-deep); }
+.art-thumb img{ width:100%; height:100%; object-fit:cover; transition:transform .6s; }
+.art-card:hover .art-thumb img{ transform:scale(1.06); }
+.art-info{ padding-top:0.8rem; display:flex; justify-content:space-between; align-items:flex-start; }
+.art-info h5{ font-family:var(--ff-display); font-size:1.02rem; font-weight:500; }
+.art-info span{ font-size:0.78rem; color:var(--ink-soft); display:block; margin-top:0.15rem; }
+.art-info .price{ font-family:var(--ff-mono); font-weight:700; font-size:0.9rem; }
+
+/* ============ PERSONALISED ============ */
+.personal-wrap{ background:var(--paper); }
+.personal-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+@media (max-width:960px){ .personal-grid{ grid-template-columns:repeat(2,1fr); } }
+.personal-card{
+  background:var(--cream); border:1px solid var(--line); border-radius:var(--radius-m); padding:1.6rem;
+  transition:.3s;
+}
+.personal-card:hover{ border-color:var(--clay); transform:translateY(-4px); box-shadow:var(--shadow-soft); }
+.personal-card h5{ font-family:var(--ff-display); font-size:1.08rem; font-weight:500; }
+.personal-card p{ font-size:0.82rem; color:var(--ink-soft); margin-top:0.4rem; }
+
+/* ============ TESTIMONIAL ============ */
+.testi{ text-align:center; max-width:820px; margin:0 auto; }
+.testi .mark{ font-family:var(--ff-display); font-style:italic; font-size:4rem; color:var(--clay); line-height:1; }
+.testi blockquote{
+  font-family:var(--ff-display); font-weight:400; font-size:clamp(1.5rem,3vw,2.3rem); line-height:1.35;
+  color:var(--walnut-deep); margin-top:0.5rem;
+}
+.testi cite{ display:block; margin-top:1.6rem; font-style:normal; font-family:var(--ff-mono); font-size:0.8rem; color:var(--ink-soft); }
+
+/* ============ BEFORE/AFTER ============ */
+.ba-wrap{ max-width:820px; margin:0 auto; position:relative; user-select:none; }
+.ba-frame{ position:relative; aspect-ratio:16/10; border-radius:var(--radius-m); overflow:hidden; box-shadow:var(--shadow-soft); }
+.ba-frame img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.ba-after{ clip-path:inset(0 0 0 50%); }
+.ba-handle{
+  position:absolute; top:0; bottom:0; left:50%; width:2px; background:var(--cream);
+  cursor:ew-resize; z-index:5;
+}
+.ba-handle::after{
+  content:"↔"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:44px; height:44px; background:var(--cream); border-radius:50%; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 20px rgba(0,0,0,0.25); font-size:1.1rem; color:var(--walnut);
+}
+.ba-label{ position:absolute; top:1rem; font-family:var(--ff-mono); font-size:0.7rem; letter-spacing:0.08em; padding:0.4rem 0.7rem; background:rgba(20,14,8,0.6); color:#fff; border-radius:2px; text-transform:uppercase; z-index:4;}
+.ba-label.before{ left:1rem; }
+.ba-label.after{ right:1rem; }
+
+/* ============ PACKAGING ============ */
+.pack-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+@media (max-width:960px){ .pack-wrap{ grid-template-columns:1fr; gap:2.5rem; } }
+.pack-img{ aspect-ratio:4/3; border-radius:var(--radius-m); overflow:hidden; box-shadow:var(--shadow-soft);}
+.pack-img img{ width:100%; height:100%; object-fit:cover; }
+.pack-list{ margin-top:1.6rem; display:flex; flex-direction:column; gap:0.8rem; }
+.pack-list li{ display:flex; gap:0.8rem; align-items:baseline; font-size:0.94rem; color:var(--ink-soft); }
+.pack-list li::before{ content:"—"; color:var(--clay-deep); }
+
+/* ============ JOURNAL ============ */
+.journal-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+@media (max-width:900px){ .journal-grid{ grid-template-columns:1fr; } }
+.journal-card .jimg{ aspect-ratio:5/4; border-radius:2px; overflow:hidden; margin-bottom:1rem; }
+.journal-card .jimg img{ width:100%; height:100%; object-fit:cover; transition:transform .6s; }
+.journal-card:hover .jimg img{ transform:scale(1.05); }
+.journal-card .jtag{ font-family:var(--ff-mono); font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--clay-deep); }
+.journal-card h4{ font-family:var(--ff-display); font-weight:500; font-size:1.2rem; margin-top:0.5rem; }
+
+/* ============ FINAL CTA ============ */
+.final-cta{
+  background:var(--walnut); color:var(--cream); text-align:center; position:relative; overflow:hidden;
+}
+.final-cta::before{
+  content:""; position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.final-cta h2{ font-family:var(--ff-display); font-weight:500; font-size:clamp(2.2rem,5vw,4rem); position:relative; z-index:2; }
+.final-cta p{ margin:1.3rem auto 2.2rem; max-width:480px; color:rgba(243,237,226,0.68); position:relative; z-index:2; }
+.final-cta .hero-ctas{ justify-content:center; position:relative; z-index:2; }
+.final-cta .btn-outline{ color:var(--cream); border-color:rgba(243,237,226,0.4); }
+.final-cta .btn-outline:hover{ background:rgba(243,237,226,0.1); border-color:var(--cream); }
+.final-cta .btn-primary{ background:var(--clay); }
+.final-cta .btn-primary:hover{ background:var(--cream); color:var(--walnut); }
+
+/* ============ FOOTER ============ */
+footer{ background:var(--walnut-deep); color:rgba(243,237,226,0.75); padding:5rem 6vw 2rem; }
+.foot-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1.2fr; gap:3rem; padding-bottom:3.5rem; border-bottom:1px solid rgba(243,237,226,0.12); }
+@media (max-width:900px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
+.foot-brand .logo{ color:var(--cream); }
+.foot-brand p{ margin-top:1rem; font-size:0.88rem; max-width:280px; color:rgba(243,237,226,0.55); }
+.foot-social{ display:flex; gap:1rem; margin-top:1.4rem; }
+.foot-social a{ font-family:var(--ff-mono); font-size:0.74rem; letter-spacing:0.05em; border-bottom:1px solid rgba(243,237,226,0.3); padding-bottom:2px; }
+footer h5{ font-family:var(--ff-mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--wood); margin-bottom:1.2rem; }
+footer ul li{ margin-bottom:0.7rem; font-size:0.9rem; }
+footer ul li a:hover{ color:var(--cream); }
+.foot-bottom{ display:flex; justify-content:space-between; padding-top:1.8rem; font-size:0.78rem; color:rgba(243,237,226,0.4); flex-wrap:wrap; gap:0.8rem; }
+
+/* ============ TOAST ============ */
+#toast{
+  position:fixed; bottom:2rem; left:50%; transform:translateX(-50%) translateY(30px);
+  background:var(--walnut); color:var(--cream); padding:0.9rem 1.6rem; border-radius:3px;
+  font-size:0.88rem; font-weight:500; box-shadow:var(--shadow-deep);
+  opacity:0; pointer-events:none; transition:opacity .35s ease, transform .35s ease; z-index:2000;
+  display:flex; align-items:center; gap:0.6rem;
+}
+#toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* ============ LIGHTBOX ============ */
+#lightbox{
+  position:fixed; inset:0; background:rgba(20,14,8,0.92); z-index:3000; display:none;
+  align-items:center; justify-content:center; padding:4vw;
+}
+#lightbox.open{ display:flex; }
+#lightbox img{ max-width:88vw; max-height:86vh; border-radius:2px; box-shadow:var(--shadow-deep); }
+#lightbox-close{ position:absolute; top:2rem; right:2.5rem; color:#fff; font-size:1.6rem; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  html{ scroll-behavior:auto; }
+}
+</style>
+</head>
+<body>
+
+<div id="toast"></div>
+<div id="lightbox"><span id="lightbox-close">✕ Close</span><img id="lightbox-img" src="" alt="Enlarged view"></div>
+
+<!-- ============ NAV ============ -->
+<nav id="main-nav">
+  <a href="#" class="logo">FRAME<span>house</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="#shop">Shop</a>
+    <a href="#frames">Frames</a>
+    <a href="#art">Wall Art</a>
+    <a href="#build">Custom</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#story">Our Story</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+    <button class="icon-btn" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg></button>
+    <button class="icon-btn" id="cart-btn" aria-label="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 6h2l2.4 12.2a2 2 0 0 0 2 1.8h8.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+      <span id="cart-count">0</span>
+    </button>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="shop">
+  <div class="hero-badge">HANDCRAFTED<br><b>WITH CARE</b></div>
+  <div class="hero-inner">
+    <h1>Give Your Memories<br>A Place <em>To Live.</em></h1>
+    <p class="sub">Beautiful photographs deserve beautiful frames.</p>
+    <p class="desc">We turn your favourite photographs and artwork into timeless pieces — cut, matted and finished by hand, then framed to last generations on your wall.</p>
+    <div class="hero-ctas">
+      <a href="#frames" class="btn btn-primary">Shop Frames →</a>
+      <a href="#build" class="btn btn-outline">Create Your Frame →</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="line"></span> Scroll to explore</div>
+</header>
+
+<!-- ============ FIND YOUR FRAME ============ -->
+<section class="section" id="frames">
+  <div class="section-head reveal">
+    <span class="eyebrow">The Collection</span>
+    <h2>Find Your Frame</h2>
+    <p>Six frame families, each milled from real wood or cast metal, ready to hold the photograph you keep coming back to.</p>
+  </div>
+  <div class="frame-grid">
+
+    <div class="frame-card reveal">
+      <div class="frame-thumb"><span class="frame-swatch" style="background:#C89968"></span><img src="https://picsum.photos/seed/oak-frame/700/900" alt="Classic Oak frame"></div>
+      <div class="frame-body">
+        <div class="name">Classic Oak</div>
+        <div class="desc">Natural wooden frame with a warm, honeyed finish.</div>
+        <div class="frame-meta"><span>Sizes 6×8 – 24×36</span><span class="rating">★ 4.9</span></div>
+        <div class="frame-foot"><span class="frame-price">₹1,890</span><button class="add-cart" data-name="Classic Oak">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="frame-card reveal">
+      <div class="frame-thumb"><span class="frame-swatch" style="background:#1c1c1c"></span><img src="https://picsum.photos/seed/black-frame/700/900" alt="Soft Black frame"></div>
+      <div class="frame-body">
+        <div class="name">Soft Black</div>
+        <div class="desc">Minimal matte-black frame for modern interiors.</div>
+        <div class="frame-meta"><span>Sizes 6×8 – 24×36</span><span class="rating">★ 4.8</span></div>
+        <div class="frame-foot"><span class="frame-price">₹1,690</span><button class="add-cart" data-name="Soft Black">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="frame-card reveal">
+      <div class="frame-thumb"><span class="frame-swatch" style="background:#5A3826"></span><img src="https://picsum.photos/seed/walnut-frame/700/900" alt="Walnut frame"></div>
+      <div class="frame-body">
+        <div class="name">Walnut</div>
+        <div class="desc">Rich dark wood frame for premium photographs.</div>
+        <div class="frame-meta"><span>Sizes 8×10 – 24×36</span><span class="rating">★ 5.0</span></div>
+        <div class="frame-foot"><span class="frame-price">₹2,290</span><button class="add-cart" data-name="Walnut">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="frame-card reveal">
+      <div class="frame-thumb"><span class="frame-swatch" style="background:#F3EEE6;border-color:#333"></span><img src="https://picsum.photos/seed/white-frame/700/900" alt="Gallery White frame"></div>
+      <div class="frame-body">
+        <div class="name">Gallery White</div>
+        <div class="desc">Clean white frame designed for artwork and photography.</div>
+        <div class="frame-meta"><span>Sizes 6×8 – 24×36</span><span class="rating">★ 4.7</span></div>
+        <div class="frame-foot"><span class="frame-price">₹1,790</span><button class="add-cart" data-name="Gallery White">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="frame-card reveal">
+      <div class="frame-thumb"><span class="frame-swatch" style="background:#AD8C55"></span><img src="https://picsum.photos/seed/brass-frame/700/900" alt="Brass Edge frame"></div>
+      <div class="frame-body">
+        <div class="name">Brass Edge</div>
+        <div class="desc">Elegant metallic frame for statement pieces.</div>
+        <div class="frame-meta"><span>Sizes 8×10 – 18×24</span><span class="rating">★ 4.9</span></div>
+        <div class="frame-foot"><span class="frame-price">₹2,690</span><button class="add-cart" data-name="Brass Edge">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="frame-card reveal">
+      <div class="frame-thumb"><span class="frame-swatch" style="background:#D8C9A8"></span><img src="https://picsum.photos/seed/canvas-frame/700/900" alt="Natural Canvas frame"></div>
+      <div class="frame-body">
+        <div class="name">Natural Canvas</div>
+        <div class="desc">Soft textured frame for artistic prints.</div>
+        <div class="frame-meta"><span>Sizes 8×10 – 24×36</span><span class="rating">★ 4.8</span></div>
+        <div class="frame-foot"><span class="frame-price">₹2,090</span><button class="add-cart" data-name="Natural Canvas">Add to Cart</button></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SIZES ============ -->
+<section class="section sizes-wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Fit Your Wall</span>
+    <h2>Every Frame, Sized Right</h2>
+    <p>From a bedside 6×8 to a statement 24×36 — or send us your own measurements.</p>
+  </div>
+  <div class="size-grid reveal">
+    <div class="size-card"><div class="size-box" style="width:40px;height:32px;"></div><span class="label">6×8</span></div>
+    <div class="size-card active"><div class="size-box" style="width:48px;height:38px;"></div><span class="label">8×10</span></div>
+    <div class="size-card"><div class="size-box" style="width:56px;height:46px;"></div><span class="label">12×16</span></div>
+    <div class="size-card"><div class="size-box" style="width:64px;height:52px;"></div><span class="label">16×20</span></div>
+    <div class="size-card"><div class="size-box" style="width:70px;height:58px;"></div><span class="label">18×24</span></div>
+    <div class="size-card"><div class="size-box" style="width:80px;height:68px;"></div><span class="label">24×36</span></div>
+    <div class="size-card"><div class="size-box" style="width:52px;height:52px;border-style:dashed;"></div><span class="label">Custom</span></div>
+  </div>
+  <div class="sizes-cta reveal"><a href="#build" class="btn btn-outline" style="color:var(--cream);border-color:rgba(243,237,226,0.4)">Find Your Perfect Size →</a></div>
+</section>
+
+<!-- ============ BUILD YOUR FRAME ============ -->
+<section class="section" id="build">
+  <div class="section-head reveal">
+    <span class="eyebrow">The Studio Process</span>
+    <h2>Build Your Frame</h2>
+    <p>Five steps between a photograph on your phone and a piece on your wall.</p>
+  </div>
+  <div class="build-wrap">
+    <div class="build-steps reveal">
+      <div class="build-step active" data-step="1"><span class="num">01</span><div><h4>Choose Your Photo</h4><p>Upload your favourite photograph or artwork file.</p></div></div>
+      <div class="build-step" data-step="2"><span class="num">02</span><div><h4>Pick Your Frame</h4><p>Oak, walnut, black, white or brass — your call.</p></div></div>
+      <div class="build-step" data-step="3"><span class="num">03</span><div><h4>Choose Your Size</h4><p>Standard sizes or exact custom dimensions.</p></div></div>
+      <div class="build-step" data-step="4"><span class="num">04</span><div><h4>Choose Your Finish</h4><p>Matte, textured, glossy or archival finish.</p></div></div>
+      <div class="build-step" data-step="5"><span class="num">05</span><div><h4>We Frame It</h4><p>The studio prepares, assembles and carefully packs your piece.</p></div></div>
+    </div>
+    <div class="build-preview reveal">
+      <div id="preview-frame"><img src="https://picsum.photos/seed/build-preview/500/620" alt="Frame preview"></div>
+    </div>
+  </div>
+  <div class="build-cta reveal"><a href="#" class="btn btn-primary">Start Creating →</a></div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section" style="padding-top:0;padding-bottom:5rem;">
+  <div class="stats-grid reveal">
+    <div class="stat"><b>25K+</b><span>Frames Created</span></div>
+    <div class="stat"><b>14+</b><span>Frame Styles</span></div>
+    <div class="stat"><b>48H</b><span>Studio Processing</span></div>
+    <div class="stat"><b>98%</b><span>Happy Customers</span></div>
+    <div class="stat"><b>12</b><span>Countries Delivered</span></div>
+  </div>
+</section>
+
+<!-- ============ LOGO CLOUD ============ -->
+<section class="section" style="padding-top:0;padding-bottom:4rem;">
+  <div class="logo-cloud reveal">
+    <span>CASA</span><span>MONO</span><span>LIVING FORM</span><span>STUDIO 24</span><span>ARCHIVE</span><span>OBJECT</span><span>FRAME JOURNAL</span><span>THE EDIT</span><span>ROOM</span><span>PAPER & WALL</span>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE ============ -->
+<section class="section">
+  <div class="section-head reveal">
+    <span class="eyebrow">Our Promise</span>
+    <h2>Made To Stay.</h2>
+  </div>
+  <div class="why-grid reveal">
+    <div class="why-card"><div class="ico">Aa</div><h4>Museum-Quality Prints</h4><p>Archival printing designed to preserve photographs and artwork for decades.</p></div>
+    <div class="why-card"><div class="ico">Aa</div><h4>Handmade Frames</h4><p>Each frame is carefully assembled and finished by hand in our studio.</p></div>
+    <div class="why-card"><div class="ico">Aa</div><h4>Sustainable Materials</h4><p>Responsibly sourced wood and fully recyclable packaging, always.</p></div>
+    <div class="why-card"><div class="ico">Aa</div><h4>Protective Packaging</h4><p>Built to keep your artwork safe and unscratched during shipping.</p></div>
+    <div class="why-card"><div class="ico">Aa</div><h4>Custom Sizes</h4><p>Frames cut to fit your exact wall and photograph, no compromises.</p></div>
+    <div class="why-card"><div class="ico">Aa</div><h4>Easy Gifting</h4><p>Gift-ready packaging for birthdays, weddings and anniversaries.</p></div>
+  </div>
+</section>
+
+<!-- ============ STUDIO GALLERY ============ -->
+<section class="section" id="gallery">
+  <div class="section-head reveal">
+    <span class="eyebrow">Behind The Craft</span>
+    <h2>A Day Inside The Frame Studio</h2>
+    <p>Wood, prints and hands — a look at how a piece moves from bench to wall.</p>
+  </div>
+  <div class="studio-grid reveal">
+    <div class="g-item g1"><img src="https://picsum.photos/seed/studio-1/600/1000" alt="Cutting oak in the studio"><span class="g-cap">09:12 — CUTTING OAK</span></div>
+    <div class="g-item g2"><img src="https://picsum.photos/seed/studio-2/600/500" alt="Checking a fresh print"><span class="g-cap">11:40 — PRINT CHECK</span></div>
+    <div class="g-item g3"><img src="https://picsum.photos/seed/studio-3/600/500" alt="Hands assembling a frame"><span class="g-cap">13:05 — ASSEMBLY</span></div>
+    <div class="g-item g4"><img src="https://picsum.photos/seed/studio-4/900/500" alt="Finished frame on a wall"><span class="g-cap">14:20 — FINAL FRAME</span></div>
+    <div class="g-item g5"><img src="https://picsum.photos/seed/studio-5/400/500" alt="Close-up of wood texture"><span class="g-cap">15:48 — GRAIN</span></div>
+    <div class="g-item g6"><img src="https://picsum.photos/seed/studio-6/600/750" alt="Package ready to ship"><span class="g-cap">17:05 — READY TO SHIP</span></div>
+  </div>
+</section>
+
+<!-- ============ GALLERY WALL BUILDER ============ -->
+<section class="section wall-wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Arrangement Guide</span>
+    <h2>Build A Wall Worth Looking At.</h2>
+    <p>Preview how frames of different sizes and finishes sit together, before a single one goes up.</p>
+  </div>
+  <div class="wall-controls reveal">
+    <button class="wall-btn active" data-wall="minimal">Minimal</button>
+    <button class="wall-btn" data-wall="warm">Warm</button>
+    <button class="wall-btn" data-wall="eclectic">Eclectic</button>
+    <button class="wall-btn" data-wall="gallery">Gallery</button>
+  </div>
+  <div class="wall-stage reveal">
+    <div class="wall-layout active" data-layout="minimal">
+      <div class="wframe" style="width:26%;height:220px;background:#F3EEE6;padding:10px;"><img src="https://picsum.photos/seed/wall-min-1/400/500"></div>
+      <div class="wframe" style="width:20%;height:170px;background:#1c1c1c;padding:8px;margin-top:2rem;"><img src="https://picsum.photos/seed/wall-min-2/400/500"></div>
+      <div class="wframe" style="width:26%;height:220px;background:#F3EEE6;padding:10px;"><img src="https://picsum.photos/seed/wall-min-3/400/500"></div>
+    </div>
+    <div class="wall-layout" data-layout="warm">
+      <div class="wframe" style="width:22%;height:190px;background:#C89968;padding:10px;"><img src="https://picsum.photos/seed/wall-warm-1/400/500"></div>
+      <div class="wframe" style="width:28%;height:240px;background:#5A3826;padding:12px;margin-top:1.5rem;"><img src="https://picsum.photos/seed/wall-warm-2/400/500"></div>
+      <div class="wframe" style="width:18%;height:160px;background:#AD8C55;padding:8px;"><img src="https://picsum.photos/seed/wall-warm-3/400/500"></div>
+      <div class="wframe" style="width:20%;height:190px;background:#C89968;padding:10px;margin-top:2.2rem;"><img src="https://picsum.photos/seed/wall-warm-4/400/500"></div>
+    </div>
+    <div class="wall-layout" data-layout="eclectic">
+      <div class="wframe" style="width:16%;height:150px;background:#1c1c1c;padding:8px;transform:rotate(-3deg);"><img src="https://picsum.photos/seed/wall-ec-1/400/400"></div>
+      <div class="wframe" style="width:24%;height:260px;background:#5A3826;padding:12px;margin-top:2.4rem;transform:rotate(2deg);"><img src="https://picsum.photos/seed/wall-ec-2/400/500"></div>
+      <div class="wframe" style="width:14%;height:130px;background:#AD8C55;padding:6px;transform:rotate(-4deg);"><img src="https://picsum.photos/seed/wall-ec-3/400/400"></div>
+      <div class="wframe" style="width:20%;height:180px;background:#F3EEE6;padding:10px;transform:rotate(3deg);"><img src="https://picsum.photos/seed/wall-ec-4/400/500"></div>
+      <div class="wframe" style="width:16%;height:200px;background:#C89968;padding:8px;margin-top:1.5rem;transform:rotate(-2deg);"><img src="https://picsum.photos/seed/wall-ec-5/400/500"></div>
+    </div>
+    <div class="wall-layout" data-layout="gallery" style="flex-wrap:wrap;padding:2rem 3rem;">
+      <div class="wframe" style="width:13%;height:150px;background:#1c1c1c;padding:6px;"><img src="https://picsum.photos/seed/wall-g-1/400/500"></div>
+      <div class="wframe" style="width:13%;height:150px;background:#F3EEE6;padding:6px;"><img src="https://picsum.photos/seed/wall-g-2/400/500"></div>
+      <div class="wframe" style="width:13%;height:150px;background:#5A3826;padding:6px;"><img src="https://picsum.photos/seed/wall-g-3/400/500"></div>
+      <div class="wframe" style="width:13%;height:150px;background:#AD8C55;padding:6px;"><img src="https://picsum.photos/seed/wall-g-4/400/500"></div>
+      <div class="wframe" style="width:13%;height:150px;background:#C89968;padding:6px;"><img src="https://picsum.photos/seed/wall-g-5/400/500"></div>
+      <div class="wframe" style="width:13%;height:150px;background:#1c1c1c;padding:6px;"><img src="https://picsum.photos/seed/wall-g-6/400/500"></div>
+      <div class="wframe" style="width:13%;height:150px;background:#F3EEE6;padding:6px;"><img src="https://picsum.photos/seed/wall-g-7/400/500"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FRAME SHOP SHOWCASE ============ -->
+<section class="section shop-wrap">
+  <div class="shop-inner">
+    <div class="shop-copy reveal">
+      <span class="eyebrow">The Frame Shop</span>
+      <h2>“Your photograph is the story.<br>The frame is how you tell it.”</h2>
+      <p>Every frame in the shop is built to carry one photograph well — the wood, the mat, the glass, all chosen so the picture stays the point.</p>
+      <div class="hero-ctas"><a href="#frames" class="btn btn-primary">Explore The Frame Shop →</a></div>
+    </div>
+    <div class="shop-stack reveal">
+      <div class="stack-frame sf1"><img src="https://picsum.photos/seed/shopstack-1/500/650" alt="Oak framed photograph"></div>
+      <div class="stack-frame sf2"><img src="https://picsum.photos/seed/shopstack-2/500/650" alt="Black framed photograph"></div>
+      <div class="stack-frame sf3"><img src="https://picsum.photos/seed/shopstack-3/500/650" alt="Brass framed photograph"></div>
+      <div class="stack-frame sf4"><img src="https://picsum.photos/seed/shopstack-4/500/650" alt="Walnut framed photograph"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ART PRINTS ============ -->
+<section class="section" id="art">
+  <div class="section-head reveal">
+    <span class="eyebrow">Framed Art</span>
+    <h2>The Print Collection</h2>
+    <p>Curated prints, already matted and framed, ready to hang the day they arrive.</p>
+  </div>
+  <div class="filter-row reveal">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="photography">Photography</button>
+    <button class="filter-chip" data-filter="abstract">Abstract</button>
+    <button class="filter-chip" data-filter="architecture">Architecture</button>
+    <button class="filter-chip" data-filter="nature">Nature</button>
+    <button class="filter-chip" data-filter="bw">Black & White</button>
+  </div>
+  <div class="art-grid reveal">
+    <div class="art-card show" data-cat="photography"><div class="art-thumb"><img src="https://picsum.photos/seed/art-1/500/650" alt="Travel photography print"></div><div class="art-info"><div><h5>Coastal Light</h5><span>Photography · Oak frame</span></div><span class="price">₹3,290</span></div></div>
+    <div class="art-card show" data-cat="abstract"><div class="art-thumb"><img src="https://picsum.photos/seed/art-2/500/650" alt="Abstract art print"></div><div class="art-info"><div><h5>Terracotta Field</h5><span>Abstract · White frame</span></div><span class="price">₹2,990</span></div></div>
+    <div class="art-card show" data-cat="architecture"><div class="art-thumb"><img src="https://picsum.photos/seed/art-3/500/650" alt="Architecture print"></div><div class="art-info"><div><h5>Concrete Lines</h5><span>Architecture · Black frame</span></div><span class="price">₹3,090</span></div></div>
+    <div class="art-card show" data-cat="nature"><div class="art-thumb"><img src="https://picsum.photos/seed/art-4/500/650" alt="Nature print"></div><div class="art-info"><div><h5>Quiet Forest</h5><span>Nature · Walnut frame</span></div><span class="price">₹2,790</span></div></div>
+    <div class="art-card show" data-cat="bw"><div class="art-thumb"><img src="https://picsum.photos/seed/art-5/500/650" alt="Black and white print"></div><div class="art-info"><div><h5>Old Harbour</h5><span>Black & White · Brass frame</span></div><span class="price">₹3,490</span></div></div>
+    <div class="art-card show" data-cat="photography"><div class="art-thumb"><img src="https://picsum.photos/seed/art-6/500/650" alt="Minimal photography print"></div><div class="art-info"><div><h5>Morning Window</h5><span>Photography · White frame</span></div><span class="price">₹2,890</span></div></div>
+    <div class="art-card show" data-cat="abstract"><div class="art-thumb"><img src="https://picsum.photos/seed/art-7/500/650" alt="Abstract minimal print"></div><div class="art-info"><div><h5>Ash & Clay</h5><span>Abstract · Oak frame</span></div><span class="price">₹2,690</span></div></div>
+    <div class="art-card show" data-cat="nature"><div class="art-thumb"><img src="https://picsum.photos/seed/art-8/500/650" alt="Vintage nature print"></div><div class="art-info"><div><h5>Wild Meadow</h5><span>Vintage · Walnut frame</span></div><span class="price">₹2,590</span></div></div>
+  </div>
+</section>
+
+<!-- ============ PERSONALISED ============ -->
+<section class="section personal-wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Made For You</span>
+    <h2>Some Memories Deserve More Than A Camera Roll.</h2>
+  </div>
+  <div class="personal-grid reveal">
+    <div class="personal-card"><h5>Wedding Frames</h5><p>Your day, framed the way you'll want to remember it.</p></div>
+    <div class="personal-card"><h5>Family Portrait Frames</h5><p>One frame, every face that matters most.</p></div>
+    <div class="personal-card"><h5>Baby Memory Frames</h5><p>The tiny moments, kept somewhere permanent.</p></div>
+    <div class="personal-card"><h5>Travel Memory Frames</h5><p>The trip you still talk about, on the wall now.</p></div>
+    <div class="personal-card"><h5>Anniversary Frames</h5><p>Another year, another photograph worth keeping.</p></div>
+    <div class="personal-card"><h5>Pet Portrait Frames</h5><p>Because they're family too.</p></div>
+    <div class="personal-card"><h5>Graduation Frames</h5><p>The cap-toss photo, finally off your phone.</p></div>
+    <div class="personal-card"><h5>Quote Frames</h5><p>Words worth reading every morning.</p></div>
+  </div>
+  <div class="build-cta reveal"><a href="#build" class="btn btn-primary">Create A Personal Frame →</a></div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section class="section">
+  <div class="testi reveal">
+    <div class="mark">“</div>
+    <blockquote>The frame completely changed the photograph. It now feels like something we'll keep forever.</blockquote>
+    <cite>— Ananya R., Bengaluru</cite>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="section">
+  <div class="section-head reveal">
+    <span class="eyebrow">See The Difference</span>
+    <h2>Before The Frame. After The Frame.</h2>
+  </div>
+  <div class="ba-wrap reveal">
+    <div class="ba-frame" id="ba-frame">
+      <span class="ba-label before">Before</span>
+      <span class="ba-label after">After</span>
+      <img src="https://picsum.photos/seed/before-unframed/1200/750" alt="Unframed photograph" class="ba-before">
+      <img src="https://picsum.photos/seed/after-framed/1200/750" alt="Framed photograph on wall" class="ba-after" id="ba-after">
+      <div class="ba-handle" id="ba-handle"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGING ============ -->
+<section class="section">
+  <div class="pack-wrap">
+    <div class="pack-img reveal"><img src="https://picsum.photos/seed/packaging/900/700" alt="Frame packaging with care card"></div>
+    <div class="reveal">
+      <span class="eyebrow">Ships With Care</span>
+      <h2 style="font-family:var(--ff-display);font-weight:500;font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;">Packed Like It Matters.</h2>
+      <p style="color:var(--ink-soft);margin-top:1rem;max-width:420px;">Every frame is wrapped and protected before it leaves the studio, so it arrives exactly the way it left our hands.</p>
+      <ul class="pack-list">
+        <li>Corner-protected frame, cushioned on all sides</li>
+        <li>Acid-free protective paper around the print</li>
+        <li>A handwritten brand card and care instructions</li>
+        <li>A short thank-you note, every single time</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNAL ============ -->
+<section class="section">
+  <div class="section-head reveal">
+    <span class="eyebrow">The Journal</span>
+    <h2>Notes On Framing Well</h2>
+  </div>
+  <div class="journal-grid reveal">
+    <div class="journal-card"><div class="jimg"><img src="https://picsum.photos/seed/journal-1/600/480" alt="Gallery wall article"></div><span class="jtag">Interiors</span><h4>How To Build A Gallery Wall</h4></div>
+    <div class="journal-card"><div class="jimg"><img src="https://picsum.photos/seed/journal-2/600/480" alt="Choosing a frame article"></div><span class="jtag">Guide</span><h4>Choosing The Right Frame For Your Home</h4></div>
+    <div class="journal-card"><div class="jimg"><img src="https://picsum.photos/seed/journal-3/600/480" alt="Oak vs walnut article"></div><span class="jtag">Materials</span><h4>Oak vs Walnut</h4></div>
+    <div class="journal-card"><div class="jimg"><img src="https://picsum.photos/seed/journal-4/600/480" alt="Travel memories article"></div><span class="jtag">Travel</span><h4>How To Frame Your Travel Memories</h4></div>
+    <div class="journal-card"><div class="jimg"><img src="https://picsum.photos/seed/journal-5/600/480" alt="Family photos article"></div><span class="jtag">Family</span><h4>5 Ways To Style Family Photos</h4></div>
+    <div class="journal-card"><div class="jimg"><img src="https://picsum.photos/seed/journal-6/600/480" alt="Studio story article"></div><span class="jtag">Studio</span><h4>Inside Our First Year</h4></div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section final-cta" id="story">
+  <h2>Your Walls Are Waiting.</h2>
+  <p>Turn your favourite photographs, memories and artwork into pieces you'll want to live with.</p>
+  <div class="hero-ctas">
+    <a href="#frames" class="btn btn-primary">Shop Frames →</a>
+    <a href="#build" class="btn btn-outline">Create Something Custom →</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#" class="logo">FRAME<span>house</span></a>
+      <p>A small studio that frames photographs and artwork by hand, so they last a lot longer than a camera roll.</p>
+      <div class="foot-social"><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Facebook</a></div>
+    </div>
+    <div>
+      <h5>Shop</h5>
+      <ul><li><a href="#frames">All Frames</a></li><li><a href="#frames">Photo Frames</a></li><li><a href="#art">Art Prints</a></li><li><a href="#gallery">Gallery Walls</a></li><li><a href="#build">Custom Frames</a></li><li><a href="#">Gift Cards</a></li></ul>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul><li><a href="#story">Our Story</a></li><li><a href="#">Journal</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#build">Frame Guide</a></li><li><a href="#">Shipping</a></li><li><a href="#">FAQs</a></li></ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li>+91 98765 43210</li>
+        <li><a href="mailto:demo@gmail.com">demo@gmail.com</a></li>
+        <li>123, Demo Address<br>516360</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 FRAMEHOUSE. All rights reserved.</span>
+    <span>Handframed, always.</span>
+  </div>
+</footer>
+
+<script>
+/* ---------- NAV ---------- */
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+window.addEventListener('resize', () => { if (window.innerWidth > 960) navLinks.classList.remove('open'); });
+
+const mainNav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  mainNav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* ---------- SCROLL REVEAL ---------- */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = `${(i % 6) * 0.06}s`;
+  revealObs.observe(el);
+});
+
+/* ---------- CART ---------- */
+let cartCount = 0;
+const cartCountEl = document.getElementById('cart-count');
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+}
+document.querySelectorAll('.add-cart').forEach(btn => {
+  btn.addEventListener('click', () => {
+    cartCount++;
+    cartCountEl.textContent = cartCount;
+    showToast(`${btn.dataset.name} added to your cart`);
+  });
+});
+document.getElementById('cart-btn').addEventListener('click', () => {
+  showToast(cartCount ? `${cartCount} item${cartCount>1?'s':''} in your cart` : 'Your cart is empty');
+});
+
+/* ---------- SIZE SELECTOR ---------- */
+document.querySelectorAll('.size-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.size-card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+  });
+});
+
+/* ---------- BUILD YOUR FRAME PREVIEW ---------- */
+const buildSteps = document.querySelectorAll('.build-step');
+const previewFrame = document.getElementById('preview-frame');
+const frameLooks = {
+  1: { bg:'#C89968', pad:'14px' },
+  2: { bg:'#1c1c1c', pad:'12px' },
+  3: { bg:'#5A3826', pad:'20px' },
+  4: { bg:'#AD8C55', pad:'10px' },
+  5: { bg:'#3B2A20', pad:'16px' }
+};
+buildSteps.forEach(step => {
+  step.addEventListener('click', () => {
+    buildSteps.forEach(s => s.classList.remove('active'));
+    step.classList.add('active');
+    const look = frameLooks[step.dataset.step];
+    if (look){ previewFrame.style.background = look.bg; previewFrame.style.padding = look.pad; }
+  });
+});
+
+/* ---------- GALLERY WALL STYLE SWITCHER ---------- */
+document.querySelectorAll('.wall-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.wall-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.wall-layout').forEach(l => l.classList.remove('active'));
+    document.querySelector(`.wall-layout[data-layout="${btn.dataset.wall}"]`).classList.add('active');
+  });
+});
+
+/* ---------- ART PRINT FILTER ---------- */
+document.querySelectorAll('.filter-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const f = chip.dataset.filter;
+    document.querySelectorAll('.art-card').forEach(card => {
+      card.classList.toggle('show', f === 'all' || card.dataset.cat === f);
+    });
+  });
+});
+
+/* ---------- BEFORE / AFTER SLIDER ---------- */
+const baFrame = document.getElementById('ba-frame');
+const baAfter = document.getElementById('ba-after');
+const baHandle = document.getElementById('ba-handle');
+let dragging = false;
+function setSlider(clientX){
+  const rect = baFrame.getBoundingClientRect();
+  let pct = ((clientX - rect.left) / rect.width) * 100;
+  pct = Math.max(0, Math.min(100, pct));
+  baAfter.style.clipPath = `inset(0 0 0 ${pct}%)`;
+  baHandle.style.left = `${pct}%`;
+}
+baHandle.addEventListener('mousedown', () => dragging = true);
+window.addEventListener('mouseup', () => dragging = false);
+window.addEventListener('mousemove', e => { if (dragging) setSlider(e.clientX); });
+baHandle.addEventListener('touchstart', () => dragging = true, { passive:true });
+window.addEventListener('touchend', () => dragging = false);
+window.addEventListener('touchmove', e => { if (dragging && e.touches[0]) setSlider(e.touches[0].clientX); }, { passive:true });
+baFrame.addEventListener('click', e => setSlider(e.clientX));
+
+/* ---------- LIGHTBOX ---------- */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+document.querySelectorAll('.g-item img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('open');
+  });
+});
+document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
+lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+</script>
+</body>
+</html>
