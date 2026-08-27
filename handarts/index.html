@@ -1,0 +1,2845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="seo-title">Loading…</title>
+<meta id="seo-description" name="description" content="">
+<meta id="seo-keywords" name="keywords" content="">
+<meta id="og-title" property="og:title" content="">
+<meta id="og-description" property="og:description" content="">
+<meta id="og-image" property="og:image" content="">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<style>
+/* ===================================================================
+   ROOT / THEME
+=================================================================== */
+:root{
+  --ivory:#FAF6EF;
+  --paper:#F3ECE0;
+  --charcoal:#2B2521;
+  --umber:#211B18;
+  --clay:#B5613F;
+  --clay-deep:#94472C;
+  --gold:#AD8A4D;
+  --gold-soft:#D9C48F;
+  --sage:#7C8564;
+  --line:rgba(43,37,33,0.14);
+  --line-strong:rgba(43,37,33,0.28);
+
+  --font-display:'Playfair Display', serif;
+  --font-accent:'Cormorant Garamond', serif;
+  --font-body:'Manrope', sans-serif;
+
+  --container: 1240px;
+  --pad: clamp(20px, 5vw, 64px);
+  --radius: 2px;
+  --dur-fast: .25s;
+  --dur: .6s;
+  --dur-slow: 1.1s;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+}
+body{
+  margin:0;
+  background:var(--ivory);
+  color:var(--charcoal);
+  font-family:var(--font-body);
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit;}
+ul{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4,p{margin:0;}
+::selection{background:var(--gold-soft); color:var(--umber);}
+
+.wrap{
+  max-width:var(--container);
+  margin:0 auto;
+  padding-left:var(--pad);
+  padding-right:var(--pad);
+}
+.eyebrow{
+  font-family:var(--font-accent);
+  font-style:italic;
+  font-size:clamp(16px,2vw,20px);
+  color:var(--clay-deep);
+  letter-spacing:.04em;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+.eyebrow::before{
+  content:'';
+  width:34px;height:1px;
+  background:var(--gold);
+  display:inline-block;
+}
+.section{ padding:clamp(64px,10vw,140px) 0; position:relative; }
+.section-head{ max-width:760px; margin-bottom:56px; }
+.section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+.section-head.center .eyebrow{ justify-content:center; }
+.section-head.center .eyebrow::before{ display:none; }
+.h2{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(32px,4.4vw,54px);
+  line-height:1.08;
+  letter-spacing:-.01em;
+}
+.sub{
+  margin-top:18px;
+  font-size:clamp(15px,1.5vw,18px);
+  color:rgba(43,37,33,.72);
+  max-width:56ch;
+  font-weight:400;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:16px 30px;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border:1px solid var(--charcoal);
+  border-radius:var(--radius);
+  transition:background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+  white-space:nowrap;
+}
+.btn-dark{ background:var(--charcoal); color:var(--ivory); }
+.btn-dark:hover{ background:var(--umber); transform:translateY(-2px); }
+.btn-outline{ background:transparent; color:var(--charcoal); }
+.btn-outline:hover{ background:var(--charcoal); color:var(--ivory); transform:translateY(-2px); }
+.btn-gold{ background:var(--gold); color:var(--umber); border-color:var(--gold); }
+.btn-gold:hover{ background:var(--clay-deep); border-color:var(--clay-deep); color:var(--ivory); transform:translateY(-2px); }
+.btn-ghost-light{ border-color:rgba(250,246,239,.5); color:var(--ivory); }
+.btn-ghost-light:hover{ background:var(--ivory); color:var(--umber); }
+.btn-sm{ padding:11px 20px; font-size:12px; }
+.btn i{font-size:13px;}
+
+/* ===================================================================
+   AMBIENT BACKGROUND SVGS (decorative, subtle motion)
+=================================================================== */
+.bg-svg-layer{
+  position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0;
+}
+.bg-svg-layer svg{ position:absolute; }
+.bg-svg-layer .drift-slow{ animation:driftSlow 34s ease-in-out infinite; }
+.bg-svg-layer .drift-med{ animation:driftMed 22s ease-in-out infinite; }
+.bg-svg-layer .drift-rotate{ animation:driftRotate 60s linear infinite; transform-origin:center; }
+.bg-svg-layer .bob{ animation:bob 9s ease-in-out infinite; }
+
+@keyframes driftSlow{
+  0%,100%{ transform:translate(0,0) rotate(0deg); }
+  50%{ transform:translate(22px,-26px) rotate(4deg); }
+}
+@keyframes driftMed{
+  0%,100%{ transform:translate(0,0) rotate(0deg); }
+  50%{ transform:translate(-18px,20px) rotate(-3deg); }
+}
+@keyframes driftRotate{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
+@keyframes bob{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-14px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .bg-svg-layer *{ animation:none !important; }
+}
+/* ensure content sits above the decorative layer */
+.hero .wrap, .statement .wrap, .studio .wrap, .quality-section .wrap, .enquiry-cta .wrap{ position:relative; z-index:1; }
+
+/* thread signature divider */
+.thread-divider{ width:100%; overflow:hidden; line-height:0; position:relative; z-index:2; }
+.thread-divider svg{ width:100%; height:auto; display:block; }
+.thread-path{
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:1.6;
+  stroke-dasharray:8 7;
+  stroke-linecap:round;
+  opacity:.85;
+}
+.thread-path.animate{
+  stroke-dashoffset:1000;
+  stroke-dasharray:1000;
+  animation:stitch 2.4s var(--ease) forwards;
+}
+@keyframes stitch{ to{ stroke-dashoffset:0; } }
+
+/* ===================================================================
+   ANNOUNCEMENT
+=================================================================== */
+.announcement{
+  background:var(--umber);
+  color:var(--gold-soft);
+  font-size:12.5px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-align:center;
+  padding:10px var(--pad);
+  font-weight:500;
+}
+.announcement span{ opacity:.55; margin:0 10px; }
+
+/* ===================================================================
+   HEADER
+=================================================================== */
+header.site-header{
+  position:sticky; top:0; z-index:200;
+  background:rgba(250,246,239,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  transition:box-shadow var(--dur-fast) ease;
+}
+header.site-header.scrolled{ box-shadow:0 8px 24px -16px rgba(33,27,24,.25); }
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding-top:18px; padding-bottom:18px;
+}
+.logo{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:.01em;
+  display:flex; align-items:baseline; gap:8px;
+}
+.logo .mark{ color:var(--clay); }
+nav.primary-nav{ display:flex; align-items:center; gap:38px; }
+nav.primary-nav a{
+  font-size:13.5px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  position:relative; padding:4px 0;
+}
+nav.primary-nav a::after{
+  content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--clay);
+  transition:width var(--dur-fast) var(--ease);
+}
+nav.primary-nav a:hover::after{ width:100%; }
+.header-actions{ display:flex; align-items:center; gap:20px; }
+.hamburger{ display:none; font-size:22px; }
+
+@media (max-width: 980px){
+  nav.primary-nav{ display:none; }
+  .header-actions .btn-sm.header-cta-desktop{ display:none; }
+  .hamburger{ display:block; }
+}
+
+.mobile-menu{
+  position:fixed; inset:0; z-index:300;
+  background:var(--ivory);
+  transform:translateX(100%);
+  transition:transform var(--dur) var(--ease);
+  display:flex; flex-direction:column;
+  padding:24px var(--pad);
+}
+.mobile-menu.open{ transform:translateX(0); }
+.mobile-menu-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:50px; }
+.mobile-menu nav{ display:flex; flex-direction:column; gap:0; }
+.mobile-menu nav a{
+  font-family:var(--font-display); font-size:28px; font-weight:600;
+  padding:16px 0; border-bottom:1px solid var(--line);
+}
+.mobile-menu-footer{ margin-top:auto; padding-top:30px; }
+
+/* ===================================================================
+   HERO
+=================================================================== */
+.hero{
+  padding:clamp(40px,7vw,80px) 0 0;
+  position:relative;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid; grid-template-columns:1.05fr .95fr;
+  gap:clamp(30px,5vw,70px);
+  align-items:center;
+}
+.hero-copy .eyebrow{ margin-bottom:24px; }
+.hero-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(42px,6.2vw,84px);
+  line-height:.98;
+  letter-spacing:-.01em;
+}
+.hero-title em{ font-style:italic; color:var(--clay); font-weight:500; }
+.hero-desc{
+  margin-top:28px; font-size:clamp(16px,1.6vw,19px);
+  color:rgba(43,37,33,.72); max-width:46ch;
+}
+.hero-cta-row{ display:flex; gap:16px; margin-top:40px; flex-wrap:wrap; }
+.hero-visual{ position:relative; }
+.hero-frame{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:var(--radius);
+}
+.hero-frame img{ width:100%; height:100%; object-fit:cover; }
+.hero-frame::after{
+  content:''; position:absolute; inset:14px;
+  border:1px solid rgba(250,246,239,.55);
+  pointer-events:none;
+}
+.hero-tag{
+  position:absolute; bottom:-24px; left:-24px;
+  background:var(--ivory);
+  border:1px solid var(--line);
+  padding:18px 22px;
+  max-width:230px;
+  box-shadow:0 20px 50px -20px rgba(33,27,24,.3);
+}
+.hero-tag .num{ font-family:var(--font-display); font-size:26px; font-weight:700; color:var(--clay); }
+.hero-tag .lbl{ font-size:12px; text-transform:uppercase; letter-spacing:.06em; margin-top:4px; color:rgba(43,37,33,.6); }
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero-visual{ order:-1; }
+  .hero-tag{ display:none; }
+}
+
+/* ===================================================================
+   BRAND STATEMENT
+=================================================================== */
+.statement{
+  background:var(--umber); color:var(--ivory);
+  text-align:center;
+  padding:clamp(70px,12vw,140px) 0;
+  position:relative; overflow:hidden;
+}
+.statement-text{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(30px,5.4vw,66px);
+  line-height:1.14;
+  letter-spacing:-.01em;
+  max-width:920px; margin:0 auto;
+}
+.statement-text em{ font-style:italic; color:var(--gold-soft); font-weight:500; }
+.statement-sub{
+  margin-top:28px; font-family:var(--font-accent); font-style:italic;
+  font-size:clamp(17px,2vw,22px); color:rgba(250,246,239,.65);
+}
+
+/* ===================================================================
+   ABOUT
+=================================================================== */
+.about-grid{
+  display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(30px,6vw,90px); align-items:center;
+}
+.about-img-wrap{ position:relative; }
+.about-img{ aspect-ratio:3/4; overflow:hidden; }
+.about-img img{ width:100%; height:100%; object-fit:cover; }
+.about-copy p{ margin-top:20px; color:rgba(43,37,33,.75); font-size:16px; max-width:52ch; }
+.about-copy .h2{ margin-bottom:4px; }
+@media (max-width:900px){ .about-grid{ grid-template-columns:1fr; } }
+
+/* ===================================================================
+   STATS
+=================================================================== */
+.stats-strip{
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  padding:clamp(40px,6vw,60px) 0;
+}
+.stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center; }
+.stat-num{ font-family:var(--font-display); font-size:clamp(30px,4vw,52px); font-weight:700; color:var(--clay); }
+.stat-lbl{ margin-top:6px; font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:rgba(43,37,33,.6); }
+@media (max-width:700px){ .stats-grid{ grid-template-columns:repeat(2,1fr); gap:32px 16px; } }
+
+/* ===================================================================
+   COLLECTIONS
+=================================================================== */
+.collections-grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+  background:var(--line);
+}
+.collection-card{
+  background:var(--ivory); position:relative; aspect-ratio:3/4; overflow:hidden;
+  display:flex; align-items:flex-end;
+}
+.collection-card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.1s var(--ease); }
+.collection-card:hover img{ transform:scale(1.06); }
+.collection-card::before{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(0deg, rgba(33,27,24,.82) 0%, rgba(33,27,24,.15) 55%, transparent 75%);
+}
+.collection-content{ position:relative; z-index:2; padding:22px; color:var(--ivory); width:100%; }
+.collection-content i{ color:var(--gold-soft); font-size:18px; margin-bottom:10px; display:block; }
+.collection-content h3{ font-family:var(--font-display); font-size:20px; font-weight:600; }
+.collection-content p{ font-size:12.5px; margin-top:6px; opacity:.8; max-width:24ch; }
+@media (max-width:980px){ .collections-grid{ grid-template-columns:repeat(2,1fr); } }
+
+/* ===================================================================
+   FEATURED CREATIONS
+=================================================================== */
+.featured-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px; }
+.featured-card{ cursor:pointer; }
+.featured-img{ aspect-ratio:4/5; overflow:hidden; position:relative; }
+.featured-img img{ width:100%; height:100%; object-fit:cover; transition:transform .9s var(--ease); }
+.featured-card:hover .featured-img img{ transform:scale(1.05); }
+.featured-tags{ position:absolute; top:14px; left:14px; display:flex; gap:6px; flex-wrap:wrap; max-width:85%; }
+.tag-pill{
+  background:rgba(250,246,239,.92); color:var(--umber);
+  font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; font-weight:700;
+  padding:5px 10px;
+}
+.featured-body{ padding-top:18px; }
+.featured-body .cat{ font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--clay-deep); font-weight:700; }
+.featured-body h3{ font-family:var(--font-display); font-size:22px; font-weight:600; margin-top:8px; }
+.featured-body p{ font-size:14.5px; color:rgba(43,37,33,.68); margin-top:8px; }
+.featured-link{
+  margin-top:14px; display:inline-flex; align-items:center; gap:8px;
+  font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+  border-bottom:1px solid var(--charcoal); padding-bottom:2px;
+}
+@media (max-width:980px){ .featured-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:640px){ .featured-grid{ grid-template-columns:1fr; } }
+
+/* ===================================================================
+   EXPLORE / PRODUCT GRID + FILTER
+=================================================================== */
+.filter-row{
+  display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; margin-bottom:44px;
+  scrollbar-width:none;
+}
+.filter-row::-webkit-scrollbar{ display:none; }
+.filter-btn{
+  padding:10px 20px; border:1px solid var(--line-strong); white-space:nowrap;
+  font-size:13px; font-weight:600; letter-spacing:.03em; text-transform:uppercase;
+  border-radius:20px; transition:all var(--dur-fast) var(--ease); flex-shrink:0;
+}
+.filter-btn.active,.filter-btn:hover{ background:var(--charcoal); border-color:var(--charcoal); color:var(--ivory); }
+
+.creations-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
+.creation-card{ cursor:pointer; }
+.creation-img{ aspect-ratio:1/1.15; overflow:hidden; background:var(--paper); position:relative; }
+.creation-img img{ width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease); }
+.creation-card:hover .creation-img img{ transform:scale(1.07); }
+.creation-badges{ position:absolute; bottom:12px; left:12px; display:flex; gap:6px; flex-wrap:wrap; }
+.creation-body{ padding-top:14px; }
+.creation-body h4{ font-family:var(--font-display); font-size:17px; font-weight:600; }
+.creation-body .view-link{ font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--clay-deep); font-weight:700; margin-top:6px; display:inline-block; }
+@media (max-width:980px){ .creations-grid{ grid-template-columns:repeat(2,1fr); } }
+
+.load-more-wrap{ text-align:center; margin-top:48px; }
+.hidden-card{ display:none !important; }
+
+/* ===================================================================
+   CUSTOMISATION STUDIO
+=================================================================== */
+.studio{ background:var(--paper); position:relative; overflow:hidden; }
+.studio-intro{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; margin-bottom:60px; }
+.studio-steps-copy p{ font-family:var(--font-accent); font-style:italic; font-size:19px; line-height:1.9; color:rgba(43,37,33,.8); }
+@media (max-width:900px){ .studio-intro{ grid-template-columns:1fr; gap:20px; } }
+
+.studio-panel{
+  background:var(--ivory); border:1px solid var(--line); padding:clamp(24px,4vw,48px);
+}
+.studio-step{ display:none; }
+.studio-step.active{ display:block; animation:fadeUp .5s var(--ease); }
+@keyframes fadeUp{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+.studio-step-title{ font-family:var(--font-display); font-size:24px; font-weight:600; margin-bottom:24px; }
+.option-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; }
+.option-pill{
+  border:1px solid var(--line-strong); padding:16px 14px; text-align:center; font-size:14px; font-weight:600;
+  transition:all var(--dur-fast) var(--ease);
+}
+.option-pill i{ display:block; font-size:18px; margin-bottom:8px; color:var(--gold); }
+.option-pill.selected,.option-pill:hover{ border-color:var(--clay); background:rgba(181,97,63,.06); }
+.option-pill.selected{ background:var(--charcoal); color:var(--ivory); }
+.option-pill.selected i{ color:var(--gold-soft); }
+
+.studio-inputs{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.studio-inputs.full{ grid-template-columns:1fr; }
+.field label{ font-size:12.5px; text-transform:uppercase; letter-spacing:.05em; font-weight:700; color:rgba(43,37,33,.6); display:block; margin-bottom:8px; }
+.field input, .field textarea{
+  width:100%; border:none; border-bottom:1px solid var(--line-strong); background:transparent;
+  padding:10px 2px; font-family:inherit; font-size:15px; color:var(--charcoal);
+}
+.field input:focus, .field textarea:focus{ outline:none; border-color:var(--clay); }
+.field textarea{ resize:vertical; min-height:80px; }
+
+.studio-nav{ display:flex; justify-content:space-between; align-items:center; margin-top:36px; }
+.studio-dots{ display:flex; gap:8px; }
+.studio-dots span{ width:8px; height:8px; border-radius:50%; background:var(--line-strong); }
+.studio-dots span.active{ background:var(--clay); }
+
+.studio-summary{ background:var(--umber); color:var(--ivory); padding:24px; margin-top:24px; font-size:14px; line-height:1.9; display:none; }
+.studio-summary.show{ display:block; }
+.studio-summary strong{ color:var(--gold-soft); }
+
+/* ===================================================================
+   ART STYLES
+=================================================================== */
+.styles-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
+.style-card{ text-align:center; }
+.style-img{ aspect-ratio:1/1; overflow:hidden; border-radius:50%; margin:0 auto 18px; width:100%; max-width:150px; }
+.style-img img{ width:100%; height:100%; object-fit:cover; }
+.style-card h4{ font-family:var(--font-display); font-size:16px; font-weight:600; }
+.style-card p{ font-size:12.5px; color:rgba(43,37,33,.62); margin-top:6px; }
+@media (max-width:900px){ .styles-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (max-width:560px){ .styles-grid{ grid-template-columns:repeat(2,1fr); } }
+
+/* ===================================================================
+   WEARABLE ART / editorial full-bleed
+=================================================================== */
+.editorial{
+  display:grid; grid-template-columns:1fr 1fr; min-height:560px;
+}
+.editorial-img{ position:relative; overflow:hidden; }
+.editorial-img img{ width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+.editorial-copy{
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(30px,6vw,90px); background:var(--charcoal); color:var(--ivory);
+}
+.editorial-copy .eyebrow{ color:var(--gold-soft); }
+.editorial-copy .h2{ color:var(--ivory); }
+.editorial-copy ul{ margin-top:26px; display:flex; flex-direction:column; gap:12px; }
+.editorial-copy ul li{ font-size:15px; display:flex; align-items:center; gap:10px; color:rgba(250,246,239,.85); }
+.editorial-copy ul li i{ color:var(--gold); font-size:12px; }
+.editorial-copy .btn{ margin-top:34px; align-self:flex-start; }
+@media (max-width:900px){ .editorial{ grid-template-columns:1fr; } .editorial-img{ min-height:320px; } }
+
+/* ===================================================================
+   PROCESS - stitched thread timeline (signature element)
+=================================================================== */
+.process-wrap{ position:relative; }
+.process-line-svg{ position:absolute; left:31px; top:10px; bottom:10px; width:2px; }
+.process-line-svg .stitch-vert{
+  fill:none; stroke:var(--gold); stroke-width:2; stroke-dasharray:6 8; stroke-linecap:round;
+}
+.process-steps{ display:flex; flex-direction:column; gap:0; }
+.process-step{ display:flex; gap:28px; padding:26px 0; position:relative; }
+.process-num{
+  flex-shrink:0; width:64px; height:64px; border-radius:50%;
+  border:1.5px dashed var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--clay-deep);
+  background:var(--ivory); position:relative; z-index:2;
+}
+.process-content h4{ font-family:var(--font-display); font-size:20px; font-weight:600; margin-top:6px; }
+.process-content p{ font-size:14.5px; color:rgba(43,37,33,.68); margin-top:8px; max-width:52ch; }
+
+/* ===================================================================
+   MATERIALS
+=================================================================== */
+.materials-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--line); }
+.material-card{ background:var(--ivory); padding:32px 26px; }
+.material-card i{ font-size:24px; color:var(--gold); }
+.material-card h4{ font-family:var(--font-display); font-size:17px; font-weight:600; margin-top:16px; }
+.material-card p{ font-size:13.5px; color:rgba(43,37,33,.65); margin-top:10px; }
+@media (max-width:900px){ .materials-grid{ grid-template-columns:repeat(2,1fr); } }
+
+/* ===================================================================
+   OCCASIONS
+=================================================================== */
+.occasions-scroll{ display:flex; gap:20px; overflow-x:auto; padding-bottom:10px; }
+.occasion-card{ flex:0 0 260px; position:relative; aspect-ratio:3/4; overflow:hidden; }
+.occasion-card img{ width:100%; height:100%; object-fit:cover; }
+.occasion-card::after{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(33,27,24,.85), transparent 60%); }
+.occasion-content{ position:absolute; bottom:0; left:0; right:0; padding:20px; color:var(--ivory); z-index:2; }
+.occasion-content h4{ font-family:var(--font-display); font-size:19px; font-weight:600; }
+.occasion-content p{ font-size:12px; opacity:.8; margin-top:4px; }
+
+/* ===================================================================
+   WHY US
+=================================================================== */
+.why-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:34px; }
+.why-card i{ font-size:22px; color:var(--clay); }
+.why-card h4{ font-family:var(--font-display); font-size:18px; font-weight:600; margin-top:16px; }
+.why-card p{ font-size:13.5px; color:rgba(43,37,33,.65); margin-top:10px; }
+@media (max-width:900px){ .why-grid{ grid-template-columns:repeat(2,1fr); } }
+
+/* ===================================================================
+   QUALITY
+=================================================================== */
+.quality-section{ background:var(--umber); color:var(--ivory); position:relative; overflow:hidden; }
+.quality-section .eyebrow{ color:var(--gold-soft); }
+.quality-section .h2{ color:var(--ivory); }
+.quality-list{ display:grid; grid-template-columns:repeat(5,1fr); gap:20px; margin-top:44px; }
+.quality-item{ text-align:center; padding:20px 10px; border:1px solid rgba(250,246,239,.16); }
+.quality-item i{ color:var(--gold-soft); font-size:20px; }
+.quality-item p{ margin-top:12px; font-size:13.5px; }
+@media (max-width:900px){ .quality-list{ grid-template-columns:repeat(2,1fr); } }
+
+/* ===================================================================
+   GALLERY (masonry)
+=================================================================== */
+.gallery-masonry{
+  column-count:4; column-gap:14px;
+}
+.gallery-item{ break-inside:avoid; margin-bottom:14px; cursor:pointer; overflow:hidden; position:relative; }
+.gallery-item img{ width:100%; display:block; transition:transform .7s var(--ease); }
+.gallery-item:hover img{ transform:scale(1.06); }
+.gallery-item::after{ content:'\f065'; font-family:"Font Awesome 6 Free"; font-weight:900; position:absolute; top:12px; right:12px; color:#fff; background:rgba(33,27,24,.45); width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; opacity:0; transition:opacity var(--dur-fast); }
+.gallery-item:hover::after{ opacity:1; }
+@media (max-width:980px){ .gallery-masonry{ column-count:3; } }
+@media (max-width:640px){ .gallery-masonry{ column-count:2; } }
+
+/* ===================================================================
+   TESTIMONIALS
+=================================================================== */
+.testi-track-wrap{ overflow:hidden; }
+.testi-track{ display:flex; gap:26px; transition:transform .6s var(--ease); }
+.testi-card{
+  flex:0 0 calc(33.333% - 18px); background:var(--paper); padding:36px 30px; border:1px solid var(--line);
+}
+.testi-card i.fa-quote-left{ color:var(--gold); font-size:20px; opacity:.6; }
+.testi-quote{ font-family:var(--font-accent); font-style:italic; font-size:19px; line-height:1.6; margin-top:16px; color:var(--charcoal); }
+.testi-name{ margin-top:22px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+.testi-role{ font-size:12.5px; color:rgba(43,37,33,.55); margin-top:2px; }
+.testi-nav{ display:flex; gap:12px; justify-content:center; margin-top:36px; }
+.testi-nav button{ width:42px; height:42px; border:1px solid var(--line-strong); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:all var(--dur-fast); }
+.testi-nav button:hover{ background:var(--charcoal); color:var(--ivory); border-color:var(--charcoal); }
+@media (max-width:980px){ .testi-card{ flex:0 0 calc(50% - 13px); } }
+@media (max-width:640px){ .testi-card{ flex:0 0 100%; } }
+
+/* ===================================================================
+   FAQ
+=================================================================== */
+.faq-list{ max-width:820px; margin:0 auto; }
+.faq-item{ border-bottom:1px solid var(--line); }
+.faq-q{ display:flex; justify-content:space-between; align-items:center; padding:24px 4px; font-family:var(--font-display); font-size:18px; font-weight:600; }
+.faq-q i{ transition:transform var(--dur-fast) var(--ease); color:var(--clay); font-size:14px; }
+.faq-item.open .faq-q i{ transform:rotate(45deg); }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height var(--dur) var(--ease); }
+.faq-a-inner{ padding:0 4px 24px; font-size:14.5px; color:rgba(43,37,33,.68); max-width:70ch; }
+
+/* ===================================================================
+   ENQUIRY CTA
+=================================================================== */
+.enquiry-cta{
+  background:linear-gradient(135deg, var(--clay-deep), var(--umber));
+  color:var(--ivory); text-align:center; padding:clamp(70px,10vw,120px) 0;
+  position:relative; overflow:hidden;
+}
+.enquiry-cta .eyebrow{ color:var(--gold-soft); justify-content:center; }
+.enquiry-cta .eyebrow::before{ display:none; }
+.enquiry-title{ font-family:var(--font-display); font-weight:700; font-size:clamp(34px,6vw,64px); line-height:1.05; }
+.enquiry-title em{ font-style:italic; color:var(--gold-soft); }
+.enquiry-sub{ margin-top:22px; font-size:17px; color:rgba(250,246,239,.75); max-width:56ch; margin-left:auto; margin-right:auto; }
+.enquiry-btns{ margin-top:40px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+/* ===================================================================
+   CONTACT
+=================================================================== */
+.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; }
+.contact-info-item{ display:flex; gap:18px; padding:22px 0; border-bottom:1px solid var(--line); }
+.contact-info-item i{ font-size:18px; color:var(--clay); margin-top:3px; }
+.contact-info-item h4{ font-size:13px; text-transform:uppercase; letter-spacing:.05em; font-weight:700; color:rgba(43,37,33,.55); }
+.contact-info-item p{ margin-top:4px; font-size:16px; }
+.contact-map-frame{ aspect-ratio:4/3; background:var(--paper); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; color:rgba(43,37,33,.5); }
+.contact-map-frame i{ font-size:34px; color:var(--gold); }
+@media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; gap:40px; } }
+
+/* ===================================================================
+   FOOTER
+=================================================================== */
+footer.site-footer{ background:var(--umber); color:rgba(250,246,239,.75); padding:80px 0 0; }
+.footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px; padding-bottom:60px; }
+.footer-brand .logo{ color:var(--ivory); }
+.footer-brand .logo .mark{ color:var(--gold-soft); }
+.footer-brand p{ margin-top:18px; font-size:14px; max-width:36ch; line-height:1.8; }
+.footer-social{ display:flex; gap:12px; margin-top:24px; }
+.footer-social a{ width:38px; height:38px; border:1px solid rgba(250,246,239,.2); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:all var(--dur-fast); }
+.footer-social a:hover{ background:var(--gold-soft); color:var(--umber); border-color:var(--gold-soft); }
+.footer-col h5{ font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--gold-soft); margin-bottom:20px; }
+.footer-col ul li{ margin-bottom:12px; font-size:14.5px; }
+.footer-col ul li a:hover{ color:var(--ivory); }
+.footer-bottom{ border-top:1px solid rgba(250,246,239,.12); padding:26px 0; display:flex; justify-content:space-between; align-items:center; font-size:12.5px; flex-wrap:wrap; gap:10px; }
+@media (max-width:900px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .footer-grid{ grid-template-columns:1fr; } }
+
+/* ===================================================================
+   FLOATING WHATSAPP
+=================================================================== */
+.float-whatsapp{
+  position:fixed; bottom:26px; right:26px; z-index:250;
+  width:60px; height:60px; border-radius:50%;
+  background:#25D366; color:#fff;
+  display:flex; align-items:center; justify-content:center; font-size:26px;
+  box-shadow:0 10px 30px -8px rgba(37,211,102,.6);
+  animation:pulse-wa 2.6s ease-in-out infinite;
+}
+@keyframes pulse-wa{ 0%,100%{ box-shadow:0 10px 30px -8px rgba(37,211,102,.6);} 50%{ box-shadow:0 10px 30px -2px rgba(37,211,102,.9);} }
+.float-whatsapp:hover{ transform:scale(1.07); }
+
+/* ===================================================================
+   MODAL
+=================================================================== */
+.modal-overlay{
+  position:fixed; inset:0; z-index:400; background:rgba(33,27,24,.72);
+  display:flex; align-items:center; justify-content:center; padding:20px;
+  opacity:0; pointer-events:none; transition:opacity var(--dur-fast) ease;
+}
+.modal-overlay.open{ opacity:1; pointer-events:auto; }
+.modal-box{
+  background:var(--ivory); max-width:960px; width:100%; max-height:90vh; overflow-y:auto;
+  display:grid; grid-template-columns:1fr 1fr;
+  transform:translateY(30px) scale(.98); transition:transform var(--dur) var(--ease);
+  position:relative;
+}
+.modal-overlay.open .modal-box{ transform:translateY(0) scale(1); }
+.modal-close{
+  position:absolute; top:16px; right:16px; z-index:5; width:38px; height:38px; border-radius:50%;
+  background:rgba(250,246,239,.9); display:flex; align-items:center; justify-content:center; font-size:16px;
+}
+.modal-img{ aspect-ratio:4/5; overflow:hidden; }
+.modal-img img{ width:100%; height:100%; object-fit:cover; }
+.modal-body{ padding:clamp(24px,3vw,44px); }
+.modal-cat{ font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--clay-deep); font-weight:700; }
+.modal-title{ font-family:var(--font-display); font-size:clamp(24px,3vw,32px); font-weight:700; margin-top:10px; }
+.modal-desc{ margin-top:16px; font-size:15px; color:rgba(43,37,33,.7); line-height:1.75; }
+.modal-meta{ margin-top:26px; display:flex; flex-direction:column; gap:16px; }
+.modal-meta-row h5{ font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:rgba(43,37,33,.5); font-weight:700; }
+.modal-meta-row .chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+.modal-meta-row .chip{ font-size:12.5px; padding:6px 12px; background:var(--paper); border:1px solid var(--line); }
+.modal-meta-row p{ font-size:14.5px; margin-top:8px; color:rgba(43,37,33,.68); }
+.modal-cta{ margin-top:30px; display:flex; gap:12px; flex-wrap:wrap; }
+@media (max-width:720px){ .modal-box{ grid-template-columns:1fr; } .modal-img{ aspect-ratio:16/10; } }
+
+/* lightbox */
+.lightbox-overlay{
+  position:fixed; inset:0; z-index:420; background:rgba(20,16,14,.94);
+  display:flex; align-items:center; justify-content:center; padding:30px;
+  opacity:0; pointer-events:none; transition:opacity var(--dur-fast) ease;
+}
+.lightbox-overlay.open{ opacity:1; pointer-events:auto; }
+.lightbox-overlay img{ max-width:90vw; max-height:85vh; object-fit:contain; }
+.lightbox-close{ position:absolute; top:26px; right:30px; color:#fff; font-size:26px; }
+
+/* ===================================================================
+   IMAGE FALLBACK / PLACEHOLDER
+=================================================================== */
+img.img-broken{
+  object-fit:contain !important;
+  background:var(--paper);
+  padding:20%;
+  opacity:.55;
+}
+.img-placeholder{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:10px; background:var(--paper); color:rgba(43,37,33,.4);
+  border:1px dashed var(--line-strong);
+}
+.img-placeholder i{ font-size:26px; color:var(--gold); opacity:.7; }
+.img-placeholder span{ font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; font-weight:600; }
+.img-frame{ position:relative; width:100%; height:100%; }
+
+/* ===================================================================
+   BEFORE / AFTER
+=================================================================== */
+.ba-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:34px; }
+.ba-card{ text-align:center; }
+.ba-slider{
+  position:relative; aspect-ratio:4/5; overflow:hidden; cursor:ew-resize;
+  border:1px solid var(--line);
+}
+.ba-slider img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.ba-slider .ba-after-wrap{ position:absolute; inset:0; width:50%; overflow:hidden; border-right:2px solid var(--ivory); }
+.ba-slider .ba-after-wrap img{ width:200%; max-width:none; }
+.ba-slider:hover .ba-after-wrap img{ width:200%; }
+.ba-handle{
+  position:absolute; top:50%; left:50%; width:38px; height:38px; border-radius:50%;
+  background:var(--ivory); border:1px solid var(--line-strong);
+  display:flex; align-items:center; justify-content:center; color:var(--charcoal);
+  transform:translate(-50%,-50%); pointer-events:none; font-size:12px; z-index:3;
+  box-shadow:0 6px 16px -6px rgba(33,27,24,.4);
+}
+.ba-label-before,.ba-label-after{
+  position:absolute; top:12px; font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; font-weight:700;
+  padding:5px 10px; background:rgba(33,27,24,.65); color:var(--ivory); z-index:2;
+}
+.ba-label-before{ right:12px; }
+.ba-label-after{ left:12px; }
+.ba-card h4{ font-family:var(--font-display); font-size:17px; font-weight:600; margin-top:16px; }
+.ba-card p{ font-size:13px; color:rgba(43,37,33,.6); margin-top:4px; }
+@media (max-width:900px){ .ba-grid{ grid-template-columns:1fr; max-width:420px; margin:0 auto; } }
+
+/* ===================================================================
+   REELS / VIDEO SHOWCASE
+=================================================================== */
+.reels-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.reel-card{
+  position:relative; aspect-ratio:9/16; overflow:hidden; border-radius:var(--radius);
+}
+.reel-card img{ width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease); }
+.reel-card:hover img{ transform:scale(1.06); }
+.reel-card::before{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(33,27,24,.85), transparent 55%); }
+.reel-play{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:52px; height:52px; border-radius:50%; background:rgba(250,246,239,.92);
+  display:flex; align-items:center; justify-content:center; color:var(--umber); font-size:18px; z-index:2;
+  transition:transform var(--dur-fast) var(--ease);
+}
+.reel-card:hover .reel-play{ transform:translate(-50%,-50%) scale(1.1); }
+.reel-caption{ position:absolute; bottom:14px; left:14px; right:14px; color:var(--ivory); font-size:13px; font-weight:600; z-index:2; }
+@media (max-width:900px){ .reels-grid{ grid-template-columns:repeat(2,1fr); } }
+
+/* ===================================================================
+   PRICING / PACKAGES
+=================================================================== */
+.pricing-note{
+  max-width:640px; margin:0 auto 46px; text-align:center; font-size:13.5px;
+  color:rgba(43,37,33,.55); font-style:italic; font-family:var(--font-accent);
+}
+.pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:stretch; }
+.price-card{
+  border:1px solid var(--line); padding:38px 30px; display:flex; flex-direction:column;
+  background:var(--ivory); transition:transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.price-card.highlighted{ border-color:var(--gold); background:var(--charcoal); color:var(--ivory); transform:scale(1.02); }
+.price-card:hover{ transform:translateY(-4px); box-shadow:0 24px 50px -30px rgba(33,27,24,.35); }
+.price-card.highlighted:hover{ transform:scale(1.02) translateY(-4px); }
+.price-badge{
+  align-self:flex-start; font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; font-weight:700;
+  background:var(--gold); color:var(--umber); padding:5px 12px; margin-bottom:16px;
+}
+.price-name{ font-family:var(--font-display); font-size:22px; font-weight:600; }
+.price-range{ font-family:var(--font-display); font-size:clamp(24px,3vw,32px); font-weight:700; color:var(--clay); margin-top:10px; }
+.price-card.highlighted .price-range{ color:var(--gold-soft); }
+.price-desc{ font-size:14px; margin-top:14px; opacity:.75; }
+.price-features{ margin-top:24px; display:flex; flex-direction:column; gap:12px; flex-grow:1; }
+.price-features li{ font-size:14px; display:flex; gap:10px; align-items:flex-start; }
+.price-features li i{ color:var(--gold); font-size:12px; margin-top:4px; }
+.price-card .btn{ margin-top:28px; justify-content:center; }
+@media (max-width:900px){ .pricing-grid{ grid-template-columns:1fr; max-width:440px; margin:0 auto; } .price-card.highlighted{ transform:none; } }
+
+/* ===================================================================
+   TEAM / ARTISANS
+=================================================================== */
+.team-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+.team-card{ text-align:center; }
+.team-img{ aspect-ratio:1/1; border-radius:50%; overflow:hidden; max-width:170px; margin:0 auto 20px; position:relative; }
+.team-img img{ width:100%; height:100%; object-fit:cover; }
+.team-card h4{ font-family:var(--font-display); font-size:18px; font-weight:600; }
+.team-card .role{ font-size:12.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--clay-deep); font-weight:700; margin-top:6px; }
+.team-card .specialty{ font-size:13px; color:rgba(43,37,33,.6); margin-top:10px; }
+@media (max-width:900px){ .team-grid{ grid-template-columns:repeat(2,1fr); } }
+
+/* focus states for accessibility */
+a:focus-visible, button:focus-visible, .filter-btn:focus-visible, .option-pill:focus-visible{
+  outline:2px solid var(--clay); outline-offset:3px;
+}
+
+/* reveal utility (used with AOS fallback in case AOS fails to load) */
+.no-overflow{ overflow-x:hidden; }
+</style>
+</head>
+<body>
+
+<!-- ===================================================================
+     EMBEDDED JSON DATA — single source of truth
+=================================================================== -->
+<script id="website-data" type="application/json">
+{
+  "brand": {
+    "name": "Artisan & Thread",
+    "shortName": "A&T",
+    "logo": "",
+    "tagline": "Made By Hand. Made For You.",
+    "description": "A small studio creating handmade bags, hand-painted clothing, embroidery and personalised gifts — every piece designed around your story and finished entirely by hand.",
+    "phone": "987654321",
+    "whatsapp": "91987654321",
+    "email": "demo@gmail.com",
+    "location": "123 Demo Street, 123456",
+    "address": "123, Demo Street - 123456"
+  },
+
+  "seo": {
+    "title": "Artisan & Thread | Handmade Bags, Wearable Art & Custom Gifts",
+    "description": "Handmade bags, hand-painted clothing, embroidery and personalised gifts — designed around your story and crafted entirely by hand. Showcase & enquiry only.",
+    "keywords": ["handmade bags","custom bags","hand painted clothes","fabric art","embroidery","personalised gifts","custom t-shirts","wedding gifts","corporate gifts"],
+    "ogImage": "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1200&auto=format&fit=crop"
+  },
+
+  "navigation": [
+    { "label": "Home", "target": "#home" },
+    { "label": "Collections", "target": "#collections" },
+    { "label": "Customise", "target": "#customise" },
+    { "label": "Our Story", "target": "#story" },
+    { "label": "Process", "target": "#process" },
+    { "label": "Gallery", "target": "#gallery" },
+    { "label": "Contact", "target": "#contact" }
+  ],
+
+  "announcement": "Handmade With Care • Every Piece Has Its Own Story • Custom Orders Open",
+
+  "hero": {
+    "eyebrow": "The Artisan & Thread Studio",
+    "titleLine1": "Made By Hand.",
+    "titleLine2": "Made For <em>You.</em>",
+    "description": "Handcrafted bags, wearable art and personalised creations designed around your story — imagined, painted and stitched entirely by hand.",
+    "image": "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=1400&auto=format&fit=crop",
+    "primaryCta": "Explore Creations",
+    "primaryCtaTarget": "#creations",
+    "secondaryCta": "Create Yours",
+    "secondaryCtaTarget": "#customise",
+    "tagNumber": "9+",
+    "tagLabel": "Years Of Handmade Craft"
+  },
+
+  "stats": [
+    { "value": "100%", "label": "Handcrafted" },
+    { "value": "500+", "label": "Custom Creations" },
+    { "value": "50+", "label": "Art Styles" },
+    { "value": "1000+", "label": "Happy Customers" }
+  ],
+
+  "statement": {
+    "line1": "Not Mass Produced.",
+    "line2": "<em>Not Ordinary.</em>",
+    "sub": "Every piece is imagined, painted and finished entirely by hand."
+  },
+
+  "story": {
+    "eyebrow": "Our Story",
+    "title": "More Than Handmade",
+    "image": "https://images.unsplash.com/photo-1556760544-74068565f05c?q=80&w=1200&auto=format&fit=crop",
+    "paragraphs": [
+      "We believe ordinary objects can become meaningful pieces of art — a bag that carries more than belongings, a shirt that carries a memory.",
+      "Every creation begins with an idea shared by you, and ends with something entirely personal: painted, stitched and finished by hand in our small studio.",
+      "No two pieces are ever quite the same — and that is exactly the point."
+    ]
+  },
+
+  "collections": [
+    { "id": "bags", "title": "Handmade Bags", "description": "Unique bags crafted and customised by hand.", "image": "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=800&auto=format&fit=crop", "icon": "fa-solid fa-bag-shopping" },
+    { "id": "clothing", "title": "Art On Clothing", "description": "Hand-painted tees, shirts and jackets.", "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop", "icon": "fa-solid fa-shirt" },
+    { "id": "gifts", "title": "Custom Gifts", "description": "Personalised keepsakes for every occasion.", "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop", "icon": "fa-solid fa-gift" },
+    { "id": "fabric-art", "title": "Fabric Art", "description": "Original artwork painted onto fabric.", "image": "https://images.unsplash.com/photo-1579762593175-20226054cad0?q=80&w=800&auto=format&fit=crop", "icon": "fa-solid fa-palette" },
+    { "id": "embroidery", "title": "Embroidery", "description": "Hand-stitched thread art and patterns.", "image": "https://images.unsplash.com/photo-1610030181087-540f4b48fbb2?q=80&w=800&auto=format&fit=crop", "icon": "fa-solid fa-feather-pointed" },
+    { "id": "accessories", "title": "Personalised Accessories", "description": "Small handmade details, made just for you.", "image": "https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=800&auto=format&fit=crop", "icon": "fa-solid fa-gem" },
+    { "id": "decor", "title": "Home Décor", "description": "Handmade textile art for your space.", "image": "https://images.unsplash.com/photo-1616627451515-3e9c86e2d7d9?q=80&w=800&auto=format&fit=crop", "icon": "fa-solid fa-house-chimney" },
+    { "id": "special", "title": "Special Creations", "description": "One-of-a-kind pieces made to order.", "image": "https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=800&auto=format&fit=crop", "icon": "fa-solid fa-star" }
+  ],
+
+  "categories": ["All","Bags","Clothing","Fabric Art","Embroidery","Gifts","Accessories","Home Décor"],
+
+  "products": [
+    {
+      "id": "p1", "name": "Hand-Painted Canvas Tote", "category": "Bags", "featured": true,
+      "image": "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "Botanical artwork painted by hand on a natural canvas tote.",
+      "description": "A generously sized canvas tote hand-painted with an original botanical design. Each tote is painted individually, so subtle brushstroke variations make every bag one of a kind.",
+      "tags": ["Hand Painted","Custom Colours","Personalised"],
+      "materials": "Natural canvas, fabric paint, cotton lining",
+      "artStyle": "Botanical",
+      "customisations": "Colour palette, name or initial, strap length",
+      "idealFor": "Everyday use, gifting, market runs",
+      "care": "Hand wash cold, dry flat, avoid direct sun"
+    },
+    {
+      "id": "p2", "name": "Embroidered Sling Bag", "category": "Bags", "featured": true,
+      "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "Hand-embroidered floral thread work on a compact sling.",
+      "description": "A compact everyday sling finished with dense hand embroidery. The thread work is built up in layers over several days to create texture and depth.",
+      "tags": ["Hand Embroidered","Compact","Custom Thread Colours"],
+      "materials": "Cotton canvas, embroidery thread, brass hardware",
+      "artStyle": "Floral Embroidery",
+      "customisations": "Thread colour, initials, strap style",
+      "idealFor": "Daily wear, festive occasions",
+      "care": "Spot clean only, store flat"
+    },
+    {
+      "id": "p3", "name": "Custom Name Painted Tee", "category": "Clothing", "featured": true,
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "A hand-painted typography tee with your name or quote.",
+      "description": "Your name, initials or a favourite quote hand-lettered directly onto a soft cotton tee using fabric-safe paint that stays flexible after washing.",
+      "tags": ["Hand Painted","Typography","Name / Quote"],
+      "materials": "100% cotton, fabric paint",
+      "artStyle": "Typography",
+      "customisations": "Text, font style, colour, placement",
+      "idealFor": "Birthdays, couple sets, everyday wear",
+      "care": "Turn inside out, wash cold, do not tumble dry"
+    },
+    {
+      "id": "p4", "name": "Hand-Painted Denim Jacket", "category": "Clothing",
+      "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "An abstract hand-painted design across a classic denim jacket.",
+      "description": "A well-loved denim silhouette turned into a wearable canvas with an original abstract composition, painted panel by panel by hand.",
+      "tags": ["Hand Painted","Abstract","One Of A Kind"],
+      "materials": "Denim, fabric paint, fabric medium",
+      "artStyle": "Abstract",
+      "customisations": "Design theme, colour palette, back or sleeve art",
+      "idealFor": "Statement wear, gifting",
+      "care": "Dry clean recommended"
+    },
+    {
+      "id": "p5", "name": "Botanical Fabric Wall Art", "category": "Fabric Art",
+      "image": "https://images.unsplash.com/photo-1579762593175-20226054cad0?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "An original botanical composition painted on stretched fabric.",
+      "description": "A framed fabric artwork painted with layered botanical forms, stretched and finished for display. Designed to hold its own on any wall.",
+      "tags": ["Original Artwork","Framed","Custom Size"],
+      "materials": "Cotton canvas, fabric paint, wooden frame",
+      "artStyle": "Botanical",
+      "customisations": "Size, colour palette, framing",
+      "idealFor": "Home décor, housewarming gifts",
+      "care": "Dust gently, avoid direct sunlight"
+    },
+    {
+      "id": "p6", "name": "Name Embroidery Hoop Art", "category": "Embroidery",
+      "image": "https://images.unsplash.com/photo-1610030181087-540f4b48fbb2?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "A name or quote hand-embroidered inside a wooden hoop.",
+      "description": "Fine hand embroidery detailing a name, date or short quote inside a natural wooden hoop — a quiet, personal piece for any room.",
+      "tags": ["Hand Embroidered","Personalised","Ready To Hang"],
+      "materials": "Cotton fabric, embroidery thread, wooden hoop",
+      "artStyle": "Typography",
+      "customisations": "Text, thread colour, hoop size",
+      "idealFor": "Nursery décor, anniversary gifts",
+      "care": "Dust gently, keep dry"
+    },
+    {
+      "id": "p7", "name": "Couple Portrait Tote Set", "category": "Gifts",
+      "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "A hand-painted portrait set for two, made as a pair.",
+      "description": "A matching pair of totes, each hand-painted with a simplified portrait illustration — a favourite for engagements, anniversaries and couple gifting.",
+      "tags": ["Couple Set","Portrait","Hand Painted"],
+      "materials": "Canvas, fabric paint",
+      "artStyle": "Portrait",
+      "customisations": "Reference photo, colour style, names",
+      "idealFor": "Anniversaries, weddings, couple gifts",
+      "care": "Hand wash cold, dry flat"
+    },
+    {
+      "id": "p8", "name": "Traditional Motif Clutch", "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "A hand-painted clutch featuring traditional Indian motifs.",
+      "description": "A compact clutch finished with traditional motif work, painted freehand and detailed with fine linework — festive without being loud.",
+      "tags": ["Traditional Motif","Hand Painted","Festive"],
+      "materials": "Cotton silk blend, fabric paint, brass clasp",
+      "artStyle": "Traditional Indian",
+      "customisations": "Motif style, colour palette, clasp finish",
+      "idealFor": "Weddings, festivals",
+      "care": "Dry clean only"
+    },
+    {
+      "id": "p9", "name": "Geometric Cushion Cover", "category": "Home Décor",
+      "image": "https://images.unsplash.com/photo-1616627451515-3e9c86e2d7d9?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "A hand-painted geometric pattern on natural linen.",
+      "description": "A clean geometric composition hand-painted on linen, designed to sit quietly within a considered living space.",
+      "tags": ["Hand Painted","Geometric","Set Of Two Available"],
+      "materials": "Linen, fabric paint, cotton back panel",
+      "artStyle": "Geometric",
+      "customisations": "Colour palette, size, single or set",
+      "idealFor": "Living room styling, housewarming gifts",
+      "care": "Spot clean, cool iron if needed"
+    },
+    {
+      "id": "p10", "name": "Minimal Line-Art Shirt", "category": "Clothing",
+      "image": "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "A single continuous line illustration hand-painted on a shirt.",
+      "description": "A restrained, single-line illustration painted directly onto a relaxed cotton shirt — minimal, considered, entirely hand done.",
+      "tags": ["Minimal","Hand Painted","Line Art"],
+      "materials": "Cotton, fine-tip fabric paint",
+      "artStyle": "Minimal",
+      "customisations": "Illustration subject, placement, ink colour",
+      "idealFor": "Everyday wear, thoughtful gifting",
+      "care": "Wash cold, hang dry"
+    },
+    {
+      "id": "p11", "name": "Floral Embroidered Bag Charm", "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1611923134239-b9be5816e23c?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "A tiny hand-embroidered charm to personalise any bag.",
+      "description": "A small embroidered charm with fine floral detailing — an easy way to personalise a bag you already own, or complete a gift.",
+      "tags": ["Hand Embroidered","Small Gift","Add-On"],
+      "materials": "Cotton, embroidery thread, keyring hardware",
+      "artStyle": "Floral Embroidery",
+      "customisations": "Thread colour, initial, keyring or clip",
+      "idealFor": "Small gifts, bag personalisation",
+      "care": "Spot clean only"
+    },
+    {
+      "id": "p12", "name": "Abstract Wedding Guestbook Cloth", "category": "Fabric Art",
+      "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=900&auto=format&fit=crop",
+      "shortDescription": "A hand-painted fabric guestbook for signatures and messages.",
+      "description": "An alternative to a paper guestbook — a large fabric canvas with a soft abstract wash, ready for guests to sign directly with fabric pens.",
+      "tags": ["Wedding", "Custom Size", "Keepsake"],
+      "materials": "Cotton canvas, fabric paint, wooden dowel",
+      "artStyle": "Abstract",
+      "customisations": "Size, colour wash, names and date detail",
+      "idealFor": "Weddings, engagement parties",
+      "care": "Frame or roll for storage, avoid moisture"
+    }
+  ],
+
+  "customisation": {
+    "eyebrow": "Customisation Studio",
+    "title": "Create Something <em>That Is Yours.</em>",
+    "description": "Choose the base. Choose the artwork. Choose the colours. Add your name. Add a quote. Share your idea. We turn your concept into a handmade creation.",
+    "itemOptions": [
+      { "id": "bag", "label": "Bag", "icon": "fa-solid fa-bag-shopping" },
+      { "id": "tshirt", "label": "T-Shirt", "icon": "fa-solid fa-shirt" },
+      { "id": "shirt", "label": "Shirt", "icon": "fa-solid fa-vest" },
+      { "id": "jacket", "label": "Jacket", "icon": "fa-solid fa-user-tie" },
+      { "id": "fabric", "label": "Fabric Art", "icon": "fa-solid fa-swatchbook" },
+      { "id": "gift", "label": "Gift Set", "icon": "fa-solid fa-gift" },
+      { "id": "other", "label": "Other", "icon": "fa-solid fa-ellipsis" }
+    ],
+    "artworkOptions": [
+      { "id": "floral", "label": "Floral", "icon": "fa-solid fa-leaf" },
+      { "id": "abstract", "label": "Abstract", "icon": "fa-solid fa-shapes" },
+      { "id": "minimal", "label": "Minimal", "icon": "fa-solid fa-minus" },
+      { "id": "traditional", "label": "Traditional", "icon": "fa-solid fa-om" },
+      { "id": "typography", "label": "Typography", "icon": "fa-solid fa-font" },
+      { "id": "portrait", "label": "Portrait", "icon": "fa-solid fa-user" },
+      { "id": "custom", "label": "Custom Artwork", "icon": "fa-solid fa-wand-magic-sparkles" }
+    ],
+    "colourOptions": [
+      { "id": "earth", "label": "Earth Tones", "icon": "fa-solid fa-mountain-sun" },
+      { "id": "pastel", "label": "Pastels", "icon": "fa-solid fa-cloud" },
+      { "id": "bold", "label": "Bold & Bright", "icon": "fa-solid fa-fire" },
+      { "id": "monochrome", "label": "Monochrome", "icon": "fa-solid fa-circle-half-stroke" },
+      { "id": "gold-accent", "label": "Gold Accents", "icon": "fa-solid fa-star" },
+      { "id": "custom-colour", "label": "I'll Share A Reference", "icon": "fa-solid fa-image" }
+    ],
+    "addOns": [
+      { "id": "name", "label": "Add Name" },
+      { "id": "quote", "label": "Add Quote" },
+      { "id": "size", "label": "Choose Size" },
+      { "id": "embroidery-add", "label": "Add Embroidery" },
+      { "id": "packaging", "label": "Gift Packaging" }
+    ]
+  },
+
+  "artStyles": [
+    { "title": "Botanical", "description": "Leaves, blooms and organic forms.", "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Abstract", "description": "Free-flowing colour and shape.", "image": "https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Minimal", "description": "Clean lines, quiet composition.", "image": "https://images.unsplash.com/photo-1517697471339-4aa32300da2a?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Traditional Indian", "description": "Motifs rooted in heritage craft.", "image": "https://images.unsplash.com/photo-1610189844777-c9860e7b3d99?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Typography", "description": "Names, quotes and lettering.", "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Floral", "description": "Delicate hand-painted blossoms.", "image": "https://images.unsplash.com/photo-1487070183336-b863922373d4?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Geometric", "description": "Structured pattern and symmetry.", "image": "https://images.unsplash.com/photo-1550537687-c91072c4792d?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Portrait", "description": "Faces, pets and cherished moments.", "image": "https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Illustrative", "description": "Storybook-style linework.", "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Custom", "description": "Your idea, brought to life.", "image": "https://images.unsplash.com/photo-1502691876148-a84978e59af8?q=80&w=500&auto=format&fit=crop" }
+  ],
+
+  "wearableArt": {
+    "eyebrow": "Art On Cloth",
+    "title": "Wearable Art",
+    "description": "Turn everyday clothing into something personal.",
+    "points": ["Hand-painted T-shirts","Painted shirts","Custom jackets","Fabric artwork","Personalised clothing"],
+    "image": "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1200&auto=format&fit=crop",
+    "cta": "Explore Wearable Art",
+    "ctaTarget": "#creations"
+  },
+
+  "customArtwork": {
+    "eyebrow": "Custom Artwork",
+    "title": "Your Idea. <em>Our Art.</em>",
+    "description": "Have something specific in mind?",
+    "points": ["A favourite flower","A meaningful quote","A family illustration","A pet portrait","A special memory","A unique pattern"],
+    "closing": "Tell us your idea and we can discuss how to turn it into a handmade piece.",
+    "cta": "Discuss My Idea"
+  },
+
+  "process": [
+    { "num": "01", "title": "Share Your Idea", "description": "Tell us what you're imagining — a photo, a quote, or just a feeling you want captured." },
+    { "num": "02", "title": "Choose Your Base", "description": "Pick the bag, garment or fabric piece that will carry your design." },
+    { "num": "03", "title": "Design & Discuss", "description": "We sketch the concept with you and confirm colours, placement and details." },
+    { "num": "04", "title": "Handcrafted With Care", "description": "Your piece is painted or embroidered entirely by hand in our studio." },
+    { "num": "05", "title": "Quality Check", "description": "Every stitch, brushstroke and finish is checked before it leaves us." },
+    { "num": "06", "title": "Ready For You", "description": "Your one-of-a-kind creation is packaged with care and readied for delivery." }
+  ],
+
+  "materials": [
+    { "title": "Natural Canvas", "description": "Sturdy, breathable and ideal for hand-painted artwork.", "icon": "fa-solid fa-seedling" },
+    { "title": "Cotton", "description": "Soft, skin-friendly and long-lasting for wearables.", "icon": "fa-solid fa-shirt" },
+    { "title": "Quality Fabrics", "description": "Sourced for durability and a beautiful paint finish.", "icon": "fa-solid fa-scroll" },
+    { "title": "Premium Threads", "description": "Colourfast threads chosen for fine embroidery work.", "icon": "fa-solid fa-spool" },
+    { "title": "Fabric Paints", "description": "Flexible, wash-safe paints made for textile art.", "icon": "fa-solid fa-fill-drip" },
+    { "title": "Wooden Elements", "description": "Natural hoops, buttons and handles for a handmade finish.", "icon": "fa-solid fa-tree" },
+    { "title": "Eco-Friendly Packaging", "description": "Recyclable and reusable packaging for every order.", "icon": "fa-solid fa-box-open" },
+    { "title": "Hand Finishing", "description": "Every seam and edge finished by hand, not machine shortcuts.", "icon": "fa-solid fa-hand" }
+  ],
+
+  "occasions": [
+    { "title": "Birthdays", "description": "A gift as personal as the person.", "image": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Anniversaries", "description": "Mark a memory with something handmade.", "image": "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Weddings", "description": "Keepsakes for the whole celebration.", "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Bridesmaid Gifts", "description": "Matching, meaningful and made by hand.", "image": "https://images.unsplash.com/photo-1595231712325-2be5578e5926?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Baby Gifts", "description": "Soft, gentle pieces for little ones.", "image": "https://images.unsplash.com/photo-1522771930-78848d9293e8?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Festivals", "description": "Traditional motifs for festive days.", "image": "https://images.unsplash.com/photo-1604423043492-31e77b02b1cd?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Corporate Gifts", "description": "Thoughtful bulk gifting, personalised.", "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Housewarming", "description": "Handmade décor for a new home.", "image": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=500&auto=format&fit=crop" },
+    { "title": "Just Because", "description": "No occasion needed for something meaningful.", "image": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=500&auto=format&fit=crop" }
+  ],
+
+  "whyUs": [
+    { "title": "Made By Hand", "description": "No machines, no shortcuts — every piece passes through human hands.", "icon": "fa-solid fa-hand-sparkles" },
+    { "title": "Unique", "description": "No two creations are ever perfectly identical.", "icon": "fa-solid fa-fingerprint" },
+    { "title": "Personal", "description": "Built around your story, not a catalogue.", "icon": "fa-solid fa-heart" },
+    { "title": "Thoughtfully Designed", "description": "Every detail considered before a single stitch begins.", "icon": "fa-solid fa-compass-drafting" },
+    { "title": "Small-Batch", "description": "We create in small numbers, never mass volumes.", "icon": "fa-solid fa-boxes-stacked" },
+    { "title": "Meaningful", "description": "Made to be kept, not just used.", "icon": "fa-solid fa-gem" },
+    { "title": "Made To Order", "description": "Your piece begins only once you say yes.", "icon": "fa-solid fa-pen-ruler" },
+    { "title": "Authentic Craft", "description": "Traditional techniques passed down and practised daily.", "icon": "fa-solid fa-scroll" }
+  ],
+
+  "quality": {
+    "eyebrow": "Quality Promise",
+    "title": "Every Piece Is Checked <em>Before It Leaves Our Studio.</em>",
+    "checks": [
+      { "label": "Stitch Quality", "icon": "fa-solid fa-thread" },
+      { "label": "Paint Finish", "icon": "fa-solid fa-paintbrush" },
+      { "label": "Fabric Quality", "icon": "fa-solid fa-swatchbook" },
+      { "label": "Detailing", "icon": "fa-solid fa-magnifying-glass" },
+      { "label": "Packaging", "icon": "fa-solid fa-box" }
+    ]
+  },
+
+  "beforeAfter": {
+    "eyebrow": "Before & After",
+    "title": "From Simple <em>To Personal.</em>",
+    "description": "See how a plain base becomes a one-of-a-kind piece through hand painting and embroidery.",
+    "sets": [
+      {
+        "before": "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=700&auto=format&fit=crop&sat=-100",
+        "after": "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=700&auto=format&fit=crop",
+        "label": "Custom artwork",
+        "title": "Plain Canvas Tote"
+      },
+      {
+        "before": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=700&auto=format&fit=crop&sat=-100",
+        "after": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=700&auto=format&fit=crop",
+        "label": "Hand-painted lettering",
+        "title": "Plain Cotton Tee"
+      },
+      {
+        "before": "https://images.unsplash.com/photo-1610030181087-540f4b48fbb2?q=80&w=700&auto=format&fit=crop&sat=-100",
+        "after": "https://images.unsplash.com/photo-1610030181087-540f4b48fbb2?q=80&w=700&auto=format&fit=crop",
+        "label": "Hand embroidery",
+        "title": "Plain Hoop Fabric"
+      }
+    ]
+  },
+
+  "reels": {
+    "eyebrow": "In Motion",
+    "title": "Watch The Craft Unfold",
+    "description": "A closer look at how each piece comes together — from first brushstroke to final stitch.",
+    "items": [
+      { "thumbnail": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=500&auto=format&fit=crop", "caption": "Painting a botanical tote", "url": "https://instagram.com" },
+      { "thumbnail": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=500&auto=format&fit=crop", "caption": "Hand embroidery close-up", "url": "https://instagram.com" },
+      { "thumbnail": "https://images.unsplash.com/photo-1620391547406-1a0d3ceec141?q=80&w=500&auto=format&fit=crop", "caption": "Mixing custom colours", "url": "https://instagram.com" },
+      { "thumbnail": "https://images.unsplash.com/photo-1607083681678-ce9f9c94ba1d?q=80&w=500&auto=format&fit=crop", "caption": "Packaging a finished order", "url": "https://instagram.com" }
+    ],
+    "cta": "Follow On Instagram",
+    "ctaUrl": "https://instagram.com"
+  },
+
+  "pricing": {
+    "eyebrow": "Pricing & Packages",
+    "title": "A Sense Of Investment",
+    "description": "Every piece is made to order, so final pricing depends on size, detail and materials. These ranges are a starting guide — we'll confirm an exact quote after discussing your idea.",
+    "note": "Prices shown are indicative starting ranges, not fixed listings. Final pricing is confirmed after your custom enquiry.",
+    "packages": [
+      {
+        "name": "Signature Piece",
+        "priceRange": "₹1,200 – ₹2,500",
+        "description": "A single hand-painted or embroidered item — bag, tee or accessory.",
+        "features": ["One base item", "One art style", "Name or quote add-on", "5–7 day turnaround"],
+        "highlighted": false
+      },
+      {
+        "name": "Custom Studio",
+        "priceRange": "₹2,500 – ₹6,000",
+        "description": "A fully bespoke creation designed around your reference, photo or idea.",
+        "features": ["Design consultation call", "Reference-based artwork", "Two rounds of revisions", "Premium packaging"],
+        "highlighted": true
+      },
+      {
+        "name": "Event & Bulk Gifting",
+        "priceRange": "Custom Quote",
+        "description": "Matching sets for weddings, corporate gifting or celebrations.",
+        "features": ["Volume-based pricing", "Consistent design across sets", "Dedicated coordination", "Flexible delivery timelines"],
+        "highlighted": false
+      }
+    ]
+  },
+
+  "team": {
+    "eyebrow": "Meet The Makers",
+    "title": "The Hands Behind Every Piece",
+    "description": "A small studio of artists and stitchers, each bringing a different craft to every order.",
+    "members": [
+      { "name": "Kavya Nair", "role": "Founder & Lead Artist", "specialty": "Hand painting, botanical & portrait work", "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=500&auto=format&fit=crop" },
+      { "name": "Rohan Mehta", "role": "Embroidery Lead", "specialty": "Hand embroidery, thread art", "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop" },
+      { "name": "Simran Kaur", "role": "Textile Designer", "specialty": "Fabric selection, pattern design", "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=500&auto=format&fit=crop" },
+      { "name": "Arjun Das", "role": "Studio Coordinator", "specialty": "Custom orders, client consultations", "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop" }
+    ]
+  },
+
+  "gallery": [
+    { "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=700&auto=format&fit=crop", "caption": "Finished tote, hand-painted botanical" },
+    { "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=700&auto=format&fit=crop", "caption": "Artist at work in the studio" },
+    { "image": "https://images.unsplash.com/photo-1620391547406-1a0d3ceec141?q=80&w=700&auto=format&fit=crop", "caption": "Painting on fabric" },
+    { "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=700&auto=format&fit=crop", "caption": "Hand stitching detail" },
+    { "image": "https://images.unsplash.com/photo-1610030181087-540f4b48fbb2?q=80&w=700&auto=format&fit=crop", "caption": "Embroidery in progress" },
+    { "image": "https://images.unsplash.com/photo-1621786830011-3b7bab5f7d24?q=80&w=700&auto=format&fit=crop", "caption": "Raw materials laid out" },
+    { "image": "https://images.unsplash.com/photo-1567696911980-2c69eaea997e?q=80&w=700&auto=format&fit=crop", "caption": "Our studio corner" },
+    { "image": "https://images.unsplash.com/photo-1607083681678-ce9f9c94ba1d?q=80&w=700&auto=format&fit=crop", "caption": "Ready for gifting" },
+    { "image": "https://images.unsplash.com/photo-1616627451515-3e9c86e2d7d9?q=80&w=700&auto=format&fit=crop", "caption": "A customer's completed cushion" },
+    { "image": "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=700&auto=format&fit=crop", "caption": "Line-art shirt, freshly painted" },
+    { "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=700&auto=format&fit=crop", "caption": "Threads and tools of the trade" },
+    { "image": "https://images.unsplash.com/photo-1595231712325-2be5578e5926?q=80&w=700&auto=format&fit=crop", "caption": "A bridesmaid gift set" }
+  ],
+
+  "testimonials": [
+    { "quote": "I gave them a simple idea and they turned it into something much more beautiful than I imagined.", "name": "Ananya R.", "role": "Custom Tote Bag" },
+    { "quote": "The embroidery work is unbelievably fine. You can tell every stitch was done with care.", "name": "Devansh K.", "role": "Embroidered Sling Bag" },
+    { "quote": "We ordered matching painted tees as wedding favours — every guest loved them.", "name": "Meera & Arjun", "role": "Wedding Gifting" },
+    { "quote": "They understood exactly what I wanted from a single reference photo. Genuinely impressed.", "name": "Priya S.", "role": "Portrait Tote" },
+    { "quote": "Corporate gifting is usually so impersonal — this felt thoughtful and premium instead.", "name": "Karan V.", "role": "Corporate Gifts, 40 units" },
+    { "quote": "The jacket became my most complimented piece of clothing this year.", "name": "Riya T.", "role": "Hand-Painted Denim Jacket" }
+  ],
+
+  "faq": [
+    { "q": "How does customisation work?", "a": "Share your idea through our Customisation Studio or WhatsApp — the base item, artwork style and any colours or text you'd like. We'll confirm the design with you before we begin." },
+    { "q": "Can I provide my own design?", "a": "Yes. You're welcome to share a reference photo, sketch or existing design, and we'll discuss how best to translate it by hand onto your chosen item." },
+    { "q": "Can I choose colours?", "a": "Absolutely. Every piece can be adjusted to a colour palette of your choice, including matching a reference image you send us." },
+    { "q": "Can you add names or quotes?", "a": "Yes, hand-lettered names, initials and short quotes are one of our most requested customisations, available across bags, clothing and gifts." },
+    { "q": "How long does a custom creation take?", "a": "Most custom pieces take between 5–10 working days depending on complexity, with additional time during festive or wedding seasons. We'll always confirm a timeline with you upfront." },
+    { "q": "Can I order custom gifts for events?", "a": "Yes, we take on weddings, birthdays, baby showers and other event gifting — including matching sets for multiple guests." },
+    { "q": "Do you accept bulk/corporate enquiries?", "a": "Yes, we work with businesses on personalised corporate gifting. Share your approximate quantity and timeline with us and we'll guide you through the options." },
+    { "q": "How should I care for hand-painted clothing?", "a": "Turn the garment inside out before washing, use cold water, avoid the tumble dryer, and skip direct ironing over painted areas to preserve the artwork." }
+  ],
+
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Let's Talk About Your Idea",
+    "description": "Whether it's a single custom piece or a gifting order for an entire event, we'd love to hear what you have in mind."
+  },
+
+  "enquiry": {
+    "eyebrow": "Custom Enquiry",
+    "title": "Have An Idea? <em>Let's Make It Real.</em>",
+    "description": "Tell us what you are imagining. We'll help you turn it into something handmade.",
+    "whatsappCta": "WhatsApp Your Idea",
+    "callCta": "Call Us"
+  },
+
+  "whatsappMessages": {
+    "general": "Hello {brand},\n\nI would like to know more about your handmade creations.\n\nThank you.",
+    "custom": "Hello {brand},\n\nI am interested in creating a customised item.\n\nPlease share the available options.\n\nThank you.",
+    "artwork": "Hello {brand},\n\nI have an idea for a custom artwork.\n\nI would like to discuss the design, materials and available options.\n\nThank you.",
+    "event": "Hello {brand},\n\nI am interested in customised creations for an event.\n\nEvent:\nApproximate Quantity:\nDate:\n\nPlease share the available options.\n\nThank you.",
+    "product": "Hello {brand},\n\nI would like to ask about this creation:\n\nItem: {productName}\nCategory: {productCategory}\n\nCould you share more details and customisation options?\n\nThank you."
+  },
+
+  "socialLinks": [
+    { "platform": "Instagram", "icon": "fa-brands fa-instagram", "url": "https://instagram.com" },
+    { "platform": "Pinterest", "icon": "fa-brands fa-pinterest", "url": "https://pinterest.com" },
+    { "platform": "Facebook", "icon": "fa-brands fa-facebook", "url": "https://facebook.com" }
+  ],
+
+  "footer": {
+    "collectionsHeading": "Collections",
+    "studioHeading": "Studio",
+    "contactHeading": "Contact",
+    "studioLinks": [
+      { "label": "Customisation Studio", "target": "#customise" },
+      { "label": "Our Story", "target": "#story" },
+      { "label": "How We Create", "target": "#process" },
+      { "label": "Gallery", "target": "#gallery" }
+    ],
+    "copyright": "All creations handmade with care."
+  },
+
+  "theme": {
+    "primary": "#3B302A",
+    "secondary": "#A67C52",
+    "gold": "#AD8A4D",
+    "cream": "#F5F0E8",
+    "ivory": "#FFFDF8",
+    "dark": "#211B18",
+    "accent": "#9C5C45"
+  },
+
+  "animations": {
+    "durationFast": 250,
+    "duration": 600,
+    "durationSlow": 1100,
+    "aosOnce": true,
+    "aosOffset": 60
+  },
+
+  "imageFallback": {
+    "placeholderIcon": "fa-solid fa-image",
+    "placeholderLabel": "Image Coming Soon",
+    "backupImage": "https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=900&auto=format&fit=crop",
+    "maxRetries": 1
+  },
+
+  "sectionVisibility": {
+    "announcement": true,
+    "hero": true,
+    "statement": true,
+    "about": true,
+    "stats": true,
+    "collections": true,
+    "featured": true,
+    "products": true,
+    "customisation": true,
+    "artStyles": true,
+    "wearableArt": true,
+    "customArtwork": true,
+    "embroidery": true,
+    "occasions": true,
+    "process": true,
+    "materials": true,
+    "whyUs": true,
+    "quality": true,
+    "team": true,
+    "reels": true,
+    "pricing": true,
+    "gallery": true,
+    "beforeAfter": true,
+    "testimonials": true,
+    "faq": true,
+    "contact": true
+  }
+}
+</script>
+
+<!-- ===================================================================
+     APPLICATION MARKUP (all dynamic content injected via JS)
+=================================================================== -->
+
+<div id="announcement-bar" class="announcement"></div>
+
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <a href="#home" class="logo" id="logo-el"></a>
+    <nav class="primary-nav" id="primary-nav"></nav>
+    <div class="header-actions">
+      <button class="btn btn-dark btn-sm header-cta-desktop" id="header-cta">Create Something</button>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-top">
+    <span class="logo" id="mobile-logo"></span>
+    <button aria-label="Close menu" id="mobile-menu-close" style="font-size:24px;"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <nav id="mobile-nav"></nav>
+  <div class="mobile-menu-footer">
+    <button class="btn btn-dark" style="width:100%;justify-content:center;" id="mobile-menu-cta">Create Something</button>
+  </div>
+</div>
+
+<main id="home">
+
+  <!-- HERO -->
+  <section class="hero" id="hero-section">
+    <div class="bg-svg-layer" aria-hidden="true">
+      <svg class="drift-slow" style="top:8%; left:2%; width:120px; opacity:.5;" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 60 C 30 20, 50 100, 70 60 S 110 20, 115 55" stroke="#AD8A4D" stroke-width="1.4" stroke-dasharray="6 6" stroke-linecap="round"/>
+        <circle cx="10" cy="60" r="3" fill="#AD8A4D"/>
+      </svg>
+      <svg class="drift-med" style="top:65%; left:6%; width:60px; opacity:.4;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 6 L34 24 L52 24 L37 35 L42 53 L30 42 L18 53 L23 35 L8 24 L26 24 Z" stroke="#B5613F" stroke-width="1.2" fill="none"/>
+      </svg>
+      <svg class="drift-rotate" style="top:14%; right:4%; width:90px; opacity:.35;" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="45" cy="45" r="38" stroke="#7C8564" stroke-width="1" stroke-dasharray="3 9"/>
+      </svg>
+      <svg class="bob" style="bottom:10%; right:10%; width:46px; opacity:.5;" viewBox="0 0 46 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="23" y1="4" x2="23" y2="80" stroke="#AD8A4D" stroke-width="1.4"/>
+        <circle cx="23" cy="4" r="4" fill="#AD8A4D"/>
+        <path d="M23 80 L18 90 L28 90 Z" fill="#AD8A4D"/>
+      </svg>
+    </div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy" data-aos="fade-up">
+        <div class="eyebrow" id="hero-eyebrow"></div>
+        <h1 class="hero-title" id="hero-title"></h1>
+        <p class="hero-desc" id="hero-desc"></p>
+        <div class="hero-cta-row">
+          <a class="btn btn-dark" id="hero-primary-cta"></a>
+          <a class="btn btn-outline" id="hero-secondary-cta"></a>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left" data-aos-delay="150">
+        <div class="hero-frame"><img id="hero-img" alt=""></div>
+        <div class="hero-tag">
+          <div class="num" id="hero-tag-num"></div>
+          <div class="lbl" id="hero-tag-lbl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STATEMENT -->
+  <section class="statement" id="statement-section">
+    <div class="wrap">
+      <h2 class="statement-text" id="statement-text" data-aos="fade-up"></h2>
+      <p class="statement-sub" id="statement-sub" data-aos="fade-up" data-aos-delay="100"></p>
+    </div>
+  </section>
+
+  <!-- ABOUT / STORY -->
+  <section class="section" id="story-section">
+    <div class="wrap about-grid">
+      <div class="about-img-wrap" data-aos="fade-right">
+        <div class="about-img"><img id="story-img" alt=""></div>
+      </div>
+      <div class="about-copy" data-aos="fade-left">
+        <div class="eyebrow" id="story-eyebrow"></div>
+        <h2 class="h2" id="story-title"></h2>
+        <div id="story-paragraphs"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-strip" id="stats-section">
+    <div class="wrap stats-grid" id="stats-grid"></div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="section" id="collections">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow">Our Collections</div>
+        <h2 class="h2">Crafted Across Every Form</h2>
+        <p class="sub" style="margin-left:auto;margin-right:auto;">From bags to wearable art — explore where handmade craft takes shape.</p>
+      </div>
+    </div>
+    <div class="wrap"><div class="collections-grid" id="collections-grid"></div></div>
+  </section>
+
+  <!-- FEATURED CREATIONS -->
+  <section class="section" id="featured-section">
+    <div class="wrap">
+      <div class="section-head" data-aos="fade-up">
+        <div class="eyebrow">Featured Creations</div>
+        <h2 class="h2">Recently Made By Hand</h2>
+      </div>
+      <div class="featured-grid" id="featured-grid"></div>
+    </div>
+  </section>
+
+  <!-- EXPLORE ALL CREATIONS -->
+  <section class="section" id="creations">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow">Explore All Creations</div>
+        <h2 class="h2">Every Piece, Made To Order</h2>
+      </div>
+      <div class="filter-row" id="filter-row"></div>
+      <div class="creations-grid" id="creations-grid"></div>
+      <div class="load-more-wrap"><button class="btn btn-outline" id="load-more-btn">Load More Creations</button></div>
+    </div>
+  </section>
+
+  <!-- CUSTOMISATION STUDIO -->
+  <section class="section studio" id="customise">
+    <div class="wrap">
+      <div class="studio-intro">
+        <div data-aos="fade-right">
+          <div class="eyebrow" id="studio-eyebrow"></div>
+          <h2 class="h2" id="studio-title"></h2>
+        </div>
+        <div class="studio-steps-copy" data-aos="fade-left">
+          <p id="studio-description"></p>
+        </div>
+      </div>
+
+      <div class="studio-panel" data-aos="fade-up">
+        <!-- Step 1: item -->
+        <div class="studio-step active" data-step="1">
+          <div class="studio-step-title">What would you like to customise?</div>
+          <div class="option-grid" id="studio-item-options"></div>
+        </div>
+        <!-- Step 2: artwork -->
+        <div class="studio-step" data-step="2">
+          <div class="studio-step-title">What kind of artwork?</div>
+          <div class="option-grid" id="studio-artwork-options"></div>
+        </div>
+        <!-- Step 3: colours -->
+        <div class="studio-step" data-step="3">
+          <div class="studio-step-title">Preferred colours?</div>
+          <div class="option-grid" id="studio-colour-options"></div>
+        </div>
+        <!-- Step 4: details -->
+        <div class="studio-step" data-step="4">
+          <div class="studio-step-title">Any names, quotes or details?</div>
+          <div class="studio-inputs full">
+            <div class="field">
+              <label for="studio-name-input">Name / Initials (optional)</label>
+              <input type="text" id="studio-name-input" placeholder="e.g. Ananya">
+            </div>
+            <div class="field">
+              <label for="studio-quote-input">Quote / Idea (optional)</label>
+              <textarea id="studio-quote-input" placeholder="Tell us anything else about your idea..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="studio-summary" id="studio-summary"></div>
+
+        <div class="studio-nav">
+          <button class="btn btn-outline btn-sm" id="studio-back-btn" style="visibility:hidden;">Back</button>
+          <div class="studio-dots" id="studio-dots"></div>
+          <button class="btn btn-dark btn-sm" id="studio-next-btn">Next</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ART STYLES -->
+  <section class="section" id="art-styles-section">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow">Art Styles</div>
+        <h2 class="h2">Find Your Aesthetic</h2>
+      </div>
+      <div class="styles-grid" id="styles-grid"></div>
+    </div>
+  </section>
+
+  <!-- WEARABLE ART EDITORIAL -->
+  <section class="editorial" id="wearable-art-section">
+    <div class="editorial-img" data-aos="fade-right"><img id="wearable-img" alt=""></div>
+    <div class="editorial-copy" data-aos="fade-left">
+      <div class="eyebrow" id="wearable-eyebrow"></div>
+      <h2 class="h2" id="wearable-title"></h2>
+      <p style="margin-top:16px;color:rgba(250,246,239,.7);" id="wearable-desc"></p>
+      <ul id="wearable-points"></ul>
+      <a class="btn btn-ghost-light" id="wearable-cta"></a>
+    </div>
+  </section>
+
+  <!-- CUSTOM ARTWORK -->
+  <section class="section" id="custom-artwork-section" style="background:var(--paper);">
+    <div class="wrap" style="max-width:820px;text-align:center;">
+      <div class="eyebrow" style="justify-content:center;" id="artwork-eyebrow"></div>
+      <div class="eyebrow" style="display:none;"></div>
+      <h2 class="h2" id="artwork-title" data-aos="fade-up"></h2>
+      <p class="sub" style="margin-left:auto;margin-right:auto;" id="artwork-desc" data-aos="fade-up"></p>
+      <ul id="artwork-points" style="margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;list-style:none;padding:0;" data-aos="fade-up"></ul>
+      <p style="margin-top:26px;font-family:var(--font-accent);font-style:italic;font-size:19px;" id="artwork-closing" data-aos="fade-up"></p>
+      <a class="btn btn-gold" style="margin-top:30px;" id="artwork-cta" data-aos="fade-up"></a>
+    </div>
+  </section>
+
+  <!-- HOW WE CREATE / PROCESS -->
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow">How We Create</div>
+        <h2 class="h2">From Idea To Handmade</h2>
+      </div>
+      <div class="process-wrap">
+        <div class="process-steps" id="process-steps"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS -->
+  <section class="section" id="materials-section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow">Materials & Craft</div>
+        <h2 class="h2">What We Build With</h2>
+      </div>
+    </div>
+    <div class="wrap"><div class="materials-grid" id="materials-grid"></div></div>
+  </section>
+
+  <!-- OCCASIONS -->
+  <section class="section" id="occasions-section">
+    <div class="wrap">
+      <div class="section-head" data-aos="fade-up">
+        <div class="eyebrow">Gifts & Occasions</div>
+        <h2 class="h2">Made For Every Moment</h2>
+      </div>
+      <div class="occasions-scroll" id="occasions-scroll"></div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE HANDMADE -->
+  <section class="section" id="why-us-section" style="background:var(--paper);">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow">Why Choose Handmade</div>
+        <h2 class="h2">Why It's Worth The Wait</h2>
+      </div>
+      <div class="why-grid" id="why-grid"></div>
+    </div>
+  </section>
+
+  <!-- TEAM / ARTISANS -->
+  <section class="section" id="team-section">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow" id="team-eyebrow"></div>
+        <h2 class="h2" id="team-title"></h2>
+        <p class="sub" style="margin-left:auto;margin-right:auto;" id="team-desc"></p>
+      </div>
+      <div class="team-grid" id="team-grid"></div>
+    </div>
+  </section>
+
+  <!-- REELS / VIDEO SHOWCASE -->
+  <section class="section" id="reels-section" style="background:var(--paper);">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow" id="reels-eyebrow"></div>
+        <h2 class="h2" id="reels-title"></h2>
+        <p class="sub" style="margin-left:auto;margin-right:auto;" id="reels-desc"></p>
+      </div>
+      <div class="reels-grid" id="reels-grid"></div>
+      <div style="text-align:center;margin-top:40px;">
+        <a class="btn btn-outline" id="reels-cta"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="section" id="before-after-section">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow" id="ba-eyebrow"></div>
+        <h2 class="h2" id="ba-title"></h2>
+        <p class="sub" style="margin-left:auto;margin-right:auto;" id="ba-desc"></p>
+      </div>
+      <div class="ba-grid" id="ba-grid"></div>
+    </div>
+  </section>
+
+  <!-- PRICING / PACKAGES -->
+  <section class="section" id="pricing-section" style="background:var(--paper);">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow" id="pricing-eyebrow"></div>
+        <h2 class="h2" id="pricing-title"></h2>
+        <p class="sub" style="margin-left:auto;margin-right:auto;" id="pricing-desc"></p>
+      </div>
+      <p class="pricing-note" id="pricing-note" data-aos="fade-up"></p>
+      <div class="pricing-grid" id="pricing-grid"></div>
+    </div>
+  </section>
+
+  <!-- QUALITY -->
+  <section class="section quality-section" id="quality-section">
+    <div class="wrap" style="text-align:center;">
+      <div class="eyebrow" style="justify-content:center;" id="quality-eyebrow"></div>
+      <h2 class="h2" id="quality-title" data-aos="fade-up"></h2>
+      <div class="quality-list" id="quality-list"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow">Gallery</div>
+        <h2 class="h2">From The Studio Floor</h2>
+      </div>
+      <div class="gallery-masonry" id="gallery-masonry"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials-section" style="background:var(--paper);">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow">Customer Stories</div>
+        <h2 class="h2">In Their Own Words</h2>
+      </div>
+      <div class="testi-track-wrap"><div class="testi-track" id="testi-track"></div></div>
+      <div class="testi-nav">
+        <button id="testi-prev" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="testi-next" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq-section">
+    <div class="wrap">
+      <div class="section-head center" data-aos="fade-up">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="h2">Questions, Answered</h2>
+      </div>
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </section>
+
+  <!-- CUSTOM ENQUIRY CTA -->
+  <section class="enquiry-cta" id="enquiry-section">
+    <div class="wrap">
+      <div class="eyebrow" id="enquiry-eyebrow"></div>
+      <h2 class="enquiry-title" id="enquiry-title"></h2>
+      <p class="enquiry-sub" id="enquiry-desc"></p>
+      <div class="enquiry-btns">
+        <button class="btn btn-gold" id="enquiry-whatsapp-btn"></button>
+        <a class="btn btn-ghost-light" id="enquiry-call-btn"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div data-aos="fade-right">
+        <div class="eyebrow" id="contact-eyebrow"></div>
+        <h2 class="h2" id="contact-title"></h2>
+        <p class="sub" id="contact-desc"></p>
+        <div id="contact-info-list" style="margin-top:20px;"></div>
+      </div>
+      <div data-aos="fade-left">
+        <div class="contact-map-frame">
+          <i class="fa-solid fa-location-dot"></i>
+          <span id="contact-location-label"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="logo" id="footer-logo"></span>
+      <p id="footer-desc"></p>
+      <div class="footer-social" id="footer-social"></div>
+    </div>
+    <div class="footer-col">
+      <h5 id="footer-collections-heading"></h5>
+      <ul id="footer-collections-list"></ul>
+    </div>
+    <div class="footer-col">
+      <h5 id="footer-studio-heading"></h5>
+      <ul id="footer-studio-list"></ul>
+    </div>
+    <div class="footer-col">
+      <h5 id="footer-contact-heading"></h5>
+      <ul id="footer-contact-list"></ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span id="footer-copyright"></span>
+    <span id="footer-year"></span>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<button class="float-whatsapp" id="float-whatsapp-btn" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+
+<!-- CREATION MODAL -->
+<div class="modal-overlay" id="creation-modal" role="dialog" aria-modal="true" aria-label="Creation details">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-img"><img id="modal-img" alt=""></div>
+    <div class="modal-body">
+      <div class="modal-cat" id="modal-cat"></div>
+      <h3 class="modal-title" id="modal-title"></h3>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-meta">
+        <div class="modal-meta-row"><h5>Materials</h5><p id="modal-materials"></p></div>
+        <div class="modal-meta-row"><h5>Art Style</h5><p id="modal-artstyle"></p></div>
+        <div class="modal-meta-row"><h5>Available Customisations</h5><p id="modal-customisations"></p></div>
+        <div class="modal-meta-row"><h5>Ideal For</h5><p id="modal-idealfor"></p></div>
+        <div class="modal-meta-row"><h5>Care Instructions</h5><p id="modal-care"></p></div>
+      </div>
+      <div class="modal-cta">
+        <button class="btn btn-dark" id="modal-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Ask About This Creation</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox-overlay">
+  <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <img id="lightbox-img" alt="">
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+$(function () {
+  "use strict";
+
+  /* =================================================================
+     LOAD DATA — single source of truth
+  ================================================================= */
+  let data = {};
+  function loadData() {
+    const raw = document.getElementById('website-data').textContent;
+    data = JSON.parse(raw);
+  }
+
+  /* =================================================================
+     IMAGE FALLBACK / RETRY
+     Attaches a shared error handler to every <img> rendered by the app.
+     On failure: retries once (cache-busted), then falls back to a
+     backup stock image, then finally swaps in a styled placeholder.
+  ================================================================= */
+  function imgFallbackAttr(altText) {
+    // Returns the onerror handler string plus data attributes, to be
+    // concatenated into any dynamically-built <img> tag.
+    const label = (data.imageFallback && data.imageFallback.placeholderLabel) || 'Image Coming Soon';
+    return `onerror="window.__handleImgError(this)" data-placeholder-label="${label}" data-alt-text="${(altText || '').replace(/"/g, '&quot;')}"`;
+  }
+
+  function attachImgFallback($img, altText) {
+    const label = (data.imageFallback && data.imageFallback.placeholderLabel) || 'Image Coming Soon';
+    $img.attr('data-placeholder-label', label);
+    $img.attr('data-alt-text', altText || '');
+    $img.off('error').on('error', function () { window.__handleImgError(this); });
+  }
+
+  window.__handleImgError = function (imgEl) {
+    const $img = $(imgEl);
+    const attempts = parseInt($img.data('retryCount') || 0, 10);
+    const maxRetries = (data.imageFallback && data.imageFallback.maxRetries) || 1;
+    const backup = data.imageFallback && data.imageFallback.backupImage;
+
+    if (attempts < maxRetries) {
+      // Retry the original source once, cache-busted, in case it was a transient load failure.
+      $img.data('retryCount', attempts + 1);
+      const original = $img.attr('data-original-src') || $img.attr('src');
+      $img.attr('data-original-src', original.split('?__retry=')[0]);
+      const bust = original.split('?__retry=')[0] + (original.includes('?') ? '&' : '?') + '__retry=' + Date.now();
+      imgEl.src = bust;
+      return;
+    }
+
+    if (backup && $img.attr('src') !== backup && !$img.data('usedBackup')) {
+      $img.data('usedBackup', true);
+      imgEl.src = backup;
+      return;
+    }
+
+    // Final fallback: replace with a styled placeholder block.
+    const label = $img.attr('data-placeholder-label') || 'Image Coming Soon';
+    const icon = (data.imageFallback && data.imageFallback.placeholderIcon) || 'fa-solid fa-image';
+    const $wrap = $img.parent();
+    if (!$wrap.hasClass('img-frame')) $wrap.addClass('img-frame');
+    $img.remove();
+    if (!$wrap.find('.img-placeholder').length) {
+      $wrap.append(`<div class="img-placeholder"><i class="${icon}"></i><span>${label}</span></div>`);
+    }
+  };
+
+  /* =================================================================
+     THEME
+  ================================================================= */
+  function applyTheme() {
+    const t = data.theme || {};
+    const root = document.documentElement.style;
+    if (t.primary) root.setProperty('--charcoal', t.primary);
+    if (t.secondary) root.setProperty('--secondary', t.secondary);
+    if (t.gold) root.setProperty('--gold', t.gold);
+    if (t.cream) root.setProperty('--paper', t.cream);
+    if (t.ivory) root.setProperty('--ivory', t.ivory);
+    if (t.dark) root.setProperty('--umber', t.dark);
+    if (t.accent) root.setProperty('--clay', t.accent);
+  }
+
+  /* =================================================================
+     SEO
+  ================================================================= */
+  function applySEO() {
+    const seo = data.seo || {};
+    document.title = seo.title || data.brand.name;
+    $('#seo-title').text(seo.title || data.brand.name);
+    $('#seo-description').attr('content', seo.description || '');
+    $('#seo-keywords').attr('content', (seo.keywords || []).join(', '));
+    $('#og-title').attr('content', seo.title || '');
+    $('#og-description').attr('content', seo.description || '');
+    $('#og-image').attr('content', seo.ogImage || '');
+  }
+
+  /* =================================================================
+     VISIBILITY HELPER
+  ================================================================= */
+  function vis(key) {
+    return !data.sectionVisibility || data.sectionVisibility[key] !== false;
+  }
+  function hideIfNeeded(key, selector) {
+    if (!vis(key)) $(selector).remove();
+  }
+
+  /* =================================================================
+     WHATSAPP HELPERS
+  ================================================================= */
+  function waNumber() { return data.brand.whatsapp; }
+  function openWhatsApp(message) {
+    const url = `https://wa.me/${waNumber()}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+  function buildMessage(key, replacements) {
+    let tpl = (data.whatsappMessages && data.whatsappMessages[key]) || '';
+    tpl = tpl.replace(/{brand}/g, data.brand.name);
+    if (replacements) {
+      Object.keys(replacements).forEach(k => {
+        tpl = tpl.replace(new RegExp(`{${k}}`, 'g'), replacements[k]);
+      });
+    }
+    return tpl;
+  }
+
+  /* =================================================================
+     NAVIGATION
+  ================================================================= */
+  function renderNavigation() {
+    const nav = data.navigation || [];
+    const $primary = $('#primary-nav').empty();
+    const $mobile = $('#mobile-nav').empty();
+    nav.forEach(item => {
+      $primary.append(`<a href="${item.target}">${item.label}</a>`);
+      $mobile.append(`<a href="${item.target}">${item.label}</a>`);
+    });
+
+    $('#logo-el, #mobile-logo, #footer-logo').each(function () {
+      $(this).html(`${data.brand.name.split(' ')[0]} <span class="mark">${data.brand.name.split(' ').slice(1).join(' ')}</span>`);
+    });
+
+    $('#header-cta, #mobile-menu-cta').text('Create Something').off('click').on('click', function () {
+      window.location.hash = 'customise';
+      $('#mobile-menu').removeClass('open');
+    });
+  }
+
+  function initializeNavigation() {
+    $('#hamburger-btn').on('click', () => $('#mobile-menu').addClass('open'));
+    $('#mobile-menu-close').on('click', () => $('#mobile-menu').removeClass('open'));
+    $('#mobile-menu a').on('click', () => $('#mobile-menu').removeClass('open'));
+
+    $(window).on('scroll', function () {
+      $('#site-header').toggleClass('scrolled', $(window).scrollTop() > 10);
+    });
+  }
+
+  /* =================================================================
+     ANNOUNCEMENT
+  ================================================================= */
+  function renderAnnouncement() {
+    if (!vis('announcement')) { $('#announcement-bar').remove(); return; }
+    const parts = (data.announcement || '').split('•').map(s => s.trim()).filter(Boolean);
+    $('#announcement-bar').html(parts.join(' <span>•</span> '));
+  }
+
+  /* =================================================================
+     HERO
+  ================================================================= */
+  function renderHero() {
+    if (!vis('hero')) { $('#hero-section').remove(); return; }
+    const h = data.hero;
+    $('#hero-eyebrow').text(h.eyebrow);
+    $('#hero-title').html(`${h.titleLine1}<br>${h.titleLine2}`);
+    $('#hero-desc').text(h.description);
+    $('#hero-img').attr('src', h.image).attr('alt', h.titleLine1);
+    attachImgFallback($('#hero-img'), h.titleLine1);
+    $('#hero-primary-cta').text(h.primaryCta).attr('href', h.primaryCtaTarget);
+    $('#hero-secondary-cta').text(h.secondaryCta).attr('href', h.secondaryCtaTarget);
+    $('#hero-tag-num').text(h.tagNumber);
+    $('#hero-tag-lbl').text(h.tagLabel);
+  }
+
+  /* =================================================================
+     STATEMENT
+  ================================================================= */
+  function renderStatement() {
+    if (!vis('statement')) { $('#statement-section').remove(); return; }
+    const s = data.statement;
+    $('#statement-text').html(`${s.line1}<br>${s.line2}`);
+    $('#statement-sub').text(s.sub);
+  }
+
+  /* =================================================================
+     ABOUT / STORY
+  ================================================================= */
+  function renderAbout() {
+    if (!vis('about')) { $('#story-section').remove(); return; }
+    const s = data.story;
+    $('#story-eyebrow').text(s.eyebrow);
+    $('#story-title').text(s.title);
+    $('#story-img').attr('src', s.image).attr('alt', s.title);
+    attachImgFallback($('#story-img'), s.title);
+    const $p = $('#story-paragraphs').empty();
+    (s.paragraphs || []).forEach(p => $p.append(`<p>${p}</p>`));
+  }
+
+  /* =================================================================
+     STATS
+  ================================================================= */
+  function renderStats() {
+    if (!vis('stats')) { $('#stats-section').remove(); return; }
+    const $grid = $('#stats-grid').empty();
+    (data.stats || []).forEach(st => {
+      $grid.append(`
+        <div data-aos="fade-up">
+          <div class="stat-num">${st.value}</div>
+          <div class="stat-lbl">${st.label}</div>
+        </div>`);
+    });
+  }
+
+  /* =================================================================
+     COLLECTIONS
+  ================================================================= */
+  function renderCollections() {
+    if (!vis('collections')) { $('#collections').remove(); return; }
+    const $grid = $('#collections-grid').empty();
+    (data.collections || []).forEach((c, i) => {
+      $grid.append(`
+        <div class="collection-card" data-aos="fade-up" data-aos-delay="${(i % 4) * 60}">
+          <img src="${c.image}" alt="${c.title}" loading="lazy" ${imgFallbackAttr(c.title)}>
+          <div class="collection-content">
+            <i class="${c.icon}"></i>
+            <h3>${c.title}</h3>
+            <p>${c.description}</p>
+          </div>
+        </div>`);
+    });
+  }
+
+  /* =================================================================
+     FEATURED CREATIONS
+  ================================================================= */
+  function renderFeatured() {
+    if (!vis('featured')) { $('#featured-section').remove(); return; }
+    const featured = (data.products || []).filter(p => p.featured);
+    const $grid = $('#featured-grid').empty();
+    featured.forEach((p, i) => {
+      $grid.append(`
+        <div class="featured-card" data-id="${p.id}" data-aos="fade-up" data-aos-delay="${i * 80}">
+          <div class="featured-img">
+            <img src="${p.image}" alt="${p.name}" loading="lazy" ${imgFallbackAttr(p.name)}>
+            <div class="featured-tags">${(p.tags || []).slice(0, 2).map(t => `<span class="tag-pill">${t}</span>`).join('')}</div>
+          </div>
+          <div class="featured-body">
+            <div class="cat">${p.category}</div>
+            <h3>${p.name}</h3>
+            <p>${p.shortDescription}</p>
+            <span class="featured-link">View Creation <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>`);
+    });
+    $grid.on('click', '.featured-card', function () {
+      openCreationModal($(this).data('id'));
+    });
+  }
+
+  /* =================================================================
+     EXPLORE ALL CREATIONS + FILTER
+  ================================================================= */
+  const PAGE_SIZE = 8;
+  let visibleCount = PAGE_SIZE;
+  let activeCategory = 'All';
+
+  function renderCategoryFilters() {
+    const $row = $('#filter-row').empty();
+    (data.categories || []).forEach(cat => {
+      $row.append(`<button class="filter-btn ${cat === 'All' ? 'active' : ''}" data-cat="${cat}">${cat}</button>`);
+    });
+  }
+
+  function renderCreations() {
+    if (!vis('products')) { $('#creations').remove(); return; }
+    renderCategoryFilters();
+    drawCreationsGrid();
+  }
+
+  function drawCreationsGrid() {
+    const all = (data.products || []).filter(p => activeCategory === 'All' || p.category === activeCategory);
+    const shown = all.slice(0, visibleCount);
+    const $grid = $('#creations-grid').empty();
+    shown.forEach((p, i) => {
+      $grid.append(`
+        <div class="creation-card" data-id="${p.id}" data-aos="fade-up" data-aos-delay="${(i % 4) * 60}">
+          <div class="creation-img">
+            <img src="${p.image}" alt="${p.name}" loading="lazy" ${imgFallbackAttr(p.name)}>
+            <div class="creation-badges">${(p.tags || []).slice(0, 1).map(t => `<span class="tag-pill">${t}</span>`).join('')}</div>
+          </div>
+          <div class="creation-body">
+            <h4>${p.name}</h4>
+            <span class="view-link">View Creation</span>
+          </div>
+        </div>`);
+    });
+    $('#load-more-btn').toggle(all.length > visibleCount);
+    $grid.off('click').on('click', '.creation-card', function () {
+      openCreationModal($(this).data('id'));
+    });
+  }
+
+  function initializeFilters() {
+    $('#filter-row').on('click', '.filter-btn', function () {
+      $('.filter-btn').removeClass('active');
+      $(this).addClass('active');
+      activeCategory = $(this).data('cat');
+      visibleCount = PAGE_SIZE;
+      drawCreationsGrid();
+    });
+    $('#load-more-btn').on('click', function () {
+      visibleCount += PAGE_SIZE;
+      drawCreationsGrid();
+    });
+  }
+
+  /* =================================================================
+     CREATION MODAL
+  ================================================================= */
+  function openCreationModal(id) {
+    const p = (data.products || []).find(prod => prod.id === id);
+    if (!p) return;
+    $('#modal-img').attr('src', p.image).attr('alt', p.name);
+    attachImgFallback($('#modal-img'), p.name);
+    $('#modal-cat').text(p.category);
+    $('#modal-title').text(p.name);
+    $('#modal-desc').text(p.description);
+    $('#modal-materials').text(p.materials);
+    $('#modal-artstyle').text(p.artStyle);
+    $('#modal-customisations').text(p.customisations);
+    $('#modal-idealfor').text(p.idealFor);
+    $('#modal-care').text(p.care);
+    $('#modal-whatsapp-btn').off('click').on('click', function () {
+      const msg = buildMessage('product', { productName: p.name, productCategory: p.category });
+      openWhatsApp(msg);
+    });
+    $('#creation-modal').addClass('open');
+    $('body').css('overflow', 'hidden');
+  }
+
+  function initializeCreationModal() {
+    $('#modal-close-btn, #creation-modal').on('click', function (e) {
+      if (e.target === this) {
+        $('#creation-modal').removeClass('open');
+        $('body').css('overflow', '');
+      }
+    });
+    $(document).on('keydown', function (e) {
+      if (e.key === 'Escape') {
+        $('#creation-modal').removeClass('open');
+        $('#lightbox-overlay').removeClass('open');
+        $('body').css('overflow', '');
+      }
+    });
+  }
+
+  /* =================================================================
+     CUSTOMISATION STUDIO
+  ================================================================= */
+  const studioState = { item: null, artwork: null, colour: null, name: '', quote: '' };
+  let studioStep = 1;
+  const STUDIO_STEPS = 4;
+
+  function renderCustomisation() {
+    if (!vis('customisation')) { $('#customise').remove(); return; }
+    const c = data.customisation;
+    $('#studio-eyebrow').text(c.eyebrow);
+    $('#studio-title').html(c.title);
+    $('#studio-description').text(c.description);
+
+    const buildPills = (opts, containerId, stateKey) => {
+      const $c = $(containerId).empty();
+      opts.forEach(opt => {
+        $c.append(`<button type="button" class="option-pill" data-key="${stateKey}" data-value="${opt.id}"><i class="${opt.icon}"></i>${opt.label}</button>`);
+      });
+    };
+    buildPills(c.itemOptions, '#studio-item-options', 'item');
+    buildPills(c.artworkOptions, '#studio-artwork-options', 'artwork');
+    buildPills(c.colourOptions, '#studio-colour-options', 'colour');
+
+    const $dots = $('#studio-dots').empty();
+    for (let i = 1; i <= STUDIO_STEPS; i++) {
+      $dots.append(`<span class="${i === 1 ? 'active' : ''}"></span>`);
+    }
+  }
+
+  function updateStudioDots() {
+    $('#studio-dots span').removeClass('active').each(function (i) {
+      if (i + 1 === studioStep) $(this).addClass('active');
+    });
+  }
+
+  function goToStudioStep(step) {
+    studioStep = Math.max(1, Math.min(STUDIO_STEPS, step));
+    $('.studio-step').removeClass('active');
+    $(`.studio-step[data-step="${studioStep}"]`).addClass('active');
+    $('#studio-back-btn').css('visibility', studioStep === 1 ? 'hidden' : 'visible');
+    $('#studio-next-btn').text(studioStep === STUDIO_STEPS ? 'Review & Send' : 'Next');
+    $('#studio-summary').removeClass('show');
+    updateStudioDots();
+  }
+
+  function renderStudioSummary() {
+    const c = data.customisation;
+    const findLabel = (arr, id) => (arr.find(o => o.id === id) || {}).label || 'Not specified';
+    const itemLabel = studioState.item ? findLabel(c.itemOptions, studioState.item) : 'Not specified';
+    const artLabel = studioState.artwork ? findLabel(c.artworkOptions, studioState.artwork) : 'Not specified';
+    const colourLabel = studioState.colour ? findLabel(c.colourOptions, studioState.colour) : 'Not specified';
+    $('#studio-summary').addClass('show').html(`
+      <strong>Your Custom Idea Summary</strong><br>
+      Item: ${itemLabel}<br>
+      Artwork: ${artLabel}<br>
+      Colours: ${colourLabel}<br>
+      ${studioState.name ? 'Name/Initials: ' + studioState.name + '<br>' : ''}
+      ${studioState.quote ? 'Quote/Idea: ' + studioState.quote + '<br>' : ''}
+      <br><em>Tap "Send My Idea on WhatsApp" below to share this with us.</em>
+    `);
+  }
+
+  function initializeCustomization() {
+    $('#studio-item-options, #studio-artwork-options, #studio-colour-options').on('click', '.option-pill', function () {
+      const key = $(this).data('key');
+      const value = $(this).data('value');
+      $(this).siblings().removeClass('selected');
+      $(this).addClass('selected');
+      studioState[key] = value;
+    });
+
+    $('#studio-name-input').on('input', function () { studioState.name = $(this).val(); });
+    $('#studio-quote-input').on('input', function () { studioState.quote = $(this).val(); });
+
+    $('#studio-next-btn').on('click', function () {
+      if (studioStep < STUDIO_STEPS) {
+        goToStudioStep(studioStep + 1);
+      } else {
+        renderStudioSummary();
+        sendStudioWhatsApp();
+      }
+    });
+    $('#studio-back-btn').on('click', function () { goToStudioStep(studioStep - 1); });
+  }
+
+  function sendStudioWhatsApp() {
+    const c = data.customisation;
+    const findLabel = (arr, id) => (arr.find(o => o.id === id) || {}).label || 'Not specified';
+    const itemLabel = studioState.item ? findLabel(c.itemOptions, studioState.item) : 'Not specified';
+    const artLabel = studioState.artwork ? findLabel(c.artworkOptions, studioState.artwork) : 'Not specified';
+    const colourLabel = studioState.colour ? findLabel(c.colourOptions, studioState.colour) : 'Not specified';
+
+    let msg = `Hello ${data.brand.name},\n\nI am interested in creating a customised item.\n\nItem:\n${itemLabel}\n\nArtwork:\n${artLabel}\n\nPreferred Colours:\n${colourLabel}\n`;
+    if (studioState.name) msg += `\nName / Initials:\n${studioState.name}\n`;
+    if (studioState.quote) msg += `\nQuote / Idea:\n${studioState.quote}\n`;
+    msg += `\nPlease let me know the available options and how we can proceed.\n\nThank you.`;
+    openWhatsApp(msg);
+  }
+
+  /* =================================================================
+     ART STYLES
+  ================================================================= */
+  function renderArtStyles() {
+    if (!vis('artStyles')) { $('#art-styles-section').remove(); return; }
+    const $grid = $('#styles-grid').empty();
+    (data.artStyles || []).forEach((s, i) => {
+      $grid.append(`
+        <div class="style-card" data-aos="fade-up" data-aos-delay="${(i % 5) * 60}">
+          <div class="style-img"><img src="${s.image}" alt="${s.title}" loading="lazy" ${imgFallbackAttr(s.title)}></div>
+          <h4>${s.title}</h4>
+          <p>${s.description}</p>
+        </div>`);
+    });
+  }
+
+  /* =================================================================
+     WEARABLE ART
+  ================================================================= */
+  function renderWearableArt() {
+    if (!vis('wearableArt')) { $('#wearable-art-section').remove(); return; }
+    const w = data.wearableArt;
+    $('#wearable-img').attr('src', w.image).attr('alt', w.title);
+    attachImgFallback($('#wearable-img'), w.title);
+    $('#wearable-eyebrow').text(w.eyebrow);
+    $('#wearable-title').text(w.title);
+    $('#wearable-desc').text(w.description);
+    const $ul = $('#wearable-points').empty();
+    (w.points || []).forEach(p => $ul.append(`<li><i class="fa-solid fa-check"></i>${p}</li>`));
+    $('#wearable-cta').text(w.cta).attr('href', w.ctaTarget);
+  }
+
+  /* =================================================================
+     CUSTOM ARTWORK
+  ================================================================= */
+  function renderCustomArtwork() {
+    if (!vis('customArtwork')) { $('#custom-artwork-section').remove(); return; }
+    const a = data.customArtwork;
+    $('#artwork-eyebrow').text(a.eyebrow);
+    $('#artwork-title').html(a.title);
+    $('#artwork-desc').text(a.description);
+    const $ul = $('#artwork-points').empty();
+    (a.points || []).forEach(p => $ul.append(`<li class="chip" style="background:var(--ivory);border:1px solid var(--line);padding:10px 18px;font-size:14px;">${p}</li>`));
+    $('#artwork-closing').text(a.closing);
+    $('#artwork-cta').text(a.cta).on('click', function () {
+      openWhatsApp(buildMessage('artwork'));
+    });
+  }
+
+  /* =================================================================
+     PROCESS
+  ================================================================= */
+  function renderProcess() {
+    if (!vis('process')) { $('#process').remove(); return; }
+    const $steps = $('#process-steps').empty();
+    (data.process || []).forEach((step, i) => {
+      $steps.append(`
+        <div class="process-step" data-aos="fade-up" data-aos-delay="${i * 60}">
+          <div class="process-num">${step.num}</div>
+          <div class="process-content">
+            <h4>${step.title}</h4>
+            <p>${step.description}</p>
+          </div>
+        </div>`);
+    });
+  }
+
+  /* =================================================================
+     MATERIALS
+  ================================================================= */
+  function renderMaterials() {
+    if (!vis('materials')) { $('#materials-section').remove(); return; }
+    const $grid = $('#materials-grid').empty();
+    (data.materials || []).forEach((m, i) => {
+      $grid.append(`
+        <div class="material-card" data-aos="fade-up" data-aos-delay="${(i % 4) * 50}">
+          <i class="${m.icon}"></i>
+          <h4>${m.title}</h4>
+          <p>${m.description}</p>
+        </div>`);
+    });
+  }
+
+  /* =================================================================
+     OCCASIONS
+  ================================================================= */
+  function renderOccasions() {
+    if (!vis('occasions')) { $('#occasions-section').remove(); return; }
+    const $scroll = $('#occasions-scroll').empty();
+    (data.occasions || []).forEach((o, i) => {
+      $scroll.append(`
+        <div class="occasion-card" data-aos="fade-up" data-aos-delay="${(i % 4) * 50}">
+          <img src="${o.image}" alt="${o.title}" loading="lazy" ${imgFallbackAttr(o.title)}>
+          <div class="occasion-content">
+            <h4>${o.title}</h4>
+            <p>${o.description}</p>
+          </div>
+        </div>`);
+    });
+  }
+
+  /* =================================================================
+     WHY US
+  ================================================================= */
+  function renderWhyUs() {
+    if (!vis('whyUs')) { $('#why-us-section').remove(); return; }
+    const $grid = $('#why-grid').empty();
+    (data.whyUs || []).forEach((w, i) => {
+      $grid.append(`
+        <div class="why-card" data-aos="fade-up" data-aos-delay="${(i % 4) * 50}">
+          <i class="${w.icon}"></i>
+          <h4>${w.title}</h4>
+          <p>${w.description}</p>
+        </div>`);
+    });
+  }
+
+  /* =================================================================
+     TEAM / ARTISANS
+  ================================================================= */
+  function renderTeam() {
+    if (!vis('team')) { $('#team-section').remove(); return; }
+    const t = data.team;
+    $('#team-eyebrow').text(t.eyebrow);
+    $('#team-title').text(t.title);
+    $('#team-desc').text(t.description);
+    const $grid = $('#team-grid').empty();
+    (t.members || []).forEach((m, i) => {
+      $grid.append(`
+        <div class="team-card" data-aos="fade-up" data-aos-delay="${i * 70}">
+          <div class="team-img img-frame"><img src="${m.image}" alt="${m.name}" loading="lazy" ${imgFallbackAttr(m.name)}></div>
+          <h4>${m.name}</h4>
+          <div class="role">${m.role}</div>
+          <p class="specialty">${m.specialty}</p>
+        </div>`);
+    });
+  }
+
+  /* =================================================================
+     REELS / VIDEO SHOWCASE
+  ================================================================= */
+  function renderReels() {
+    if (!vis('reels')) { $('#reels-section').remove(); return; }
+    const r = data.reels;
+    $('#reels-eyebrow').text(r.eyebrow);
+    $('#reels-title').text(r.title);
+    $('#reels-desc').text(r.description);
+    const $grid = $('#reels-grid').empty();
+    (r.items || []).forEach((item, i) => {
+      $grid.append(`
+        <a class="reel-card" href="${item.url}" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="${i * 60}">
+          <img src="${item.thumbnail}" alt="${item.caption}" loading="lazy" ${imgFallbackAttr(item.caption)}>
+          <span class="reel-play"><i class="fa-solid fa-play"></i></span>
+          <span class="reel-caption">${item.caption}</span>
+        </a>`);
+    });
+    $('#reels-cta').html(`<i class="fa-brands fa-instagram"></i> ${r.cta}`).attr('href', r.ctaUrl).attr('target', '_blank').attr('rel', 'noopener');
+  }
+
+  /* =================================================================
+     BEFORE / AFTER
+  ================================================================= */
+  function renderBeforeAfter() {
+    if (!vis('beforeAfter')) { $('#before-after-section').remove(); return; }
+    const b = data.beforeAfter;
+    $('#ba-eyebrow').text(b.eyebrow);
+    $('#ba-title').html(b.title);
+    $('#ba-desc').text(b.description);
+    const $grid = $('#ba-grid').empty();
+    (b.sets || []).forEach((set, i) => {
+      $grid.append(`
+        <div class="ba-card" data-aos="fade-up" data-aos-delay="${i * 80}">
+          <div class="ba-slider" data-index="${i}">
+            <img src="${set.before}" alt="${set.title} before" loading="lazy" ${imgFallbackAttr(set.title + ' before')}>
+            <div class="ba-after-wrap"><img src="${set.after}" alt="${set.title} after" loading="lazy" ${imgFallbackAttr(set.title + ' after')}></div>
+            <div class="ba-label-before">Before</div>
+            <div class="ba-label-after">After</div>
+            <div class="ba-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+          </div>
+          <h4>${set.title}</h4>
+          <p>${set.label}</p>
+        </div>`);
+    });
+  }
+
+  function initializeBeforeAfter() {
+    $('#ba-grid').on('mousemove touchmove', '.ba-slider', function (e) {
+      const $slider = $(this);
+      const rect = this.getBoundingClientRect();
+      const clientX = e.type.startsWith('touch') ? e.originalEvent.touches[0].clientX : e.clientX;
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      $slider.find('.ba-after-wrap').css('width', pct + '%');
+      $slider.find('.ba-handle').css('left', pct + '%');
+    });
+  }
+
+  /* =================================================================
+     PRICING / PACKAGES
+  ================================================================= */
+  function renderPricing() {
+    if (!vis('pricing')) { $('#pricing-section').remove(); return; }
+    const p = data.pricing;
+    $('#pricing-eyebrow').text(p.eyebrow);
+    $('#pricing-title').text(p.title);
+    $('#pricing-desc').text(p.description);
+    $('#pricing-note').html(`<i class="fa-solid fa-circle-info"></i> ${p.note}`);
+    const $grid = $('#pricing-grid').empty();
+    (p.packages || []).forEach((pkg, i) => {
+      $grid.append(`
+        <div class="price-card ${pkg.highlighted ? 'highlighted' : ''}" data-aos="fade-up" data-aos-delay="${i * 80}">
+          ${pkg.highlighted ? '<span class="price-badge">Most Chosen</span>' : ''}
+          <div class="price-name">${pkg.name}</div>
+          <div class="price-range">${pkg.priceRange}</div>
+          <p class="price-desc">${pkg.description}</p>
+          <ul class="price-features">${(pkg.features || []).map(f => `<li><i class="fa-solid fa-check"></i>${f}</li>`).join('')}</ul>
+          <button type="button" class="btn ${pkg.highlighted ? 'btn-gold' : 'btn-outline'} price-enquire-btn" data-pkg="${pkg.name}">Enquire About This</button>
+        </div>`);
+    });
+    $grid.off('click', '.price-enquire-btn').on('click', '.price-enquire-btn', function () {
+      const pkgName = $(this).data('pkg');
+      const msg = `Hello ${data.brand.name},\n\nI would like to know more about the "${pkgName}" package.\n\nCould you share full pricing details and how we can proceed?\n\nThank you.`;
+      openWhatsApp(msg);
+    });
+  }
+
+  /* =================================================================
+     QUALITY
+  ================================================================= */
+  function renderQuality() {
+    if (!vis('quality')) { $('#quality-section').remove(); return; }
+    const q = data.quality;
+    $('#quality-eyebrow').text(q.eyebrow);
+    $('#quality-title').html(q.title);
+    const $list = $('#quality-list').empty();
+    (q.checks || []).forEach(item => {
+      $list.append(`<div class="quality-item"><i class="${item.icon}"></i><p>${item.label}</p></div>`);
+    });
+  }
+
+  /* =================================================================
+     GALLERY
+  ================================================================= */
+  function renderGallery() {
+    if (!vis('gallery')) { $('#gallery').remove(); return; }
+    const $masonry = $('#gallery-masonry').empty();
+    (data.gallery || []).forEach((g, i) => {
+      $masonry.append(`<div class="gallery-item" data-src="${g.image}" data-aos="fade-up" data-aos-delay="${(i % 4) * 40}"><img src="${g.image}" alt="${g.caption || ''}" loading="lazy" ${imgFallbackAttr(g.caption)}></div>`);
+    });
+    $masonry.on('click', '.gallery-item', function () {
+      $('#lightbox-img').attr('src', $(this).data('src'));
+      $('#lightbox-overlay').addClass('open');
+    });
+  }
+  function initializeLightbox() {
+    $('#lightbox-close-btn, #lightbox-overlay').on('click', function (e) {
+      if (e.target === this || $(e.target).closest('#lightbox-close-btn').length) {
+        $('#lightbox-overlay').removeClass('open');
+      }
+    });
+  }
+
+  /* =================================================================
+     TESTIMONIALS
+  ================================================================= */
+  let testiIndex = 0;
+  function renderTestimonials() {
+    if (!vis('testimonials')) { $('#testimonials-section').remove(); return; }
+    const $track = $('#testi-track').empty();
+    (data.testimonials || []).forEach(t => {
+      $track.append(`
+        <div class="testi-card">
+          <i class="fa-solid fa-quote-left"></i>
+          <p class="testi-quote">${t.quote}</p>
+          <div class="testi-name">${t.name}</div>
+          <div class="testi-role">${t.role}</div>
+        </div>`);
+    });
+  }
+  function testiPerView() {
+    const w = $(window).width();
+    if (w <= 640) return 1;
+    if (w <= 980) return 2;
+    return 3;
+  }
+  function updateTestiTrack() {
+    const total = (data.testimonials || []).length;
+    const perView = testiPerView();
+    const maxIndex = Math.max(0, total - perView);
+    testiIndex = Math.min(testiIndex, maxIndex);
+    const cardWidth = $('#testi-track .testi-card').first().outerWidth(true) || 0;
+    $('#testi-track').css('transform', `translateX(-${testiIndex * cardWidth}px)`);
+  }
+  function initializeTestimonials() {
+    $('#testi-next').on('click', function () {
+      const total = (data.testimonials || []).length;
+      const perView = testiPerView();
+      const maxIndex = Math.max(0, total - perView);
+      testiIndex = Math.min(testiIndex + 1, maxIndex);
+      updateTestiTrack();
+    });
+    $('#testi-prev').on('click', function () {
+      testiIndex = Math.max(testiIndex - 1, 0);
+      updateTestiTrack();
+    });
+    $(window).on('resize', updateTestiTrack);
+    setTimeout(updateTestiTrack, 300);
+  }
+
+  /* =================================================================
+     FAQ
+  ================================================================= */
+  function renderFAQ() {
+    if (!vis('faq')) { $('#faq-section').remove(); return; }
+    const $list = $('#faq-list').empty();
+    (data.faq || []).forEach((item, i) => {
+      $list.append(`
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="${(i % 4) * 40}">
+          <button class="faq-q" aria-expanded="false">
+            <span>${item.q}</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">${item.a}</div></div>
+        </div>`);
+    });
+  }
+  function initializeFAQ() {
+    $('#faq-list').on('click', '.faq-q', function () {
+      const $item = $(this).closest('.faq-item');
+      const $answer = $item.find('.faq-a');
+      const isOpen = $item.hasClass('open');
+      $('.faq-item').removeClass('open');
+      $('.faq-a').css('max-height', '');
+      $('.faq-q').attr('aria-expanded', 'false');
+      if (!isOpen) {
+        $item.addClass('open');
+        $(this).attr('aria-expanded', 'true');
+        $answer.css('max-height', $answer[0].scrollHeight + 'px');
+      }
+    });
+  }
+
+  /* =================================================================
+     ENQUIRY CTA
+  ================================================================= */
+  function renderEnquiry() {
+    const e = data.enquiry;
+    $('#enquiry-eyebrow').text(e.eyebrow);
+    $('#enquiry-title').html(e.title);
+    $('#enquiry-desc').text(e.description);
+    $('#enquiry-whatsapp-btn').html(`<i class="fa-brands fa-whatsapp"></i> ${e.whatsappCta}`).on('click', function () {
+      openWhatsApp(buildMessage('general'));
+    });
+    $('#enquiry-call-btn').html(`<i class="fa-solid fa-phone"></i> ${e.callCta}`).attr('href', `tel:+${data.brand.phone}`);
+  }
+
+  /* =================================================================
+     CONTACT
+  ================================================================= */
+  function renderContact() {
+    if (!vis('contact')) { $('#contact').remove(); return; }
+    const c = data.contact;
+    $('#contact-eyebrow').text(c.eyebrow);
+    $('#contact-title').text(c.title);
+    $('#contact-desc').text(c.description);
+    $('#contact-location-label').text(data.brand.location);
+
+    const items = [
+      { icon: 'fa-solid fa-phone', label: 'Phone', value: '+' + data.brand.whatsapp },
+      { icon: 'fa-brands fa-whatsapp', label: 'WhatsApp', value: '+' + data.brand.whatsapp },
+      { icon: 'fa-solid fa-envelope', label: 'Email', value: data.brand.email },
+      { icon: 'fa-solid fa-location-dot', label: 'Studio Address', value: data.brand.address }
+    ];
+    const $list = $('#contact-info-list').empty();
+    items.forEach(it => {
+      $list.append(`
+        <div class="contact-info-item">
+          <i class="${it.icon}"></i>
+          <div><h4>${it.label}</h4><p>${it.value}</p></div>
+        </div>`);
+    });
+  }
+
+  /* =================================================================
+     FOOTER
+  ================================================================= */
+  function renderFooter() {
+    $('#footer-desc').text(data.brand.description);
+    $('#footer-collections-heading').text(data.footer.collectionsHeading);
+    $('#footer-studio-heading').text(data.footer.studioHeading);
+    $('#footer-contact-heading').text(data.footer.contactHeading);
+
+    const $colList = $('#footer-collections-list').empty();
+    (data.collections || []).slice(0, 6).forEach(c => {
+      $colList.append(`<li><a href="#creations">${c.title}</a></li>`);
+    });
+
+    const $studioList = $('#footer-studio-list').empty();
+    (data.footer.studioLinks || []).forEach(l => {
+      $studioList.append(`<li><a href="${l.target}">${l.label}</a></li>`);
+    });
+
+    const $contactList = $('#footer-contact-list').empty();
+    $contactList.append(`<li><i class="fa-solid fa-phone"></i> +${data.brand.whatsapp}</li>`);
+    $contactList.append(`<li><i class="fa-solid fa-envelope"></i> ${data.brand.email}</li>`);
+    $contactList.append(`<li><i class="fa-solid fa-location-dot"></i> ${data.brand.location}</li>`);
+
+    const $social = $('#footer-social').empty();
+    (data.socialLinks || []).forEach(s => {
+      $social.append(`<a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.platform}"><i class="${s.icon}"></i></a>`);
+    });
+
+    $('#footer-copyright').text(`© ${new Date().getFullYear()} ${data.brand.name}. ${data.footer.copyright}`);
+  }
+
+  /* =================================================================
+     FLOATING WHATSAPP
+  ================================================================= */
+  function initializeWhatsApp() {
+    $('#float-whatsapp-btn').on('click', function () {
+      openWhatsApp(buildMessage('general'));
+    });
+  }
+
+  /* =================================================================
+     ANIMATIONS
+  ================================================================= */
+  function initializeAnimations() {
+    const anim = data.animations || {};
+    if (window.AOS) {
+      AOS.init({
+        duration: anim.duration || 600,
+        once: anim.aosOnce !== false,
+        offset: anim.aosOffset || 60,
+        easing: 'ease-out-cubic'
+      });
+    }
+  }
+
+  /* =================================================================
+     INIT
+  ================================================================= */
+  loadData();
+  applyTheme();
+  applySEO();
+  renderAnnouncement();
+  renderNavigation();
+  renderHero();
+  renderStatement();
+  renderAbout();
+  renderStats();
+  renderCollections();
+  renderFeatured();
+  renderCreations();
+  renderCustomisation();
+  renderArtStyles();
+  renderWearableArt();
+  renderCustomArtwork();
+  renderProcess();
+  renderMaterials();
+  renderOccasions();
+  renderWhyUs();
+  renderTeam();
+  renderReels();
+  renderBeforeAfter();
+  renderPricing();
+  renderQuality();
+  renderGallery();
+  renderTestimonials();
+  renderFAQ();
+  renderEnquiry();
+  renderContact();
+  renderFooter();
+
+  initializeFilters();
+  initializeCreationModal();
+  initializeCustomization();
+  initializeWhatsApp();
+  initializeNavigation();
+  initializeLightbox();
+  initializeBeforeAfter();
+  initializeTestimonials();
+  initializeFAQ();
+  initializeAnimations();
+
+  goToStudioStep(1);
+});
+</script>
+
+</body>
+</html>
