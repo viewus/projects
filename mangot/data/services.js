@@ -1,0 +1,83 @@
+﻿// data/services.js — Global Export, Wholesale & Supply Chain Capabilities
+const SERVICES = {
+  cards: [
+    {
+      icon: '✈️',
+      id: 'freight',
+      title: 'Global Air & Sea Freight Export',
+      desc: 'Rapid temperature-controlled air cargo for premium table mangoes and reefer sea containers for commercial volume consignments to UK, Europe, Middle East, and North America.',
+      list: [
+        'Temperature monitored cold-chain transit (10°C - 13°C)',
+        'Direct airport customs clearance & phytosanitary clearance',
+        'FOB, CIF, and DDP shipping terms available',
+      ],
+    },
+    {
+      icon: '🏢',
+      id: 'wholesale',
+      title: 'Wholesale & B2B Bulk Distribution',
+      desc: 'Consistent seasonal and contract supply partnerships for supermarkets, organic retailers, cash & carry networks, and commercial food processors.',
+      list: [
+        'Scheduled pallet and container load fulfillment',
+        'Custom private labelling & bespoke barcoded packaging',
+        'Flexible volume tiers with contracted harvest pricing',
+      ],
+    },
+    {
+      icon: '🔬',
+      id: 'quality',
+      title: 'Grading, Sorting & Phytosanitary Control',
+      desc: 'State-of-the-art packhouse infrastructure featuring optical grading, automated weight sorting, hot water treatment (HWT), and certified zero-pesticide residue inspection.',
+      list: [
+        'Global G.A.P. and APEDA certified facilities',
+        'Brix sugar content & pressure testing per batch',
+        'Vapour Heat Treatment (VHT) / Irradiation compliant',
+      ],
+    },
+    {
+      icon: '📦',
+      id: 'coldchain',
+      title: 'Custom Packaging & Shelf-Life Engineering',
+      desc: 'Eco-friendly corrugated export boxes equipped with custom dividers, cushioned netting, and ethylene absorber sachets to guarantee flawless arrival.',
+      list: [
+        'Food-grade foam sleeve protective wrapping',
+        'Moisture-resistant 5-ply export master cartons',
+        'Ventilated display trays ready for supermarket shelves',
+      ],
+    },
+  ],
+  features: [
+    { icon: '🌿', text: 'Farm-Direct Certified Orchards' },
+    { icon: '❄️', text: 'End-to-End Cold Chain' },
+    { icon: '✈️', text: 'Express Air Freight Dispatch' },
+    { icon: '🛡️', text: 'Phytosanitary & GAP Certified' },
+    { icon: '🌍', text: 'Export to 18+ Countries' },
+    { icon: '📦', text: 'Custom Pallet & Bulk Packaging' },
+  ],
+  process: [
+    {
+      step: 1,
+      icon: '🌳',
+      title: 'Select Orchard Harvest',
+      desc: 'Harvested by hand at mature-green stage with stalk intact to preserve natural latex and flavor retention.',
+    },
+    {
+      step: 2,
+      icon: '🔍',
+      title: 'Laser Grading & Quality Check',
+      desc: 'De-sapped, washed, hot-water treated, and sorted by uniform weight, size, brix, and skin purity.',
+    },
+    {
+      step: 3,
+      icon: '📦',
+      title: 'Protective Export Packing',
+      desc: 'Individually foam-netted and packed into ventilated cartons with ethylene control and cold pre-cooling.',
+    },
+    {
+      step: 4,
+      icon: '🚀',
+      title: 'Cold-Chain Global Dispatch',
+      desc: 'Swift refrigerated transit via air or sea directly to your destination port or central distribution hub.',
+    },
+  ],
+};

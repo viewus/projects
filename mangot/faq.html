@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Mangot &mdash; Mango Sourcing, Order Minimums &amp; Global Shipping</title>
+  <meta name="description" content="Frequently asked questions regarding international mango export, order minimums, shipping terms, packaging specifications, and seasonal booking." />
+  <link rel="canonical" href="https://mangot.co.uk/faq.html" />
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/nav.css" />
+  <link rel="stylesheet" href="./assets/css/footer.css" />
+  <link rel="stylesheet" href="./assets/css/pages.css" />
+  <script src="./data/faq.js"></script>
+  <script src="./data/seo.js"></script>
+  <script src="./assets/js/seo.js"></script>
+</head>
+<body data-page="faq">
+
+  <nav id="main-nav"></nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="hero-tag">Trade Knowledge</div>
+      <h1>Frequently Asked <span class="accent">Questions</span></h1>
+      <p>Everything commercial importers, wholesalers, and retail buyers need to know about our sourcing, packaging, quality grading, and global freight.</p>
+    </div>
+  </div>
+
+  <!-- FAQ ACCORDION -->
+  <section id="faq" style="background:var(--white)">
+    <div class="faq-header fade-up section-header">
+      <div class="section-tag">Buyer Queries</div>
+      <h2 class="section-title">Export &amp; Procurement <span class="accent">FAQ</span></h2>
+      <p class="section-body">Click any question below to expand detailed specifications and trade terms.</p>
+    </div>
+    <div class="faq-grid" id="faq-grid"></div>
+  </section>
+
+  <!-- STILL HAVE QUESTIONS -->
+  <section style="background:var(--mango-cream);padding:5rem 4rem;text-align:center">
+    <div style="max-width:650px;margin:0 auto">
+      <div class="section-tag" style="display:inline-flex">Custom Consignment Inquiries</div>
+      <h2 class="section-title">Need a Custom <span class="accent">Export Plan?</span></h2>
+      <p class="section-body" style="margin:.8rem auto 2rem">Our export specialists are available to discuss tailored pallet allocations, private labeling, and port-to-port logistics.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="./contact.html" class="btn-mango">Contact Trade Desk &rarr;</a>
+        <a href="tel:+447887699208" class="btn-outline">&#x1F4DE; Call Export Team</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="main-footer"></footer>
+  <a id="whatsapp-float" class="whatsapp-float" href="#" target="_blank" aria-label="Chat on WhatsApp"></a>
+
+  <script src="./data/site.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('faq-grid');
+      if (!grid || typeof FAQ === 'undefined') return;
+      grid.innerHTML = FAQ.map((item, i) =>
+        `<div class="faq-item ${i === 0 ? 'active' : ''}">
+          <button class="faq-question">
+            ${item.q}
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-answer"><p>${item.a}</p></div>
+        </div>`
+      ).join('');
+      /* Accordion */
+      grid.addEventListener('click', e => {
+        const btn = e.target.closest('.faq-question');
+        if (!btn) return;
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isOpen) item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

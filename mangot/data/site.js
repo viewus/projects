@@ -1,0 +1,42 @@
+﻿// data/site.js — Site-wide configuration for Mangot (Mango Cultivation & Global Export)
+const SITE = {
+  name: 'Mangot',
+  tagline: 'Sun-Ripened Quality. Farm to Global Markets.',
+  description: 'Mangot is a premier producer, supplier, and global exporter of sun-ripened premium mangoes, natural pulp, and farm-fresh tropical produce.',
+  phone: '+44 7887 699 208',
+  phoneHref: 'tel:+447887699208',
+  whatsapp: 'https://wa.me/447887699208',
+  website: 'www.mangot.co.uk',
+  email: 'export@mangot.co.uk',
+  social: [
+    { icon: '📸', label: 'Instagram', href: '#' },
+    { icon: '📘', label: 'Facebook', href: '#' },
+    { icon: '💼', label: 'LinkedIn', href: '#' },
+    { icon: '▶️', label: 'YouTube', href: '#' },
+  ],
+  navLinks: [
+    { label: 'Home', href: './index.html', page: 'home' },
+    { label: 'Mango Varieties', href: './products.html', page: 'products' },
+    { label: 'About Us', href: './about.html', page: 'about' },
+    { label: 'Export & Supply', href: './services.html', page: 'services' },
+    { label: 'FAQ', href: './faq.html', page: 'faq' },
+    { label: 'Get a Quote', href: './contact.html', page: 'contact', cta: true },
+  ],
+  footerLinks: {
+    'Mango Varieties': [
+      { label: 'Ratnagiri Alphonso', href: './products.html#alphonso' },
+      { label: 'Gir Kesar', href: './products.html#kesar' },
+      { label: 'Honey Ataulfo', href: './products.html#ataulfo' },
+      { label: 'Tommy Atkins', href: './products.html#tommy' },
+      { label: 'Natural Mango Pulp', href: './products.html#pulp' },
+    ],
+    'Export & Services': [
+      { label: 'Global Air & Sea Freight', href: './services.html#freight' },
+      { label: 'Wholesale & B2B Supply', href: './services.html#wholesale' },
+      { label: 'Quality Certification', href: './services.html#quality' },
+      { label: 'Cold Chain Packaging', href: './services.html#coldchain' },
+      { label: 'Request Export Catalog', href: './contact.html' },
+    ],
+  },
+  copyright: '© 2026 Mangot Agro Exports Ltd. All Rights Reserved.',
+};
