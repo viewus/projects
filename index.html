@@ -1115,54 +1115,110 @@
         transform: translateY(-1px);
         box-shadow: 0 6px 22px rgba(123, 108, 246, 0.5);
       }
-      /* footer */
-      .sf {
-      /* whatsapp floating button */
+      /* luxury whatsapp floating button */
       .whatsapp-float {
         position: fixed;
-        bottom: 26px;
-        right: 26px;
-        width: 56px;
-        height: 56px;
-        background: linear-gradient(135deg, #25d366, #128c7e);
+        bottom: 24px;
+        right: 24px;
+        width: 58px;
+        height: 58px;
+        background: radial-gradient(circle at 30% 30%, #34e774 0%, #25d366 50%, #0d834e 100%);
         color: #ffffff !important;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 28px;
+        font-size: 30px;
         text-decoration: none;
-        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.25);
+        box-shadow: 
+          0 8px 24px rgba(37, 211, 102, 0.45),
+          0 2px 6px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(255, 255, 255, 0.25) inset;
         z-index: 9999;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+      }
+      .whatsapp-float::before {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(37, 211, 102, 0.45) 0%, transparent 70%);
+        z-index: -1;
+        animation: waPulse 2.8s infinite;
+      }
+      @keyframes waPulse {
+        0% { transform: scale(0.92); opacity: 0.8; }
+        50% { transform: scale(1.28); opacity: 0.15; }
+        100% { transform: scale(0.92); opacity: 0.8; }
       }
       .whatsapp-float:hover {
-        transform: scale(1.12) translateY(-4px);
-        box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+        transform: scale(1.1) translateY(-4px);
+        box-shadow: 
+          0 14px 32px rgba(37, 211, 102, 0.65),
+          0 0 0 2px rgba(255, 255, 255, 0.6);
       }
       .whatsapp-float .wa-tooltip {
         position: absolute;
-        right: 68px;
+        right: 72px;
         background: rgba(10, 12, 22, 0.94);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
         color: #fff;
         padding: 7px 14px;
-        border-radius: 8px;
+        border-radius: 20px;
         font-family: var(--f);
-        font-size: 12.5px;
-        font-weight: 600;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
         white-space: nowrap;
         opacity: 0;
         pointer-events: none;
         transform: translateX(10px);
-        transition: all 0.25s ease;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 1px solid rgba(37, 211, 102, 0.35);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
       }
       .whatsapp-float:hover .wa-tooltip {
         opacity: 1;
         transform: translateX(0);
+      }
+      /* scroll to top floating button (placed upside WhatsApp) */
+      .scroll-top-btn {
+        position: fixed;
+        bottom: 94px;
+        right: 33px;
+        width: 40px;
+        height: 40px;
+        background: var(--bc);
+        color: var(--t1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        z-index: 9998;
+        border: 1px solid var(--b2);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .scroll-top-btn.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .scroll-top-btn:hover {
+        background: var(--br);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: scale(1.1) translateY(-2px);
+        box-shadow: 0 8px 24px var(--brg);
       }
     </style>
   </head>
@@ -1189,10 +1245,13 @@
     <div class="mbg" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTl">
       <div class="mbox" id="mbox"></div>
     </div>
-    <a href="https://wa.me/917095643856?text=Hi%20Akhilesh,%20I'm%20reaching%20out%20regarding%20your%20projects." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/917095643856?text=Hi%20Akhilesh,%20I%20need%20a%20website." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
       <span class="wa-tooltip">Chat on WhatsApp</span>
     </a>
+    <button class="scroll-top-btn" id="scrollTopBtn" type="button" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <script type="application/json" id="pd">
       {
         "brand": { "mark": "AR", "name": "Akhilesh Ravuri", "subtitle": "Projects Showcase", "href": "./" },
@@ -1581,10 +1640,7 @@
             e(D.brand.subtitle) +
             "</div></div></a>" +
             '<div class="ne">' +
-            '<a class="connect-btn" href="https://crafted-webworks.github.io/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-paper-plane"></i> <span>Connect Me</span></a>' +
-            '<div class="cc"><b>' +
-            P.length +
-            "</b> Projects</div>" +
+            '<a class="connect-btn" href="https://crafted-webworks.github.io/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View My Site</span></a>' +
             '<button class="ib" id="tbtn" type="button" aria-label="Toggle theme"><i class="fa-solid fa-' +
             (th === "dark" ? "sun" : "moon") +
             '"></i></button></div>';
@@ -1888,10 +1944,19 @@
           modal.addEventListener("click", function (ev) {
             if (ev.target === modal) cModal();
           });
+          var stBtn = document.getElementById("scrollTopBtn");
+          if (stBtn) {
+            stBtn.addEventListener("click", function () {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+          }
           window.addEventListener(
             "scroll",
             function () {
               document.getElementById("sH").classList.toggle("scrolled", window.scrollY > 8);
+              if (stBtn) {
+                stBtn.classList.toggle("show", window.scrollY > 200);
+              }
             },
             { passive: true }
           );
