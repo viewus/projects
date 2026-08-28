@@ -1157,9 +1157,6 @@
     <div class="mbg" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTl">
       <div class="mbox" id="mbox"></div>
     </div>
-    <footer class="sf">
-      <div class="w" id="fI"></div>
-    </footer>
     <script type="application/json" id="pd">
       {
         "brand": { "mark": "AR", "name": "Akhilesh Ravuri", "subtitle": "Projects Showcase", "href": "./" },
@@ -1563,14 +1560,10 @@
             e(UI.placeholder) +
             '" autocomplete="off">' +
             '<kbd class="sk">/</kbd><button class="scl" id="scl" aria-label="Clear">&times;</button></div>' +
-            '<select class="ss" id="ssel" aria-label="Sort"><option value="featured">Featured</option>' +
-            '<option value="pages-desc">Most Pages</option><option value="name-asc">A &rarr; Z</option>' +
-            '<option value="year-desc">Newest</option></select>' +
             '<div class="vt"><button class="vb on" id="vg" type="button"><i class="fa-solid fa-grip"></i></button>' +
             '<button class="vb" id="vl" type="button"><i class="fa-solid fa-bars"></i></button></div>';
           sIn = document.getElementById("sbox");
           sCl = document.getElementById("scl");
-          ss = document.getElementById("ssel");
           fr = document.getElementById("fR");
         }
         function rFlt() {
@@ -1757,9 +1750,6 @@
         function cModal() {
           modal.classList.remove("open");
         }
-        function rFooter() {
-          document.getElementById("fI").innerHTML = D.footer.text.replace("{year}", new Date().getFullYear());
-        }
         function sTheme(t) {
           document.documentElement.dataset.theme = t;
           try {
@@ -1825,10 +1815,12 @@
             render();
             sIn.focus();
           });
-          ss.addEventListener("change", function () {
-            st.sort = ss.value;
-            render();
-          });
+          if (ss) {
+            ss.addEventListener("change", function () {
+              st.sort = ss.value;
+              render();
+            });
+          }
           document.getElementById("vg").addEventListener("click", function () {
             st.view = "grid";
             this.classList.add("on");
@@ -1876,7 +1868,6 @@
         rCtrl();
         rFlt();
         render();
-        rFooter();
         bind();
       })();
     </script>
