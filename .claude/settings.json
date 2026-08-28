@@ -1,15 +1,1 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(rtk git *)",
-      "Bash(node -e ' *)",
-      "Bash(node tools/sync-pages.js)",
-      "Bash(node run.js)",
-      "Bash(node -e \"const j=require\\('jsdom'\\);console.log\\('exports:',Object.keys\\(j\\).join\\(', '\\)\\);console.log\\('version:',require\\('jsdom/package.json'\\).version\\)\")",
-      "Bash(cd \"C:/Users/Akhilesh/node_modules/jsdom/lib/jsdom/browser/resources\" && sed -n '1,45p' request-interceptor.js)",
-      "Read(//c/Users/Akhilesh/node_modules/jsdom/lib/jsdom/browser/resources/**)",
-      "Bash(python -)",
-      "Bash(node all.js)"
-    ]
-  }
-}
+
