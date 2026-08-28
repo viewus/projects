@@ -275,6 +275,35 @@
         align-items: center;
         gap: 10px;
       }
+      .connect-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 7px 15px;
+        background: var(--brd);
+        color: #fff !important;
+        font-family: var(--fd);
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: var(--r);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 2px 10px var(--brg);
+        transition: all var(--ft);
+      }
+      .connect-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px var(--brg);
+        filter: brightness(1.1);
+      }
+      @media (max-width: 580px) {
+        .connect-btn span {
+          display: none;
+        }
+        .connect-btn {
+          padding: 8px 12px;
+        }
+      }
       .cc {
         display: inline-flex;
         align-items: center;
@@ -1519,7 +1548,9 @@
             ' <span class="pd"></span></div><div class="bsub">' +
             e(D.brand.subtitle) +
             "</div></div></a>" +
-            '<div class="ne"><div class="cc"><b>' +
+            '<div class="ne">' +
+            '<a class="connect-btn" href="https://crafted-webworks.github.io/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-paper-plane"></i> <span>Connect Me</span></a>' +
+            '<div class="cc"><b>' +
             P.length +
             "</b> Projects</div>" +
             '<button class="ib" id="tbtn" type="button" aria-label="Toggle theme"><i class="fa-solid fa-' +
