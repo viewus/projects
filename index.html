@@ -1146,7 +1146,6 @@
     </header>
     <main>
       <div class="w">
-        <section class="hero" id="hS"></section>
         <section class="ctrl" id="cS">
           <div class="cti" id="cI"></div>
           <div class="fr" id="fR"></div>
@@ -1557,33 +1556,6 @@
             (th === "dark" ? "sun" : "moon") +
             '"></i></button></div>';
         }
-        function rHero() {
-          var cats = new Set(
-            P.map(function (p) {
-              return p.category;
-            })
-          );
-          var tp = P.reduce(function (a, p) {
-            return a + p.pages;
-          }, 0);
-          document.getElementById("hS").innerHTML =
-            '<div class="hlbl"><i class="fa-solid fa-layer-group"></i> Portfolio Showcase</div>' +
-            '<h1 class="ht">Built with <span class="gt">precision</span>.<br>Shipped with purpose.</h1>' +
-            '<p class="hd">A curated collection of ' +
-            P.length +
-            " production-grade web apps spanning " +
-            cats.size +
-            " industries.</p>" +
-            '<div class="hst"><div><div class="sn">' +
-            P.length +
-            '</div><div class="sl">Applications</div></div>' +
-            '<div class="sdv"></div><div><div class="sn">' +
-            cats.size +
-            '</div><div class="sl">Industries</div></div>' +
-            '<div class="sdv"></div><div><div class="sn">' +
-            tp +
-            '+</div><div class="sl">Total Pages</div></div></div>';
-        }
         function rCtrl() {
           document.getElementById("cI").innerHTML =
             '<div class="sw"><i class="fa-solid fa-magnifying-glass si"></i>' +
@@ -1901,7 +1873,6 @@
         modal = document.getElementById("modal");
         mbox = document.getElementById("mbox");
         iTheme();
-        rHero();
         rCtrl();
         rFlt();
         render();
