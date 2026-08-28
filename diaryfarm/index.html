@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dew Farm Dairy | Fresh Milk, Straight From The Farm</title>
+  <meta name="description"
+    content="Pure, fresh milk delivered directly from trusted farms to your doorstep. Collected each morning, quality checked, and bottled in reusable glass." />
+  <link rel="canonical" href="https://dewfarmdairy.co.uk/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #faf3e6;
+      --milk: #fffdf8;
+      --beige: #e9dcc4;
+      --beige-deep: #d8c6a3;
+      --green: #4a6741;
+      --green-deep: #34492e;
+      --green-pale: #eef1e6;
+      --brown: #6b4a2f;
+      --brown-deep: #4a3220;
+      --yellow: #e6ac35;
+      --yellow-pale: #f7dfa8;
+      --text: #33291d;
+      --text-muted: #7c6d58;
+      --shadow: rgba(75, 58, 33, 0.14);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --serif: 'Fraunces', serif;
+      --sans: 'Inter', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--milk);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* paper grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9998;
+      mix-blend-mode: multiply;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    ::selection { background: var(--yellow-pale); color: var(--brown-deep); }
+
+    h1, h2, h3, h4 {
+      font-family: var(--serif);
+      font-weight: 600;
+      color: var(--green-deep);
+      line-height: 1.12;
+    }
+
+    section { padding: 6rem 4rem; position: relative; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 22px;
+      height: 1px;
+      background: var(--brown);
+    }
+
+    .sec-title {
+      font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+      max-width: 700px;
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--yellow);
+    }
+
+    .sec-body {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-top: 1rem;
+      line-height: 1.75;
+    }
+
+    .sec-head { max-width: 720px; margin-bottom: 3.2rem; }
+    .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+    .sec-head.center .eyebrow { justify-content: center; }
+    .sec-head.center .eyebrow::before { display: none; }
+    .sec-head.center .sec-body { margin-left: auto; margin-right: auto; }
+
+    .fade-up, .fade-left, .fade-right {
+      opacity: 0;
+      transition: opacity 0.85s cubic-bezier(.2,.7,.2,1), transform 0.85s cubic-bezier(.2,.7,.2,1);
+    }
+    .fade-up { transform: translateY(34px); }
+    .fade-left { transform: translateX(-34px); }
+    .fade-right { transform: translateX(34px); }
+    .fade-up.visible, .fade-left.visible, .fade-right.visible { opacity: 1; transform: translate(0,0); }
+
+    /* buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0.95rem 1.85rem;
+      border-radius: 40px;
+      border: none;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: var(--milk);
+      box-shadow: 0 10px 24px rgba(74,103,65,0.28);
+    }
+    .btn-primary:hover { background: var(--green-deep); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--brown);
+      color: var(--brown);
+    }
+    .btn-outline:hover { background: var(--brown); color: var(--milk); }
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--brown-deep);
+      box-shadow: 0 10px 24px rgba(230,172,53,0.3);
+    }
+    .btn-yellow:hover { background: #d99a1f; transform: translateY(-2px); }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 4rem;
+      background: rgba(250, 243, 230, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(107,74,47,0.1);
+      transition: all 0.3s;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--green-deep);
+    }
+    .nav-logo-icon {
+      width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .nav-links { display: flex; gap: 0.2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      padding: 0.5rem 0.9rem;
+      border-radius: 20px;
+      transition: all 0.25s;
+    }
+    .nav-links a:hover { background: var(--green-pale); color: var(--green-deep); }
+    .nav-cta {
+      background: var(--green) !important;
+      color: var(--milk) !important;
+      padding: 0.55rem 1.1rem !important;
+      border-radius: 24px;
+      font-weight: 700 !important;
+      margin-left: 0.6rem;
+    }
+    .nav-cta:hover { background: var(--green-deep) !important; color: var(--milk) !important; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+    .hamburger span { width: 22px; height: 2px; background: var(--green-deep); border-radius: 2px; }
+
+    /* HERO */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 9rem 4rem 4rem;
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: -2;
+      background-image: url('https://images.unsplash.com/photo-1440428099904-c6d459a7e7b5?auto=format&fit=crop&q=70&w=2000');
+      background-size: cover;
+      background-position: center 60%;
+      filter: saturate(0.8) brightness(1.12);
+      opacity: 0.4;
+    }
+    .hero-scrim {
+      position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(150deg, rgba(255,253,248,0.97) 0%, rgba(250,243,230,0.92) 40%, rgba(233,220,196,0.72) 100%);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3.5rem;
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: var(--milk);
+      border: 1px solid var(--beige-deep);
+      border-radius: 50%;
+      width: 96px; height: 96px;
+      justify-content: center;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--green-deep);
+      line-height: 1.35;
+      position: absolute;
+      top: 18%;
+      right: 2%;
+      box-shadow: 0 12px 26px var(--shadow);
+      transform: rotate(-8deg);
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brown);
+      background: rgba(230,172,53,0.16);
+      border: 1px solid rgba(230,172,53,0.35);
+      padding: 0.5rem 1.1rem;
+      border-radius: 30px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.1rem);
+      font-weight: 600;
+    }
+    .hero-title .accent {
+      font-style: italic;
+      color: var(--green);
+    }
+    .hero-desc {
+      margin-top: 1.3rem;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      line-height: 1.75;
+    }
+    .hero-btns { display: flex; gap: 1rem; margin-top: 2.3rem; flex-wrap: wrap; }
+    .hero-stats-row {
+      display: flex;
+      gap: 2.2rem;
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(107,74,47,0.15);
+    }
+    .hero-stat-num {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--green-deep);
+    }
+    .hero-stat-label { font-size: 0.72rem; color: var(--text-muted); }
+
+    .hero-right { position: relative; display: flex; align-items: center; justify-content: center; }
+    .hero-photo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 34px 60px -14px rgba(75,58,33,0.32);
+      border: 6px solid var(--milk);
+    }
+    .hero-photo-wrap img { width: 100%; height: 500px; object-fit: cover; }
+
+    /* MARQUEE */
+    .marquee-wrap {
+      background: var(--green-deep);
+      padding: 0.9rem 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(230,172,53,0.25);
+      border-bottom: 1px solid rgba(230,172,53,0.25);
+    }
+    .marquee-track { display: flex; width: max-content; gap: 2rem; align-items: center; animation: marquee 26s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-item { font-family: var(--serif); font-weight: 600; font-size: 0.95rem; color: var(--yellow-pale); white-space: nowrap; }
+    .marquee-sep { color: var(--yellow); }
+
+    /* QUALITY SECTION */
+    #quality { background: var(--cream); }
+    .quality-inner { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 3.5rem; max-width: 1300px; margin: 0 auto; align-items: center; }
+    .quality-photo {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 24px 50px var(--shadow);
+    }
+    .quality-photo img { width: 100%; height: 480px; object-fit: cover; }
+    .quality-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 2.2rem; }
+    .quality-card {
+      background: var(--milk);
+      border: 1px solid var(--beige-deep);
+      border-radius: var(--radius-md);
+      padding: 1.2rem 1.3rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+    .quality-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--green-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .quality-card-title { font-weight: 700; font-size: 0.85rem; color: var(--text); }
+    .quality-card-sub { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+    /* JOURNEY (Farm to Home) */
+    #journey { background: var(--milk); }
+    .journey-track {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.4rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .journey-track::before {
+      content: '';
+      position: absolute;
+      top: 26px;
+      left: 6%;
+      right: 6%;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, var(--beige-deep) 0 8px, transparent 8px 16px);
+      z-index: 0;
+    }
+    .journey-step { position: relative; z-index: 1; text-align: center; }
+    .journey-num {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      background: var(--milk);
+      border: 2px solid var(--green);
+      color: var(--green-deep);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0 auto 1.1rem;
+    }
+    .journey-title { font-family: var(--serif); font-weight: 600; font-size: 1.02rem; color: var(--green-deep); margin-bottom: 0.5rem; }
+    .journey-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; padding: 0 0.3rem; }
+
+    /* PRODUCTS */
+    #products { background: var(--cream); }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; max-width: 1300px; margin: 0 auto; }
+    .product-card {
+      background: var(--milk);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--beige-deep);
+      transition: all 0.35s;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px var(--shadow); }
+    .product-img { height: 190px; overflow: hidden; position: relative; }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .product-card:hover .product-img img { transform: scale(1.06); }
+    .product-tag {
+      position: absolute;
+      top: 0.8rem; left: 0.8rem;
+      background: var(--yellow);
+      color: var(--brown-deep);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+    .product-body { padding: 1.4rem 1.4rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+    .product-name { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: var(--green-deep); margin-bottom: 0.4rem; }
+    .product-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 0.9rem; flex: 1; }
+    .product-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.78rem; color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .product-price { font-family: var(--serif); font-weight: 700; font-size: 1.15rem; color: var(--green-deep); }
+    .product-cta {
+      display: block;
+      text-align: center;
+      background: var(--green-pale);
+      color: var(--green-deep);
+      border: 1px solid var(--beige-deep);
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.65rem 1rem;
+      transition: all 0.25s;
+    }
+    .product-cta:hover { background: var(--green); color: var(--milk); }
+
+    /* GLASS BOTTLE SECTION */
+    #bottle {
+      background: var(--green-deep);
+      color: var(--milk);
+      overflow: hidden;
+    }
+    .bottle-inner {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 3.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    #bottle .eyebrow { color: var(--yellow-pale); }
+    #bottle .eyebrow::before { background: var(--yellow-pale); }
+    #bottle h2 { color: var(--milk); }
+    #bottle .sec-body { color: rgba(255,253,248,0.7); }
+    .bottle-visual {
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .bottle-photo {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      width: 300px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    }
+    .bottle-photo img { width: 100%; height: 420px; object-fit: cover; }
+    .bottle-badge {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      background: var(--yellow);
+      color: var(--brown-deep);
+      border-radius: 50%;
+      width: 118px; height: 118px;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+      transform: rotate(6deg);
+    }
+    .bottle-features { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.6rem; }
+    .bottle-feature { display: flex; gap: 0.9rem; align-items: flex-start; }
+    .bottle-feature-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(255,253,248,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+    .bottle-feature-title { font-weight: 700; font-size: 0.9rem; }
+    .bottle-feature-desc { font-size: 0.78rem; color: rgba(255,253,248,0.6); margin-top: 0.15rem; }
+
+    /* PROMISE / QUALITY PROMISE */
+    #promise { background: var(--milk); }
+    .promise-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.2rem; max-width: 1300px; margin: 0 auto; }
+    .promise-card {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 1.8rem 1.4rem;
+      text-align: center;
+      border: 1px solid var(--beige-deep);
+      transition: all 0.3s;
+    }
+    .promise-card:hover { border-color: var(--green); transform: translateY(-5px); }
+    .promise-num { font-family: var(--serif); font-size: 0.75rem; font-weight: 700; color: var(--yellow); margin-bottom: 0.8rem; }
+    .promise-title { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--green-deep); margin-bottom: 0.5rem; }
+    .promise-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* STATS */
+    #stats { background: var(--beige); padding-top: 4.5rem; padding-bottom: 4.5rem; }
+    .stats-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.5rem; max-width: 1300px; margin: 0 auto; text-align: center; }
+    .stat-card { border-right: 1px dashed rgba(107,74,47,0.25); padding: 0.5rem; }
+    .stat-card:last-child { border-right: none; }
+    .stat-num { font-family: var(--serif); font-weight: 700; font-size: clamp(2rem, 3.6vw, 2.7rem); color: var(--green-deep); }
+    .stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.4rem; }
+
+    /* FARM SECTION */
+    #farms { background: var(--cream); }
+    .farms-inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; max-width: 1300px; margin: 0 auto; align-items: center; }
+    .farms-gallery { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.9rem; }
+    .farms-gallery img { border-radius: var(--radius-md); width: 100%; height: 190px; object-fit: cover; }
+    .farms-gallery img:nth-child(2) { margin-top: 2rem; }
+    .farm-tag-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
+    .farm-tag { font-size: 0.78rem; font-weight: 600; background: var(--milk); border: 1px solid var(--beige-deep); padding: 0.5rem 1rem; border-radius: 20px; }
+
+    /* COWS SECTION */
+    #cows { background: var(--milk); }
+    .cows-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; max-width: 1300px; margin: 0 auto; align-items: center; }
+    .cows-photo-stack { position: relative; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1rem; }
+    .cows-photo-stack img { width: 100%; border-radius: var(--radius-md); object-fit: cover; }
+    .cows-photo-stack .cp-main { height: 420px; }
+    .cows-photo-stack .cp-side { height: 200px; align-self: end; }
+    .cow-care-list { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.8rem; }
+    .cow-care-item { display: flex; gap: 0.9rem; align-items: flex-start; }
+    .cow-care-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--green-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+    .cow-care-title { font-weight: 700; font-size: 0.88rem; color: var(--text); }
+    .cow-care-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; line-height: 1.5; }
+    .cow-breed-strip { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1.8rem; }
+    .cow-breed-chip {
+      font-size: 0.76rem; font-weight: 600;
+      background: var(--cream); border: 1px solid var(--beige-deep);
+      padding: 0.5rem 1rem; border-radius: 20px;
+    }
+
+    /* WHY CHOOSE US */
+    #why { background: var(--milk); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1300px; margin: 0 auto; }
+    .why-card {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.6rem;
+      border: 1px solid var(--beige-deep);
+      transition: all 0.3s;
+    }
+    .why-card:hover { transform: translateY(-5px); border-color: var(--green); }
+    .why-icon { width: 50px; height: 50px; border-radius: 12px; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.1rem; }
+    .why-title { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--green-deep); margin-bottom: 0.5rem; }
+    .why-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* SUBSCRIPTION */
+    #subscription { background: var(--green-deep); color: var(--milk); }
+    #subscription .eyebrow { color: var(--yellow-pale); }
+    #subscription .eyebrow::before { background: var(--yellow-pale); }
+    #subscription h2 { color: var(--milk); }
+    .sub-inner { max-width: 1100px; margin: 0 auto; }
+    .sub-card {
+      background: rgba(255,253,248,0.06);
+      border: 1px solid rgba(255,253,248,0.15);
+      border-radius: var(--radius-lg);
+      padding: 2.6rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+    }
+    .sub-group { margin-bottom: 1.6rem; }
+    .sub-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--yellow-pale); margin-bottom: 0.7rem; display: block; }
+    .sub-options { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .sub-option {
+      background: rgba(255,253,248,0.06);
+      border: 1.5px solid rgba(255,253,248,0.2);
+      color: var(--milk);
+      padding: 0.6rem 1.1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.25s;
+    }
+    .sub-option.active, .sub-option:hover { background: var(--yellow); border-color: var(--yellow); color: var(--brown-deep); }
+    .sub-summary {
+      background: var(--milk);
+      color: var(--text);
+      border-radius: var(--radius-md);
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .sub-summary-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.7rem 0; border-bottom: 1px solid var(--beige); }
+    .sub-summary-row:last-of-type { border-bottom: none; }
+    .sub-summary-label { font-size: 0.8rem; color: var(--text-muted); }
+    .sub-summary-val { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: var(--green-deep); }
+    .sub-summary-val.small { font-size: 0.95rem; }
+    .sub-cta { width: 100%; margin-top: 1.3rem; justify-content: center; }
+
+    /* GALLERY DAY */
+    #gallery { background: var(--cream); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 170px;
+      gap: 1rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .gallery-item { border-radius: var(--radius-md); overflow: hidden; position: relative; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item.tall { grid-row: span 2; }
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-caption {
+      position: absolute; inset: auto 0 0 0;
+      background: linear-gradient(0deg, rgba(51,41,29,0.8), transparent);
+      color: var(--milk);
+      padding: 0.9rem 1rem 0.7rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* NUTRITION */
+    #nutrition { background: var(--milk); }
+    .nutrition-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; max-width: 1300px; margin: 0 auto; align-items: center; }
+    .nutrition-visual {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+    }
+    .nutrient-item { text-align: center; }
+    .nutrient-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .nutrient-name { font-weight: 700; font-size: 0.85rem; color: var(--green-deep); }
+    .nutrient-note { font-size: 0.68rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .nutrition-disclaimer { font-size: 0.72rem; color: var(--text-muted); font-style: italic; margin-top: 1.4rem; }
+
+    /* HOW TO ORDER */
+    #how-to-order { background: var(--cream); }
+    .how-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.3rem; max-width: 1300px; margin: 0 auto; }
+    .how-card { background: var(--milk); border: 1px solid var(--beige-deep); border-radius: var(--radius-md); padding: 1.7rem 1.3rem; text-align: center; }
+    .how-num { font-family: var(--serif); font-weight: 700; font-size: 1.6rem; color: var(--yellow); margin-bottom: 0.7rem; }
+    .how-title { font-weight: 700; font-size: 0.88rem; color: var(--text); }
+    .how-cta { text-align: center; margin-top: 2.5rem; }
+
+    /* TESTIMONIALS */
+    #testimonials { background: var(--milk); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1300px; margin: 0 auto; }
+    .testi-card { background: var(--cream); border-radius: var(--radius-md); padding: 2rem; border: 1px solid var(--beige-deep); }
+    .testi-stars { color: var(--yellow); font-size: 0.85rem; margin-bottom: 0.9rem; }
+    .testi-text { font-size: 0.88rem; color: var(--text); line-height: 1.65; font-style: italic; margin-bottom: 1.3rem; }
+    .testi-person { display: flex; align-items: center; gap: 0.8rem; }
+    .testi-avatar img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+    .testi-name { font-weight: 700; font-size: 0.85rem; color: var(--green-deep); }
+    .testi-sub { font-size: 0.7rem; color: var(--text-muted); }
+
+    /* DELIVERY */
+    #delivery { background: var(--beige); }
+    .delivery-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1300px; margin: 0 auto; align-items: center; }
+    .delivery-steps { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.8rem; }
+    .delivery-step { display: flex; gap: 1rem; align-items: flex-start; }
+    .delivery-dot { width: 30px; height: 30px; border-radius: 50%; background: var(--green); color: var(--milk); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; font-weight: 700; }
+    .delivery-step-text { font-size: 0.88rem; color: var(--text); font-weight: 600; }
+    .delivery-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 1.6rem; font-style: italic; }
+    .delivery-photo { border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 24px 50px var(--shadow); }
+    .delivery-photo img { width: 100%; height: 420px; object-fit: cover; }
+
+    /* CONTACT */
+    #contact {
+      max-width: 1300px;
+      margin: 4rem auto;
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 4rem;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3.5rem;
+    }
+    .contact-detail { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.3rem; }
+    .cd-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--milk); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .cd-label { font-size: 0.7rem; font-weight: 700; color: var(--brown); text-transform: uppercase; letter-spacing: 0.06em; }
+    .cd-val { font-size: 0.9rem; color: var(--text); font-weight: 600; }
+    .contact-btns { display: flex; gap: 0.8rem; margin-top: 1.6rem; flex-wrap: wrap; }
+    .contact-form { background: var(--milk); border-radius: var(--radius-md); padding: 2.4rem; }
+    .form-title { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; color: var(--green-deep); margin-bottom: 1.4rem; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-label { display: block; font-size: 0.76rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 0.8rem 1rem; border-radius: var(--radius-sm);
+      border: 1.5px solid var(--beige-deep); background: var(--cream);
+      font-family: var(--sans); font-size: 0.86rem; color: var(--text); outline: none;
+      transition: border 0.25s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--green); }
+    .form-textarea { min-height: 90px; resize: vertical; }
+    .form-submit {
+      width: 100%; background: var(--green); color: var(--milk); font-weight: 700;
+      padding: 0.95rem; border-radius: var(--radius-sm); border: none; font-size: 0.88rem;
+      margin-top: 0.4rem; transition: all 0.3s;
+    }
+    .form-submit:hover { background: var(--green-deep); transform: translateY(-2px); }
+    .form-status { display: none; margin-top: 1rem; padding: 0.8rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; font-weight: 600; }
+    .form-status.success { background: rgba(74,103,65,0.12); color: var(--green-deep); }
+    .form-status.error { background: rgba(180,80,40,0.1); color: #8a3b1f; }
+
+    /* FINAL CTA */
+    #final-cta {
+      position: relative;
+      isolation: isolate;
+      text-align: center;
+      overflow: hidden;
+      padding: 7rem 4rem;
+    }
+    .final-bg {
+      position: absolute; inset: 0; z-index: -2;
+      background-image: url('https://images.unsplash.com/photo-1440428099904-c6d459a7e7b5?auto=format&fit=crop&q=70&w=2000');
+      background-size: cover; background-position: center 55%;
+    }
+    .final-scrim { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(52,73,46,0.88), rgba(52,73,46,0.94)); }
+    #final-cta h2 { color: var(--milk); max-width: 700px; margin: 0 auto; }
+    #final-cta .sec-body { color: rgba(255,253,248,0.75); margin-left: auto; margin-right: auto; }
+    .final-btns { display: flex; gap: 1rem; justify-content: center; margin-top: 2.2rem; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { background: var(--green-deep); color: var(--milk); padding: 4rem 4rem 1.6rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; max-width: 1300px; margin: 0 auto; padding-bottom: 2.4rem; border-bottom: 1px solid rgba(255,253,248,0.12); }
+    .f-logo { font-family: var(--serif); font-weight: 700; font-size: 1.35rem; color: var(--yellow-pale); margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.82rem; color: rgba(255,253,248,0.55); line-height: 1.7; max-width: 300px; }
+    .footer-col h4 { font-family: var(--serif); color: var(--yellow-pale); font-size: 0.92rem; margin-bottom: 1.1rem; font-weight: 600; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col a { font-size: 0.8rem; color: rgba(255,253,248,0.6); }
+    .footer-col a:hover { color: var(--yellow-pale); }
+    .footer-bottom { max-width: 1300px; margin: 0 auto; padding-top: 1.4rem; font-size: 0.75rem; color: rgba(255,253,248,0.45); text-align: center; }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 1.8rem; left: 50%;
+      transform: translateX(-50%) translateY(120%);
+      background: var(--green-deep);
+      color: var(--milk);
+      padding: 0.9rem 1.6rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex; align-items: center; gap: 0.6rem;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+      z-index: 999;
+      transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1080px) {
+      .stats-grid, .promise-grid, .journey-track, .how-steps { grid-template-columns: repeat(3,1fr); }
+      .stat-card:nth-child(3n) { border-right: none; }
+      .journey-track::before { display: none; }
+    }
+    @media (max-width: 960px) {
+      section { padding: 4rem 1.5rem; }
+      nav { padding: 0.9rem 1.5rem; }
+      .hamburger { display: flex; }
+      .nav-links {
+        position: fixed; top: 64px; left: 0; right: 0;
+        flex-direction: column; background: var(--cream);
+        padding: 1.5rem; gap: 0.4rem;
+        transform: translateY(-150%); transition: transform 0.35s;
+      }
+      .nav-links.open { transform: translateY(0); }
+      .nav-links a { text-align: center; padding: 0.8rem; }
+      .hero-inner, .quality-inner, .bottle-inner, .farms-inner, .cows-inner, .nutrition-inner, .delivery-inner, #contact, .sub-card { grid-template-columns: 1fr; }
+      .hero-right { margin-top: 2.5rem; order: -1; }
+      .hero-badge { position: static; margin-bottom: 1rem; transform: rotate(0deg); }
+      .products-grid, .why-grid, .testi-grid { grid-template-columns: repeat(2,1fr); }
+      .stats-grid, .promise-grid, .journey-track, .how-steps, .gallery-grid { grid-template-columns: repeat(2,1fr); }
+      .stat-card:nth-child(2n) { border-right: none; }
+      .quality-list { grid-template-columns: 1fr; }
+      .farms-gallery img:nth-child(2) { margin-top: 0; }
+      .cows-photo-stack { grid-template-columns: 1fr 1fr; }
+      .cows-photo-stack .cp-main { height: 260px; }
+      .cows-photo-stack .cp-side { height: 260px; align-self: stretch; }
+      #contact { padding: 2rem; }
+      .footer-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 620px) {
+      .products-grid, .why-grid, .testi-grid, .stats-grid, .promise-grid, .journey-track, .how-steps, .gallery-grid { grid-template-columns: 1fr; }
+      .stat-card { border-right: none; border-bottom: 1px dashed rgba(107,74,47,0.25); }
+      .gallery-item.wide { grid-column: span 1; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-icon">🥛</span>
+      Dew Farm <span style="font-style:italic;">Dairy</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#quality">Our Milk</a></li>
+      <li><a href="#products">Shop</a></li>
+      <li><a href="#farms">Farms</a></li>
+      <li><a href="#cows">Our Cows</a></li>
+      <li><a href="#subscription">Subscribe</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="fade-up">
+    <div class="hero-bg"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-tag">Direct From Trusted Farms</div>
+        <h1 class="hero-title">Fresh Milk.<br /><span class="accent">Straight From The Farm.</span></h1>
+        <p class="hero-desc">Pure, fresh and carefully handled milk delivered directly from trusted farms to your
+          doorstep — collected each morning, quality checked, and bottled in reusable glass.</p>
+        <div class="hero-btns">
+          <a href="#products" class="btn btn-primary">Order Fresh Milk →</a>
+          <a href="#journey" class="btn btn-outline">How It Works →</a>
+        </div>
+        <div class="hero-stats-row">
+          <div>
+            <div class="hero-stat-num">50+</div>
+            <div class="hero-stat-label">Partner Farms</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">10K+</div>
+            <div class="hero-stat-label">Families Served</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">24H</div>
+            <div class="hero-stat-label">Delivery Cycle</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-badge">FARM FRESH<br />EVERY<br />DAY</div>
+        <div class="hero-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1601436423474-51738541c1b1?auto=format&fit=crop&q=80&w=700"
+            alt="Fresh glass bottle of milk" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Farm Fresh</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Collected Daily</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Glass Bottled</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Quality Checked</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">No Unnecessary Processing</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Doorstep Delivery</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Trusted Farms</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Farm Fresh</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Collected Daily</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Glass Bottled</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Quality Checked</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">No Unnecessary Processing</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Doorstep Delivery</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Trusted Farms</span><span class="marquee-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- MILK QUALITY -->
+  <section id="quality">
+    <div class="quality-inner">
+      <div class="quality-photo fade-left">
+        <img src="https://images.unsplash.com/photo-1611211301828-be4b317d0707?auto=format&fit=crop&q=80&w=700"
+          alt="Fresh milk being poured" />
+      </div>
+      <div class="fade-right">
+        <div class="eyebrow">Our Quality</div>
+        <h2 class="sec-title">You Should Know Where Your <em>Milk</em> Comes From.</h2>
+        <p class="sec-body">Our milk is sourced directly from farms and handled carefully at every stage — from
+          collection to your doorstep. No unnecessary steps, no unnecessary processing.</p>
+        <div class="quality-list">
+          <div class="quality-card"><div class="quality-icon">🚜</div><div><div class="quality-card-title">Direct
+                From Farms</div><div class="quality-card-sub">No middlemen, no delays</div></div></div>
+          <div class="quality-card"><div class="quality-icon">🌅</div><div><div class="quality-card-title">Freshly
+                Collected</div><div class="quality-card-sub">Gathered each morning</div></div></div>
+          <div class="quality-card"><div class="quality-icon">✅</div><div><div
+                class="quality-card-title">Quality Checked</div><div class="quality-card-sub">Every single batch
+              </div></div></div>
+          <div class="quality-card"><div class="quality-icon">🤲</div><div><div
+                class="quality-card-title">Carefully Handled</div><div class="quality-card-sub">At every stage
+              </div></div></div>
+          <div class="quality-card"><div class="quality-icon">🌿</div><div><div
+                class="quality-card-title">Naturally Nutritious</div><div class="quality-card-sub">Kept close to
+                its natural state</div></div></div>
+          <div class="quality-card"><div class="quality-icon">🧼</div><div><div class="quality-card-title">Hygienic
+                Packaging</div><div class="quality-card-sub">Clean glass bottling</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FARM TO HOME JOURNEY -->
+  <section id="journey">
+    <div class="sec-head center fade-up">
+      <div class="eyebrow">The Journey</div>
+      <h2 class="sec-title">From Our Farm To <em>Your Home.</em></h2>
+      <p class="sec-body">Every bottle follows the same careful path — five steps between the farm and your
+        doorstep.</p>
+    </div>
+    <div class="journey-track fade-up">
+      <div class="journey-step">
+        <div class="journey-num">01</div>
+        <div class="journey-title">Healthy Farms</div>
+        <div class="journey-desc">Milk comes from carefully selected and trusted dairy farms.</div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-num">02</div>
+        <div class="journey-title">Fresh Collection</div>
+        <div class="journey-desc">Milk is collected with strict hygiene and quality practices.</div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-num">03</div>
+        <div class="journey-title">Quality Checks</div>
+        <div class="journey-desc">Checked for freshness and quality before dispatch.</div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-num">04</div>
+        <div class="journey-title">Glass Bottle</div>
+        <div class="journey-desc">Packed in clean, reusable glass bottles.</div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-num">05</div>
+        <div class="journey-title">Home Delivery</div>
+        <div class="journey-desc">Delivered fresh, directly to your doorstep.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="sec-head center fade-up">
+      <div class="eyebrow">Shop Fresh Milk</div>
+      <h2 class="sec-title">Milk, The Way <em>Nature Made It.</em></h2>
+      <p class="sec-body">Every product below is fresh milk — sourced with care, handled with respect.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <span class="product-tag">Everyday</span>
+          <img src="https://images.unsplash.com/photo-1601436423474-51738541c1b1?auto=format&fit=crop&q=80&w=500"
+            alt="Fresh cow milk bottle" />
+        </div>
+        <div class="product-body">
+          <div class="product-name">Fresh Cow Milk</div>
+          <div class="product-desc">Pure, fresh farm milk for everyday use — collected each morning.</div>
+          <div class="product-meta"><span>1 L Glass Bottle</span><span class="product-price">£1.60</span></div>
+          <a href="#contact" class="product-cta">Enquire About This Milk</a>
+        </div>
+      </div>
+
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <span class="product-tag">Rich &amp; Creamy</span>
+          <img src="https://images.unsplash.com/photo-1601436423474-51738541c1b1?auto=format&fit=crop&q=80&w=500"
+            alt="Full cream milk bottle" />
+        </div>
+        <div class="product-body">
+          <div class="product-name">Full Cream Milk</div>
+          <div class="product-desc">Rich and creamy milk for families who love a fuller taste.</div>
+          <div class="product-meta"><span>1 L Glass Bottle</span><span class="product-price">£1.90</span></div>
+          <a href="#contact" class="product-cta">Enquire About This Milk</a>
+        </div>
+      </div>
+
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <span class="product-tag">Premium</span>
+          <img src="https://images.unsplash.com/photo-1545468258-d895ac85938e?auto=format&fit=crop&q=80&w=500"
+            alt="A2 milk bottle" />
+        </div>
+        <div class="product-body">
+          <div class="product-name">A2 Milk</div>
+          <div class="product-desc">Premium milk sourced from selected cows, where applicable.</div>
+          <div class="product-meta"><span>1 L Glass Bottle</span><span class="product-price">£2.40</span></div>
+          <a href="#contact" class="product-cta">Enquire About This Milk</a>
+        </div>
+      </div>
+
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <span class="product-tag">Organic</span>
+          <img src="https://images.unsplash.com/photo-1630086443087-ba126864a2ad?auto=format&fit=crop&q=80&w=500"
+            alt="Organic milk bottle" />
+        </div>
+        <div class="product-body">
+          <div class="product-name">Organic Milk</div>
+          <div class="product-desc">Naturally produced milk from farms following organic practices, where
+            available.</div>
+          <div class="product-meta"><span>1 L Glass Bottle</span><span class="product-price">£2.20</span></div>
+          <a href="#contact" class="product-cta">Enquire About This Milk</a>
+        </div>
+      </div>
+
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <span class="product-tag">Best Value</span>
+          <img src="https://images.unsplash.com/photo-1652040828412-637e07d3718f?auto=format&fit=crop&q=80&w=500"
+            alt="Family milk pack" />
+        </div>
+        <div class="product-body">
+          <div class="product-name">Family Milk Pack</div>
+          <div class="product-desc">Larger quantity designed for everyday family consumption.</div>
+          <div class="product-meta"><span>4 x 1 L Glass Bottles</span><span class="product-price">£7.20</span></div>
+          <a href="#contact" class="product-cta">Enquire About This Milk</a>
+        </div>
+      </div>
+
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <span class="product-tag">Subscribe &amp; Save</span>
+          <img src="https://images.unsplash.com/photo-1719152214230-a2944f482073?auto=format&fit=crop&q=80&w=500"
+            alt="Daily milk delivery" />
+        </div>
+        <div class="product-body">
+          <div class="product-name">Daily Milk Subscription</div>
+          <div class="product-desc">Fresh milk delivered every morning on a recurring schedule.</div>
+          <div class="product-meta"><span>From 500ml / day</span><span class="product-price">From £1.10</span></div>
+          <a href="#subscription" class="product-cta">See Subscription Options</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GLASS BOTTLE -->
+  <section id="bottle">
+    <div class="bottle-inner">
+      <div class="bottle-visual fade-left">
+        <div class="bottle-photo">
+          <img src="https://images.unsplash.com/photo-1601436423474-51738541c1b1?auto=format&fit=crop&q=80&w=600"
+            alt="Close-up of glass milk bottle" />
+        </div>
+        <div class="bottle-badge">RETURN.<br />REFILL.<br />REPEAT.</div>
+      </div>
+      <div class="fade-right">
+        <div class="eyebrow">The Bottle</div>
+        <h2 class="sec-title">Better Milk. <em>Better Bottle.</em></h2>
+        <p class="sec-body">Our milk is delivered in reusable glass bottles — a more premium, more sustainable way
+          to bring fresh milk home, with far less single-use plastic along the way.</p>
+        <div class="bottle-features">
+          <div class="bottle-feature"><div class="bottle-feature-icon">♻️</div><div><div
+                class="bottle-feature-title">Reusable Glass Bottles</div><div class="bottle-feature-desc">Washed,
+                sanitised and refilled</div></div></div>
+          <div class="bottle-feature"><div class="bottle-feature-icon">🧼</div><div><div
+                class="bottle-feature-title">Hygienic Packaging</div><div class="bottle-feature-desc">Sealed fresh
+                at bottling</div></div></div>
+          <div class="bottle-feature"><div class="bottle-feature-icon">✨</div><div><div
+                class="bottle-feature-title">Premium Presentation</div><div class="bottle-feature-desc">A better
+                experience, every delivery</div></div></div>
+          <div class="bottle-feature"><div class="bottle-feature-icon">🌍</div><div><div
+                class="bottle-feature-title">Less Single-Use Plastic</div><div class="bottle-feature-desc">Better
+                for the everyday household</div></div></div>
+          <div class="bottle-feature"><div class="bottle-feature-icon">📦</div><div><div
+                class="bottle-feature-title">Easy Bottle Return</div><div class="bottle-feature-desc">Leave empties
+                out for your next delivery</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY PROMISE -->
+  <section id="promise">
+    <div class="sec-head center fade-up">
+      <div class="eyebrow">Our Standards</div>
+      <h2 class="sec-title">Our <em>Quality Promise.</em></h2>
+    </div>
+    <div class="promise-grid">
+      <div class="promise-card fade-up">
+        <div class="promise-num">01</div>
+        <div class="promise-title">Freshness</div>
+        <div class="promise-desc">Milk is handled carefully to preserve freshness.</div>
+      </div>
+      <div class="promise-card fade-up">
+        <div class="promise-num">02</div>
+        <div class="promise-title">Purity</div>
+        <div class="promise-desc">We focus on clean sourcing and responsible handling.</div>
+      </div>
+      <div class="promise-card fade-up">
+        <div class="promise-num">03</div>
+        <div class="promise-title">Hygiene</div>
+        <div class="promise-desc">From collection to delivery, hygiene remains a priority.</div>
+      </div>
+      <div class="promise-card fade-up">
+        <div class="promise-num">04</div>
+        <div class="promise-title">Traceability</div>
+        <div class="promise-desc">Know where your milk comes from and how it reaches you.</div>
+      </div>
+      <div class="promise-card fade-up">
+        <div class="promise-num">05</div>
+        <div class="promise-title">Consistency</div>
+        <div class="promise-desc">Every delivery should meet the same quality expectations.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats">
+    <div class="stats-grid fade-up">
+      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Partner Farms</div></div>
+      <div class="stat-card"><div class="stat-num">10K+</div><div class="stat-label">Families Served</div></div>
+      <div class="stat-card"><div class="stat-num">24H</div><div class="stat-label">Fresh Delivery Cycle</div></div>
+      <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Quality Focused</div></div>
+      <div class="stat-card"><div class="stat-num">365</div><div class="stat-label">Days Of Freshness</div></div>
+    </div>
+  </section>
+
+  <!-- FARMS -->
+  <section id="farms">
+    <div class="farms-inner">
+      <div class="farms-gallery fade-left">
+        <img src="https://images.unsplash.com/photo-1440428099904-c6d459a7e7b5?auto=format&fit=crop&q=80&w=500"
+          alt="Green dairy farm pasture" />
+        <img src="https://images.unsplash.com/photo-1652040828412-637e07d3718f?auto=format&fit=crop&q=80&w=500"
+          alt="Cow grazing peacefully" />
+      </div>
+      <div class="fade-right">
+        <div class="eyebrow">Our Farms</div>
+        <h2 class="sec-title">Meet The Farms <em>Behind Your Milk.</em></h2>
+        <p class="sec-body">We work with a network of selected dairy farmers and farms that prioritise animal care,
+          clean surroundings, responsible farming, proper milking practices, fresh handling, and consistent quality
+          standards.</p>
+        <div class="farm-tag-list">
+          <span class="farm-tag">🐄 Animal Care</span>
+          <span class="farm-tag">🌾 Clean Surroundings</span>
+          <span class="farm-tag">🤝 Responsible Farming</span>
+          <span class="farm-tag">🫙 Proper Milking Practices</span>
+          <span class="farm-tag">❄️ Fresh Handling</span>
+          <span class="farm-tag">✅ Quality Standards</span>
+        </div>
+        <a href="#gallery" class="btn btn-primary" style="margin-top:2rem;">Discover Our Farms →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE COWS -->
+  <section id="cows">
+    <div class="cows-inner">
+      <div class="cows-photo-stack fade-left">
+        <img class="cp-main" src="https://images.unsplash.com/photo-1652040828412-637e07d3718f?auto=format&fit=crop&q=80&w=700"
+          alt="Dairy cow standing in a green field" />
+        <img class="cp-side" src="https://images.unsplash.com/photo-1630086443087-ba126864a2ad?auto=format&fit=crop&q=80&w=500"
+          alt="Close-up portrait of a dairy cow" />
+      </div>
+      <div class="fade-right">
+        <div class="eyebrow">The Cows</div>
+        <h2 class="sec-title">It All Starts With A <em>Healthy Cow.</em></h2>
+        <p class="sec-body">Good milk begins long before collection. It starts with how a cow is fed, how much
+          space she has to graze, and how well she's looked after day to day. Our partner farms are chosen because
+          they take this seriously.</p>
+        <div class="cow-care-list">
+          <div class="cow-care-item">
+            <div class="cow-care-icon">🌾</div>
+            <div>
+              <div class="cow-care-title">Open Pasture Grazing</div>
+              <div class="cow-care-desc">Cows spend time outdoors on open pasture whenever conditions allow, with
+                access to fresh grass and clean water.</div>
+            </div>
+          </div>
+          <div class="cow-care-item">
+            <div class="cow-care-icon">🩺</div>
+            <div>
+              <div class="cow-care-title">Regular Veterinary Care</div>
+              <div class="cow-care-desc">Herd health is checked routinely, with veterinary support on hand at each
+                partner farm.</div>
+            </div>
+          </div>
+          <div class="cow-care-item">
+            <div class="cow-care-icon">⏰</div>
+            <div>
+              <div class="cow-care-title">Calm, Consistent Milking</div>
+              <div class="cow-care-desc">Cows are milked on a steady daily rhythm, using gentle handling practices
+                that keep the herd relaxed.</div>
+            </div>
+          </div>
+          <div class="cow-care-item">
+            <div class="cow-care-icon">🏡</div>
+            <div>
+              <div class="cow-care-title">Comfortable Shelter</div>
+              <div class="cow-care-desc">Clean, well-ventilated barns give the herd shelter and rest away from
+                extreme weather.</div>
+            </div>
+          </div>
+        </div>
+        <div class="cow-breed-strip">
+          <span class="cow-breed-chip">🐄 Holstein Friesian</span>
+          <span class="cow-breed-chip">🐄 Jersey</span>
+          <span class="cow-breed-chip">🐄 Guernsey</span>
+          <span class="cow-breed-chip">🐄 Ayrshire</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why">
+    <div class="sec-head center fade-up">
+      <div class="eyebrow">Why Choose Us</div>
+      <h2 class="sec-title">Milk You Can <em>Trust.</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-icon">🚜</div>
+        <div class="why-title">Direct From Farms</div>
+        <div class="why-desc">Reduce unnecessary steps between farm and home.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">🌅</div>
+        <div class="why-title">Delivered Fresh</div>
+        <div class="why-desc">Designed around frequent fresh delivery.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">🍶</div>
+        <div class="why-title">Glass Bottle</div>
+        <div class="why-desc">A premium, reusable packaging experience.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">✅</div>
+        <div class="why-title">Quality First</div>
+        <div class="why-desc">Milk is handled with freshness and hygiene in mind.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">📅</div>
+        <div class="why-title">Convenient Subscription</div>
+        <div class="why-desc">Set up regular milk delivery according to your household needs.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">🚪</div>
+        <div class="why-title">Reliable Delivery</div>
+        <div class="why-desc">Fresh milk delivered directly to your doorstep.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIPTION -->
+  <section id="subscription">
+    <div class="sub-inner">
+      <div class="sec-head fade-up">
+        <div class="eyebrow">Subscribe &amp; Save</div>
+        <h2 class="sec-title">Your Milk, <em>Every Morning.</em></h2>
+        <p class="sec-body">Choose your quantity and delivery frequency — we'll take care of the rest.</p>
+      </div>
+      <div class="sub-card fade-up">
+        <div>
+          <div class="sub-group">
+            <span class="sub-label">Milk Quantity</span>
+            <div class="sub-options" id="qtyOptions">
+              <button class="sub-option" data-val="0.5">500 ml</button>
+              <button class="sub-option active" data-val="1">1 L</button>
+              <button class="sub-option" data-val="2">2 L</button>
+              <button class="sub-option" data-val="5">5 L</button>
+            </div>
+          </div>
+          <div class="sub-group">
+            <span class="sub-label">Delivery Frequency</span>
+            <div class="sub-options" id="freqOptions">
+              <button class="sub-option active" data-val="daily" data-mult="30">Daily</button>
+              <button class="sub-option" data-val="alternate" data-mult="15">Alternate Days</button>
+              <button class="sub-option" data-val="weekly" data-mult="4">Weekly</button>
+              <button class="sub-option" data-val="custom" data-mult="12">Custom Schedule</button>
+            </div>
+          </div>
+        </div>
+        <div class="sub-summary">
+          <div class="sub-summary-row">
+            <span class="sub-summary-label">Estimated Daily Price</span>
+            <span class="sub-summary-val small" id="dailyPrice">£1.60</span>
+          </div>
+          <div class="sub-summary-row">
+            <span class="sub-summary-label">Estimated Monthly Price</span>
+            <span class="sub-summary-val" id="monthlyPrice">£48.00</span>
+          </div>
+          <div class="sub-summary-row">
+            <span class="sub-summary-label">Delivery Frequency</span>
+            <span class="sub-summary-val small" id="freqDisplay">Daily</span>
+          </div>
+          <button class="btn btn-yellow sub-cta" onclick="showToast('Subscription request started — we\'ll be in touch to confirm your schedule 🥛')">Start My Milk Subscription →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY DAY -->
+  <section id="gallery">
+    <div class="sec-head center fade-up">
+      <div class="eyebrow">A Day In The Dairy</div>
+      <h2 class="sec-title">A Day In The Life Of <em>Your Milk.</em></h2>
+      <p class="sec-body">From sunrise on the farm to the moment it's poured at home.</p>
+    </div>
+    <div class="gallery-grid fade-up">
+      <div class="gallery-item tall">
+        <img src="https://images.unsplash.com/photo-1440428099904-c6d459a7e7b5?auto=format&fit=crop&q=80&w=500"
+          alt="Morning farm collection">
+        <div class="gallery-caption">05:45 — MORNING COLLECTION</div>
+      </div>
+      <div class="gallery-item wide">
+        <img src="https://images.unsplash.com/photo-1652040828412-637e07d3718f?auto=format&fit=crop&q=80&w=800"
+          alt="Cows grazing at dawn">
+        <div class="gallery-caption">06:20 — COWS AT PASTURE</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1611211301828-be4b317d0707?auto=format&fit=crop&q=80&w=500"
+          alt="Quality check of fresh milk">
+        <div class="gallery-caption">07:10 — QUALITY CHECK</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1545468258-d895ac85938e?auto=format&fit=crop&q=80&w=500"
+          alt="Milk bottled fresh">
+        <div class="gallery-caption">08:00 — BOTTLED FRESH</div>
+      </div>
+      <div class="gallery-item wide">
+        <img src="https://images.unsplash.com/photo-1719152214230-a2944f482073?auto=format&fit=crop&q=80&w=800"
+          alt="Milk delivery on the road">
+        <div class="gallery-caption">09:30 — ON THE ROAD</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1601436423474-51738541c1b1?auto=format&fit=crop&q=80&w=500"
+          alt="Milk delivered at the door">
+        <div class="gallery-caption">10:15 — AT YOUR DOOR</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUTRITION -->
+  <section id="nutrition">
+    <div class="nutrition-inner">
+      <div class="fade-left">
+        <div class="eyebrow">Nutrition</div>
+        <h2 class="sec-title">Goodness In <em>Every Glass.</em></h2>
+        <p class="sec-body">Milk naturally contains a range of everyday nutrients that make it a simple, wholesome
+          part of a balanced diet.</p>
+        <p class="nutrition-disclaimer">This information is general and factual. It is not intended as medical or
+          dietary advice.</p>
+      </div>
+      <div class="nutrition-visual fade-right">
+        <div class="nutrient-item">
+          <div class="nutrient-icon">💪</div>
+          <div class="nutrient-name">Protein</div>
+          <div class="nutrient-note">Supports everyday nutrition</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-icon">🦴</div>
+          <div class="nutrient-name">Calcium</div>
+          <div class="nutrient-note">Naturally occurring</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-icon">🌱</div>
+          <div class="nutrient-name">Essential Nutrients</div>
+          <div class="nutrient-note">Part of a balanced diet</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-icon">☀️</div>
+          <div class="nutrient-name">Natural Vitamins</div>
+          <div class="nutrient-note">Occurring naturally in milk</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-icon">⚡</div>
+          <div class="nutrient-name">Energy</div>
+          <div class="nutrient-note">A simple everyday source</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-icon">🥛</div>
+          <div class="nutrient-name">Everyday Nutrition</div>
+          <div class="nutrient-note">A wholesome daily staple</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO ORDER -->
+  <section id="how-to-order">
+    <div class="sec-head center fade-up">
+      <div class="eyebrow">Simple &amp; Easy</div>
+      <h2 class="sec-title">How To <em>Order.</em></h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-card fade-up">
+        <div class="how-num">01</div>
+        <div class="how-title">Choose your milk.</div>
+      </div>
+      <div class="how-card fade-up">
+        <div class="how-num">02</div>
+        <div class="how-title">Select your quantity.</div>
+      </div>
+      <div class="how-card fade-up">
+        <div class="how-num">03</div>
+        <div class="how-title">Choose one-time or subscription.</div>
+      </div>
+      <div class="how-card fade-up">
+        <div class="how-num">04</div>
+        <div class="how-title">Enter your delivery address.</div>
+      </div>
+      <div class="how-card fade-up">
+        <div class="how-num">05</div>
+        <div class="how-title">Receive fresh milk at your door.</div>
+      </div>
+    </div>
+    <div class="how-cta fade-up">
+      <a href="#products" class="btn btn-primary">Order Fresh Milk →</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="sec-head center fade-up">
+      <div class="eyebrow">What Families Say</div>
+      <h2 class="sec-title">Loved By <em>Households Across The UK.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">It feels completely different knowing exactly where our family's milk comes from. The
+          glass bottles are a beautiful touch too.</p>
+        <div class="testi-person">
+          <div class="testi-avatar"><img src="https://i.pravatar.cc/300?u=21" alt="Customer"></div>
+          <div>
+            <div class="testi-name">Charlotte Reed</div>
+            <div class="testi-sub">Subscriber since 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The taste difference is real — richer and fresher than anything from the supermarket.
+          Delivery has never once been late.</p>
+        <div class="testi-person">
+          <div class="testi-avatar"><img src="https://i.pravatar.cc/300?u=22" alt="Customer"></div>
+          <div>
+            <div class="testi-name">James Whitfield</div>
+            <div class="testi-sub">Daily Subscriber</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Returning the empty bottles for the next delivery is such a simple, satisfying habit.
+          Proud to support farms doing it properly.</p>
+        <div class="testi-person">
+          <div class="testi-avatar"><img src="https://i.pravatar.cc/300?u=23" alt="Customer"></div>
+          <div>
+            <div class="testi-name">Priya Nair</div>
+            <div class="testi-sub">Family Pack Customer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY -->
+  <section id="delivery">
+    <div class="delivery-inner">
+      <div class="fade-left">
+        <div class="eyebrow">Delivery</div>
+        <h2 class="sec-title">Freshness Doesn't Wait. <em>Neither Do We.</em></h2>
+        <p class="sec-body">Every drop follows a tight, careful timeline between farm and doorstep.</p>
+        <div class="delivery-steps">
+          <div class="delivery-step"><div class="delivery-dot">1</div><div class="delivery-step-text">Morning
+              collection</div></div>
+          <div class="delivery-step"><div class="delivery-dot">2</div><div class="delivery-step-text">Quality
+              checks</div></div>
+          <div class="delivery-step"><div class="delivery-dot">3</div><div class="delivery-step-text">Fresh
+              bottling</div></div>
+          <div class="delivery-step"><div class="delivery-dot">4</div><div class="delivery-step-text">Carefully
+              packed</div></div>
+          <div class="delivery-step"><div class="delivery-dot">5</div><div class="delivery-step-text">Doorstep
+              delivery</div></div>
+        </div>
+        <p class="delivery-note">Delivery schedules may vary slightly depending on your location.</p>
+      </div>
+      <div class="delivery-photo fade-right">
+        <img src="https://images.unsplash.com/photo-1719152214230-a2944f482073?auto=format&fit=crop&q=80&w=700"
+          alt="Milk delivery to doorstep" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="padding: 0 4rem;">
+    <div id="contact">
+      <div class="fade-left">
+        <div class="eyebrow">Get In Touch</div>
+        <h2 class="sec-title">Order Or <em>Ask A Question.</em></h2>
+        <p class="sec-body" style="margin-top:0.8rem;margin-bottom:1.6rem;">Questions about your milk, delivery
+          schedule, or bottle returns? We'd love to help.</p>
+        <div class="contact-detail">
+          <div class="cd-icon">📞</div>
+          <div>
+            <div class="cd-label">Phone</div>
+            <div class="cd-val">9876543210</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">✉️</div>
+          <div>
+            <div class="cd-label">Email</div>
+            <div class="cd-val">demo@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">📍</div>
+          <div>
+            <div class="cd-label">Address</div>
+            <div class="cd-val">123, Demo Address - 516360</div>
+          </div>
+        </div>
+        <div class="contact-btns">
+          <a href="tel:9876543210" class="btn btn-primary">Call Us</a>
+          <a href="mailto:demo@gmail.com" class="btn btn-outline">Email Us</a>
+          <a href="#products" class="btn btn-yellow">Order Milk</a>
+        </div>
+      </div>
+      <div class="contact-form fade-right">
+        <div class="form-title">Send Us A Message 🥛</div>
+        <div class="form-group"><label class="form-label">Full Name</label><input type="text" id="name"
+            class="form-input" placeholder="Your name" /></div>
+        <div class="form-group"><label class="form-label">Email Address</label><input type="email" id="email"
+            class="form-input" placeholder="demo@gmail.com" /></div>
+        <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" id="phone"
+            class="form-input" placeholder="Your phone number" /></div>
+        <div class="form-group"><label class="form-label">I'm enquiring about</label><select id="enquiry-type"
+            class="form-select">
+            <option value="">Select enquiry type...</option>
+            <option>One-Time Order</option>
+            <option>Daily Subscription</option>
+            <option>Bottle Return</option>
+            <option>Something Else</option>
+          </select></div>
+        <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" id="query"
+            placeholder="Tell us more — quantity, delivery address, preferred schedule..."></textarea></div>
+        <button class="form-submit" id="submitBtn" type="button" onclick="submitForm()">Send Message</button>
+        <div class="form-status" id="formStatus"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="final-cta">
+    <div class="final-bg"></div>
+    <div class="final-scrim"></div>
+    <div class="eyebrow" style="color: var(--yellow-pale); justify-content:center;">Bring The Farm Home</div>
+    <h2 class="sec-title">"Bring The <em>Farm</em> Home."</h2>
+    <p class="sec-body">Fresh milk, carefully sourced and delivered in a reusable glass bottle — straight to your
+      doorstep.</p>
+    <div class="final-btns">
+      <a href="#products" class="btn btn-yellow">Order Fresh Milk →</a>
+      <a href="#subscription" class="btn btn-outline" style="border-color:rgba(255,253,248,0.4);color:var(--milk);">Start A Subscription →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="f-logo">Dew Farm <span style="font-style:italic;">Dairy</span> 🥛</div>
+        <p>Fresh milk, directly from trusted farms, carefully bottled in glass, and delivered to your home.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#products">Fresh Milk</a></li>
+          <li><a href="#products">A2 Milk</a></li>
+          <li><a href="#products">Full Cream Milk</a></li>
+          <li><a href="#products">Family Packs</a></li>
+          <li><a href="#subscription">Subscriptions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#farms">Our Farms</a></li>
+          <li><a href="#cows">Our Cows</a></li>
+          <li><a href="#quality">Milk Quality</a></li>
+          <li><a href="#journey">Our Process</a></li>
+          <li><a href="#bottle">Glass Bottles</a></li>
+          <li><a href="#nutrition">Our Story</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#delivery">Delivery</a></li>
+          <li><a href="#contact">FAQs</a></li>
+          <li><a href="#bottle">Bottle Returns</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="margin-bottom:0.4rem;">9876543210 · demo@gmail.com · 123, Demo Address - 516360</div>
+      <div>© 2026 Dew Farm Dairy. Fresh Milk. Straight From The Farm.</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"><span id="toastIcon">🥛</span><span id="toastText">Thanks!</span></div>
+
+  <script>
+    /* NAV toggle */
+    function toggleNav() { document.getElementById('nav-links').classList.toggle('open'); }
+    window.addEventListener('resize', () => { if (window.innerWidth > 960) document.getElementById('nav-links').classList.remove('open'); });
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open')));
+
+    /* Sticky nav shrink */
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('main-nav');
+      const compact = window.innerWidth <= 960;
+      if (window.scrollY > 60) {
+        nav.style.padding = compact ? '0.6rem 1.5rem' : '0.7rem 4rem';
+        nav.style.boxShadow = '0 6px 24px rgba(75,58,33,0.12)';
+      } else {
+        nav.style.padding = compact ? '0.9rem 1.5rem' : '1.1rem 4rem';
+        nav.style.boxShadow = 'none';
+      }
+    });
+
+    /* Scroll reveal */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el => obs.observe(el));
+    document.querySelectorAll('.products-grid .product-card, .quality-list .quality-card, .why-grid .why-card, .promise-grid .promise-card, .journey-track .journey-step, .how-steps .how-card, .testi-grid .testi-card')
+      .forEach((el, i) => { el.style.transitionDelay = `${(i % 6) * 0.06}s`; });
+
+    /* Toast */
+    let toastTimer;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastText').textContent = message;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+    }
+
+    /* Subscription selector */
+    const qtyOptions = document.querySelectorAll('#qtyOptions .sub-option');
+    const freqOptions = document.querySelectorAll('#freqOptions .sub-option');
+    const dailyPriceEl = document.getElementById('dailyPrice');
+    const monthlyPriceEl = document.getElementById('monthlyPrice');
+    const freqDisplayEl = document.getElementById('freqDisplay');
+
+    const pricePerLitre = 1.6;
+    let selectedQty = 1;
+    let selectedMult = 30;
+    let selectedFreqLabel = 'Daily';
+
+    function updateSubPrice() {
+      const daily = pricePerLitre * selectedQty;
+      const monthly = daily * selectedMult;
+      dailyPriceEl.textContent = `£${daily.toFixed(2)}`;
+      monthlyPriceEl.textContent = `£${monthly.toFixed(2)}`;
+      freqDisplayEl.textContent = selectedFreqLabel;
+    }
+
+    qtyOptions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        qtyOptions.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedQty = parseFloat(btn.dataset.val);
+        updateSubPrice();
+      });
+    });
+
+    freqOptions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        freqOptions.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedMult = parseInt(btn.dataset.mult, 10);
+        selectedFreqLabel = btn.textContent;
+        updateSubPrice();
+      });
+    });
+
+    updateSubPrice();
+
+    /* Contact form */
+    const API_URL = "https://script.google.com/macros/s/AKfycbzl717Y-4DxUNX1p-sK6bmb0_yUVCtVSWH_HDMqNWlGJF7_E7YjT9WoV8ql8LxV00Q6Pg/exec";
+
+    function submitForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const type = document.getElementById('enquiry-type').value.trim();
+      const query = document.getElementById('query').value.trim();
+      const btn = document.getElementById('submitBtn');
+
+      if (!name || !email || !query) {
+        showFormStatus('Please fill in your name, email, and message.', 'error');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      showFormStatus('', '');
+
+      fetch(API_URL, {
+        method: 'POST',
+        body: JSON.stringify({
+          action: 'add_lead',
+          name, email, phone,
+          query: (type ? `[${type}] ` : '') + query
+        })
+      })
+        .then(r => r.json())
+        .then(() => {
+          btn.textContent = "Sent! We'll be in touch soon";
+          showFormStatus("Message sent successfully. We'll contact you soon.", 'success');
+          ['name', 'email', 'phone', 'query'].forEach(id => { const f = document.getElementById(id); if (f) f.value = ''; });
+          document.getElementById('enquiry-type').value = '';
+          setTimeout(() => { btn.disabled = false; btn.textContent = 'Send Message'; }, 4500);
+        })
+        .catch(() => {
+          btn.disabled = false;
+          btn.textContent = 'Send Message';
+          showFormStatus('Something went wrong. Please call us on 9876543210.', 'error');
+        });
+    }
+
+    function showFormStatus(message, type) {
+      const status = document.getElementById('formStatus');
+      if (!message) { status.style.display = 'none'; return; }
+      status.textContent = message;
+      status.className = `form-status ${type}`;
+      status.style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
