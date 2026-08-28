@@ -1,0 +1,13 @@
+{
+  "title": "Inside the store",
+  "intro": "The aisles, the fresh counter and the people behind it.",
+
+  "items": [
+    { "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80", "caption": "The main aisle, restocked before opening", "alt": "Grocery store aisle lined with shelves" },
+    { "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80", "caption": "Fresh counter, delivered each morning", "alt": "Fresh vegetables arranged on a display counter" },
+    { "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80", "caption": "Staples, sold loose or in bulk packs", "alt": "Sacks and containers of rice and grains" },
+    { "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80", "caption": "The bakery shelf, baked on site", "alt": "Loaves of bread on a bakery shelf" },
+    { "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80", "caption": "Chilled dairy, restocked twice daily", "alt": "Refrigerated dairy section" },
+    { "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80", "caption": "Packing an evening delivery run", "alt": "Groceries being packed into bags" }
+  ]
+}

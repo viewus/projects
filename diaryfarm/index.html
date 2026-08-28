@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,12 +7,10 @@
   <meta name="description"
     content="Pure, fresh milk delivered directly from trusted farms to your doorstep. Collected each morning, quality checked, and bottled in reusable glass." />
   <link rel="canonical" href="https://dewfarmdairy.co.uk/" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
-
   <style>
     :root {
       --cream: #faf3e6;
@@ -36,29 +33,24 @@
       --serif: 'Fraunces', serif;
       --sans: 'Inter', sans-serif;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     html, body {
       max-width: 100%;
       overflow-x: hidden;
     }
-
     body {
       font-family: var(--sans);
       background: var(--milk);
       color: var(--text);
       line-height: 1.5;
     }
-
     /* paper grain overlay */
     body::after {
       content: '';
@@ -69,23 +61,18 @@
       z-index: 9998;
       mix-blend-mode: multiply;
     }
-
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
     button { font-family: inherit; cursor: pointer; }
-
     ::selection { background: var(--yellow-pale); color: var(--brown-deep); }
-
     h1, h2, h3, h4 {
       font-family: var(--serif);
       font-weight: 600;
       color: var(--green-deep);
       line-height: 1.12;
     }
-
     section { padding: 6rem 4rem; position: relative; }
-
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -97,24 +84,20 @@
       color: var(--brown);
       margin-bottom: 1rem;
     }
-
     .eyebrow::before {
       content: '';
       width: 22px;
       height: 1px;
       background: var(--brown);
     }
-
     .sec-title {
       font-size: clamp(1.9rem, 3.6vw, 2.85rem);
       max-width: 700px;
     }
-
     .sec-title em {
       font-style: italic;
       color: var(--yellow);
     }
-
     .sec-body {
       font-size: 1rem;
       color: var(--text-muted);
@@ -122,13 +105,11 @@
       margin-top: 1rem;
       line-height: 1.75;
     }
-
     .sec-head { max-width: 720px; margin-bottom: 3.2rem; }
     .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
     .sec-head.center .eyebrow { justify-content: center; }
     .sec-head.center .eyebrow::before { display: none; }
     .sec-head.center .sec-body { margin-left: auto; margin-right: auto; }
-
     .fade-up, .fade-left, .fade-right {
       opacity: 0;
       transition: opacity 0.85s cubic-bezier(.2,.7,.2,1), transform 0.85s cubic-bezier(.2,.7,.2,1);
@@ -137,7 +118,6 @@
     .fade-left { transform: translateX(-34px); }
     .fade-right { transform: translateX(34px); }
     .fade-up.visible, .fade-left.visible, .fade-right.visible { opacity: 1; transform: translate(0,0); }
-
     /* buttons */
     .btn {
       display: inline-flex;
@@ -168,7 +148,6 @@
       box-shadow: 0 10px 24px rgba(230,172,53,0.3);
     }
     .btn-yellow:hover { background: #d99a1f; transform: translateY(-2px); }
-
     /* NAV */
     nav {
       position: fixed;
@@ -226,7 +205,6 @@
       padding: 6px;
     }
     .hamburger span { width: 22px; height: 2px; background: var(--green-deep); border-radius: 2px; }
-
     /* HERO */
     #hero {
       position: relative;
@@ -322,7 +300,6 @@
       color: var(--green-deep);
     }
     .hero-stat-label { font-size: 0.72rem; color: var(--text-muted); }
-
     .hero-right { position: relative; display: flex; align-items: center; justify-content: center; }
     .hero-photo-wrap {
       position: relative;
@@ -334,7 +311,6 @@
       border: 6px solid var(--milk);
     }
     .hero-photo-wrap img { width: 100%; height: 500px; object-fit: cover; }
-
     /* MARQUEE */
     .marquee-wrap {
       background: var(--green-deep);
@@ -347,7 +323,6 @@
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .marquee-item { font-family: var(--serif); font-weight: 600; font-size: 0.95rem; color: var(--yellow-pale); white-space: nowrap; }
     .marquee-sep { color: var(--yellow); }
-
     /* QUALITY SECTION */
     #quality { background: var(--cream); }
     .quality-inner { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 3.5rem; max-width: 1300px; margin: 0 auto; align-items: center; }
@@ -377,7 +352,6 @@
     }
     .quality-card-title { font-weight: 700; font-size: 0.85rem; color: var(--text); }
     .quality-card-sub { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem; }
-
     /* JOURNEY (Farm to Home) */
     #journey { background: var(--milk); }
     .journey-track {
@@ -413,7 +387,6 @@
     }
     .journey-title { font-family: var(--serif); font-weight: 600; font-size: 1.02rem; color: var(--green-deep); margin-bottom: 0.5rem; }
     .journey-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; padding: 0 0.3rem; }
-
     /* PRODUCTS */
     #products { background: var(--cream); }
     .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; max-width: 1300px; margin: 0 auto; }
@@ -464,7 +437,6 @@
       transition: all 0.25s;
     }
     .product-cta:hover { background: var(--green); color: var(--milk); }
-
     /* GLASS BOTTLE SECTION */
     #bottle {
       background: var(--green-deep);
@@ -523,7 +495,6 @@
     }
     .bottle-feature-title { font-weight: 700; font-size: 0.9rem; }
     .bottle-feature-desc { font-size: 0.78rem; color: rgba(255,253,248,0.6); margin-top: 0.15rem; }
-
     /* PROMISE / QUALITY PROMISE */
     #promise { background: var(--milk); }
     .promise-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.2rem; max-width: 1300px; margin: 0 auto; }
@@ -539,7 +510,6 @@
     .promise-num { font-family: var(--serif); font-size: 0.75rem; font-weight: 700; color: var(--yellow); margin-bottom: 0.8rem; }
     .promise-title { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--green-deep); margin-bottom: 0.5rem; }
     .promise-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
-
     /* STATS */
     #stats { background: var(--beige); padding-top: 4.5rem; padding-bottom: 4.5rem; }
     .stats-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.5rem; max-width: 1300px; margin: 0 auto; text-align: center; }
@@ -547,7 +517,6 @@
     .stat-card:last-child { border-right: none; }
     .stat-num { font-family: var(--serif); font-weight: 700; font-size: clamp(2rem, 3.6vw, 2.7rem); color: var(--green-deep); }
     .stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.4rem; }
-
     /* FARM SECTION */
     #farms { background: var(--cream); }
     .farms-inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; max-width: 1300px; margin: 0 auto; align-items: center; }
@@ -556,7 +525,6 @@
     .farms-gallery img:nth-child(2) { margin-top: 2rem; }
     .farm-tag-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
     .farm-tag { font-size: 0.78rem; font-weight: 600; background: var(--milk); border: 1px solid var(--beige-deep); padding: 0.5rem 1rem; border-radius: 20px; }
-
     /* COWS SECTION */
     #cows { background: var(--milk); }
     .cows-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; max-width: 1300px; margin: 0 auto; align-items: center; }
@@ -582,7 +550,6 @@
       background: var(--cream); border: 1px solid var(--beige-deep);
       padding: 0.5rem 1rem; border-radius: 20px;
     }
-
     /* WHY CHOOSE US */
     #why { background: var(--milk); }
     .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1300px; margin: 0 auto; }
@@ -597,7 +564,6 @@
     .why-icon { width: 50px; height: 50px; border-radius: 12px; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.1rem; }
     .why-title { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--green-deep); margin-bottom: 0.5rem; }
     .why-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
-
     /* SUBSCRIPTION */
     #subscription { background: var(--green-deep); color: var(--milk); }
     #subscription .eyebrow { color: var(--yellow-pale); }
@@ -642,7 +608,6 @@
     .sub-summary-val { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: var(--green-deep); }
     .sub-summary-val.small { font-size: 0.95rem; }
     .sub-cta { width: 100%; margin-top: 1.3rem; justify-content: center; }
-
     /* GALLERY DAY */
     #gallery { background: var(--cream); }
     .gallery-grid {
@@ -667,7 +632,6 @@
       font-weight: 700;
       letter-spacing: 0.05em;
     }
-
     /* NUTRITION */
     #nutrition { background: var(--milk); }
     .nutrition-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; max-width: 1300px; margin: 0 auto; align-items: center; }
@@ -684,7 +648,6 @@
     .nutrient-name { font-weight: 700; font-size: 0.85rem; color: var(--green-deep); }
     .nutrient-note { font-size: 0.68rem; color: var(--text-muted); margin-top: 0.2rem; }
     .nutrition-disclaimer { font-size: 0.72rem; color: var(--text-muted); font-style: italic; margin-top: 1.4rem; }
-
     /* HOW TO ORDER */
     #how-to-order { background: var(--cream); }
     .how-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.3rem; max-width: 1300px; margin: 0 auto; }
@@ -692,7 +655,6 @@
     .how-num { font-family: var(--serif); font-weight: 700; font-size: 1.6rem; color: var(--yellow); margin-bottom: 0.7rem; }
     .how-title { font-weight: 700; font-size: 0.88rem; color: var(--text); }
     .how-cta { text-align: center; margin-top: 2.5rem; }
-
     /* TESTIMONIALS */
     #testimonials { background: var(--milk); }
     .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1300px; margin: 0 auto; }
@@ -703,7 +665,6 @@
     .testi-avatar img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
     .testi-name { font-weight: 700; font-size: 0.85rem; color: var(--green-deep); }
     .testi-sub { font-size: 0.7rem; color: var(--text-muted); }
-
     /* DELIVERY */
     #delivery { background: var(--beige); }
     .delivery-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1300px; margin: 0 auto; align-items: center; }
@@ -714,7 +675,6 @@
     .delivery-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 1.6rem; font-style: italic; }
     .delivery-photo { border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 24px 50px var(--shadow); }
     .delivery-photo img { width: 100%; height: 420px; object-fit: cover; }
-
     /* CONTACT */
     #contact {
       max-width: 1300px;
@@ -752,7 +712,6 @@
     .form-status { display: none; margin-top: 1rem; padding: 0.8rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; font-weight: 600; }
     .form-status.success { background: rgba(74,103,65,0.12); color: var(--green-deep); }
     .form-status.error { background: rgba(180,80,40,0.1); color: #8a3b1f; }
-
     /* FINAL CTA */
     #final-cta {
       position: relative;
@@ -770,7 +729,6 @@
     #final-cta h2 { color: var(--milk); max-width: 700px; margin: 0 auto; }
     #final-cta .sec-body { color: rgba(255,253,248,0.75); margin-left: auto; margin-right: auto; }
     .final-btns { display: flex; gap: 1rem; justify-content: center; margin-top: 2.2rem; flex-wrap: wrap; }
-
     /* FOOTER */
     footer { background: var(--green-deep); color: var(--milk); padding: 4rem 4rem 1.6rem; }
     .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; max-width: 1300px; margin: 0 auto; padding-bottom: 2.4rem; border-bottom: 1px solid rgba(255,253,248,0.12); }
@@ -781,7 +739,6 @@
     .footer-col a { font-size: 0.8rem; color: rgba(255,253,248,0.6); }
     .footer-col a:hover { color: var(--yellow-pale); }
     .footer-bottom { max-width: 1300px; margin: 0 auto; padding-top: 1.4rem; font-size: 0.75rem; color: rgba(255,253,248,0.45); text-align: center; }
-
     /* TOAST */
     .toast {
       position: fixed;
@@ -799,7 +756,6 @@
       transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
     }
     .toast.show { transform: translateX(-50%) translateY(0); }
-
     /* RESPONSIVE */
     @media (max-width: 1080px) {
       .stats-grid, .promise-grid, .journey-track, .how-steps { grid-template-columns: repeat(3,1fr); }
@@ -840,10 +796,7 @@
     }
   </style>
 </head>
-
 <body>
-
-  <!-- NAV -->
   <nav id="main-nav">
     <a href="#" class="nav-logo">
       <span class="nav-logo-icon">🥛</span>
@@ -862,8 +815,6 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-
-  <!-- HERO -->
   <section id="hero" class="fade-up">
     <div class="hero-bg"></div>
     <div class="hero-scrim"></div>
@@ -901,8 +852,6 @@
       </div>
     </div>
   </section>
-
-  <!-- MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee-track">
       <span class="marquee-item">Farm Fresh</span><span class="marquee-sep">✦</span>
@@ -921,8 +870,6 @@
       <span class="marquee-item">Trusted Farms</span><span class="marquee-sep">✦</span>
     </div>
   </div>
-
-  <!-- MILK QUALITY -->
   <section id="quality">
     <div class="quality-inner">
       <div class="quality-photo fade-left">
@@ -954,8 +901,6 @@
       </div>
     </div>
   </section>
-
-  <!-- FARM TO HOME JOURNEY -->
   <section id="journey">
     <div class="sec-head center fade-up">
       <div class="eyebrow">The Journey</div>
@@ -991,8 +936,6 @@
       </div>
     </div>
   </section>
-
-  <!-- PRODUCTS -->
   <section id="products">
     <div class="sec-head center fade-up">
       <div class="eyebrow">Shop Fresh Milk</div>
@@ -1000,7 +943,6 @@
       <p class="sec-body">Every product below is fresh milk — sourced with care, handled with respect.</p>
     </div>
     <div class="products-grid">
-
       <div class="product-card fade-up">
         <div class="product-img">
           <span class="product-tag">Everyday</span>
@@ -1014,7 +956,6 @@
           <a href="#contact" class="product-cta">Enquire About This Milk</a>
         </div>
       </div>
-
       <div class="product-card fade-up">
         <div class="product-img">
           <span class="product-tag">Rich &amp; Creamy</span>
@@ -1028,7 +969,6 @@
           <a href="#contact" class="product-cta">Enquire About This Milk</a>
         </div>
       </div>
-
       <div class="product-card fade-up">
         <div class="product-img">
           <span class="product-tag">Premium</span>
@@ -1042,7 +982,6 @@
           <a href="#contact" class="product-cta">Enquire About This Milk</a>
         </div>
       </div>
-
       <div class="product-card fade-up">
         <div class="product-img">
           <span class="product-tag">Organic</span>
@@ -1057,7 +996,6 @@
           <a href="#contact" class="product-cta">Enquire About This Milk</a>
         </div>
       </div>
-
       <div class="product-card fade-up">
         <div class="product-img">
           <span class="product-tag">Best Value</span>
@@ -1071,7 +1009,6 @@
           <a href="#contact" class="product-cta">Enquire About This Milk</a>
         </div>
       </div>
-
       <div class="product-card fade-up">
         <div class="product-img">
           <span class="product-tag">Subscribe &amp; Save</span>
@@ -1085,11 +1022,8 @@
           <a href="#subscription" class="product-cta">See Subscription Options</a>
         </div>
       </div>
-
     </div>
   </section>
-
-  <!-- GLASS BOTTLE -->
   <section id="bottle">
     <div class="bottle-inner">
       <div class="bottle-visual fade-left">
@@ -1124,8 +1058,6 @@
       </div>
     </div>
   </section>
-
-  <!-- QUALITY PROMISE -->
   <section id="promise">
     <div class="sec-head center fade-up">
       <div class="eyebrow">Our Standards</div>
@@ -1159,8 +1091,6 @@
       </div>
     </div>
   </section>
-
-  <!-- STATS -->
   <section id="stats">
     <div class="stats-grid fade-up">
       <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Partner Farms</div></div>
@@ -1170,8 +1100,6 @@
       <div class="stat-card"><div class="stat-num">365</div><div class="stat-label">Days Of Freshness</div></div>
     </div>
   </section>
-
-  <!-- FARMS -->
   <section id="farms">
     <div class="farms-inner">
       <div class="farms-gallery fade-left">
@@ -1198,8 +1126,6 @@
       </div>
     </div>
   </section>
-
-  <!-- MEET THE COWS -->
   <section id="cows">
     <div class="cows-inner">
       <div class="cows-photo-stack fade-left">
@@ -1257,8 +1183,6 @@
       </div>
     </div>
   </section>
-
-  <!-- WHY CHOOSE US -->
   <section id="why">
     <div class="sec-head center fade-up">
       <div class="eyebrow">Why Choose Us</div>
@@ -1297,8 +1221,6 @@
       </div>
     </div>
   </section>
-
-  <!-- SUBSCRIPTION -->
   <section id="subscription">
     <div class="sub-inner">
       <div class="sec-head fade-up">
@@ -1345,8 +1267,6 @@
       </div>
     </div>
   </section>
-
-  <!-- GALLERY DAY -->
   <section id="gallery">
     <div class="sec-head center fade-up">
       <div class="eyebrow">A Day In The Dairy</div>
@@ -1386,8 +1306,6 @@
       </div>
     </div>
   </section>
-
-  <!-- NUTRITION -->
   <section id="nutrition">
     <div class="nutrition-inner">
       <div class="fade-left">
@@ -1432,8 +1350,6 @@
       </div>
     </div>
   </section>
-
-  <!-- HOW TO ORDER -->
   <section id="how-to-order">
     <div class="sec-head center fade-up">
       <div class="eyebrow">Simple &amp; Easy</div>
@@ -1465,8 +1381,6 @@
       <a href="#products" class="btn btn-primary">Order Fresh Milk →</a>
     </div>
   </section>
-
-  <!-- TESTIMONIALS -->
   <section id="testimonials">
     <div class="sec-head center fade-up">
       <div class="eyebrow">What Families Say</div>
@@ -1511,8 +1425,6 @@
       </div>
     </div>
   </section>
-
-  <!-- DELIVERY -->
   <section id="delivery">
     <div class="delivery-inner">
       <div class="fade-left">
@@ -1539,8 +1451,6 @@
       </div>
     </div>
   </section>
-
-  <!-- CONTACT -->
   <section style="padding: 0 4rem;">
     <div id="contact">
       <div class="fade-left">
@@ -1598,8 +1508,6 @@
       </div>
     </div>
   </section>
-
-  <!-- FINAL CTA -->
   <section id="final-cta">
     <div class="final-bg"></div>
     <div class="final-scrim"></div>
@@ -1612,8 +1520,6 @@
       <a href="#subscription" class="btn btn-outline" style="border-color:rgba(255,253,248,0.4);color:var(--milk);">Start A Subscription →</a>
     </div>
   </section>
-
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
@@ -1656,15 +1562,12 @@
       <div>© 2026 Dew Farm Dairy. Fresh Milk. Straight From The Farm.</div>
     </div>
   </footer>
-
   <div class="toast" id="toast"><span id="toastIcon">🥛</span><span id="toastText">Thanks!</span></div>
-
   <script>
     /* NAV toggle */
     function toggleNav() { document.getElementById('nav-links').classList.toggle('open'); }
     window.addEventListener('resize', () => { if (window.innerWidth > 960) document.getElementById('nav-links').classList.remove('open'); });
     document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open')));
-
     /* Sticky nav shrink */
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('main-nav');
@@ -1677,7 +1580,6 @@
         nav.style.boxShadow = 'none';
       }
     });
-
     /* Scroll reveal */
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -1685,7 +1587,6 @@
     document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el => obs.observe(el));
     document.querySelectorAll('.products-grid .product-card, .quality-list .quality-card, .why-grid .why-card, .promise-grid .promise-card, .journey-track .journey-step, .how-steps .how-card, .testi-grid .testi-card')
       .forEach((el, i) => { el.style.transitionDelay = `${(i % 6) * 0.06}s`; });
-
     /* Toast */
     let toastTimer;
     function showToast(message) {
@@ -1695,19 +1596,16 @@
       clearTimeout(toastTimer);
       toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
     }
-
     /* Subscription selector */
     const qtyOptions = document.querySelectorAll('#qtyOptions .sub-option');
     const freqOptions = document.querySelectorAll('#freqOptions .sub-option');
     const dailyPriceEl = document.getElementById('dailyPrice');
     const monthlyPriceEl = document.getElementById('monthlyPrice');
     const freqDisplayEl = document.getElementById('freqDisplay');
-
     const pricePerLitre = 1.6;
     let selectedQty = 1;
     let selectedMult = 30;
     let selectedFreqLabel = 'Daily';
-
     function updateSubPrice() {
       const daily = pricePerLitre * selectedQty;
       const monthly = daily * selectedMult;
@@ -1715,7 +1613,6 @@
       monthlyPriceEl.textContent = `£${monthly.toFixed(2)}`;
       freqDisplayEl.textContent = selectedFreqLabel;
     }
-
     qtyOptions.forEach(btn => {
       btn.addEventListener('click', () => {
         qtyOptions.forEach(b => b.classList.remove('active'));
@@ -1724,7 +1621,6 @@
         updateSubPrice();
       });
     });
-
     freqOptions.forEach(btn => {
       btn.addEventListener('click', () => {
         freqOptions.forEach(b => b.classList.remove('active'));
@@ -1734,12 +1630,9 @@
         updateSubPrice();
       });
     });
-
     updateSubPrice();
-
     /* Contact form */
     const API_URL = "https://script.google.com/macros/s/AKfycbzl717Y-4DxUNX1p-sK6bmb0_yUVCtVSWH_HDMqNWlGJF7_E7YjT9WoV8ql8LxV00Q6Pg/exec";
-
     function submitForm() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -1747,16 +1640,13 @@
       const type = document.getElementById('enquiry-type').value.trim();
       const query = document.getElementById('query').value.trim();
       const btn = document.getElementById('submitBtn');
-
       if (!name || !email || !query) {
         showFormStatus('Please fill in your name, email, and message.', 'error');
         return;
       }
-
       btn.disabled = true;
       btn.textContent = 'Sending...';
       showFormStatus('', '');
-
       fetch(API_URL, {
         method: 'POST',
         body: JSON.stringify({
@@ -1779,7 +1669,6 @@
           showFormStatus('Something went wrong. Please call us on 9876543210.', 'error');
         });
     }
-
     function showFormStatus(message, type) {
       const status = document.getElementById('formStatus');
       if (!message) { status.style.display = 'none'; return; }
@@ -1789,5 +1678,4 @@
     }
   </script>
 </body>
-
 </html>

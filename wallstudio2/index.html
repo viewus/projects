@@ -1,10 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- ============================================= -->
-    <!-- SEO -->
-    <!-- ============================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>MURALE — Premium Wall Stickers & Interior Wall Décor</title>
@@ -12,21 +8,15 @@
     <meta name="keywords" content="wall stickers, wall décor, interior design, custom wall graphics, premium wall art, wall decals">
     <link rel="canonical" href="https://www.murale.example/">
     <meta name="theme-color" content="#211D18">
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="MURALE — Premium Wall Stickers & Interior Wall Décor">
     <meta property="og:description" content="Curated, custom wall stickers designed for beautiful, considered interiors. Residential & commercial.">
     <meta property="og:image" content="https://picsum.photos/seed/murale-og/1200/630">
     <meta property="og:url" content="https://www.murale.example/">
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MURALE — Premium Wall Stickers & Interior Wall Décor">
     <meta name="twitter:description" content="Curated, custom wall stickers designed for beautiful, considered interiors.">
     <meta name="twitter:image" content="https://picsum.photos/seed/murale-og/1200/630">
-
-    <!-- Structured data (populated at runtime from SITE_DATA, static fallback below) -->
     <script type="application/ld+json" id="ld-local-business">
     {
         "@context": "https://schema.org",
@@ -38,23 +28,13 @@
         "address": { "@type": "PostalAddress", "addressCountry": "IN" }
     }
     </script>
-
-    <!-- ============================================= -->
-    <!-- CDN -->
-    <!-- ============================================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
     <link rel="preload" as="image" href="https://picsum.photos/seed/murale-hero-1/1800/1000">
-
-    <!-- ============================================= -->
-    <!-- CSS -->
-    <!-- ============================================= -->
     <style>
         :root {
             --ink: #211D18;
@@ -74,11 +54,8 @@
             --ease: cubic-bezier(.22, .61, .36, 1);
             --header-h: 92px;
         }
-
         * { box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
-
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after {
@@ -88,7 +65,6 @@
                 scroll-behavior: auto !important;
             }
         }
-
         body {
             font-family: 'Manrope', sans-serif;
             color: var(--ink);
@@ -96,20 +72,15 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-
         img { max-width: 100%; }
-
         a { color: inherit; text-decoration: none; }
-
         .font-serif { font-family: 'Fraunces', serif; }
-
         h1, h2, h3, h4, .display {
             font-family: 'Fraunces', serif;
             font-weight: 450;
             letter-spacing: -0.01em;
             color: var(--ink);
         }
-
         .eyebrow {
             font-family: 'Manrope', sans-serif;
             font-size: 0.72rem;
@@ -121,7 +92,6 @@
             align-items: center;
             gap: 10px;
         }
-
         .eyebrow::before {
             content: "";
             width: 26px;
@@ -129,12 +99,10 @@
             background: var(--brass);
             display: inline-block;
         }
-
         :focus-visible {
             outline: 2px solid var(--brass);
             outline-offset: 3px;
         }
-
         .btn-brass {
             background: var(--ink);
             color: var(--paper) !important;
@@ -150,7 +118,6 @@
             transition: all .35s var(--ease);
         }
         .btn-brass:hover { background: var(--brass); border-color: var(--brass); color: var(--ink) !important; transform: translateY(-2px); }
-
         .btn-outline-lux {
             background: transparent;
             color: var(--ink) !important;
@@ -165,22 +132,17 @@
             transition: all .35s var(--ease);
         }
         .btn-outline-lux:hover { border-color: var(--ink); background: var(--ink); color: var(--paper) !important; }
-
         .btn-brass.btn-sm-lux, .btn-outline-lux.btn-sm-lux { padding: 10px 22px; font-size: 0.82rem; }
-
         section { position: relative; }
         .section-pad { padding: 110px 0; }
         @media (max-width: 767px) { .section-pad { padding: 64px 0; } }
-
         .container-lux { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
-
         /* ---------------- Fixed top bar (announcement + header, blended over hero) ---------------- */
         .topbar-fixed {
             position: fixed;
             top: 0; left: 0; width: 100%;
             z-index: 1000;
         }
-
         .announce {
             background: transparent;
             color: rgba(255,255,255,0.88);
@@ -212,7 +174,6 @@
                 text-overflow: ellipsis;
             }
         }
-
         /* ---------------- Header ---------------- */
         header.site-header {
             position: relative;
@@ -236,7 +197,6 @@
             transition: height .4s var(--ease);
         }
         .topbar-fixed.is-scrolled .header-inner { height: 72px; }
-
         .brand-logo {
             display: flex;
             align-items: center;
@@ -258,7 +218,6 @@
         .topbar-fixed:not(.is-scrolled) .brand-logo .mark { border-color: rgba(255,255,255,0.6); color: #fff; }
         .brand-logo:hover .mark { background: var(--ink); color: var(--paper); }
         .topbar-fixed:not(.is-scrolled) .brand-logo:hover .mark { background: #fff; color: var(--ink); }
-
         .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
         .brand-name {
             font-family: 'Fraunces', serif;
@@ -279,7 +238,6 @@
             transition: color .4s var(--ease);
         }
         .topbar-fixed:not(.is-scrolled) .brand-tagline { color: var(--brass-light); }
-
         .main-nav { display: flex; align-items: center; gap: 34px; }
         .main-nav a {
             font-size: 0.78rem;
@@ -302,7 +260,6 @@
         }
         .topbar-fixed:not(.is-scrolled) .main-nav a::after { background: var(--brass-light); }
         .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
-
         .header-actions { display: flex; align-items: center; gap: 14px; }
         .header-wa-btn {
             width: 42px; height: 42px; border-radius: 50%;
@@ -312,7 +269,6 @@
         }
         .topbar-fixed:not(.is-scrolled) .header-wa-btn { border-color: rgba(255,255,255,0.5); color: #fff; }
         .header-wa-btn:hover { background: #2fae60; border-color: #2fae60; color: #fff; }
-
         .btn-header-cta {
             border-color: var(--line-strong) !important;
             color: var(--ink) !important;
@@ -323,7 +279,6 @@
         .btn-header-cta:hover { background: var(--ink) !important; color: var(--paper) !important; }
         .topbar-fixed:not(.is-scrolled) .btn-header-cta { border-color: rgba(255,255,255,0.55) !important; color: #fff !important; }
         .topbar-fixed:not(.is-scrolled) .btn-header-cta:hover { background: #fff !important; color: var(--ink) !important; }
-
         .hamburger-btn {
             display: none;
             width: 44px; height: 44px;
@@ -335,15 +290,12 @@
             transition: all .3s;
         }
         .topbar-fixed:not(.is-scrolled) .hamburger-btn { border-color: rgba(255,255,255,0.5); color: #fff; }
-
         @media (max-width: 991px) {
             .main-nav { display: none; }
             .hamburger-btn { display: inline-flex; }
         }
-
         /* Sections need breathing room so the fixed header never covers anchor targets */
         section[id] { scroll-margin-top: 100px; }
-
         .offcanvas-lux { background: var(--paper); width: min(84vw, 360px); }
         .offcanvas-lux .nav-link-lux {
             font-family: 'Fraunces', serif;
@@ -353,7 +305,6 @@
             display: block;
             color: var(--ink);
         }
-
         /* ---------------- Hero ---------------- */
         .hero-swiper { height: 100vh; min-height: 640px; position: relative; }
         .hero-slide { position: relative; width: 100%; height: 100%; overflow: hidden; }
@@ -402,15 +353,12 @@
         .hero-btns .btn-outline-lux:hover { background: #fff; color: var(--ink) !important; }
         .hero-btns .btn-brass { background: var(--paper); color: var(--ink) !important; border-color: var(--paper); }
         .hero-btns .btn-brass:hover { background: var(--brass); border-color: var(--brass); color: #fff !important; }
-
         .hero-swiper .swiper-pagination-bullet { background: #fff; opacity: 0.5; width: 7px; height: 7px; }
         .hero-swiper .swiper-pagination-bullet-active { opacity: 1; background: var(--brass-light); width: 22px; border-radius: 4px; }
-
         /* image zoom helper */
         .zoom-frame { overflow: hidden; border-radius: var(--radius-lg); }
         .zoom-frame img { transition: transform .8s var(--ease); display: block; width: 100%; height: 100%; object-fit: cover; }
         .zoom-frame:hover img { transform: scale(1.08); }
-
         /* ---------------- Stats ---------------- */
         .stats-strip {
             background: var(--paper-alt);
@@ -427,12 +375,10 @@
         }
         .stat-num .accent-suffix { color: var(--brass); }
         .stat-label { font-size: 0.82rem; letter-spacing: 0.04em; color: var(--ink-soft); margin-top: 6px; text-transform: uppercase; }
-
         /* ---------------- reveal ---------------- */
         .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
         .reveal.in-view { opacity: 1; transform: translateY(0); }
         @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
-
         /* ---------------- About ---------------- */
         .about-media { position: relative; }
         .badge-float {
@@ -446,7 +392,6 @@
         .badge-float .num { font-family: 'Fraunces', serif; font-size: 2.1rem; color: var(--brass-light); line-height: 1; }
         .badge-float .lbl { font-size: 0.76rem; letter-spacing: 0.03em; margin-top: 4px; opacity: 0.85; }
         @media (max-width: 767px) { .badge-float { left: 14px; bottom: -20px; padding: 16px 18px; } }
-
         .feature-list { list-style: none; padding: 0; margin: 28px 0; }
         .feature-list li {
             display: flex; align-items: center; gap: 14px;
@@ -455,7 +400,6 @@
         }
         .feature-list li:last-child { border-bottom: none; }
         .feature-list i { color: var(--brass); font-size: 0.95rem; }
-
         /* ---------------- Service cards ---------------- */
         .service-card {
             background: var(--paper-alt);
@@ -477,7 +421,6 @@
         .service-card .card-link { font-size: 0.84rem; font-weight: 700; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
         .service-card .card-link i { transition: transform .3s; }
         .service-card:hover .card-link i { transform: translateX(4px); }
-
         /* ---------------- Categories ---------------- */
         .category-rail {
             display: flex; gap: 16px; overflow-x: auto; padding: 6px 4px 22px;
@@ -502,7 +445,6 @@
         }
         .category-card .cat-count { position: absolute; right: 14px; top: 14px; color: #fff; font-size: 0.72rem; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.4); padding: 3px 10px; border-radius: var(--radius-sm); }
         .category-card.is-active { outline: 2px solid var(--brass); outline-offset: 3px; }
-
         /* ---------------- Products ---------------- */
         .filter-bar {
             display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;
@@ -516,7 +458,6 @@
         }
         .pill-btn:hover { border-color: var(--ink); color: var(--ink); }
         .pill-btn.active { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-
         .search-box { position: relative; min-width: 240px; }
         .search-box input {
             width: 100%; border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
@@ -524,7 +465,6 @@
         }
         .search-box input:focus { outline: none; border-color: var(--brass); }
         .search-box i { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--ink-soft); font-size: 0.85rem; }
-
         .product-card {
             background: var(--paper-alt);
             border-radius: var(--radius-lg);
@@ -563,17 +503,14 @@
         .product-price { font-size: 0.86rem; font-weight: 700; }
         .view-details-btn { font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 7px; transition: gap .3s; }
         .view-details-btn:hover { gap: 11px; color: var(--brass); }
-
         .empty-state { text-align: center; padding: 70px 20px; }
         .empty-state i { font-size: 2.4rem; color: var(--line-strong); margin-bottom: 16px; }
         .empty-state p { color: var(--ink-soft); }
-
         /* skeletons */
         .skeleton { background: linear-gradient(90deg, rgba(33,29,24,0.06) 25%, rgba(33,29,24,0.12) 37%, rgba(33,29,24,0.06) 63%); background-size: 400% 100%; animation: sk 1.4s ease infinite; border-radius: var(--radius-sm); }
         @keyframes sk { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
         .skeleton-card .product-media { background: transparent; }
         .skeleton-line { height: 12px; margin: 8px 0; }
-
         /* Mini product card */
         .mini-card { display: flex; gap: 14px; align-items: center; background: var(--paper); border-radius: var(--radius-md); padding: 10px; border: 1px solid var(--line); transition: all .3s; }
         .mini-card:hover { border-color: var(--brass); }
@@ -581,10 +518,8 @@
         .mini-card .m-tag { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brass); font-weight: 700; }
         .mini-card h5 { font-size: 0.92rem; margin: 3px 0; font-family: 'Manrope',sans-serif; font-weight: 700; }
         .mini-card .m-price { font-size: 0.78rem; color: var(--ink-soft); }
-
         /* ---------------- Featured carousel (mobile) ---------------- */
         .featured-swiper .swiper-slide { height: auto; }
-
         /* ---------------- Gallery ---------------- */
         .gallery-grid {
             display: grid;
@@ -605,12 +540,10 @@
         .gi-4 { grid-column: span 2; }
         @media (max-width: 991px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } .gi-1 { grid-column: span 2; } }
         @media (max-width: 575px) { .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; } .gi-1, .gi-4 { grid-column: span 1; } }
-
         /* ---------------- Trust badges ---------------- */
         .trust-strip { display: flex; flex-wrap: wrap; gap: 34px; justify-content: center; padding: 40px 0; }
         .trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; font-weight: 600; color: var(--ink-soft); }
         .trust-item i { color: var(--brass); }
-
         /* ---------------- Contact ---------------- */
         .contact-wrap { background: var(--ink); color: var(--paper); border-radius: var(--radius-lg); overflow: hidden; }
         .contact-info { padding: 60px 50px; }
@@ -633,9 +566,7 @@
         #formSuccess, #formError { display: none; padding: 16px 18px; border-radius: var(--radius-sm); font-size: 0.9rem; margin-top: 18px; }
         #formSuccess { background: rgba(69,76,62,0.12); color: var(--moss); border: 1px solid var(--moss); }
         #formError { background: rgba(179,64,47,0.1); color: #b3402f; border: 1px solid #b3402f; }
-
         @media (max-width: 991px) { .contact-info, .contact-form-side { padding: 44px 26px; } }
-
         /* ---------------- Footer ---------------- */
         footer.site-footer { background: #1a1712; color: rgba(243,238,228,0.7); padding: 80px 0 0; }
         footer.site-footer h6 { color: #fff; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 22px; }
@@ -646,7 +577,6 @@
         .social-row { display: flex; gap: 10px; }
         .social-row a { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(243,238,228,0.2); display: flex; align-items: center; justify-content: center; transition: all .3s; }
         .social-row a:hover { background: var(--brass); border-color: var(--brass); color: #1a1712; }
-
         /* ---------------- Floating controls ---------------- */
         .floating-stack { position: fixed; right: 22px; bottom: 26px; z-index: 900; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
         .fab {
@@ -674,14 +604,12 @@
         }
         .fab-wa:hover .fab-tooltip { opacity: 1; visibility: visible; }
         @media (max-width: 767px) { .fab-tooltip { display: none; } .floating-stack { right: 16px; bottom: env(safe-area-inset-bottom, 16px); } }
-
         /* ---------------- Product Modal ---------------- */
         .product-modal .modal-dialog { max-width: 1060px; }
         .product-modal .modal-content { border-radius: var(--radius-lg); border: none; overflow: hidden; }
         .product-modal .modal-body { padding: 0; }
         .pm-grid { display: grid; grid-template-columns: 1.05fr 1fr; min-height: 560px; }
         @media (max-width: 860px) { .pm-grid { grid-template-columns: 1fr; min-height: auto; } }
-
         .pm-gallery { background: var(--paper); padding: 30px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
         .pm-breadcrumb { font-size: 0.74rem; color: var(--ink-soft); padding-right: 44px; }
         .pm-breadcrumb a:hover { color: var(--brass); }
@@ -705,7 +633,6 @@
         .pm-thumb { width: 68px; height: 68px; border-radius: 4px; overflow: hidden; opacity: 0.55; border: 2px solid transparent; cursor: pointer; transition: all .25s; flex-shrink:0; }
         .pm-thumb.active { opacity: 1; border-color: var(--brass); }
         .pm-thumb img { width: 100%; height: 100%; object-fit: cover; }
-
         .pm-info { padding: 34px 36px; overflow-y: auto; max-height: 90vh; }
         .pm-info .p-tag-badge { display: inline-block; background: var(--paper); color: var(--brass); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 5px 13px; border-radius: var(--radius-sm); margin-bottom: 14px; }
         .pm-info h2 { font-size: 1.8rem; margin-bottom: 10px; }
@@ -732,12 +659,10 @@
             transition: all .25s var(--ease);
         }
         .pm-close-btn:hover { background: var(--brass); border-color: var(--brass); color: #fff; }
-
         @media (max-width: 767px) {
             .pm-info { max-height: none; }
             .pm-cta-row { position: sticky; bottom: -1px; background: #fff; padding: 12px 0 2px; margin-bottom: 8px; }
         }
-
         /* Lightbox */
         .lux-lightbox { position: fixed; inset: 0; background: rgba(15,13,10,0.94); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 30px; }
         .lux-lightbox.open { display: flex; }
@@ -766,27 +691,18 @@
             .lux-lightbox .lb-arrow { width: 40px; height: 40px; }
             .lux-lightbox .lb-arrow.left { left: 10px; } .lux-lightbox .lb-arrow.right { right: 10px; }
         }
-
         /* Section headings shared */
         .section-head { max-width: 620px; margin-bottom: 56px; }
         .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
         .section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); margin: 16px 0 14px; }
         .section-head p { color: var(--ink-soft); font-size: 1rem; }
-
         .bg-alt { background: var(--paper-alt); }
-
         ::selection { background: var(--brass); color: #fff; }
     </style>
 </head>
-
 <body>
-
-    <!-- ============================================= -->
-    <!-- Fixed transparent-to-glass top bar (Announcement + Header) -->
-    <!-- ============================================= -->
     <div class="topbar-fixed" id="topbarFixed">
         <div class="announce" id="announceStrip"></div>
-
         <header class="site-header" id="siteHeader">
             <div class="container-lux">
                 <div class="header-inner">
@@ -797,7 +713,6 @@
                             <span class="brand-tagline">Wall Studio</span>
                         </span>
                     </a>
-
                     <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
                         <a href="#home" class="active">Home</a>
                         <a href="#about">About</a>
@@ -806,7 +721,6 @@
                         <a href="#gallery">Gallery</a>
                         <a href="#contact">Contact</a>
                     </nav>
-
                     <div class="header-actions">
                         <a href="#" class="header-wa-btn d-none d-md-inline-flex" id="headerWaBtn" aria-label="Chat on WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>
@@ -820,8 +734,6 @@
             </div>
         </header>
     </div>
-
-    <!-- Mobile Offcanvas -->
     <div class="offcanvas offcanvas-end offcanvas-lux" tabindex="-1" id="mobileOffcanvas" aria-labelledby="mobileOffcanvasLabel">
         <div class="offcanvas-header">
             <span class="brand-logo" id="mobileOffcanvasLabel">
@@ -840,29 +752,17 @@
             </a>
         </div>
     </div>
-
-    <!-- ============================================= -->
-    <!-- Hero -->
-    <!-- ============================================= -->
     <section id="home">
         <div class="swiper hero-swiper" id="heroSwiper">
             <div class="swiper-wrapper" id="heroWrapper"></div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- Stats -->
-    <!-- ============================================= -->
     <section class="stats-strip">
         <div class="container-lux">
             <div class="row g-4" id="statsRow"></div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- About -->
-    <!-- ============================================= -->
     <section id="about" class="section-pad">
         <div class="container-lux">
             <div class="row g-5 align-items-center">
@@ -887,10 +787,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- Services -->
-    <!-- ============================================= -->
     <section id="services" class="section-pad bg-alt">
         <div class="container-lux">
             <div class="section-head center reveal mx-auto">
@@ -901,10 +797,6 @@
             <div class="row g-4" id="servicesRow"></div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- Categories -->
-    <!-- ============================================= -->
     <section class="section-pad">
         <div class="container-lux">
             <div class="section-head reveal">
@@ -915,10 +807,6 @@
             <div class="category-rail" id="categoryRailTop"></div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- Featured -->
-    <!-- ============================================= -->
     <section class="section-pad bg-alt">
         <div class="container-lux">
             <div class="section-head reveal">
@@ -931,10 +819,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- Products -->
-    <!-- ============================================= -->
     <section id="products" class="section-pad">
         <div class="container-lux">
             <div class="section-head center mx-auto reveal">
@@ -942,7 +826,6 @@
                 <h2>Explore Our Collection</h2>
                 <p>Designed to transform ordinary walls into beautiful spaces.</p>
             </div>
-
             <div class="filter-bar">
                 <div class="pill-filters" id="pillFilters"></div>
                 <div class="search-box">
@@ -950,7 +833,6 @@
                     <input type="text" id="productSearch" placeholder="Search designs, categories, moods..." aria-label="Search products">
                 </div>
             </div>
-
             <div class="row g-4" id="productsGrid"></div>
             <div class="empty-state d-none" id="emptyState">
                 <i class="fa-regular fa-image"></i>
@@ -958,19 +840,11 @@
             </div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- Trust badges -->
-    <!-- ============================================= -->
     <section class="bg-alt" style="border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
         <div class="container-lux">
             <div class="trust-strip" id="trustStrip"></div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- Gallery -->
-    <!-- ============================================= -->
     <section id="gallery" class="section-pad">
         <div class="container-lux">
             <div class="section-head reveal">
@@ -981,10 +855,6 @@
             <div class="gallery-grid" id="galleryGrid"></div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- Contact -->
-    <!-- ============================================= -->
     <section id="contact" class="section-pad bg-alt">
         <div class="container-lux">
             <div class="contact-wrap reveal">
@@ -1052,10 +922,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ============================================= -->
-    <!-- Footer -->
-    <!-- ============================================= -->
     <footer class="site-footer">
         <div class="container-lux">
             <div class="row g-5">
@@ -1088,32 +954,23 @@
             </div>
         </div>
     </footer>
-
-    <!-- ============================================= -->
-    <!-- Product Modal -->
-    <!-- ============================================= -->
     <div class="modal fade product-modal" id="productModal" tabindex="-1" aria-hidden="true" aria-labelledby="productModalLabel">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <button type="button" class="pm-close-btn" data-bs-dismiss="modal" aria-label="Close product details"><i class="fa-solid fa-xmark"></i></button>
                 <div class="modal-body">
                     <div class="pm-grid" id="pmGrid">
-                        <!-- rendered dynamically -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Lightbox -->
     <div class="lux-lightbox" id="luxLightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
         <button class="lb-close" id="lbClose" aria-label="Close viewer"><i class="fa-solid fa-xmark"></i></button>
         <button class="lb-arrow left" id="lbPrev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
         <img src="" alt="" id="lbImg">
         <button class="lb-arrow right" id="lbNext" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
-
-    <!-- Floating Controls -->
     <div class="floating-stack">
         <a href="#" class="fab fab-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></a>
         <a href="#" class="fab fab-wa" id="floatingWaBtn" aria-label="Chat with us on WhatsApp">
@@ -1121,18 +978,12 @@
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </div>
-
-    <!-- ============================================= -->
-    <!-- CDN Scripts -->
-    <!-- ============================================= -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script>
     (function ($) {
         "use strict";
-
         // =================================================================
         // CONFIG
         // =================================================================
@@ -1143,7 +994,6 @@
             FALLBACK_IMAGE: "https://picsum.photos/seed/murale-fallback/800/800",
             WHATSAPP_COUNTRY_CODE: "91"
         };
-
         // =================================================================
         // SITE DATA (local fallback / demo data source)
         // =================================================================
@@ -1157,9 +1007,7 @@
                 hours: "Mon – Sat, 10:00 AM – 7:00 PM",
                 currency: "₹"
             },
-
             announcement: "Custom sizes available • Professional installation • Free design consultation",
-
             header: {
                 navigation: [
                     { label: "Home", href: "#home" },
@@ -1170,7 +1018,6 @@
                     { label: "Contact", href: "#contact" }
                 ]
             },
-
             hero: [
                 {
                     type: "image",
@@ -1182,14 +1029,12 @@
                     secondaryButton: { text: "Get a Free Quote", action: "contact" }
                 }
             ],
-
             stats: [
                 { value: 500, suffix: "+", label: "Curated Designs" },
                 { value: 1500, suffix: "+", label: "Happy Customers" },
                 { value: 10, suffix: "+", label: "Years Experience" },
                 { value: 100, suffix: "%", label: "Customizable" }
             ],
-
             about: {
                 eyebrow: "About Murale",
                 title: "Walls, reconsidered as a design surface",
@@ -1205,7 +1050,6 @@
                     "Residential & Commercial Solutions"
                 ]
             },
-
             services: [
                 { icon: "fa-couch", title: "Home Wall Décor", description: "Living rooms, bedrooms and hallways finished with designs chosen for how you actually live.", action: "products" },
                 { icon: "fa-shapes", title: "Kids Room Designs", description: "Playful, durable surfaces that grow with your child, from nursery to teenage room.", action: "products" },
@@ -1214,7 +1058,6 @@
                 { icon: "fa-store", title: "Retail & Commercial Décor", description: "Storefronts and hospitality interiors that hold up to daily footfall and changing seasons.", action: "contact" },
                 { icon: "fa-drafting-compass", title: "Interior Design Solutions", description: "Full-room material planning in partnership with your architect or interior designer.", action: "contact" }
             ],
-
             categories: [
                 { id: "living-room", name: "Living Room", image: "https://picsum.photos/seed/murale-cat-living/500/600" },
                 { id: "bedroom", name: "Bedroom", image: "https://picsum.photos/seed/murale-cat-bedroom/500/601" },
@@ -1226,7 +1069,6 @@
                 { id: "quotes", name: "Quotes", image: "https://picsum.photos/seed/murale-cat-quotes/500/607" },
                 { id: "custom", name: "Custom Designs", image: "https://picsum.photos/seed/murale-cat-custom/500/608" }
             ],
-
             products: [
                 {
                     id: "wall-001", title: "Botanical Serenity", category: "nature", tag: "Bestseller", featured: true,
@@ -1385,7 +1227,6 @@
                     whatsappMessage: "Hi, I am interested in a custom design like \"Modern Heritage\"."
                 }
             ],
-
             gallery: [
                 { image: "https://picsum.photos/seed/murale-gal-1/900/900", title: "Modern Living Spaces", category: "Living Room" },
                 { image: "https://picsum.photos/seed/murale-gal-2/700/560", title: "Kids Room Transformations", category: "Kids Room" },
@@ -1396,18 +1237,15 @@
                 { image: "https://picsum.photos/seed/murale-gal-7/700/560", title: "Reading Nooks", category: "Nature" },
                 { image: "https://picsum.photos/seed/murale-gal-8/700/560", title: "Entryway Statements", category: "Abstract" }
             ],
-
             trustBadges: [
                 { icon: "fa-award", label: "Premium Quality" },
                 { icon: "fa-object-ungroup", label: "Custom Designs" },
                 { icon: "fa-screwdriver-wrench", label: "Easy Installation" },
                 { icon: "fa-truck-fast", label: "Pan-India Delivery" }
             ],
-
             contact: {
                 lead: "Tell us about your space and we'll get back with size, pricing and a design recommendation within one business day."
             },
-
             footer: {
                 about: "A design-led wall décor studio creating custom, premium wall stickers for homes and businesses.",
                 social: [
@@ -1417,7 +1255,6 @@
                 ]
             }
         };
-
         // =================================================================
         // STATE
         // =================================================================
@@ -1431,7 +1268,6 @@
             lightboxImages: [],
             lightboxIndex: 0
         };
-
         // =================================================================
         // UTILITIES
         // =================================================================
@@ -1440,24 +1276,20 @@
             img.src = CONFIG.FALLBACK_IMAGE;
         }
         window.imageFallback = imageFallback;
-
         function escapeHtml(str) {
             if (!str) return "";
             return String(str).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
         }
-
         function buildWhatsappLink(message) {
             const number = CONFIG.WHATSAPP_COUNTRY_CODE && !state.content.settings.whatsappNumber.startsWith(CONFIG.WHATSAPP_COUNTRY_CODE)
                 ? CONFIG.WHATSAPP_COUNTRY_CODE + state.content.settings.whatsappNumber
                 : state.content.settings.whatsappNumber;
             return `https://wa.me/${state.content.settings.whatsappNumber}?text=${encodeURIComponent(message)}`;
         }
-
         function findCategoryName(id) {
             const cat = state.content.categories.find(c => c.id === id);
             return cat ? cat.name : id;
         }
-
         // =================================================================
         // API FUNCTIONS  (fetch first, gracefully fall back to SITE_DATA)
         // =================================================================
@@ -1472,7 +1304,6 @@
                 state.content = SITE_DATA;
             }
         }
-
         async function loadProducts() {
             try {
                 const res = await fetch(CONFIG.PRODUCTS_API_URL, { headers: { Accept: "application/json" } });
@@ -1487,7 +1318,6 @@
                 state.products = SITE_DATA.products;
             }
         }
-
         async function submitContactForm(payload) {
             try {
                 const res = await fetch(CONFIG.CONTACT_API_URL, {
@@ -1503,28 +1333,24 @@
                 return { success: true, offline: true };
             }
         }
-
         // =================================================================
         // RENDER FUNCTIONS
         // =================================================================
         function renderAnnouncement() {
             $("#announceStrip").text(state.content.announcement);
         }
-
         function renderHeader() {
             const nav = state.content.header.navigation;
             $("#mobileNav").html(nav.map(n => `<a href="${n.href}" class="nav-link-lux" data-mobile-nav>${escapeHtml(n.label)}</a>`).join(""));
             const waLink = buildWhatsappLink("Hi, I am interested in your wall sticker designs. Please share more details.");
             $("#headerWaBtn, #offcanvasWaBtn, #floatingWaBtn").attr("href", waLink);
         }
-
         function renderHero() {
             const slides = state.content.hero.map((slide, i) => {
                 const mediaEl = slide.type === "video"
                     ? `<video src="${slide.media}" poster="${slide.poster || ''}" autoplay muted loop playsinline
                          onerror="this.poster='${slide.poster || CONFIG.FALLBACK_IMAGE}'; this.style.display='none';"></video>`
                     : `<img src="${slide.media}" alt="${escapeHtml(slide.title)}" loading="${i === 0 ? 'eager' : 'lazy'}" onerror="imageFallback(this)">`;
-
                 return `
                 <div class="swiper-slide hero-slide">
                     <div class="hero-media-wrap">${mediaEl}</div>
@@ -1543,7 +1369,6 @@
                 </div>`;
             }).join("");
             $("#heroWrapper").html(slides);
-
             const multiSlide = state.content.hero.length > 1;
             new Swiper("#heroSwiper", {
                 loop: multiSlide,
@@ -1556,7 +1381,6 @@
                 a11y: { enabled: true }
             });
         }
-
         function renderStats() {
             const html = state.content.stats.map(s => `
                 <div class="col-6 col-md-3">
@@ -1567,7 +1391,6 @@
                 </div>`).join("");
             $("#statsRow").html(html);
         }
-
         function renderAbout() {
             const a = state.content.about;
             $("#aboutEyebrow").text(a.eyebrow);
@@ -1578,7 +1401,6 @@
             $(".about-media img").attr("src", a.image).attr("alt", "Interior featuring a MURALE wall sticker installation");
             $("#aboutFeatures").html(a.features.map(f => `<li><i class="fa-solid fa-circle-check"></i>${escapeHtml(f)}</li>`).join(""));
         }
-
         function renderServices() {
             const html = state.content.services.map(s => `
                 <div class="col-md-6 col-lg-4">
@@ -1592,7 +1414,6 @@
             $("#servicesRow").html(html);
             observeReveals();
         }
-
         function renderCategories() {
             const cats = [{ id: "all", name: "All Designs", image: "https://picsum.photos/seed/murale-cat-all/500/609" }, ...state.content.categories];
             const html = cats.map(c => {
@@ -1607,13 +1428,11 @@
             }).join("");
             $("#categoryRailTop").html(html);
         }
-
         function renderPillFilters() {
             const cats = [{ id: "all", name: "All" }, ...state.content.categories];
             const html = cats.map(c => `<button type="button" class="pill-btn ${state.activeCategory === c.id ? 'active' : ''}" data-category="${c.id}">${escapeHtml(c.name)}</button>`).join("");
             $("#pillFilters").html(html);
         }
-
         function productCardHtml(p, mini = false) {
             if (mini) {
                 return `
@@ -1648,7 +1467,6 @@
                 </div>
             </div>`;
         }
-
         function getFilteredProducts() {
             const term = state.searchTerm.trim().toLowerCase();
             return state.products.filter(p => {
@@ -1659,7 +1477,6 @@
                 return haystack.includes(term);
             });
         }
-
         function renderProducts() {
             const list = getFilteredProducts();
             if (!list.length) {
@@ -1671,7 +1488,6 @@
             }
             observeReveals();
         }
-
         function renderFeatured() {
             const featured = state.products.filter(p => p.featured);
             const html = featured.map(p => `
@@ -1679,7 +1495,6 @@
                     ${productCardHtml(p)}
                 </div>`).join("");
             $("#featuredWrapper").html(html.replace(/col-sm-6 col-lg-3 /g, ""));
-
             new Swiper("#featuredSwiper", {
                 slidesPerView: 1.15,
                 spaceBetween: 20,
@@ -1690,7 +1505,6 @@
             });
             observeReveals();
         }
-
         function renderGallery() {
             const items = state.content.gallery;
             const html = items.map((g, i) => `
@@ -1704,11 +1518,9 @@
             $("#galleryGrid").html(html);
             state.lightboxImages = items.map(g => g.image);
         }
-
         function renderTrust() {
             $("#trustStrip").html(state.content.trustBadges.map(t => `<div class="trust-item"><i class="fa-solid ${t.icon}"></i>${escapeHtml(t.label)}</div>`).join(""));
         }
-
         function renderContact() {
             const s = state.content.settings;
             $("#contactLead").text(state.content.contact.lead);
@@ -1717,13 +1529,11 @@
             $("#contactEmailLine").text(s.email);
             $("#contactAddressLine").text(s.address);
             $("#contactHoursLine").text(s.hours);
-
             const catOptions = state.content.categories.map(c => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join("");
             $("#cfCategory").html(`<option value="">Any category</option>${catOptions}`);
             const prodOptions = state.products.map(p => `<option value="${p.id}">${escapeHtml(p.title)}</option>`).join("");
             $("#cfProduct").html(`<option value="">Not sure yet</option>${prodOptions}`);
         }
-
         function renderFooter() {
             $("#footerYear").text(new Date().getFullYear());
             $("#footerAbout").text(state.content.footer.about);
@@ -1737,7 +1547,6 @@
                 <div><i class="fa-solid fa-location-dot me-2"></i>${s.address}</div>
             `);
         }
-
         function renderSkeletons() {
             const skel = Array.from({ length: 8 }).map(() => `
                 <div class="col-sm-6 col-lg-3">
@@ -1753,7 +1562,6 @@
                 </div>`).join("");
             $("#productsGrid").html(skel);
         }
-
         function renderAll() {
             renderAnnouncement();
             renderHeader();
@@ -1772,7 +1580,6 @@
             initCountUp();
             initSeoMeta();
         }
-
         // =================================================================
         // SEO — populate structured data dynamically
         // =================================================================
@@ -1791,7 +1598,6 @@
                 document.getElementById("ld-local-business").textContent = JSON.stringify(ld);
             } catch (e) { /* non-critical */ }
         }
-
         // =================================================================
         // PRODUCT FILTERING
         // =================================================================
@@ -1801,11 +1607,9 @@
             renderPillFilters();
             renderProducts();
         }
-
         function scrollToProducts() {
             document.getElementById("products").scrollIntoView({ behavior: "smooth" });
         }
-
         $(document).on("click", "[data-category]", function () {
             setCategory($(this).data("category"));
             scrollToProducts();
@@ -1818,7 +1622,6 @@
             setCategory($(this).data("category-jump"));
             scrollToProducts();
         });
-
         let searchDebounce;
         $("#productSearch").on("input", function () {
             clearTimeout(searchDebounce);
@@ -1828,13 +1631,11 @@
                 renderProducts();
             }, 200);
         });
-
         // =================================================================
         // PRODUCT MODAL
         // =================================================================
         const productModalEl = document.getElementById("productModal");
         const productModal = new bootstrap.Modal(productModalEl);
-
         function openProduct(id) {
             const product = state.products.find(p => p.id === id);
             if (!product) return;
@@ -1843,22 +1644,18 @@
             renderProductModal(product);
             productModal.show();
         }
-
         function renderProductModal(p) {
             const related = state.products.filter(rp => rp.category === p.category && rp.id !== p.id).slice(0, 3);
-
             const thumbs = p.images.map((img, i) => `
                 <div class="pm-thumb ${i === 0 ? 'active' : ''}" data-thumb-index="${i}">
                     <img src="${img}" alt="${escapeHtml(p.title)} view ${i + 1}" onerror="imageFallback(this)">
                 </div>`).join("");
-
             const sizeChips = p.sizes.map(s => `<span>${escapeHtml(s)}</span>`).join("");
             const suitable = p.suitableFor.join(", ");
             const featureList = p.features.map(f => `<li><i class="fa-solid fa-circle-check" style="color:var(--brass); margin-right:8px;"></i>${escapeHtml(f)}</li>`).join("");
             const relatedHtml = related.length
                 ? `<div class="pm-related mt-4"><h5>Explore Similar Designs</h5><div class="d-flex flex-column gap-2">${related.map(r => productCardHtml(r, true)).join("")}</div></div>`
                 : "";
-
             const html = `
                 <div class="pm-gallery">
                     <div class="pm-breadcrumb">
@@ -1877,43 +1674,33 @@
                     <h2>${escapeHtml(p.title)}</h2>
                     <p class="p-short">${escapeHtml(p.shortDescription)}</p>
                     <div class="p-price-lg">${escapeHtml(p.price)}</div>
-
                     <div class="pm-spec-grid">
                         <div class="pm-spec"><div class="lbl">Material</div><div class="val">${escapeHtml(p.material)}</div></div>
                         <div class="pm-spec"><div class="lbl">Finish</div><div class="val">${escapeHtml(p.finish)}</div></div>
                         <div class="pm-spec"><div class="lbl">Suitable For</div><div class="val">${escapeHtml(suitable)}</div></div>
                         <div class="pm-spec"><div class="lbl">Category</div><div class="val">${escapeHtml(findCategoryName(p.category))}</div></div>
                     </div>
-
                     <div class="lbl" style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); margin-bottom:8px;">Available Sizes</div>
                     <div class="pm-size-chips">${sizeChips}</div>
-
                     <div class="pm-desc-block">${escapeHtml(p.description)}</div>
-
                     <ul class="feature-list" style="margin-top:0;">${featureList}</ul>
-
                     <div class="pm-note"><b>Installation:</b> ${escapeHtml(p.installation)}</div>
                     <div class="pm-note"><b>Customization:</b> ${escapeHtml(p.customization)}</div>
-
                     <div class="pm-cta-row">
                         <a href="${buildWhatsappLink(p.whatsappMessage)}" target="_blank" rel="noopener" class="btn-brass"><i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp</a>
                         <a href="#" class="btn-outline-lux" data-cta-action="contact" data-close-modal>Request a Quote</a>
                     </div>
-
                     ${relatedHtml}
                 </div>`;
             $("#pmGrid").html(html);
         }
-
         $(document).on("click", "[data-view-product]", function (e) {
             e.preventDefault();
             openProduct($(this).data("view-product"));
         });
-
         $(document).on("click", "[data-related-product]", function () {
             openProduct($(this).data("related-product"));
         });
-
         $(document).on("click", "#pmPrev, #pmNext", function (e) {
             e.preventDefault();
             e.stopPropagation();
@@ -1923,37 +1710,31 @@
             state.currentImageIndex = (state.currentImageIndex + dir + p.images.length) % p.images.length;
             updateModalImage(p);
         });
-
         $(document).on("click", "[data-thumb-index]", function (e) {
             e.stopPropagation();
             state.currentImageIndex = $(this).data("thumb-index");
             const p = state.products.find(pp => pp.id === state.currentProductId);
             updateModalImage(p);
         });
-
         function updateModalImage(p) {
             $("#pmMainImg").attr("src", p.images[state.currentImageIndex]);
             $("#pmCounter").text(`${state.currentImageIndex + 1} / ${p.images.length}`);
             $(".pm-thumb").removeClass("active").eq(state.currentImageIndex).addClass("active");
         }
-
         $(document).on("click", "[data-lightbox-trigger]", function () {
             const p = state.products.find(pp => pp.id === state.currentProductId);
             if (!p) return;
             openLightbox(p.images, state.currentImageIndex);
         });
-
         $(document).on("click", "[data-close-modal]", function () {
             productModal.hide();
         });
-
         productModalEl.addEventListener("hidden.bs.modal", function () {
             // stop any video / restore state per spec (no video in modal by default, but future-proofed)
             $("#pmGrid video").each(function () { this.pause(); });
             document.body.style.overflow = "";
             state.currentProductId = null;
         });
-
         // =================================================================
         // LIGHTBOX (gallery + product images)
         // =================================================================
@@ -1963,24 +1744,19 @@
             $("#lbImg").attr("src", images[state.lightboxIndex]);
             $("#luxLightbox").addClass("open");
         }
-
         function closeLightbox() { $("#luxLightbox").removeClass("open"); }
-
         function lightboxStep(dir) {
             const imgs = state.lightboxImages;
             state.lightboxIndex = (state.lightboxIndex + dir + imgs.length) % imgs.length;
             $("#lbImg").attr("src", imgs[state.lightboxIndex]);
         }
-
         $("#lbClose").on("click", closeLightbox);
         $("#lbPrev").on("click", () => lightboxStep(-1));
         $("#lbNext").on("click", () => lightboxStep(1));
         $("#luxLightbox").on("click", function (e) { if (e.target === this) closeLightbox(); });
-
         $(document).on("click", "[data-gallery-index]", function () {
             openLightbox(state.lightboxImages, $(this).data("gallery-index"));
         });
-
         $(document).on("keydown", function (e) {
             if ($("#luxLightbox").hasClass("open")) {
                 if (e.key === "Escape") closeLightbox();
@@ -1988,7 +1764,6 @@
                 if (e.key === "ArrowRight") lightboxStep(1);
             }
         });
-
         // =================================================================
         // SMART CTA ACTION HANDLER (central)
         // =================================================================
@@ -2010,37 +1785,30 @@
                     scrollToProducts();
             }
         }
-
         $(document).on("click", "[data-cta-action]", function (e) {
             e.preventDefault();
             const action = $(this).data("cta-action");
             if ($(this).is("[data-close-modal]")) productModal.hide();
             handleCtaAction(action);
         });
-
         // =================================================================
         // CONTACT FORM
         // =================================================================
         function validateForm() {
             let valid = true;
             $(".form-feedback").text("");
-
             const name = $("#cfName").val().trim();
             const phone = $("#cfPhone").val().trim();
             const email = $("#cfEmail").val().trim();
-
             if (!name) { $('[data-error-for="cfName"]').text("Please enter your name."); valid = false; }
             if (!phone || phone.replace(/\D/g, "").length < 7) { $('[data-error-for="cfPhone"]').text("Please enter a valid phone number."); valid = false; }
             if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $('[data-error-for="cfEmail"]').text("Please enter a valid email."); valid = false; }
-
             return valid;
         }
-
         $("#contactForm").on("submit", async function (e) {
             e.preventDefault();
             $("#formSuccess, #formError").hide();
             if (!validateForm()) return;
-
             const payload = {
                 name: $("#cfName").val().trim(),
                 phone: $("#cfPhone").val().trim(),
@@ -2049,17 +1817,13 @@
                 category: $("#cfCategory").val(),
                 message: $("#cfMessage").val().trim()
             };
-
             const $btn = $("#cfSubmitBtn");
             const originalLabel = $("#cfSubmitLabel").text();
             $btn.prop("disabled", true);
             $("#cfSubmitLabel").html('<i class="fa-solid fa-spinner fa-spin"></i> Sending...');
-
             const result = await submitContactForm(payload);
-
             $btn.prop("disabled", false);
             $("#cfSubmitLabel").text(originalLabel);
-
             if (result && result.success) {
                 $("#formSuccess").text("Thank you! We will contact you shortly.").fadeIn();
                 this.reset();
@@ -2067,11 +1831,9 @@
                 $("#formError").text("Something went wrong. Please try again or reach us on WhatsApp.").fadeIn();
             }
         });
-
         // =================================================================
         // WHATSAPP (floating, header) — kept in sync via renderHeader()
         // =================================================================
-
         // =================================================================
         // SCROLL / ANIMATIONS
         // =================================================================
@@ -2081,13 +1843,11 @@
                 $("#scrollTopBtn").toggleClass("is-visible", window.scrollY > 500);
             });
         }
-
         // Subtle parallax on the hero background image — moves slower than the
         // page scroll for a premium, layered feel.
         function initHeroParallax() {
             const heroEl = document.getElementById("heroSwiper");
             if (!heroEl || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
             let ticking = false;
             function update() {
                 ticking = false;
@@ -2102,12 +1862,10 @@
                 if (!ticking) { requestAnimationFrame(update); ticking = true; }
             }, { passive: true });
         }
-
         $("#scrollTopBtn").on("click", function (e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
-
         function observeReveals() {
             const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
             const els = document.querySelectorAll(".reveal:not(.in-view)");
@@ -2122,7 +1880,6 @@
             }, { threshold: 0.15 });
             els.forEach(el => io.observe(el));
         }
-
         function initCountUp() {
             const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
             const io = new IntersectionObserver((entries) => {
@@ -2148,7 +1905,6 @@
             }, { threshold: 0.4 });
             document.querySelectorAll("[data-count-to]").forEach(el => io.observe(el));
         }
-
         // Nav active state on scroll
         function initNavSpy() {
             const sections = ["home", "about", "services", "products", "gallery", "contact"];
@@ -2162,7 +1918,6 @@
             }, { rootMargin: "-45% 0px -50% 0px" });
             sections.forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
         }
-
         // Pause offscreen hero videos for performance
         function initVideoPause() {
             document.querySelectorAll(".hero-media-wrap video").forEach(video => {
@@ -2175,7 +1930,6 @@
                 io.observe(video);
             });
         }
-
         // =================================================================
         // INITIALIZATION
         // =================================================================
@@ -2188,7 +1942,6 @@
             initNavSpy();
             observeReveals();
             setTimeout(initVideoPause, 800);
-
             // Close mobile offcanvas on nav click
             $(document).on("click", "[data-mobile-nav]", function () {
                 const offcanvasEl = document.getElementById("mobileOffcanvas");
@@ -2196,9 +1949,7 @@
                 oc.hide();
             });
         }
-
         $(document).ready(init);
-
     })(jQuery);
     </script>
 </body>

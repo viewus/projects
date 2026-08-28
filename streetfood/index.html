@@ -1,25 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Charcoal Route — Indian Food Truck</title>
 <meta name="description" content="Charcoal Route — a premium Indian food truck serving breakfast, tiffin, lunch, dinner and our signature biryani.">
-
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500&family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<!-- AOS -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-
-<!-- Swiper -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
 <style>
 /* ============================================================
    0. THEME TOKENS (populated further by JS from JSON, kept here as fallback)
@@ -34,18 +25,15 @@
   --clr-text:#2A2420;
   --clr-line: rgba(42,36,32,0.14);
   --clr-line-dark: rgba(247,240,228,0.14);
-
   --font-display: 'Playfair Display', serif;
   --font-body: 'Manrope', sans-serif;
   --font-alt: 'Inter', sans-serif;
-
   --container: 1240px;
   --gutter: clamp(20px, 5vw, 64px);
   --radius-s: 4px;
   --radius-m: 8px;
   --ease: cubic-bezier(.22,.68,0,1);
 }
-
 *{box-sizing:border-box; margin:0; padding:0;}
 html{scroll-behavior:smooth;}
 html,body{overflow-x:hidden; max-width:100%;}
@@ -62,7 +50,6 @@ ul{list-style:none;}
 button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit;}
 input{font-family:inherit;}
 .container{max-width:var(--container); margin:0 auto; padding:0 var(--gutter);}
-
 .eyebrow{
   font-family:var(--font-alt);
   font-size:11.5px;
@@ -99,16 +86,13 @@ input{font-family:inherit;}
   max-width:56ch;
 }
 .section-head.center .section-sub{margin-left:auto;margin-right:auto;}
-
 section{ position:relative; }
 .pad{ padding:96px 0; }
 .pad-sm{ padding:64px 0; }
-
 .dark-section{ background:var(--clr-dark); color:var(--clr-cream); }
 .dark-section .section-sub{ color:rgba(247,240,228,0.62); }
 .dark-section .eyebrow{ color:var(--clr-secondary); }
 .dark-section .eyebrow::before{ background:var(--clr-secondary); }
-
 .btn{
   display:inline-flex; align-items:center; gap:10px;
   font-family:var(--font-alt); font-weight:600; font-size:13.5px;
@@ -125,7 +109,6 @@ section{ position:relative; }
 .dark-section .btn-outline{ border-color:rgba(247,240,228,0.4); }
 .dark-section .btn-outline:hover{ background:var(--clr-cream); color:var(--clr-dark); }
 .btn-ghost{ font-weight:600; font-size:13px; letter-spacing:.06em; text-transform:uppercase; border-bottom:1px solid currentColor; padding-bottom:2px;}
-
 /* ============================================================
    ANNOUNCEMENT BAR
    ============================================================ */
@@ -150,7 +133,6 @@ section{ position:relative; }
 .announce-track span{ display:inline-flex; align-items:center; gap:10px; color:var(--clr-secondary); }
 .announce-track span i{ font-size:9px; color:var(--clr-primary); }
 @keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
-
 /* ============================================================
    HEADER
    ============================================================ */
@@ -197,7 +179,6 @@ nav#main-nav a:hover::after{ width:100%; }
 #hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
 #hamburger.open span:nth-child(2){ opacity:0; }
 #hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
-
 #mobile-nav{
   position:fixed; inset:0 0 0 auto; width:min(84vw,340px); height:100vh;
   background:var(--clr-dark); z-index:300;
@@ -214,7 +195,6 @@ nav#main-nav a:hover::after{ width:100%; }
 }
 #mobile-overlay.open{ opacity:1; pointer-events:auto; }
 .mobile-close{ align-self:flex-end; font-size:22px; color:var(--clr-cream); }
-
 /* ============================================================
    HERO
    ============================================================ */
@@ -246,7 +226,6 @@ nav#main-nav a:hover::after{ width:100%; }
 }
 .hero-tags{ font-family:var(--font-alt); font-size:13px; letter-spacing:.05em; text-transform:uppercase; color:var(--clr-secondary); margin-top:20px; font-weight:600; }
 .hero-cta{ display:flex; gap:18px; margin-top:38px; flex-wrap:wrap; }
-
 .trust-strip{
   border-top:1px solid var(--clr-line-dark);
   margin-top:60px; padding-top:26px;
@@ -254,7 +233,6 @@ nav#main-nav a:hover::after{ width:100%; }
 }
 .trust-strip .item{ font-family:var(--font-alt); font-size:13px; font-weight:600; letter-spacing:.02em; display:flex; align-items:center; gap:10px; color:rgba(247,240,228,0.75); }
 .trust-strip .item i{ color:var(--clr-secondary); }
-
 /* ============================================================
    STORY BANNER (full width statement)
    ============================================================ */
@@ -268,7 +246,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .story-title{ font-family:var(--font-display); font-weight:800; font-size:clamp(34px,5.4vw,68px); line-height:1.03; max-width:14ch; }
 .story-title span{ color:var(--clr-secondary); }
 .story-text{ font-family:var(--font-alt); margin-top:20px; max-width:44ch; color:rgba(247,240,228,.72); font-size:16.5px; line-height:1.7; }
-
 /* ============================================================
    ABOUT
    ============================================================ */
@@ -282,7 +259,6 @@ nav#main-nav a:hover::after{ width:100%; }
 }
 .about-body p{ font-size:16.5px; line-height:1.8; color:rgba(42,36,32,.75); margin-top:18px; max-width:52ch; }
 .about-signature{ margin-top:30px; font-family:var(--font-display); font-style:italic; font-size:19px; color:var(--clr-primary); }
-
 /* ============================================================
    PHILOSOPHY
    ============================================================ */
@@ -292,7 +268,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .phil-num{ font-family:var(--font-alt); font-size:12px; color:var(--clr-secondary); letter-spacing:.1em; font-weight:700; }
 .phil-title{ font-family:var(--font-display); font-weight:700; font-size:30px; margin-top:16px; color:var(--clr-cream); }
 .phil-desc{ font-family:var(--font-alt); font-size:14.5px; color:rgba(247,240,228,.6); margin-top:10px; line-height:1.6; }
-
 /* ============================================================
    CATEGORY STRIP
    ============================================================ */
@@ -305,7 +280,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .cat-chip i{ color:var(--clr-primary); }
 .cat-chip:hover{ background:var(--clr-text); color:var(--clr-light); border-color:var(--clr-text); }
 .cat-chip:hover i{ color:var(--clr-secondary); }
-
 /* ============================================================
    FOOD CARDS / GRID
    ============================================================ */
@@ -328,9 +302,7 @@ nav#main-nav a:hover::after{ width:100%; }
 .fc-link{ font-size:12px; font-family:var(--font-alt); font-weight:700; }
 .dark-section .food-card{ background:#1e1815; border-color:var(--clr-line-dark); }
 .dark-section .fc-desc{ color:rgba(247,240,228,.55); }
-
 .section-foot-cta{ display:flex; justify-content:center; margin-top:52px; }
-
 /* ============================================================
    BIRYANI — SIGNATURE
    ============================================================ */
@@ -351,7 +323,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .biryani-story{ margin-top:44px; display:grid; grid-template-columns:repeat(4,1fr); gap:20px; padding-top:36px; border-top:1px solid var(--clr-line-dark); }
 .biryani-step{ font-family:var(--font-alt); font-size:13.5px; color:rgba(247,240,228,.7); }
 .biryani-step b{ display:block; font-family:var(--font-display); font-size:22px; color:var(--clr-cream); font-weight:700; margin-bottom:6px; }
-
 /* ============================================================
    CHEF SPECIALS
    ============================================================ */
@@ -362,7 +333,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .chef-overlay{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(23,19,17,0) 40%, rgba(23,19,17,.92) 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:26px; color:#fff; }
 .chef-name{ font-family:var(--font-display); font-weight:700; font-size:22px; }
 .chef-quote{ font-family:var(--font-display); font-style:italic; font-size:13.5px; margin-top:8px; color:rgba(255,255,255,.75); }
-
 /* ============================================================
    TODAY'S SPECIAL
    ============================================================ */
@@ -375,7 +345,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .special-tag{ display:inline-flex; align-items:center; gap:8px; background:var(--clr-primary); color:#fff; font-family:var(--font-alt); font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; padding:7px 14px; border-radius:2px; width:fit-content; }
 .special-copy h3{ font-family:var(--font-display); font-size:clamp(28px,3vw,40px); margin-top:18px; }
 .special-copy p{ font-family:var(--font-alt); color:rgba(42,36,32,.68); margin-top:14px; line-height:1.7; max-width:46ch; }
-
 /* ============================================================
    WHY US / GRID FEATURES
    ============================================================ */
@@ -384,7 +353,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .feature-item i{ font-size:22px; color:var(--clr-primary); }
 .feature-item h4{ font-family:var(--font-display); font-size:19px; margin-top:16px; font-weight:700; }
 .feature-item p{ font-family:var(--font-alt); font-size:13px; color:rgba(42,36,32,.6); margin-top:8px; }
-
 /* ============================================================
    INGREDIENTS
    ============================================================ */
@@ -394,7 +362,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .ingredient-item .ing-media{ border-radius:var(--radius-m); overflow:hidden; aspect-ratio:1/1; }
 .ingredient-item img{ width:100%; height:100%; object-fit:cover; }
 .ingredient-item h5{ font-family:var(--font-display); font-size:17px; margin-top:14px; font-weight:700; }
-
 /* ============================================================
    PROCESS (HOW WE COOK)
    ============================================================ */
@@ -404,7 +371,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .process-num{ font-family:var(--font-display); font-size:44px; font-style:italic; color:var(--clr-secondary); font-weight:700; }
 .process-step h4{ font-family:var(--font-display); font-size:19px; margin-top:14px; color:var(--clr-cream); }
 .process-step p{ font-family:var(--font-alt); font-size:13px; color:rgba(247,240,228,.55); margin-top:8px; line-height:1.6; }
-
 /* ============================================================
    FRESHNESS
    ============================================================ */
@@ -414,7 +380,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .freshness-list i{ color:var(--clr-primary); margin-top:3px; }
 .freshness-media{ position:relative; }
 .freshness-media img{ border-radius:var(--radius-m); width:100%; aspect-ratio:4/5; object-fit:cover; }
-
 /* ============================================================
    EXPERIENCE
    ============================================================ */
@@ -422,7 +387,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .experience-grid img{ width:100%; height:100%; object-fit:cover; border-radius:var(--radius-s); }
 .experience-grid .g-big{ grid-column:span 2; grid-row:span 2; }
 .experience-copy{ text-align:center; max-width:640px; margin:0 auto 12px; }
-
 /* ============================================================
    LOCATION
    ============================================================ */
@@ -440,7 +404,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .week-row .off{ color:rgba(42,36,32,.4); font-style:italic; }
 .map-wrap{ border-radius:var(--radius-m); overflow:hidden; aspect-ratio:4/3.4; border:1px solid var(--clr-line); }
 .map-wrap iframe{ width:100%; height:100%; border:0; }
-
 /* ============================================================
    CATERING
    ============================================================ */
@@ -450,7 +413,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .catering-inner{ position:relative; z-index:2; padding:56px; color:#fff; max-width:680px; }
 .catering-tags{ display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 30px; }
 .catering-tags span{ font-family:var(--font-alt); font-size:12.5px; border:1px solid rgba(255,255,255,.3); padding:8px 16px; border-radius:30px; }
-
 /* ============================================================
    SEASONAL
    ============================================================ */
@@ -458,7 +420,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .seasonal-card{ position:relative; border-radius:var(--radius-m); overflow:hidden; aspect-ratio:3/2.2; }
 .seasonal-card img{ width:100%; height:100%; object-fit:cover; }
 .seasonal-tag{ position:absolute; bottom:0; left:0; right:0; background:linear-gradient(0deg, rgba(23,19,17,.88), transparent); padding:20px; color:#fff; font-family:var(--font-display); font-weight:700; font-size:18px; }
-
 /* ============================================================
    GALLERY (masonry)
    ============================================================ */
@@ -467,13 +428,11 @@ nav#main-nav a:hover::after{ width:100%; }
 .gallery-masonry img:hover{ opacity:.88; }
 .insta-cta{ display:flex; align-items:center; justify-content:space-between; margin-top:36px; flex-wrap:wrap; gap:16px; padding-top:30px; border-top:1px solid var(--clr-line-dark); }
 .insta-cta p{ font-family:var(--font-display); font-style:italic; font-size:20px; }
-
 /* Lightbox */
 #lightbox{ position:fixed; inset:0; background:rgba(10,8,7,.95); z-index:500; display:none; align-items:center; justify-content:center; padding:40px; }
 #lightbox.open{ display:flex; }
 #lightbox img{ max-width:90vw; max-height:85vh; object-fit:contain; border-radius:4px; }
 #lightbox .lb-close{ position:absolute; top:26px; right:32px; color:#fff; font-size:28px; }
-
 /* ============================================================
    TESTIMONIALS
    ============================================================ */
@@ -485,7 +444,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .swiper{ padding-bottom:50px !important; }
 .swiper-pagination-bullet{ background:var(--clr-text) !important; opacity:.25; }
 .swiper-pagination-bullet-active{ opacity:1; background:var(--clr-primary) !important; }
-
 /* ============================================================
    SOCIAL PROOF STATS
    ============================================================ */
@@ -493,7 +451,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .stat-item{ background:var(--clr-dark); padding:40px; text-align:center; }
 .stat-num{ font-family:var(--font-display); font-weight:800; font-size:clamp(36px,4.6vw,54px); color:var(--clr-secondary); }
 .stat-label{ font-family:var(--font-alt); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:rgba(247,240,228,.62); margin-top:8px; }
-
 /* ============================================================
    FAQ
    ============================================================ */
@@ -504,7 +461,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .faq-item.open .faq-q i{ transform:rotate(45deg); }
 .faq-a{ max-height:0; overflow:hidden; transition:max-height .4s var(--ease); }
 .faq-a p{ font-family:var(--font-alt); font-size:14.5px; color:rgba(42,36,32,.65); padding:0 4px 24px; max-width:64ch; line-height:1.7; }
-
 /* ============================================================
    CONTACT
    ============================================================ */
@@ -513,7 +469,6 @@ nav#main-nav a:hover::after{ width:100%; }
 .contact-title .accent{ color:var(--clr-secondary); font-style:italic; }
 .contact-sub{ font-family:var(--font-alt); color:rgba(247,240,228,.62); max-width:52ch; margin:22px auto 0; font-size:16px; }
 .contact-actions{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:44px; }
-
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -528,7 +483,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
 .footer-col li{ margin-bottom:11px; font-family:var(--font-alt); font-size:14px; }
 .footer-col a:hover{ color:var(--clr-cream); }
 .footer-bottom{ border-top:1px solid var(--clr-line-dark); margin-top:60px; padding-top:26px; display:flex; justify-content:space-between; font-family:var(--font-alt); font-size:12.5px; color:rgba(247,240,228,.4); flex-wrap:wrap; gap:10px; }
-
 /* ============================================================
    MENU EXPLORER (filter + search)
    ============================================================ */
@@ -540,7 +494,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
 .search-box input{ background:transparent; border:1px solid var(--clr-line); border-radius:30px; padding:11px 42px 11px 20px; font-size:13.5px; width:240px; color:var(--clr-text); }
 .search-box i{ position:absolute; right:16px; top:50%; transform:translateY(-50%); color:rgba(42,36,32,.5); }
 .no-results{ text-align:center; padding:60px 0; font-family:var(--font-alt); color:rgba(42,36,32,.5); display:none; }
-
 /* ============================================================
    MODAL
    ============================================================ */
@@ -559,7 +512,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
 .modal-ingredients span{ background:var(--clr-cream); padding:7px 14px; border-radius:20px; font-size:12.5px; font-family:var(--font-alt); }
 .modal-note{ font-family:var(--font-display); font-style:italic; font-size:15px; margin-top:20px; color:rgba(42,36,32,.7); }
 .modal-cta{ margin-top:30px; }
-
 /* ============================================================
    FLOATING WHATSAPP + MOBILE BOTTOM BAR
    ============================================================ */
@@ -574,14 +526,11 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
   animation:pulse 2.4s ease-out infinite; z-index:-1;
 }
 @keyframes pulse{ 0%{ transform:scale(1); opacity:.6; } 100%{ transform:scale(1.9); opacity:0; } }
-
 #mobile-bottom-bar{ display:none; }
-
 /* ============================================================
    SCROLL-REVEAL COUNTER helper
    ============================================================ */
 .counter{ display:inline-block; }
-
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -638,7 +587,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
   .explorer-controls{ flex-direction:column; align-items:stretch; }
   .search-box input{ width:100%; }
 }
-
 /* ============================================================
    REDUCED MOTION
    ============================================================ */
@@ -649,10 +597,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
 </style>
 </head>
 <body>
-
-<!-- ============================================================
-     EMBEDDED JSON — SINGLE SOURCE OF TRUTH
-     ============================================================ -->
 <script id="website-data" type="application/json">
 {
   "meta": {
@@ -760,37 +704,30 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     { "id": "bf-004", "name": "Set Dosa", "category": "breakfast", "description": "Soft, spongy trio of dosas, mildly sweet and paired with coconut chutney.", "image": "https://images.unsplash.com/photo-1610192244261-3f33de3f72e1?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Rice","Urad Dal","Poha","Curd"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "bf-005", "name": "Pongal", "category": "breakfast", "description": "Comforting rice and moong dal porridge, tempered with ghee, pepper and cumin.", "image": "https://images.unsplash.com/photo-1626132647958-1ca7dbaaebe3?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Rice","Moong Dal","Ghee","Black Pepper","Cashew"], "highlight": "", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "bf-006", "name": "Poori Bhaji", "category": "breakfast", "description": "Puffed golden bread with a mildly spiced potato curry on the side.", "image": "https://images.unsplash.com/photo-1626777553635-be62ac2e0aa2?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Wheat Flour","Potato","Turmeric","Mustard Seeds"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
-
     { "id": "tf-001", "name": "Chapati & Kurma", "category": "tiffin", "description": "Soft wheat flatbreads paired with a mixed vegetable coconut kurma.", "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Wheat Flour","Mixed Vegetables","Coconut","Spices"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "tf-002", "name": "Parotta & Salna", "category": "tiffin", "description": "Flaky layered parotta served with a fiery, fragrant salna gravy.", "image": "https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Maida","Onion","Tomato","Spices"], "highlight": "Tiffin Favourite", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "tf-003", "name": "Upma", "category": "tiffin", "description": "Savoury semolina, tempered and studded with vegetables and cashews.", "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Semolina","Vegetables","Mustard Seeds","Cashew"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "tf-004", "name": "Idli Vada Combo", "category": "tiffin", "description": "The best of both — soft idlis and crisp vadas on one plate.", "image": "https://images.unsplash.com/photo-1567337710282-00832b415979?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Rice","Urad Dal","Chutney","Sambar"], "highlight": "", "isFeatured": true, "isSignature": false, "available": true },
-
     { "id": "ln-001", "name": "South Indian Meals", "category": "lunch", "description": "A full plate of rice, sambar, rasam, curry, poriyal and papad.", "image": "https://images.unsplash.com/photo-1626132647523-66b4bf5f5b41?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Rice","Sambar","Rasam","Seasonal Vegetables","Papad"], "highlight": "Home-Style", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "ln-002", "name": "Paneer Butter Masala", "category": "lunch", "description": "Cottage cheese cubes simmered in a rich, buttery tomato gravy.", "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Paneer","Tomato","Butter","Cream","Spices"], "highlight": "", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "ln-003", "name": "Chicken Curry & Rice", "category": "lunch", "description": "Slow-cooked chicken curry, deeply spiced, served with steamed rice.", "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Chicken","Onion","Tomato","Spices","Rice"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "ln-004", "name": "Dal Tadka", "category": "lunch", "description": "Yellow lentils tempered with garlic, cumin and dried red chilli.", "image": "https://images.unsplash.com/photo-1626777553635-be62ac2e0aa2?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Toor Dal","Garlic","Cumin","Ghee"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "ln-005", "name": "Roti & Sabzi", "category": "lunch", "description": "Fresh tandoor-style rotis with a rotating seasonal vegetable curry.", "image": "https://images.unsplash.com/photo-1633945274309-2e0d99e30b0d?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Wheat Flour","Seasonal Vegetables","Spices"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
-
     { "id": "br-001", "name": "Signature Chicken Biryani", "category": "biryani", "description": "Aromatic long-grain basmati layered with marinated chicken, saffron and fragrant spices — Hyderabadi-style, slow-cooked to order.", "image": "https://images.unsplash.com/photo-1633945274309-2e0d99e30b0d?q=80&w=1800&auto=format&fit=crop", "ingredients": ["Basmati Rice","Chicken","Onion","Mint","Saffron","Whole Spices"], "highlight": "Chef's Signature", "isFeatured": true, "isSignature": true, "available": true },
     { "id": "br-002", "name": "Mutton Biryani", "category": "biryani", "description": "Rich, bone-in mutton slow-braised and layered with fragrant dum-cooked rice.", "image": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Basmati Rice","Mutton","Yogurt","Fried Onion","Spices"], "highlight": "Weekend Special", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "br-003", "name": "Vegetable Dum Biryani", "category": "biryani", "description": "Garden vegetables and paneer, layered and slow-cooked in sealed dum style.", "image": "https://images.unsplash.com/photo-1701579231349-060c318f2b8f?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Basmati Rice","Mixed Vegetables","Paneer","Whole Spices"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "br-004", "name": "Egg Biryani", "category": "biryani", "description": "Boiled eggs folded into fragrant masala rice, finished with fried onions.", "image": "https://images.unsplash.com/photo-1642821373181-696a54913e93?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Basmati Rice","Eggs","Onion","Spices"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
-
     { "id": "dn-001", "name": "Chicken Kebab Platter", "category": "dinner", "description": "Charcoal-grilled chicken kebabs, smoky and marinated overnight.", "image": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Chicken","Yogurt","Ginger-Garlic","Spices"], "highlight": "Best Seller", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "dn-002", "name": "Butter Chicken", "category": "dinner", "description": "Tandoori chicken simmered in a velvety tomato-butter gravy.", "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Chicken","Tomato","Butter","Cream","Spices"], "highlight": "", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "dn-003", "name": "Paneer Tikka", "category": "dinner", "description": "Char-grilled cottage cheese skewers, marinated in smoky tandoori spice.", "image": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d3?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Paneer","Yogurt","Bell Pepper","Spices"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "dn-004", "name": "Kerala Parotta & Curry", "category": "dinner", "description": "Layered flaky parotta with a bold, dark-roasted evening curry.", "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Maida","Chicken or Vegetable","Spices"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
-
     { "id": "sf-001", "name": "Vada Pav", "category": "streetfood", "description": "Mumbai's favourite — spiced potato fritter tucked in a soft bun with chutneys.", "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Potato","Bun","Garlic Chutney","Green Chilli"], "highlight": "", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "sf-002", "name": "Pav Bhaji", "category": "streetfood", "description": "Buttery mashed vegetable mash, served sizzling with toasted pav.", "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Mixed Vegetables","Butter","Pav Bread","Spices"], "highlight": "Street Favourite", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "sf-003", "name": "Chicken Frankie Roll", "category": "streetfood", "description": "Spiced chicken and onions rolled in a soft, griddled flatbread.", "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Chicken","Wheat Flour","Onion","Chutney"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "sf-004", "name": "Chaat Platter", "category": "streetfood", "description": "A tangy, crunchy mix of puris, chutneys, sev and spiced potatoes.", "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Puri","Potato","Tamarind Chutney","Yogurt","Sev"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "sf-005", "name": "Samosa", "category": "streetfood", "description": "Golden, flaky pastry stuffed with spiced potato and peas.", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Maida","Potato","Peas","Spices"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
-
     { "id": "sn-001", "name": "Onion Pakora", "category": "snacks", "description": "Crisp, deep-fried onion fritters with a hint of chilli and coriander.", "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Onion","Gram Flour","Green Chilli"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "sn-002", "name": "Grilled Corn Chaat", "category": "snacks", "description": "Charred sweet corn tossed with lime, chilli and roasted spices.", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Corn","Lime","Chilli Powder","Butter"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
-
     { "id": "bv-001", "name": "Filter Coffee", "category": "beverages", "description": "Strong South Indian filter coffee, frothed and served piping hot.", "image": "https://images.unsplash.com/photo-1610632380989-680fe40816c6?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Coffee Decoction","Milk","Sugar"], "highlight": "", "isFeatured": true, "isSignature": false, "available": true },
     { "id": "bv-002", "name": "Masala Chai", "category": "beverages", "description": "Spiced tea brewed with cardamom, ginger and cloves.", "image": "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Tea Leaves","Milk","Ginger","Cardamom"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true },
     { "id": "bv-003", "name": "Fresh Sugarcane Juice", "category": "beverages", "description": "Cold-pressed sugarcane juice with a squeeze of lime and mint.", "image": "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?q=80&w=1200&auto=format&fit=crop", "ingredients": ["Sugarcane","Lime","Mint","Ginger"], "highlight": "", "isFeatured": false, "isSignature": false, "available": true }
@@ -994,13 +931,7 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
   }
 }
 </script>
-
-<!-- ============================================================
-     STATIC SHELL (all dynamic content injected by JS)
-     ============================================================ -->
-
 <div id="announcement-bar"><div class="announce-track" id="announce-track"></div></div>
-
 <header id="site-header">
   <div class="header-inner">
     <a href="#home" class="logo" id="logo"></a>
@@ -1011,16 +942,13 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </header>
-
 <div id="mobile-overlay"></div>
 <div id="mobile-nav">
   <div class="mobile-close"><i class="fa-solid fa-xmark"></i></div>
   <nav id="mobile-nav-links"></nav>
   <a href="#location" class="btn btn-primary">Find Us</a>
 </div>
-
 <main>
-
 <section id="home" data-vis="hero">
   <div id="hero">
     <div class="hero-bg"><img id="hero-img" alt="Food truck hero"></div>
@@ -1035,7 +963,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </section>
-
 <section data-vis="storyBanner" class="story-banner">
   <img id="story-img" alt="Food truck story">
   <div class="story-banner-inner">
@@ -1043,7 +970,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     <p class="story-text" id="story-text"></p>
   </div>
 </section>
-
 <section id="about" data-vis="about" class="pad">
   <div class="container about-grid">
     <div class="about-media" data-aos="fade-right">
@@ -1059,11 +985,9 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </section>
-
 <section id="philosophy" data-vis="philosophy" class="dark-section">
   <div class="philosophy-grid" id="philosophy-grid"></div>
 </section>
-
 <section id="menu" data-vis="categories" class="pad">
   <div class="container">
     <div class="section-head center">
@@ -1073,28 +997,24 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     <div class="cat-strip" id="cat-strip" style="justify-content:center;"></div>
   </div>
 </section>
-
 <section id="breakfast" data-vis="breakfast" class="pad">
   <div class="container">
     <div class="section-head"><div class="eyebrow">Breakfast</div><h2 class="section-title">Start Your Day Right.</h2></div>
     <div class="food-grid" id="grid-breakfast"></div>
   </div>
 </section>
-
 <section id="tiffin" data-vis="tiffin" class="pad" style="background:var(--clr-cream);">
   <div class="container">
     <div class="section-head"><div class="eyebrow">Tiffin</div><h2 class="section-title">The Tiffin Favourites.</h2></div>
     <div class="food-grid cols-3" id="grid-tiffin"></div>
   </div>
 </section>
-
 <section id="lunch" data-vis="lunch" class="pad">
   <div class="container">
     <div class="section-head"><div class="eyebrow">Lunch</div><h2 class="section-title">Lunch That Feels Like Home.</h2></div>
     <div class="food-grid" id="grid-lunch"></div>
   </div>
 </section>
-
 <section id="biryani" data-vis="biryani" class="pad">
   <div class="container">
     <div class="biryani-hero">
@@ -1116,34 +1036,29 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </section>
-
 <section id="dinner" data-vis="dinner" class="pad dark-section">
   <div class="container">
     <div class="section-head"><div class="eyebrow">Dinner</div><h2 class="section-title">When The Sun Goes Down, The Flavours Get Bolder.</h2></div>
     <div class="food-grid" id="grid-dinner"></div>
   </div>
 </section>
-
 <section id="streetfood" data-vis="streetFood" class="pad" style="background:var(--clr-cream);">
   <div class="container">
     <div class="section-head"><div class="eyebrow">Street Food Specials</div><h2 class="section-title">Bold Bites From The Street.</h2></div>
     <div class="food-grid" id="grid-streetfood"></div>
   </div>
 </section>
-
 <section id="chef-specials" data-vis="chefSpecials" class="pad">
   <div class="container">
     <div class="section-head center"><div class="eyebrow" id="chef-eyebrow"></div><h2 class="section-title" id="chef-title"></h2></div>
     <div class="chef-grid" id="chef-grid"></div>
   </div>
 </section>
-
 <section id="todays-special" data-vis="todaysSpecial" class="pad" style="background:var(--clr-cream);">
   <div class="container">
     <div class="special-box" id="special-box"></div>
   </div>
 </section>
-
 <section id="menu-explorer" data-vis="menuExplorer" class="pad">
   <div class="container">
     <div class="section-head center">
@@ -1159,28 +1074,24 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     <div class="no-results" id="no-results">No dishes match your search. Try another word.</div>
   </div>
 </section>
-
 <section id="why-us" data-vis="whyUs" class="pad dark-section">
   <div class="container">
     <div class="section-head center"><div class="eyebrow" id="why-eyebrow"></div><h2 class="section-title" id="why-title"></h2></div>
     <div class="feature-grid" id="feature-grid"></div>
   </div>
 </section>
-
 <section id="ingredients" data-vis="ingredients" class="pad">
   <div class="container">
     <div class="section-head"><div class="eyebrow" id="ing-eyebrow"></div><h2 class="section-title" id="ing-title"></h2></div>
     <div class="ingredient-strip" id="ingredient-strip"></div>
   </div>
 </section>
-
 <section id="process" data-vis="process" class="pad dark-section">
   <div class="container">
     <div class="section-head center"><div class="eyebrow" id="process-eyebrow"></div><h2 class="section-title" id="process-title"></h2></div>
     <div class="process-row" id="process-row"></div>
   </div>
 </section>
-
 <section id="freshness" data-vis="freshness" class="pad">
   <div class="container freshness-grid">
     <div data-aos="fade-right">
@@ -1191,7 +1102,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     <div class="freshness-media" data-aos="fade-left"><img id="fresh-img" alt="Fresh food preparation"></div>
   </div>
 </section>
-
 <section id="experience" data-vis="experience" class="pad" style="background:var(--clr-cream);">
   <div class="container">
     <div class="section-head center">
@@ -1202,7 +1112,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     <div class="experience-grid" id="experience-grid"></div>
   </div>
 </section>
-
 <section id="location" data-vis="location" class="pad">
   <div class="container">
     <div class="section-head center"><div class="eyebrow" id="loc-eyebrow"></div><h2 class="section-title" id="loc-title"></h2></div>
@@ -1215,7 +1124,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </section>
-
 <section id="catering" data-vis="catering" class="pad" style="background:var(--clr-cream);">
   <div class="container">
     <div class="catering-wrap" data-aos="fade-up">
@@ -1229,14 +1137,12 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </section>
-
 <section id="seasonal" data-vis="seasonal" class="pad">
   <div class="container">
     <div class="section-head center"><div class="eyebrow" id="seasonal-eyebrow"></div><h2 class="section-title" id="seasonal-title"></h2></div>
     <div class="seasonal-grid" id="seasonal-grid"></div>
   </div>
 </section>
-
 <section id="gallery" data-vis="gallery" class="pad dark-section">
   <div class="container">
     <div class="section-head"><div class="eyebrow" id="gallery-eyebrow"></div><h2 class="section-title" id="gallery-title"></h2></div>
@@ -1247,7 +1153,6 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </section>
-
 <section id="testimonials" data-vis="testimonials" class="pad" style="background:var(--clr-cream);">
   <div class="container">
     <div class="section-head center"><div class="eyebrow" id="testi-eyebrow"></div><h2 class="section-title" id="testi-title"></h2></div>
@@ -1257,20 +1162,17 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </section>
-
 <section id="social-proof" data-vis="socialProof" class="pad dark-section" style="padding-top:0;">
   <div class="container">
     <div class="stats-row" id="stats-row"></div>
   </div>
 </section>
-
 <section id="faq" data-vis="faq" class="pad">
   <div class="container">
     <div class="section-head"><div class="eyebrow" id="faq-eyebrow"></div><h2 class="section-title" id="faq-title"></h2></div>
     <div class="faq-list" id="faq-list"></div>
   </div>
 </section>
-
 <section id="contact" data-vis="contact" class="pad">
   <div class="container">
     <h2 class="contact-title" id="contact-title"></h2>
@@ -1278,9 +1180,7 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     <div class="contact-actions" id="contact-actions"></div>
   </div>
 </section>
-
 </main>
-
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -1302,10 +1202,8 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </footer>
-
 <div id="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></div>
 <div id="mobile-bottom-bar"></div>
-
 <div id="food-modal-overlay">
   <div class="food-modal">
     <div class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></div>
@@ -1321,27 +1219,19 @@ footer{ background:#100d0b; color:rgba(247,240,228,.7); padding:80px 0 30px; }
     </div>
   </div>
 </div>
-
 <div id="lightbox"><div class="lb-close"><i class="fa-solid fa-xmark"></i></div><img id="lightbox-img" alt=""></div>
-
-<!-- ============================================================
-     CDN LIBRARIES
-     ============================================================ -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 <script>
 $(function () {
   "use strict";
-
   /* ============================================================
      1. LOAD DATA
      ============================================================ */
   const data = JSON.parse(document.getElementById("website-data").textContent);
   const V = data.sectionVisibility || {};
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   function showSection(key, selectorArr){
     if (V[key] === false){
       selectorArr.forEach(sel => $(sel).closest("section").hide());
@@ -1349,11 +1239,9 @@ $(function () {
     }
     return true;
   }
-
   function waMessage(text){
     return "https://wa.me/" + data.meta.whatsappNumber + "?text=" + encodeURIComponent(text);
   }
-
   /* ============================================================
      2. THEME
      ============================================================ */
@@ -1367,20 +1255,17 @@ $(function () {
     root.setProperty("--clr-light", t.light);
     root.setProperty("--clr-text", t.text);
   }
-
   /* ============================================================
      3. NAVIGATION
      ============================================================ */
   function renderNavigation(){
     $("#logo").html(data.meta.name + '<span class="mark">' + data.meta.logoMarkText + '</span>');
     $("#footer-logo").text(data.meta.name);
-
     const nav = data.navigation.map(n => `<a href="${n.target}">${n.label}</a>`).join("");
     $("#main-nav").html(nav);
     $("#mobile-nav-links").html(nav);
     $("#footer-nav").html(data.navigation.map(n => `<li><a href="${n.target}">${n.label}</a></li>`).join(""));
   }
-
   /* ============================================================
      4. HERO
      ============================================================ */
@@ -1399,7 +1284,6 @@ $(function () {
     $("#trust-strip").html(data.trustStrip.map(t => `<div class="item"><i class="fa-solid ${t.icon}"></i>${t.label}</div>`).join(""));
     buildHeroSVG();
   }
-
   function buildHeroSVG(){
     const svg = document.getElementById("hero-svg-fx");
     if (!svg) return;
@@ -1434,7 +1318,6 @@ $(function () {
     svg.innerHTML = markup;
     if (reducedMotion){ svg.querySelectorAll("animate").forEach(a => a.remove()); }
   }
-
   /* ============================================================
      5. STORY BANNER
      ============================================================ */
@@ -1445,7 +1328,6 @@ $(function () {
     $("#story-title").html(s.titleLine1 + "<br>" + s.titleLine2);
     $("#story-text").text(s.text);
   }
-
   /* ============================================================
      6. ABOUT
      ============================================================ */
@@ -1460,7 +1342,6 @@ $(function () {
     $("#about-signature").text(a.signature);
     $("#about-cta").text(a.cta.label).attr("href", a.cta.target);
   }
-
   function renderPhilosophy(){
     if (!showSection("philosophy", ["#philosophy"])) return;
     $("#philosophy-grid").html(data.philosophy.map(p => `
@@ -1470,7 +1351,6 @@ $(function () {
         <div class="phil-desc">${p.desc}</div>
       </div>`).join(""));
   }
-
   /* ============================================================
      7. CATEGORY STRIP + FOOD CARDS
      ============================================================ */
@@ -1490,26 +1370,22 @@ $(function () {
       </div>
     </div>`;
   }
-
   function renderCategories(){
     if (!showSection("categories", ["#menu"])) return;
     $("#cat-eyebrow").text(data.categoriesIntro.eyebrow);
     $("#cat-title").html(data.categoriesIntro.titleLine1 + "<br>" + data.categoriesIntro.titleLine2);
     $("#cat-strip").html(data.categories.map(c => `<a href="#${c.id === 'biryani' ? 'biryani' : (c.id === 'streetfood' ? 'streetfood' : c.id)}" class="cat-chip"><i class="fa-solid ${c.icon}"></i>${c.label}</a>`).join(""));
   }
-
   function renderCategorySection(gridId, category, limit){
     let items = data.menu.filter(m => m.category === category);
     if (limit) items = items.slice(0, limit);
     $(gridId).html(items.map(foodCard).join(""));
   }
-
   function renderBreakfast(){ if (showSection("breakfast", ["#breakfast"])) renderCategorySection("#grid-breakfast", "breakfast", 4); }
   function renderTiffin(){ if (showSection("tiffin", ["#tiffin"])) renderCategorySection("#grid-tiffin", "tiffin", 3); }
   function renderLunch(){ if (showSection("lunch", ["#lunch"])) renderCategorySection("#grid-lunch", "lunch", 4); }
   function renderDinner(){ if (showSection("dinner", ["#dinner"])) renderCategorySection("#grid-dinner", "dinner", 4); }
   function renderStreetFood(){ if (showSection("streetFood", ["#streetfood"])) renderCategorySection("#grid-streetfood", "streetfood", 4); }
-
   /* ============================================================
      8. SIGNATURE BIRYANI
      ============================================================ */
@@ -1526,7 +1402,6 @@ $(function () {
     $("#biryani-steps").html(b.steps.map(s => `<div class="biryani-step"><b>${s.label}</b>${s.text}</div>`).join(""));
     buildBiryaniSVG();
   }
-
   function buildBiryaniSVG(){
     const svg = document.getElementById("biryani-fx");
     if (!svg) return;
@@ -1556,7 +1431,6 @@ $(function () {
     svg.innerHTML = markup;
     if (reducedMotion){ svg.querySelectorAll("animate").forEach(a => a.remove()); }
   }
-
   /* ============================================================
      9. CHEF SPECIALS
      ============================================================ */
@@ -1574,7 +1448,6 @@ $(function () {
         </div>
       </div>`).join(""));
   }
-
   /* ============================================================
      10. TODAY'S SPECIAL
      ============================================================ */
@@ -1594,7 +1467,6 @@ $(function () {
       </div>
     `);
   }
-
   /* ============================================================
      11. WHY US
      ============================================================ */
@@ -1606,7 +1478,6 @@ $(function () {
     $("#feature-grid").html(w.items.map(i => `
       <div class="feature-item" data-aos="fade-up"><i class="fa-solid ${i.icon}"></i><h4>${i.title}</h4><p>${i.desc}</p></div>`).join(""));
   }
-
   /* ============================================================
      12. INGREDIENTS
      ============================================================ */
@@ -1618,7 +1489,6 @@ $(function () {
     $("#ingredient-strip").html(ing.items.map(i => `
       <div class="ingredient-item" data-aos="fade-up"><div class="ing-media"><img src="${i.image}" alt="${i.name}" loading="lazy"></div><h5>${i.name}</h5></div>`).join(""));
   }
-
   /* ============================================================
      13. PROCESS
      ============================================================ */
@@ -1630,7 +1500,6 @@ $(function () {
     $("#process-row").html(p.steps.map(s => `
       <div class="process-step" data-aos="fade-up"><div class="process-num">${s.num}</div><h4>${s.title}</h4><p>${s.desc}</p></div>`).join(""));
   }
-
   /* ============================================================
      14. FRESHNESS
      ============================================================ */
@@ -1642,7 +1511,6 @@ $(function () {
     $("#fresh-img").attr("src", f.image);
     $("#fresh-list").html(f.items.map(i => `<li><i class="fa-solid fa-check"></i>${i}</li>`).join(""));
   }
-
   /* ============================================================
      15. EXPERIENCE
      ============================================================ */
@@ -1654,7 +1522,6 @@ $(function () {
     $("#exp-text").text(e.text);
     $("#experience-grid").html(e.images.map(img => `<img src="${img.src}" class="${img.big ? 'g-big' : ''}" alt="Food truck experience" loading="lazy" data-aos="fade-up">`).join(""));
   }
-
   /* ============================================================
      16. LOCATION
      ============================================================ */
@@ -1684,7 +1551,6 @@ $(function () {
       $("#map-wrap").hide();
     }
   }
-
   /* ============================================================
      17. CATERING
      ============================================================ */
@@ -1697,7 +1563,6 @@ $(function () {
     $("#catering-cta").text(c.cta).attr("href", waMessage("Hello, I would like to enquire about booking the food truck for an event. Please share more details."))
       .attr("target","_blank").attr("rel","noopener");
   }
-
   /* ============================================================
      18. SEASONAL
      ============================================================ */
@@ -1709,7 +1574,6 @@ $(function () {
     $("#seasonal-grid").html(s.items.map(i => `
       <div class="seasonal-card" data-aos="fade-up"><img src="${i.image}" alt="${i.title}" loading="lazy"><div class="seasonal-tag">${i.title}</div></div>`).join(""));
   }
-
   /* ============================================================
      19. GALLERY
      ============================================================ */
@@ -1721,7 +1585,6 @@ $(function () {
     $("#gallery-masonry").html(g.images.map(src => `<img src="${src}" alt="Food truck gallery" loading="lazy" data-aos="fade-up">`).join(""));
     $("#insta-handle").text("Follow " + g.instaHandle);
   }
-
   /* ============================================================
      20. TESTIMONIALS (Swiper)
      ============================================================ */
@@ -1739,7 +1602,6 @@ $(function () {
           <div class="testimonial-role">${i.role}</div>
         </div>
       </div>`).join(""));
-
     new Swiper("#testi-swiper", {
       slidesPerView: 1.1,
       spaceBetween: 24,
@@ -1747,7 +1609,6 @@ $(function () {
       breakpoints: { 720: { slidesPerView: 2, spaceBetween: 28 }, 1024: { slidesPerView: 3, spaceBetween: 30 } }
     });
   }
-
   /* ============================================================
      21. SOCIAL PROOF + COUNTERS
      ============================================================ */
@@ -1756,7 +1617,6 @@ $(function () {
     const s = data.socialProof;
     $("#stats-row").html(s.stats.map(st => `<div class="stat-item"><div class="stat-num counter" data-target="${st.num}">0</div><div class="stat-label">${st.label}</div></div>`).join(""));
   }
-
   function initializeCounters(){
     const counters = document.querySelectorAll(".counter");
     if (!counters.length) return;
@@ -1781,7 +1641,6 @@ $(function () {
     }, { threshold: 0.4 });
     counters.forEach(c => obs.observe(c));
   }
-
   /* ============================================================
      22. FAQ
      ============================================================ */
@@ -1796,7 +1655,6 @@ $(function () {
         <div class="faq-a"><p>${i.a}</p></div>
       </div>`).join(""));
   }
-
   function initializeFAQ(){
     $("#faq-list").on("click", ".faq-q", function(){
       const $item = $(this).closest(".faq-item");
@@ -1809,7 +1667,6 @@ $(function () {
       }
     });
   }
-
   /* ============================================================
      23. CONTACT
      ============================================================ */
@@ -1824,7 +1681,6 @@ $(function () {
       <a class="btn btn-outline" href="${c.directionsUrl}" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Get Directions</a>
     `);
   }
-
   /* ============================================================
      24. FOOTER
      ============================================================ */
@@ -1840,7 +1696,6 @@ $(function () {
     `);
     $("#footer-copyright").text(data.footer.copyright);
   }
-
   /* ============================================================
      25. ANNOUNCEMENT BAR
      ============================================================ */
@@ -1850,7 +1705,6 @@ $(function () {
     const html = items.map(i => `<span><i class="fa-solid fa-circle"></i>${i}</span>`).join("");
     $("#announce-track").html(html + html); // duplicate for seamless loop
   }
-
   /* ============================================================
      26. MENU EXPLORER — FILTER + SEARCH
      ============================================================ */
@@ -1861,7 +1715,6 @@ $(function () {
     $("#filter-tabs").html(tabs.join(""));
     renderExplorerGrid("all", "");
   }
-
   function renderExplorerGrid(filter, query){
     let items = data.menu;
     if (filter && filter !== "all") items = items.filter(m => m.category === filter);
@@ -1877,7 +1730,6 @@ $(function () {
     $("#explorer-grid").html(items.map(foodCard).join(""));
     $("#no-results").toggle(items.length === 0);
   }
-
   function initializeFilters(){
     $("#filter-tabs").on("click", ".filter-tab", function(){
       $(".filter-tab").removeClass("active");
@@ -1885,14 +1737,12 @@ $(function () {
       renderExplorerGrid($(this).data("filter"), $("#menu-search").val());
     });
   }
-
   function initializeSearch(){
     $("#menu-search").on("input", function(){
       const activeFilter = $(".filter-tab.active").data("filter") || "all";
       renderExplorerGrid(activeFilter, $(this).val());
     });
   }
-
   /* ============================================================
      27. FOOD DETAIL MODAL
      ============================================================ */
@@ -1922,7 +1772,6 @@ $(function () {
       if (e.key === "Escape") { $("#food-modal-overlay").removeClass("open"); $("#lightbox").removeClass("open"); $("body").css("overflow",""); }
     });
   }
-
   /* ============================================================
      28. GALLERY LIGHTBOX
      ============================================================ */
@@ -1933,7 +1782,6 @@ $(function () {
     });
     $("#lightbox").on("click", function(){ $(this).removeClass("open"); });
   }
-
   /* ============================================================
      29. WHATSAPP FLOAT + BOTTOM BAR
      ============================================================ */
@@ -1945,7 +1793,6 @@ $(function () {
       <a href="${data.contact.directionsUrl}" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i>Location</a>
     `);
   }
-
   /* ============================================================
      30. NAVIGATION (mobile menu + scroll header)
      ============================================================ */
@@ -1966,7 +1813,6 @@ $(function () {
       $("#site-header").toggleClass("scrolled", $(window).scrollTop() > 40);
     });
   }
-
   /* ============================================================
      31. INIT ANIMATIONS
      ============================================================ */
@@ -1975,7 +1821,6 @@ $(function () {
       AOS.init({ duration: 800, once: true, offset: 60, disable: reducedMotion });
     }
   }
-
   /* ============================================================
      RUN EVERYTHING
      ============================================================ */
@@ -2010,7 +1855,6 @@ $(function () {
   renderFAQ();
   renderContact();
   renderFooter();
-
   initializeFilters();
   initializeSearch();
   initializeFoodModal();
@@ -2020,7 +1864,6 @@ $(function () {
   initializeFAQ();
   initializeCounters();
   initializeAnimations();
-
   // refresh AOS after dynamic content injection
   setTimeout(() => { if (window.AOS) AOS.refreshHard(); }, 200);
 });

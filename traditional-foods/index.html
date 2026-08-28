@@ -1,17 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Heritage Foods — Tradition Crafted With Love</title>
 <meta name="description" content="Authentic Indian sweets, snacks, pickles and spice blends — handcrafted in small batches and delivered with care.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-
 <style>
 /* ============================================================
    0. RESET + TOKENS
@@ -30,17 +28,14 @@
   --text-muted:#6B5B50;
   --line:rgba(198,161,91,0.35);
   --white:#FFFDF9;
-
   --font-display:'Playfair Display', serif;
   --font-serif:'Cormorant Garamond', serif;
   --font-body:'Manrope', sans-serif;
-
   --anim-duration:700ms;
   --shadow-soft:0 10px 40px -14px rgba(23,16,13,0.25);
   --shadow-lift:0 22px 60px -18px rgba(23,16,13,0.35);
   --radius:2px;
 }
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{
@@ -56,7 +51,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 ul{list-style:none;}
 input,textarea{font-family:inherit;}
 ::selection{background:var(--gold-soft);color:var(--dark);}
-
 .eyebrow{
   font-family:var(--font-body);
   font-size:12px;
@@ -89,7 +83,6 @@ input,textarea{font-family:inherit;}
 .section{padding:100px 0;position:relative;}
 .divider{width:64px;height:1px;background:var(--gold);margin:22px auto;}
 .divider.left{margin:22px 0;}
-
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   padding:16px 34px;
@@ -112,7 +105,6 @@ input,textarea{font-family:inherit;}
 .btn-block{width:100%;}
 .btn-sm{padding:11px 20px;font-size:11px;}
 .btn:disabled{opacity:0.45;cursor:not-allowed;}
-
 /* ============================================================
    1. TOP ANNOUNCEMENT BAR
    ============================================================ */
@@ -130,7 +122,6 @@ input,textarea{font-family:inherit;}
 .announcement span{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);}
 .announcement i{color:var(--gold);font-size:10px;}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
 /* ============================================================
    2. HEADER
    ============================================================ */
@@ -154,7 +145,6 @@ header.site-header.scrolled{box-shadow:0 6px 30px -18px rgba(0,0,0,0.25);}
 }
 .brand-mark .name{font-family:var(--font-display);font-size:21px;font-weight:600;color:var(--dark);letter-spacing:0.01em;line-height:1;}
 .brand-mark .name small{display:block;font-family:var(--font-body);font-size:9.5px;letter-spacing:0.24em;color:var(--secondary);font-weight:600;margin-top:4px;}
-
 nav.main-nav{display:flex;gap:38px;}
 nav.main-nav a{
   font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;
@@ -163,7 +153,6 @@ nav.main-nav a{
 nav.main-nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s ease;}
 nav.main-nav a:hover::after{width:100%;}
 nav.main-nav a:hover{color:var(--primary);}
-
 .header-actions{display:flex;align-items:center;gap:22px;}
 .icon-btn{position:relative;font-size:17px;color:var(--dark);transition:color .25s ease;}
 .icon-btn:hover{color:var(--primary);}
@@ -173,7 +162,6 @@ nav.main-nav a:hover{color:var(--primary);}
   display:flex;align-items:center;justify-content:center;
 }
 .hamburger{display:none;font-size:20px;}
-
 /* search box */
 .search-box{
   position:absolute;top:100%;left:0;right:0;background:var(--white);
@@ -194,7 +182,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .search-result-item img{width:46px;height:46px;object-fit:cover;}
 .search-result-item .sri-name{font-weight:600;font-size:14px;}
 .search-result-item .sri-cat{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;}
-
 /* ============================================================
    3. HERO
    ============================================================ */
@@ -226,7 +213,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .hero-trust .trust-item{display:flex;align-items:center;gap:10px;color:var(--cream);}
 .hero-trust .trust-item i{color:var(--gold);font-size:16px;}
 .hero-trust .trust-item span{font-size:12px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;}
-
 /* ============================================================
    4. OFFERS BANNER
    ============================================================ */
@@ -242,7 +228,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .offer-content .eyebrow::before{background:var(--gold);}
 .offer-content h3{font-family:var(--font-display);font-size:clamp(28px,4vw,42px);margin:16px 0 16px;font-weight:600;}
 .offer-content p{font-family:var(--font-serif);font-size:19px;margin-bottom:28px;opacity:0.9;}
-
 /* ============================================================
    5. CATEGORY NAV / FILTERS
    ============================================================ */
@@ -259,7 +244,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .cat-pill:hover{border-color:var(--gold);}
 .cat-pill.active{background:var(--primary);border-color:var(--primary);color:var(--white);}
 .cat-pill.active i{color:var(--gold-soft);}
-
 .filter-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:34px;}
 .product-count{font-size:13px;color:var(--text-muted);letter-spacing:.04em;}
 .quick-filters{display:flex;gap:10px;flex-wrap:wrap;}
@@ -268,7 +252,6 @@ nav.main-nav a:hover{color:var(--primary);}
   text-transform:uppercase;font-weight:600;color:var(--text-muted);transition:all .25s ease;
 }
 .chip.active,.chip:hover{border-color:var(--primary);color:var(--primary);}
-
 /* ============================================================
    6. PRODUCT GRID / CARD
    ============================================================ */
@@ -314,7 +297,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .pc-unit{font-size:11.5px;color:var(--text-muted);margin-top:-4px;}
 .pc-actions{display:flex;gap:10px;margin-top:8px;}
 .pc-actions .btn{flex:1;padding:12px 10px;font-size:11px;}
-
 /* ============================================================
    7. HERITAGE / QUALITY / GIFTING
    ============================================================ */
@@ -328,7 +310,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .heritage-stats{display:flex;gap:44px;margin-top:36px;}
 .heritage-stats .stat b{display:block;font-family:var(--font-display);font-size:30px;color:var(--gold-soft);}
 .heritage-stats .stat span{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(248,242,231,0.6);}
-
 .quality-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--line);}
 .quality-item{background:var(--cream);padding:44px 26px;text-align:center;transition:background .3s ease;}
 .quality-item:hover{background:var(--white);}
@@ -338,7 +319,6 @@ nav.main-nav a:hover{color:var(--primary);}
 }
 .quality-item h4{font-family:var(--font-display);font-size:16.5px;font-weight:600;margin-bottom:8px;color:var(--dark);}
 .quality-item p{font-size:12.5px;color:var(--text-muted);line-height:1.5;}
-
 .gifting-section{background:var(--cream-deep);}
 .gifting-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
 .gift-card{position:relative;aspect-ratio:4/5;overflow:hidden;}
@@ -349,7 +329,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .gift-card-content .tag{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft);font-weight:700;}
 .gift-card-content h4{font-family:var(--font-display);font-size:21px;margin:8px 0 4px;}
 .gift-card-content span{font-size:12.5px;opacity:.85;}
-
 /* ============================================================
    8. TESTIMONIALS
    ============================================================ */
@@ -364,7 +343,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .testimonial-dots{display:flex;gap:10px;justify-content:center;margin-top:40px;}
 .t-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.3);transition:all .3s ease;}
 .t-dot.active{background:var(--gold-soft);width:22px;border-radius:5px;}
-
 /* ============================================================
    9. GALLERY
    ============================================================ */
@@ -379,7 +357,6 @@ nav.main-nav a:hover{color:var(--primary);}
   display:flex;align-items:center;justify-content:center;color:var(--white);font-size:20px;
   background:rgba(23,16,13,0);opacity:0;transition:all .3s ease;}
 .gallery-item:hover::after{background:rgba(23,16,13,0.4);opacity:1;}
-
 /* ============================================================
    10. FAQ
    ============================================================ */
@@ -390,7 +367,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .faq-item.open .faq-q i{transform:rotate(45deg);}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
 .faq-a p{padding:0 4px 26px;font-size:15px;color:var(--text-muted);line-height:1.65;max-width:640px;}
-
 /* ============================================================
    11. CONTACT
    ============================================================ */
@@ -405,7 +381,6 @@ nav.main-nav a:hover{color:var(--primary);}
 .contact-map-placeholder i{font-size:32px;color:var(--gold);}
 .contact-map-placeholder h4{font-family:var(--font-display);font-size:20px;color:var(--white);}
 .contact-map-placeholder p{font-size:13.5px;color:rgba(248,242,231,0.6);}
-
 /* ============================================================
    12. FOOTER
    ============================================================ */
@@ -420,7 +395,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
 .footer-col ul li{margin-bottom:12px;font-size:14px;}
 .footer-col ul li a:hover{color:var(--gold-soft);}
 .footer-bottom{border-top:1px solid rgba(198,161,91,0.15);padding:22px 0;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;flex-wrap:wrap;gap:10px;}
-
 /* ============================================================
    13. FLOATING ELEMENTS
    ============================================================ */
@@ -431,7 +405,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
   box-shadow:0 12px 30px -6px rgba(37,211,102,0.6);transition:transform .25s ease;
 }
 .floating-whatsapp:hover{transform:scale(1.08);}
-
 .mobile-cart-bar{
   position:fixed;left:0;right:0;bottom:0;z-index:65;background:var(--dark);color:var(--white);
   padding:14px 22px;display:none;align-items:center;justify-content:space-between;
@@ -441,7 +414,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
 .mobile-cart-bar .mcb-info{font-size:13px;}
 .mobile-cart-bar .mcb-info b{color:var(--gold-soft);display:block;font-family:var(--font-display);font-size:16px;}
 .mobile-cart-bar button{background:var(--gold);color:var(--dark);padding:11px 22px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
-
 /* ============================================================
    14. CART DRAWER
    ============================================================ */
@@ -477,7 +449,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
 .subtotal-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;}
 .subtotal-row span{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);}
 .subtotal-row b{font-family:var(--font-display);font-size:24px;color:var(--primary);}
-
 /* ============================================================
    15. PRODUCT MODAL
    ============================================================ */
@@ -522,7 +493,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
 .pm-oos-note{font-size:13px;color:var(--primary);font-weight:600;margin-bottom:16px;}
 .pm-added-msg{font-size:12.5px;color:#2e7d32;font-weight:600;margin-top:10px;display:none;align-items:center;gap:6px;}
 .pm-added-msg.show{display:flex;}
-
 /* ============================================================
    16. CHECKOUT MODAL
    ============================================================ */
@@ -544,7 +514,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
 .form-group textarea{resize:vertical;min-height:70px;}
 .form-error{font-size:11.5px;color:var(--primary);margin-top:5px;display:none;}
 .form-error.show{display:block;}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .toast{
   position:fixed;bottom:26px;left:50%;transform:translateX(-50%);background:var(--dark);color:var(--white);
@@ -553,7 +522,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(-8px);}
 .toast i{color:var(--gold-soft);}
-
 /* ============================================================
    17. LIGHTBOX
    ============================================================ */
@@ -564,7 +532,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:26px;padding:16px;}
 .lightbox-nav.prev{left:14px;}
 .lightbox-nav.next{right:14px;}
-
 /* ============================================================
    18. RESPONSIVE
    ============================================================ */
@@ -606,7 +573,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
   .hero-trust{gap:20px;}
   .heritage-stats{gap:28px;flex-wrap:wrap;}
 }
-
 /* mobile nav drawer */
 .mobile-nav{
   position:fixed;top:0;right:0;bottom:0;width:min(320px,84vw);background:var(--dark);z-index:99;
@@ -619,17 +585,12 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
 .mobile-nav .mn-order{margin-top:auto;padding-top:24px;}
 .mobile-nav-social{display:flex;gap:10px;margin-top:22px;}
 .mobile-nav-social a{width:36px;height:36px;border:1px solid rgba(198,161,91,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;padding:0;border-bottom:none;}
-
 .text-center{text-align:center;}
 .mt-40{margin-top:40px;}
 [data-aos]{}
 </style>
 </head>
 <body>
-
-<!-- ============================================================
-     EMBEDDED JSON DATA — SINGLE SOURCE OF TRUTH
-     ============================================================ -->
 <script id="website-data" type="application/json">
 {
   "brand": {
@@ -644,7 +605,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     "address": "123, Demo Location, 123456",
     "hours": "Mon – Sat, 9:00 AM – 8:00 PM"
   },
-
   "navigation": [
     { "label": "Home", "target": "#home" },
     { "label": "Collection", "target": "#collection" },
@@ -654,13 +614,11 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     { "label": "Reviews", "target": "#reviews" },
     { "label": "Contact", "target": "#contact" }
   ],
-
   "announcement": [
     "Handcrafted Indian Favourites — Pure Ingredients, Made Fresh",
     "Complimentary Delivery Across Bengaluru On Orders Above ₹999",
     "Festive Gift Boxes Now Available — Order Ahead For Diwali"
   ],
-
   "hero": {
     "eyebrow": "The Art Of Indian Flavour",
     "titleLine1": "Tradition, Crafted",
@@ -676,7 +634,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       { "icon": "fa-gem", "label": "Premium Quality" }
     ]
   },
-
   "categories": [
     { "id": "all", "name": "All", "icon": "fa-layer-group" },
     { "id": "sweets", "name": "Sweets", "icon": "fa-cake-candles" },
@@ -687,14 +644,12 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     { "id": "combos", "name": "Combos", "icon": "fa-boxes-stacked" },
     { "id": "giftboxes", "name": "Gift Boxes", "icon": "fa-gift" }
   ],
-
   "quickFilters": [
     { "id": "bestseller", "label": "Bestsellers" },
     { "id": "new", "label": "New" },
     { "id": "vegetarian", "label": "Vegetarian" },
     { "id": "under500", "label": "Under ₹500" }
   ],
-
   "products": [
     {
       "id": "sweet-001",
@@ -1065,7 +1020,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       "dietary": ["Vegetarian"]
     }
   ],
-
   "offer": {
     "eyebrow": "Festive Collection",
     "title": "Curated Gift Boxes For Every Celebration",
@@ -1073,7 +1027,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     "image": "https://images.unsplash.com/photo-1613292443284-8d10ef9383fb?auto=format&fit=crop&w=1600&q=80",
     "cta": { "label": "Explore Collection", "target": "#gifting" }
   },
-
   "heritage": {
     "eyebrow": "Our Heritage",
     "title": "Where Tradition Meets Craft",
@@ -1089,7 +1042,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       { "value": "12,000+", "label": "Happy Families" }
     ]
   },
-
   "quality": {
     "eyebrow": "Our Promise",
     "title": "Uncompromising Quality, In Every Batch",
@@ -1101,7 +1053,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       { "icon": "fa-box-open", "title": "Freshly Packed", "description": "Sealed and shipped within hours." }
     ]
   },
-
   "gifting": {
     "eyebrow": "Premium Gifting",
     "title": "Perfect For Gifting",
@@ -1112,14 +1063,12 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       { "tag": "Corporate", "title": "Corporate Gifting", "note": "Bulk orders, branded packaging", "image": "https://images.unsplash.com/photo-1626132647523-66f9bf01f9f3?auto=format&fit=crop&w=700&q=80" }
     ]
   },
-
   "testimonials": [
     { "rating": 5, "quote": "The Mysore Pak tastes exactly like the one my grandmother used to make. Every single time, without fail.", "author": "Ananya R., Bengaluru" },
     { "rating": 5, "quote": "Ordered the Festive Celebration Box for Diwali gifting and every single recipient asked where it was from.", "author": "Karthik M., Chennai" },
     { "rating": 5, "quote": "Their Avakkai pickle is the closest I have found to my mother's recipe since I moved abroad.", "author": "Divya S., Hyderabad" },
     { "rating": 4, "quote": "Wonderful quality and the WhatsApp ordering made the whole process so easy and personal.", "author": "Rohan K., Bengaluru" }
   ],
-
   "gallery": [
     "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=700&q=80",
     "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80",
@@ -1130,7 +1079,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     "https://images.unsplash.com/photo-1626132647523-66f9bf01f9f3?auto=format&fit=crop&w=700&q=80",
     "https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?auto=format&fit=crop&w=700&q=80"
   ],
-
   "faq": [
     { "q": "How can I place an order?", "a": "Simply browse our collection, add items to your cart and click \"Order on WhatsApp\". You can also click \"Order Now\" on any single product for a quick order." },
     { "q": "Do you deliver across Bengaluru?", "a": "Yes, we deliver across Bengaluru with complimentary delivery on orders above ₹999. Delivery to other cities is available on request — please confirm with us on WhatsApp." },
@@ -1140,20 +1088,17 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     { "q": "Can I customise a gift hamper?", "a": "Yes, custom hampers can be arranged for bulk or corporate orders. Message us on WhatsApp with your requirements and budget." },
     { "q": "How do I know if a product is fresh?", "a": "Everything is prepared in small batches and packed within hours of preparation. Each pack carries a preparation date for full transparency." }
   ],
-
   "contact": {
     "eyebrow": "Get In Touch",
     "title": "We'd Love To Hear From You",
     "subtitle": "For orders, bulk enquiries or a chat about your favourite childhood sweet — reach out any time."
   },
-
   "socialLinks": [
     { "icon": "fa-brands fa-instagram", "url": "https://instagram.com" },
     { "icon": "fa-brands fa-facebook-f", "url": "https://facebook.com" },
     { "icon": "fa-brands fa-whatsapp", "url": "https://wa.me/919845012345" },
     { "icon": "fa-brands fa-youtube", "url": "https://youtube.com" }
   ],
-
   "theme": {
     "primary": "#6D0F1B",
     "secondary": "#B08D57",
@@ -1162,32 +1107,22 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     "dark": "#17100D",
     "text": "#2A211D"
   },
-
   "animations": { "enabled": true, "duration": 700, "once": true },
-
   "sections": {
     "hero": true, "featured": true, "categories": true, "products": true,
     "offers": true, "heritage": true, "quality": true, "gifting": true,
     "testimonials": true, "gallery": true, "faq": true, "contact": true
   },
-
   "whatsappOrder": {
     "enabled": true,
     "greeting": "Hello Sri Heritage Foods,",
     "footer": "Please confirm availability, delivery charges and final amount.\n\nThank you.",
     "includeAddress": true
   },
-
   "checkout": { "askCustomerDetails": true }
 }
 </script>
-
-<!-- ============================================================
-     WEBSITE MARKUP
-     ============================================================ -->
-
 <div class="announcement" id="announcementBar"></div>
-
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
     <a href="#home" class="brand-mark" id="brandMark"></a>
@@ -1210,17 +1145,13 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     </div>
   </div>
 </header>
-
 <div class="mobile-nav" id="mobileNav">
   <button class="mn-close" id="mobileNavClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   <div id="mobileNavLinks"></div>
   <div class="mobile-nav-social" id="mobileNavSocial"></div>
   <a href="#" class="btn btn-gold btn-block mn-order" id="mobileNavWhatsapp"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
 </div>
-
 <main id="home">
-
-  <!-- HERO -->
   <section class="hero" id="heroSection">
     <div class="hero-bg"><img id="heroImg" alt="Signature Indian sweets"></div>
     <div class="hero-inner">
@@ -1233,8 +1164,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       </div>
     </div>
   </section>
-
-  <!-- FEATURED -->
   <section class="section" id="featuredSection">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1245,8 +1174,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       <div class="product-grid" id="featuredGrid"></div>
     </div>
   </section>
-
-  <!-- OFFER BANNER -->
   <section id="offerSection">
     <div class="offer-banner" data-aos="fade-in">
       <div class="offer-banner-img"><img id="offerImg" alt="Festive gift boxes"></div>
@@ -1258,8 +1185,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       </div>
     </div>
   </section>
-
-  <!-- COLLECTION / PRODUCTS -->
   <section class="section" id="collection">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1275,8 +1200,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       <div class="product-grid" id="productGrid"></div>
     </div>
   </section>
-
-  <!-- HERITAGE -->
   <section class="section heritage-section" id="heritage">
     <div class="container">
       <div class="heritage-grid">
@@ -1290,8 +1213,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       </div>
     </div>
   </section>
-
-  <!-- QUALITY -->
   <section class="section" id="quality">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1301,8 +1222,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     </div>
     <div class="quality-grid" id="qualityGrid"></div>
   </section>
-
-  <!-- GIFTING -->
   <section class="section gifting-section" id="gifting">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1313,8 +1232,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       <div class="gifting-grid" id="giftingGrid"></div>
     </div>
   </section>
-
-  <!-- TESTIMONIALS -->
   <section class="section testimonial-section" id="reviews">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1325,8 +1242,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       <div class="testimonial-dots" id="testimonialDots"></div>
     </div>
   </section>
-
-  <!-- GALLERY -->
   <section class="section" id="galleryVisual">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1336,8 +1251,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       <div class="gallery-grid" id="galleryGrid"></div>
     </div>
   </section>
-
-  <!-- FAQ -->
   <section class="section" id="faqSection">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1347,8 +1260,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       <div class="faq-list" id="faqList"></div>
     </div>
   </section>
-
-  <!-- CONTACT -->
   <section class="section contact-section" id="contact">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
@@ -1367,9 +1278,7 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
       </div>
     </div>
   </section>
-
 </main>
-
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -1397,15 +1306,11 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     </div>
   </div>
 </footer>
-
-<!-- FLOATING ELEMENTS -->
 <a href="#" class="floating-whatsapp" id="floatingWhatsapp" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 <div class="mobile-cart-bar" id="mobileCartBar">
   <div class="mcb-info"><b id="mcbTotal">₹0</b><span id="mcbCount">0 Items</span></div>
   <button id="mcbViewCart">View Cart</button>
 </div>
-
-<!-- CART DRAWER -->
 <div class="overlay" id="overlay"></div>
 <div class="drawer" id="cartDrawer">
   <div class="drawer-header">
@@ -1418,8 +1323,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     <button class="btn btn-primary btn-block" id="cartCheckoutBtn"><i class="fa-brands fa-whatsapp"></i> Order Entire Cart On WhatsApp</button>
   </div>
 </div>
-
-<!-- PRODUCT MODAL -->
 <div class="modal-backdrop" id="modalBackdrop"></div>
 <div class="product-modal" id="productModal">
   <button class="pm-close" id="pmClose"><i class="fa-solid fa-xmark"></i></button>
@@ -1458,8 +1361,6 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     <div class="pm-added-msg" id="pmAddedMsg"><i class="fa-solid fa-circle-check"></i> Added to your cart</div>
   </div>
 </div>
-
-<!-- CHECKOUT MODAL -->
 <div class="checkout-modal" id="checkoutModal">
   <h3>Almost There</h3>
   <p class="sub">Share a few details so we can confirm your order faster.</p>
@@ -1483,24 +1384,17 @@ footer{background:var(--dark);color:rgba(248,242,231,0.68);border-top:1px solid 
     <button class="btn btn-primary btn-block" id="checkoutSubmit"><i class="fa-brands fa-whatsapp"></i> Continue</button>
   </div>
 </div>
-
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
   <button class="lightbox-nav prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
   <img id="lightboxImg" alt="">
   <button class="lightbox-nav next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
 </div>
-
-<!-- TOAST -->
 <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toastMsg"></span></div>
-
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
 $(function(){
-
 /* ============================================================
    LOAD DATA — SINGLE SOURCE OF TRUTH
    ============================================================ */
@@ -1508,7 +1402,6 @@ const data = JSON.parse(document.getElementById('website-data').textContent);
 const FALLBACK_IMG = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(
   '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800"><rect width="100%" height="100%" fill="#F1E8D8"/><text x="50%" y="50%" font-family="Georgia,serif" font-size="28" fill="#B08D57" text-anchor="middle" dominant-baseline="middle">Sri Heritage Foods</text></svg>'
 );
-
 let state = {
   activeCategory: 'all',
   activeQuickFilters: [],
@@ -1520,9 +1413,7 @@ let state = {
   pendingCheckout: null, // {type:'single'|'cart', payload}
   lightboxIndex: 0
 };
-
 let cart = [];
-
 /* ---------- helpers ---------- */
 function escapeHtml(str){
   return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -1568,7 +1459,6 @@ function lowestPrice(product){
 function lowestVariant(product){
   return product.variants.reduce((a,b)=> b.price < a.price ? b : a);
 }
-
 /* ============================================================
    APPLY THEME FROM JSON
    ============================================================ */
@@ -1582,7 +1472,6 @@ function applyTheme(){
   root.setProperty('--dark', t.dark);
   root.setProperty('--text', t.text);
 }
-
 /* ============================================================
    SECTION VISIBILITY
    ============================================================ */
@@ -1598,7 +1487,6 @@ function applySectionVisibility(){
     if(s[key] === false){ $(map[key]).hide(); }
   });
 }
-
 /* ============================================================
    ANNOUNCEMENT BAR
    ============================================================ */
@@ -1608,7 +1496,6 @@ function renderAnnouncement(){
   const html = doubled.map(t => `<span><i class="fa-solid fa-circle"></i>${escapeHtml(t)}</span>`).join('');
   $('#announcementBar').html(`<div class="marquee-track">${html}</div>`);
 }
-
 /* ============================================================
    HEADER / NAVIGATION
    ============================================================ */
@@ -1622,25 +1509,21 @@ function renderNavigation(){
     <div class="mark">${escapeHtml(b.logo || b.shortName.charAt(0))}</div>
     <div class="name">${escapeHtml(b.shortName)}</div>
   `);
-
   const navHtml = data.navigation.map(n => `<a href="${n.target}">${escapeHtml(n.label)}</a>`).join('');
   $('#mainNav').html(navHtml);
   $('#mobileNavLinks').html(data.navigation.map(n => `<a href="${n.target}" class="mn-link">${escapeHtml(n.label)}</a>`).join(''));
   $('#footerNav').html(data.navigation.map(n => `<li><a href="${n.target}">${escapeHtml(n.label)}</a></li>`).join(''));
   $('#mobileNavSocial').html((data.socialLinks || []).map(s => `<a href="${s.url}" target="_blank" rel="noopener"><i class="${s.icon}"></i></a>`).join(''));
-
   const waLink = whatsappBaseLink();
   $('#headerWhatsappBtn').attr('href', waLink);
   $('#floatingWhatsapp').attr('href', waLink);
   $('#contactWhatsappBtn').attr('href', waLink);
   $('#mobileNavWhatsapp').attr('href', waLink);
 }
-
 function whatsappBaseLink(msg){
   const text = msg || `Hello ${data.brand.name}, I would like to know more about your products.`;
   return `https://wa.me/${data.brand.whatsapp}?text=${encodeURIComponent(text)}`;
 }
-
 /* ============================================================
    HERO
    ============================================================ */
@@ -1659,7 +1542,6 @@ function renderHero(){
     <div class="trust-item"><i class="fa-solid ${t.icon}"></i><span>${escapeHtml(t.label)}</span></div>
   `).join(''));
 }
-
 /* ============================================================
    OFFER BANNER
    ============================================================ */
@@ -1673,7 +1555,6 @@ function renderOffer(){
   $('#offerSubtitle').text(o.subtitle);
   $('#offerCta').text(o.cta.label).attr('href', o.cta.target);
 }
-
 /* ============================================================
    PRODUCT CARD RENDERER (single reusable function)
    ============================================================ */
@@ -1683,13 +1564,11 @@ function renderProductCard(product){
   const oldPrice = variant.oldPrice;
   const pct = discountPct(price, oldPrice);
   const oos = product.isAvailable === false;
-
   let badges = '';
   if(oos) badges += `<span class="badge oos">Out Of Stock</span>`;
   if(product.isBestseller && !oos) badges += `<span class="badge">Bestseller</span>`;
   if(product.isNew && !oos) badges += `<span class="badge new">New</span>`;
   if(pct > 0 && !oos) badges += `<span class="badge discount">${pct}% OFF</span>`;
-
   return `
   <div class="product-card" data-id="${product.id}" data-aos="fade-up">
     <div class="pc-media" data-action="view">
@@ -1715,12 +1594,10 @@ function renderProductCard(product){
     </div>
   </div>`;
 }
-
 function catName(id){
   const c = data.categories.find(c => c.id === id);
   return c ? c.name : id;
 }
-
 function lazyLoadImages(scope){
   $(scope || document).find('.lazy-img').each(function(){
     const src = $(this).data('src');
@@ -1731,7 +1608,6 @@ function lazyLoadImages(scope){
     }
   });
 }
-
 /* ============================================================
    FEATURED
    ============================================================ */
@@ -1740,7 +1616,6 @@ function renderFeaturedProducts(){
   $('#featuredGrid').html(featured.map(renderProductCard).join(''));
   lazyLoadImages('#featuredGrid');
 }
-
 /* ============================================================
    CATEGORIES
    ============================================================ */
@@ -1751,19 +1626,16 @@ function renderCategories(){
     </button>
   `).join('');
   $('#categoryStrip').html(html);
-
   const qf = (data.quickFilters || []).map(f => `
     <button class="chip" data-filter="${f.id}">${escapeHtml(f.label)}</button>
   `).join('');
   $('#quickFilters').html(qf);
 }
-
 /* ============================================================
    PRODUCT GRID + FILTERING/SEARCH
    ============================================================ */
 function matchesFilters(product){
   if(state.activeCategory !== 'all' && product.category !== state.activeCategory) return false;
-
   if(state.searchTerm){
     const term = state.searchTerm.toLowerCase();
     const haystack = [
@@ -1772,7 +1644,6 @@ function matchesFilters(product){
     ].join(' ').toLowerCase();
     if(!haystack.includes(term)) return false;
   }
-
   for(const f of state.activeQuickFilters){
     if(f === 'bestseller' && !product.isBestseller) return false;
     if(f === 'new' && !product.isNew) return false;
@@ -1781,7 +1652,6 @@ function matchesFilters(product){
   }
   return true;
 }
-
 function renderProducts(){
   const filtered = data.products.filter(matchesFilters);
   $('#productCount').text(`${filtered.length} Product${filtered.length !== 1 ? 's' : ''}`);
@@ -1797,7 +1667,6 @@ function renderProducts(){
   lazyLoadImages('#productGrid');
   if(window.AOS) AOS.refreshHard();
 }
-
 /* ============================================================
    HERITAGE
    ============================================================ */
@@ -1812,7 +1681,6 @@ function renderHeritage(){
     <div class="stat"><b>${escapeHtml(s.value)}</b><span>${escapeHtml(s.label)}</span></div>
   `).join(''));
 }
-
 /* ============================================================
    QUALITY
    ============================================================ */
@@ -1828,7 +1696,6 @@ function renderQuality(){
     </div>
   `).join(''));
 }
-
 /* ============================================================
    GIFTING
    ============================================================ */
@@ -1849,7 +1716,6 @@ function renderGifting(){
   `).join(''));
   lazyLoadImages('#giftingGrid');
 }
-
 /* ============================================================
    TESTIMONIALS
    ============================================================ */
@@ -1880,7 +1746,6 @@ function startTestimonialAuto(){
     goToTestimonial((current + 1) % total);
   }, 5500);
 }
-
 /* ============================================================
    GALLERY + LIGHTBOX
    ============================================================ */
@@ -1904,7 +1769,6 @@ function navigateLightbox(dir){
   state.lightboxIndex = (state.lightboxIndex + dir + total) % total;
   $('#lightboxImg').attr('src', imgUrl(data.gallery[state.lightboxIndex], 1400));
 }
-
 /* ============================================================
    FAQ
    ============================================================ */
@@ -1916,7 +1780,6 @@ function renderFAQ(){
     </div>
   `).join(''));
 }
-
 /* ============================================================
    CONTACT
    ============================================================ */
@@ -1927,7 +1790,6 @@ function renderContact(){
   $('#contactTitle').text(c.title);
   $('#contactSubtitle').text(c.subtitle);
   $('#contactAddressNote').text(b.address);
-
   const rows = [
     { icon:'fa-location-dot', title:'Visit Us', value: b.address },
     { icon:'fa-phone', title:'Call Us', value: b.phone, href:`tel:${b.phone}` },
@@ -1944,14 +1806,12 @@ function renderContact(){
       </div>
     </div>
   `).join(''));
-
   $('#footerContact').html(`
     <li><i class="fa-solid fa-phone" style="margin-right:8px;color:var(--gold)"></i>${escapeHtml(b.phone)}</li>
     <li><i class="fa-solid fa-envelope" style="margin-right:8px;color:var(--gold)"></i>${escapeHtml(b.email)}</li>
     <li><i class="fa-solid fa-location-dot" style="margin-right:8px;color:var(--gold)"></i>${escapeHtml(b.address)}</li>
   `);
 }
-
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -1961,7 +1821,6 @@ function renderFooter(){
   $('#footerCategories').html(data.categories.filter(c=>c.id!=='all').map(c => `<li><a href="#collection" data-jump-cat="${c.id}">${escapeHtml(c.name)}</a></li>`).join(''));
   $('#footerCopyright').text(`© ${new Date().getFullYear()} ${data.brand.name}. All rights reserved.`);
 }
-
 /* ============================================================
    INITIALIZE FILTERS
    ============================================================ */
@@ -1991,7 +1850,6 @@ function initializeFilters(){
     $('html,body').animate({ scrollTop: $('#collection').offset().top - 90 }, 500);
   });
 }
-
 /* ============================================================
    INITIALIZE SEARCH
    ============================================================ */
@@ -2022,7 +1880,6 @@ function initializeSearch(){
     openProductModal(id);
   });
 }
-
 /* ============================================================
    PRODUCT MODAL
    ============================================================ */
@@ -2032,7 +1889,6 @@ function openProductModal(id){
   state.currentModalProduct = product;
   state.currentVariantIndex = 0;
   state.currentQty = 1;
-
   $('#pmCat').text(catName(product.category));
   $('#pmName').text(product.name);
   $('#pmDesc').text(product.description);
@@ -2041,23 +1897,18 @@ function openProductModal(id){
   $('#pmTags').html([...(product.tags||[]), ...(product.dietary||[])].map(t => `<span>${escapeHtml(t)}</span>`).join(''));
   $('#pmOosNote').toggle(product.isAvailable === false);
   $('#pmAddedMsg').removeClass('show');
-
   const gallery = product.gallery && product.gallery.length ? product.gallery : [product.image];
   $('#pmMainImg').attr('src', imgUrl(gallery[0], 900));
   imgOnError('#pmMainImg');
   $('#pmThumbs').html(gallery.map((g,i)=>`<img src="${imgUrl(g,120)}" data-full="${imgUrl(g,900)}" data-i="${i}" class="${i===0?'active':''}" loading="lazy" decoding="async">`).join(''));
-
   renderModalVariants();
   updateModalQty();
   updateModalPrice();
-
   const disabled = product.isAvailable === false;
   $('#pmAddToCart, #pmOrderNow').prop('disabled', disabled);
-
   $('#modalBackdrop, #productModal').addClass('show');
   $('body').css('overflow','hidden');
 }
-
 function renderModalVariants(){
   const product = state.currentModalProduct;
   $('#pmVariants').html(product.variants.map((v,i)=>`
@@ -2079,35 +1930,29 @@ function closeProductModal(){
   $('#modalBackdrop, #productModal').removeClass('show');
   $('body').css('overflow','');
 }
-
 function initializeProductModal(){
   $(document).on('click', '.product-card', function(e){
     if($(e.target).closest('[data-action="order"]').length) return;
     if($(e.target).closest('[data-action="wishlist"]').length) return;
     openProductModal($(this).data('id'));
   });
-
   $('#pmClose, #modalBackdrop').on('click', closeProductModal);
-
   $('#pmThumbs').on('click', 'img', function(){
     $('#pmThumbs img').removeClass('active');
     $(this).addClass('active');
     $('#pmMainImg').attr('src', $(this).data('full') || $(this).attr('src'));
   });
-
   $('#pmVariants').on('click', '.pm-variant', function(){
     state.currentVariantIndex = parseInt($(this).data('i'));
     renderModalVariants();
     updateModalPrice();
   });
-
   $('#pmQtyMinus').on('click', function(){
     if(state.currentQty > 1){ state.currentQty--; updateModalQty(); }
   });
   $('#pmQtyPlus').on('click', function(){
     state.currentQty++; updateModalQty();
   });
-
   $('#pmAddToCart').on('click', function(){
     const product = state.currentModalProduct;
     const variant = product.variants[state.currentVariantIndex];
@@ -2116,7 +1961,6 @@ function initializeProductModal(){
     showToast(`${product.name} added to cart`);
     setTimeout(()=> $('#pmAddedMsg').removeClass('show'), 2200);
   });
-
   $('#pmOrderNow').on('click', function(){
     const product = state.currentModalProduct;
     const variant = product.variants[state.currentVariantIndex];
@@ -2127,7 +1971,6 @@ function initializeProductModal(){
     closeProductModal();
     beginCheckout('single', [item]);
   });
-
   // product-card direct order now button
   $(document).on('click', '.product-card [data-action="order"]', function(e){
     e.stopPropagation();
@@ -2140,24 +1983,20 @@ function initializeProductModal(){
     };
     beginCheckout('single', [item]);
   });
-
   $(document).on('click', '.product-card [data-action="wishlist"]', function(e){
     e.stopPropagation();
     $(this).toggleClass('active');
     const icon = $(this).find('i');
     icon.toggleClass('fa-regular fa-solid');
   });
-
   $(document).on('keyup', function(e){
     if(e.key === 'Escape'){ closeProductModal(); closeCartDrawer(); closeMobileNav(); closeCheckout(); closeLightbox(); }
   });
 }
-
 /* ============================================================
    CART
    ============================================================ */
 const CART_KEY = 'luxuryFoodCart';
-
 function loadCart(){
   try{
     const raw = localStorage.getItem(CART_KEY);
@@ -2199,11 +2038,9 @@ function cartSubtotal(){
 function cartCount(){
   return cart.reduce((sum,c)=> sum + c.quantity, 0);
 }
-
 function renderCart(){
   const count = cartCount();
   $('#cartCount').text(count).toggle(count > 0);
-
   if(cart.length === 0){
     $('#cartBody').html(`
       <div class="empty-cart">
@@ -2235,9 +2072,7 @@ function renderCart(){
     `).join(''));
     $('#cartFooter').show();
   }
-
   $('#cartSubtotal').text(formatINR(cartSubtotal()));
-
   // mobile cart bar
   if(count > 0){
     $('#mcbTotal').text(formatINR(cartSubtotal()));
@@ -2247,7 +2082,6 @@ function renderCart(){
     $('#mobileCartBar').removeClass('show');
   }
 }
-
 function openCartDrawer(){
   closeMobileNav();
   $('#overlay').addClass('show').data('for', 'cart');
@@ -2259,18 +2093,14 @@ function closeCartDrawer(){
   $('#cartDrawer').removeClass('show');
   unlockScroll();
 }
-
 function initializeCart(){
   loadCart();
   renderCart();
-
   $('#cartToggle, #mcbViewCart').on('click', openCartDrawer);
   $('#cartClose').on('click', function(){
     closeCartDrawer();
   });
-
   $('#cartBody').on('click', 'a#emptyCartExplore', function(){ closeCartDrawer(); });
-
   $('#cartBody').on('click', '[data-action="inc"]', function(){
     const item = $(this).closest('.cart-item');
     updateCartQty(item.data('pid'), item.data('variant'), 1);
@@ -2284,14 +2114,12 @@ function initializeCart(){
     removeFromCart(item.data('pid'), item.data('variant'));
     showToast('Item removed from cart');
   });
-
   $('#cartCheckoutBtn').on('click', function(){
     if(cart.length === 0) return;
     closeCartDrawer();
     beginCheckout('cart', cart);
   });
 }
-
 /* ============================================================
    WHATSAPP ORDERING + CHECKOUT
    ============================================================ */
@@ -2303,7 +2131,6 @@ function beginCheckout(type, items){
     sendWhatsAppOrder(null);
   }
 }
-
 function openCheckoutModal(){
   $('#custName, #custPhone, #custAddress').val('');
   $('.form-error').removeClass('show');
@@ -2314,31 +2141,25 @@ function closeCheckout(){
   $('#modalBackdrop, #checkoutModal').removeClass('show');
   $('body').css('overflow','');
 }
-
 function validateCheckoutForm(){
   let valid = true;
   const name = $('#custName').val().trim();
   const phone = $('#custPhone').val().trim();
   const address = $('#custAddress').val().trim();
-
   if(!name){ $('#custNameError').addClass('show'); valid = false; } else { $('#custNameError').removeClass('show'); }
   if(!/^\d{7,15}$/.test(phone.replace(/[\s+\-]/g,''))){ $('#custPhoneError').addClass('show'); valid = false; } else { $('#custPhoneError').removeClass('show'); }
   if(!address){ $('#custAddressError').addClass('show'); valid = false; } else { $('#custAddressError').removeClass('show'); }
-
   return valid ? { name, phone, address } : null;
 }
-
 function sendWhatsAppOrder(customer){
   const wo = data.whatsappOrder || {};
   const { type, items } = state.pendingCheckout || {};
   if(!items || !items.length) return;
-
   let lines = [];
   lines.push(wo.greeting || `Hello ${data.brand.name},`);
   lines.push('');
   lines.push(type === 'cart' ? 'I would like to place an order.' : 'I would like to order:');
   lines.push('');
-
   if(type === 'cart'){
     lines.push('ORDER DETAILS');
     lines.push('────────────────────');
@@ -2365,7 +2186,6 @@ function sendWhatsAppOrder(customer){
     lines.push(`Price: ${formatINR(item.price)}`);
     lines.push(`Total: ${formatINR(subtotal)}`);
   }
-
   if(customer){
     lines.push('');
     lines.push('CUSTOMER DETAILS');
@@ -2373,14 +2193,11 @@ function sendWhatsAppOrder(customer){
     lines.push(`Phone: ${customer.phone}`);
     if(wo.includeAddress !== false) lines.push(`Address: ${customer.address}`);
   }
-
   lines.push('');
   lines.push(wo.footer || 'Please confirm availability and delivery details.\n\nThank you.');
-
   const message = lines.join('\n');
   const url = `https://wa.me/${data.brand.whatsapp}?text=${encodeURIComponent(message)}`;
   window.open(url, '_blank');
-
   if(state.pendingCheckout.type === 'cart'){
     cart = [];
     saveCart();
@@ -2388,7 +2205,6 @@ function sendWhatsAppOrder(customer){
   }
   state.pendingCheckout = null;
 }
-
 function initializeWhatsAppOrdering(){
   $('#checkoutCancel, #modalBackdrop').on('click', function(){
     if($('#checkoutModal').hasClass('show')) closeCheckout();
@@ -2400,7 +2216,6 @@ function initializeWhatsAppOrdering(){
     sendWhatsAppOrder(customer);
   });
 }
-
 /* ============================================================
    NAVIGATION (mobile menu, smooth scroll, header shadow)
    ============================================================ */
@@ -2417,12 +2232,10 @@ function closeMobileNav(){
   $('#hamburgerBtn i').removeClass('fa-xmark').addClass('fa-bars');
   unlockScroll();
 }
-
 function initializeNavigation(){
   $(window).on('scroll', function(){
     $('#siteHeader').toggleClass('scrolled', $(window).scrollTop() > 10);
   });
-
   $('#hamburgerBtn').on('click', openMobileNav);
   $('#mobileNavClose').on('click', closeMobileNav);
   $('#mobileNav').on('click', '.mn-link', closeMobileNav);
@@ -2431,7 +2244,6 @@ function initializeNavigation(){
     if(forWhat === 'nav') closeMobileNav();
     else closeCartDrawer();
   });
-
   $('a[href^="#"]').on('click', function(e){
     const target = $(this).attr('href');
     if(target.length > 1 && $(target).length){
@@ -2439,7 +2251,6 @@ function initializeNavigation(){
       $('html,body').animate({ scrollTop: $(target).offset().top - 84 }, 550);
     }
   });
-
   // FAQ accordion
   $('#faqList').on('click', '.faq-q', function(){
     const item = $(this).closest('.faq-item');
@@ -2451,13 +2262,11 @@ function initializeNavigation(){
       inner.css('max-height', inner[0].scrollHeight + 'px');
     }
   });
-
   // Testimonial dots
   $('#testimonialDots').on('click', '.t-dot', function(){
     goToTestimonial(parseInt($(this).data('i')));
     startTestimonialAuto();
   });
-
   // Gallery lightbox
   $('#galleryGrid').on('click', '.gallery-item', function(){ openLightbox(parseInt($(this).data('i'))); });
   $('#lightboxClose, #lightbox').on('click', function(e){
@@ -2469,7 +2278,6 @@ function initializeNavigation(){
   $('#lightboxPrev').on('click', function(e){ e.stopPropagation(); navigateLightbox(-1); });
   $('#lightboxNext').on('click', function(e){ e.stopPropagation(); navigateLightbox(1); });
 }
-
 /* ============================================================
    ANIMATIONS
    ============================================================ */
@@ -2480,7 +2288,6 @@ function initializeAnimations(){
     AOS.init({ duration: anim.duration || 700, once: anim.once !== false, offset: 60, easing: 'ease-out-quart' });
   }
 }
-
 /* ============================================================
    BOOT SEQUENCE
    ============================================================ */
@@ -2501,7 +2308,6 @@ renderFAQ();
 renderContact();
 renderFooter();
 applySectionVisibility();
-
 initializeFilters();
 initializeSearch();
 initializeProductModal();
@@ -2509,7 +2315,6 @@ initializeCart();
 initializeWhatsAppOrdering();
 initializeNavigation();
 initializeAnimations();
-
 });
 </script>
 </body>

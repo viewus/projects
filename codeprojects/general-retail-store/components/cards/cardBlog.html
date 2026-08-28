@@ -1,0 +1,16 @@
+<!-- Blog card. Filled by renderers/content.js from data/blogs.json. -->
+<a class="blogCard staggerItem" href="{{href}}" style="--cardIndex: {{index}}">
+  <div class="blogCardMedia">
+    <img class="blogCardImage" {{imgAttrsHtml}} alt="{{imageAlt}}" loading="lazy" width="800" height="450">
+  </div>
+
+  <div class="blogCardBody">
+    <div class="blogCardMeta">
+      <span><i class="bi bi-tag" aria-hidden="true"></i> {{category}}</span>
+      <span><i class="bi bi-clock" aria-hidden="true"></i> {{readTime}}</span>
+    </div>
+    <h3 class="blogCardTitle">{{title}}</h3>
+    <p class="blogCardExcerpt">{{excerpt}}</p>
+    <span class="linkArrow">{{readMoreLabel}} <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+  </div>
+</a>

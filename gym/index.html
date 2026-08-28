@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -58,10 +58,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .line.revealed{ transform:scaleX(1); }
 .reveal{ opacity:0; transform:translateY(40px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
 .reveal.revealed{ opacity:1; transform:translateY(0); }
-
 /* ============ SCROLL PROGRESS ============ */
 #scroll-progress{ position:fixed; top:0; left:0; height:2px; background:var(--champagne); width:0%; z-index:9999; transition:width .1s linear; }
-
 /* ============ PRELOADER ============ */
 #loader{
   position:fixed; inset:0; background:var(--black); z-index:10000;
@@ -75,7 +73,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .loader-bar{ width:220px; height:1px; background:var(--line); position:relative; overflow:hidden; margin-top:10px; }
 .loader-bar::after{ content:''; position:absolute; left:0; top:0; bottom:0; width:0%; background:var(--champagne); animation:loadfill 1.6s var(--ease) forwards; }
 @keyframes loadfill{ to{ width:100%; } }
-
 /* ============ CURSOR ============ */
 .cursor-dot{
   position:fixed; top:0; left:0; width:8px; height:8px; border-radius:50%; background:var(--champagne);
@@ -86,7 +83,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .cursor-dot .clabel{ display:none; position:absolute; inset:0; align-items:center; justify-content:center; font-size:.6rem; letter-spacing:.08em; color:var(--warm-white); font-weight:600; }
 .cursor-dot.showlabel .clabel{ display:flex; }
 @media (hover:hover) and (pointer:fine){ .cursor-dot{ display:block; } body, a, button{ cursor:none; } }
-
 /* ============ NAV ============ */
 header#site-nav{
   position:fixed; top:0; left:0; right:0; z-index:500; border-bottom:1px solid var(--line);
@@ -107,7 +103,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2){ opacity:0; }
 .hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
-
 #mobile-menu{
   position:fixed; inset:0; background:var(--black); z-index:490; display:flex; flex-direction:column;
   justify-content:center; padding:40px; gap:0; transform:translateX(100%); transition:transform .55s var(--ease);
@@ -119,7 +114,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .mm-item .mm-num{ font-size:.8rem; color:var(--champagne); }
 .mm-item a{ font-family:var(--font-display); font-size:2rem; }
 .mm-cta{ margin-top:30px; border:1px solid var(--champagne); color:var(--champagne); padding:16px 24px; text-align:center; letter-spacing:.1em; font-size:.8rem; font-weight:600; }
-
 /* ============ HERO ============ */
 .hero{ min-height:100vh; position:relative; display:flex; align-items:flex-end; overflow:hidden; }
 .hero-bg{ position:absolute; inset:0; z-index:0; }
@@ -138,14 +132,12 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .hero-scroll{ position:absolute; left:40px; bottom:34px; font-size:.7rem; letter-spacing:.14em; color:var(--stone); display:flex; align-items:center; gap:10px; z-index:5; }
 .hero-scroll .arrow{ animation:bob 1.8s ease-in-out infinite; }
 @keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(6px);} }
-
 /* ============ INTRO ============ */
 .intro{ padding:160px 0; background:var(--black); }
 .intro-grid{ display:grid; grid-template-columns:0.5fr 1fr; gap:60px; align-items:start; }
 .intro-num{ font-size:clamp(4rem,10vw,9rem); font-weight:300; line-height:.8; }
 .intro-text h2{ font-size:clamp(2.2rem,5vw,3.8rem); font-weight:400; max-width:760px; }
 .intro-text p{ margin-top:26px; color:var(--stone); font-size:1.1rem; max-width:600px; }
-
 /* ============ PHILOSOPHY ============ */
 .philosophy{ padding:60px 0 0; border-top:1px solid var(--line); }
 .phil-panel{
@@ -159,14 +151,12 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .phil-img{ position:absolute; right:40px; top:50%; width:180px; height:120px; transform:translateY(-50%) translateX(30px) scale(.9); opacity:0; transition:all .5s var(--ease); overflow:hidden; z-index:1; pointer-events:none; }
 .phil-panel:hover .phil-img{ opacity:.9; transform:translateY(-50%) translateX(0) scale(1); }
 .phil-img img{ width:100%; height:100%; object-fit:cover; filter:grayscale(.4); }
-
 /* ============ METRICS ============ */
 .metrics{ padding:130px 0; background:var(--charcoal); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .metrics-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:40px; }
 .metric-item{ text-align:left; }
 .metric-num{ font-family:var(--font-display); font-size:clamp(2.6rem,5vw,4.2rem); color:var(--champagne); font-weight:400; }
 .metric-label{ margin-top:10px; font-size:.75rem; letter-spacing:.1em; color:var(--stone); text-transform:uppercase; }
-
 /* ============ FLOOR ============ */
 .floor-section{ padding:150px 0; }
 .floor-visual{ position:relative; margin-top:60px; aspect-ratio:16/8; border:1px solid var(--line); overflow:hidden; }
@@ -179,7 +169,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .floor-panel{ margin-top:26px; border:1px solid var(--line); padding:26px 30px; min-height:80px; }
 .floor-panel h4{ font-family:var(--font-display); font-size:1.4rem; margin-bottom:8px; }
 .floor-panel p{ color:var(--stone); }
-
 /* ============ PROGRAMS ============ */
 .programs-section{ padding:140px 0; border-top:1px solid var(--line); }
 .program-row{
@@ -199,7 +188,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 }
 .program-float-img.show{ opacity:1; }
 .program-float-img img{ width:100%; height:100%; object-fit:cover; }
-
 /* ============ TRAINERS ============ */
 .trainers-section{ padding:140px 0; border-top:1px solid var(--line); }
 .trainers-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--line); margin-top:60px; }
@@ -212,7 +200,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .trainer-overlay .role{ font-size:.75rem; color:var(--stone); letter-spacing:.06em; margin-top:4px; }
 .trainer-overlay .exp{ font-size:.7rem; color:var(--muted); margin-top:14px; opacity:0; transform:translateY(6px); transition:all .3s var(--ease); }
 .trainer-card:hover .exp{ opacity:1; transform:translateY(0); }
-
 /* ============ ASSESSMENT ============ */
 .assessment-section{ padding:140px 0; background:var(--charcoal); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .assess-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
@@ -222,7 +209,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .bar-track{ height:2px; background:var(--line); position:relative; }
 .bar-fill{ position:absolute; left:0; top:0; bottom:0; background:var(--champagne); width:0%; transition:width 1.4s var(--ease); }
 .bar-val{ font-family:var(--font-display); text-align:right; color:var(--champagne); }
-
 /* ============ MEMBERSHIP ============ */
 .membership-section{ padding:140px 0; }
 .membership-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); margin-top:60px; }
@@ -236,7 +222,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .mem-cta{ margin-top:auto; border:1px solid var(--line); padding:16px; text-align:center; font-size:.8rem; letter-spacing:.1em; font-weight:600; transition:all .3s var(--ease); }
 .mem-card.featured .mem-cta{ border-color:var(--champagne); color:var(--champagne); }
 .mem-cta:hover{ background:var(--champagne); color:var(--black); border-color:var(--champagne); }
-
 /* ============ RECOVERY ============ */
 .recovery-section{ padding:140px 0; background:var(--stone); color:var(--black); }
 .recovery-section .eyebrow{ color:var(--bronze); }
@@ -247,7 +232,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .recovery-item img{ width:100%; height:100%; object-fit:cover; filter:grayscale(.2); }
 .recovery-item h4{ margin-top:18px; font-size:1.3rem; color:var(--black); font-weight:400; }
 .recovery-item p{ margin-top:6px; color:var(--bronze); font-size:.9rem; }
-
 /* ============ CLUB GALLERY ============ */
 .club-section{ padding:140px 0; }
 .club-scroll{ display:flex; gap:0; overflow-x:auto; margin-top:60px; padding-bottom:10px; }
@@ -257,7 +241,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .club-item .cimg{ aspect-ratio:3/4; overflow:hidden; border:1px solid var(--line); }
 .club-item img{ width:100%; height:100%; object-fit:cover; filter:grayscale(.4) brightness(.8); }
 .club-item .clabel{ margin-top:14px; font-size:.8rem; letter-spacing:.06em; color:var(--stone); }
-
 /* ============ SCHEDULE ============ */
 .schedule-section{ padding:140px 0; border-top:1px solid var(--line); }
 .schedule-table{ margin-top:60px; overflow-x:auto; }
@@ -267,7 +250,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .class-slot{ padding:16px 14px; border-bottom:1px solid var(--line); font-size:.82rem; cursor:pointer; transition:background .25s var(--ease); }
 .class-slot:hover{ background:var(--charcoal); }
 .class-slot .ctime{ color:var(--champagne); font-weight:600; display:block; margin-bottom:3px; }
-
 /* ============ JOURNAL ============ */
 .journal-section{ padding:140px 0; background:var(--charcoal); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .journal-list{ margin-top:50px; }
@@ -275,7 +257,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .journal-row:hover{ padding-left:16px; }
 .journal-row h3{ font-size:clamp(1.3rem,2.6vw,2rem); font-weight:400; max-width:700px; }
 .journal-row .jdate{ font-size:.78rem; color:var(--muted); white-space:nowrap; }
-
 /* ============ TESTIMONIALS ============ */
 .testimonial-section{ padding:160px 0; text-align:center; position:relative; }
 .quote-mark{ font-family:var(--font-display); font-size:6rem; color:var(--champagne); opacity:.5; line-height:.5;}
@@ -284,7 +265,6 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .testi-controls{ display:flex; justify-content:center; gap:14px; margin-top:40px; }
 .testi-dot{ width:8px; height:8px; border-radius:50%; border:1px solid var(--line); transition:all .3s var(--ease); }
 .testi-dot.active{ background:var(--champagne); border-color:var(--champagne); }
-
 /* ============ COLLAGE ============ */
 .collage-section{ padding:120px 0; }
 .collage-grid{ display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:110px; gap:12px; margin-top:50px; }
@@ -297,14 +277,12 @@ header#site-nav.scrolled{ background:rgba(8,8,8,0.86); }
 .cg4{ grid-column:span 2; grid-row:span 2; }
 .cg5{ grid-column:span 2; grid-row:span 3; }
 .cg6{ grid-column:span 2; grid-row:span 2; }
-
 /* ============ FINAL CTA ============ */
 .final-cta{ padding:180px 0; text-align:center; position:relative; border-top:1px solid var(--line); }
 .final-cta h2{ font-size:clamp(2.6rem,7vw,6rem); font-weight:300; }
 .final-cta p{ margin:26px auto 44px; color:var(--stone); max-width:400px; }
 .final-cta .ctas{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
 .final-vertical{ position:absolute; right:20px; bottom:0; writing-mode:vertical-rl; font-family:var(--font-display); font-size:6rem; color:var(--graphite); letter-spacing:.05em; user-select:none; pointer-events:none; }
-
 /* ============ FOOTER ============ */
 footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
 .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:50px; }
@@ -314,7 +292,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
 .footer-col a{ display:block; padding:5px 0; color:var(--stone); font-size:.88rem; transition:color .2s; }
 .footer-col a:hover{ color:var(--champagne); }
 .footer-bottom{ margin-top:60px; padding-top:22px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:.75rem; color:var(--muted); }
-
 /* ============ MODALS ============ */
 .modal-overlay{ position:fixed; inset:0; z-index:800; background:rgba(5,5,5,0.9); backdrop-filter:blur(6px); opacity:0; visibility:hidden; transition:opacity .4s var(--ease), visibility .4s var(--ease); display:flex; align-items:center; justify-content:center; padding:24px; }
 .modal-overlay.open{ opacity:1; visibility:visible; }
@@ -335,7 +312,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
 .modal-simple{ padding:50px; }
 .modal-simple h2{ font-size:2rem; margin-bottom:20px; }
 .modal-simple p{ color:var(--stone); margin-bottom:16px; }
-
 /* ============ FORM (application) ============ */
 .app-progress{ font-size:.75rem; letter-spacing:.1em; color:var(--champagne); margin-bottom:26px; }
 .app-step{ display:none; }
@@ -350,17 +326,14 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
 .app-nav button{ border:1px solid var(--line); padding:14px 26px; font-size:.8rem; letter-spacing:.08em; font-weight:600; }
 .app-nav button.primary{ background:var(--champagne); color:var(--black); border-color:var(--champagne); }
 .app-nav button:disabled{ opacity:.3; pointer-events:none; }
-
 /* ============ TOAST ============ */
 #toast{ position:fixed; bottom:30px; left:50%; transform:translateX(-50%) translateY(140%); background:var(--champagne); color:var(--black); padding:18px 34px; z-index:900; font-weight:700; font-size:.82rem; letter-spacing:.05em; transition:transform .4s var(--ease); text-align:center; }
 #toast.show{ transform:translateX(-50%) translateY(0); }
 #toast .sub{ display:block; font-weight:400; font-size:.75rem; margin-top:4px; }
-
 /* ============ EASTER EGG ============ */
 #egg{ position:fixed; inset:0; background:var(--black); z-index:9997; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:opacity .6s var(--ease), visibility .6s var(--ease); }
 #egg.show{ opacity:1; visibility:visible; }
 #egg h2{ font-size:clamp(2rem,6vw,4.5rem); letter-spacing:.02em; text-align:center; }
-
 /* ============ RESPONSIVE ============ */
 @media (max-width:1024px){
   .intro-grid{ grid-template-columns:1fr; gap:30px; }
@@ -392,20 +365,13 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
 </style>
 </head>
 <body>
-
 <div id="scroll-progress"></div>
-
-<!-- LOADER -->
 <div id="loader">
   <div class="loader-logo">FORM / 01</div>
   <div class="loader-sub">Private Performance Club</div>
   <div class="loader-bar"></div>
 </div>
-
-<!-- CURSOR -->
 <div class="cursor-dot" id="cursorDot"><span class="clabel" id="cursorLabel">VIEW</span></div>
-
-<!-- NAV -->
 <header id="site-nav">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo" id="logoMark">FORM / 01</a>
@@ -419,8 +385,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
     <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-
-<!-- MOBILE MENU -->
 <nav id="mobile-menu" aria-hidden="true">
   <div class="mm-item"><span class="mm-num">01</span><a href="#philosophy">TRAIN</a></div>
   <div class="mm-item"><span class="mm-num">02</span><a href="#trainers">COACH</a></div>
@@ -428,9 +392,7 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
   <div class="mm-item"><span class="mm-num">04</span><a href="#club">CLUB</a></div>
   <button class="mm-cta" id="mmMembershipBtn">REQUEST MEMBERSHIP</button>
 </nav>
-
 <main>
-  <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-bg" id="heroBg">
       <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80" alt="A dark, cinematic private training floor with concrete and black steel equipment" loading="eager">
@@ -447,8 +409,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
     </div>
     <div class="hero-scroll">SCROLL TO EXPLORE <span class="arrow">↓</span></div>
   </section>
-
-  <!-- INTRO -->
   <section class="intro">
     <div class="wrap intro-grid">
       <div class="intro-num reveal">01</div>
@@ -459,8 +419,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
     </div>
     <div class="wrap"><div class="line" style="margin-top:70px;"></div></div>
   </section>
-
-  <!-- PHILOSOPHY -->
   <section class="philosophy" id="philosophy">
     <div class="wrap">
       <div class="section-head reveal" style="margin-bottom:40px;">
@@ -470,13 +428,9 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
     </div>
     <div id="philList"></div>
   </section>
-
-  <!-- METRICS -->
   <section class="metrics">
     <div class="wrap metrics-grid" id="metricsGrid"></div>
   </section>
-
-  <!-- FLOOR -->
   <section class="floor-section">
     <div class="wrap">
       <div class="section-head reveal">
@@ -490,8 +444,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
       <div class="floor-panel" id="floorPanel"><h4>01 / Strength Lab</h4><p>Free weights, racks and platforms built for controlled, heavy strength work.</p></div>
     </div>
   </section>
-
-  <!-- PROGRAMS -->
   <section class="programs-section" id="programs">
     <div class="wrap">
       <div class="section-head reveal">
@@ -502,8 +454,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
     </div>
     <div class="program-float-img" id="programFloatImg"><img id="programFloatImgTag" src="" alt=""></div>
   </section>
-
-  <!-- TRAINERS -->
   <section class="trainers-section" id="trainers">
     <div class="wrap">
       <div class="section-head reveal">
@@ -513,8 +463,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
       <div class="trainers-grid" id="trainersGrid"></div>
     </div>
   </section>
-
-  <!-- ASSESSMENT -->
   <section class="assessment-section">
     <div class="wrap assess-grid">
       <div class="reveal">
@@ -526,8 +474,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
       <div class="bars reveal" id="assessBars"></div>
     </div>
   </section>
-
-  <!-- MEMBERSHIP -->
   <section class="membership-section" id="membership">
     <div class="wrap">
       <div class="section-head reveal center">
@@ -537,8 +483,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
       <div class="membership-grid" id="membershipGrid"></div>
     </div>
   </section>
-
-  <!-- RECOVERY -->
   <section class="recovery-section" id="recovery">
     <div class="wrap">
       <div class="section-head reveal">
@@ -548,8 +492,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
       <div class="recovery-scroll" id="recoveryScroll"></div>
     </div>
   </section>
-
-  <!-- CLUB -->
   <section class="club-section" id="club">
     <div class="wrap">
       <div class="section-head reveal">
@@ -559,8 +501,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
       <div class="club-scroll" id="clubScroll"></div>
     </div>
   </section>
-
-  <!-- SCHEDULE -->
   <section class="schedule-section">
     <div class="wrap">
       <div class="section-head reveal">
@@ -572,8 +512,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
       </div>
     </div>
   </section>
-
-  <!-- JOURNAL -->
   <section class="journal-section">
     <div class="wrap">
       <div class="section-head reveal">
@@ -583,8 +521,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
       <div class="journal-list" id="journalList"></div>
     </div>
   </section>
-
-  <!-- TESTIMONIALS -->
   <section class="testimonial-section">
     <div class="wrap">
       <div class="quote-mark">"</div>
@@ -593,15 +529,11 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
       <div class="testi-controls" id="testiControls"></div>
     </div>
   </section>
-
-  <!-- COLLAGE -->
   <section class="collage-section">
     <div class="wrap">
       <div class="collage-grid" id="collageGrid"></div>
     </div>
   </section>
-
-  <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="wrap">
       <h2 class="reveal">READY TO TRAIN<br>DIFFERENTLY?</h2>
@@ -614,7 +546,6 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
     <div class="final-vertical">FORM / 01</div>
   </section>
 </main>
-
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -648,20 +579,15 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
     </div>
   </div>
 </footer>
-
-<!-- MODALS -->
 <div class="modal-overlay" id="trainerModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-box" id="trainerModalBox"></div>
 </div>
-
 <div class="modal-overlay" id="classModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-box" id="classModalBox"></div>
 </div>
-
 <div class="modal-overlay" id="journalModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-box" id="journalModalBox"></div>
 </div>
-
 <div class="modal-overlay" id="appModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-box">
     <button class="modal-close" id="appModalClose" aria-label="Close">✕</button>
@@ -671,38 +597,29 @@ footer{ padding:80px 0 30px; border-top:1px solid var(--line); }
     </div>
   </div>
 </div>
-
-<!-- EASTER EGG -->
 <div id="egg"><h2>DISCIPLINE IS QUIET.</h2></div>
-
-<!-- TOAST -->
 <div id="toast"></div>
-
 <script>
 (function(){
 "use strict";
-
 /* ================= DATA ================= */
 const philosophy = [
   {num:"01", title:"STRENGTH", text:"Build measurable strength through structured, individualized programming.", image:"https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=500&q=80"},
   {num:"02", title:"MOVEMENT", text:"Train the way the body was designed to move — not around it.", image:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80"},
   {num:"03", title:"RECOVERY", text:"Performance is built between sessions, not just during them.", image:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&q=80"}
 ];
-
 const metrics = [
   {num:"12,000+", label:"Sessions Completed"},
   {num:"38", label:"Elite Coaches"},
   {num:"92%", label:"Member Retention"},
   {num:"7", label:"Performance Zones"}
 ];
-
 const floorZones = [
   {id:1, label:"01 / STRENGTH LAB", top:"18%", left:"8%", title:"01 / Strength Lab", desc:"Free weights, racks and platforms built for controlled, heavy strength work."},
   {id:2, label:"02 / CONDITIONING", top:"60%", left:"24%", title:"02 / Conditioning", desc:"Open-format space for metabolic and cardiovascular performance training."},
   {id:3, label:"03 / MOBILITY", top:"22%", left:"62%", title:"03 / Mobility", desc:"A dedicated zone for controlled range of motion, stretching and joint work."},
   {id:4, label:"04 / PERFORMANCE", top:"64%", left:"74%", title:"04 / Performance", desc:"Sprint, jump and agility training for athletic development."}
 ];
-
 const programs = [
   {number:"01", title:"Foundation", description:"Build the base.", duration:"12 weeks", level:"All levels", image:"https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=700&q=80"},
   {number:"02", title:"Athletic Performance", description:"Move faster. Move better.", duration:"16 weeks", level:"Intermediate+", image:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80"},
@@ -711,20 +628,17 @@ const programs = [
   {number:"05", title:"Mobility", description:"Move without limitation.", duration:"8 weeks", level:"All levels", image:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=700&q=80"},
   {number:"06", title:"Private Performance", description:"Fully individualized coaching.", duration:"Ongoing", level:"By application", image:"https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=700&q=80"}
 ];
-
 const trainers = [
   {name:"Arjun Rao", role:"Performance Coach", experience:"12 Years", bio:"Arjun works primarily with athletic performance clients, focused on speed, power output and structural resilience.", certs:["CSCS","FMS Level 2"], specialties:["Speed","Power","Athletic Prep"], philosophy:"Strength is a skill before it's a number.", image:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80"},
   {name:"Meera Shah", role:"Strength Coach", experience:"9 Years", bio:"Meera specializes in structured strength systems for long-term, measurable progress across all experience levels.", certs:["NSCA-CPT","Precision Nutrition"], specialties:["Strength Systems","Programming"], philosophy:"Consistency outperforms intensity.", image:"https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=80"},
   {name:"Vikram Nair", role:"Recovery Specialist", experience:"11 Years", bio:"Vikram leads our recovery programming, integrating mobility, breathwork and structured rest into every member's plan.", certs:["DPT","FRC Mobility Specialist"], specialties:["Mobility","Recovery","Breathwork"], philosophy:"Recovery is where adaptation actually happens.", image:"https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=600&q=80"},
   {name:"Kavya Menon", role:"Performance Coach", experience:"7 Years", bio:"Kavya works with members on body composition and general performance goals, blending strength and conditioning.", certs:["ACE-CPT","CSCS"], specialties:["Body Composition","Conditioning"], philosophy:"Sustainable change is the only real change.", image:"https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=80"}
 ];
-
 const memberships = [
   {name:"CORE", price:"8,500", features:["Performance Floor Access","Locker Access","Group Sessions","Community Events"], featured:false},
   {name:"PRIVATE", price:"22,000", features:["Everything in Core","Personal Coaching","Structured Programming","Monthly Assessment"], featured:true},
   {name:"BLACK", price:"45,000", features:["Everything in Private","Full Recovery Access","Priority Scheduling","Dedicated Coach"], featured:false}
 ];
-
 const recoveryItems = [
   {name:"Sauna", desc:"Heat therapy for recovery and circulation.", image:"https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=500&q=80"},
   {name:"Cold Plunge", desc:"Controlled cold exposure protocols.", image:"https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&q=80"},
@@ -732,7 +646,6 @@ const recoveryItems = [
   {name:"Breathwork", desc:"Nervous system regulation sessions.", image:"https://images.unsplash.com/photo-1591343395082-e120087004b4?w=500&q=80"},
   {name:"Massage", desc:"Deep tissue and recovery therapy.", image:"https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=500&q=80"}
 ];
-
 const clubSpaces = [
   {name:"Lounge", image:"https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&q=80"},
   {name:"Locker Rooms", image:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80"},
@@ -741,7 +654,6 @@ const clubSpaces = [
   {name:"Changing Area", image:"https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=500&q=80"},
   {name:"Consultation Room", image:"https://images.unsplash.com/photo-1594381898411-846e7d193883?w=500&q=80"}
 ];
-
 const scheduleDays = ["MON","TUE","WED","THU","FRI","SAT"];
 const scheduleTemplate = [
   {time:"06:00", name:"Strength", trainer:"Arjun Rao", duration:"60 min", capacity:"12", intensity:"High"},
@@ -750,7 +662,6 @@ const scheduleTemplate = [
   {time:"18:00", name:"Performance", trainer:"Arjun Rao", duration:"60 min", capacity:"10", intensity:"High"},
   {time:"19:30", name:"Strength", trainer:"Meera Shah", duration:"60 min", capacity:"12", intensity:"Medium"}
 ];
-
 const journal = [
   {title:"Why Strength Training Changes With Age", date:"Aug 2026", body:"As we age, the priorities of strength training shift — from pure output toward preserving tissue quality, joint integrity and the capacity to keep training for decades, not just years."},
   {title:"The Architecture of a Better Warm-Up", date:"Jul 2026", body:"A warm-up isn't a formality. Done properly, it primes the nervous system, raises tissue temperature and rehearses the specific movement patterns the session demands."},
@@ -758,14 +669,12 @@ const journal = [
   {title:"How We Measure Performance", date:"Jun 2026", body:"We track strength, mobility, endurance and recovery capacity as a single profile, retested regularly so every program stays grounded in real data, not guesswork."},
   {title:"Training for Longevity", date:"Jun 2026", body:"The goal isn't just performance today — it's still being capable of the things you love doing twenty years from now."}
 ];
-
 const testimonials = [
   {quote:"I stopped training for appearance and started training for performance.", author:"RAHUL M. — MEMBER SINCE 2024"},
   {quote:"The assessment alone told me more about my body than five years at other gyms.", author:"ANJALI K. — MEMBER SINCE 2025"},
   {quote:"Recovery used to be an afterthought. Here, it's half the program.", author:"DEV S. — MEMBER SINCE 2023"},
   {quote:"The coaching is precise. Nothing feels generic or copy-pasted.", author:"NISHA P. — MEMBER SINCE 2025"}
 ];
-
 const collageImages = [
   {src:"https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=700&q=80", alt:"Hands gripping a barbell", cls:"cg1"},
   {src:"https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&q=80", alt:"Running shoes on concrete floor", cls:"cg2"},
@@ -774,21 +683,18 @@ const collageImages = [
   {src:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&q=80", alt:"Coach correcting a member's movement", cls:"cg5"},
   {src:"https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=500&q=80", alt:"Minimalist recovery room interior", cls:"cg6"}
 ];
-
 const assessmentData = [
   {label:"Strength", value:82},
   {label:"Mobility", value:74},
   {label:"Endurance", value:68},
   {label:"Recovery", value:81}
 ];
-
 /* ================= UTIL ================= */
 function $(sel, ctx){ return (ctx||document).querySelector(sel); }
 function $all(sel, ctx){ return Array.from((ctx||document).querySelectorAll(sel)); }
 function safeGet(key){ try{ const v = localStorage.getItem(key); return v?JSON.parse(v):null; }catch(e){ return null; } }
 function safeSet(key,val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
 function imgFallback(src, alt){ return `<img src="${src}" alt="${alt}" loading="lazy" onerror="this.style.opacity=0.1">`; }
-
 /* ================= RENDER: PHILOSOPHY ================= */
 function renderPhilosophy(){
   $('#philList').innerHTML = philosophy.map(p=>`
@@ -800,7 +706,6 @@ function renderPhilosophy(){
     </div>`).join('');
   observeReveal($all('.phil-panel'));
 }
-
 /* ================= RENDER: METRICS ================= */
 function renderMetrics(){
   $('#metricsGrid').innerHTML = metrics.map((m,i)=>`
@@ -826,7 +731,6 @@ function animateMetric(el, target){
   }
   requestAnimationFrame(step);
 }
-
 /* ================= RENDER: FLOOR ================= */
 function renderFloor(){
   $('#floorLabels').innerHTML = floorZones.map(z=>`
@@ -840,7 +744,6 @@ function renderFloor(){
     });
   });
 }
-
 /* ================= RENDER: PROGRAMS ================= */
 function renderPrograms(){
   $('#programsList').innerHTML = programs.map((p,i)=>`
@@ -869,7 +772,6 @@ function renderPrograms(){
     row.addEventListener('click', ()=> document.getElementById('membership').scrollIntoView({behavior:'smooth'}));
   });
 }
-
 /* ================= RENDER: TRAINERS ================= */
 function createTrainerCard(t, i){
   return `
@@ -911,7 +813,6 @@ function openTrainerModal(idx){
   $('#trainerModalClose').addEventListener('click', ()=>closeModal('trainerModal'));
   $('#bookSessionBtn').addEventListener('click', ()=>{ closeModal('trainerModal'); openApp(); });
 }
-
 /* ================= RENDER: ASSESSMENT ================= */
 function renderAssessment(){
   $('#assessBars').innerHTML = assessmentData.map(a=>`
@@ -935,7 +836,6 @@ function animateBars(){
     requestAnimationFrame(step);
   });
 }
-
 /* ================= RENDER: MEMBERSHIP ================= */
 function renderMemberships(){
   $('#membershipGrid').innerHTML = memberships.map(m=>`
@@ -947,7 +847,6 @@ function renderMemberships(){
     </div>`).join('');
   $all('.mem-cta').forEach(btn=> btn.addEventListener('click', ()=> openApp(btn.dataset.plan)));
 }
-
 /* ================= RENDER: RECOVERY ================= */
 function renderRecovery(){
   $('#recoveryScroll').innerHTML = recoveryItems.map(r=>`
@@ -957,7 +856,6 @@ function renderRecovery(){
       <p>${r.desc}</p>
     </div>`).join('');
 }
-
 /* ================= RENDER: CLUB ================= */
 function renderClub(){
   $('#clubScroll').innerHTML = clubSpaces.map(c=>`
@@ -966,7 +864,6 @@ function renderClub(){
       <div class="clabel">${c.name.toUpperCase()}</div>
     </div>`).join('');
 }
-
 /* ================= RENDER: SCHEDULE ================= */
 function renderSchedule(){
   $('#scheduleGrid').innerHTML = scheduleDays.map(day=>`
@@ -1006,7 +903,6 @@ function openClassModal(cls, day){
     showToast('SESSION REQUESTED', "We'll confirm your session shortly.");
   });
 }
-
 /* ================= RENDER: JOURNAL ================= */
 function renderJournal(){
   $('#journalList').innerHTML = journal.map((j,i)=>`
@@ -1032,7 +928,6 @@ function openJournalModal(idx){
   openModal('journalModal');
   $('#journalModalClose').addEventListener('click', ()=>closeModal('journalModal'));
 }
-
 /* ================= RENDER: TESTIMONIALS ================= */
 let testiIdx = 0, testiTimer;
 function renderTestimonialControls(){
@@ -1049,13 +944,11 @@ function resetTestiTimer(){
   clearInterval(testiTimer);
   testiTimer = setInterval(()=>{ testiIdx = (testiIdx+1) % testimonials.length; showTesti(); }, 6000);
 }
-
 /* ================= RENDER: COLLAGE ================= */
 function renderCollage(){
   $('#collageGrid').innerHTML = collageImages.map(c=>`
     <div class="collage-item ${c.cls}">${imgFallback(c.src, c.alt)}</div>`).join('');
 }
-
 /* ================= MODAL HELPERS ================= */
 function openModal(id){
   $('#'+id).classList.add('open');
@@ -1071,7 +964,6 @@ function closeAllModals(){
   $all('.modal-overlay.open').forEach(m=>{ m.classList.remove('open'); m.setAttribute('aria-hidden','true'); });
   document.body.style.overflow='';
 }
-
 /* ================= APPLICATION FLOW ================= */
 const appData = {name:'', email:'', phone:'', goal:'', experience:'', program:''};
 let appStepIndex = 0;
@@ -1116,7 +1008,6 @@ function renderAppStep(){
       <button id="appNext" class="primary">${appStepIndex===total-1?'SUBMIT APPLICATION':'CONTINUE →'}</button>
     </div></div>`;
   $('#appSteps').innerHTML = inner;
-
   if(def.type==='input'){
     $('#appInputName').addEventListener('input', e=> appData.name = e.target.value);
   }
@@ -1143,7 +1034,6 @@ function renderAppStep(){
     }
   });
 }
-
 /* ================= TOAST ================= */
 let toastTimer;
 function showToast(msg, sub){
@@ -1153,7 +1043,6 @@ function showToast(msg, sub){
   clearTimeout(toastTimer);
   toastTimer = setTimeout(()=>t.classList.remove('show'), 3400);
 }
-
 /* ================= SCROLL REVEAL ================= */
 let observer;
 function initObserver(){
@@ -1170,7 +1059,6 @@ function initObserver(){
     });
   }, {threshold:0.2});
   observeReveal($all('.reveal, .line'));
-
   const assessObserver = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){ animateBars(); assessObserver.disconnect(); }
@@ -1182,7 +1070,6 @@ function initObserver(){
 function observeReveal(nodeList){
   Array.prototype.forEach.call(nodeList, el=>{ if(observer) observer.observe(el); });
 }
-
 /* ================= SCROLL PROGRESS ================= */
 function initScrollProgress(){
   const bar = $('#scroll-progress');
@@ -1199,14 +1086,12 @@ function initScrollProgress(){
     }
   }, {passive:true});
 }
-
 /* ================= NAV ================= */
 function initNav(){
   const nav = $('#site-nav');
   window.addEventListener('scroll', ()=>{
     if(window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
   }, {passive:true});
-
   const hamburger = $('#hamburgerBtn');
   const mobileMenu = $('#mobile-menu');
   hamburger.addEventListener('click', ()=>{
@@ -1218,14 +1103,12 @@ function initNav(){
   $all('#mobile-menu a').forEach(a=>a.addEventListener('click', ()=>{
     mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false');
   }));
-
   $('#navMembershipBtn').addEventListener('click', ()=>openApp());
   $('#mmMembershipBtn').addEventListener('click', ()=>{ mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); openApp(); });
   $('#finalMembershipBtn').addEventListener('click', ()=>openApp());
   $('#tourBtn').addEventListener('click', ()=>{ openApp(); });
   $('#assessBtn').addEventListener('click', ()=>openApp());
   $('#enterClubBtn').addEventListener('click', ()=> document.getElementById('philosophy').scrollIntoView({behavior:'smooth'}));
-
   document.addEventListener('keydown', e=>{
     if(e.key==='Escape'){
       mobileMenu.classList.remove('open'); hamburger.classList.remove('open');
@@ -1233,7 +1116,6 @@ function initNav(){
     }
   });
 }
-
 /* ================= HERO PARALLAX ================= */
 function initHeroParallax(){
   const bg = $('#heroBg img');
@@ -1244,7 +1126,6 @@ function initHeroParallax(){
     bg.style.transform = `scale(1.08) translate(${x}px, ${y}px)`;
   }, {passive:true});
 }
-
 /* ================= MAGNETIC BUTTONS ================= */
 function initMagnetic(){
   if(!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
@@ -1258,7 +1139,6 @@ function initMagnetic(){
     btn.addEventListener('mouseleave', ()=>{ btn.style.transform = ''; });
   });
 }
-
 /* ================= CURSOR ================= */
 function initCursor(){
   const dot = $('#cursorDot');
@@ -1279,7 +1159,6 @@ function initCursor(){
     }
   });
 }
-
 /* ================= EASTER EGG ================= */
 function initEasterEgg(){
   let clicks=0, timer;
@@ -1298,7 +1177,6 @@ function initEasterEgg(){
     }
   });
 }
-
 /* ================= MODAL CLOSE ON BG CLICK ================= */
 function initModalBgClose(){
   $all('.modal-overlay').forEach(overlay=>{
@@ -1306,7 +1184,6 @@ function initModalBgClose(){
   });
   $('#appModalClose').addEventListener('click', closeAllModals);
 }
-
 /* ================= INIT ================= */
 function init(){
   renderPhilosophy();
@@ -1324,7 +1201,6 @@ function init(){
   showTesti();
   resetTestiTimer();
   renderCollage();
-
   initNav();
   initScrollProgress();
   initHeroParallax();
@@ -1333,13 +1209,11 @@ function init(){
   initEasterEgg();
   initModalBgClose();
   initObserver();
-
   window.addEventListener('load', ()=>{
     setTimeout(()=>$('#loader').classList.add('hide'), 500);
   });
   setTimeout(()=>{ if($('#loader')) $('#loader').classList.add('hide'); }, 2400);
 }
-
 document.addEventListener('DOMContentLoaded', init);
 })();
 </script>

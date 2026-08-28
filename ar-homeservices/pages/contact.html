@@ -5,16 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us — AR Home Services</title>
   <meta name="description" content="Contact AR Home Services for professional home services. Book a service, get a free quote, or reach us by phone, email, or in person." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.min.css" />
 </head>
 <body>
-
-  <!-- ── NAVBAR ── -->
   <nav id="navbar" class="scrolled">
     <div class="container">
       <div class="nav-inner">
@@ -37,7 +34,6 @@
       </div>
     </div>
   </nav>
-
   <div id="mobile-menu" class="mobile-menu">
     <button id="mobile-close" class="mobile-menu-close">&times;</button>
     <a href="../index.html">Home</a>
@@ -46,8 +42,6 @@
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="btn btn-primary" style="margin-top:16px">Get a Quote</a>
   </div>
-
-  <!-- ── PAGE HERO ── -->
   <section class="page-hero" aria-label="Contact page hero">
     <div class="container">
       <div class="page-hero-content fade-up">
@@ -61,8 +55,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── QUICK CONTACT STRIP ── -->
   <section style="background:var(--gold);padding:28px 0" aria-label="Quick contact">
     <div class="container">
       <div style="display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;">
@@ -80,18 +72,13 @@
       </div>
     </div>
   </section>
-
-  <!-- ── CONTACT SECTION ── -->
   <section class="section-pad" aria-label="Contact form and information">
     <div class="container">
       <div class="contact-grid">
-
-        <!-- LEFT: Info -->
         <div class="fade-left">
           <div class="section-label">Reach Us</div>
           <h2 class="section-title">Let's Talk About<br />Your Home</h2>
           <p>Whether it's a quick repair or a full renovation support — tell us what you need and our team will get back to you with a tailored quote and availability within 2 hours.</p>
-
           <div class="contact-info-items">
             <div class="contact-info-item">
               <div class="contact-icon-wrap" aria-hidden="true">
@@ -102,7 +89,6 @@
                 <div class="contact-detail-value">12, Brigade Road,<br />Bangalore – 560001, Karnataka, India</div>
               </div>
             </div>
-
             <div class="contact-info-item">
               <div class="contact-icon-wrap" aria-hidden="true">
                 <i class="fa-solid fa-phone"></i>
@@ -115,7 +101,6 @@
                 </div>
               </div>
             </div>
-
             <div class="contact-info-item">
               <div class="contact-icon-wrap" aria-hidden="true">
                 <i class="fa-solid fa-envelope"></i>
@@ -128,7 +113,6 @@
                 </div>
               </div>
             </div>
-
             <div class="contact-info-item">
               <div class="contact-icon-wrap" aria-hidden="true">
                 <i class="fa-solid fa-clock"></i>
@@ -142,8 +126,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Social Links -->
           <div style="margin-top:40px">
             <div class="section-label" style="margin-bottom:16px">Follow Us</div>
             <div style="display:flex;gap:12px">
@@ -162,17 +144,13 @@
             </div>
           </div>
         </div>
-
-        <!-- RIGHT: Form -->
         <div class="fade-right">
           <div class="contact-form-wrap">
             <div class="form-header">
               <h3>Send Us a Message</h3>
               <p style="font-size:0.88rem">Fill in the details below and we'll get back to you within 2 hours.</p>
             </div>
-
             <form id="contact-form" novalidate aria-label="Contact form">
-              <!-- Fields wrapper (hidden on success) -->
               <div class="form-fields">
                 <div class="form-row">
                   <div class="form-group">
@@ -189,7 +167,6 @@
                     />
                     <div class="form-error" data-error="name" role="alert"></div>
                   </div>
-
                   <div class="form-group">
                     <label class="form-label" for="phone">Phone Number <span>*</span></label>
                     <input
@@ -205,7 +182,6 @@
                     <div class="form-error" data-error="phone" role="alert"></div>
                   </div>
                 </div>
-
                 <div class="form-group">
                   <label class="form-label" for="email">Email Address <span>*</span></label>
                   <input
@@ -220,7 +196,6 @@
                   />
                   <div class="form-error" data-error="email" role="alert"></div>
                 </div>
-
                 <div class="form-group">
                   <label class="form-label" for="service-type">Service Required</label>
                   <select id="service-type" name="service-type" class="form-select form-input">
@@ -234,7 +209,6 @@
                     <option value="other">Other / Not Sure</option>
                   </select>
                 </div>
-
                 <div class="form-group">
                   <label class="form-label" for="query">Describe Your Requirement <span>*</span></label>
                   <textarea
@@ -247,7 +221,6 @@
                   ></textarea>
                   <div class="form-error" data-error="query" role="alert"></div>
                 </div>
-
                 <button type="submit" class="btn-submit" id="submit-btn" aria-label="Submit enquiry">
                   <span class="btn-text">
                     <i class="fa-solid fa-paper-plane"></i>
@@ -255,14 +228,11 @@
                   </span>
                   <span class="spinner" aria-label="Loading..."></span>
                 </button>
-
                 <p style="font-size:0.75rem;text-align:center;margin-top:14px;color:var(--grey-text)">
                   <i class="fa-solid fa-lock fa-xs"></i>
                   Your information is secure and will never be shared.
                 </p>
               </div>
-
-              <!-- Success Message -->
               <div class="success-message" role="alert" aria-live="polite">
                 <div class="success-icon" aria-hidden="true">✓</div>
                 <h3 style="color:var(--navy);margin-bottom:8px">Message Sent!</h3>
@@ -272,8 +242,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Map -->
       <div class="map-section fade-up">
         <h3 style="margin-bottom:24px">Find Us</h3>
         <div class="map-wrapper">
@@ -291,8 +259,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── FOOTER ── -->
   <footer id="footer">
     <div class="container">
       <div class="footer-grid">
@@ -356,7 +322,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/main.min.js"></script>
 </body>
 </html>

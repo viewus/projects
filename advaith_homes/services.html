@@ -1,27 +1,24 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services — Advaith Homes</title>
   <meta name="description"
     content="Advaith Homes buyer's agent services — from full property search to negotiation-only packages. We work exclusively for you." />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/commonstandard.css" />
+  <link rel="stylesheet" href="css/main.min.css" />
+  <link rel="stylesheet" href="css/commonstandard.min.css" />
   <style>
     .services-hero {
       padding: calc(var(--nav-h) + 30px) 0 30px;
       background: radial-gradient(ellipse 60% 80% at 70% 30%, rgba(139, 92, 246, .12) 0%, transparent 60%), var(--bg);
       text-align: center;
     }
-
     .services-hero p {
       font-size: 1.1rem;
       max-width: 600px;
       margin: 16px auto 0;
     }
-
     .service-full {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -30,29 +27,23 @@
       padding: 80px 0;
       border-bottom: 1px solid var(--border);
     }
-
     .service-full:last-child {
       border-bottom: none;
     }
-
     .service-full:nth-child(even) .service-full__visual {
       order: -1;
     }
-
     .service-full__icon {
       font-size: 4rem;
       margin-bottom: 24px;
     }
-
     .service-full__title {
       font-size: clamp(1.6rem, 2.5vw, 2.2rem);
       margin-bottom: 16px;
     }
-
     .service-full__list {
       margin: 20px 0;
     }
-
     .service-full__list li {
       display: flex;
       gap: 10px;
@@ -62,7 +53,6 @@
       border-bottom: 1px solid var(--border);
       align-items: flex-start;
     }
-
     .service-full__list li::before {
       content: '✓';
       color: var(--accent);
@@ -70,7 +60,6 @@
       flex-shrink: 0;
       margin-top: 1px;
     }
-
     .service-full__visual {
       background: linear-gradient(135deg, var(--client-color-100), var(--client-color-50));
       border-radius: var(--r-xl);
@@ -78,12 +67,10 @@
       border: 1px solid var(--client-color-200);
       text-align: center;
     }
-
     .service-full__visual-icon {
       font-size: 5rem;
       margin-bottom: 20px;
     }
-
     .price-tag {
       display: inline-flex;
       flex-direction: column;
@@ -94,7 +81,6 @@
       padding: 20px 32px;
       box-shadow: var(--shadow-md);
     }
-
     .price-tag__label {
       font-size: .75rem;
       color: var(--text-muted);
@@ -103,36 +89,30 @@
       letter-spacing: .08em;
       margin-bottom: 6px;
     }
-
     .price-tag__from {
       font-family: var(--font-display);
       font-size: 2rem;
       font-weight: 700;
       color: var(--accent);
     }
-
     .price-tag__note {
       font-size: .78rem;
       color: var(--text-muted);
       margin-top: 4px;
     }
-
     .packages {
       background: var(--slate-900);
       padding: var(--section-py) 0;
     }
-
     .packages h2 {
       color: white;
     }
-
     .pkg-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 56px;
     }
-
     .pkg-card {
       background: rgba(255, 255, 255, .05);
       border: 1px solid rgba(255, 255, 255, .1);
@@ -140,31 +120,26 @@
       padding: 36px 28px;
       transition: transform .3s, box-shadow .3s;
     }
-
     .pkg-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
     }
-
     .pkg-card--featured {
       background: linear-gradient(135deg, var(--client-color-800), var(--client-color-600));
       border-color: var(--client-color-400);
     }
-
     .pkg-card__name {
       font-family: var(--font-display);
       font-size: 1.4rem;
       color: white;
       margin-bottom: 8px;
     }
-
     .pkg-card__desc {
       font-size: .875rem;
       color: rgba(255, 255, 255, .6);
       margin-bottom: 24px;
       line-height: 1.6;
     }
-
     .pkg-card__price {
       font-family: var(--font-display);
       font-size: 2rem;
@@ -172,13 +147,11 @@
       color: white;
       margin-bottom: 24px;
     }
-
     .pkg-card__price span {
       font-size: 1rem;
       font-weight: 400;
       color: rgba(255, 255, 255, .5);
     }
-
     .pkg-feature {
       display: flex;
       gap: 10px;
@@ -187,34 +160,28 @@
       padding: 8px 0;
       border-bottom: 1px solid rgba(255, 255, 255, .07);
     }
-
     .pkg-feature::before {
       content: '✓';
       color: var(--gold-400);
       font-weight: 700;
       flex-shrink: 0;
     }
-
     @media(max-width:768px) {
       .service-full {
         grid-template-columns: 1fr;
         gap: 32px
       }
-
       .service-full:nth-child(even) .service-full__visual {
         order: 0
       }
-
       .pkg-grid {
         grid-template-columns: 1fr
       }
     }
   </style>
 </head>
-
 <body data-page="services">
   <div id="nav-placeholder"></div>
-
   <section class="services-hero">
     <div class="container">
       <div class="eyebrow reveal" style="justify-content:center">Our Services</div>
@@ -226,10 +193,8 @@
       </div>
     </div>
   </section>
-
   <section class="section">
     <div class="container">
-
       <div class="service-full">
         <div>
           <div class="service-full__icon">🔍</div>
@@ -261,7 +226,6 @@
           <p style="margin-top:20px;font-size:.85rem;color:var(--text-muted)">Average client saving: £18,000+</p>
         </div>
       </div>
-
       <div class="service-full">
         <div>
           <div class="service-full__icon">🤝</div>
@@ -289,7 +253,6 @@
           <p style="margin-top:20px;font-size:.85rem;color:var(--text-muted)">Average client saving: £12,000+</p>
         </div>
       </div>
-
       <div class="service-full">
         <div>
           <div class="service-full__icon">📋</div>
@@ -319,7 +282,6 @@
           <p style="margin-top:20px;font-size:.85rem;color:var(--text-muted)">Included free in Full Service package</p>
         </div>
       </div>
-
       <div class="service-full">
         <div>
           <div class="service-full__icon">⚖️</div>
@@ -349,10 +311,8 @@
           <p style="margin-top:20px;font-size:.85rem;color:var(--text-muted)">Included in Full Service package</p>
         </div>
       </div>
-
     </div>
   </section>
-
   <section class="cta-section">
     <div class="container">
       <div class="cta-inner reveal">
@@ -367,10 +327,7 @@
       </div>
     </div>
   </section>
-
   <div id="footer-placeholder"></div>
-  <script src="js/components.js"></script>
+  <script src="js/components.min.js"></script>
 </body>
-
 </html>
-

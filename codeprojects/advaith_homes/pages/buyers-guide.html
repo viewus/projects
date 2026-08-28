@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer's Guide — Advaith Homes</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .guide-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .guide-content h2 {
+            margin-top: 60px;
+            margin-bottom: 24px;
+            font-size: 2.2rem;
+            color: var(--slate-900);
+        }
+        .guide-content h3 {
+            margin-top: 40px;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+            color: var(--gold-600);
+        }
+        .guide-content p {
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--slate-600);
+        }
+        .guide-content ul {
+            margin-bottom: 32px;
+            padding-left: 24px;
+            list-style-type: none;
+        }
+        .guide-content li {
+            position: relative;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--slate-600);
+            padding-left: 32px;
+        }
+        .guide-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--gold-500);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .guide-hero {
+            background: linear-gradient(to right, var(--slate-900), var(--slate-800));
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        .guide-hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+        }
+        .guide-hero p {
+            color: var(--slate-300);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .guide-callout {
+            background: var(--client-color-50);
+            border-left: 4px solid var(--gold-500);
+            padding: 32px;
+            border-radius: 0 var(--r-lg) var(--r-lg) 0;
+            margin: 40px 0;
+        }
+        .guide-callout p {
+            margin-bottom: 0;
+            color: var(--slate-800);
+            font-weight: 500;
+        }
+
+        /* ── Buying Calculator ── */
+        .calculator-container {
+            background: var(--surface);
+            border-radius: var(--r-2xl);
+            border: 1px solid var(--border);
+            padding: 40px;
+            box-shadow: var(--shadow-xl);
+            margin: 60px 0;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .calc-input-group {
+            margin-bottom: 24px;
+        }
+
+        .calc-label {
+            display: block;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: var(--border);
+            border-radius: 5px;
+            outline: none;
+            margin: 15px 0;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--gold-500);
+            cursor: pointer;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .calc-results {
+            background: var(--slate-900);
+            border-radius: var(--r-xl);
+            padding: 30px;
+            color: white;
+        }
+
+        .result-item {
+            margin-bottom: 20px;
+        }
+
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold-400);
+        }
+
+        .budget-display {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gold-600);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            width: 50%;
+            padding-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-right: 0;
+            padding-left: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            right: -6px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--gold-500);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -6px;
+        }
+
+        .timeline-content {
+            background: var(--surface);
+            padding: 30px;
+            border-radius: var(--r-xl);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-300);
+        }
+
+        .timeline-step {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--gold-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline-content h4 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 991px) {
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+            .calculator-container {
+                padding: 30px 20px;
+            }
+            .timeline-line {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                margin-left: 0 !important;
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+            }
+            .timeline-dot {
+                left: 14px !important;
+            }
+        }
+    </style>
+</head>
+<body data-page="buyers-guide">
+    <div id="nav-placeholder"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <div class="eyebrow reveal" style="justify-content:center; color: var(--gold-400);">Ultimate Resource</div>
+            <h1 class="reveal reveal-delay-1">The Complete Buyer's Guide</h1>
+            <p class="reveal reveal-delay-2">Navigate the UK property market with confidence. From your first savings goal to receiving the keys.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container guide-content reveal">
+            <p class="lead" style="font-size: 1.25rem; font-weight: 500; color: var(--slate-800);">Buying a house is one of the most significant decisions you’ll make, and for first-time buyers in the UK, the process can seem overwhelming. The UK housing market is unique, with its own rules, financial considerations, and legal processes. In this guide, we will walk you through every step of how to prepare to buy a house in the UK, ensuring that you’re well-equipped to navigate the journey with confidence.</p>
+
+            <h2>Understanding the UK Housing Market</h2>
+            <p>Before diving into the home buying process, it’s essential to get a grasp of the current state of the UK housing market. House prices in the UK have risen significantly over the last few decades, driven by factors such as population growth, limited housing supply, and regional economic trends.</p>
+            
+            <h3>Key Trends in the UK Housing Market</h3>
+            <p>Recent trends show a steady rise in property prices in major urban areas like London, Birmingham, and Manchester, with rural areas also seeing price growth due to increased demand during the work-from-home boom. However, prices can fluctuate based on factors like economic shifts or changes in interest rates.</p>
+            
+            <h3>Regional Differences in Property Prices</h3>
+            <p>Property prices vary greatly depending on where you want to live. For instance, London remains one of the most expensive regions, while areas like the North East of England, Wales, and parts of Scotland offer more affordable options.</p>
+
+            <h2>Assessing Your Financial Situation</h2>
+            <p>Before embarking on your home buying journey, you need to ensure that you have a clear picture of your finances. This step is crucial, as it will determine how much you can borrow, what type of mortgage you can get, and how comfortable you will be with your monthly repayments.</p>
+            
+            <h3>Evaluating Your Current Finances</h3>
+            <p>Take a close look at your savings, income, and outgoings. Do you have enough saved for a deposit? Are there any large debts that might affect your mortgage eligibility? Lenders will assess your income, expenses, and credit history to determine how much you can borrow.</p>
+
+            <div class="guide-callout">
+                <p><strong>Tips to Improve Your Credit Score:</strong> Your credit score is a crucial factor in getting a mortgage, especially in the UK. Improving your score by paying off debts, staying below credit card limits, and avoiding multiple credit applications in a short time can boost your chances of approval.</p>
+            </div>
+
+            <div class="calculator-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button class="calc-tab active" data-tab="monthly" style="padding: 12px 24px; border-radius: 50px; background: var(--slate-900); color: white; border: none; font-weight: 600; cursor: pointer;">Monthly Budget</button>
+                <button class="calc-tab" data-tab="total" style="padding: 12px 24px; border-radius: 50px; background: var(--bg-alt); color: var(--slate-600); border: none; font-weight: 600; cursor: pointer;">Total Purchase Cost</button>
+            </div>
+
+            <div class="calculator-container reveal">
+                <div class="calc-grid">
+                    <div class="calc-inputs">
+                        <div class="calc-input-group">
+                            <label class="calc-label">Property Budget</label>
+                            <span id="budget-val" class="budget-display">£450,000</span>
+                            <input type="range" min="100000" max="2000000" step="10000" value="450000" class="range-slider" id="budget-slider">
+                        </div>
+                        <div class="calc-input-group">
+                            <label class="calc-label">Interest Rate (%)</label>
+                            <span id="rate-val" class="budget-display">4.5%</span>
+                            <input type="range" min="1" max="10" step="0.1" value="4.5" class="range-slider" id="rate-slider">
+                        </div>
+                        <div class="calc-input-group">
+                            <label class="calc-label">Buyer Type</label>
+                            <select id="buyer-type" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--border);">
+                                <option value="first">First Time Buyer</option>
+                                <option value="next">Moving Home</option>
+                                <option value="investor">Buy to Let / Second Home</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="calc-results">
+                        <div class="result-item">
+                            <div class="result-label">Est. Monthly Repayment</div>
+                            <div id="monthly-val" class="result-value" style="color:white">£1,925</div>
+                            <div class="result-description" style="font-size:0.8rem; opacity:0.7">Based on 25-year term</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Est. Negotiation Savings</div>
+                            <div id="savings-val" class="result-value">£18,000</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Est. Stamp Duty (SDLT)</div>
+                            <div id="sdlt-val" class="result-value">£0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Factoring in Extra Costs:</strong> Buying a home isn’t just about the price of the house. You’ll need to factor in Stamp Duty, legal fees, survey costs, and possibly mortgage arrangement fees.</li>
+                <li><strong>Calculating Affordability:</strong> A good rule of thumb is that your housing costs (including mortgage repayments) should not exceed 35% of your monthly income.</li>
+            </ul>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const slider = document.getElementById('budget-slider');
+                    const rateSlider = document.getElementById('rate-slider');
+                    const budgetVal = document.getElementById('budget-val');
+                    const rateVal = document.getElementById('rate-val');
+                    const savingsVal = document.getElementById('savings-val');
+                    const sdltVal = document.getElementById('sdlt-val');
+                    const monthlyVal = document.getElementById('monthly-val');
+                    const buyerType = document.getElementById('buyer-type');
+
+                    function formatMoney(num) {
+                        return '£' + Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    }
+
+                    function calculateSDLT(price, type) {
+                        let tax = 0;
+                        if (type === 'investor') {
+                            tax = price * 0.03;
+                        } else if (type === 'first') {
+                            if (price > 425000) tax = (price - 425000) * 0.05;
+                            if (price > 625000) tax = calculateSDLT(price, 'next');
+                        } else {
+                            if (price > 250000) tax += (Math.min(price, 925000) - 250000) * 0.05;
+                            if (price > 925000) tax += (Math.min(price, 1500000) - 925000) * 0.10;
+                            if (price > 1500000) tax += (price - 1500000) * 0.12;
+                        }
+                        return Math.max(0, Math.round(tax));
+                    }
+
+                    function updateCalc() {
+                        const budget = parseInt(slider.value);
+                        const rate = parseFloat(rateSlider.value);
+                        budgetVal.innerText = formatMoney(budget);
+                        rateVal.innerText = rate + '%';
+                        
+                        // Est Savings (4% average)
+                        savingsVal.innerText = formatMoney(budget * 0.04);
+                        
+                        // Monthly Payment (P * r * (1+r)^n) / ((1+r)^n - 1)
+                        const loan = budget * 0.9; // Assume 10% deposit
+                        const monthlyRate = (rate / 100) / 12;
+                        const n = 25 * 12;
+                        const monthly = loan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+                        monthlyVal.innerText = formatMoney(monthly);
+                        
+                        // SDLT
+                        const sdlt = calculateSDLT(budget, buyerType.value);
+                        sdltVal.innerText = formatMoney(sdlt);
+                    }
+
+                    slider.addEventListener('input', updateCalc);
+                    rateSlider.addEventListener('input', updateCalc);
+                    buyerType.addEventListener('change', updateCalc);
+                    updateCalc();
+                });
+            </script>
+
+            <h2>Saving for a Deposit</h2>
+            <p>In the UK, you’ll generally need a deposit of at least 5-20% of the property’s purchase price. The higher your deposit, the better your mortgage deal will likely be.</p>
+            <p>For a typical home in the UK, saving for a 10-15% deposit is advisable. This amount not only gives you access to better mortgage rates but also reduces the loan-to-value (LTV) ratio, making you less of a risk to lenders. The UK government also offers several schemes, such as the Lifetime ISA, to help first-time buyers save effectively.</p>
+
+            <h2>Exploring Mortgage Options</h2>
+            <p>When preparing to buy a house in the UK, it’s important to explore the different mortgage options available to you.</p>
+            <ul>
+                <li><strong>Fixed vs. Variable Rate:</strong> Fixed-rate mortgages offer the security of knowing that your payments will stay the same for a set period. Variable-rate mortgages can fluctuate with the market.</li>
+                <li><strong>Consulting a Broker:</strong> Mortgage brokers can help you find the best deals, especially if you’re unsure about where to start. They have access to a wider range of products than what’s available directly to consumers.</li>
+            </ul>
+
+            <h2>Finding the Right Property</h2>
+            <p>Once your finances are in order, it’s time to start house hunting. Think about your priorities when looking for a house—proximity to work, schools, local amenities, and future resale value are all important factors.</p>
+            <p>Property websites are excellent tools for finding potential homes, but buying agents (like Advaith Homes) can also help you to secure the property by finding off-market opportunities and negotiating fiercely on your behalf.</p>
+
+            <h2>Your Roadmap to Ownership</h2>
+            <p>The journey to your new home follows a clear, structured path. Here is what to expect at each milestone.</p>
+
+            <div class="timeline-container reveal">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-step">Step 01</span>
+                        <h4>Financial Readiness</h4>
+                        <p>Assess your budget, save for your deposit, and obtain a Mortgage in Principle (MIP).</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-step">Step 02</span>
+                        <h4>Strategic Sourcing</h4>
+                        <p>Identify your ideal location and property type. We find off-market opportunities others miss.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-step">Step 03</span>
+                        <h4>The Perfect Offer</h4>
+                        <p>We handle the negotiations to ensure you secure the best price and terms.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-step">Step 04</span>
+                        <h4>Conveyancing & Legal</h4>
+                        <p>Instruct solicitors, conduct property searches, and finalize the mortgage offer.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-step">Step 05</span>
+                        <h4>Exchange & Completion</h4>
+                        <p>Contracts are signed, deposits paid, and finally—the keys are in your hand.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin: 60px 0; border: none; border-top: 1px solid var(--slate-200);">
+
+            <h2>Conclusion</h2>
+            <p>Preparing to buy a house in the UK requires careful financial planning, understanding the housing market, and making informed decisions at every stage. With the right preparation, buying your dream home can be a smooth and rewarding process. Start by assessing your financial situation, setting a realistic budget, and exploring your mortgage options. Happy house hunting!</p>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="../free-consultation.html" class="btn btn-primary btn-lg">Book a Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="../js/components.js"></script>
+</body>
+</html>
+
+

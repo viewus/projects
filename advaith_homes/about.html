@@ -1,12 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us — Advaith Homes</title>
-    <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/commonstandard.css" />
+    <link rel="stylesheet" href="css/main.min.css" />
+  <link rel="stylesheet" href="css/commonstandard.min.css" />
     <style>
         .about-hero {
             padding: calc(var(--nav-h) + 30px) 0 30px;
@@ -15,7 +14,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .about-hero::before {
             content: '';
             position: absolute;
@@ -23,26 +21,22 @@
             background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .04) 1px, transparent 0);
             background-size: 32px 32px;
         }
-
         .about-hero h1,
         .about-hero p {
             color: white;
         }
-
         .about-hero p {
             color: rgba(255, 255, 255, .75);
             max-width: 620px;
             margin: 16px auto 0;
             font-size: 1.1rem;
         }
-
         .story {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 72px;
             align-items: center;
         }
-
         .story__quote {
             font-family: var(--font-display);
             font-size: 1.4rem;
@@ -53,14 +47,12 @@
             padding-left: 24px;
             margin: 28px 0;
         }
-
         .team-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 28px;
             margin-top: 56px;
         }
-
         .team-card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -68,12 +60,10 @@
             overflow: hidden;
             transition: box-shadow .3s, transform .3s;
         }
-
         .team-card:hover {
             box-shadow: var(--shadow-lg);
             transform: translateY(-6px);
         }
-
         .team-card__photo {
             width: 100%;
             height: 220px;
@@ -82,28 +72,22 @@
             justify-content: center;
             font-size: 5rem;
         }
-
         .team-card__photo--1 {
             background: linear-gradient(135deg, var(--client-color-200), var(--client-color-400));
         }
-
         .team-card__photo--2 {
             background: linear-gradient(135deg, #c4b5fd, var(--client-color-300));
         }
-
         .team-card__photo--3 {
             background: linear-gradient(135deg, #fcd34d, var(--gold-500));
         }
-
         .team-card__body {
             padding: 24px;
         }
-
         .team-card__name {
             font-size: 1.1rem;
             margin-bottom: 4px;
         }
-
         .team-card__role {
             font-size: .8rem;
             font-weight: 600;
@@ -112,53 +96,43 @@
             color: var(--accent);
             margin-bottom: 10px;
         }
-
         .team-card p {
             font-size: .875rem;
         }
-
         .values-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 24px;
             margin-top: 56px;
         }
-
         .value-item {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--r-lg);
             padding: 28px;
         }
-
         .value-item__icon {
             font-size: 1.8rem;
             margin-bottom: 12px;
         }
-
         .value-item h4 {
             margin-bottom: 8px;
         }
-
         @media(max-width:768px) {
             .story {
                 grid-template-columns: 1fr
             }
-
             .team-grid {
                 grid-template-columns: 1fr
             }
-
             .values-grid {
                 grid-template-columns: 1fr
             }
         }
     </style>
 </head>
-
 <body data-page="about">
     <div id="nav-placeholder"></div>
-
     <section class="about-hero">
         <div class="container" style="position:relative">
             <div class="eyebrow reveal" style="color:var(--gold-300);justify-content:center">Our Story</div>
@@ -167,7 +141,6 @@
                 our corner. So we built the service we wished existed.</p>
         </div>
     </section>
-
     <section class="section">
         <div class="container">
             <div class="story">
@@ -226,7 +199,6 @@
             </div>
         </div>
     </section>
-
     <section class="section section--alt">
         <div class="container">
             <div style="text-align:center;max-width:600px;margin:0 auto">
@@ -266,7 +238,6 @@
             </div>
         </div>
     </section>
-
     <section class="section">
         <div class="container">
             <div style="text-align:center;max-width:600px;margin:0 auto">
@@ -300,7 +271,6 @@
             </div>
         </div>
     </section>
-
     <section class="cta-section">
         <div class="container">
             <div class="cta-inner reveal">
@@ -315,10 +285,7 @@
             </div>
         </div>
     </section>
-
     <div id="footer-placeholder"></div>
-    <script src="js/components.js"></script>
+    <script src="js/components.min.js"></script>
 </body>
-
 </html>
-

@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artisano — Premium Custom Furniture</title>
+  <meta name="description" content="Artisano crafts bespoke, handcrafted furniture — sofas, wooden tables, designer boards and complete interior woodwork for discerning clients." />
+  <link rel="canonical" href="index.html" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- ECharts CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js" defer></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Artisan<span>o</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/services.html">Services</a></li>
+        <li><a href="pages/portfolio.html">Portfolio</a></li>
+        <li><a href="pages/gallery.html">Gallery</a></li>
+        <li><a href="pages/contact.html" class="nav-cta btn btn-primary">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="hero" aria-label="Hero section">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Est. 2018 — Handcrafted Excellence</div>
+        <h1>Where Wood Meets <em>Art</em> &amp; Precision</h1>
+        <p>We craft bespoke furniture that transforms living spaces — tailored to your vision, built to endure generations.</p>
+        <div class="hero-actions">
+          <a href="pages/portfolio.html" class="btn btn-primary">View Our Work</a>
+          <a href="pages/contact.html" class="btn btn-outline">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT PREVIEW ═══════════ -->
+  <section class="about-preview" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-img-wrap reveal-left">
+        <img
+          src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=700&q=85"
+          alt="Artisano craftsman working on custom furniture"
+          class="about-img-main"
+          loading="lazy"
+        />
+        <div class="about-img-badge">
+          <strong>6+</strong>
+          <span>Years of<br>Craftsmanship</span>
+        </div>
+      </div>
+      <div class="about-text reveal-right">
+        <span class="section-label">Our Story</span>
+        <h2 id="about-heading" class="section-title">Built on Passion,<br>Perfected by Hand</h2>
+        <p>At Artisano, every piece of furniture begins with a conversation — understanding your space, your lifestyle, and your vision. Our master craftsmen transform premium hardwoods into living art.</p>
+        <p>Founded in Bengaluru, we've grown from a small workshop into a trusted name for architects, interior designers, and homeowners who refuse to settle for ordinary.</p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <h4>Master Craftsmanship</h4>
+            <p>Decades of woodworking expertise in every joint and finish.</p>
+          </div>
+          <div class="pillar">
+            <h4>Premium Materials</h4>
+            <p>Sustainably sourced teak, walnut, oak and more.</p>
+          </div>
+          <div class="pillar">
+            <h4>Bespoke Design</h4>
+            <p>No templates — every piece designed for you, uniquely.</p>
+          </div>
+          <div class="pillar">
+            <h4>Lifetime Warranty</h4>
+            <p>We stand behind every piece we create.</p>
+          </div>
+        </div>
+        <a href="pages/about.html" class="btn btn-dark">Our Full Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FEATURED PRODUCTS ═══════════ -->
+  <section class="featured" aria-labelledby="featured-heading">
+    <div class="container">
+      <div class="section-head text-center reveal">
+        <span class="section-label">Our Craft</span>
+        <h2 id="featured-heading" class="section-title">Signature Collections</h2>
+        <p class="section-subtitle">Each piece is a unique creation — born from your requirements, shaped by our craft, finished to perfection.</p>
+      </div>
+      <div class="products-grid">
+        <article class="product-card reveal delay-1">
+          <div class="product-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=85"
+              alt="Bespoke premium sofa"
+              loading="lazy"
+            />
+            <div class="product-overlay">
+              <span class="product-overlay-tag">View Details</span>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-cat">Sofas &amp; Seating</p>
+            <h3>The Heritage Sofa</h3>
+            <p>Sink into our hand-tufted, solid hardwood-framed sofas upholstered in the finest fabrics selected for durability and elegance.</p>
+          </div>
+        </article>
+        <article class="product-card reveal delay-2">
+          <div class="product-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=85"
+              alt="Custom wooden dining table"
+              loading="lazy"
+            />
+            <div class="product-overlay">
+              <span class="product-overlay-tag">View Details</span>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-cat">Tables &amp; Surfaces</p>
+            <h3>Live-Edge Dining Table</h3>
+            <p>Responsibly sourced slabs, preserving natural grain patterns for a one-of-a-kind centrepiece.</p>
+          </div>
+        </article>
+        <article class="product-card reveal delay-3">
+          <div class="product-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=700&q=85"
+              alt="Designer wooden board"
+              loading="lazy"
+            />
+            <div class="product-overlay">
+              <span class="product-overlay-tag">View Details</span>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-cat">Designer Boards</p>
+            <h3>Artisan Wall Panels</h3>
+            <p>Geometric, fluted or carved — our boards transform plain walls into architectural statements.</p>
+          </div>
+        </article>
+        <article class="product-card reveal delay-4">
+          <div class="product-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=700&q=85"
+              alt="Interior woodwork project"
+              loading="lazy"
+            />
+            <div class="product-overlay">
+              <span class="product-overlay-tag">View Details</span>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-cat">Interior Woodwork</p>
+            <h3>Complete Fit-Outs</h3>
+            <p>From wardrobes to ceilings — fully integrated woodwork that defines the character of your space.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PORTFOLIO HIGHLIGHT ═══════════ -->
+  <section class="portfolio-highlight" aria-labelledby="portfolio-heading">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Portfolio</span>
+        <h2 id="portfolio-heading" class="section-title">Recent Masterpieces</h2>
+        <p class="section-subtitle">A curated glimpse into projects that redefined their spaces.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item reveal-left">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=85" alt="Luxury living room project" loading="lazy" />
+          <div class="portfolio-item-overlay">
+            <h4>Whitfield Residence</h4>
+            <p>Full interior woodwork &amp; custom sofa suite — Bengaluru, 2024</p>
+          </div>
+        </div>
+        <div class="portfolio-item reveal delay-1">
+          <img src="https://images.unsplash.com/photo-1549187774-b4e9b0445b41?w=700&q=85" alt="Wooden table project" loading="lazy" />
+          <div class="portfolio-item-overlay">
+            <h4>The Teak Dining Set</h4>
+            <p>Live-edge table &amp; 8 chairs — Mumbai, 2024</p>
+          </div>
+        </div>
+        <div class="portfolio-item reveal delay-2">
+          <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=700&q=85" alt="Office interior woodwork" loading="lazy" />
+          <div class="portfolio-item-overlay">
+            <h4>Nexus Office HQ</h4>
+            <p>Modular workstations &amp; wall panelling — Pune, 2023</p>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-cta reveal">
+        <a href="pages/portfolio.html" class="btn btn-dark">Explore All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ WHY CHOOSE US ═══════════ -->
+  <section class="why-us" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="section-head text-center reveal">
+        <span class="section-label">Why Artisano</span>
+        <h2 id="why-heading" class="section-title">The Artisano Promise</h2>
+        <p class="section-subtitle">Four pillars that guide every piece we create — from the first sketch to the final delivery.</p>
+      </div>
+      <div class="why-grid reveal-group">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-drafting-compass"></i></div>
+          <h4>Custom Design</h4>
+          <p>Every dimension, curve, and finish tailored precisely to your vision — no compromises, no off-the-shelf solutions.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-wood"></i></div>
+          <h4>Premium Wood</h4>
+          <p>We source only FSC-certified hardwoods — teak, walnut, oak, and rosewood from responsible suppliers worldwide.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-hands"></i></div>
+          <h4>Master Artisans</h4>
+          <p>Our workshop team averages 15+ years of experience, combining traditional joinery with modern precision tools.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>10-Year Warranty</h4>
+          <p>Structural integrity guaranteed for a decade. We build for generations, not just for today.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ANALYTICS ═══════════ -->
+  <section class="analytics" aria-labelledby="analytics-heading">
+    <div class="container">
+      <div class="section-head text-center reveal">
+        <span class="section-label">Our Numbers</span>
+        <h2 id="analytics-heading" class="section-title">Crafting Excellence in Figures</h2>
+      </div>
+      <div class="stats-row">
+        <div class="stat-box reveal delay-1">
+          <div class="stat-num" data-count="120" data-suffix="+">0</div>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-box reveal delay-2">
+          <div class="stat-num" data-count="85" data-suffix="+">0</div>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat-box reveal delay-3">
+          <div class="stat-num" data-count="12">0</div>
+          <p>Ongoing Projects</p>
+        </div>
+        <div class="stat-box reveal delay-4">
+          <div class="stat-num" data-count="6" data-suffix="+">0</div>
+          <p>Years of Experience</p>
+        </div>
+      </div>
+      <div class="charts-row">
+        <div class="chart-card reveal delay-1">
+          <h4>Projects Completed per Year</h4>
+          <div class="chart-container" id="barChart"></div>
+        </div>
+        <div class="chart-card reveal delay-2">
+          <h4>Service Category Distribution</h4>
+          <div class="chart-container" id="pieChart"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TESTIMONIALS ═══════════ -->
+  <section class="testimonials" aria-labelledby="testi-heading">
+    <div class="container">
+      <div class="section-head text-center reveal">
+        <span class="section-label">Testimonials</span>
+        <h2 id="testi-heading" class="section-title">Voices of Our Clients</h2>
+      </div>
+      <div class="testi-slider reveal">
+        <div class="testi-track">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Artisano transformed our living room beyond imagination. The custom sofa they crafted is the centrepiece every guest talks about. Unmatched quality and attention to detail.</p>
+            <div class="testi-author">
+              <div class="testi-avatar"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Priya Sharma" loading="lazy" /></div>
+              <div>
+                <div class="testi-name">Priya Sharma</div>
+                <div class="testi-role">Interior Designer, Bengaluru</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-quote">"</div>
+            <p class="testi-text">The live-edge dining table Artisano built for us is simply breathtaking. The craftsmanship is exceptional — it's more sculpture than furniture. Worth every rupee.</p>
+            <div class="testi-author">
+              <div class="testi-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Mehta" loading="lazy" /></div>
+              <div>
+                <div class="testi-name">Rahul Mehta</div>
+                <div class="testi-role">Architect &amp; Developer, Mumbai</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-quote">"</div>
+            <p class="testi-text">We commissioned Artisano to fit out our entire 3,000 sq ft office. The result was stunning — professional, warm, and completely on brand. Our clients are always impressed.</p>
+            <div class="testi-author">
+              <div class="testi-avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ananya Krishnan" loading="lazy" /></div>
+              <div>
+                <div class="testi-name">Ananya Krishnan</div>
+                <div class="testi-role">CEO, Nexus Technologies, Pune</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-controls" role="tablist" aria-label="Testimonial navigation">
+          <button class="testi-dot active" data-index="0" role="tab" aria-label="Testimonial 1"></button>
+          <button class="testi-dot" data-index="1" role="tab" aria-label="Testimonial 2"></button>
+          <button class="testi-dot" data-index="2" role="tab" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA BANNER ═══════════ -->
+  <section class="cta-banner" aria-label="Call to action">
+    <div class="container">
+      <span class="section-label reveal">Begin Your Journey</span>
+      <h2 class="reveal">Your Dream Furniture<br>Starts with a Conversation</h2>
+      <p class="reveal">Share your vision, dimensions, and preferences. Our design consultants will craft a bespoke proposal within 48 hours.</p>
+      <div class="reveal">
+        <a href="pages/contact.html" class="btn btn-primary">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Artisan<span>o</span></a>
+          <p>Premium custom furniture crafted in Bengaluru. We bring your vision to life through wood, skill, and passion — one masterpiece at a time.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="pages/about.html">About Us</a></li>
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/portfolio.html">Portfolio</a></li>
+            <li><a href="pages/gallery.html">Gallery</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="pages/services.html">Custom Sofas</a></li>
+            <li><a href="pages/services.html">Wooden Tables</a></li>
+            <li><a href="pages/services.html">Designer Boards</a></li>
+            <li><a href="pages/services.html">Interior Woodwork</a></li>
+            <li><a href="pages/services.html">Restoration</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:demo@gmail.com">demo@gmail.com</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><a href="#">42 Craft Street, Indiranagar<br>Bengaluru, Karnataka 560038</a></li>
+            <li><a href="#">Mon – Sat, 10 AM – 7 PM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Artisano. All rights reserved. Crafted with passion in Bengaluru.</p>
+        <p><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

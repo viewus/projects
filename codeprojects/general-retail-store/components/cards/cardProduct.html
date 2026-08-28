@@ -1,0 +1,31 @@
+<!-- Product card. Filled by renderers/product.js from an entry in
+     data/products.json. --cardIndex drives the staggered grid entrance in
+     animations.css, so a grid unfolds in reading order after a filter change
+     rather than snapping into place. -->
+<article class="productCard staggerItem" style="--cardIndex: {{index}}">
+  <a class="productCardMedia" href="{{href}}" aria-label="{{name}}">
+    <img class="productCardImage" {{imgAttrsHtml}} alt="{{imageAlt}}" loading="lazy" width="600" height="450">
+    <div class="productCardBadges">{{badgesHtml}}</div>
+    {{outOfStockHtml}}
+  </a>
+
+  <div class="productCardBody">
+    <p class="productCardBrand">{{brand}}</p>
+    <h3 class="productCardTitle"><a href="{{href}}">{{name}}</a></h3>
+    <span class="productCardUnit">{{unit}}</span>
+
+    <div class="productCardPrice">
+      <span class="priceNow">{{priceText}}</span>
+      {{priceWasHtml}}
+      {{priceOffHtml}}
+    </div>
+  </div>
+
+  <div class="productCardFoot">
+    <button class="btn btnOutline btnSm btnBlock" type="button"
+            data-add-to-list="{{slug}}" data-name="{{name}}" data-unit="{{unit}}"
+            data-category="{{category}}">
+      <i class="bi bi-plus-lg" aria-hidden="true"></i> Add to list
+    </button>
+  </div>
+</article>

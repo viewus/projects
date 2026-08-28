@@ -1,0 +1,104 @@
+{
+  "_note": "THE section switchboard. Each key is a page (matching <body data-page>), holding an ORDERED array of sections. Set enabled:false to hide a section; move an entry to reorder the page. Both are JSON edits — no code changes. 'component' must name a renderer registered via RS.registerComponent(); see assets/js/renderers/. 'data' is a file under data/, optionally with #branch to select part of it.",
+
+  "home": [
+    { "id": "hero",          "component": "heroCarousel",  "enabled": true,  "data": "homepage.json#heroCarousel" },
+    { "id": "trust",         "component": "trustBar",      "enabled": true,  "data": "homepage.json#trustBar" },
+    { "id": "aisles",        "component": "categoryStrip", "enabled": true,  "data": "categories.json" },
+    { "id": "deal",          "component": "dealOfDay",     "enabled": true,  "data": "homepage.json#dealOfDay", "tone": "alt" },
+    { "id": "popular",       "component": "productRow",    "enabled": true,  "data": "homepage.json#popular" },
+    { "id": "categories",    "component": "categoryGrid",  "enabled": true,  "data": "categories.json",      "tone": "alt" },
+    { "id": "offers",        "component": "offerGrid",     "enabled": true,  "data": "offers.json" },
+    { "id": "howItWorks",    "component": "howItWorks",    "enabled": true,  "data": "homepage.json#howItWorks", "tone": "alt" },
+    { "id": "planner",       "component": "plannerTeaser", "enabled": true,  "data": "homepage.json#plannerTeaser" },
+    { "id": "promo",         "component": "promoBanner",   "enabled": true,  "data": "homepage.json#promoBanner", "tone": "alt" },
+    { "id": "seasonal",      "component": "productRow",    "enabled": true,  "data": "homepage.json#seasonal" },
+    { "id": "recipes",       "component": "recipeRow",     "enabled": true,  "data": "homepage.json#recipes", "tone": "alt" },
+    { "id": "features",      "component": "featureRow",    "enabled": true,  "data": "homepage.json#features" },
+    { "id": "brands",        "component": "brandStrip",    "enabled": true,  "data": "brands.json",          "tone": "alt" },
+    { "id": "testimonials",  "component": "reviewGrid",    "enabled": true,  "data": "testimonials.json" },
+    { "id": "blog",          "component": "blogRow",       "enabled": true,  "data": "homepage.json#blog",   "tone": "alt" },
+    { "id": "faq",           "component": "faqPreview",    "enabled": true,  "data": "faq.json" },
+    { "id": "storeInfo",     "component": "storeInfo",     "enabled": true,  "data": "contact.json#store",   "tone": "alt" }
+  ],
+
+  "products": [
+    { "id": "pageHead",   "component": "pageHead",    "enabled": true, "data": "homepage.json#productsHead" },
+    { "id": "catalogue",  "component": "catalogue",   "enabled": true, "data": "products.json" },
+    { "id": "trust",      "component": "trustBar",    "enabled": true, "data": "homepage.json#trustBar", "tone": "alt" }
+  ],
+
+  "categories": [
+    { "id": "pageHead",   "component": "pageHead",     "enabled": true, "data": "homepage.json#categoriesHead" },
+    { "id": "aisles",     "component": "categoryStrip", "enabled": true, "data": "categories.json" },
+    { "id": "allCats",    "component": "categoryGrid",  "enabled": true, "data": "categories.json", "tone": "alt" },
+    { "id": "trust",      "component": "trustBar",     "enabled": true, "data": "homepage.json#trustBar" }
+  ],
+
+  "offers": [
+    { "id": "pageHead",   "component": "pageHead",    "enabled": true, "data": "homepage.json#offersHead" },
+    { "id": "deal",       "component": "dealOfDay",   "enabled": true, "data": "homepage.json#dealOfDay" },
+    { "id": "allOffers",  "component": "offerGrid",   "enabled": true, "data": "offers.json", "tone": "alt" },
+    { "id": "onSale",     "component": "productRow",  "enabled": true, "data": "homepage.json#onSale" },
+    { "id": "promo",      "component": "promoBanner", "enabled": true, "data": "homepage.json#promoBanner", "tone": "alt" }
+  ],
+
+  "planner": [
+    { "id": "pageHead",   "component": "pageHead",     "enabled": true, "data": "homepage.json#plannerHead" },
+    { "id": "plannerApp", "component": "plannerApp",   "enabled": true, "data": "shopping-lists.json" },
+    { "id": "checklist",  "component": "checklistApp", "enabled": true, "data": "homepage.json#checklist", "tone": "alt" }
+  ],
+
+  "monthlyGrocery": [
+    { "id": "pageHead",   "component": "pageHead",     "enabled": true, "data": "homepage.json#monthlyHead" },
+    { "id": "monthly",    "component": "listPicker",   "enabled": true, "data": "shopping-lists.json#monthly" },
+    { "id": "budget",     "component": "budgetCalc",   "enabled": true, "data": "shopping-lists.json#budget", "tone": "alt" }
+  ],
+
+  "healthyShopping": [
+    { "id": "pageHead",   "component": "pageHead",     "enabled": true, "data": "homepage.json#healthyHead" },
+    { "id": "healthy",    "component": "listPicker",   "enabled": true, "data": "shopping-lists.json#healthy" },
+    { "id": "healthyProducts", "component": "catalogue", "enabled": true, "data": "products.json", "tone": "alt" }
+  ],
+
+  "recipes": [
+    { "id": "pageHead",   "component": "pageHead",     "enabled": true, "data": "homepage.json#recipesHead" },
+    { "id": "recipeList", "component": "recipeGrid",   "enabled": true, "data": "recipes.json" }
+  ],
+
+  "blogs": [
+    { "id": "pageHead",   "component": "pageHead",     "enabled": true, "data": "homepage.json#blogsHead" },
+    { "id": "blogList",   "component": "blogGrid",     "enabled": true, "data": "blogs.json" }
+  ],
+
+  "about": [
+    { "id": "pageHead",   "component": "pageHead",     "enabled": true, "data": "homepage.json#aboutHead" },
+    { "id": "story",      "component": "richText",     "enabled": true, "data": "homepage.json#aboutStory" },
+    { "id": "stats",      "component": "statRow",      "enabled": true, "data": "homepage.json#aboutStats", "tone": "alt" },
+    { "id": "values",     "component": "featureRow",   "enabled": true, "data": "homepage.json#aboutValues" },
+    { "id": "gallery",    "component": "gallery",      "enabled": true, "data": "gallery.json", "tone": "alt" }
+  ],
+
+  "contact": [
+    { "id": "pageHead",   "component": "pageHead",     "enabled": true, "data": "homepage.json#contactHead" },
+    { "id": "contactApp", "component": "contactApp",   "enabled": true, "data": "contact.json" },
+    { "id": "storeInfo",  "component": "storeInfo",    "enabled": true, "data": "contact.json#store", "tone": "alt", "showMap": true }
+  ],
+
+  "faq": [
+    { "id": "pageHead",   "component": "pageHead",     "enabled": true, "data": "homepage.json#faqHead" },
+    { "id": "faqList",    "component": "faqFull",      "enabled": true, "data": "faq.json" }
+  ],
+
+  "privacy": [
+    { "id": "legal",      "component": "legalDoc",     "enabled": true, "data": "homepage.json#privacy" }
+  ],
+
+  "terms": [
+    { "id": "legal",      "component": "legalDoc",     "enabled": true, "data": "homepage.json#terms" }
+  ],
+
+  "notFound": [
+    { "id": "notFound",   "component": "notFound",     "enabled": true, "data": "homepage.json#notFound" }
+  ]
+}

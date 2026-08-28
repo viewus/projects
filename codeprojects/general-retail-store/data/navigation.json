@@ -1,0 +1,50 @@
+{
+  "_note": "Menu structure. 'route' values are keys from the routes map in assets/js/router.js — never write file paths here, or the links break when the site moves to a subfolder.",
+
+  "header": {
+    "_note": "Announcement bar. Messages cross-fade one at a time; add or remove entries freely. Set rotateMs higher to slow it down. With one message it simply stays put.",
+    "rotateMs": 4200,
+    "messages": [
+      { "emoji": "🚚", "text": "Free delivery on orders above ₹499 — same-day if you order before 6 pm" },
+      { "emoji": "🥬", "text": "Fresh produce delivered to us every morning from growers in the district" },
+      { "emoji": "🏷️", "text": "New offers every Friday — 20% off staples this week with STAPLE20" },
+      { "emoji": "🧾", "text": "Build a monthly list in two minutes with our free shopping planner" },
+      { "emoji": "🛒", "text": "Open 7 am – 9:30 pm, seven days a week" }
+    ],
+    "items": [
+      { "type": "tel", "icon": "bi-telephone", "configKey": "contact.phone", "hrefKey": "contact.phone" },
+      { "type": "link", "icon": "bi-geo-alt", "label": "Store locator", "route": "contact" },
+      { "type": "link", "icon": "bi-question-circle", "label": "Help", "route": "faq" }
+    ]
+  },
+
+  "items": [
+    { "label": "Home", "route": "home" },
+    { "label": "Categories", "route": "categories" },
+    { "label": "Products", "route": "products" },
+    { "label": "Offers", "route": "offers" },
+    {
+      "label": "Plan",
+      "children": [
+        { "label": "Shopping Planner", "route": "planner" },
+        { "label": "Monthly Grocery", "route": "monthlyGrocery" },
+        { "label": "Healthy Shopping", "route": "healthyShopping" },
+        { "label": "Recipes", "route": "recipes" }
+      ]
+    },
+    {
+      "label": "More",
+      "children": [
+        { "label": "Blog", "route": "blogs" },
+        { "label": "About us", "route": "about" },
+        { "label": "FAQ", "route": "faq" },
+        { "label": "Contact", "route": "contact" }
+      ]
+    }
+  ],
+
+  "cta": {
+    "label": "Shop now",
+    "route": "products"
+  }
+}

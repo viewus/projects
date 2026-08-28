@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Image unavailable">
+  <defs>
+    <linearGradient id="ph" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAF7F2"/>
+      <stop offset="1" stop-color="#EAE4DA"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#ph)"/>
+  <g fill="none" stroke="#C62828" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
+    <circle cx="200" cy="140" r="46"/>
+    <line x1="150" y1="95" x2="150" y2="130"/>
+    <line x1="160" y1="95" x2="160" y2="130"/>
+    <line x1="170" y1="95" x2="170" y2="130"/>
+    <path d="M150 130c0 8 20 8 20 0"/>
+    <path d="M250 95v40a8 8 0 0 0 8 8v40"/>
+    <line x1="258" y1="95" x2="258" y2="120"/>
+  </g>
+  <text x="200" y="210" font-family="Poppins, Arial, sans-serif" font-size="14" fill="#6B6B6B" text-anchor="middle">Image coming soon</text>
+</svg>

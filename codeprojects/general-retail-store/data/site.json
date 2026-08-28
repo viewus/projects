@@ -1,0 +1,62 @@
+﻿{
+  "_note": "Identity and contact details. This is the first file to edit when re-skinning the template for a new client.",
+
+  "siteName": "FreshCart",
+  "legalName": "FreshCart Retail Private Limited",
+  "tagline": "Everyday groceries, honestly priced",
+  "descriptor": "Groceries • Fresh Produce • Household",
+  "baseUrl": "https://projects.akhileshravuri.online/general-retail-store/",
+
+  "logo": {
+    "mark": "assets/images/logo.svg",
+    "favicon": "assets/images/logo.svg",
+    "appleTouch": "assets/images/logo.svg"
+  },
+
+  "defaultOgImage": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
+
+  "currency": {
+    "code": "INR",
+    "symbol": "₹",
+    "locale": "en-IN"
+  },
+
+  "contact": {
+    "phone": "+91 9876543210",
+    "phoneHref": "tel:+919876543210",
+    "whatsapp": "https://wa.me/919876543210",
+    "email": "demo@gmail.com",
+    "supportEmail": "demo@gmail.com",
+    "addressLine1": "Shop 12, Market Road",
+    "addressLine2": "Gandhi Nagar",
+    "city": "Proddatur",
+    "region": "Andhra Pradesh",
+    "postalCode": "516360",
+    "country": "India",
+    "addressFull": "Shop 12, Market Road, Gandhi Nagar, Proddatur, Andhra Pradesh 516360",
+    "mapEmbed": "https://www.google.com/maps?q=Proddatur,Andhra+Pradesh&output=embed",
+    "mapLink": "https://maps.google.com/?q=Proddatur,Andhra+Pradesh",
+    "geo": { "lat": 14.7502, "lng": 78.5481 },
+    "parking": "Free customer parking for 20 vehicles behind the store",
+    "openingHours": [
+      { "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "07:00", "closes": "21:30", "label": "Mon – Sat: 7:00 am – 9:30 pm" },
+      { "days": ["Sunday"], "opens": "08:00", "closes": "20:00", "label": "Sunday: 8:00 am – 8:00 pm" }
+    ]
+  },
+
+  "social": {
+    "facebook": "https://facebook.com/",
+    "instagram": "https://instagram.com/",
+    "youtube": "",
+    "twitter": "",
+    "linkedin": "",
+    "twitterHandle": ""
+  },
+
+  "delivery": {
+    "freeAbove": 499,
+    "standardFee": 39,
+    "radiusKm": 8,
+    "sameDayCutoff": "6:00 pm"
+  }
+}

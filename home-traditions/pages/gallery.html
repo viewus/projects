@@ -9,10 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.min.css" />
 </head>
 <body>
-
   <header class="navbar" id="navbar">
     <div class="nav-inner container">
       <a href="../index.html" class="logo"><span class="logo-icon">✦</span><span class="logo-text">Artisana</span></a>
@@ -36,7 +35,6 @@
       <a href="contact.html">Contact</a>
     </div>
   </header>
-
   <section class="page-hero">
     <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1400&q=80')"></div>
     <div class="page-hero-overlay"></div>
@@ -46,8 +44,6 @@
       <p>Craft told through images</p>
     </div>
   </section>
-
-  <!-- Filter -->
   <section class="gallery-section section">
     <div class="container">
       <div class="gallery-filters reveal">
@@ -58,7 +54,6 @@
         <button class="filter-btn" data-filter="metal">Metal</button>
         <button class="filter-btn" data-filter="painting">Painting</button>
       </div>
-
       <div class="masonry-grid" id="galleryGrid">
         <div class="masonry-item reveal" data-category="wood" tabindex="0" role="button" aria-label="Open Kondapalli Dancer image">
           <img src="https://images.unsplash.com/photo-1610701596061-2ecf227e85b2?w=400&q=75" alt="Kondapalli Dancer wooden toy" loading="lazy" />
@@ -111,8 +106,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" hidden>
     <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
     <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
@@ -125,7 +118,6 @@
     </div>
     <button class="lightbox-next" id="lightboxNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
   </div>
-
   <section class="cta-banner reveal">
     <div class="cta-inner container">
       <h2>Inspired by what you see?</h2>
@@ -133,7 +125,6 @@
       <a href="contact.html" class="btn-primary btn-large">Commission a Piece</a>
     </div>
   </section>
-
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -169,8 +160,7 @@
       <p>Crafted with ♥ in India</p>
     </div>
   </footer>
-
   <div class="toast-container" id="toastContainer" aria-live="polite"></div>
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/main.min.js"></script>
 </body>
 </html>

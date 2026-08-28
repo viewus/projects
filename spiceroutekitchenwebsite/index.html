@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,55 +8,35 @@
 <meta name="keywords" data-seo="keywords" content="">
 <meta name="theme-color" content="#C62828">
 <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN.com/">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" data-seo="ogTitle" content="Spice Route Kitchen">
 <meta property="og:description" data-seo="ogDescription" content="">
 <meta property="og:image" data-seo="ogImage" content="">
 <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN.com/">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" data-seo="ogTitle" content="">
 <meta name="twitter:description" data-seo="ogDescription" content="">
-
-<!-- Favicon (uses logo) -->
 <link rel="icon" href="assets/svg/logos/logo.svg" type="image/svg+xml">
-
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-<!-- Site CSS -->
-<link rel="stylesheet" href="assets/css/main.css">
-
-<!-- Structured Data (populated at runtime from JSON) -->
+<link rel="stylesheet" href="assets/css/main.min.css">
 <script type="application/ld+json" id="structuredData"></script>
 </head>
 <body>
-
-<!-- ============ ANNOUNCEMENT BAR ============ -->
 <div id="announcementBar" class="announcementBar" role="status" aria-live="polite" hidden>
   <div class="announcementTrack" id="announcementTrack"></div>
 </div>
-
-<!-- ============ HEADER ============ -->
 <header id="siteHeader" class="siteHeader">
   <div class="container headerInner">
     <a href="#home" class="brand" id="brandLink" aria-label="Go to homepage">
       <img id="brandLogo" src="assets/svg/logos/logo.svg" alt="" class="brandLogo">
       <span id="brandName" class="brandName"></span>
     </a>
-
     <nav class="mainNav" id="mainNav" aria-label="Primary">
       <ul id="navList" class="navList"></ul>
     </nav>
-
     <div class="headerActions">
       <button type="button" class="iconBtn searchToggle" id="searchToggle" aria-label="Search menu" aria-expanded="false">
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
@@ -67,8 +47,6 @@
       </button>
     </div>
   </div>
-
-  <!-- Search panel -->
   <div class="searchPanel" id="searchPanel" hidden>
     <div class="container searchPanelInner">
       <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
@@ -77,8 +55,6 @@
     </div>
   </div>
 </header>
-
-<!-- ============ MOBILE MENU ============ -->
 <div class="mobileMenu" id="mobileMenu" hidden>
   <nav aria-label="Mobile Primary">
     <ul id="mobileNavList" class="mobileNavList"></ul>
@@ -86,10 +62,7 @@
   <a href="#" class="btn btnPrimary mobileOrderBtn" id="mobileOrderBtn">Order Now</a>
 </div>
 <div class="mobileMenuOverlay" id="mobileMenuOverlay" hidden></div>
-
 <main id="mainContent">
-
-  <!-- ============ HERO ============ -->
   <section id="home" class="hero" aria-label="Hero">
     <div class="container heroGrid">
       <div class="heroContent">
@@ -109,19 +82,12 @@
       <div class="heroVisual" id="heroVisual" aria-hidden="false"></div>
     </div>
   </section>
-
-  <!-- Category nav + Menu share this wrapper so the sticky category bar
-       only stays pinned while the menu itself is being browsed, not for
-       the rest of the page (its sticky range is bounded by this box). -->
   <div class="menuBrowseWrap">
-    <!-- ============ CATEGORY NAVIGATION ============ -->
     <section id="categoryNavSection" class="categoryNavSection" aria-label="Menu categories">
       <div class="container">
         <div class="categoryScroller" id="categoryScroller" role="tablist" aria-label="Filter menu by category"></div>
       </div>
     </section>
-
-    <!-- ============ MENU ============ -->
     <section id="menu" class="menuSection" aria-label="Menu">
       <div class="container">
         <div class="sectionHeading" data-heading="menu">
@@ -129,7 +95,6 @@
           <h2 class="sectionTitle"></h2>
           <p class="sectionSubtitle"></p>
         </div>
-
         <div class="menuToolbar">
           <div class="menuSearchWrap">
             <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
@@ -137,16 +102,12 @@
           </div>
           <div class="menuFilters" id="menuFilters" role="group" aria-label="Dietary filters"></div>
         </div>
-
         <p class="menuResultsCount" id="menuResultsCount" aria-live="polite"></p>
-
         <div class="menuGrid" id="menuGrid"></div>
         <p class="menuEmptyState" id="menuEmptyState" hidden>No dishes match your search. Try a different keyword or category.</p>
       </div>
     </section>
   </div>
-
-  <!-- ============ FEATURED / BESTSELLERS ============ -->
   <section id="featured" class="featuredSection" aria-label="Customer favourites">
     <div class="container">
       <div class="sectionHeading" data-heading="featured">
@@ -156,8 +117,6 @@
       <div class="featuredScroller" id="featuredScroller"></div>
     </div>
   </section>
-
-  <!-- ============ OFFERS ============ -->
   <section id="offers" class="offersSection" aria-label="Special offers">
     <div class="container">
       <div class="sectionHeading" data-heading="offers">
@@ -167,8 +126,6 @@
       <div class="offersGrid" id="offersGrid"></div>
     </div>
   </section>
-
-  <!-- ============ WHY CHOOSE US ============ -->
   <section id="features" class="featuresSection" aria-label="Why choose us">
     <div class="container">
       <div class="sectionHeading" data-heading="features">
@@ -178,8 +135,6 @@
       <div class="featureGrid" id="featureGrid"></div>
     </div>
   </section>
-
-  <!-- ============ ABOUT ============ -->
   <section id="about" class="aboutSection" aria-label="About us">
     <div class="container aboutGrid">
       <div class="aboutImageWrap">
@@ -194,8 +149,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ============ PROCESS ============ -->
   <section id="process" class="processSection" aria-label="How we prepare your food">
     <div class="container">
       <div class="sectionHeading">
@@ -206,8 +159,6 @@
       <div class="processTimeline" id="processTimeline"></div>
     </div>
   </section>
-
-  <!-- ============ GALLERY ============ -->
   <section id="gallery" class="gallerySection" aria-label="Photo gallery">
     <div class="container">
       <div class="sectionHeading" data-heading="gallery">
@@ -217,8 +168,6 @@
       <div class="galleryGrid" id="galleryGrid"></div>
     </div>
   </section>
-
-  <!-- ============ TESTIMONIALS ============ -->
   <section id="testimonials" class="testimonialsSection" aria-label="Customer reviews">
     <div class="container">
       <div class="sectionHeading" data-heading="testimonials">
@@ -228,8 +177,6 @@
       <div class="testimonialsGrid" id="testimonialsGrid"></div>
     </div>
   </section>
-
-  <!-- ============ FAQ ============ -->
   <section id="faq" class="faqSection" aria-label="Frequently asked questions">
     <div class="container">
       <div class="sectionHeading" data-heading="faq">
@@ -239,8 +186,6 @@
       <div class="faqAccordion" id="faqAccordion"></div>
     </div>
   </section>
-
-  <!-- ============ CONTACT / ORDER ============ -->
   <section id="contact" class="contactSection" aria-label="Contact and order">
     <div class="container contactGrid">
       <div class="contactCta">
@@ -251,16 +196,11 @@
       <div class="contactDetails" id="contactDetails"></div>
     </div>
   </section>
-
 </main>
-
-<!-- ============ FLOATING ORDER BUTTON ============ -->
 <a href="#" class="floatingOrderBtn" id="floatingOrderBtn" hidden>
   <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
   <span id="floatingOrderLabel"></span>
 </a>
-
-<!-- ============ LIGHTBOX ============ -->
 <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
   <button type="button" class="lightboxClose" id="lightboxClose" aria-label="Close image viewer"><i class="fa-solid fa-xmark"></i></button>
   <button type="button" class="lightboxNav lightboxPrev" id="lightboxPrev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
@@ -270,8 +210,6 @@
   </figure>
   <button type="button" class="lightboxNav lightboxNext" id="lightboxNext" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
 </div>
-
-<!-- ============ FOOTER ============ -->
 <footer class="siteFooter" id="siteFooter">
   <div class="container footerGrid">
     <div class="footerBrand">
@@ -300,18 +238,16 @@
     </div>
   </div>
 </footer>
-
-<!-- ============ SCRIPTS ============ -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="data/restaurantData.js"></script>
-<script src="assets/js/utils/helpers.js"></script>
-<script src="assets/js/components/renderers/menuRenderer.js"></script>
-<script src="assets/js/components/renderers/offerRenderer.js"></script>
-<script src="assets/js/components/renderers/featureRenderer.js"></script>
-<script src="assets/js/components/renderers/galleryRenderer.js"></script>
-<script src="assets/js/components/renderers/testimonialRenderer.js"></script>
-<script src="assets/js/components/renderers/faqRenderer.js"></script>
-<script src="assets/js/components/animations.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="data/restaurantData.min.js"></script>
+<script src="assets/js/utils/helpers.min.js"></script>
+<script src="assets/js/components/renderers/menuRenderer.min.js"></script>
+<script src="assets/js/components/renderers/offerRenderer.min.js"></script>
+<script src="assets/js/components/renderers/featureRenderer.min.js"></script>
+<script src="assets/js/components/renderers/galleryRenderer.min.js"></script>
+<script src="assets/js/components/renderers/testimonialRenderer.min.js"></script>
+<script src="assets/js/components/renderers/faqRenderer.min.js"></script>
+<script src="assets/js/components/animations.min.js"></script>
+<script src="assets/js/main.min.js"></script>
 </body>
 </html>

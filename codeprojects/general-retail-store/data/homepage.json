@@ -1,0 +1,315 @@
+{
+  "_note": "Section copy for the home page plus the page-head blocks for every other page. sections.json points at branches of this file using the file.json#branch syntax, which keeps related copy together instead of scattering it across 16 tiny files.",
+
+  "hero": {
+    "eyebrow": "Open 7 am – 9:30 pm, seven days",
+    "title": "Everyday groceries, honestly priced",
+    "text": "Fresh produce from growers down the road, staples in family packs, and free delivery within 8 km on orders above ₹499.",
+    "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=80",
+    "imageAlt": "Grocery store aisle stocked with fresh produce",
+    "primaryCta": { "label": "Browse products", "route": "products" },
+    "secondaryCta": { "label": "Plan a monthly shop", "route": "planner" },
+    "stats": [
+      { "value": "1,200+", "label": "Lines stocked" },
+      { "value": "8 km", "label": "Delivery radius" },
+      { "value": "Same day", "label": "Order before 6 pm" }
+    ]
+  },
+
+  "heroCarousel": {
+    "_note": "Rotating hero. Add or remove slides freely — dots and arrows follow automatically. Autoplay pauses on hover, on focus, on a hidden tab, and entirely for visitors who have asked for reduced motion.",
+    "label": "Featured offers",
+    "autoplayMs": 6000,
+    "slides": [
+      {
+        "eyebrow": "Open 7 am – 9:30 pm, seven days",
+        "title": "Everyday groceries, honestly priced",
+        "text": "Fresh produce from growers down the road, staples in family packs, and free delivery within 8 km on orders above ₹499.",
+        "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=80",
+        "imageAlt": "Grocery store aisle stocked with fresh produce",
+        "color": "#1f7a4d",
+        "primaryCta": { "label": "Browse products", "route": "products" },
+        "secondaryCta": { "label": "Plan a monthly shop", "route": "planner" },
+        "stats": [
+          { "value": "1,200+", "label": "Lines stocked" },
+          { "value": "8 km", "label": "Delivery radius" },
+          { "value": "Same day", "label": "Order before 6 pm" }
+        ]
+      },
+      {
+        "eyebrow": "Delivered to us each morning",
+        "title": "Fresh from growers in the district",
+        "text": "Our fruit and vegetables come from about forty local growers, delivered the morning after picking — never held in cold storage for weeks.",
+        "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1000&q=80",
+        "imageAlt": "Fresh vegetables arranged on a display counter",
+        "color": "#4a9d5f",
+        "primaryCta": { "label": "Shop fresh produce", "route": "products?category=fruits-vegetables" },
+        "secondaryCta": { "label": "How we buy", "route": "about" }
+      },
+      {
+        "eyebrow": "This week only",
+        "title": "20% off staples over ₹500",
+        "text": "Rice, atta, dals and cooking oil. Stock the whole month in a single trip and use code STAPLE20 at the counter.",
+        "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=80",
+        "imageAlt": "Sacks and containers of rice and grains",
+        "color": "#c98b3a",
+        "primaryCta": { "label": "Shop staples", "route": "products?category=staples-grains" },
+        "secondaryCta": { "label": "See all offers", "route": "offers" }
+      },
+      {
+        "eyebrow": "Free tool",
+        "title": "Plan the whole month in two minutes",
+        "text": "Pick your household size and we'll build a starting list — sized, grouped by aisle, and ready to print or carry on your phone.",
+        "image": "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=1000&q=80",
+        "imageAlt": "A written shopping list beside a basket of groceries",
+        "color": "#5b8fb9",
+        "primaryCta": { "label": "Open the planner", "route": "planner" },
+        "secondaryCta": { "label": "Monthly lists", "route": "monthlyGrocery" }
+      }
+    ]
+  },
+
+  "trustBar": {
+    "items": [
+      { "icon": "bi-truck", "title": "Free delivery above ₹499", "text": "Within 8 km, same-day before 6 pm" },
+      { "icon": "bi-basket2", "title": "Fresh every morning", "text": "Direct from growers in the district" },
+      { "icon": "bi-arrow-counterclockwise", "title": "Easy returns", "text": "7 days on unopened non-perishables" },
+      { "icon": "bi-tags", "title": "Honest pricing", "text": "Shelf price is the price you pay" }
+    ]
+  },
+
+  "categoryStrip": {
+    "title": "Shop by aisle",
+    "intro": "Jump straight to what you came for.",
+    "linkLabel": "All categories",
+    "linkRoute": "categories"
+  },
+
+  "dealOfDay": {
+    "eyebrow": "Deal of the day",
+    "productSlug": "atta-whole-wheat",
+    "endsAt": ""
+  },
+
+  "promoBanner": {
+    "eyebrow": "Festival season",
+    "title": "Hampers built to order, from ₹899",
+    "text": "Made up from our dry fruits, sweets and gifting range. Give us three days' notice for larger orders and we'll have them ready to collect.",
+    "image": "https://images.unsplash.com/photo-1605007493699-af65834f8a00?auto=format&fit=crop&w=800&q=80",
+    "imageAlt": "Festival gift hamper of dry fruits and sweets",
+    "color": "#d4a017",
+    "cta": { "label": "Enquire about hampers", "route": "contact" }
+  },
+
+  "howItWorks": {
+    "title": "Ordering, start to finish",
+    "intro": "No account, no app. Four steps from list to doorstep.",
+    "steps": [
+      { "icon": "bi-card-checklist", "title": "Build your list", "text": "Use the planner, a recipe, or just add products as you browse. It saves in your browser." },
+      { "icon": "bi-whatsapp", "title": "Send it to us", "text": "Share the list on WhatsApp or ring the store. We confirm the total before packing." },
+      { "icon": "bi-bag-check", "title": "We pack it", "text": "We call before substituting anything — never a silent swap of brand or size." },
+      { "icon": "bi-house-door", "title": "Collect or delivered", "text": "Same-day delivery before 6 pm within 8 km, or collect from the counter." }
+    ]
+  },
+
+  "features": {
+    "items": [
+      { "icon": "bi-truck", "title": "Free local delivery", "text": "On orders above ₹499, within 8 km. Same-day if you order before 6 pm." },
+      { "icon": "bi-basket", "title": "Fresh every morning", "text": "Produce arrives daily from growers inside the district — never held in cold storage for weeks." },
+      { "icon": "bi-tags", "title": "Honest pricing", "text": "Shelf price is the price you pay. Bulk packs are genuinely cheaper per kilo, and we'll say when they're not." },
+      { "icon": "bi-arrow-repeat", "title": "Easy returns", "text": "Seven days on unopened non-perishables. Poor-quality produce replaced or refunded the same day." }
+    ]
+  },
+
+  "popular": {
+    "title": "Popular this week",
+    "intro": "What our regulars are putting in the basket most often.",
+    "source": "products.json",
+    "sort": "popularity",
+    "limit": 8,
+    "linkLabel": "See all products",
+    "linkRoute": "products"
+  },
+
+  "seasonal": {
+    "title": "Good right now",
+    "intro": "In season, well priced, and moving quickly off the shelf.",
+    "source": "products.json",
+    "filterTag": "fresh",
+    "limit": 4,
+    "linkLabel": "Shop fresh produce",
+    "linkRoute": "products?category=fruits-vegetables"
+  },
+
+  "onSale": {
+    "title": "Biggest savings",
+    "intro": "Everything currently marked down, largest discount first.",
+    "source": "products.json",
+    "sort": "discount",
+    "onlyDiscounted": true,
+    "limit": 8
+  },
+
+  "plannerTeaser": {
+    "eyebrow": "Free tool",
+    "title": "Plan the whole month in two minutes",
+    "text": "Tell us who you're shopping for and we'll build a starting list — sized, categorised and ready to edit. Tick items off in the aisle, or print it and take it with you.",
+    "image": "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=900&q=80",
+    "imageAlt": "A written shopping list beside a basket of groceries",
+    "cta": { "label": "Open the planner", "route": "planner" },
+    "points": [
+      "Six household profiles, from single to joint family",
+      "Quantities sized to a month, editable line by line",
+      "Saved in your browser — come back and it's still there",
+      "Print, share or download as a plain text list"
+    ]
+  },
+
+  "recipes": {
+    "title": "Cook it, shop for it",
+    "intro": "Pick a dish and we'll add every ingredient to your list in one tap.",
+    "limit": 3,
+    "linkLabel": "All recipes",
+    "linkRoute": "recipes"
+  },
+
+  "blog": {
+    "title": "From the shop floor",
+    "intro": "Storage advice, budget notes and seasonal buying tips.",
+    "limit": 3,
+    "linkLabel": "Read the blog",
+    "linkRoute": "blogs"
+  },
+
+  "productsHead": {
+    "title": "All products",
+    "intro": "Search, filter by category, brand or price, and sort however you like. Everything on our shelves is here."
+  },
+  "categoriesHead": {
+    "title": "Shop by category",
+    "intro": "Eight aisles covering the weekly shop."
+  },
+  "offersHead": {
+    "title": "Today's offers",
+    "intro": "Running deals, refreshed every Friday morning. No codes needed in store — just mention it at the counter."
+  },
+  "plannerHead": {
+    "title": "Shopping planner",
+    "intro": "Build a list sized to your household, edit it, and take it with you."
+  },
+  "monthlyHead": {
+    "title": "Monthly grocery lists",
+    "intro": "A month of staples, sized by household — plus a calculator that splits a budget across categories."
+  },
+  "healthyHead": {
+    "title": "Healthy shopping",
+    "intro": "Filtered views of our full range for common dietary goals. Nothing here is a separate premium range — it's the same shelf, sorted usefully."
+  },
+  "recipesHead": {
+    "title": "Recipes",
+    "intro": "Six dishes we get asked about most, each with its ingredients ready to add to your list."
+  },
+  "blogsHead": {
+    "title": "From the shop floor",
+    "intro": "Practical notes on shopping, storage and budgeting from the people who stock the shelves."
+  },
+  "faqHead": {
+    "title": "Frequently asked questions",
+    "intro": "Delivery, payment, returns and the practical details."
+  },
+  "contactHead": {
+    "title": "Contact us",
+    "intro": "Ring the store for anything urgent. For everything else, the form below reaches us by email."
+  },
+  "aboutHead": {
+    "title": "About FreshCart",
+    "intro": "A neighbourhood store, buying direct and pricing honestly."
+  },
+
+  "aboutStory": {
+    "blocks": [
+      { "type": "p", "text": "FreshCart began as a single counter on Market Road stocking rice, dal and cooking oil. What our customers actually wanted, it turned out, was somewhere they could finish the whole week's shop without a second stop — so we grew into the aisles you see now." },
+      { "type": "h", "text": "Buying direct" },
+      { "type": "p", "text": "Our fruit and vegetables come from growers inside the district, delivered to us the morning after picking. Cutting out the intermediate market is why produce here is fresher and usually cheaper than the chains — not because we squeeze the farmer." },
+      { "type": "h", "text": "Pricing you can check" },
+      { "type": "p", "text": "The shelf price is the price you pay. Where a bulk pack genuinely costs less per kilo we will tell you, and where it does not — spices, cooking oil, biscuits — we will tell you that too, even though the smaller pack earns us less." },
+      { "type": "h", "text": "Knowing the stock" },
+      { "type": "p", "text": "Everyone on the floor can tell you which cereal suits an eight-month-old, which rice holds up in a biryani, and what came in this morning. That is the part a bigger shop cannot copy." }
+    ]
+  },
+
+  "aboutStats": {
+    "items": [
+      { "value": "1,200+", "label": "Lines stocked" },
+      { "value": "40+", "label": "Local growers we buy from" },
+      { "value": "9 years", "label": "On Market Road" },
+      { "value": "8 km", "label": "Delivery radius" }
+    ]
+  },
+
+  "aboutValues": {
+    "title": "What we hold to",
+    "items": [
+      { "icon": "bi-hand-thumbs-up", "title": "Say when it isn't worth it", "text": "If the bulk pack won't save you money, or the produce isn't good today, we say so." },
+      { "icon": "bi-people", "title": "Buy local first", "text": "Forty growers within the district supply our fresh counter. We pay them weekly, not on ninety-day terms." },
+      { "icon": "bi-recycle", "title": "Waste as little as possible", "text": "Produce is marked down at two days and donated at three. Very little leaves this shop as rubbish." },
+      { "icon": "bi-shield-check", "title": "Label honestly", "text": "Dates on the shelf edge, origin on the crate, and no repackaging to hide an old batch." }
+    ]
+  },
+
+  "checklist": {
+    "title": "Your shopping list",
+    "emptyTitle": "Your list is empty",
+    "emptyBody": "Generate one from a household profile above, or add items from any product or recipe page.",
+    "printLabel": "Print list",
+    "shareLabel": "Share",
+    "downloadLabel": "Download",
+    "clearLabel": "Clear list",
+    "clearConfirm": "Remove every item from your list?",
+    "_todoNote": "TODO: 'Download' saves a plain .txt file and 'Print' uses the print stylesheet in common.css. A true PDF export would need a library such as jsPDF, which this build deliberately avoids to keep the page dependency-free."
+  },
+
+  "notFound": {
+    "code": "404",
+    "title": "That page isn't here",
+    "text": "The link may be out of date, or the page may have moved. Try the search, or head back to the shop.",
+    "primaryCta": { "label": "Back to home", "route": "home" },
+    "secondaryCta": { "label": "Browse products", "route": "products" }
+  },
+
+  "privacy": {
+    "title": "Privacy policy",
+    "updated": "2026-08-01",
+    "blocks": [
+      { "type": "p", "text": "This page explains what this website collects, why, and what we do with it. It is written to be read rather than to be legally exhaustive — if anything is unclear, ring the store and ask." },
+      { "type": "h", "text": "What this website stores" },
+      { "type": "p", "text": "Your shopping list and your light/dark preference are saved in your own browser's local storage. They never leave your device and we cannot see them. Clearing your browser data removes them." },
+      { "type": "h", "text": "What we collect when you contact us" },
+      { "type": "p", "text": "If you submit the contact form or subscribe to the newsletter, we receive what you typed — typically your name, phone number, email and message. We use it to reply to you and nothing else." },
+      { "type": "h", "text": "Analytics" },
+      { "type": "p", "text": "This site ships with analytics switched off and loads no tracking scripts by default. If that changes, this section will say which provider is in use before it is enabled." },
+      { "type": "h", "text": "Third parties" },
+      { "type": "p", "text": "Images on this site are served from Unsplash, and fonts from Google Fonts. Those providers see your IP address as part of serving the file, as they would on any site that uses them." },
+      { "type": "h", "text": "Getting your data removed" },
+      { "type": "p", "text": "Email or ring us and we will delete any enquiry or subscription record we hold for you. There is no account to close." }
+    ]
+  },
+
+  "terms": {
+    "title": "Terms of use",
+    "updated": "2026-08-01",
+    "blocks": [
+      { "type": "p", "text": "By using this website you accept the terms below." },
+      { "type": "h", "text": "Prices and availability" },
+      { "type": "p", "text": "Prices shown here are updated weekly and are a guide. Fresh produce moves with the market, so the price at the counter may differ — we will always tell you before billing. Stock shown as available is not reserved until we confirm an order." },
+      { "type": "h", "text": "Orders" },
+      { "type": "p", "text": "An order is confirmed when we acknowledge it by phone or message, not when you send it. We may decline or limit an order — for example on bulk quantities during a shortage." },
+      { "type": "h", "text": "Returns" },
+      { "type": "p", "text": "Unopened non-perishable goods may be returned within 7 days with the bill. Fresh produce, dairy and bakery items cannot be returned once they have left the store, for food safety reasons. This does not affect your rights where goods are faulty." },
+      { "type": "h", "text": "Content on this site" },
+      { "type": "p", "text": "Recipes, storage advice and shopping lists here are general guidance. They are not dietary or medical advice — if you have a condition or an allergy, check with a professional." },
+      { "type": "h", "text": "Accuracy" },
+      { "type": "p", "text": "We keep this site as accurate as we can, but we cannot guarantee it is free of errors. If you spot something wrong, telling us is genuinely helpful." }
+    ]
+  }
+}

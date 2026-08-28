@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,7 +31,6 @@
   body{font-family:'Work Sans',sans-serif;background:var(--paper);color:var(--text);}
   h1,h2,h3,.display{font-family:'Newsreader',serif;}
   img{display:block;max-width:100%;}
-
   /* signature furrow-row texture, reused as section dividers/backgrounds */
   .furrow-rows{
     background-image:repeating-linear-gradient(180deg, rgba(74,54,36,0.05) 0px, rgba(74,54,36,0.05) 2px, transparent 2px, transparent 22px);
@@ -40,7 +38,6 @@
   .furrow-rows-light{
     background-image:repeating-linear-gradient(180deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 22px);
   }
-
   section{padding:6.5rem 4rem;position:relative;}
   .eyebrow{
     display:inline-flex;align-items:center;gap:0.55rem;font-size:0.72rem;font-weight:700;
@@ -52,7 +49,6 @@
   .lede{font-size:1.02rem;color:var(--text-muted);line-height:1.75;max-width:640px;}
   .section-head{max-width:760px;margin:0 auto 3.5rem;text-align:center;}
   .section-head .lede{margin:0 auto;}
-
   /* NAV */
   nav{
     position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;
@@ -78,7 +74,6 @@
   .nav-cta:hover{background:var(--wheat-light) !important;}
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px;}
   .hamburger span{width:24px;height:2px;background:var(--wheat-light);border-radius:2px;}
-
   /* HERO */
   #hero{min-height:100vh;position:relative;display:flex;align-items:flex-end;padding:0;overflow:hidden;}
   .hero-img{
@@ -104,7 +99,6 @@
   .btn-wheat:hover{background:var(--wheat-light);transform:translateY(-2px);}
   .btn-outline-light{display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:var(--paper-soft);font-weight:600;font-size:0.9rem;padding:0.95rem 2rem;border-radius:8px;text-decoration:none;border:2px solid rgba(246,242,231,0.35);cursor:pointer;transition:all 0.3s;}
   .btn-outline-light:hover{border-color:var(--wheat-light);color:var(--wheat-light);}
-
   /* WHO WE ARE */
   #who{background:var(--paper);}
   .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1300px;margin:0 auto;align-items:center;}
@@ -115,7 +109,6 @@
   .who-visual{position:relative;border-radius:22px;overflow:hidden;height:440px;box-shadow:0 25px 50px var(--shadow);}
   .who-visual img{width:100%;height:100%;object-fit:cover;}
   .who-visual-tag{position:absolute;bottom:1.4rem;left:1.4rem;background:rgba(23,17,11,0.75);backdrop-filter:blur(6px);color:var(--paper-soft);padding:0.7rem 1.1rem;border-radius:10px;font-size:0.78rem;font-weight:600;}
-
   /* PRODUCTS */
   #products{background:var(--sky);}
   .cat-filter{display:flex;justify-content:center;gap:0.6rem;flex-wrap:wrap;margin-bottom:2.8rem;}
@@ -135,7 +128,6 @@
   .product-season{display:inline-block;font-size:0.62rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--field-deep);background:rgba(76,107,63,0.12);padding:0.25rem 0.6rem;border-radius:12px;margin-bottom:0.8rem;width:fit-content;}
   .ask-btn{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;background:var(--soil-dark);color:var(--wheat-light);font-weight:700;font-size:0.76rem;padding:0.65rem;border-radius:8px;text-decoration:none;transition:all 0.25s;}
   .ask-btn:hover{background:var(--field-deep);}
-
   /* PROCESS */
   #process{background:var(--soil-dark);color:var(--paper-soft);}
   #process .eyebrow{color:var(--wheat-light);}
@@ -148,7 +140,6 @@
   .process-num{width:4.2rem;height:4.2rem;border-radius:50%;background:var(--soil);border:2px solid var(--wheat);color:var(--wheat-light);font-family:'Newsreader',serif;font-weight:700;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;}
   .process-title{font-family:'Newsreader',serif;font-weight:700;font-size:1.1rem;margin-bottom:0.5rem;color:var(--paper-soft);}
   .process-desc{font-size:0.82rem;color:rgba(246,242,231,0.55);line-height:1.6;padding:0 0.3rem;}
-
   /* QUALITY */
   #quality{background:var(--paper);}
   .quality-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem;max-width:1320px;margin:0 auto;}
@@ -157,7 +148,6 @@
   .quality-icon{font-size:1.7rem;margin-bottom:0.9rem;}
   .quality-title{font-family:'Newsreader',serif;font-weight:700;font-size:1.02rem;margin-bottom:0.5rem;color:var(--soil-dark);}
   .quality-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.55;}
-
   /* FARMERS */
   #farmers{background:var(--field-deep);color:var(--paper-soft);}
   #farmers .eyebrow{color:var(--wheat-light);}
@@ -171,7 +161,6 @@
   .stat-box{text-align:left;border-left:2px solid rgba(224,169,74,0.4);padding-left:1rem;}
   .stat-num{font-family:'Newsreader',serif;font-weight:700;font-size:2.1rem;color:var(--wheat-light);line-height:1;}
   .stat-label{font-size:0.72rem;color:rgba(246,242,231,0.6);font-weight:600;margin-top:0.3rem;}
-
   /* GALLERY */
   #gallery{background:var(--paper);}
   .gallery-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:0.9rem;max-width:1320px;margin:0 auto;}
@@ -181,7 +170,6 @@
   .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
   .gallery-item:hover img{transform:scale(1.07);}
   .gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:0.9rem 1rem;background:linear-gradient(0deg, rgba(23,17,11,0.85), transparent);color:var(--paper-soft);font-size:0.68rem;font-weight:700;letter-spacing:0.06em;}
-
   /* SEASONAL */
   #seasonal{background:var(--sky);}
   .season-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;max-width:1200px;margin:0 auto 1.5rem;}
@@ -191,7 +179,6 @@
   .season-list li{font-size:0.86rem;color:var(--text-muted);font-weight:600;padding-left:1.1rem;position:relative;}
   .season-list li::before{content:'';position:absolute;left:0;top:0.5em;width:6px;height:6px;border-radius:50%;background:var(--field);}
   .season-note{text-align:center;font-size:0.78rem;color:var(--text-muted);font-style:italic;max-width:600px;margin:0 auto;}
-
   /* WHO WE SUPPLY */
   #supply-to{background:var(--paper);}
   .supply-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:1320px;margin:0 auto 2.5rem;}
@@ -201,7 +188,6 @@
   .supply-title{font-family:'Newsreader',serif;font-weight:700;font-size:1.05rem;margin-bottom:0.4rem;color:var(--soil-dark);}
   .supply-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.55;}
   .supply-cta{text-align:center;}
-
   /* BULK SUPPLY */
   #bulk{background:var(--field-deep);color:var(--paper-soft);text-align:center;}
   #bulk .heading{color:var(--paper-soft);}
@@ -209,7 +195,6 @@
   .bulk-points{display:flex;justify-content:center;gap:0.8rem;flex-wrap:wrap;margin-bottom:2.2rem;}
   .bulk-point{background:rgba(255,255,255,0.07);border:1px solid rgba(224,169,74,0.3);padding:0.55rem 1.1rem;border-radius:20px;font-size:0.78rem;font-weight:600;}
   .bulk-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
-
   /* VALUES */
   #values{background:var(--paper);}
   .values-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem;max-width:1320px;margin:0 auto;}
@@ -217,7 +202,6 @@
   .value-num{font-family:'Newsreader',serif;font-style:italic;font-size:1.6rem;color:var(--wheat);margin-bottom:0.6rem;}
   .value-title{font-family:'Newsreader',serif;font-weight:700;font-size:1rem;margin-bottom:0.5rem;color:var(--soil-dark);}
   .value-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.55;}
-
   /* WHY WORK WITH US */
   #why{background:var(--sky);}
   .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:1320px;margin:0 auto;}
@@ -225,7 +209,6 @@
   .why-icon{font-size:1.5rem;margin-bottom:0.7rem;}
   .why-title{font-family:'Newsreader',serif;font-weight:700;font-size:1rem;margin-bottom:0.4rem;color:var(--soil-dark);}
   .why-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.55;}
-
   /* CONTACT */
   #contact{background:var(--soil-dark);color:var(--paper-soft);}
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1300px;margin:0 auto;align-items:center;}
@@ -246,7 +229,6 @@
   .contact-panel .btn-outline-light{width:100%;justify-content:center;}
   #enquiryStatus{margin-top:1rem;font-size:0.8rem;font-weight:600;display:none;}
   #enquiryStatus.success{color:var(--wheat-light);display:block;}
-
   /* FINAL CTA */
   #final-cta{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:6rem 2rem;}
   .final-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
@@ -254,7 +236,6 @@
   .final-inner{position:relative;z-index:2;max-width:700px;}
   .final-inner h2{font-size:clamp(2.1rem,4.5vw,3.2rem);color:var(--paper-soft);margin-bottom:1rem;font-weight:600;}
   .final-inner p{color:rgba(246,242,231,0.8);font-size:1.05rem;margin-bottom:2rem;}
-
   /* FOOTER */
   footer{background:var(--soil-dark);color:rgba(246,242,231,0.7);padding:4rem 4rem 2rem;}
   .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.6rem;border-bottom:1px solid rgba(224,169,74,0.15);margin-bottom:1.8rem;}
@@ -266,11 +247,9 @@
   .footer-col ul li a, .footer-col p{font-size:0.82rem;color:rgba(246,242,231,0.55);text-decoration:none;}
   .footer-col ul li a:hover{color:var(--wheat-light);}
   .footer-bottom{text-align:center;font-size:0.75rem;color:rgba(246,242,231,0.35);}
-
   /* SCROLL REVEAL */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease, transform 0.6s ease;}
   .reveal.visible{opacity:1;transform:translateY(0);}
-
   /* MOBILE */
   @media(max-width:1080px){
     .product-grid{grid-template-columns:repeat(3,1fr);}
@@ -318,10 +297,7 @@
   }
 </style>
 </head>
-
 <body>
-
-<!-- NAV -->
 <nav id="main-nav">
   <a href="#" class="nav-logo"><div class="nav-logo-icon">🌾</div>Farmer<span>Group</span></a>
   <ul class="nav-links" id="nav-links">
@@ -334,8 +310,6 @@
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- HERO -->
 <section id="hero">
   <img class="hero-img" src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=1800"
        alt="Green crop fields under morning sunlight" onerror="handleImgError(this)" data-fallback-icon="🌅">
@@ -351,8 +325,6 @@
     </div>
   </div>
 </section>
-
-<!-- WHO WE ARE -->
 <section id="who">
   <div class="who-grid">
     <div class="reveal">
@@ -376,8 +348,6 @@
     </div>
   </div>
 </section>
-
-<!-- WHAT WE GROW -->
 <section id="products">
   <div class="section-head reveal">
     <div class="eyebrow" style="justify-content:center;">What We Grow</div>
@@ -385,7 +355,6 @@
     <p class="lede">Fresh vegetables, fruits, greens, grains and pulses — cultivated on our farms and made available
       to you according to the season.</p>
   </div>
-
   <div class="cat-filter">
     <button class="cat-btn active" data-filter="all">All</button>
     <button class="cat-btn" data-filter="vegetables">Vegetables</button>
@@ -395,9 +364,7 @@
     <button class="cat-btn" data-filter="pulses">Pulses</button>
     <button class="cat-btn" data-filter="seasonal">Seasonal Crops</button>
   </div>
-
   <div class="product-grid" id="productGrid">
-    <!-- Vegetables -->
     <div class="product-card" data-cat="vegetables seasonal">
       <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&q=80&w=500" alt="Fresh red tomatoes" onerror="handleImgError(this)" data-fallback-icon="🍅"></div>
       <div class="product-body"><div class="product-name">Tomato</div><div class="product-desc">Firm, ripe tomatoes harvested for daily kitchen use.</div><div class="product-season">Year-Round</div><a href="#contact" class="ask-btn">Ask For Supply</a></div>
@@ -446,8 +413,6 @@
       <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&q=80&w=500" alt="Assorted seasonal vegetables in a basket" onerror="handleImgError(this)" data-fallback-icon="🧺"></div>
       <div class="product-body"><div class="product-name">Other Seasonal Vegetables</div><div class="product-desc">Additional vegetables available depending on the current harvest.</div><div class="product-season">Varies</div><a href="#contact" class="ask-btn">Ask For Supply</a></div>
     </div>
-
-    <!-- Fruits -->
     <div class="product-card" data-cat="fruits summer seasonal">
       <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&q=80&w=500" alt="Fresh ripe mangoes" onerror="handleImgError(this)" data-fallback-icon="🥭"></div>
       <div class="product-body"><div class="product-name">Mango</div><div class="product-desc">Sweet, tree-ripened mangoes from our orchards.</div><div class="product-season">Summer</div><a href="#contact" class="ask-btn">Ask For Supply</a></div>
@@ -468,8 +433,6 @@
       <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?auto=format&fit=crop&q=80&w=500" alt="Fresh watermelon" onerror="handleImgError(this)" data-fallback-icon="🍉"></div>
       <div class="product-body"><div class="product-name">Watermelon</div><div class="product-desc">Juicy, sweet watermelons grown through the summer months.</div><div class="product-season">Summer</div><a href="#contact" class="ask-btn">Ask For Supply</a></div>
     </div>
-
-    <!-- Greens -->
     <div class="product-card" data-cat="greens monsoon seasonal">
       <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&q=80&w=500" alt="Fresh spinach leaves" onerror="handleImgError(this)" data-fallback-icon="🥬"></div>
       <div class="product-body"><div class="product-name">Spinach</div><div class="product-desc">Tender, dark green spinach leaves picked fresh.</div><div class="product-season">Monsoon</div><a href="#contact" class="ask-btn">Ask For Supply</a></div>
@@ -490,8 +453,6 @@
       <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1622206151226-18ca2c9d680b?auto=format&fit=crop&q=80&w=500" alt="Assorted fresh leafy greens" onerror="handleImgError(this)" data-fallback-icon="🥬"></div>
       <div class="product-body"><div class="product-name">Other Leafy Greens</div><div class="product-desc">Additional leafy greens available depending on the season.</div><div class="product-season">Varies</div><a href="#contact" class="ask-btn">Ask For Supply</a></div>
     </div>
-
-    <!-- Grains & Pulses -->
     <div class="product-card" data-cat="grains">
       <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=500" alt="Harvested rice grains" onerror="handleImgError(this)" data-fallback-icon="🌾"></div>
       <div class="product-body"><div class="product-name">Rice</div><div class="product-desc">Locally cultivated rice, harvested and sun-dried.</div><div class="product-season">Seasonal</div><a href="#contact" class="ask-btn">Ask For Supply</a></div>
@@ -518,8 +479,6 @@
     </div>
   </div>
 </section>
-
-<!-- PROCESS -->
 <section id="process" class="furrow-rows-light">
   <div class="section-head reveal">
     <div class="eyebrow" style="justify-content:center;">Farm To Supply</div>
@@ -537,8 +496,6 @@
     </div>
   </div>
 </section>
-
-<!-- QUALITY -->
 <section id="quality">
   <div class="section-head reveal">
     <div class="eyebrow" style="justify-content:center;">Quality</div>
@@ -553,8 +510,6 @@
     <div class="quality-card reveal"><div class="quality-icon">📅</div><div class="quality-title">Seasonal Produce</div><div class="quality-desc">We supply crops according to local growing seasons and availability.</div></div>
   </div>
 </section>
-
-<!-- FARMERS -->
 <section id="farmers">
   <div class="farmers-grid">
     <div class="reveal">
@@ -576,8 +531,6 @@
     </div>
   </div>
 </section>
-
-<!-- GALLERY -->
 <section id="gallery">
   <div class="section-head reveal">
     <div class="eyebrow" style="justify-content:center;">Farm Gallery</div>
@@ -595,8 +548,6 @@
     <div class="gallery-item g-wide reveal"><img src="https://images.unsplash.com/photo-1444927714506-8492d94b5ba0?auto=format&fit=crop&q=80&w=900" alt="Wide view of farm landscape" onerror="handleImgError(this)" data-fallback-icon="🌾"><div class="gallery-caption">15:30 — READY FOR SUPPLY</div></div>
   </div>
 </section>
-
-<!-- SEASONAL -->
 <section id="seasonal">
   <div class="section-head reveal">
     <div class="eyebrow" style="justify-content:center;">Seasonal Crops</div>
@@ -610,8 +561,6 @@
   </div>
   <p class="season-note">Availability depends on the current harvest and local growing conditions.</p>
 </section>
-
-<!-- WHO WE SUPPLY -->
 <section id="supply-to">
   <div class="section-head reveal">
     <div class="eyebrow" style="justify-content:center;">Who We Supply</div>
@@ -627,8 +576,6 @@
   </div>
   <div class="supply-cta"><a href="#contact" class="btn-wheat" style="background:var(--field-deep);color:var(--paper-soft);box-shadow:none;">Discuss Your Requirement →</a></div>
 </section>
-
-<!-- BULK SUPPLY -->
 <section id="bulk" class="furrow-rows-light">
   <div class="reveal" style="max-width:700px;margin:0 auto;">
     <div class="eyebrow" style="justify-content:center;">Bulk &amp; Regular Supply</div>
@@ -645,8 +592,6 @@
     </div>
   </div>
 </section>
-
-<!-- VALUES -->
 <section id="values">
   <div class="section-head reveal">
     <div class="eyebrow" style="justify-content:center;">Our Farming Values</div>
@@ -660,8 +605,6 @@
     <div class="value-card reveal"><div class="value-num">05</div><div class="value-title">Long-Term Relationships</div><div class="value-desc">Build reliable relationships with buyers and customers.</div></div>
   </div>
 </section>
-
-<!-- WHY WORK WITH US -->
 <section id="why">
   <div class="section-head reveal">
     <div class="eyebrow" style="justify-content:center;">Why Work With Us</div>
@@ -676,8 +619,6 @@
     <div class="why-card reveal"><div class="why-icon">👨‍🌾</div><div class="why-title">Farmer-Owned</div><div class="why-desc">The supply network is built around the farmers themselves.</div></div>
   </div>
 </section>
-
-<!-- STATS -->
 <section id="stats" style="background:var(--wheat);padding:3.5rem 4rem;">
   <div class="stats-row" style="max-width:1100px;margin:0 auto;">
     <div class="stat-box reveal" style="border-color:rgba(43,33,24,0.3);"><div class="stat-num" style="color:var(--soil-dark);">50+</div><div class="stat-label" style="color:var(--soil-dark);">Farmer Members</div></div>
@@ -686,8 +627,6 @@
     <div class="stat-box reveal" style="border-color:rgba(43,33,24,0.3);"><div class="stat-num" style="color:var(--soil-dark);">365</div><div class="stat-label" style="color:var(--soil-dark);">Days Of Farming</div></div>
   </div>
 </section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-grid">
     <div class="reveal">
@@ -712,8 +651,6 @@
     </div>
   </div>
 </section>
-
-<!-- FINAL CTA -->
 <section id="final-cta">
   <img class="final-img" src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=1800" alt="Farmland at golden hour" onerror="handleImgError(this)" data-fallback-icon="🌾">
   <div class="final-overlay"></div>
@@ -723,8 +660,6 @@
     <a href="tel:9876543210" class="btn-wheat">📞 Call Our Farmer Group →</a>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -750,7 +685,6 @@
   </div>
   <div class="footer-bottom">© 2026 — Farmer Group. Grown With Care. Supplied With Trust.</div>
 </footer>
-
 <script>
   // image fallback
   function handleImgError(img){
@@ -759,12 +693,10 @@
     const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='500' height='380'><rect width='100%' height='100%' fill='%23EAF1E3'/><text x='50%' y='50%' font-size='70' text-anchor='middle' dominant-baseline='middle'>${icon}</text></svg>`;
     img.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg).replace(/'/g,'%27');
   }
-
   // mobile nav
   function toggleNav(){ document.getElementById('nav-links').classList.toggle('open'); }
   window.addEventListener('resize', () => { if (window.innerWidth > 960) document.getElementById('nav-links').classList.remove('open'); });
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open')));
-
   // sticky nav shrink
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('main-nav');
@@ -777,13 +709,11 @@
       nav.classList.remove('scrolled');
     }
   });
-
   // scroll reveal
   const revealObs = new IntersectionObserver(entries => {
     entries.forEach((e,i) => { if (e.isIntersecting) { setTimeout(()=>e.target.classList.add('visible'), i*40); revealObs.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
   // product category filter
   const catButtons = document.querySelectorAll('.cat-btn');
   const productCards = document.querySelectorAll('.product-card');
@@ -798,7 +728,6 @@
       });
     });
   });
-
   // simple enquiry interaction (no backend — opens mail client with prefilled subject)
   function sendEnquiry(){
     const status = document.getElementById('enquiryStatus');

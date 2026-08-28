@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,14 +11,11 @@
 <meta id="og-description" property="og:description" content="">
 <meta property="og:type" content="website">
 <meta id="og-image" property="og:image" content="">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
-
 <script id="website-data" type="application/json">
 {
   "seo": {
@@ -461,7 +458,6 @@
   ]
 }
 </script>
-
 <style>
 :root{
   --primary:#0C4F5C;
@@ -481,7 +477,6 @@
   --radius-md: 14px;
   --radius-lg: 28px;
 }
-
 *,*::before,*::after{box-sizing:border-box; margin:0; padding:0;}
 html{scroll-behavior:smooth;}
 body{
@@ -518,16 +513,13 @@ h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; color:var(--second
 .btn-gold:hover{background:#b3925a;}
 .btn-light{background:var(--white); color:var(--secondary);}
 .btn-light:hover{background:var(--aqua);}
-
 /* reduced motion */
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
 }
-
 /* ===== Announcement ===== */
 .announcement{background:var(--secondary); color:var(--aqua); text-align:center; font-family:var(--font-ui);
   font-size:.78rem; letter-spacing:.06em; padding:9px 16px;}
-
 /* ===== Header ===== */
 header.site-header{
   position:sticky; top:0; z-index:200; background:rgba(247,245,239,.88); backdrop-filter:blur(14px);
@@ -553,7 +545,6 @@ nav.main-nav a.active{color:var(--primary);}
 .mobile-overlay{position:fixed; inset:0; background:rgba(16,33,38,.5); z-index:290; opacity:0; pointer-events:none; transition:.35s;}
 .mobile-overlay.open{opacity:1; pointer-events:auto;}
 .close-mobile{position:absolute; top:32px; right:32px; font-size:1.4rem; color:var(--secondary);}
-
 /* ===== Hero ===== */
 .hero{position:relative; padding:70px 0 90px; overflow:hidden;}
 .hero-bg-svg{position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none;}
@@ -574,7 +565,6 @@ nav.main-nav a.active{color:var(--primary);}
 .fc-2{bottom:12%; left:-14%; animation-delay:1.2s;}
 .fc-3{top:38%; right:-12%; animation-delay:.6s;}
 @keyframes floatCard{0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);}}
-
 /* dental bg motifs */
 .tooth-outline{fill:none; stroke:var(--primary); stroke-width:1.2; opacity:.08;}
 .tooth-outline.slow{animation:floatSlow 14s ease-in-out infinite;}
@@ -585,13 +575,11 @@ nav.main-nav a.active{color:var(--primary);}
 .dental-grid-bg{position:absolute; inset:0; opacity:.05;
   background-image:linear-gradient(var(--primary) 1px, transparent 1px), linear-gradient(90deg, var(--primary) 1px, transparent 1px);
   background-size:44px 44px;}
-
 /* ===== Trust strip ===== */
 .trust-strip{background:var(--white); padding:34px 0; border-top:1px solid rgba(12,79,92,.08); border-bottom:1px solid rgba(12,79,92,.08);}
 .trust-strip .container{display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px;}
 .trust-item{display:flex; align-items:center; gap:12px; font-family:var(--font-ui); font-weight:600; font-size:.86rem; color:var(--secondary);}
 .trust-item i{color:var(--gold); font-size:1.05rem;}
-
 /* ===== Doctor ===== */
 .doctor-section{background:var(--white);}
 .doctor-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:70px; align-items:center;}
@@ -609,13 +597,11 @@ nav.main-nav a.active{color:var(--primary);}
 .doctor-signature{margin-top:34px; padding-top:26px; border-top:1px solid rgba(12,79,92,.12);}
 .doctor-signature q{font-family:var(--font-accent); font-style:italic; font-size:1.5rem; color:var(--secondary); display:block;}
 .doctor-signature cite{display:block; margin-top:10px; font-family:var(--font-ui); font-style:normal; font-weight:700; color:var(--gold); font-size:.85rem;}
-
 /* Credentials */
 .credentials-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:50px;}
 .credential-card{background:var(--cream); border-radius:var(--radius-md); padding:26px 22px; border:1px solid rgba(12,79,92,.08);}
 .credential-card .label{font-family:var(--font-display); font-size:1.2rem; color:var(--primary);}
 .credential-card .detail{font-family:var(--font-ui); font-size:.78rem; color:#5c7370; margin-top:6px;}
-
 /* ===== Treatments ===== */
 .treatments-section{position:relative; background:var(--cream);}
 .treatment-controls{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; margin:44px 0 34px;}
@@ -637,7 +623,6 @@ nav.main-nav a.active{color:var(--primary);}
 .treatment-card p.desc{color:#5c7370; font-size:.92rem; margin-top:10px;}
 .treatment-meta{margin-top:16px; display:flex; flex-direction:column; gap:4px; font-family:var(--font-ui); font-size:.72rem; color:var(--gold); text-transform:uppercase; letter-spacing:.03em;}
 .treatment-card .learn-more{margin-top:18px; font-family:var(--font-ui); font-size:.78rem; font-weight:700; color:var(--secondary); display:inline-flex; align-items:center; gap:6px;}
-
 /* ===== Modal ===== */
 .modal-overlay{position:fixed; inset:0; background:rgba(16,33,38,.6); z-index:500; display:none; align-items:center; justify-content:center; padding:20px;}
 .modal-overlay.open{display:flex;}
@@ -654,7 +639,6 @@ nav.main-nav a.active{color:var(--primary);}
 .modal-faq-item .q{font-weight:700; color:var(--secondary); font-size:.92rem;}
 .modal-faq-item .a{color:#5c7370; font-size:.88rem; margin-top:6px;}
 .modal-cta{margin-top:28px;}
-
 /* ===== Expertise ===== */
 .expertise-section{background:var(--secondary); color:var(--cream);}
 .expertise-section .eyebrow{color:var(--aqua);}
@@ -666,7 +650,6 @@ nav.main-nav a.active{color:var(--primary);}
 .expertise-item .num{font-family:var(--font-display); font-size:2.2rem; color:var(--gold); opacity:.8;}
 .expertise-item h3{color:var(--cream); font-size:1.4rem;}
 .expertise-item p{color:#b9cdd0; font-size:.94rem;}
-
 /* ===== Technology ===== */
 .tech-section{background:var(--dark); position:relative; overflow:hidden; color:var(--cream);}
 .tech-section .eyebrow{color:var(--gold);}
@@ -680,7 +663,6 @@ nav.main-nav a.active{color:var(--primary);}
 .tech-card h3{color:var(--cream); font-size:1.1rem;}
 .tech-card p{color:#9ab3b0; font-size:.88rem; margin-top:8px;}
 .glow-dot{position:absolute; width:6px; height:6px; border-radius:50%; background:var(--aqua); box-shadow:0 0 12px 4px rgba(142,216,208,.5); opacity:.5;}
-
 /* ===== Results / Smile transformation ===== */
 .results-section{background:var(--cream);}
 .transform-slider{margin-top:50px;}
@@ -699,7 +681,6 @@ nav.main-nav a.active{color:var(--primary);}
 .transform-info .cat{font-family:var(--font-ui); font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:var(--gold);}
 .transform-info p{color:#5c7370; font-size:.9rem; margin-top:10px;}
 .swiper-button-next, .swiper-button-prev{color:var(--primary) !important; transform:scale(.7);}
-
 /* ===== Patient experience / journey ===== */
 .experience-section{background:var(--white);}
 .experience-steps{display:flex; justify-content:space-between; margin-top:50px; flex-wrap:wrap; gap:24px;}
@@ -707,7 +688,6 @@ nav.main-nav a.active{color:var(--primary);}
 .exp-step .circle{width:70px; height:70px; border-radius:50%; background:var(--cream); border:1.5px solid var(--aqua);
   display:flex; align-items:center; justify-content:center; margin:0 auto 14px; color:var(--primary); font-size:1.3rem;}
 .exp-step span{font-family:var(--font-ui); font-weight:700; font-size:.82rem; color:var(--secondary);}
-
 .journey-section{background:var(--cream);}
 .journey-timeline{position:relative; margin-top:60px; padding-left:40px; border-left:2px solid rgba(12,79,92,.15);}
 .journey-item{position:relative; padding-bottom:46px;}
@@ -716,7 +696,6 @@ nav.main-nav a.active{color:var(--primary);}
 .journey-item .step-num{font-family:var(--font-display); color:var(--primary); font-size:1.1rem;}
 .journey-item h3{font-size:1.2rem; margin-top:4px;}
 .journey-item p{color:#5c7370; font-size:.9rem; margin-top:6px; max-width:460px;}
-
 /* ===== Why choose ===== */
 .why-section{background:var(--white);}
 .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:50px;}
@@ -725,7 +704,6 @@ nav.main-nav a.active{color:var(--primary);}
 .why-card i{color:var(--primary); font-size:1.4rem; margin-bottom:16px;}
 .why-card h3{font-size:1.1rem;}
 .why-card p{color:#5c7370; font-size:.88rem; margin-top:8px;}
-
 /* ===== Hygiene ===== */
 .hygiene-section{background:var(--secondary); color:var(--cream); position:relative; overflow:hidden;}
 .hygiene-section .eyebrow{color:var(--aqua);}
@@ -741,7 +719,6 @@ nav.main-nav a.active{color:var(--primary);}
 .hygiene-card i{color:var(--gold); font-size:1.2rem; margin-bottom:14px;}
 .hygiene-card h3{color:var(--cream); font-size:1.05rem;}
 .hygiene-card p{color:#b9cdd0; font-size:.85rem; margin-top:8px;}
-
 /* ===== Clinic experience ===== */
 .clinic-section{background:var(--cream);}
 .clinic-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:50px;}
@@ -750,7 +727,6 @@ nav.main-nav a.active{color:var(--primary);}
 .clinic-photo:hover img{transform:scale(1.06);}
 .clinic-photo .cap{position:absolute; bottom:0; left:0; right:0; padding:16px; background:linear-gradient(to top, rgba(16,33,38,.75), transparent);
   color:var(--white); font-family:var(--font-ui); font-weight:600; font-size:.85rem;}
-
 /* ===== Gallery ===== */
 .gallery-section{background:var(--white);}
 .gallery-masonry{columns:4 220px; column-gap:18px; margin-top:50px;}
@@ -764,7 +740,6 @@ nav.main-nav a.active{color:var(--primary);}
 .lightbox.open{display:flex;}
 .lightbox img{max-width:90vw; max-height:85vh; border-radius:10px;}
 .lightbox-close{position:absolute; top:26px; right:32px; color:var(--white); font-size:1.6rem;}
-
 /* ===== Testimonials ===== */
 .testimonials-section{background:var(--cream);}
 .google-review-badge{display:inline-flex; align-items:center; gap:10px; background:var(--white); padding:12px 22px; border-radius:100px;
@@ -776,7 +751,6 @@ nav.main-nav a.active{color:var(--primary);}
 .testimonial-card .author{margin-top:20px; display:flex; justify-content:space-between; align-items:center;}
 .testimonial-card .author strong{font-family:var(--font-ui); font-size:.88rem;}
 .testimonial-card .author span{font-family:var(--font-ui); font-size:.7rem; color:var(--gold); text-transform:uppercase;}
-
 /* ===== FAQ ===== */
 .faq-section{background:var(--white);}
 .faq-list{margin-top:50px; max-width:820px; margin-left:auto; margin-right:auto;}
@@ -786,13 +760,11 @@ nav.main-nav a.active{color:var(--primary);}
 .faq-item.open .faq-question i{transform:rotate(45deg);}
 .faq-answer{max-height:0; overflow:hidden; transition:.35s ease;}
 .faq-answer p{padding:0 4px 24px; color:#5c7370; font-size:.92rem; max-width:640px;}
-
 /* ===== Appointment CTA ===== */
 .appointment-cta{background:var(--dark); color:var(--cream); position:relative; overflow:hidden; text-align:center;}
 .appointment-cta h2{color:var(--cream); font-size:clamp(2rem,4vw,3.2rem);}
 .appointment-cta .sub{font-family:var(--font-accent); font-style:italic; color:var(--aqua); font-size:1.3rem; margin-top:16px;}
 .appointment-cta .cta-row{display:flex; gap:18px; justify-content:center; margin-top:36px; flex-wrap:wrap;}
-
 /* Appointment form */
 .appointment-form-section{background:var(--white);}
 .form-wrap{max-width:760px; margin:50px auto 0; background:var(--cream); border-radius:var(--radius-lg); padding:44px; border:1px solid rgba(12,79,92,.08);}
@@ -807,7 +779,6 @@ nav.main-nav a.active{color:var(--primary);}
 .form-submit-row{margin-top:10px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
 .form-success{display:none; margin-top:20px; background:#dff2ea; color:#1f6a4c; padding:16px 20px; border-radius:var(--radius-sm); font-size:.9rem;}
 .form-success.show{display:block;}
-
 /* ===== Contact ===== */
 .contact-section{background:var(--secondary); color:var(--cream);}
 .contact-section .eyebrow{color:var(--aqua);}
@@ -824,7 +795,6 @@ nav.main-nav a.active{color:var(--primary);}
 .hours-table td:first-child{color:var(--cream); font-weight:600;}
 .map-frame{border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(247,245,239,.15); height:100%; min-height:360px;}
 .map-frame iframe{width:100%; height:100%; min-height:360px; border:0;}
-
 /* ===== Footer ===== */
 footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
 .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px;}
@@ -836,7 +806,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
 .footer-social{display:flex; gap:14px; margin-top:20px;}
 .footer-social a{width:36px; height:36px; border-radius:50%; background:rgba(247,245,239,.06); display:flex; align-items:center; justify-content:center; color:var(--aqua);}
 .footer-bottom{margin-top:50px; padding-top:26px; border-top:1px solid rgba(247,245,239,.08); text-align:center; font-size:.78rem;}
-
 /* ===== Floating call + mobile bottom bar ===== */
 .floating-call{position:fixed; bottom:100px; right:24px; width:56px; height:56px; border-radius:50%; background:var(--primary); color:var(--white);
   display:flex; align-items:center; justify-content:center; font-size:1.2rem; box-shadow:0 15px 35px -10px rgba(12,79,92,.6); z-index:150; animation:pulseCall 2.4s infinite;}
@@ -847,11 +816,9 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
 .mobile-bottom-bar a{display:flex; flex-direction:column; align-items:center; gap:4px; font-family:var(--font-ui); font-size:.62rem; color:var(--secondary); font-weight:700;}
 .mobile-bottom-bar a i{font-size:1.05rem; color:var(--primary);}
 .mobile-bottom-bar a.book i{color:var(--gold);}
-
 /* Custom cursor (desktop only) */
 .cursor-dot{position:fixed; width:8px; height:8px; border-radius:50%; background:var(--primary); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .2s, height .2s, background .2s;}
 .cursor-ring{position:fixed; width:34px; height:34px; border-radius:50%; border:1px solid var(--gold); pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:transform .12s ease-out, opacity .2s;}
-
 /* ===== Responsive ===== */
 @media (max-width:1024px){
   .hero-grid{grid-template-columns:1fr;}
@@ -891,17 +858,12 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
   .hero-ctas{flex-direction:column; align-items:stretch;}
   .hero-ctas .btn{justify-content:center;}
 }
-
 /* AOS override subtlety */
 [data-aos]{transition-property:transform, opacity;}
 </style>
 </head>
 <body>
-
-<!-- ===================== ANNOUNCEMENT ===================== -->
 <div class="announcement" id="announcement-bar"></div>
-
-<!-- ===================== HEADER ===================== -->
 <header class="site-header">
   <div class="container header-inner">
     <a href="#hero" class="logo">
@@ -922,8 +884,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
   <button class="close-mobile" id="close-mobile" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   <ul id="mobile-nav-links"></ul>
 </div>
-
-<!-- ===================== HERO ===================== -->
 <section class="hero" id="hero">
   <svg class="hero-bg-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
     <path class="tooth-outline slow" d="M600 90c-40 0-64 34-64 78 0 60 20 150 34 190 8 22 18 34 30 34s22-12 30-34c14-40 34-130 34-190 0-44-24-78-64-78z" transform="translate(-260,0) scale(1.4)"/>
@@ -950,13 +910,9 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     </div>
   </div>
 </section>
-
-<!-- ===================== TRUST STRIP ===================== -->
 <section class="trust-strip" id="trust">
   <div class="container" id="trust-strip-list"></div>
 </section>
-
-<!-- ===================== DOCTOR ===================== -->
 <section class="section-pad doctor-section" id="doctor">
   <div class="container">
     <div class="doctor-grid">
@@ -980,12 +936,9 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
       </div>
     </div>
     <div class="credentials-grid" id="credentials">
-      <!-- credentials cards -->
     </div>
   </div>
 </section>
-
-<!-- ===================== TREATMENTS ===================== -->
 <section class="section-pad treatments-section" id="treatments">
   <div class="container">
     <span class="eyebrow center" style="display:block;">What We Offer</span>
@@ -1001,8 +954,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="treatments-grid" id="treatments-grid"></div>
   </div>
 </section>
-
-<!-- ===================== SIGNATURE EXPERTISE ===================== -->
 <section class="section-pad expertise-section" id="expertise">
   <div class="container">
     <span class="eyebrow">Signature Expertise</span>
@@ -1010,8 +961,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="expertise-list" id="expertise-list"></div>
   </div>
 </section>
-
-<!-- ===================== TECHNOLOGY ===================== -->
 <section class="section-pad tech-section" id="technology">
   <div class="scan-lines"></div>
   <div class="container">
@@ -1021,8 +970,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="tech-grid" id="tech-grid"></div>
   </div>
 </section>
-
-<!-- ===================== RESULTS ===================== -->
 <section class="section-pad results-section" id="results">
   <div class="container">
     <span class="eyebrow center" style="display:block;">Real Journeys, Thoughtfully Documented</span>
@@ -1035,8 +982,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     </div>
   </div>
 </section>
-
-<!-- ===================== PATIENT EXPERIENCE ===================== -->
 <section class="section-pad experience-section" id="experience">
   <div class="container">
     <span class="eyebrow center" style="display:block;">Our Approach</span>
@@ -1045,8 +990,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="experience-steps" id="experience-steps"></div>
   </div>
 </section>
-
-<!-- ===================== PATIENT JOURNEY ===================== -->
 <section class="section-pad journey-section" id="journey">
   <div class="container">
     <span class="eyebrow">Step by Step</span>
@@ -1054,8 +997,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="journey-timeline" id="journey-timeline"></div>
   </div>
 </section>
-
-<!-- ===================== WHY CHOOSE US ===================== -->
 <section class="section-pad why-section" id="why-choose">
   <div class="container">
     <span class="eyebrow center" style="display:block;">Why Patients Choose Us</span>
@@ -1063,8 +1004,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="why-grid" id="why-grid"></div>
   </div>
 </section>
-
-<!-- ===================== HYGIENE ===================== -->
 <section class="section-pad hygiene-section" id="hygiene">
   <div class="container">
     <span class="eyebrow">Clinical Standards</span>
@@ -1080,8 +1019,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="hygiene-grid" id="hygiene-grid"></div>
   </div>
 </section>
-
-<!-- ===================== CLINIC EXPERIENCE ===================== -->
 <section class="section-pad clinic-section" id="clinic">
   <div class="container">
     <span class="eyebrow center" style="display:block;">Inside The Studio</span>
@@ -1089,8 +1026,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="clinic-grid" id="clinic-grid"></div>
   </div>
 </section>
-
-<!-- ===================== GALLERY ===================== -->
 <section class="section-pad gallery-section" id="gallery">
   <div class="container">
     <span class="eyebrow center" style="display:block;">Gallery</span>
@@ -1102,8 +1037,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
   <button class="lightbox-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
   <img id="lightbox-img" src="" alt="">
 </div>
-
-<!-- ===================== TESTIMONIALS ===================== -->
 <section class="section-pad testimonials-section" id="testimonials">
   <div class="container">
     <span class="eyebrow center" style="display:block;">Patient Reviews</span>
@@ -1116,8 +1049,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     </div>
   </div>
 </section>
-
-<!-- ===================== FAQ ===================== -->
 <section class="section-pad faq-section" id="faq">
   <div class="container">
     <span class="eyebrow center" style="display:block;">Questions</span>
@@ -1125,8 +1056,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="faq-list" id="faq-list"></div>
   </div>
 </section>
-
-<!-- ===================== APPOINTMENT CTA ===================== -->
 <section class="section-pad appointment-cta" id="appointment">
   <svg class="hero-bg-svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" style="opacity:.5;">
     <path id="smile-cta" class="smile-path" style="stroke:var(--aqua); opacity:.35;" d="M100 240 C 380 380, 820 380, 1100 220"/>
@@ -1141,8 +1070,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     </div>
   </div>
 </section>
-
-<!-- ===================== APPOINTMENT FORM ===================== -->
 <section class="section-pad appointment-form-section" id="appointment-form">
   <div class="container">
     <span class="eyebrow center" style="display:block;">Request an Appointment</span>
@@ -1190,8 +1117,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     </form>
   </div>
 </section>
-
-<!-- ===================== CONTACT ===================== -->
 <section class="section-pad contact-section" id="contact">
   <div class="container">
     <span class="eyebrow">Visit The Clinic</span>
@@ -1205,8 +1130,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     </div>
   </div>
 </section>
-
-<!-- ===================== FOOTER ===================== -->
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
@@ -1231,8 +1154,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <span id="footer-copyright"></span>
   </div>
 </footer>
-
-<!-- ===================== TREATMENT MODAL ===================== -->
 <div class="modal-overlay" id="treatment-modal-overlay">
   <div class="treatment-modal" id="treatment-modal">
     <button class="modal-close" id="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
@@ -1240,8 +1161,6 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <div class="modal-body" id="modal-body-content"></div>
   </div>
 </div>
-
-<!-- ===================== FLOATING CALL + MOBILE BAR ===================== -->
 <a href="#" class="floating-call" id="floating-call-btn" aria-label="Call the clinic"><i class="fa-solid fa-phone"></i></a>
 <div class="mobile-bottom-bar" id="mobile-bottom-bar">
   <div class="row">
@@ -1250,22 +1169,17 @@ footer.site-footer{background:var(--dark); color:#93a8a5; padding:70px 0 30px;}
     <a href="#appointment-form" class="book"><i class="fa-solid fa-calendar-check"></i>Book</a>
   </div>
 </div>
-
 <div class="cursor-dot" id="cursor-dot"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
-
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
-
 <script>
 (function(){
 "use strict";
-
 const data = JSON.parse(document.getElementById('website-data').textContent);
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const animationsOn = data.animations.enabled && !prefersReducedMotion;
-
 /* ---------------- Utility ---------------- */
 function esc(str){
   if(str === undefined || str === null) return '';
@@ -1287,7 +1201,6 @@ function defaultWhatsAppMessage(extra){
   msg += 'Please let me know the available appointment options.\n\nThank you.';
   return msg;
 }
-
 /* ---------------- SEO ---------------- */
 function applySEO(){
   document.title = data.seo.title;
@@ -1298,7 +1211,6 @@ function applySEO(){
   $('#og-description').attr('content', data.seo.description);
   $('#og-image').attr('content', data.seo.ogImage);
 }
-
 /* ---------------- Theme ---------------- */
 function applyTheme(){
   const t = data.theme;
@@ -1312,7 +1224,6 @@ function applyTheme(){
   root.setProperty('--gold', t.gold);
   root.setProperty('--anim-duration', data.animations.duration + 'ms');
 }
-
 /* ---------------- Section visibility ---------------- */
 function applySectionVisibility(){
   const map = {
@@ -1340,35 +1251,29 @@ function applySectionVisibility(){
     }
   });
 }
-
 /* ---------------- Announcement ---------------- */
 function renderAnnouncement(){
   $('#announcement-bar').text(data.announcement);
 }
-
 /* ---------------- Navigation / Header ---------------- */
 function renderNavigation(){
   $('#clinic-name-header').text(data.clinicName);
   $('#footer-clinic-name').text(data.clinicName);
   $('#logo-initials, #footer-logo-initials').text(data.logoInitials);
   $('#header-book-btn').text('Book Appointment');
-
   const navHtml = data.navigation.map(function(n){
     return '<li><a href="#'+n.target+'" data-target="'+n.target+'">'+esc(n.label)+'</a></li>';
   }).join('');
   $('#nav-links').html(navHtml);
-
   const mobileHtml = data.navigation.map(function(n){
     return '<li><a href="#'+n.target+'" data-target="'+n.target+'">'+esc(n.label)+'</a></li>';
   }).join('');
   $('#mobile-nav-links').html(mobileHtml);
-
   const footerNavHtml = data.navigation.map(function(n){
     return '<li><a href="#'+n.target+'">'+esc(n.label)+'</a></li>';
   }).join('');
   $('#footer-nav').html(footerNavHtml);
 }
-
 function initializeNavigation(){
   $('#hamburger-btn').on('click', function(){
     $('#mobile-menu').addClass('open');
@@ -1380,7 +1285,6 @@ function initializeNavigation(){
   }
   $('#close-mobile, #mobile-overlay').on('click', closeMobile);
   $('#mobile-nav-links a').on('click', closeMobile);
-
   $('a[href^="#"]').on('click', function(e){
     const target = $(this).attr('href');
     if(target.length > 1 && $(target).length){
@@ -1388,7 +1292,6 @@ function initializeNavigation(){
       $('html, body').animate({ scrollTop: $(target).offset().top - 70 }, 600);
     }
   });
-
   const navSections = data.navigation.map(function(n){ return n.target; });
   $(window).on('scroll', function(){
     let current = '';
@@ -1400,7 +1303,6 @@ function initializeNavigation(){
     if(current){ $('nav.main-nav a[data-target="'+current+'"]').addClass('active'); }
   });
 }
-
 /* ---------------- Hero ---------------- */
 function renderHero(){
   const h = data.hero;
@@ -1412,7 +1314,6 @@ function renderHero(){
   $('#hero-secondary-cta').text(h.secondaryCta);
   $('#hero-image').attr('src', h.image).attr('alt', data.doctor.name + ' portrait');
 }
-
 /* ---------------- Trust cards + strip ---------------- */
 function renderTrust(){
   const s = data.trustStats;
@@ -1429,13 +1330,11 @@ function renderTrust(){
       $(cardIds[i]).html(valueHtml);
     }
   }
-
   const stripHtml = data.trustStrip.map(function(t){
     return '<div class="trust-item"><i class="fa-solid '+t.icon+'"></i><span>'+esc(t.label)+'</span></div>';
   }).join('');
   $('#trust-strip-list').html(stripHtml);
 }
-
 function initializeCounters(){
   if(!data.animations.counters){
     $('.fc-value[data-count]').each(function(){
@@ -1473,7 +1372,6 @@ function initializeCounters(){
   $(window).on('scroll', runCounters);
   runCounters();
 }
-
 /* ---------------- Doctor ---------------- */
 function renderDoctor(){
   const d = data.doctor;
@@ -1484,18 +1382,15 @@ function renderDoctor(){
   $('#doctor-bio').text(d.bio);
   $('#doctor-quote').text(d.quote);
   $('#doctor-quote-cite').text('— ' + d.name);
-
   const membershipsHtml = d.memberships.map(function(m){
     return '<span class="membership-pill">'+esc(m)+'</span>';
   }).join('');
   $('#doctor-memberships').html(membershipsHtml);
-
   const credHtml = d.credentials.map(function(c){
     return '<div class="credential-card" data-aos="fade-up"><div class="label">'+esc(c.label)+'</div><div class="detail">'+esc(c.detail)+'</div></div>';
   }).join('');
   $('#credentials').html(credHtml);
 }
-
 /* ---------------- Treatments ---------------- */
 function treatmentCardHtml(t){
   return '<div class="treatment-card" data-category="'+esc(t.category)+'" data-name="'+esc(t.name.toLowerCase())+'" data-id="'+esc(t.id)+'" data-aos="fade-up">'+
@@ -1534,7 +1429,6 @@ function initializeTreatmentFilters(){
     });
   });
 }
-
 /* ---------------- Treatment Modal ---------------- */
 function openTreatmentModal(treatmentId){
   const t = data.treatments.find(function(x){ return x.id === treatmentId; });
@@ -1572,7 +1466,6 @@ function initializeTreatmentModal(){
   });
   $(document).on('keyup', function(e){ if(e.key === 'Escape'){ closeTreatmentModal(); closeLightbox(); } });
 }
-
 /* ---------------- Expertise ---------------- */
 function renderExpertise(){
   const html = data.expertise.map(function(e){
@@ -1580,7 +1473,6 @@ function renderExpertise(){
   }).join('');
   $('#expertise-list').html(html);
 }
-
 /* ---------------- Technology ---------------- */
 function renderTechnology(){
   const html = data.technology.map(function(t){
@@ -1597,7 +1489,6 @@ function renderTechnology(){
     }
   }
 }
-
 /* ---------------- Results / Transformations ---------------- */
 function renderResults(){
   const html = data.transformations.map(function(t, i){
@@ -1636,7 +1527,6 @@ function initializeBASliders(){
     $wrap.on('click', function(e){ setPos(e.clientX); });
   });
 }
-
 /* ---------------- Patient experience / journey ---------------- */
 function renderPatientExperience(){
   const html = data.patientExperienceSteps.map(function(s){
@@ -1650,7 +1540,6 @@ function renderPatientJourney(){
   }).join('');
   $('#journey-timeline').html(html);
 }
-
 /* ---------------- Why choose us ---------------- */
 function renderWhyChoose(){
   const html = data.whyChooseUs.map(function(w){
@@ -1658,7 +1547,6 @@ function renderWhyChoose(){
   }).join('');
   $('#why-grid').html(html);
 }
-
 /* ---------------- Hygiene ---------------- */
 function renderHygiene(){
   const html = data.hygiene.map(function(h){
@@ -1666,7 +1554,6 @@ function renderHygiene(){
   }).join('');
   $('#hygiene-grid').html(html);
 }
-
 /* ---------------- Clinic experience ---------------- */
 function renderClinic(){
   const html = data.clinicGallery.map(function(c){
@@ -1674,7 +1561,6 @@ function renderClinic(){
   }).join('');
   $('#clinic-grid').html(html);
 }
-
 /* ---------------- Gallery ---------------- */
 function renderGallery(){
   const html = data.gallery.map(function(g, i){
@@ -1692,7 +1578,6 @@ function initializeLightbox(){
   });
 }
 function closeLightbox(){ $('#lightbox').removeClass('open'); }
-
 /* ---------------- Testimonials ---------------- */
 function starString(n){
   let s = '';
@@ -1711,7 +1596,6 @@ function renderTestimonials(){
   const g = data.googleReview;
   $('#google-review-badge').html('<div class="google-review-badge"><span class="stars">'+starString(Math.round(g.rating))+'</span><span>'+g.rating+' · Based on '+g.count+'+ Reviews</span></div>');
 }
-
 /* ---------------- FAQ ---------------- */
 function renderFAQ(){
   const html = data.faqs.map(function(f, i){
@@ -1734,7 +1618,6 @@ function initializeFAQ(){
   });
   $('#faq-list').on('keyup', '.faq-question', function(e){ if(e.key === 'Enter' || e.key === ' '){ $(this).click(); } });
 }
-
 /* ---------------- Appointment CTA ---------------- */
 function renderAppointment(){
   const c = data.appointmentCta;
@@ -1745,11 +1628,9 @@ function renderAppointment(){
   const waMsg = defaultWhatsAppMessage({});
   const waLink = buildWhatsAppLink(data.contact.whatsapp, waMsg);
   $('#cta-whatsapp').text(c.secondaryCta).attr('href', waLink);
-
   const options = data.treatments.map(function(t){ return '<option value="'+esc(t.name)+'">'+esc(t.name)+'</option>'; }).join('');
   $('#f-treatment').html('<option value="General Consultation">General Consultation</option>' + options);
 }
-
 function initializeAppointmentForm(){
   function updateWhatsAppAlt(){
     const extra = {
@@ -1760,7 +1641,6 @@ function initializeAppointmentForm(){
   }
   $('#appointment-form-el input, #appointment-form-el select').on('input change', updateWhatsAppAlt);
   updateWhatsAppAlt();
-
   $('#appointment-form-el').on('submit', function(e){
     e.preventDefault();
     let valid = true;
@@ -1777,7 +1657,6 @@ function initializeAppointmentForm(){
     this.reset();
   });
 }
-
 /* ---------------- Contact ---------------- */
 function renderContact(){
   const c = data.contact;
@@ -1789,16 +1668,13 @@ function renderContact(){
     '<div class="contact-info-item"><i class="fa-solid fa-car"></i><div><h4>Parking</h4><p>'+esc(c.parking)+'</p></div></div>'+
     '<div class="contact-info-item"><i class="fa-solid fa-triangle-exclamation"></i><div><h4>Emergency Information</h4><p>'+esc(c.emergencyInfo)+'</p></div></div>';
   $('#contact-info-list').html(infoHtml);
-
   const hoursHtml = c.hours.map(function(h){
     return '<tr><td>'+esc(h.day)+'</td><td>'+esc(h.time)+'</td></tr>';
   }).join('');
   $('#hours-table').html(hoursHtml);
-
   if(c.mapUrl){
     $('#map-frame').html('<iframe src="'+c.mapUrl+'" loading="lazy" title="Clinic location map" referrerpolicy="no-referrer-when-downgrade"></iframe>');
   }
-
   // footer
   const footerTreatHtml = data.treatments.slice(0,6).map(function(t){ return '<li><a href="#treatments">'+esc(t.name)+'</a></li>'; }).join('');
   $('#footer-treatments').html(footerTreatHtml);
@@ -1810,13 +1686,11 @@ function renderContact(){
   const socialHtml = data.social.map(function(s){ return '<a href="'+s.url+'" aria-label="social link"><i class="'+s.icon+'"></i></a>'; }).join('');
   $('#footer-social').html(socialHtml);
   $('#footer-copyright').text('© '+ new Date().getFullYear() +' '+ data.clinicName +'. All rights reserved.');
-
   // buttons wired to contact
   $('#floating-call-btn, #mb-call').attr('href', 'tel:'+c.phone);
   const genericWaLink = buildWhatsAppLink(c.whatsapp, defaultWhatsAppMessage({}));
   $('#mb-whatsapp').attr('href', genericWaLink);
 }
-
 /* ---------------- Scroll animations / smile draw / cursor ---------------- */
 function initializeAnimations(){
   if(data.animations.enabled){
@@ -1833,7 +1707,6 @@ function initializeAnimations(){
   } else {
     document.querySelectorAll('.smile-path').forEach(function(p){ p.classList.add('drawn'); });
   }
-
   if(data.animations.customCursor && !('ontouchstart' in window) && !prefersReducedMotion){
     const dot = document.getElementById('cursor-dot');
     const ring = document.getElementById('cursor-ring');
@@ -1851,18 +1724,15 @@ function initializeAnimations(){
     if(dot) dot.style.display = 'none';
     if(ring) ring.style.display = 'none';
   }
-
   // header scroll shadow
   $(window).on('scroll', function(){
     if(window.scrollY > 12){ $('header.site-header').css('box-shadow','0 8px 30px rgba(12,79,92,.08)'); }
     else { $('header.site-header').css('box-shadow','none'); }
   });
 }
-
 function initializeWhatsApp(){
   // central place if additional wiring needed later; individual buttons wired in their render functions
 }
-
 function initializeSwipers(){
   new Swiper('.transform-slider', {
     slidesPerView: 1, spaceBetween: 30, loop: true,
@@ -1874,10 +1744,8 @@ function initializeSwipers(){
     navigation: { nextEl: '.testimonial-slider .swiper-button-next', prevEl: '.testimonial-slider .swiper-button-prev' }
   });
 }
-
 /* ---------------- Init ---------------- */
 function loadData(){ /* data already parsed above */ }
-
 $(function(){
   loadData();
   applySEO();
@@ -1902,7 +1770,6 @@ $(function(){
   renderFAQ();
   renderAppointment();
   renderContact();
-
   initializeTreatmentFilters();
   initializeTreatmentModal();
   initializeNavigation();
@@ -1912,13 +1779,11 @@ $(function(){
   initializeFAQ();
   initializeLightbox();
   initializeAppointmentForm();
-
   setTimeout(function(){
     initializeBASliders();
     initializeSwipers();
   }, 60);
 });
-
 })();
 </script>
 </body>

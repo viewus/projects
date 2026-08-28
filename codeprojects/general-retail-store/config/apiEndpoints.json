@@ -1,0 +1,20 @@
+{
+  "_note": "The ONLY place outbound request URLs are configured. assets/js/api.js reads this — no other file should contain a URL. This site is fully static, so these are expected to point at a form service (Formspree, Netlify Forms, a Google Apps Script web app, etc.).",
+
+  "_placeholderNote": "While a url still contains 'TODO-replace-with-real-endpoint', api.js logs the payload to the console and resolves as if the request succeeded, so the success flow stays demonstrable. Set a real URL to go live — no code change needed.",
+
+  "contactForm": {
+    "url": "https://TODO-replace-with-real-endpoint.example/contact",
+    "method": "POST"
+  },
+
+  "newsletter": {
+    "url": "https://TODO-replace-with-real-endpoint.example/subscribe",
+    "method": "POST"
+  },
+
+  "bulkEnquiry": {
+    "url": "https://TODO-replace-with-real-endpoint.example/bulk",
+    "method": "POST"
+  }
+}

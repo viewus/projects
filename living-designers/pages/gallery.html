@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery — Artisano Premium Custom Furniture</title>
   <meta name="description" content="Browse the Artisano photo gallery — close-up views of handcrafted sofas, wooden tables, designer boards and interior woodwork projects." />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/main.min.js" defer></script>
 </head>
 <body>
-
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container">
       <a href="../index.html" class="nav-logo">Artisan<span>o</span></a>
@@ -26,8 +24,6 @@
       <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
-  <!-- PAGE HERO -->
   <section class="page-hero gallery-hero" aria-label="Gallery hero">
     <div class="container page-hero-content">
       <span class="section-label">Visual Showcase</span>
@@ -39,8 +35,6 @@
       </nav>
     </div>
   </section>
-
-  <!-- GALLERY -->
   <section class="gallery-page" aria-labelledby="gallery-heading">
     <div class="container">
       <div class="section-head text-center reveal" style="margin-bottom:3rem">
@@ -48,95 +42,74 @@
         <h2 id="gallery-heading" class="section-title">Craftsmanship Up Close</h2>
         <p class="section-subtitle">Click any image to view it in full detail. Every grain, joint and finish tells a story.</p>
       </div>
-
       <div class="gallery-masonry" id="galleryGrid" role="list">
-
         <div class="gallery-item reveal" role="listitem">
           <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=85" alt="Premium sofa" loading="lazy" />
           <div class="gallery-item-caption"><span>Heritage Sofa</span></div>
         </div>
-
         <div class="gallery-item reveal delay-1" role="listitem">
           <img src="https://images.unsplash.com/photo-1549187774-b4e9b0445b41?w=800&q=85" alt="Live edge dining table" loading="lazy" />
           <div class="gallery-item-caption"><span>Live-Edge Table</span></div>
         </div>
-
         <div class="gallery-item reveal delay-2" role="listitem">
           <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=85" alt="Luxury interior" loading="lazy" />
           <div class="gallery-item-caption"><span>Luxury Interior</span></div>
         </div>
-
         <div class="gallery-item reveal" role="listitem">
           <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=85" alt="Wooden board panel" loading="lazy" />
           <div class="gallery-item-caption"><span>Designer Board</span></div>
         </div>
-
         <div class="gallery-item reveal delay-1" role="listitem">
           <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=85" alt="Office interior" loading="lazy" />
           <div class="gallery-item-caption"><span>Office Fit-Out</span></div>
         </div>
-
         <div class="gallery-item reveal delay-2" role="listitem">
           <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=85" alt="Sectional sofa" loading="lazy" />
           <div class="gallery-item-caption"><span>Sectional Sofa</span></div>
         </div>
-
         <div class="gallery-item reveal" role="listitem">
           <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&q=85" alt="Craftsman at work" loading="lazy" />
           <div class="gallery-item-caption"><span>The Craft</span></div>
         </div>
-
         <div class="gallery-item reveal delay-1" role="listitem">
           <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&q=85" alt="Wood detail" loading="lazy" />
           <div class="gallery-item-caption"><span>Wood Grain Detail</span></div>
         </div>
-
         <div class="gallery-item reveal delay-2" role="listitem">
           <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=85" alt="Bedroom furniture" loading="lazy" />
           <div class="gallery-item-caption"><span>Bedroom Suite</span></div>
         </div>
-
         <div class="gallery-item reveal" role="listitem">
           <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=85" alt="Chesterfield sofa" loading="lazy" />
           <div class="gallery-item-caption"><span>Chesterfield</span></div>
         </div>
-
         <div class="gallery-item reveal delay-1" role="listitem">
           <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=85" alt="Dining space" loading="lazy" />
           <div class="gallery-item-caption"><span>Dining Space</span></div>
         </div>
-
         <div class="gallery-item reveal delay-2" role="listitem">
           <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85" alt="Workshop" loading="lazy" />
           <div class="gallery-item-caption"><span>Our Workshop</span></div>
         </div>
-
         <div class="gallery-item reveal" role="listitem">
           <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?w=800&q=85" alt="Wood staining" loading="lazy" />
           <div class="gallery-item-caption"><span>Finishing Process</span></div>
         </div>
-
         <div class="gallery-item reveal delay-1" role="listitem">
           <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=85" alt="Joinery" loading="lazy" />
           <div class="gallery-item-caption"><span>Master Joinery</span></div>
         </div>
-
         <div class="gallery-item reveal delay-2" role="listitem">
           <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=85" alt="Consultation" loading="lazy" />
           <div class="gallery-item-caption"><span>Design Process</span></div>
         </div>
-
       </div>
     </div>
   </section>
-
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
     <img id="lightboxImg" src="" alt="Gallery image enlarged" />
   </div>
-
-  <!-- CTA -->
   <section class="cta-banner">
     <div class="container">
       <span class="section-label reveal">Ready to Commission?</span>
@@ -147,8 +120,6 @@
       </div>
     </div>
   </section>
-
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -197,6 +168,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>

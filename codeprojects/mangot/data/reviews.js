@@ -1,0 +1,81 @@
+﻿// data/reviews.js — Verified Testimonials from Global Produce Importers & Wholesalers
+const REVIEWS = [
+  {
+    id: 1,
+    name: 'Marcus Vance',
+    role: 'Import Director',
+    company: 'London Fresh Produce Ltd',
+    location: 'London, United Kingdom',
+    flag: '🇬🇧',
+    consignment: 'Air Freight · Alphonso & Kesar',
+    avatar: 'https://i.pravatar.cc/300?u=31',
+    rating: 5,
+    highlight: '19.5° Average Brix & Flawless Cold-Chain',
+    text: 'Mangot has been our primary Alphonso and Kesar mango supplier for three consecutive seasons. The fruit arrives in pristine condition with uniform golden color, exceptional sweetness, and complete phytosanitary documentation.'
+  },
+  {
+    id: 2,
+    name: 'Elena Rostova',
+    role: 'Procurement Lead',
+    company: 'EuroFruit Wholesale B.V.',
+    location: 'Rotterdam Port, Netherlands',
+    flag: '🇳🇱',
+    consignment: 'Reefer Container · Tommy Atkins & Pulp',
+    avatar: 'https://i.pravatar.cc/300?u=13',
+    rating: 5,
+    highlight: 'Seamless European Customs Clearance',
+    text: 'Finding reliable export partners who strictly adhere to EU maximum residue limits and packaging standards is rare. Mangot’s palletized shipments and prompt phytosanitary certs make European clearance effortless.'
+  },
+  {
+    id: 3,
+    name: 'Tariq Al-Mansoor',
+    role: 'Managing Director',
+    company: 'Gulf Tropical Distribution',
+    location: 'Dubai, United Arab Emirates',
+    flag: '🇦🇪',
+    consignment: 'Scheduled Air Cargo · GI Ratnagiri Alphonso',
+    avatar: 'https://i.pravatar.cc/300?u=12',
+    rating: 5,
+    highlight: 'Unmatched Terroir Aroma & Saffron Hue',
+    text: 'The sweetness and authentic aroma of their Ratnagiri Alphonso mangoes is unmatched in the Middle East. Our luxury supermarket clients request Mangot export cartons by name every harvest season.'
+  },
+  {
+    id: 4,
+    name: 'Devraj Patel',
+    role: 'Head of Sourcing',
+    company: 'Asian Gourmet Foods UK',
+    location: 'Birmingham, United Kingdom',
+    flag: '🇬🇧',
+    consignment: 'Weekly Pallets · Banganapalli & Kesar',
+    avatar: 'https://i.pravatar.cc/300?u=21',
+    rating: 5,
+    highlight: '100% Tree-Ripened Maturity Guarantee',
+    text: 'From the initial harvest pre-booking to weekly refrigerated dispatches into London Heathrow and Birmingham, Mangot provides complete batch traceability and unmatched fruit quality.'
+  },
+  {
+    id: 5,
+    name: 'Jean-Luc Moreau',
+    role: 'Category Manager (Tropical)',
+    company: 'Marché International Rungis',
+    location: 'Paris, France',
+    flag: '🇫🇷',
+    consignment: 'Air Express · Organic Honey Ataulfo',
+    avatar: 'https://i.pravatar.cc/300?u=45',
+    rating: 5,
+    highlight: 'Zero-Fibre Gourmet Grade Perfection',
+    text: 'Our high-end Parisian culinary accounts demand fiber-free, buttery textured mangoes. Mangot’s Honey Ataulfo consignments have consistently received five-star ratings from Michelin-starred chefs.'
+  },
+  {
+    id: 6,
+    name: 'Henrik Lindqvist',
+    role: 'Supply Chain VP',
+    company: 'Nordic Fruit Logistics',
+    location: 'Gothenburg, Sweden',
+    flag: '🇸🇪',
+    consignment: 'Aseptic Drums · Alphonso Puree',
+    avatar: 'https://i.pravatar.cc/300?u=68',
+    rating: 5,
+    highlight: '28° Brix Aseptic Industrial Quality',
+    text: 'We procure over 100 metric tons of mango puree annually for Scandinavian beverage manufacturers. Mangot’s 215kg aseptic drums provide consistent brix and sterile packaging year after year.'
+  }
+];

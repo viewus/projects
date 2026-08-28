@@ -1,0 +1,202 @@
+﻿/* assets/css/footer.css — Luxury Footer with Subtle Organic Grass Silhouette & Mango Tree Art */
+
+footer {
+  position: relative;
+  background-color: #240c03;
+  background-image: 
+    radial-gradient(circle at 85% 90%, rgba(255, 159, 28, 0.2) 0%, transparent 60%),
+    linear-gradient(150deg, #361405 0%, #1a0802 50%, #0c0301 100%);
+  color: var(--white);
+  padding: 5rem 4rem 2.4rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Very Soft, Delicate Film Grain Texture (Low Opacity) */
+.footer-grain-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.07;
+  mix-blend-mode: color-dodge;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* Subtle Organic Grass & Meadow Silhouette at Footer Base (Low Opacity) */
+.footer-grass-decor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath fill='%23ffc93c' d='M0,120 L0,85 C15,80 25,60 30,85 C45,70 55,45 60,90 C75,65 85,50 90,85 C105,70 120,40 125,95 C140,60 150,55 155,90 C170,75 180,35 185,92 C200,65 215,50 220,88 C235,70 245,45 250,90 C265,60 275,55 280,85 C295,70 310,40 315,95 C330,65 340,50 345,90 C360,75 375,35 380,92 C395,65 410,50 415,88 C430,70 440,45 445,90 C460,60 470,55 475,85 C490,70 505,40 510,95 C525,65 535,50 540,90 C555,75 570,35 575,92 C590,65 605,50 610,88 C625,70 635,45 640,90 C655,60 665,55 670,85 C685,70 700,40 705,95 C720,65 730,50 735,90 C750,75 765,35 770,92 C785,65 800,50 805,88 C820,70 830,45 835,90 C850,60 860,55 865,85 C880,70 895,40 900,95 C915,65 925,50 930,90 C945,75 960,35 965,92 C980,65 995,50 1000,88 C1015,70 1025,45 1030,90 C1045,60 1055,55 1060,85 C1075,70 1090,40 1095,95 C1110,65 1120,50 1125,90 C1140,75 1155,35 1160,92 C1175,65 1190,50 1200,88 L1200,120 Z'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 600px 80px;
+  background-position: bottom left;
+}
+
+/* Ambient Mango Gold Radial Glow */
+footer::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 159, 28, 0.22) 0%, rgba(255, 201, 60, 0.06) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(45px);
+}
+
+/* Botanical Mango Tree Illustration at Bottom Right Edge */
+.footer-tree-art {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  width: 320px;
+  height: 340px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.22;
+  background-image: url('https://images.unsplash.com/photo-1605027990121-cbae9e0642df?auto=format&fit=crop&q=80&w=600');
+  background-size: cover;
+  background-position: center;
+  mask-image: radial-gradient(circle at 75% 75%, black 45%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at 75% 75%, black 45%, transparent 75%);
+  filter: saturate(1.45) contrast(1.2);
+}
+
+.footer-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 201, 60, 0.18);
+}
+
+.f-logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--white);
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-brand p {
+  font-size: 0.88rem;
+  color: rgba(255, 247, 234, 0.75);
+  line-height: 1.75;
+  max-width: 360px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.f-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 201, 60, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.25s ease;
+}
+
+.f-social-btn:hover {
+  background: linear-gradient(135deg, var(--mango-gold), var(--mango-bright));
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(255, 159, 28, 0.35);
+}
+
+.footer-col h4 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--mango-gold);
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-col a {
+  font-size: 0.88rem;
+  color: rgba(255, 247, 234, 0.75);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.footer-col a:hover {
+  color: var(--mango-gold);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: rgba(255, 247, 234, 0.55);
+}
+
+@media (max-width: 960px) {
+  footer {
+    padding: 3.5rem 1.5rem 1.5rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .footer-tree-art {
+    width: 220px;
+    height: 240px;
+    opacity: 0.16;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

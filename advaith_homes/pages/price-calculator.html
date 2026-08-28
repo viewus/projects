@@ -1,19 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Suite — Advaith Homes</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/price-calculator.css">
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link rel="stylesheet" href="../css/price-calculator.min.css">
 </head>
 <body data-page="price-calculator">
     <div id="nav-placeholder"></div>
-
     <section class="calc-suite">
         <div class="container">
             <div class="calc-grid-main">
-                <!-- Sidebar Navigation -->
                 <aside class="calc-nav reveal">
                     <div class="calc-nav__title">Financial Suite</div>
                     <div class="calc-nav__item active" data-tool="mortgage">
@@ -32,18 +30,13 @@
                         <span class="calc-nav__icon">🏦</span>
                         <span>Affordability Check</span>
                     </div>
-                    
                     <div style="margin-top: 30px; padding: 20px; background: var(--bg-alt); border-radius: 12px;">
                         <div style="font-weight: 700; color: var(--slate-900); font-size: 0.9rem; margin-bottom: 8px;">Need exact numbers?</div>
                         <p style="font-size: 0.8rem; line-height: 1.4; margin-bottom: 12px;">Our experts provide verified valuations and exact fee structures for your specific purchase.</p>
                         <a href="../free-consultation.html" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;">Expert Consultation</a>
                     </div>
                 </aside>
-
-                <!-- Tool Area -->
                 <main class="calc-card reveal reveal-delay-1">
-                    
-                    <!-- 1. Mortgage Tool -->
                     <div class="tool-view active" id="tool-mortgage">
                         <div class="calc-header">
                             <h2>Mortgage Calculator</h2>
@@ -96,8 +89,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- 2. SDLT Tool -->
                     <div class="tool-view" id="tool-sdlt">
                         <div class="calc-header">
                             <h2>Stamp Duty (SDLT)</h2>
@@ -133,8 +124,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- 3. Total Cost Tool -->
                     <div class="tool-view" id="tool-total">
                         <div class="calc-header">
                             <h2>Total Moving Costs</h2>
@@ -172,8 +161,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- 4. Affordability Tool -->
                     <div class="tool-view" id="tool-afford">
                         <div class="calc-header">
                             <h2>Affordability Check</h2>
@@ -206,31 +193,26 @@
                             </div>
                         </div>
                     </div>
-
                 </main>
             </div>
         </div>
     </section>
-
     <div id="footer-placeholder"></div>
-    <script src="../js/components.js"></script>
+    <script src="../js/components.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // ── Sidebar Logic ─────────────────────────
             const navItems = document.querySelectorAll('.calc-nav__item');
             const toolViews = document.querySelectorAll('.tool-view');
-
             navItems.forEach(item => {
                 item.addEventListener('click', () => {
                     navItems.forEach(i => i.classList.remove('active'));
                     toolViews.forEach(v => v.classList.remove('active'));
-                    
                     item.classList.add('active');
                     const tool = item.dataset.tool;
                     document.getElementById('tool-' + tool).classList.add('active');
                 });
             });
-
             // ── Input Filtering (Strictly Numbers) ─────
             const numericInputs = document.querySelectorAll('input[type="number"]');
             numericInputs.forEach(input => {
@@ -244,12 +226,10 @@
                     if (input.value < 0) input.value = 0;
                 });
             });
-
             // ── Calculation Logic ─────────────────────
             function format(num) {
                 return '£' + Math.round(num).toLocaleString();
             }
-
             function getSDLT(price, type) {
                 let tax = 0;
                 if (type === 'investor') {
@@ -265,37 +245,31 @@
                 }
                 return Math.max(0, tax);
             }
-
             // 1. Mortgage Logic
             const mPrice = document.getElementById('m-price');
             const mPriceS = document.getElementById('m-price-s');
             const mDeposit = document.getElementById('m-deposit');
             const mDepositS = document.getElementById('m-deposit-s');
             const mRate = document.getElementById('m-rate');
-
             function updateMortgage() {
                 const price = parseFloat(mPrice.value);
                 const depPerc = parseFloat(mDepositS.value);
                 const depAmt = price * (depPerc / 100);
                 mDeposit.value = Math.round(depAmt);
                 document.getElementById('m-dep-perc').innerText = depPerc + '%';
-                
                 const loan = price - depAmt;
                 const r = (parseFloat(mRate.value) / 100) / 12;
                 const n = 25 * 12;
                 const monthly = loan * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-                
                 document.getElementById('m-res-monthly').innerText = format(monthly);
                 document.getElementById('m-res-total').innerText = format(monthly * n);
                 document.getElementById('m-res-interest').innerText = format((monthly * n) - loan);
             }
-
             mPriceS.addEventListener('input', (e) => { mPrice.value = e.target.value; updateMortgage(); });
             mPrice.addEventListener('input', (e) => { mPriceS.value = e.target.value; updateMortgage(); });
             mDepositS.addEventListener('input', updateMortgage);
             mRate.addEventListener('input', updateMortgage);
             updateMortgage();
-
             // 2. SDLT Logic
             const sPrice = document.getElementById('s-price');
             const sType = document.getElementById('s-type');
@@ -307,7 +281,6 @@
             sPrice.addEventListener('input', updateSDLT);
             sType.addEventListener('change', updateSDLT);
             updateSDLT();
-
             // 3. Total Cost Logic
             const tPrice = document.getElementById('t-price');
             const tLegal = document.getElementById('t-legal');
@@ -317,7 +290,6 @@
                 const sdlt = getSDLT(price, 'next');
                 const dep = price * 0.10;
                 const total = dep + sdlt + parseFloat(tLegal.value) + parseFloat(tSurvey.value);
-                
                 document.getElementById('t-res-val').innerText = format(total);
                 document.getElementById('t-res-dep').innerText = format(dep);
                 document.getElementById('t-res-sdlt').innerText = format(sdlt);
@@ -325,7 +297,6 @@
             }
             [tPrice, tLegal, tSurvey].forEach(el => el.addEventListener('input', updateTotal));
             updateTotal();
-
             // 4. Affordability Logic
             const aInc1 = document.getElementById('a-inc1');
             const aInc2 = document.getElementById('a-inc2');

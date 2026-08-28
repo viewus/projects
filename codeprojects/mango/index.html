@@ -1,0 +1,2051 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Golden Orchard — Premium Indian Mango Exporters</title>
+<meta name="description" content="The Golden Orchard grows, prepares and exports premium Indian mangoes from orchard to markets around the world. Established 1958.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="The Golden Orchard — Premium Indian Mango Exporters">
+<meta property="og:description" content="Grown in Indian soil. Sent to the world. Premium mangoes, carefully grown, naturally ripened and prepared for tables across the world.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=1200">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE GOLDEN ORCHARD — full stylesheet
+   ============================================================ */
+:root{
+  --mango:#D89024;
+  --mango-light:#E8B24E;
+  --deep-mango:#A96318;
+
+  --forest:#263C2D;
+  --deep-forest:#17271D;
+
+  --cream:#EFE4CA;
+  --paper:#F4EBD8;
+  --old-paper:#DCCBA7;
+
+  --brown:#63452D;
+  --dark-brown:#33251C;
+
+  --brass:#B08A45;
+  --aged-gold:#C39A52;
+
+  --ink:#29251F;
+
+  --faded-red:#8A493B;
+  --muted-green:#68735A;
+
+  --display: 'Playfair Display', serif;
+  --serif: 'Cormorant Garamond', serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --hand: 'Caveat', cursive;
+
+  --ease: cubic-bezier(.25,.7,.25,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  overflow-x:hidden;
+  position:relative;
+  cursor:none;
+}
+body.touch{cursor:auto;}
+
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;background:none;border:none;cursor:pointer;color:inherit;}
+input,textarea,select{font-family:inherit;}
+ul{list-style:none;}
+
+:focus-visible{outline:2px solid var(--mango); outline-offset:3px;}
+
+/* ---------- global paper / grain texture ---------- */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:9000;
+  pointer-events:none;
+  opacity:.10;
+  mix-blend-mode:multiply;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,.6) 0, transparent 1px),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,.5) 0, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(0,0,0,.5) 0, transparent 1px),
+    radial-gradient(circle at 85% 15%, rgba(0,0,0,.4) 0, transparent 1px),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.04) 0px, transparent 1px, transparent 2px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.03) 0px, transparent 2px, transparent 4px);
+  background-size:3px 3px, 5px 5px, 4px 4px, 6px 6px, 100% 100%, 100% 100%;
+  animation:grainShift 8s steps(6) infinite;
+}
+@keyframes grainShift{
+  0%{transform:translate(0,0);}
+  20%{transform:translate(-1%,1%);}
+  40%{transform:translate(1%,-1%);}
+  60%{transform:translate(-1%,-1%);}
+  80%{transform:translate(1%,1%);}
+  100%{transform:translate(0,0);}
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:8999;
+  pointer-events:none;
+  background:radial-gradient(ellipse at center, transparent 45%, rgba(23,39,29,.22) 100%);
+  box-shadow:inset 0 0 140px rgba(41,37,31,.35);
+}
+
+/* torn paper divider used between colour bands */
+.torn-divider{ position:relative; height:32px; width:100%; margin-top:-32px; margin-bottom:0; z-index:2;
+  clip-path:polygon(0% 100%,1.6% 35%,3.4% 82%,5.1% 15%,7% 68%,8.8% 8%,10.6% 78%,12.5% 25%,14.3% 92%,16.1% 12%,18% 70%,19.8% 5%,21.6% 88%,23.5% 30%,25.3% 95%,27.1% 18%,29% 75%,30.8% 8%,32.6% 85%,34.5% 22%,36.3% 90%,38.1% 15%,40% 72%,41.8% 5%,43.6% 82%,45.5% 28%,47.3% 95%,49.1% 12%,51% 70%,52.8% 8%,54.6% 88%,56.5% 20%,58.3% 92%,60.1% 15%,62% 75%,63.8% 5%,65.6% 85%,67.5% 25%,69.3% 90%,71.1% 12%,73% 70%,74.8% 8%,76.6% 82%,78.5% 30%,80.3% 95%,82.1% 18%,84% 72%,85.8% 5%,87.6% 88%,89.5% 22%,91.3% 90%,93.1% 15%,95% 78%,96.8% 8%,98.6% 85%,100% 100%);
+}
+.torn-divider.tc-cream{background:var(--cream);}
+.torn-divider.tc-paper{background:var(--paper);}
+.torn-divider.tc-old{background:var(--old-paper);}
+.torn-divider.tc-forest{background:var(--deep-forest);}
+.torn-divider.tc-forest2{background:var(--forest);}
+.torn-divider.flip{transform:scaleY(-1); margin-bottom:0; margin-top:-1px;}
+
+.section-grain{position:absolute;inset:0;pointer-events:none;opacity:.12;mix-blend-mode:overlay;
+  background-image:radial-gradient(circle at 15% 25%, rgba(255,255,255,.5) 0, transparent 1px),
+    radial-gradient(circle at 80% 70%, rgba(0,0,0,.5) 0, transparent 1px);
+  background-size:3px 3px;
+}
+
+/* ---------- custom cursor ---------- */
+.cursor{
+  position:fixed; top:0; left:0; width:14px; height:14px; border-radius:50%;
+  background:var(--brass); pointer-events:none; z-index:99999; transform:translate(-50%,-50%);
+  transition:width .25s var(--ease), height .25s var(--ease), background .25s var(--ease);
+  mix-blend-mode:normal;
+}
+.cursor-label{
+  position:fixed; top:0; left:0; pointer-events:none; z-index:99999;
+  font-family:var(--display); font-size:11px; letter-spacing:.14em; color:var(--paper);
+  background:var(--deep-forest); padding:6px 12px; border-radius:20px; opacity:0; transform:translate(-50%,-50%) scale(.8);
+  transition:opacity .2s ease, transform .2s ease; white-space:nowrap;
+}
+.cursor-label.active{opacity:1; transform:translate(-50%,26px) scale(1);}
+.trail{position:fixed; top:0; left:0; width:6px; height:6px; border-radius:50%; background:var(--brass);
+  pointer-events:none; z-index:99998; opacity:.35; transform:translate(-50%,-50%);}
+@media (hover:none), (pointer:coarse){
+  .cursor,.cursor-label,.trail{display:none;}
+  body{cursor:auto;}
+}
+
+/* ---------- loading screen ---------- */
+#loader{
+  position:fixed; inset:0; background:var(--deep-forest); z-index:100000;
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  transition:transform .9s var(--ease), opacity .6s ease .3s;
+}
+#loader.hide{transform:translateY(-100%); opacity:0; pointer-events:none;}
+.loader-seal{
+  width:76px; height:76px; margin-bottom:22px; opacity:.9;
+  animation:seal-breathe 3s ease-in-out infinite;
+}
+@keyframes seal-breathe{0%,100%{opacity:.7;}50%{opacity:1;}}
+.loader-title{
+  font-family:var(--display); color:var(--cream); font-size:clamp(24px,4vw,38px);
+  letter-spacing:.3em; text-transform:uppercase; text-align:center; line-height:1.5;
+}
+.loader-sub{
+  font-family:var(--sans); color:var(--brass); font-size:11px; letter-spacing:.4em;
+  margin-top:10px; text-transform:uppercase;
+}
+.loader-bar{
+  width:220px; height:1px; background:rgba(176,138,69,.3); margin-top:34px; position:relative; overflow:hidden;
+}
+.loader-bar::after{
+  content:""; position:absolute; left:0; top:0; height:100%; width:0%; background:var(--brass);
+  animation:loadfill 1.4s var(--ease) forwards;
+}
+@keyframes loadfill{to{width:100%;}}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.eyebrow{
+  font-family:var(--sans); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--deep-mango); display:inline-block; margin-bottom:16px;
+}
+.eyebrow::before{content:"— "; color:var(--brass);}
+h1,h2,h3,h4{font-family:var(--display); font-weight:600; line-height:1.08; color:var(--ink);}
+.section-title{font-size:clamp(30px,4.6vw,58px); letter-spacing:-.01em;}
+.section-title em{font-style:italic; color:var(--deep-mango); font-weight:500;}
+.lede{font-family:var(--serif); font-size:clamp(18px,2vw,23px); line-height:1.6; color:var(--brown); font-weight:500;}
+.hand{font-family:var(--hand); color:var(--faded-red);}
+.container{max-width:1360px; margin:0 auto; padding:0 6vw;}
+.stamp-btn{
+  display:inline-flex; align-items:center; gap:10px; padding:17px 34px 16px;
+  border:2px solid var(--brass); background:var(--deep-forest); color:var(--cream);
+  font-family:var(--display); font-weight:600; font-size:13px; letter-spacing:.14em; text-transform:uppercase;
+  transition:transform .25s var(--ease), border-color .25s ease, background .25s ease, box-shadow .25s ease;
+  position:relative; box-shadow:4px 4px 0 0 var(--brass);
+  text-shadow:0 1px 0 rgba(0,0,0,.4);
+  background-image:
+    radial-gradient(circle at 18% 24%, rgba(239,228,202,.05) 0, transparent 2px),
+    radial-gradient(circle at 72% 68%, rgba(239,228,202,.04) 0, transparent 2px);
+}
+/* perforated stamp edge, top & bottom (dotted ring, always readable regardless of backdrop) */
+.stamp-btn::before, .stamp-btn::after{
+  content:""; position:absolute; left:10px; right:10px; height:0; pointer-events:none;
+  border-top:2px dotted rgba(239,228,202,.35);
+}
+.stamp-btn::before{top:5px;}
+.stamp-btn::after{bottom:5px;}
+.stamp-btn.ghost::before, .stamp-btn.ghost::after{border-top-color:rgba(51,37,28,.3);}
+.stamp-btn.light::before, .stamp-btn.light::after{border-top-color:rgba(239,228,202,.3);}
+.stamp-btn:hover{transform:translate(3px,-3px) rotate(-.4deg); border-color:var(--mango-light); background:#1c2f22; box-shadow:1px 1px 0 0 var(--mango-light);}
+.stamp-btn svg{transition:transform .25s var(--ease); position:relative;}
+.stamp-btn:hover svg{transform:translateX(4px);}
+.stamp-btn.ghost{background:transparent; color:var(--forest); border-color:var(--brown); box-shadow:4px 4px 0 0 var(--brown);}
+.stamp-btn.ghost:hover{background:var(--forest); color:var(--cream); box-shadow:1px 1px 0 0 var(--forest);}
+.stamp-btn.light{border-color:var(--brass); color:var(--paper); background:transparent; box-shadow:4px 4px 0 0 rgba(176,138,69,.6);}
+.stamp-btn.light:hover{box-shadow:1px 1px 0 0 var(--mango-light);}
+
+.paper-card{
+  background:var(--paper);
+  box-shadow:0 1px 0 rgba(41,37,31,.06), 0 18px 40px -22px rgba(41,37,31,.4), 5px 5px 0 0 rgba(99,69,45,.1);
+  border:2px solid rgba(99,69,45,.3);
+  position:relative;
+}
+.torn-edge::before{
+  content:""; position:absolute; left:-3px; right:-3px; top:-3px; height:6px;
+  background:repeating-linear-gradient(100deg, transparent 0 6px, rgba(41,37,31,.06) 6px 8px);
+  opacity:.6;
+}
+
+::selection{background:var(--mango); color:var(--deep-forest);}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:5000;
+  background:rgba(23,39,29,.86); backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(176,138,69,.25);
+  transition:padding .35s var(--ease), background .35s ease, box-shadow .35s ease;
+  padding:22px 0;
+}
+header.scrolled{padding:11px 0; background:rgba(23,39,29,.97); box-shadow:0 12px 30px -18px rgba(0,0,0,.6);}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:24px;}
+.brand{display:flex; align-items:center; gap:12px; cursor:pointer;}
+.seal{
+  width:46px; height:46px; border-radius:50%; border:1px solid var(--brass);
+  display:flex; align-items:center; justify-content:center; position:relative; flex-shrink:0;
+  transition:transform .3s var(--ease);
+}
+.brand:hover .seal{transform:rotate(-8deg);}
+.seal::before{content:""; position:absolute; inset:4px; border:1px solid rgba(176,138,69,.5); border-radius:50%;}
+.seal svg{width:22px; height:22px;}
+.brand-text{line-height:1.15;}
+.brand-text .name{font-family:var(--display); color:var(--cream); font-size:15px; letter-spacing:.12em; text-transform:uppercase;}
+.brand-text .est{font-family:var(--sans); color:var(--brass); font-size:9px; letter-spacing:.24em; text-transform:uppercase;}
+nav.primary{display:flex; align-items:center; gap:34px;}
+nav.primary a{
+  font-family:var(--sans); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream);
+  position:relative; padding-bottom:4px; opacity:.85;
+}
+nav.primary a::after{content:""; position:absolute; left:0; bottom:0; height:1px; width:0; background:var(--mango-light); transition:width .3s var(--ease);}
+nav.primary a:hover{opacity:1;}
+nav.primary a:hover::after{width:100%;}
+.nav-actions{display:flex; align-items:center; gap:18px;}
+.icon-btn{width:34px; height:34px; display:flex; align-items:center; justify-content:center; color:var(--cream); opacity:.85;}
+.icon-btn:hover{opacity:1;}
+.menu-toggle{display:none; flex-direction:column; gap:5px; width:30px;}
+.menu-toggle span{height:1px; background:var(--cream); width:100%;}
+
+@media (max-width:900px){
+  nav.primary{display:none;}
+  .menu-toggle{display:flex;}
+}
+
+/* mobile full-screen menu */
+#mobile-menu{
+  position:fixed; inset:0; background:var(--deep-forest); z-index:9500;
+  display:flex; flex-direction:column; justify-content:center; padding:10vw 8vw;
+  transform:translateY(-100%); transition:transform .5s var(--ease);
+}
+#mobile-menu.open{transform:translateY(0);}
+#mobile-menu .close-menu{position:absolute; top:26px; right:6vw; color:var(--cream); font-size:13px; letter-spacing:.2em;}
+#mobile-menu a{
+  font-family:var(--display); font-size:clamp(28px,9vw,44px); color:var(--cream);
+  display:flex; align-items:baseline; gap:16px; padding:10px 0; opacity:0; transform:translateY(14px);
+  transition:opacity .5s ease, transform .5s ease; border-bottom:1px solid rgba(176,138,69,.18);
+}
+#mobile-menu.open a{opacity:1; transform:translateY(0);}
+#mobile-menu a span{font-family:var(--sans); font-size:12px; color:var(--brass);}
+.menu-illus{margin-top:40px; opacity:.6; width:70px;}
+
+/* search overlay */
+#search-overlay{
+  position:fixed; inset:0; background:rgba(23,39,29,.98); z-index:9700;
+  display:flex; align-items:flex-start; justify-content:center; padding-top:14vh;
+  opacity:0; pointer-events:none; transition:opacity .35s ease;
+}
+#search-overlay.open{opacity:1; pointer-events:auto;}
+.search-box{width:min(680px,86vw);}
+.search-box .eyebrow{color:var(--brass);}
+.search-box input{
+  width:100%; background:transparent; border:none; border-bottom:1px solid var(--brass);
+  color:var(--cream); font-family:var(--display); font-size:clamp(22px,4vw,34px); padding:12px 0;
+}
+.search-box input::placeholder{color:rgba(239,228,202,.35);}
+#search-results{margin-top:26px; max-height:50vh; overflow:auto;}
+#search-results .res{padding:14px 0; border-bottom:1px solid rgba(176,138,69,.15); color:var(--cream);}
+#search-results .res span{display:block; font-size:11px; color:var(--brass); letter-spacing:.14em; text-transform:uppercase; margin-bottom:4px;}
+.search-close{position:absolute; top:26px; right:6vw; color:var(--cream); font-size:13px; letter-spacing:.2em;}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative; min-height:100vh; display:flex; align-items:flex-end;
+  background:
+    linear-gradient(180deg, rgba(23,39,29,.35) 0%, rgba(23,39,29,.55) 55%, rgba(23,39,29,.92) 100%),
+    url('https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=1800&q=80') center/cover no-repeat;
+  overflow:hidden;
+}
+.hero::after{
+  content:""; position:absolute; inset:0;
+  background:repeating-radial-gradient(circle at 50% 50%, rgba(0,0,0,.15) 0, transparent 3px);
+  opacity:.25; mix-blend-mode:multiply; pointer-events:none;
+}
+.hero-content{position:relative; z-index:3; padding:16vh 6vw 9vh; width:100%;}
+.hero-tag{font-family:var(--sans); color:var(--brass); font-size:11px; letter-spacing:.35em; text-transform:uppercase; margin-bottom:20px;}
+.hero-title{
+  font-family:var(--display); color:var(--cream); font-size:clamp(40px,8vw,108px); line-height:.98;
+  letter-spacing:-.01em; max-width:16ch; text-shadow:0 8px 30px rgba(0,0,0,.35);
+}
+.hero-sub{font-family:var(--serif); font-style:italic; color:var(--cream); opacity:.88; font-size:clamp(16px,2vw,22px); max-width:44ch; margin-top:24px;}
+.hero-ctas{display:flex; gap:18px; margin-top:44px; flex-wrap:wrap;}
+.hero-meta{display:flex; gap:40px; margin-top:64px; flex-wrap:wrap;}
+.hero-meta div{border-left:1px solid rgba(176,138,69,.4); padding-left:14px;}
+.hero-meta .k{font-family:var(--display); color:var(--mango-light); font-size:20px;}
+.hero-meta .v{font-family:var(--sans); color:var(--cream); font-size:10px; letter-spacing:.18em; text-transform:uppercase; opacity:.7;}
+.side-label{
+  position:absolute; right:26px; top:50%; transform:translateY(-50%) rotate(90deg); transform-origin:right center;
+  font-family:var(--sans); color:var(--cream); font-size:10px; letter-spacing:.4em; text-transform:uppercase; opacity:.55;
+  white-space:nowrap; z-index:3;
+}
+.hero-scroll{
+  position:absolute; left:6vw; bottom:26px; z-index:3; display:flex; align-items:center; gap:10px;
+  color:var(--cream); font-size:10px; letter-spacing:.24em; text-transform:uppercase; opacity:.7;
+}
+.hero-scroll .line{width:36px; height:1px; background:var(--brass); position:relative; overflow:hidden;}
+.hero-scroll .line::after{content:""; position:absolute; left:-100%; top:0; height:100%; width:100%; background:var(--mango-light); animation:scrollline 2.4s ease-in-out infinite;}
+@keyframes scrollline{50%{left:0;}100%{left:100%;}}
+
+/* floating hero elements */
+.floaters{position:absolute; inset:0; z-index:2; pointer-events:none;}
+.floater{position:absolute; opacity:.85; filter:drop-shadow(0 8px 16px rgba(0,0,0,.35));}
+.f1{top:14%; left:8%; width:60px; animation:floatA 7s ease-in-out infinite;}
+.f2{top:22%; right:10%; width:48px; animation:floatB 11s ease-in-out infinite;}
+.f3{top:58%; left:4%; width:70px; animation:floatC 13s ease-in-out infinite;}
+.f4{top:10%; left:44%; width:54px; animation:floatD 9s ease-in-out infinite;}
+.f5{top:66%; right:6%; width:58px; animation:floatA 10s ease-in-out infinite reverse;}
+@keyframes floatA{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-18px) rotate(3deg);}}
+@keyframes floatB{0%,100%{transform:translateY(0) rotate(6deg);}50%{transform:translateY(14px) translateX(-8px) rotate(-4deg);}}
+@keyframes floatC{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-24px) translateX(6px) rotate(5deg);}}
+@keyframes floatD{0%,100%{transform:translateY(0) rotate(3deg);}50%{transform:translateY(16px) rotate(-6deg);}}
+@media (max-width:760px){
+  .floater{opacity:.5; width:38px !important;}
+  .side-label{display:none;}
+}
+
+/* ============================================================
+   REVEAL ANIMATION SYSTEM
+   ============================================================ */
+.reveal{opacity:0; transform:translateY(34px); transition:opacity .9s var(--ease), transform .9s var(--ease);}
+.reveal.in{opacity:1; transform:translateY(0);}
+.reveal-clip{clip-path:inset(0 0 100% 0); transition:clip-path 1.1s var(--ease);}
+.reveal-clip.in{clip-path:inset(0 0 0% 0);}
+.reveal-scale{opacity:0; transform:scale(1.25) rotate(-3deg); transition:opacity .8s ease, transform .8s var(--ease);}
+.reveal-scale.in{opacity:1; transform:scale(1) rotate(-2deg);}
+.stagger > *{transition-delay:calc(var(--i, 0) * 90ms);}
+
+/* ============================================================
+   ORCHARD INTRO
+   ============================================================ */
+.orchard-intro{padding:150px 0 120px; position:relative; overflow:hidden;}
+.oi-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:70px; align-items:center;}
+.oi-image{position:relative;}
+.oi-image img{width:100%; height:560px; object-fit:cover; filter:sepia(.14) saturate(1.05) contrast(1.05); border:1px solid rgba(99,69,45,.25);}
+.oi-image .frame{position:absolute; inset:14px; border:1px solid var(--brass); pointer-events:none;}
+.oi-note{
+  position:absolute; bottom:-26px; left:-26px; background:var(--paper); padding:16px 20px; transform:rotate(-3deg);
+  box-shadow:0 12px 30px -14px rgba(41,37,31,.5); border:1px solid rgba(99,69,45,.2);
+  font-family:var(--hand); font-size:22px; color:var(--faded-red); line-height:1.2;
+}
+.oi-text p{margin-top:22px; font-size:16px; line-height:1.85; color:var(--brown);}
+@media(max-width:900px){.oi-grid{grid-template-columns:1fr; gap:60px;} .oi-image img{height:380px;}}
+
+/* ============================================================
+   HERITAGE TIMELINE
+   ============================================================ */
+.heritage{padding:120px 0; background:var(--cream); position:relative;}
+.timeline{position:relative; margin-top:80px; padding-left:2px;}
+.timeline::before{content:""; position:absolute; top:0; bottom:0; left:100px; width:1px; background:var(--brass); transform-origin:top; transform:scaleY(0); transition:transform 1.8s var(--ease);}
+.timeline.in::before{transform:scaleY(1);}
+.tl-item{display:grid; grid-template-columns:100px 1fr; gap:40px; padding:34px 0; position:relative;}
+.tl-year{font-family:var(--display); font-size:22px; color:var(--deep-mango); position:relative;}
+.tl-item::after{content:""; position:absolute; left:96px; top:44px; width:9px; height:9px; border-radius:50%; background:var(--mango); border:2px solid var(--cream); box-shadow:0 0 0 1px var(--brass);}
+.tl-body{padding-left:26px; border-left:1px solid rgba(99,69,45,.14);}
+.tl-body h3{font-size:22px; margin-bottom:8px;}
+.tl-body p{color:var(--brown); font-size:15px; line-height:1.7; max-width:56ch;}
+@media(max-width:700px){.timeline::before{left:44px;} .tl-item{grid-template-columns:44px 1fr; gap:20px;} .tl-item::after{left:40px;}}
+
+/* ============================================================
+   MANGO COLLECTION
+   ============================================================ */
+.mango-collection{padding:130px 0; background:var(--paper);}
+.mc-head{display:flex; justify-content:space-between; align-items:flex-end; gap:30px; flex-wrap:wrap; margin-bottom:60px;}
+.mango-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:28px;}
+.mango-card{
+  background:var(--paper); border:2px solid rgba(99,69,45,.35); padding:0; position:relative; cursor:pointer;
+  box-shadow:6px 6px 0 0 rgba(99,69,45,.14);
+  clip-path:polygon(0% 0%, 97% 0%, 100% 3%, 100% 100%, 3% 100%, 0% 97%);
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s ease;
+}
+.mango-card:nth-child(3n+1){transform:rotate(-.6deg);}
+.mango-card:nth-child(3n+2){transform:rotate(.5deg);}
+.mango-card:nth-child(3n){transform:rotate(-.3deg);}
+.mango-card:hover{transform:translate(-3px,-8px) rotate(0deg); box-shadow:9px 13px 0 0 rgba(99,69,45,.18), 0 26px 50px -24px rgba(41,37,31,.5); border-color:var(--brass);}
+.mc-img-wrap{position:relative; overflow:hidden; height:210px;}
+.mc-img-wrap img{width:100%; height:100%; object-fit:cover; filter:sepia(.1) contrast(1.05); transition:transform .6s var(--ease);}
+.mango-card:hover .mc-img-wrap img{transform:scale(1.08);}
+.mc-badge{position:absolute; top:12px; left:12px; background:var(--deep-forest); color:var(--cream); font-size:9px; letter-spacing:.16em; text-transform:uppercase; padding:5px 10px;}
+.mc-stamp{position:absolute; bottom:10px; right:10px; width:44px; height:44px; opacity:0; transform:scale(.6) rotate(-15deg); transition:opacity .35s ease, transform .35s ease;}
+.mango-card:hover .mc-stamp{opacity:.85; transform:scale(1) rotate(-8deg);}
+.mc-body{padding:20px 22px 24px; border-top:1px dashed rgba(99,69,45,.25);}
+.mc-num{font-family:var(--sans); font-size:10px; color:var(--brass); letter-spacing:.16em;}
+.mc-body h3{font-size:23px; margin:6px 0 8px;}
+.mc-body p{font-size:13px; color:var(--brown); line-height:1.6;}
+.mc-meta{display:flex; justify-content:space-between; margin-top:14px; font-size:11px; letter-spacing:.06em; color:var(--muted-green); text-transform:uppercase;}
+@media(max-width:1080px){.mango-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.mango-grid{grid-template-columns:1fr;}}
+
+/* modal */
+.modal-overlay{position:fixed; inset:0; background:rgba(23,39,29,.9); z-index:9800; display:flex; align-items:center; justify-content:center; padding:24px; opacity:0; pointer-events:none; transition:opacity .35s ease;}
+.modal-overlay.open{opacity:1; pointer-events:auto;}
+.modal{background:var(--paper); max-width:760px; width:100%; max-height:88vh; overflow:auto; position:relative; border:1px solid var(--brass); transform:translateY(24px) scale(.97); transition:transform .35s var(--ease);}
+.modal-overlay.open .modal{transform:translateY(0) scale(1);}
+.modal-close{position:absolute; top:16px; right:18px; font-size:22px; color:var(--brown); z-index:2;}
+.modal-hero{height:280px; position:relative; overflow:hidden;}
+.modal-hero img{width:100%; height:100%; object-fit:cover; filter:sepia(.12) contrast(1.05);}
+.modal-hero::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(23,39,29,.7));}
+.modal-hero h3{position:absolute; bottom:20px; left:28px; color:var(--cream); font-size:clamp(28px,5vw,42px); z-index:2;}
+.modal-body{padding:34px 30px 40px;}
+.modal-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px 30px; margin:24px 0 30px;}
+.modal-grid div span{display:block; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--brass); margin-bottom:4px;}
+.modal-grid div p{font-family:var(--serif); font-size:17px; color:var(--ink); font-weight:600;}
+
+/* ============================================================
+   WHY OUR MANGOES / EDITORIAL POINTS
+   ============================================================ */
+.why{padding:130px 0; background:var(--deep-forest); color:var(--cream);}
+.why .section-title{color:var(--cream); max-width:16ch;}
+.why-list{margin-top:70px;}
+.why-item{
+  display:grid; grid-template-columns:140px 1fr 320px; gap:40px; align-items:center;
+  padding:38px 0; border-top:1px solid rgba(176,138,69,.22);
+}
+.why-item:last-child{border-bottom:1px solid rgba(176,138,69,.22);}
+.why-num{font-family:var(--display); font-size:64px; color:rgba(176,138,69,.35); line-height:1;}
+.why-item h3{color:var(--cream); font-size:26px; margin-bottom:8px;}
+.why-item p{color:rgba(239,228,202,.7); font-size:14px; max-width:44ch; line-height:1.7;}
+.why-img{height:130px; overflow:hidden; opacity:0; transition:opacity .4s ease;}
+.why-item:hover .why-img{opacity:1;}
+.why-img img{width:100%; height:100%; object-fit:cover; filter:sepia(.2) brightness(.85);}
+@media(max-width:820px){.why-item{grid-template-columns:60px 1fr; grid-template-rows:auto auto;} .why-img{display:none;} .why-num{font-size:40px;}}
+
+/* ============================================================
+   ORCHARD INTERACTIVE
+   ============================================================ */
+.orchard-immersive{position:relative; height:88vh; min-height:560px; overflow:hidden;}
+.orchard-immersive img{width:100%; height:100%; object-fit:cover; filter:sepia(.1) saturate(1.1);}
+.orchard-immersive .ov{position:absolute; inset:0; background:linear-gradient(180deg, rgba(23,39,29,.5), rgba(23,39,29,.15) 40%, rgba(23,39,29,.6));}
+.oi-head{position:absolute; top:70px; left:6vw; z-index:2; color:var(--cream); max-width:20ch;}
+.oi-head .section-title{color:var(--cream);}
+.oi-labels{position:absolute; inset:0; z-index:3;}
+.oi-label{
+  position:absolute; width:14px; height:14px; border:1px solid var(--cream); border-radius:50%; cursor:pointer;
+}
+.oi-label::before{content:""; position:absolute; inset:-8px; border:1px solid rgba(232,178,78,.5); border-radius:50%; animation:pulseRing 2.4s ease-out infinite;}
+@keyframes pulseRing{0%{transform:scale(.7); opacity:.9;}100%{transform:scale(2.2); opacity:0;}}
+.oi-panel{
+  position:absolute; top:24px; left:24px; width:220px; background:var(--paper); padding:16px 18px;
+  opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .25s ease, transform .25s ease;
+  border:1px solid var(--brass);
+}
+.oi-label:hover .oi-panel, .oi-label:focus .oi-panel{opacity:1; transform:translateY(0); pointer-events:auto;}
+.oi-panel .t{font-family:var(--display); font-size:14px; letter-spacing:.1em; text-transform:uppercase; color:var(--deep-mango); margin-bottom:6px;}
+.oi-panel p{font-size:12.5px; color:var(--brown); line-height:1.5;}
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+.process{padding:130px 0; background:var(--paper);}
+.process-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:70px; background:rgba(99,69,45,.2);}
+.p-step{background:var(--paper); padding:36px 30px 40px; position:relative;}
+.p-step img{width:100%; height:150px; object-fit:cover; margin-bottom:20px; filter:sepia(.15) contrast(1.05);}
+.p-num{font-family:var(--display); font-size:15px; color:var(--brass); letter-spacing:.1em;}
+.p-step h3{font-size:22px; margin:8px 0 10px;}
+.p-step p{font-size:13.5px; color:var(--brown); line-height:1.65;}
+.p-annot{font-family:var(--hand); font-size:19px; color:var(--faded-red); margin-top:12px; display:block;}
+@media(max-width:900px){.process-grid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   HARVEST
+   ============================================================ */
+.harvest{position:relative; min-height:78vh; display:flex; align-items:center; overflow:hidden;}
+.harvest img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:sepia(.14) saturate(1.1);}
+.harvest .ov{position:absolute; inset:0; background:linear-gradient(90deg, rgba(23,39,29,.85) 20%, rgba(23,39,29,.25) 75%);}
+.harvest-content{position:relative; z-index:2; color:var(--cream); max-width:640px;}
+.harvest-content .section-title{color:var(--cream);}
+.harvest-stamp{
+  display:inline-flex; align-items:center; gap:8px; margin-top:28px; border:1px solid var(--brass); padding:9px 18px;
+  font-family:var(--display); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--mango-light);
+  transform:rotate(-4deg); opacity:0; transition:opacity .6s ease, transform .6s var(--ease);
+}
+.harvest-stamp.in{opacity:1; transform:rotate(-4deg) scale(1);}
+
+/* ============================================================
+   QUALITY CONTROL
+   ============================================================ */
+.quality{padding:130px 0; background:var(--deep-forest); color:var(--cream);}
+.quality .section-title{color:var(--cream);}
+.q-table{margin-top:60px; border-top:1px solid rgba(176,138,69,.3);}
+.q-row{display:grid; grid-template-columns:70px 1fr 140px; align-items:center; gap:20px; padding:20px 0; border-bottom:1px solid rgba(176,138,69,.18);}
+.q-row .q-num{font-family:var(--display); color:var(--brass); font-size:14px;}
+.q-row h4{font-size:19px; color:var(--cream); font-weight:600;}
+.q-row .q-check{
+  justify-self:end; display:flex; align-items:center; gap:8px; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--mango-light);
+}
+.q-check .dot{width:8px; height:8px; border-radius:50%; background:var(--mango-light); opacity:0; transform:scale(0); transition:opacity .4s ease, transform .4s var(--ease);}
+.q-row.in .q-check .dot{opacity:1; transform:scale(1);}
+@media(max-width:640px){.q-row{grid-template-columns:40px 1fr; grid-template-rows:auto auto;} .q-check{justify-self:start; grid-column:2;}}
+
+/* ============================================================
+   PACKING HOUSE
+   ============================================================ */
+.packing{padding:130px 0; background:var(--cream);}
+.pk-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;}
+.pk-grid img{width:100%; height:480px; object-fit:cover; filter:sepia(.12) contrast(1.04);}
+.crate{
+  border:2px solid var(--brown); background:repeating-linear-gradient(115deg, rgba(99,69,45,.06) 0 10px, rgba(99,69,45,.11) 10px 20px), var(--old-paper);
+  padding:30px; text-align:center; margin-top:34px; position:relative;
+}
+.crate::before,.crate::after{content:""; position:absolute; top:8px; bottom:8px; width:1px; background:rgba(99,69,45,.4);}
+.crate::before{left:14px;} .crate::after{right:14px;}
+.crate h4{font-family:var(--display); font-size:20px; letter-spacing:.16em; color:var(--forest); text-transform:uppercase;}
+.crate .sub{font-family:var(--sans); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--brown); margin-top:6px;}
+.crate .hw{margin-top:16px; padding-top:16px; border-top:1px dashed rgba(99,69,45,.4); font-size:11px; letter-spacing:.2em; color:var(--faded-red); text-transform:uppercase;}
+@media(max-width:900px){.pk-grid{grid-template-columns:1fr;} .pk-grid img{height:340px;}}
+
+/* ============================================================
+   EXPORT MAP
+   ============================================================ */
+.export-map{padding:130px 0; background:var(--paper); overflow:hidden;}
+.map-wrap{position:relative; margin-top:60px; max-width:1100px; margin-left:auto; margin-right:auto;}
+.map-wrap svg{width:100%; height:auto;}
+.route-line{fill:none; stroke:var(--brass); stroke-width:1.4; stroke-dasharray:6 5; stroke-dashoffset:600; transition:stroke-dashoffset 2.4s var(--ease);}
+.route-line.in{stroke-dashoffset:0;}
+.route-dot{fill:var(--mango);}
+.dest-label{font-family:var(--sans); font-size:11px; letter-spacing:.08em; fill:var(--ink);}
+.origin-label{font-family:var(--display); font-size:13px; letter-spacing:.1em; fill:var(--deep-mango);}
+.mover{opacity:0;}
+.mover.in{opacity:1; animation:movePath 6s linear infinite;}
+
+/* export journey */
+.ej{padding:100px 0 140px; background:var(--paper); overflow-x:auto;}
+.ej-track{display:flex; gap:0; min-width:980px; position:relative; padding-top:40px;}
+.ej-track::before{content:""; position:absolute; top:60px; left:0; right:0; height:1px; background:repeating-linear-gradient(90deg, var(--brass) 0 8px, transparent 8px 14px);}
+.ej-step{flex:1; text-align:center; position:relative; padding:0 6px;}
+.ej-dot{width:12px; height:12px; border-radius:50%; background:var(--paper); border:2px solid var(--brass); margin:0 auto 18px; position:relative; z-index:2;}
+.ej-step h4{font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--forest);}
+.ej-crate{position:absolute; top:44px; left:0; width:34px; transition:left 3s var(--ease);}
+
+/* ============================================================
+   GLOBAL REACH STATS
+   ============================================================ */
+.reach{padding:140px 0; background:var(--deep-forest); color:var(--cream); text-align:center;}
+.reach .section-title{color:var(--cream); font-size:clamp(34px,6vw,72px); max-width:14ch; margin:0 auto;}
+.stat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:30px; margin-top:80px;}
+.stat{border-left:1px solid rgba(176,138,69,.3); padding-left:18px; text-align:left;}
+.stat .num{font-family:var(--display); font-size:clamp(38px,5vw,58px); color:var(--mango-light);}
+.stat .lab{font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(239,228,202,.65); margin-top:6px;}
+@media(max-width:760px){.stat-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services{padding:130px 0; background:var(--paper);}
+.svc-index{margin-top:60px; border-top:1px solid rgba(99,69,45,.25);}
+.svc-row{
+  display:grid; grid-template-columns:70px 1fr 130px 44px; align-items:center; gap:24px;
+  padding:26px 0; border-bottom:1px solid rgba(99,69,45,.18); position:relative; cursor:pointer;
+  transition:background .3s ease;
+}
+.svc-row:hover{background:rgba(216,144,36,.06);}
+.svc-row .sv-num{font-family:var(--display); font-size:13px; color:var(--brass);}
+.svc-row h3{font-size:22px;}
+.svc-row p{display:none;}
+.svc-row .sv-tag{font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-green); text-align:right;}
+.svc-row .sv-arrow{transition:transform .3s var(--ease);}
+.svc-row:hover .sv-arrow{transform:translateX(6px);}
+.svc-img-float{
+  position:absolute; right:120px; top:50%; transform:translateY(-50%) scale(.9); width:140px; height:90px; overflow:hidden;
+  opacity:0; pointer-events:none; transition:opacity .3s ease, transform .3s ease; z-index:5; box-shadow:0 20px 40px -14px rgba(0,0,0,.5);
+}
+.svc-row:hover .svc-img-float{opacity:1; transform:translateY(-50%) scale(1);}
+.svc-img-float img{width:100%; height:100%; object-fit:cover; filter:sepia(.15);}
+@media(max-width:760px){.svc-row{grid-template-columns:36px 1fr 26px;} .sv-tag{display:none;} .svc-img-float{display:none;}}
+
+/* ============================================================
+   PRIVATE LABEL
+   ============================================================ */
+.private-label{padding:130px 0; background:var(--old-paper); position:relative;}
+.pl-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start;}
+.pl-list{margin-top:26px;}
+.pl-list li{padding:12px 0; border-bottom:1px dashed rgba(99,69,45,.3); font-family:var(--serif); font-size:17px; color:var(--brown); display:flex; align-items:center; gap:12px;}
+.pl-list li::before{content:"—"; color:var(--deep-mango);}
+@media(max-width:900px){.pl-grid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery{padding:130px 0 100px; background:var(--paper);}
+.gal-grid{
+  display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:110px; gap:14px; margin-top:60px;
+}
+.gal-item{position:relative; overflow:hidden; cursor:pointer; grid-column:span 2; grid-row:span 2;}
+.gal-item.wide{grid-column:span 3;}
+.gal-item.tall{grid-row:span 3;}
+.gal-item.small{grid-column:span 2; grid-row:span 1;}
+.gal-item img{width:100%; height:100%; object-fit:cover; filter:sepia(.12) contrast(1.05); transition:transform .6s var(--ease);}
+.gal-item:hover img{transform:scale(1.06);}
+.gal-item::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 60%, rgba(23,39,29,.55)); opacity:0; transition:opacity .3s ease;}
+.gal-item:hover::after{opacity:1;}
+.gal-cap{position:absolute; bottom:10px; left:12px; color:var(--cream); font-size:11px; letter-spacing:.1em; text-transform:uppercase; opacity:0; transform:translateY(6px); transition:opacity .3s ease, transform .3s ease;}
+.gal-item:hover .gal-cap{opacity:1; transform:translateY(0);}
+@media(max-width:900px){.gal-grid{grid-template-columns:repeat(4,1fr); grid-auto-rows:90px;}}
+@media(max-width:600px){.gal-grid{grid-template-columns:repeat(2,1fr);} .gal-item.wide{grid-column:span 2;}}
+
+#lightbox{position:fixed; inset:0; background:rgba(23,39,29,.97); z-index:9900; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .35s ease;}
+#lightbox.open{opacity:1; pointer-events:auto;}
+#lightbox img{max-width:88vw; max-height:78vh; object-fit:contain; filter:sepia(.1) contrast(1.05); border:1px solid var(--brass);}
+.lb-count{position:absolute; bottom:30px; left:50%; transform:translateX(-50%); color:var(--cream); font-size:11px; letter-spacing:.2em; text-transform:uppercase;}
+.lb-nav{position:absolute; top:50%; transform:translateY(-50%); color:var(--cream); font-size:30px; padding:12px;}
+.lb-prev{left:20px;} .lb-next{right:20px;}
+.lb-close{position:absolute; top:24px; right:26px; color:var(--cream); font-size:24px;}
+
+/* ============================================================
+   VIDEO SECTION
+   ============================================================ */
+.video-sec{position:relative; height:80vh; min-height:520px; overflow:hidden;}
+.video-sec img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:sepia(.16) saturate(1.05) brightness(.85);}
+.video-sec .ov{position:absolute; inset:0; background:rgba(23,39,29,.42);}
+.video-sec .content{position:relative; z-index:2; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:var(--cream);}
+.play-btn{
+  width:90px; height:90px; border-radius:50%; border:2px solid var(--brass); display:flex; align-items:center; justify-content:center;
+  margin-top:30px; transition:transform .3s var(--ease), background .3s ease, box-shadow .3s ease;
+  box-shadow:0 0 0 1px rgba(176,138,69,.3), 4px 4px 0 0 rgba(176,138,69,.35);
+}
+.play-btn:hover{transform:scale(1.08) translate(-2px,-2px); background:rgba(216,144,36,.18); box-shadow:0 0 0 1px rgba(176,138,69,.4), 2px 2px 0 0 var(--mango-light);}
+.video-meta{margin-top:16px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--brass);}
+#video-modal{position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:9900; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s ease;}
+#video-modal.open{opacity:1; pointer-events:auto;}
+.vm-box{width:min(900px,88vw); aspect-ratio:16/9; background:var(--deep-forest); display:flex; align-items:center; justify-content:center; color:var(--brass); font-family:var(--display); position:relative; border:1px solid var(--brass);}
+.vm-close{position:absolute; top:-40px; right:0; color:var(--cream); font-size:14px; letter-spacing:.2em;}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials{padding:130px 0; background:var(--cream);}
+.postcards{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:60px;}
+.postcard{background:var(--paper); padding:34px 28px; border:2px solid rgba(99,69,45,.32); box-shadow:6px 6px 0 0 rgba(99,69,45,.12), 0 16px 34px -20px rgba(41,37,31,.4); position:relative;}
+.postcard:nth-child(1){transform:rotate(-2deg);}
+.postcard:nth-child(2){transform:rotate(1.5deg);}
+.postcard:nth-child(3){transform:rotate(-1deg);}
+.postcard:hover{transform:rotate(0) translateY(-6px); z-index:2;}
+.postcard .quote{font-family:var(--serif); font-style:italic; font-size:18px; color:var(--ink); line-height:1.6;}
+.postcard .attr{margin-top:20px; padding-top:16px; border-top:1px dashed rgba(99,69,45,.3); font-size:12px; letter-spacing:.06em; color:var(--brown); text-transform:uppercase;}
+.postcard .stamp-mini{position:absolute; top:16px; right:16px; width:38px; height:38px; opacity:.5;}
+@media(max-width:900px){.postcards{grid-template-columns:1fr;}}
+
+.wall{margin-top:100px; position:relative; min-height:340px;}
+.wall-q{position:absolute; max-width:260px; font-family:var(--serif); color:var(--brown); line-height:1.5;}
+.wall-q.large{font-size:24px; color:var(--forest);}
+.wall-q.small{font-size:13px;}
+.wall-q.hand{font-family:var(--hand); font-size:26px; color:var(--faded-red);}
+.wall-q.stamped{border:1px solid var(--faded-red); color:var(--faded-red); padding:10px 14px; font-family:var(--sans); font-size:10px; letter-spacing:.14em; text-transform:uppercase; transform:rotate(-6deg);}
+@media(max-width:900px){.wall{display:none;}}
+
+/* ============================================================
+   PEOPLE
+   ============================================================ */
+.people{padding:130px 0; background:var(--paper);}
+.people-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:26px; margin-top:60px;}
+.person{position:relative; overflow:hidden;}
+.person img{width:100%; height:320px; object-fit:cover; filter:sepia(.15) contrast(1.03) grayscale(.15);}
+.person-info{padding:16px 4px;}
+.person-info h4{font-size:18px;}
+.person-info .role{font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--deep-mango); margin:4px 0 8px;}
+.person-info p{font-size:12.5px; color:var(--brown); line-height:1.6;}
+@media(max-width:900px){.people-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ============================================================
+   SUSTAINABILITY
+   ============================================================ */
+.sustain{padding:130px 0; background:var(--forest); color:var(--cream); position:relative; overflow:hidden;}
+.sustain .section-title{color:var(--cream); max-width:14ch;}
+.sus-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:60px; background:rgba(176,138,69,.2);}
+.sus-item{background:var(--forest); padding:32px 26px;}
+.sus-item h4{font-size:17px; color:var(--mango-light); letter-spacing:.03em; margin-bottom:10px;}
+.sus-item p{font-size:13px; color:rgba(239,228,202,.72); line-height:1.65;}
+.leaf-deco{position:absolute; opacity:.15; animation:leafSway 9s ease-in-out infinite;}
+@keyframes leafSway{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
+@media(max-width:900px){.sus-grid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   SEASON CALENDAR
+   ============================================================ */
+.season{padding:130px 0; background:var(--paper);}
+.month-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-top:50px;}
+.month-btn{
+  padding:16px 8px; text-align:center; border:2px solid var(--brown); font-family:var(--display); font-weight:600;
+  font-size:13px; letter-spacing:.1em; background:var(--paper); color:var(--ink);
+  box-shadow:2px 2px 0 0 rgba(99,69,45,.35);
+  transition:background .25s ease, color .25s ease, border-color .25s ease, transform .25s var(--ease), box-shadow .25s ease;
+  clip-path:polygon(0% 5%, 3% 0%, 100% 0%, 100% 92%, 97% 100%, 0% 100%);
+}
+.month-btn.active, .month-btn:hover{background:var(--forest); color:var(--cream); border-color:var(--forest); transform:translate(1px,-1px); box-shadow:1px 1px 0 0 var(--brass);}
+#season-result{margin-top:40px; padding:30px; background:var(--cream); border:1px solid rgba(99,69,45,.2); min-height:120px;}
+#season-result .m-title{font-family:var(--display); font-size:22px; color:var(--deep-mango);}
+#season-result .m-varieties{display:flex; gap:14px; flex-wrap:wrap; margin-top:16px;}
+#season-result .m-varieties span{padding:8px 16px; background:var(--paper); border:1px solid rgba(99,69,45,.25); font-size:13px; font-family:var(--serif);}
+#season-result .m-peak{margin-top:16px; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--faded-red);}
+@media(max-width:760px){.month-grid{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:460px){.month-grid{grid-template-columns:repeat(3,1fr);}}
+
+/* ============================================================
+   MANGO FINDER
+   ============================================================ */
+.finder{padding:130px 0; background:var(--old-paper);}
+.finder-inner{max-width:760px; margin:0 auto; text-align:center;}
+.finder-opts{display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:40px;}
+.finder-opt{
+  padding:13px 26px; border:2px solid var(--brown); font-family:var(--serif); font-weight:600; font-size:16px; background:var(--paper);
+  box-shadow:2px 2px 0 0 rgba(99,69,45,.3);
+  transition:background .25s ease, color .25s ease, border-color .25s ease, transform .25s var(--ease), box-shadow .25s ease;
+  clip-path:polygon(0% 8%, 2% 0%, 98% 2%, 100% 10%, 100% 92%, 98% 100%, 2% 98%, 0% 90%);
+}
+.finder-opt.active, .finder-opt:hover{background:var(--deep-mango); color:var(--cream); border-color:var(--deep-mango); transform:translate(1px,-1px); box-shadow:1px 1px 0 0 var(--dark-brown);}
+#finder-result{margin-top:50px; min-height:60px;}
+.finder-card{display:inline-block; background:var(--paper); padding:30px 40px; border:1px solid var(--brass); text-align:left;}
+.finder-card h3{font-size:28px; color:var(--deep-mango); margin-bottom:12px;}
+.finder-tags{display:flex; gap:8px; flex-wrap:wrap;}
+.finder-tags span{font-size:10px; letter-spacing:.12em; text-transform:uppercase; padding:6px 12px; border:1px solid rgba(99,69,45,.3); color:var(--brown);}
+
+/* ============================================================
+   ENQUIRY FORM
+   ============================================================ */
+.enquiry{padding:130px 0; background:var(--deep-forest); color:var(--cream);}
+.enquiry .section-title{color:var(--cream);}
+.enq-no{font-family:var(--sans); font-size:11px; letter-spacing:.2em; color:var(--brass); margin-top:10px; text-transform:uppercase;}
+form.enquiry-form{margin-top:50px; background:var(--paper); color:var(--ink); padding:44px; border:1px solid var(--brass); position:relative;}
+.ef-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px 30px;}
+.field{display:flex; flex-direction:column; gap:8px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--brown);}
+.field input, .field select, .field textarea{
+  border:none; border-bottom:1px solid rgba(99,69,45,.4); background:transparent; padding:10px 2px; font-family:var(--serif); font-size:16px; color:var(--ink);
+}
+.field textarea{resize:vertical; min-height:80px;}
+.field input:focus, .field select:focus, .field textarea:focus{border-color:var(--deep-mango);}
+form.enquiry-form .submit-row{margin-top:36px; display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+#enq-confirm{margin-top:30px; padding:26px; background:var(--cream); border:1px solid var(--brass); display:none;}
+#enq-confirm.show{display:block;}
+#enq-confirm h4{font-family:var(--display); color:var(--deep-mango); font-size:20px;}
+@media(max-width:760px){.ef-grid{grid-template-columns:1fr;} form.enquiry-form{padding:28px 22px;}}
+
+/* ============================================================
+   JOURNAL
+   ============================================================ */
+.journal{padding:130px 0; background:var(--paper);}
+.journal-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px; margin-top:60px;}
+.jrn-card{cursor:pointer;}
+.jrn-card img{width:100%; height:200px; object-fit:cover; filter:sepia(.15) contrast(1.05);}
+.jrn-card .jc-eyebrow{font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--deep-mango); margin-top:16px;}
+.jrn-card h3{font-size:21px; margin-top:8px; line-height:1.3;}
+.jrn-card p{font-size:13px; color:var(--brown); margin-top:10px; line-height:1.6;}
+@media(max-width:900px){.journal-grid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   ARCHIVES / NEWSPAPER
+   ============================================================ */
+.archives{padding:130px 0; background:var(--old-paper); position:relative;}
+.archives::before{
+  content:""; position:absolute; inset:0; opacity:.5; pointer-events:none;
+  background-image:repeating-linear-gradient(0deg, rgba(41,37,31,.03) 0 1px, transparent 1px 3px);
+}
+.paper-clips{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:60px; position:relative; z-index:1;}
+.clip{background:var(--paper); padding:26px 22px; border:1px solid rgba(41,37,31,.2); filter:contrast(1.02);}
+.clip:nth-child(2){transform:rotate(1deg);}
+.clip:nth-child(3){transform:rotate(-1.5deg);}
+.clip .masthead{font-family:var(--display); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--faded-red); border-bottom:2px solid var(--ink); padding-bottom:8px; margin-bottom:14px;}
+.clip h3{font-family:var(--display); font-size:22px; line-height:1.25; text-transform:uppercase;}
+.clip p{font-size:12.5px; color:var(--brown); margin-top:12px; line-height:1.65; column-count:1;}
+@media(max-width:900px){.paper-clips{grid-template-columns:1fr;}}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact{padding:130px 0 100px; background:var(--forest); color:var(--cream); position:relative; overflow:hidden;}
+.contact::before{
+  content:""; position:absolute; inset:0; opacity:.06;
+  background-image:radial-gradient(circle, var(--brass) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+.contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px; position:relative; z-index:1;}
+.contact .section-title{color:var(--cream); max-width:14ch;}
+.c-block{margin-top:34px;}
+.c-block h5{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--brass); margin-bottom:6px;}
+.c-block p, .c-block a{font-family:var(--serif); font-size:19px; color:var(--cream);}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:var(--deep-forest); color:var(--cream); padding:90px 0 30px; position:relative;}
+.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:50px;}
+.footer-logo{font-family:var(--display); font-size:24px; letter-spacing:.06em; line-height:1.2; text-transform:uppercase;}
+.footer-est{font-size:10px; color:var(--brass); letter-spacing:.24em; margin-top:10px; text-transform:uppercase;}
+.footer-col h6{font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--brass); margin-bottom:18px;}
+.footer-col a{display:block; font-size:14px; padding:6px 0; color:rgba(239,228,202,.8);}
+.footer-col a:hover{color:var(--mango-light);}
+.footer-bottom{margin-top:80px; padding-top:26px; border-top:1px solid rgba(176,138,69,.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+.footer-stamp{border:1px solid var(--brass); padding:6px 14px; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--brass); transform:rotate(-2deg);}
+.footer-bottom small{color:rgba(239,228,202,.55); font-size:11px;}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr; gap:40px;}}
+
+/* easter egg crate */
+#egg-crate{position:fixed; bottom:20px; left:-120px; width:80px; z-index:9600; transition:left 4.5s linear;}
+#egg-crate.run{left:110vw;}
+#egg-crate .tag{position:absolute; top:-30px; left:0; font-family:var(--hand); font-size:15px; color:var(--faded-red); white-space:nowrap;}
+
+/* section spacing safety for anchors under sticky header */
+section[id]{scroll-margin-top:90px;}
+
+/* skip link */
+.skip-link{position:absolute; left:-999px; top:0; background:var(--forest); color:var(--cream); padding:12px 18px; z-index:99999;}
+.skip-link:focus{left:10px; top:10px;}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ===================== LOADER ===================== -->
+<div id="loader" aria-hidden="true">
+  <svg class="loader-seal" viewBox="0 0 100 100" fill="none">
+    <circle cx="50" cy="50" r="46" stroke="#B08A45" stroke-width="1"/>
+    <circle cx="50" cy="50" r="38" stroke="#B08A45" stroke-width="1"/>
+    <path d="M50 30c10 6 14 16 8 26-4 7-13 9-18 3 10 2 15-6 12-14-2-6-6-10-2-15z" fill="#C39A52"/>
+  </svg>
+  <div class="loader-title">The Golden<br>Orchard</div>
+  <div class="loader-sub">Est. 1958 · India</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ===================== CURSOR ===================== -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-label" id="cursorLabel" aria-hidden="true"></div>
+
+<!-- ===================== HEADER ===================== -->
+<header id="siteHeader">
+  <div class="container nav-inner">
+    <div class="brand" id="logoClick" tabindex="0" role="button" aria-label="The Golden Orchard home, click 5 times for a surprise">
+      <div class="seal">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 6c3 2 4 5 2 8-1.5 2-4 2.5-6 1 3 0 4-2 3-5-.6-2-2-3-1-4.5.4-.6 1.2-.5 2 .5z" fill="#C39A52"/></svg>
+      </div>
+      <div class="brand-text">
+        <div class="name">Golden Orchard</div>
+        <div class="est">Est. 1958 · India</div>
+      </div>
+    </div>
+    <nav class="primary" aria-label="Primary">
+      <a href="#orchard">Orchard</a>
+      <a href="#mangoes">Mangoes</a>
+      <a href="#process">Process</a>
+      <a href="#export">Export</a>
+      <a href="#story">Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Open search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <button class="icon-btn menu-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MOBILE MENU ===================== -->
+<nav id="mobile-menu" aria-label="Mobile navigation">
+  <button class="close-menu" id="closeMenu" aria-label="Close menu">CLOSE ✕</button>
+  <a href="#mangoes" data-i="1"><span>01</span> Mangoes</a>
+  <a href="#story" data-i="2"><span>02</span> Our Story</a>
+  <a href="#orchard" data-i="3"><span>03</span> Orchard</a>
+  <a href="#process" data-i="4"><span>04</span> Process</a>
+  <a href="#export" data-i="5"><span>05</span> Export</a>
+  <a href="#contact" data-i="6"><span>06</span> Contact</a>
+  <svg class="menu-illus" viewBox="0 0 24 24" fill="none"><path d="M12 4c4 3 5 8 2 12-2 3-6 3.5-9 1 5 0 6-3 4-7-1-3-3-4-1-6.5.6-.8 2.6-1 4 .5z" fill="#B08A45"/></svg>
+</nav>
+
+<!-- ===================== SEARCH OVERLAY ===================== -->
+<div id="search-overlay" role="dialog" aria-label="Search the orchard">
+  <button class="search-close" id="closeSearch">CLOSE ✕</button>
+  <div class="search-box">
+    <div class="eyebrow">Search the Orchard</div>
+    <input type="text" id="searchInput" placeholder="Search mangoes, services, journal…" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="floaters" id="floaters" aria-hidden="true">
+    <svg class="floater f1" viewBox="0 0 60 60"><path d="M30 10c14 8 18 24 8 36-6 8-18 10-26 4 14 0 20-10 16-22-3-9-11-13-4-20 2-2 4-1 6 2z" fill="#E8B24E"/></svg>
+    <svg class="floater f2" viewBox="0 0 60 30"><path d="M2 15c10-12 46-12 56 0-10 12-46 12-56 0z" fill="#68735A" opacity=".7"/></svg>
+    <svg class="floater f3" viewBox="0 0 70 70"><circle cx="35" cy="35" r="32" fill="none" stroke="#DCCBA7" stroke-width="1.5"/><text x="35" y="30" text-anchor="middle" font-size="7" fill="#DCCBA7" font-family="Playfair Display">GOLDEN</text><text x="35" y="42" text-anchor="middle" font-size="6" fill="#DCCBA7" font-family="Playfair Display">ORCHARD</text></svg>
+    <svg class="floater f4" viewBox="0 0 54 40"><rect x="1" y="1" width="52" height="38" fill="none" stroke="#EFE4CA" stroke-width="1"/><text x="27" y="24" text-anchor="middle" font-size="7" fill="#EFE4CA" font-family="Cormorant Garamond">EST. 1958</text></svg>
+    <svg class="floater f5" viewBox="0 0 60 60"><path d="M30 10c14 8 18 24 8 36-6 8-18 10-26 4 14 0 20-10 16-22-3-9-11-13-4-20 2-2 4-1 6 2z" fill="#D89024"/></svg>
+  </div>
+  <div class="side-label">From the Orchard — To the World</div>
+  <div class="hero-content">
+    <div class="hero-tag">Est. 1958 · India · Premium Export House</div>
+    <h1 class="hero-title">The Gold of<br>Indian Summer.</h1>
+    <p class="hero-sub">Carefully grown. Naturally ripened. Prepared for the world.</p>
+    <div class="hero-ctas">
+      <a href="#mangoes" class="stamp-btn" data-cursor="OPEN →">Discover Our Mangoes
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor"/></svg>
+      </a>
+      <a href="#orchard" class="stamp-btn light" data-cursor="OPEN →">Our Orchard</a>
+    </div>
+    <div class="hero-meta">
+      <div><div class="k">1958</div><div class="v">Est. India</div></div>
+      <div><div class="k">20+</div><div class="v">Countries</div></div>
+      <div><div class="k">8</div><div class="v">Varieties</div></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span class="line"></span> Scroll to Begin</div>
+</section>
+
+<div class="torn-divider tc-paper" aria-hidden="true"></div>
+<!-- ===================== ORCHARD INTRO ===================== -->
+<section class="orchard-intro" id="story">
+  <div class="container oi-grid">
+    <div class="oi-image reveal-scale">
+      <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=900&q=80" alt="Rows of mango trees at sunrise in an Indian orchard" loading="lazy" data-cursor="VIEW">
+      <div class="frame"></div>
+      <div class="oi-note">The first harvest<br>begins here ↓</div>
+    </div>
+    <div class="oi-text reveal">
+      <span class="eyebrow">The Story Begins in the Orchard</span>
+      <h2 class="section-title">The Story Begins<br>in the <em>Orchard.</em></h2>
+      <p class="lede">Before the mango reaches a crate, a ship, or a table, it begins with soil, sunlight, water and patience.</p>
+      <p>For over six decades, our family has tended the same soil that first gave shape to this orchard in 1958. Each tree is known, each season observed, and each fruit allowed the time it needs to ripen with honesty. It is a slower way of growing — and it is the only way we know.</p>
+    </div>
+  </div>
+</section>
+
+<div class="torn-divider tc-cream" aria-hidden="true"></div>
+<!-- ===================== HERITAGE TIMELINE ===================== -->
+<section class="heritage" id="heritage">
+  <div class="container">
+    <span class="eyebrow reveal">Our Heritage</span>
+    <h2 class="section-title reveal">A Family Tradition,<br><em>Grown Over Generations.</em></h2>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ===================== MANGO COLLECTION ===================== -->
+<section class="mango-collection" id="mangoes">
+  <div class="container">
+    <div class="mc-head">
+      <div>
+        <span class="eyebrow reveal">Our Mangoes</span>
+        <h2 class="section-title reveal">The Golden<br><em>Collection.</em></h2>
+      </div>
+      <p class="lede reveal" style="max-width:34ch;">Eight varieties, each carrying the character of the soil and season that raised it.</p>
+    </div>
+    <div class="mango-grid" id="mangoGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== WHY OUR MANGOES ===================== -->
+<section class="why" id="why">
+  <div class="container">
+    <span class="eyebrow reveal">Why Our Mangoes</span>
+    <h2 class="section-title reveal">Quality is Not a<br><em>Claim.</em> It is a Process.</h2>
+    <div class="why-list" id="whyList"></div>
+  </div>
+</section>
+
+<!-- ===================== ORCHARD IMMERSIVE ===================== -->
+<section class="orchard-immersive" id="orchard">
+  <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=1600&q=80" alt="Immersive view of the mango orchard canopy" loading="lazy">
+  <div class="ov"></div>
+  <div class="oi-head reveal">
+    <span class="eyebrow" style="color:#C39A52;">Where It Begins</span>
+    <h2 class="section-title">Where the Mangoes<br><em>Begin.</em></h2>
+  </div>
+  <div class="oi-labels" id="oiLabels"></div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="process" id="process">
+  <div class="container">
+    <span class="eyebrow reveal">Growing Process</span>
+    <h2 class="section-title reveal">From Blossom<br>to <em>Gold.</em></h2>
+    <div class="process-grid" id="processGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== HARVEST ===================== -->
+<section class="harvest">
+  <img src="https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=1600&q=80" alt="Workers carefully harvesting mangoes at sunrise" loading="lazy">
+  <div class="ov"></div>
+  <div class="container harvest-content reveal">
+    <span class="eyebrow">The Harvest</span>
+    <h2 class="section-title">Harvested at the<br><em>Right Moment.</em></h2>
+    <p class="lede" style="color:#EFE4CA; opacity:.85;">Picked by hand, at first light, when each fruit has reached the moment it was grown for.</p>
+    <div class="harvest-stamp" id="harvestStamp">Hand Harvested</div>
+  </div>
+</section>
+
+<!-- ===================== QUALITY CONTROL ===================== -->
+<div class="torn-divider tc-forest" aria-hidden="true"></div>
+<section class="quality" id="quality">
+  <div class="container">
+    <span class="eyebrow reveal">Quality Control</span>
+    <h2 class="section-title reveal">Every Fruit Has<br>a <em>Journey.</em></h2>
+    <div class="q-table" id="qTable"></div>
+  </div>
+</section>
+
+<!-- ===================== PACKING HOUSE ===================== -->
+<div class="torn-divider tc-cream" aria-hidden="true"></div>
+<section class="packing" id="packing">
+  <div class="container pk-grid">
+    <div class="reveal">
+      <span class="eyebrow">The Packing House</span>
+      <h2 class="section-title">Prepared for<br>the <em>Journey.</em></h2>
+      <p style="margin-top:20px; color:var(--brown); font-size:15px; line-height:1.8;">Every crate is packed by hand, cushioned, labelled and sealed with the same care given to the harvest itself — ready to travel from our orchard to markets across the world.</p>
+      <div class="crate">
+        <h4>Golden Orchard</h4>
+        <div class="sub">Mangoes · India</div>
+        <div class="hw">Handle With Care</div>
+      </div>
+    </div>
+    <img class="reveal-scale" src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=900&q=80" alt="Wooden crates of mangoes ready for export" loading="lazy" data-cursor="VIEW">
+  </div>
+</section>
+
+<!-- ===================== EXPORT MAP ===================== -->
+<section class="export-map" id="export">
+  <div class="container">
+    <span class="eyebrow reveal">Export Process</span>
+    <h2 class="section-title reveal">From India<br>to the <em>World.</em></h2>
+    <div class="map-wrap" id="mapWrap">
+      <svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" aria-label="Map showing mango export routes from India to global destinations">
+        <text x="150" y="270" class="origin-label">● INDIA</text>
+        <path id="r1" class="route-line" d="M160,265 C260,150 360,120 480,110"/>
+        <text x="486" y="108" class="dest-label">UK</text>
+        <path id="r2" class="route-line" d="M160,265 C280,180 380,150 500,150"/>
+        <text x="506" y="152" class="dest-label">Europe</text>
+        <path id="r3" class="route-line" d="M160,265 C220,240 260,230 300,230"/>
+        <text x="306" y="232" class="dest-label">UAE / Middle East</text>
+        <path id="r4" class="route-line" d="M160,265 C300,320 480,360 680,380"/>
+        <text x="686" y="382" class="dest-label">USA</text>
+        <path id="r5" class="route-line" d="M160,265 C260,300 340,320 420,340"/>
+        <text x="426" y="342" class="dest-label">Singapore</text>
+        <circle class="route-dot" cx="160" cy="265" r="5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- EXPORT JOURNEY -->
+<section class="ej">
+  <div class="container">
+    <span class="eyebrow reveal">Export Journey</span>
+    <div class="ej-track" id="ejTrack">
+      <img class="ej-crate" id="ejCrate" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect x='2' y='10' width='36' height='26' fill='%23DCCBA7' stroke='%2363452D'/><line x1='2' y1='20' x2='38' y2='20' stroke='%2363452D'/><path d='M10 10 L20 2 L30 10' fill='none' stroke='%2363452D'/></svg>" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GLOBAL REACH ===================== -->
+<section class="reach" id="reach">
+  <div class="container">
+    <span class="eyebrow reveal" style="color:#C39A52;">Global Reach</span>
+    <h2 class="section-title reveal">Grown Here.<br><em style="color:#E8B24E;">Enjoyed Everywhere.</em></h2>
+    <div class="stat-grid" id="statGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services">
+  <div class="container">
+    <span class="eyebrow reveal">What We Do</span>
+    <h2 class="section-title reveal">Our <em>Services.</em></h2>
+    <div class="svc-index" id="svcIndex"></div>
+  </div>
+</section>
+
+<!-- ===================== PRIVATE LABEL ===================== -->
+<section class="private-label">
+  <div class="container pl-grid">
+    <div class="reveal">
+      <span class="eyebrow">Custom Export / Private Label</span>
+      <h2 class="section-title">Your Brand.<br>Our <em>Orchard.</em></h2>
+    </div>
+    <div class="reveal">
+      <p class="lede">We work with distributors, retailers, hospitality groups and private brands to create tailored mango supply programs.</p>
+      <ul class="pl-list">
+        <li>Custom cartons</li>
+        <li>Private labels</li>
+        <li>Bulk orders</li>
+        <li>Seasonal contracts</li>
+        <li>Export documentation</li>
+        <li>Custom packaging</li>
+      </ul>
+      <a href="#enquiry" class="stamp-btn ghost" style="margin-top:30px;">Discuss Your Requirements →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <span class="eyebrow reveal">The Gallery</span>
+    <h2 class="section-title reveal">Moments from<br>the <em>Orchard.</em></h2>
+    <div class="gal-grid" id="galGrid"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-label="Image viewer" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close viewer">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">›</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<!-- ===================== VIDEO ===================== -->
+<section class="video-sec" id="film">
+  <img src="https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=1600&q=80" alt="A morning in the orchard" loading="lazy">
+  <div class="ov"></div>
+  <div class="content reveal">
+    <span class="eyebrow" style="color:#C39A52;">A Film</span>
+    <h2 class="section-title" style="color:#EFE4CA;">A Morning<br>in the <em style="color:#E8B24E;">Orchard.</em></h2>
+    <button class="play-btn" id="playBtn" aria-label="Play orchard film">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#EFE4CA"><path d="M8 5v14l12-7z"/></svg>
+    </button>
+    <div class="video-meta">03:42 · Orchard Film</div>
+  </div>
+</section>
+<div id="video-modal" role="dialog" aria-label="Orchard film" aria-hidden="true">
+  <div class="vm-box">
+    <button class="vm-close" id="vmClose">CLOSE ✕</button>
+    A Morning in the Orchard — Film Coming Soon
+  </div>
+</div>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials">
+  <div class="container">
+    <span class="eyebrow reveal">Trusted by Partners</span>
+    <h2 class="section-title reveal">Letters from<br>Our <em>Partners.</em></h2>
+    <div class="postcards" id="postcards"></div>
+    <div class="wall" id="wall"></div>
+  </div>
+</section>
+
+<!-- ===================== PEOPLE ===================== -->
+<section class="people">
+  <div class="container">
+    <span class="eyebrow reveal">Our People</span>
+    <h2 class="section-title reveal">Behind Every Mango<br>Are <em>Many Hands.</em></h2>
+    <div class="people-grid" id="peopleGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== SUSTAINABILITY ===================== -->
+<section class="sustain">
+  <svg class="leaf-deco" style="top:60px; right:60px; width:80px;" viewBox="0 0 60 60"><path d="M30 10c14 8 18 24 8 36-6 8-18 10-26 4 14 0 20-10 16-22-3-9-11-13-4-20 2-2 4-1 6 2z" fill="#E8B24E"/></svg>
+  <div class="container">
+    <span class="eyebrow reveal" style="color:#C39A52;">Sustainability</span>
+    <h2 class="section-title reveal">Growing with<br>the <em style="color:#E8B24E;">Land.</em></h2>
+    <div class="sus-grid" id="susGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== SEASON CALENDAR ===================== -->
+<section class="season">
+  <div class="container">
+    <span class="eyebrow reveal">Mango Season Calendar</span>
+    <h2 class="section-title reveal">When to <em>Expect</em> Them.</h2>
+    <div class="month-grid" id="monthGrid"></div>
+    <div id="season-result"></div>
+  </div>
+</section>
+
+<!-- ===================== MANGO FINDER ===================== -->
+<section class="finder" id="finder">
+  <div class="container finder-inner">
+    <span class="eyebrow reveal">Mango Finder</span>
+    <h2 class="section-title reveal">Find Your <em>Mango.</em></h2>
+    <p class="lede" style="margin-top:14px;">What are you looking for?</p>
+    <div class="finder-opts" id="finderOpts"></div>
+    <div id="finder-result"></div>
+  </div>
+</section>
+
+<!-- ===================== ENQUIRY ===================== -->
+<section class="enquiry" id="enquiry">
+  <div class="container">
+    <span class="eyebrow reveal">Export Enquiry</span>
+    <h2 class="section-title reveal">Send an <em>Export Enquiry.</em></h2>
+    <div class="enq-no" id="enqNo"></div>
+    <form class="enquiry-form" id="enquiryForm" novalidate>
+      <div class="ef-grid">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" required></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" type="text" required></div>
+        <div class="field"><label for="f-country">Country</label><input id="f-country" name="country" type="text" required></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel"></div>
+        <div class="field">
+          <label for="f-variety">Mango Variety</label>
+          <select id="f-variety" name="variety">
+            <option>Alphonso</option><option>Kesar</option><option>Banganapalli</option><option>Dussehri</option>
+            <option>Totapuri</option><option>Langra</option><option>Malgoa</option><option>Himsagar</option><option>Mixed / Undecided</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-qty">Estimated Quantity</label><input id="f-qty" name="qty" type="text" placeholder="e.g. 5 metric tonnes"></div>
+        <div class="field"><label for="f-pack">Packaging Requirement</label><input id="f-pack" name="pack" type="text" placeholder="e.g. 5kg export cartons"></div>
+        <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4"></textarea></div>
+      </div>
+      <div class="submit-row">
+        <button type="submit" class="stamp-btn">Submit Enquiry →</button>
+        <span style="font-size:12px; color:var(--brown);">We reply within 2 business days.</span>
+      </div>
+      <div id="enq-confirm">
+        <h4>Enquiry Received</h4>
+        <p style="margin-top:8px; font-size:14px; color:var(--brown);">Thank you — your export enquiry has been recorded. Our export office will be in touch shortly.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== JOURNAL ===================== -->
+<section class="journal" id="journal">
+  <div class="container">
+    <span class="eyebrow reveal">The Journal</span>
+    <h2 class="section-title reveal">Stories from<br>the <em>Orchard.</em></h2>
+    <div class="journal-grid" id="journalGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== ARCHIVES ===================== -->
+<section class="archives">
+  <div class="container">
+    <span class="eyebrow reveal">From the Archives</span>
+    <h2 class="section-title reveal">Yesterday's <em>Headlines.</em></h2>
+    <div class="paper-clips" id="clips"></div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow" style="color:#C39A52;">Get in Touch</span>
+      <h2 class="section-title">Let's Bring the<br>Orchard to <em style="color:#E8B24E;">Your Market.</em></h2>
+    </div>
+    <div class="reveal">
+      <div class="c-block"><h5>Orchard</h5><p>India</p></div>
+      <div class="c-block"><h5>Export Office</h5><p>Bengaluru, India</p></div>
+      <div class="c-block"><h5>Email</h5><a href="mailto:demo@gmail.com">demo@gmail.com</a></div>
+      <div class="c-block"><h5>Phone</h5><a href="tel:+919876543210XXXXXXXXXX">+91 XXXXX XXXXX</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-logo">The<br>Golden<br>Orchard</div>
+      <div class="footer-est">Est. 1958 · India</div>
+    </div>
+    <div class="footer-col">
+      <h6>Explore</h6>
+      <a href="#story">Our Story</a>
+      <a href="#mangoes">Mangoes</a>
+      <a href="#orchard">Orchard</a>
+      <a href="#process">Process</a>
+    </div>
+    <div class="footer-col">
+      <h6>Company</h6>
+      <a href="#export">Exports</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#journal">Journal</a>
+    </div>
+    <div class="footer-col">
+      <h6>Connect</h6>
+      <a href="#contact">Contact</a>
+      <a href="#" onclick="return false;">Instagram</a>
+      <a href="#" onclick="return false;">LinkedIn</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <div class="footer-stamp">Packed in India</div>
+    <small>© 2026 The Golden Orchard. All rights reserved.</small>
+  </div>
+</footer>
+
+<img id="egg-crate" alt="" aria-hidden="true">
+
+<script>
+(function(){
+"use strict";
+
+/* ============================================================
+   DATA
+   ============================================================ */
+const mangoes = [
+  {name:"Alphonso", origin:"Ratnagiri, Maharashtra", season:"April – May", taste:"Rich, creamy & aromatic", texture:"Smooth, fibreless", colour:"Deep saffron gold", best:"Fresh eating, desserts", availability:"Peak season", badge:"Signature", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=700&q=80"},
+  {name:"Kesar", origin:"Gir, Gujarat", season:"May – June", taste:"Sweet with a floral note", texture:"Soft, slightly fibrous", colour:"Warm saffron orange", best:"Pulp, milkshakes", availability:"In season", badge:"Premium", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=700&q=80"},
+  {name:"Banganapalli", origin:"Andhra Pradesh", season:"April – June", taste:"Mildly sweet, tangy edge", texture:"Firm, fibreless", colour:"Bright yellow", best:"Export & bulk supply", availability:"High yield", badge:"Export Grade", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=701&q=80"},
+  {name:"Dussehri", origin:"Malihabad, Uttar Pradesh", season:"June – July", taste:"Delicately sweet", texture:"Smooth, thin skin", colour:"Pale green-gold", best:"Fresh eating", availability:"Limited season", badge:"Heritage", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=701&q=80"},
+  {name:"Totapuri", origin:"Karnataka & Tamil Nadu", season:"May – July", taste:"Tangy, less sweet", texture:"Firm, crisp", colour:"Green with a blush", best:"Pulp & processing", availability:"Widely available", badge:"Processing", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=702&q=80"},
+  {name:"Langra", origin:"Varanasi, Uttar Pradesh", season:"July – August", taste:"Distinctively tart-sweet", texture:"Soft, juicy", colour:"Green even when ripe", best:"Traditional preparations", availability:"Seasonal", badge:"Traditional", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=702&q=80"},
+  {name:"Malgoa", origin:"Tamil Nadu", season:"May – June", taste:"Sweet, low acidity", texture:"Fleshy, minimal fibre", colour:"Yellow-green", best:"Fresh eating", availability:"Regional favourite", badge:"Rare", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=703&q=80"},
+  {name:"Himsagar", origin:"West Bengal", season:"May – June", taste:"Exceptionally sweet", texture:"Silky, fibreless", colour:"Golden yellow", best:"Fresh eating, gifting", availability:"Short season", badge:"Prized", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=703&q=80"}
+];
+
+const timeline = [
+  {year:"1958", title:"The First Orchard", text:"A single plot of land in Indian soil, planted with the first mango saplings by the founding family."},
+  {year:"1972", title:"First Regional Market", text:"Golden Orchard mangoes reach regional markets beyond the village for the first time."},
+  {year:"1986", title:"Export Journey Begins", text:"The first international shipment leaves for the Middle East, opening a new chapter for the orchard."},
+  {year:"2001", title:"New Orchards", text:"Additional orchards are planted across Maharashtra and Andhra Pradesh, widening our variety."},
+  {year:"2015", title:"Global Distribution", text:"Golden Orchard mangoes are shipped to over fifteen countries across four continents."},
+  {year:"2026", title:"The Story Continues", text:"Sixty-eight years on, the same soil, the same care — now reaching more tables than ever."}
+];
+
+const whyPoints = [
+  {n:"01", title:"Carefully Grown", text:"Every tree is tended by hand, with attention paid to soil health, watering and natural growth.", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=500&q=80"},
+  {n:"02", title:"Hand Selected", text:"Each fruit is inspected individually before it earns a place in a Golden Orchard crate.", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=500&q=80"},
+  {n:"03", title:"Naturally Ripened", text:"No artificial ripening agents — our mangoes ripen in their own time, the traditional way.", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=500&q=80"},
+  {n:"04", title:"Carefully Packed", text:"Cushioned, labelled and sealed by hand, ready to withstand the journey ahead.", img:"https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=500&q=80"},
+  {n:"05", title:"Export Ready", text:"Every shipment meets international standards for freshness, safety and documentation.", img:"https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500&q=80"}
+];
+
+const oiLabels = [
+  {t:"Soil", top:"70%", left:"18%", text:"Healthy soil forms the foundation of every harvest."},
+  {t:"Water", top:"45%", left:"32%", text:"Measured, responsible irrigation nourishes each tree."},
+  {t:"Sun", top:"18%", left:"55%", text:"Long, warm days give the fruit its natural sweetness."},
+  {t:"Tree", top:"55%", left:"68%", text:"Some of our trees have stood in this orchard for generations."},
+  {t:"Fruit", top:"72%", left:"82%", text:"Every mango is left to ripen at its own pace before harvest."}
+];
+
+const processSteps = [
+  {n:"01", title:"Plant", text:"Saplings are planted with care, chosen for the character of the soil they will grow in.", annot:"Where it all begins →", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=500&q=80"},
+  {n:"02", title:"Nourish", text:"Regular, responsible watering and natural feeding sustain each tree through the dry months.", annot:"Patience, season after season", img:"https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500&q=80"},
+  {n:"03", title:"Flower", text:"Delicate blossoms appear in late winter, the first promise of the coming season's fruit.", annot:"The first sign of gold", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=500&q=80"},
+  {n:"04", title:"Grow", text:"Young fruit forms and swells through the warm months, watched closely by our orchard team.", annot:"Slow, steady, sun-fed", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=500&q=80"},
+  {n:"05", title:"Select", text:"Each fruit is assessed for size, colour and maturity before it is marked ready.", annot:"Only the best move on", img:"https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=500&q=80"},
+  {n:"06", title:"Harvest", text:"Mangoes are hand-picked at first light, at the precise moment they are ready.", annot:"Harvested with care", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=501&q=80"}
+];
+
+const qualitySteps = [
+  {n:"01", title:"Size"},{n:"02", title:"Colour"},{n:"03", title:"Firmness"},
+  {n:"04", title:"Maturity"},{n:"05", title:"Surface"},{n:"06", title:"Packing"}
+];
+
+const globalStats = [
+  {num:20, suffix:"+", label:"Export Destinations"},
+  {num:6, suffix:"+", label:"Mango Varieties"},
+  {num:60, suffix:"+", label:"Years of Experience"},
+  {num:100, suffix:"%", label:"Quality Focused"}
+];
+
+const services = [
+  {n:"01", title:"Mango Cultivation", text:"Orchards grown and maintained under our direct supervision.", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&q=80"},
+  {n:"02", title:"Export Supply", text:"Reliable, documented mango exports to markets worldwide.", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=400&q=80"},
+  {n:"03", title:"Private Label", text:"Tailored branding and packaging for distributors and retailers.", img:"https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=400&q=80"},
+  {n:"04", title:"Bulk Orders", text:"High-volume sourcing for wholesalers and hospitality groups.", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&q=80"},
+  {n:"05", title:"Custom Packaging", text:"Cartons, crates and presentation built around your brand.", img:"https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&q=80"},
+  {n:"06", title:"Global Logistics", text:"Cold chain and shipping coordination from orchard to port.", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=401&q=80"},
+  {n:"07", title:"Seasonal Sourcing", text:"Advance planning aligned to each variety's peak season.", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=401&q=80"},
+  {n:"08", title:"Wholesale Supply", text:"Consistent, graded supply for regional and export markets.", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=401&q=80"}
+];
+
+const testimonials = [
+  {q:"The quality and consistency have been exceptional across every shipment.", a:"International Distributor, Dubai"},
+  {q:"Their Alphonso mangoes have become one of our seasonal highlights.", a:"Retail Partner, London"},
+  {q:"Reliable sourcing, excellent packing and beautiful fruit.", a:"Import Partner, Singapore"}
+];
+
+const people = [
+  {name:"Ramesh", role:"Orchard Supervisor", story:"Ramesh has overseen the western orchard for over eighteen years, and can tell you the history of every row of trees.", img:"https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=500&q=80"},
+  {name:"Lakshmi", role:"Harvest Lead", story:"Lakshmi leads the harvest team each season, timing each pick to the morning light.", img:"https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=500&q=80"},
+  {name:"Suresh", role:"Quality Inspector", story:"Suresh checks every crate before it leaves the packing house, a role he has held since 2004.", img:"https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80"},
+  {name:"Anita", role:"Export Coordinator", story:"Anita manages documentation and logistics, keeping every shipment on schedule.", img:"https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80"}
+];
+
+const sustain = [
+  {title:"Responsible Water Use", text:"Drip irrigation and rainwater capture reduce waste across our orchards."},
+  {title:"Soil Health", text:"Natural composting and crop rotation keep our soil fertile for generations to come."},
+  {title:"Orchard Biodiversity", text:"Native trees and plants are preserved alongside our mango groves."},
+  {title:"Low-Waste Packing", text:"Recyclable and biodegradable materials are used wherever possible."},
+  {title:"Responsible Sourcing", text:"We work directly with growers who share our long-term farming values."},
+  {title:"Long-Term Farming", text:"Decisions are made for the next generation of this orchard, not just this season."}
+];
+
+const monthData = {
+  Jan:{peak:false, v:["Cold Storage Stock"]},
+  Feb:{peak:false, v:["Early Alphonso (limited)"]},
+  Mar:{peak:false, v:["Alphonso", "Banganapalli"]},
+  Apr:{peak:true, v:["Alphonso", "Banganapalli", "Kesar"]},
+  May:{peak:true, v:["Alphonso", "Kesar", "Banganapalli", "Malgoa", "Himsagar"]},
+  Jun:{peak:true, v:["Dussehri", "Kesar", "Totapuri", "Malgoa"]},
+  Jul:{peak:true, v:["Dussehri", "Langra", "Totapuri"]},
+  Aug:{peak:false, v:["Langra", "Totapuri"]},
+  Sep:{peak:false, v:["Late Totapuri"]},
+  Oct:{peak:false, v:["Off Season"]},
+  Nov:{peak:false, v:["Off Season"]},
+  Dec:{peak:false, v:["Off Season"]}
+};
+
+const finderMap = {
+  Sweet:{name:"Himsagar", tags:["Sweet","Silky","Prized"]},
+  Aromatic:{name:"Alphonso", tags:["Rich","Aromatic","Creamy","Premium"]},
+  Creamy:{name:"Alphonso", tags:["Rich","Aromatic","Creamy","Premium"]},
+  Firm:{name:"Banganapalli", tags:["Firm","Fibreless","Export Grade"]},
+  Juicy:{name:"Langra", tags:["Juicy","Tart-Sweet","Traditional"]},
+  Cooking:{name:"Totapuri", tags:["Tangy","Firm","Processing"]},
+  "Export / Bulk":{name:"Banganapalli", tags:["High Yield","Export Grade","Consistent"]}
+};
+
+const journal = [
+  {tag:"Heritage", title:"The Story of Alphonso", text:"How one variety came to define Indian mango exports.", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=500&q=80"},
+  {tag:"Field Notes", title:"Why Mangoes Ripen Differently", text:"Understanding what shapes flavour, colour and texture.", img:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=500&q=80"},
+  {tag:"Orchard Life", title:"Inside the Orchard", text:"A season observed through the eyes of our orchard team.", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=500&q=80"},
+  {tag:"Export", title:"How We Prepare an Export Shipment", text:"From selection to sea freight — inside our export process.", img:"https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=500&q=80"},
+  {tag:"History", title:"The History of Indian Mangoes", text:"Tracing the fruit's long history across the subcontinent.", img:"https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500&q=80"},
+  {tag:"Logistics", title:"From Farm to Port", text:"The cold chain journey behind every export crate.", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=501&q=80"}
+];
+
+const galleryImgs = [
+  {src:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=700&q=80", cap:"Mango Close-Up", cls:"wide tall"},
+  {src:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=700&q=80", cap:"Orchard Rows", cls:""},
+  {src:"https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=700&q=80", cap:"Orchard Workers", cls:"small"},
+  {src:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=700&q=80", cap:"Harvest Day", cls:"tall"},
+  {src:"https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=700&q=80", cap:"Packing House", cls:"wide"},
+  {src:"https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=700&q=80", cap:"Wooden Crate", cls:"small"},
+  {src:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=701&q=80", cap:"Morning Leaves", cls:""},
+  {src:"https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=700&q=80", cap:"Golden Sunlight", cls:"small"},
+  {src:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=701&q=80", cap:"Mango Basket", cls:"wide"},
+  {src:"https://images.unsplash.com/photo-1580489944761-15a19d654956?w=700&q=80", cap:"Export Ready", cls:""},
+  {src:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=701&q=80", cap:"The Farmhouse", cls:"small"},
+  {src:"https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=702&q=80", cap:"On the Way", cls:"tall"}
+];
+
+const clips = [
+  {t:"THE GOLDEN ORCHARD EXPANDS ITS EXPORT PROGRAM", d:"1986", p:"Following a successful regional harvest, the orchard announces its first shipments bound for international markets, marking a new chapter for the family business."},
+  {t:"INDIAN MANGOES ARRIVE AT INTERNATIONAL MARKETS", d:"1994", p:"Golden Orchard fruit reaches distributors across the Middle East and Europe for the first time, praised for consistency and flavour."},
+  {t:"A NEW SEASON BEGINS", d:"2015", p:"With new orchards now in full yield, the company reports its strongest harvest yet, supplying partners across four continents."}
+];
+
+/* ============================================================
+   RENDER FUNCTIONS
+   ============================================================ */
+function el(html){const t=document.createElement('template'); t.innerHTML=html.trim(); return t.content.firstElementChild;}
+
+function renderTimeline(){
+  const wrap=document.getElementById('timeline');
+  timeline.forEach((t,i)=>{
+    wrap.appendChild(el(`
+      <div class="tl-item reveal" style="--i:${i}">
+        <div class="tl-year">${t.year}</div>
+        <div class="tl-body"><h3>${t.title}</h3><p>${t.text}</p></div>
+      </div>`));
+  });
+}
+
+function renderMangoes(){
+  const wrap=document.getElementById('mangoGrid');
+  mangoes.forEach((m,i)=>{
+    const card=el(`
+      <article class="mango-card reveal" style="--i:${i%4}" data-idx="${i}" tabindex="0" data-cursor="DISCOVER" role="button" aria-label="View details for ${m.name}">
+        <div class="mc-img-wrap">
+          <img src="${m.img}" alt="${m.name} mango" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1553279768-865429fa0078?w=700&q=80'">
+          <span class="mc-badge">${m.badge}</span>
+          <svg class="mc-stamp" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="none" stroke="#8A493B" stroke-width="1.4"/><text x="22" y="20" text-anchor="middle" font-size="6" fill="#8A493B" font-family="Playfair Display">GOLDEN</text><text x="22" y="28" text-anchor="middle" font-size="6" fill="#8A493B" font-family="Playfair Display">ORCHARD</text></svg>
+        </div>
+        <div class="mc-body">
+          <div class="mc-num">0${i+1} / Variety</div>
+          <h3>${m.name}</h3>
+          <p>${m.taste}</p>
+          <div class="mc-meta"><span>${m.origin.split(',')[0]}</span><span>${m.season}</span></div>
+        </div>
+      </article>`);
+    card.addEventListener('click',()=>openMangoModal(i));
+    card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openMangoModal(i);}});
+    wrap.appendChild(card);
+  });
+}
+
+function renderWhy(){
+  const wrap=document.getElementById('whyList');
+  whyPoints.forEach((w,i)=>{
+    wrap.appendChild(el(`
+      <div class="why-item reveal" style="--i:${i}">
+        <div class="why-num">${w.n}</div>
+        <div><h3>${w.title}</h3><p>${w.text}</p></div>
+        <div class="why-img"><img src="${w.img}" alt="" loading="lazy"></div>
+      </div>`));
+  });
+}
+
+function renderOiLabels(){
+  const wrap=document.getElementById('oiLabels');
+  oiLabels.forEach(l=>{
+    wrap.appendChild(el(`
+      <div class="oi-label" style="top:${l.top}; left:${l.left};" tabindex="0" aria-label="${l.t}">
+        <div class="oi-panel"><div class="t">${l.t}</div><p>${l.text}</p></div>
+      </div>`));
+  });
+}
+
+function renderProcess(){
+  const wrap=document.getElementById('processGrid');
+  processSteps.forEach((p,i)=>{
+    wrap.appendChild(el(`
+      <div class="p-step reveal" style="--i:${i}">
+        <img src="${p.img}" alt="${p.title} stage of mango growing" loading="lazy">
+        <div class="p-num">${p.n} / 06</div>
+        <h3>${p.title}</h3>
+        <p>${p.text}</p>
+        <span class="p-annot">${p.annot}</span>
+      </div>`));
+  });
+}
+
+function renderQuality(){
+  const wrap=document.getElementById('qTable');
+  qualitySteps.forEach((q,i)=>{
+    wrap.appendChild(el(`
+      <div class="q-row reveal" style="--i:${i}">
+        <div class="q-num">${q.n}</div>
+        <h4>${q.title}</h4>
+        <div class="q-check"><span class="dot"></span> Checked</div>
+      </div>`));
+  });
+}
+
+function renderStats(){
+  const wrap=document.getElementById('statGrid');
+  globalStats.forEach((s,i)=>{
+    wrap.appendChild(el(`
+      <div class="stat reveal" style="--i:${i}">
+        <div class="num" data-target="${s.num}" data-suffix="${s.suffix}">0${s.suffix}</div>
+        <div class="lab">${s.label}</div>
+      </div>`));
+  });
+}
+
+function renderServices(){
+  const wrap=document.getElementById('svcIndex');
+  services.forEach((s,i)=>{
+    wrap.appendChild(el(`
+      <div class="svc-row reveal" style="--i:${i%4}">
+        <div class="sv-num">${s.n} /</div>
+        <div><h3>${s.title}</h3><p>${s.text}</p></div>
+        <div class="sv-tag">Read More</div>
+        <svg class="sv-arrow" width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M0 6h15M10 1l5 5-5 5" stroke="#63452D"/></svg>
+        <div class="svc-img-float"><img src="${s.img}" alt="" loading="lazy"></div>
+      </div>`));
+  });
+}
+
+function renderTestimonials(){
+  const wrap=document.getElementById('postcards');
+  testimonials.forEach(t=>{
+    wrap.appendChild(el(`
+      <div class="postcard">
+        <svg class="stamp-mini" viewBox="0 0 40 40"><rect x="1" y="1" width="38" height="38" fill="none" stroke="#8A493B" stroke-dasharray="3 2"/></svg>
+        <p class="quote">"${t.q}"</p>
+        <div class="attr">${t.a}</div>
+      </div>`));
+  });
+  const wall=document.getElementById('wall');
+  const positions=[
+    {top:'0%',left:'2%',cls:'large'},{top:'10%',left:'42%',cls:'small'},{top:'46%',left:'8%',cls:'hand'},
+    {top:'4%',left:'70%',cls:'stamped'},{top:'54%',left:'54%',cls:'small'},{top:'30%',left:'26%',cls:'large'}
+  ];
+  const wallTexts=["Consistency you can build a business on.","Beautiful presentation, every crate.","reliable, season after season","TRUSTED PARTNER","Our customers ask for it by name.","A supplier that feels like family."];
+  positions.forEach((p,i)=>{
+    wall.appendChild(el(`<div class="wall-q ${p.cls}" style="top:${p.top}; left:${p.left};">${wallTexts[i]}</div>`));
+  });
+}
+
+function renderPeople(){
+  const wrap=document.getElementById('peopleGrid');
+  people.forEach((p,i)=>{
+    wrap.appendChild(el(`
+      <div class="person reveal" style="--i:${i}">
+        <img src="${p.img}" alt="Portrait of ${p.name}, ${p.role}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=500&q=80'">
+        <div class="person-info"><h4>${p.name}</h4><div class="role">${p.role}</div><p>${p.story}</p></div>
+      </div>`));
+  });
+}
+
+function renderSustain(){
+  const wrap=document.getElementById('susGrid');
+  sustain.forEach((s,i)=>{
+    wrap.appendChild(el(`<div class="sus-item reveal" style="--i:${i}"><h4>${s.title}</h4><p>${s.text}</p></div>`));
+  });
+}
+
+function renderMonths(){
+  const wrap=document.getElementById('monthGrid');
+  Object.keys(monthData).forEach(m=>{
+    wrap.appendChild(el(`<button class="month-btn" data-month="${m}">${m}</button>`));
+  });
+  wrap.addEventListener('click',e=>{
+    const btn=e.target.closest('.month-btn'); if(!btn) return;
+    document.querySelectorAll('.month-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    showMonth(btn.dataset.month);
+  });
+  showMonth('May');
+  document.querySelector('.month-btn[data-month="May"]').classList.add('active');
+}
+function showMonth(m){
+  const d=monthData[m];
+  const res=document.getElementById('season-result');
+  res.innerHTML=`<div class="m-title">${m.toUpperCase()}</div>
+    <div class="m-varieties">${d.v.map(v=>`<span>${v}</span>`).join('')}</div>
+    ${d.peak? '<div class="m-peak">Peak Season</div>':''}`;
+}
+
+function renderFinder(){
+  const wrap=document.getElementById('finderOpts');
+  Object.keys(finderMap).forEach(k=>{
+    wrap.appendChild(el(`<button class="finder-opt" data-key="${k}">${k}</button>`));
+  });
+  wrap.addEventListener('click',e=>{
+    const btn=e.target.closest('.finder-opt'); if(!btn) return;
+    document.querySelectorAll('.finder-opt').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const rec=finderMap[btn.dataset.key];
+    document.getElementById('finder-result').innerHTML=`
+      <p style="font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--brown); margin-bottom:16px;">Based on your preference, we recommend</p>
+      <div class="finder-card"><h3>${rec.name}</h3><div class="finder-tags">${rec.tags.map(t=>`<span>${t}</span>`).join('')}</div></div>`;
+  });
+}
+
+function renderJournal(){
+  const wrap=document.getElementById('journalGrid');
+  journal.forEach((j,i)=>{
+    wrap.appendChild(el(`
+      <article class="jrn-card reveal" style="--i:${i%3}">
+        <img src="${j.img}" alt="" loading="lazy">
+        <div class="jc-eyebrow">${j.tag}</div>
+        <h3>${j.title}</h3>
+        <p>${j.text}</p>
+      </article>`));
+  });
+}
+
+function renderClips(){
+  const wrap=document.getElementById('clips');
+  clips.forEach(c=>{
+    wrap.appendChild(el(`
+      <div class="clip reveal">
+        <div class="masthead">The Orchard Gazette · ${c.d}</div>
+        <h3>${c.t}</h3>
+        <p>${c.p}</p>
+      </div>`));
+  });
+}
+
+let galData=[];
+function renderGallery(){
+  const wrap=document.getElementById('galGrid');
+  galleryImgs.forEach((g,i)=>{
+    galData.push(g);
+    wrap.appendChild(el(`
+      <div class="gal-item ${g.cls} reveal" data-idx="${i}" tabindex="0" role="button" aria-label="View ${g.cap}">
+        <img src="${g.src}" alt="${g.cap}" loading="lazy">
+        <span class="gal-cap">${g.cap}</span>
+      </div>`));
+  });
+  wrap.addEventListener('click',e=>{
+    const item=e.target.closest('.gal-item'); if(!item) return;
+    openLightbox(parseInt(item.dataset.idx,10));
+  });
+  wrap.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){
+      const item=e.target.closest('.gal-item'); if(!item) return;
+      e.preventDefault(); openLightbox(parseInt(item.dataset.idx,10));
+    }
+  });
+}
+
+/* ============================================================
+   INIT RENDER
+   ============================================================ */
+try{
+  renderTimeline(); renderMangoes(); renderWhy(); renderOiLabels(); renderProcess();
+  renderQuality(); renderStats(); renderServices(); renderTestimonials(); renderPeople();
+  renderSustain(); renderMonths(); renderFinder(); renderJournal(); renderClips(); renderGallery();
+}catch(err){ console.error('Render error', err); }
+
+/* ============================================================
+   LOADER
+   ============================================================ */
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    const l=document.getElementById('loader');
+    if(l) l.classList.add('hide');
+  }, 900);
+});
+// fallback in case load event is delayed
+setTimeout(()=>{const l=document.getElementById('loader'); if(l) l.classList.add('hide');}, 3200);
+
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+const isTouch = matchMedia('(hover:none), (pointer:coarse)').matches;
+if(isTouch){ document.body.classList.add('touch'); }
+if(!isTouch){
+  const cursor=document.getElementById('cursor');
+  const label=document.getElementById('cursorLabel');
+  const trails=[];
+  for(let i=0;i<3;i++){
+    const t=document.createElement('div'); t.className='trail'; t.style.opacity=(0.3-i*0.08);
+    document.body.appendChild(t); trails.push({el:t,x:0,y:0});
+  }
+  let mx=0,my=0;
+  window.addEventListener('mousemove',e=>{
+    mx=e.clientX; my=e.clientY;
+    cursor.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;
+    label.style.left=mx+'px'; label.style.top=my+'px';
+  });
+  function animTrails(){
+    let x=mx,y=my;
+    trails.forEach((t,i)=>{
+      t.x += (x - t.x) * 0.28; t.y += (y - t.y) * 0.28;
+      t.el.style.transform=`translate(${t.x}px,${t.y}px) translate(-50%,-50%)`;
+      x=t.x; y=t.y;
+    });
+    requestAnimationFrame(animTrails);
+  }
+  animTrails();
+  document.querySelectorAll('a,button,[data-cursor]').forEach(node=>{
+    const txt = node.getAttribute('data-cursor') || (node.tagName==='IMG' || node.closest('img')?'VIEW':'OPEN →');
+  });
+  document.addEventListener('mouseover',e=>{
+    const target=e.target.closest('[data-cursor], .mango-card, img, button, a');
+    if(!target){ label.classList.remove('active'); cursor.style.width='14px'; cursor.style.height='14px'; return; }
+    let txt = target.getAttribute('data-cursor');
+    if(!txt){
+      if(target.classList.contains('mango-card')) txt='DISCOVER';
+      else if(target.tagName==='IMG') txt='VIEW';
+      else if(target.tagName==='BUTTON'||target.tagName==='A') txt='OPEN →';
+    }
+    if(txt){ label.textContent=txt; label.classList.add('active'); cursor.style.width='8px'; cursor.style.height='8px'; }
+  });
+  document.addEventListener('mouseout',e=>{
+    if(!e.relatedTarget || !e.relatedTarget.closest('[data-cursor], .mango-card, img, button, a')){
+      label.classList.remove('active'); cursor.style.width='14px'; cursor.style.height='14px';
+    }
+  });
+}
+
+/* ============================================================
+   HEADER SCROLL + REVEAL OBSERVER
+   ============================================================ */
+const header=document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>{
+  header.classList.toggle('scrolled', window.scrollY>60);
+},{passive:true});
+
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+    }
+  });
+},{threshold:0.15});
+
+function observeAll(){
+  document.querySelectorAll('.reveal, .reveal-clip, .reveal-scale, .timeline, .q-row').forEach(n=>io.observe(n));
+}
+observeAll();
+
+// route lines + harvest stamp + counters trigger
+const mapIO=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      document.querySelectorAll('.route-line').forEach(l=>l.classList.add('in'));
+    }
+  });
+},{threshold:.3});
+const mapEl=document.getElementById('mapWrap'); if(mapEl) mapIO.observe(mapEl);
+
+const stampIO=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('in'); });
+},{threshold:.5});
+const hStamp=document.getElementById('harvestStamp'); if(hStamp) stampIO.observe(hStamp);
+
+// counters
+let countersRun=false;
+const statSection=document.getElementById('reach');
+const counterIO=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting && !countersRun){
+      countersRun=true;
+      document.querySelectorAll('.num[data-target]').forEach(numEl=>{
+        const target=parseInt(numEl.dataset.target,10);
+        const suffix=numEl.dataset.suffix||'';
+        let cur=0; const step=Math.max(1,Math.round(target/40));
+        const t=setInterval(()=>{
+          cur+=step;
+          if(cur>=target){cur=target; clearInterval(t);}
+          numEl.textContent=cur+suffix;
+        },30);
+      });
+    }
+  });
+},{threshold:.4});
+if(statSection) counterIO.observe(statSection);
+
+// export journey crate animation
+const ejCrate=document.getElementById('ejCrate');
+const ejTrack=document.getElementById('ejTrack');
+const journeySteps=["Orchard","Harvest","Quality","Packing","Cold Chain","Port","Global Delivery"];
+journeySteps.forEach((s,i)=>{
+  ejTrack.appendChild(el(`<div class="ej-step"><div class="ej-dot"></div><h4>${s}</h4></div>`));
+});
+const ejIO=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      requestAnimationFrame(()=>{ ejCrate.style.left = (ejTrack.offsetWidth-40) + 'px'; });
+    }
+  });
+},{threshold:.4});
+ejIO.observe(ejTrack);
+
+/* ============================================================
+   MOUSE PARALLAX ON HERO FLOATERS
+   ============================================================ */
+const floaters=document.getElementById('floaters');
+if(floaters && !isTouch){
+  document.querySelector('.hero').addEventListener('mousemove',e=>{
+    const rect=e.currentTarget.getBoundingClientRect();
+    const px=(e.clientX-rect.left)/rect.width - 0.5;
+    const py=(e.clientY-rect.top)/rect.height - 0.5;
+    floaters.style.transform=`translate(${px*14}px, ${py*14}px)`;
+  });
+}
+
+/* ============================================================
+   MANGO MODAL
+   ============================================================ */
+const modalOverlay=el(`
+  <div class="modal-overlay" id="mangoModalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal">
+      <button class="modal-close" id="mangoModalClose" aria-label="Close">✕</button>
+      <div class="modal-hero"><img id="mmImg" src="" alt=""><h3 id="mmName"></h3></div>
+      <div class="modal-body">
+        <div class="modal-grid" id="mmGrid"></div>
+        <a href="#enquiry" class="stamp-btn" id="mmCta">Discover This Variety →</a>
+      </div>
+    </div>
+  </div>`);
+document.body.appendChild(modalOverlay);
+let lastFocused=null;
+function openMangoModal(i){
+  const m=mangoes[i];
+  document.getElementById('mmImg').src=m.img;
+  document.getElementById('mmImg').alt=m.name+' mango';
+  document.getElementById('mmName').textContent=m.name;
+  document.getElementById('mmGrid').innerHTML=`
+    <div><span>Origin</span><p>${m.origin}</p></div>
+    <div><span>Season</span><p>${m.season}</p></div>
+    <div><span>Taste</span><p>${m.taste}</p></div>
+    <div><span>Texture</span><p>${m.texture}</p></div>
+    <div><span>Colour</span><p>${m.colour}</p></div>
+    <div><span>Best For</span><p>${m.best}</p></div>`;
+  lastFocused=document.activeElement;
+  modalOverlay.classList.add('open'); modalOverlay.setAttribute('aria-hidden','false');
+  document.getElementById('mangoModalClose').focus();
+}
+function closeMangoModal(){
+  modalOverlay.classList.remove('open'); modalOverlay.setAttribute('aria-hidden','true');
+  if(lastFocused) lastFocused.focus();
+}
+document.getElementById('mangoModalClose').addEventListener('click',closeMangoModal);
+modalOverlay.addEventListener('click',e=>{ if(e.target===modalOverlay) closeMangoModal(); });
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+let lbIndex=0;
+const lightbox=document.getElementById('lightbox');
+function openLightbox(i){
+  lbIndex=i; updateLightbox();
+  lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false');
+}
+function updateLightbox(){
+  const g=galData[lbIndex];
+  document.getElementById('lbImg').src=g.src;
+  document.getElementById('lbImg').alt=g.cap;
+  document.getElementById('lbCount').textContent=`IMAGE ${String(lbIndex+1).padStart(2,'0')} / ${String(galData.length).padStart(2,'0')} — ${g.cap}`;
+}
+function closeLightbox(){ lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); }
+document.getElementById('lbClose').addEventListener('click',closeLightbox);
+document.getElementById('lbNext').addEventListener('click',()=>{ lbIndex=(lbIndex+1)%galData.length; updateLightbox(); });
+document.getElementById('lbPrev').addEventListener('click',()=>{ lbIndex=(lbIndex-1+galData.length)%galData.length; updateLightbox(); });
+lightbox.addEventListener('click',e=>{ if(e.target===lightbox) closeLightbox(); });
+
+/* ============================================================
+   VIDEO MODAL
+   ============================================================ */
+const videoModal=document.getElementById('video-modal');
+document.getElementById('playBtn').addEventListener('click',()=>{ videoModal.classList.add('open'); videoModal.setAttribute('aria-hidden','false'); });
+document.getElementById('vmClose').addEventListener('click',()=>{ videoModal.classList.remove('open'); videoModal.setAttribute('aria-hidden','true'); });
+videoModal.addEventListener('click',e=>{ if(e.target===videoModal){ videoModal.classList.remove('open'); videoModal.setAttribute('aria-hidden','true'); } });
+
+/* ============================================================
+   GLOBAL ESCAPE KEY
+   ============================================================ */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeMangoModal(); closeLightbox();
+    videoModal.classList.remove('open'); videoModal.setAttribute('aria-hidden','true');
+    closeMobileMenu(); closeSearchOverlay();
+  }
+});
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+const mobileMenu=document.getElementById('mobile-menu');
+const menuBtn=document.getElementById('menuBtn');
+function openMobileMenu(){ mobileMenu.classList.add('open'); menuBtn.setAttribute('aria-expanded','true'); }
+function closeMobileMenu(){ mobileMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
+menuBtn.addEventListener('click',openMobileMenu);
+document.getElementById('closeMenu').addEventListener('click',closeMobileMenu);
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileMenu));
+
+/* ============================================================
+   SEARCH OVERLAY
+   ============================================================ */
+const searchOverlay=document.getElementById('search-overlay');
+const searchInput=document.getElementById('searchInput');
+const searchResults=document.getElementById('search-results');
+const searchIndex=[
+  ...mangoes.map(m=>({type:'Mango Variety', title:m.name, sub:m.taste, href:'#mangoes'})),
+  ...services.map(s=>({type:'Service', title:s.title, sub:s.text, href:'#services'})),
+  ...journal.map(j=>({type:'Journal', title:j.title, sub:j.text, href:'#journal'})),
+  ...processSteps.map(p=>({type:'Process', title:p.title, sub:p.text, href:'#process'}))
+];
+function openSearchOverlay(){ searchOverlay.classList.add('open'); setTimeout(()=>searchInput.focus(),300); }
+function closeSearchOverlay(){ searchOverlay.classList.remove('open'); searchInput.value=''; searchResults.innerHTML=''; }
+document.getElementById('searchBtn').addEventListener('click',openSearchOverlay);
+document.getElementById('closeSearch').addEventListener('click',closeSearchOverlay);
+searchInput.addEventListener('input',()=>{
+  const q=searchInput.value.trim().toLowerCase();
+  if(!q){ searchResults.innerHTML=''; return; }
+  const matches=searchIndex.filter(item=> item.title.toLowerCase().includes(q) || item.sub.toLowerCase().includes(q)).slice(0,8);
+  searchResults.innerHTML = matches.length ? matches.map(m=>`<a class="res" href="${m.href}" style="display:block;"><span>${m.type}</span>${m.title}</a>`).join('') : '<p style="color:rgba(239,228,202,.6); padding-top:10px;">No results found.</p>';
+  searchResults.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeSearchOverlay));
+});
+
+/* ============================================================
+   ENQUIRY FORM
+   ============================================================ */
+document.getElementById('enqNo').textContent = 'Enquiry No. GO-'+ (2026000+Math.floor(Math.random()*899)).toString();
+document.getElementById('enquiryForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const confirmBox=document.getElementById('enq-confirm');
+  confirmBox.classList.add('show');
+  confirmBox.scrollIntoView({behavior:'smooth', block:'nearest'});
+  this.querySelectorAll('input,textarea').forEach(f=>f.value='');
+});
+
+/* ============================================================
+   EASTER EGG — 5 clicks on logo
+   ============================================================ */
+let logoClicks=0;
+const logo=document.getElementById('logoClick');
+function triggerEgg(){
+  logoClicks++;
+  if(logoClicks>=5){
+    logoClicks=0;
+    const crate=document.getElementById('egg-crate');
+    crate.classList.remove('run');
+    void crate.offsetWidth;
+    crate.classList.add('run');
+    const tag=document.createElement('div');
+  }
+}
+logo.addEventListener('click',triggerEgg);
+logo.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); triggerEgg(); }});
+
+/* ============================================================
+   SMOOTH ANCHOR CLOSE FOR OVERLAYS
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',()=>{ closeMobileMenu(); closeSearchOverlay(); });
+});
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,437 @@
+/* ============================================================
+   ARTISANO — main.js
+   Architecture: apiHandler, formHandler, cacheHandler,
+                 chartInit, toastNotification, animationInit
+   ============================================================ */
+
+'use strict';
+
+/* ── Constants ── */
+const API_URL    = "https://script.google.com/macros/s/AKfycbzl717Y-4DxUNX1p-sK6bmb0_yUVCtVSWH_HDMqNWlGJF7_E7YjT9WoV8ql8LxV00Q6Pg/exec";
+const CACHE_KEY  = "visitor_stats";
+const CACHE_TTL  = 20 * 60 * 1000; // 20 minutes
+
+const statsData  = {
+  projectsCompleted : 120,
+  happyClients      : 85,
+  ongoingProjects   : 12,
+  yearsExperience   : 6
+};
+
+/* ================================================================
+   CACHE HANDLER
+   ================================================================ */
+const cacheHandler = {
+  set(key, data) {
+    try {
+      localStorage.setItem(key, JSON.stringify({ data, timestamp: Date.now() }));
+    } catch(e) { console.warn('Cache write failed', e); }
+  },
+  get(key, ttl = CACHE_TTL) {
+    try {
+      const raw = localStorage.getItem(key);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (Date.now() - parsed.timestamp > ttl) { localStorage.removeItem(key); return null; }
+      return parsed.data;
+    } catch(e) { return null; }
+  }
+};
+
+/* ================================================================
+   API HANDLER  (respects 20-min cache)
+   ================================================================ */
+async function apiHandler(payload) {
+  const cached = cacheHandler.get(CACHE_KEY);
+  if (cached) { console.info('[API] Serving from cache'); return cached; }
+
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    cacheHandler.set(CACHE_KEY, data);
+    return data;
+  } catch(err) {
+    console.error('[API] Error:', err);
+    throw err;
+  }
+}
+
+/* ================================================================
+   TOAST NOTIFICATION
+   ================================================================ */
+function toastNotification(message, type = 'success') {
+  let toast = document.getElementById('toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast';
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.className = 'toast' + (type === 'error' ? ' error' : '');
+  requestAnimationFrame(() => {
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3800);
+  });
+}
+
+/* ================================================================
+   FORM HANDLER
+   ================================================================ */
+function formHandler() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const btn     = form.querySelector('.submit-btn');
+  const success = form.querySelector('.form-success');
+
+  function validate(name, email, phone, query) {
+    let ok = true;
+    const fields = { name, email, phone, query };
+
+    Object.entries(fields).forEach(([key, el]) => {
+      const group = el.closest('.form-group');
+      group.classList.remove('error');
+      if (!el.value.trim()) { group.classList.add('error'); ok = false; }
+    });
+
+    if (email.value && !/\S+@\S+\.\S+/.test(email.value)) {
+      email.closest('.form-group').classList.add('error'); ok = false;
+    }
+    if (phone.value && !/^\+?[\d\s\-()]{7,}$/.test(phone.value)) {
+      phone.closest('.form-group').classList.add('error'); ok = false;
+    }
+    return ok;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name  = form.querySelector('#name');
+    const email = form.querySelector('#email');
+    const phone = form.querySelector('#phone');
+    const query = form.querySelector('#query');
+
+    if (!validate(name, email, phone, query)) {
+      toastNotification('Please fill all required fields correctly.', 'error');
+      return;
+    }
+
+    btn.classList.add('loading');
+    btn.disabled = true;
+
+    try {
+      await fetch(API_URL, {
+        method: 'POST',
+        body: JSON.stringify({
+          action: 'add_lead',
+          name:  name.value.trim(),
+          email: email.value.trim(),
+          phone: phone.value.trim(),
+          query: query.value.trim()
+        })
+      });
+
+      success.classList.add('show');
+      form.reset();
+      toastNotification('Message sent! We\'ll be in touch soon.');
+    } catch(err) {
+      toastNotification('Something went wrong. Please try again.', 'error');
+    } finally {
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    }
+  });
+
+  // Live validation clear
+  form.querySelectorAll('input, textarea').forEach(el => {
+    el.addEventListener('input', () => el.closest('.form-group').classList.remove('error'));
+  });
+}
+
+/* ================================================================
+   CHART INIT  (Apache ECharts)
+   ================================================================ */
+function chartInit() {
+  if (typeof echarts === 'undefined') return;
+
+  /* Bar Chart — Projects per Year */
+  const barEl = document.getElementById('barChart');
+  if (barEl) {
+    const barChart = echarts.init(barEl, null, { renderer: 'canvas' });
+    barChart.setOption({
+      tooltip: { trigger: 'axis', backgroundColor: '#3E2723', textStyle: { color: '#fff' }, borderColor: '#C6A76E' },
+      grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+      xAxis: {
+        type: 'category',
+        data: ['2019','2020','2021','2022','2023','2024'],
+        axisLine: { lineStyle: { color: '#EFE3D3' } },
+        axisLabel: { color: '#888' }
+      },
+      yAxis: {
+        type: 'value',
+        axisLine: { lineStyle: { color: '#EFE3D3' } },
+        splitLine: { lineStyle: { color: '#EFE3D3' } },
+        axisLabel: { color: '#888' }
+      },
+      series: [{
+        data: [8, 15, 22, 30, 25, 20],
+        type: 'bar',
+        barWidth: '52%',
+        itemStyle: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1,
+            [{ offset: 0, color: '#C6A76E' }, { offset: 1, color: '#3E2723' }]
+          ),
+          borderRadius: [6, 6, 0, 0]
+        }
+      }]
+    });
+    window.addEventListener('resize', () => barChart.resize());
+  }
+
+  /* Pie Chart — Service Distribution */
+  const pieEl = document.getElementById('pieChart');
+  if (pieEl) {
+    const pieChart = echarts.init(pieEl, null, { renderer: 'canvas' });
+    pieChart.setOption({
+      tooltip: { trigger: 'item', backgroundColor: '#3E2723', textStyle: { color: '#fff' }, borderColor: '#C6A76E' },
+      legend: { orient: 'vertical', right: '5%', top: 'center', textStyle: { color: '#555' } },
+      series: [{
+        name: 'Services',
+        type: 'pie',
+        radius: ['42%', '70%'],
+        center: ['38%', '50%'],
+        avoidLabelOverlap: false,
+        label: { show: false },
+        emphasis: { label: { show: true, fontSize: 14, fontWeight: 'bold', fontFamily: 'Cinzel' } },
+        data: [
+          { value: 45, name: 'Custom Sofas',   itemStyle: { color: '#C6A76E' } },
+          { value: 30, name: 'Wooden Tables',  itemStyle: { color: '#3E2723' } },
+          { value: 15, name: 'Interior Work',  itemStyle: { color: '#7D5A4F' } },
+          { value: 10, name: 'Restoration',    itemStyle: { color: '#D9BC8E' } }
+        ]
+      }]
+    });
+    window.addEventListener('resize', () => pieChart.resize());
+  }
+}
+
+/* ================================================================
+   ANIMATION INIT  (Intersection Observer)
+   ================================================================ */
+function animationInit() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+
+  /* Stagger children inside .reveal-group */
+  document.querySelectorAll('.reveal-group').forEach(group => {
+    const children = group.querySelectorAll(':scope > *');
+    children.forEach((child, i) => {
+      child.classList.add('reveal');
+      child.style.transitionDelay = `${i * 0.12}s`;
+      obs.observe(child);
+    });
+  });
+
+  /* Counter animation */
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-num[data-count]').forEach(el => counterObs.observe(el));
+}
+
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count, 10);
+  const suffix = el.dataset.suffix || '';
+  const dur = 1800;
+  const start = performance.now();
+  function step(now) {
+    const pct = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - pct, 3);
+    el.textContent = Math.round(ease * target) + suffix;
+    if (pct < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* ================================================================
+   NAVBAR
+   ================================================================ */
+function initNavbar() {
+  const navbar = document.querySelector('.navbar');
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks  = document.querySelector('.nav-links');
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* Active link */
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const href = a.getAttribute('href').split('/').pop();
+    if (href === current) a.classList.add('active');
+  });
+}
+
+/* ================================================================
+   HERO PARALLAX
+   ================================================================ */
+function initHeroParallax() {
+  const heroBg = document.querySelector('.hero-bg');
+  if (!heroBg) return;
+  document.querySelector('.hero')?.classList.add('loaded');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    heroBg.style.transform = `scale(1.08) translateY(${y * 0.3}px)`;
+  }, { passive: true });
+}
+
+/* ================================================================
+   TESTIMONIAL SLIDER
+   ================================================================ */
+function initTestiSlider() {
+  const track = document.querySelector('.testi-track');
+  if (!track) return;
+  const cards = track.querySelectorAll('.testi-card');
+  const dots  = document.querySelectorAll('.testi-dot');
+  let current = 0;
+  let timer;
+
+  function goTo(idx) {
+    current = (idx + cards.length) % cards.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetTimer(); }));
+
+  function resetTimer() { clearInterval(timer); timer = setInterval(() => goTo(current + 1), 5000); }
+  resetTimer();
+}
+
+/* ================================================================
+   PORTFOLIO FILTER
+   ================================================================ */
+function initPortfolioFilter() {
+  const btns  = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.port-item');
+  if (!btns.length) return;
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.filter;
+      items.forEach(item => {
+        const match = cat === 'all' || item.dataset.cat === cat;
+        item.style.opacity = match ? '1' : '0.25';
+        item.style.pointerEvents = match ? 'auto' : 'none';
+      });
+    });
+  });
+}
+
+/* ================================================================
+   GALLERY LIGHTBOX
+   ================================================================ */
+function initLightbox() {
+  const lb  = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  if (!lb || !img) return;
+
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      img.src = item.querySelector('img').src;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  lb.querySelector('.lightbox-close').addEventListener('click', close);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+  function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+}
+
+/* ================================================================
+   LAZY LOADING IMAGES
+   ================================================================ */
+function initLazyLoad() {
+  if ('loading' in HTMLImageElement.prototype) {
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      img.src = img.dataset.src; img.removeAttribute('data-src');
+    });
+  } else {
+    const imgObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+          imgObs.unobserve(img);
+        }
+      });
+    });
+    document.querySelectorAll('img[data-src]').forEach(img => imgObs.observe(img));
+  }
+}
+
+/* ================================================================
+   BOOT
+   ================================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  initNavbar();
+  initHeroParallax();
+  animationInit();
+  initTestiSlider();
+  initPortfolioFilter();
+  initLightbox();
+  initLazyLoad();
+  formHandler();
+
+  /* Charts load after ECharts CDN */
+  if (typeof echarts !== 'undefined') {
+    chartInit();
+  } else {
+    window.addEventListener('load', chartInit);
+  }
+
+  /* Visitor stats cache demo */
+  const cached = cacheHandler.get(CACHE_KEY);
+  if (!cached) {
+    cacheHandler.set(CACHE_KEY, { visitedAt: new Date().toISOString(), page: window.location.pathname });
+  }
+});

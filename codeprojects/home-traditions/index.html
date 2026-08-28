@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Artisana — Premium handmade crafts portal. Discover authentic Indian handcrafted art, gifting, and interior decor." />
+  <title>Artisana — Handcrafted with Soul</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Apache ECharts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" defer></script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ░░ NAVBAR ░░ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="nav-inner container">
+      <a href="index.html" class="logo" aria-label="Artisana home">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Artisana</span>
+      </a>
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="pages/about.html" class="nav-link">About</a>
+        <a href="pages/services.html" class="nav-link">Services</a>
+        <a href="pages/gallery.html" class="nav-link">Gallery</a>
+        <a href="pages/contact.html" class="nav-link">Contact</a>
+      </nav>
+      <a href="pages/contact.html" class="btn-nav">Enquire Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Home</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/services.html">Services</a>
+      <a href="pages/gallery.html">Gallery</a>
+      <a href="pages/contact.html">Contact</a>
+    </div>
+  </header>
+
+  <!-- ░░ HERO ░░ -->
+  <section class="hero" id="hero" aria-label="Hero section">
+    <div class="hero-parallax" id="heroParallax"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <p class="hero-tag reveal">Handcrafted with intention</p>
+      <h1 class="hero-title reveal reveal-delay-1">
+        Where <em>Ancient</em> Craft<br/>Meets Modern Soul
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        Each piece carries the warmth of hands that shaped it — stories told through wood, clay, and thread.
+      </p>
+      <div class="hero-cta reveal reveal-delay-3">
+        <a href="pages/gallery.html" class="btn-primary">Explore Crafts</a>
+        <a href="pages/about.html" class="btn-ghost">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span></span>
+      <p>Scroll</p>
+    </div>
+  </section>
+
+  <!-- ░░ BRAND STORY PREVIEW ░░ -->
+  <section class="brand-story section" aria-label="Brand story">
+    <div class="container brand-story-grid">
+      <div class="brand-story-img reveal">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Artisan shaping clay" loading="lazy" />
+        <div class="brand-badge">Est. 2008</div>
+      </div>
+      <div class="brand-story-text reveal reveal-delay-1">
+        <span class="section-tag">Our Heritage</span>
+        <h2 class="section-title">Born from the Hands of Masters</h2>
+        <p>Artisana was born in a small workshop tucked between ancient streets, where the scent of sandalwood mingled with the sound of mallet on chisel. Two decades later, that same spirit drives every piece we create.</p>
+        <p>We work exclusively with master artisans across India — preserving vanishing crafts while giving them a new language for modern spaces.</p>
+        <a href="pages/about.html" class="btn-link">Read our full story <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FEATURED CRAFTSMANSHIP ░░ -->
+  <section class="featured section" aria-label="Featured crafts">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Crafts</span>
+        <h2 class="section-title">Craftsmanship in Every Detail</h2>
+        <p class="section-sub">A curated collection of handmade pieces that speak without words.</p>
+      </div>
+      <div class="craft-grid">
+        <div class="craft-card reveal" tabindex="0" aria-label="Wooden sculptures craft">
+          <div class="craft-img-wrap">
+            <img src="https://images.unsplash.com/photo-1610701596061-2ecf227e85b2?w=500&q=80" alt="Handcarved wooden sculptures" loading="lazy" />
+            <div class="craft-overlay">
+              <span>View Collection</span>
+            </div>
+          </div>
+          <div class="craft-info">
+            <h3>Wooden Sculptures</h3>
+            <p>Hand-carved from seasoned teak and rosewood</p>
+          </div>
+        </div>
+        <div class="craft-card reveal reveal-delay-1" tabindex="0" aria-label="Terracotta art craft">
+          <div class="craft-img-wrap">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&q=80" alt="Terracotta pottery art" loading="lazy" />
+            <div class="craft-overlay">
+              <span>View Collection</span>
+            </div>
+          </div>
+          <div class="craft-info">
+            <h3>Terracotta Art</h3>
+            <p>Earth-fired forms with ancient motifs</p>
+          </div>
+        </div>
+        <div class="craft-card reveal reveal-delay-2" tabindex="0" aria-label="Textile weaves craft">
+          <div class="craft-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500&q=80" alt="Handwoven textile art" loading="lazy" />
+            <div class="craft-overlay">
+              <span>View Collection</span>
+            </div>
+          </div>
+          <div class="craft-info">
+            <h3>Textile Weaves</h3>
+            <p>Loom-woven stories from master weavers</p>
+          </div>
+        </div>
+        <div class="craft-card reveal reveal-delay-3" tabindex="0" aria-label="Brass metalwork craft">
+          <div class="craft-img-wrap">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500&q=80" alt="Traditional brass metalwork" loading="lazy" />
+            <div class="craft-overlay">
+              <span>View Collection</span>
+            </div>
+          </div>
+          <div class="craft-info">
+            <h3>Brass Metalwork</h3>
+            <p>Timeless forms cast in gleaming brass</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ STATS / CHARTS ░░ -->
+  <section class="stats-section section" aria-label="Brand statistics and insights">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">By The Numbers</span>
+        <h2 class="section-title">A Legacy Measured in Craft</h2>
+        <p class="section-sub">Data-backed dedication — from artisan partnerships to global deliveries.</p>
+      </div>
+
+      <!-- Stat counters -->
+      <div class="stat-counters reveal">
+        <div class="stat-item">
+          <span class="stat-num" data-target="240">0</span><span class="stat-suffix">+</span>
+          <p>Artisan Partners</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="18">0</span><span class="stat-suffix">k</span>
+          <p>Pieces Crafted</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="32">0</span><span class="stat-suffix">+</span>
+          <p>Countries Delivered</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="97">0</span><span class="stat-suffix">%</span>
+          <p>Client Satisfaction</p>
+        </div>
+      </div>
+
+      <!-- Charts grid -->
+      <div class="charts-grid">
+        <!-- Chart 1: Category popularity -->
+        <div class="chart-card reveal">
+          <h4 class="chart-title">Craft Category Popularity</h4>
+          <div id="chart-category" class="echarts-container" role="img" aria-label="Bar chart showing craft category popularity"></div>
+        </div>
+
+        <!-- Chart 2: Monthly orders -->
+        <div class="chart-card reveal reveal-delay-1">
+          <h4 class="chart-title">Monthly Order Trends</h4>
+          <div id="chart-orders" class="echarts-container" role="img" aria-label="Line chart showing monthly order trends"></div>
+        </div>
+
+        <!-- Chart 3: Craft type distribution -->
+        <div class="chart-card reveal reveal-delay-2">
+          <h4 class="chart-title">Service Distribution</h4>
+          <div id="chart-distribution" class="echarts-container" role="img" aria-label="Pie chart showing service distribution"></div>
+        </div>
+
+        <!-- Chart 4: Satisfaction radar -->
+        <div class="chart-card reveal reveal-delay-3">
+          <h4 class="chart-title">Quality Dimensions</h4>
+          <div id="chart-radar" class="echarts-container" role="img" aria-label="Radar chart showing quality dimensions"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ WHY CHOOSE US ░░ -->
+  <section class="why-us section" aria-label="Why choose Artisana">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Why Artisana</span>
+        <h2 class="section-title">More Than a Product — An Experience</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-hands" aria-hidden="true"></i></div>
+          <h3>100% Handmade</h3>
+          <p>Every piece is made entirely by hand — no mass production, no shortcuts. Just skill and soul.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-1">
+          <div class="why-icon"><i class="fas fa-leaf" aria-hidden="true"></i></div>
+          <h3>Sustainably Sourced</h3>
+          <p>We use only ethically harvested natural materials, treading lightly on the earth we love.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-2">
+          <div class="why-icon"><i class="fas fa-certificate" aria-hidden="true"></i></div>
+          <h3>Master Artisans</h3>
+          <p>Our craftspeople carry generational knowledge — traditions refined across centuries.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-3">
+          <div class="why-icon"><i class="fas fa-box-open" aria-hidden="true"></i></div>
+          <h3>Custom Orders</h3>
+          <p>Work directly with artisans to create bespoke pieces tailored to your vision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ TESTIMONIALS ░░ -->
+  <section class="testimonials section" aria-label="Client testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Words From Those We've Touched</h2>
+      </div>
+      <div class="swiper testimonial-swiper reveal">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p>"The Kondapalli figurines we ordered for our office gifting were breathtaking. Every recipient was moved by the artistry. Artisana truly delivers soul in every package."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">PR</div>
+                <div>
+                  <strong>Priya Raghunathan</strong>
+                  <span>VP Marketing, TechNova</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p>"We decorated our boutique hotel lobby with Artisana's bronze collection. Guests stop every day to admire them. The quality is simply unmatched."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">AK</div>
+                <div>
+                  <strong>Arjun Kapoor</strong>
+                  <span>Director, The Marigold Hotel</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p>"From the first enquiry to the final delivery, the experience was flawless. The custom wall hanging they created is a centrepiece of my home."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">SF</div>
+                <div>
+                  <strong>Sana Faroukhi</strong>
+                  <span>Interior Designer, Dubai</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CTA BANNER ░░ -->
+  <section class="cta-banner reveal" aria-label="Call to action">
+    <div class="cta-inner container">
+      <h2>Ready to bring craft into your world?</h2>
+      <p>Custom orders · Corporate gifting · Interior installations</p>
+      <a href="pages/contact.html" class="btn-primary btn-large">Start a Conversation</a>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon">✦</span><span class="logo-text">Artisana</span></a>
+        <p>Preserving the art of the hand, one piece at a time. Proudly Indian, globally cherished.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/about.html">About Us</a></li>
+          <li><a href="pages/services.html">Services</a></li>
+          <li><a href="pages/gallery.html">Gallery</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="pages/services.html">Custom Crafts</a></li>
+          <li><a href="pages/services.html">Corporate Gifting</a></li>
+          <li><a href="pages/services.html">Bulk Orders</a></li>
+          <li><a href="pages/services.html">Interior Decor</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reach Us</h4>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i> 14 Artisan Lane, Hyderabad, India</li>
+          <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+          <li><i class="fas fa-envelope"></i> demo@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2025 Artisana. All rights reserved.</p>
+      <p>Crafted with <span aria-label="love">♥</span> in India</p>
+    </div>
+  </footer>
+
+  <!-- Toast notification container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

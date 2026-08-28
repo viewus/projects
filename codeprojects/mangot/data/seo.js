@@ -1,0 +1,166 @@
+﻿// data/seo.js — Per-page SEO metadata for Mangot (Mango Export & Wholesale)
+const SEO = {
+  home: {
+    title: 'Mangot | Premium Mango Cultivation, Wholesale & Global Export',
+    description: 'Premier producer and global exporter of sun-ripened Alphonso, Kesar, and premium tropical mangoes. Temperature-controlled export supply to UK, Europe, Middle East, and worldwide.',
+    keywords: 'mango export, buy Alphonso mango wholesale, fresh mango exporter UK, bulk Kesar mango, Indian mango importer, mango supplier Europe, Mangot',
+    canonical: 'https://mangot.co.uk/',
+    og: {
+      type: 'website',
+      url: 'https://mangot.co.uk/',
+      title: 'Mangot | Premium Mango Cultivation & Global Export',
+      description: 'Supplying top-grade fresh mangoes and natural pulp directly from certified orchards to global markets.',
+      image: 'https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=1200&h=630&fit=crop',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Mangot — Premium Mango Exporters',
+      description: 'Direct farm sourcing, cold-chain freight, and export-grade Alphonso & Kesar mangoes worldwide.',
+      image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?w=1200&h=630&fit=crop',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Mangot Agro Exports',
+      image: 'https://mangot.co.uk/mangotlogo.png',
+      url: 'https://mangot.co.uk/',
+      telephone: '+44 7887 699 208',
+      description: 'Global exporter of premium fresh mangoes and natural mango products.',
+      areaServed: 'Worldwide',
+    },
+  },
+
+  about: {
+    title: 'About Us | Mangot — Orchard Heritage & Quality Standards',
+    description: 'Discover how Mangot bridges traditional orchard cultivation with modern cold-chain logistics to supply premium fresh mangoes worldwide.',
+    keywords: 'about Mangot, mango orchard heritage, sustainable mango farming, mango export standards, Global GAP mangoes',
+    canonical: 'https://mangot.co.uk/about.html',
+    og: {
+      type: 'website',
+      url: 'https://mangot.co.uk/about.html',
+      title: 'About Mangot | Our Heritage & Export Standards',
+      description: 'Over 4,000 years of mango tradition refined with international quality control and sustainable farming.',
+      image: 'https://images.unsplash.com/photo-1605027990121-cbae9e0642df?w=1200&h=630&fit=crop',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'About Mangot | Sustainable Mango Exporters',
+      description: 'Dedicated to world-class fruit quality, direct grower partnerships, and ethical international trade.',
+      image: 'https://images.unsplash.com/photo-1605027990121-cbae9e0642df?w=1200&h=630&fit=crop',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'About Mangot Agro Exports',
+      url: 'https://mangot.co.uk/about.html',
+    },
+  },
+
+  products: {
+    title: 'Mango Varieties & Products | Mangot — Alphonso, Kesar & Pulp',
+    description: 'Explore export-grade fresh mango varieties including Ratnagiri Alphonso, Gir Kesar, Honey Ataulfo, Tommy Atkins, and aseptic mango puree.',
+    keywords: 'mango varieties, buy Alphonso export box, Kesar mango wholesale, Ataulfo mangoes, aseptic mango pulp supplier, Mangot products',
+    canonical: 'https://mangot.co.uk/products.html',
+    og: {
+      type: 'website',
+      url: 'https://mangot.co.uk/products.html',
+      title: 'Export Grade Mango Varieties | Mangot Catalog',
+      description: 'Discover premium fresh mango varieties with complete specifications: brix levels, harvest seasons, and export packaging.',
+      image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?w=1200&h=630&fit=crop',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Mangot Mango Varieties & Specifications',
+      description: 'Alphonso, Kesar, Ataulfo, Tommy Atkins & Puree with harvest calendars and export packaging data.',
+      image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?w=1200&h=630&fit=crop',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Export Mango Varieties',
+      url: 'https://mangot.co.uk/products.html',
+      description: 'Catalog of export-grade mango varieties and natural pulp products.',
+    },
+  },
+
+  services: {
+    title: 'Export & Supply Chain Services | Mangot — Global Freight & Cold Chain',
+    description: 'Comprehensive mango export solutions: international air & sea freight, phytosanitary inspection, automated grading, and customized retail packaging.',
+    keywords: 'mango export services, fruit freight forwarding, cold chain mango transport, mango wholesale distribution, phytosanitary certified mango',
+    canonical: 'https://mangot.co.uk/services.html',
+    og: {
+      type: 'website',
+      url: 'https://mangot.co.uk/services.html',
+      title: 'Mango Export & Supply Chain Services | Mangot',
+      description: 'From orchard harvest to global destination ports — temperature monitored, certified, and delivered on schedule.',
+      image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=1200&h=630&fit=crop',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Global Mango Export & Wholesale Supply | Mangot',
+      description: 'Air freight, sea reefer containers, Global GAP certified packing, and customized B2B contracts.',
+      image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=1200&h=630&fit=crop',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Mango Export & Supply Chain Logistics',
+      url: 'https://mangot.co.uk/services.html',
+      provider: { '@type': 'Organization', name: 'Mangot' },
+      areaServed: 'Worldwide',
+      serviceType: 'Agricultural Produce Export & Logistics',
+    },
+  },
+
+  faq: {
+    title: 'FAQ | Mangot — Mango Sourcing, Minimum Orders & Global Shipping',
+    description: 'Frequently asked questions regarding international mango export, order minimums, shipping terms, packaging specifications, and seasonal booking.',
+    keywords: 'mango export FAQ, wholesale mango questions, fruit shipping terms, mango shelf life in transit, MOQ mango export',
+    canonical: 'https://mangot.co.uk/faq.html',
+    og: {
+      type: 'website',
+      url: 'https://mangot.co.uk/faq.html',
+      title: 'Mangot Export FAQ | Sourcing, Logistics & Quality',
+      description: 'Detailed answers to commercial buyer questions regarding international export, cold storage, and certifications.',
+      image: 'https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=1200&h=630&fit=crop',
+    },
+    twitter: {
+      card: 'summary',
+      title: 'Mangot FAQ — Mango Export & Logistics',
+      description: 'Everything commercial buyers need to know about ordering and importing premium mangoes.',
+      image: 'https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=1200&h=630&fit=crop',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      name: 'Mangot Export FAQ',
+      url: 'https://mangot.co.uk/faq.html',
+    },
+  },
+
+  contact: {
+    title: 'Contact & Export Desk | Mangot — Request a Commercial Quote',
+    description: 'Get in touch with Mangot’s international sales and export desk. Request product pricing, seasonal harvest reservations, or commercial sample shipments.',
+    keywords: 'contact Mangot export desk, request mango quote, buy mangoes in bulk, commercial mango supplier contact, Mangot phone email',
+    canonical: 'https://mangot.co.uk/contact.html',
+    og: {
+      type: 'website',
+      url: 'https://mangot.co.uk/contact.html',
+      title: 'Contact Mangot Export Desk | Get a Quote',
+      description: 'Speak with our trade specialists regarding wholesale orders, export schedules, and pricing.',
+      image: 'https://images.unsplash.com/photo-1605027990121-cbae9e0642df?w=1200&h=630&fit=crop',
+    },
+    twitter: {
+      card: 'summary',
+      title: 'Contact Mangot Export Desk | +44 7887 699 208',
+      description: 'Ready to import premium mangoes? Our export team responds within 24 hours.',
+      image: 'https://images.unsplash.com/photo-1605027990121-cbae9e0642df?w=1200&h=630&fit=crop',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Mangot Export & Trade Desk',
+      url: 'https://mangot.co.uk/contact.html',
+    },
+  },
+};

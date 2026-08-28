@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-
 :root{
   --cream:#FBF3E3;
   --paper:#F3E7CC;
@@ -48,14 +47,12 @@ img{max-width:100%; display:block; object-fit:cover;}
 a{color:inherit; text-decoration:none;}
 button{font-family:inherit; cursor:pointer; border:none; background:none;}
 ul{list-style:none;}
-
 /* image fallback: if a photo ever fails, show a warm leaf-toned placeholder instead of a broken icon */
 .imgwrap{ position:relative; background:linear-gradient(135deg, var(--paper), #E4D3A8); overflow:hidden; }
 .imgwrap img{ width:100%; height:100%; object-fit:cover; }
 .imgwrap img.broken{ display:none; }
 .imgwrap .fallback{ display:none; position:absolute; inset:0; align-items:center; justify-content:center; text-align:center; font-family:var(--ff-hand); font-size:1.3rem; color:var(--leaf-deep); padding:1rem; }
 .imgwrap.fallback-active .fallback{ display:flex; }
-
 .eyebrow{
   font-family:var(--ff-hand); font-size:1.25rem; color:var(--terracotta-deep);
   display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem; transform:rotate(-1deg);
@@ -65,16 +62,13 @@ ul{list-style:none;}
 .section-head{ max-width:620px; margin-bottom:3rem; }
 .section-head h2{ font-family:var(--ff-display); font-weight:400; font-size:clamp(2rem,4vw,2.9rem); line-height:1.1; color:var(--coffee-deep); }
 .section-head p{ margin-top:0.9rem; color:rgba(48,28,20,0.68); font-size:1.02rem; max-width:520px; }
-
 .btn{ display:inline-flex; align-items:center; gap:0.6rem; font-weight:600; font-size:0.92rem; padding:0.9rem 1.6rem; border-radius:30px; transition:transform .3s, background .3s, color .3s, box-shadow .3s; }
 .btn-primary{ background:var(--terracotta); color:#fff; box-shadow:0 10px 24px rgba(193,89,46,0.35); }
 .btn-primary:hover{ background:var(--terracotta-deep); transform:translateY(-2px); }
 .btn-outline{ background:transparent; color:var(--coffee-deep); border:1.5px solid var(--line); }
 .btn-outline:hover{ border-color:var(--coffee-deep); background:rgba(74,46,34,0.05); transform:translateY(-2px); }
-
 .reveal{ opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease; }
 .reveal.visible{ opacity:1; transform:none; }
-
 /* ============ NAV ============ */
 #main-nav{ position:fixed; top:0; left:0; right:0; z-index:500; display:flex; align-items:center; justify-content:space-between; padding:1.3rem 4rem; transition:.35s; }
 #main-nav.scrolled{ padding:0.8rem 4rem; background:rgba(251,243,227,0.88); backdrop-filter:blur(12px); box-shadow:0 4px 24px rgba(48,28,20,0.1); border-bottom:1px solid var(--line-soft); }
@@ -95,7 +89,6 @@ ul{list-style:none;}
   .nav-cta{ display:none; }
 }
 .nav-cta{ padding:0.7rem 1.3rem; font-size:0.85rem; }
-
 /* ============ HERO ============ */
 .hero{ min-height:100vh; display:flex; align-items:flex-end; position:relative; padding:0 6vw 5.5rem; overflow:hidden; background:var(--cream); }
 .hero::before{
@@ -123,12 +116,10 @@ ul{list-style:none;}
 .hero-status .pip{ width:8px; height:8px; border-radius:50%; background:var(--leaf); }
 .hero-status.closed .pip{ background:var(--terracotta); }
 .hero-status.closed{ background:rgba(193,89,46,0.1); color:var(--terracotta-deep); }
-
 /* ============ MENU FILTER ============ */
 .filter-row{ display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:2.5rem; }
 .filter-chip{ font-size:0.85rem; font-weight:600; padding:0.55rem 1.2rem; border:1.5px solid var(--line); border-radius:24px; transition:.3s; }
 .filter-chip.active, .filter-chip:hover{ background:var(--leaf); color:#fff; border-color:var(--leaf); }
-
 .menu-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; }
 @media (max-width:1100px){ .menu-grid{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:640px){ .menu-grid{ grid-template-columns:1fr; } }
@@ -147,7 +138,6 @@ ul{list-style:none;}
 .veg-dot::after{ content:""; width:8px; height:8px; border-radius:50%; background:var(--leaf); }
 .menu-body p{ font-size:0.87rem; color:rgba(48,28,20,0.65); margin-top:0.35rem; }
 .menu-price{ margin-top:0.9rem; font-weight:700; color:var(--terracotta-deep); font-size:1.02rem; }
-
 /* ============ FAVOURITES ============ */
 .fav-wrap{ background:var(--leaf-deep); color:var(--cream); }
 .fav-wrap .eyebrow{ color:var(--yellow); }
@@ -162,7 +152,6 @@ ul{list-style:none;}
 .fav-label{ position:absolute; left:1rem; bottom:1rem; right:1rem; z-index:2; }
 .fav-label span{ font-family:var(--ff-hand); font-size:0.95rem; color:var(--yellow); }
 .fav-label h4{ font-family:var(--ff-display); font-weight:400; font-size:1.25rem; color:#fff; margin-top:0.1rem; }
-
 /* ============ QUALITY ============ */
 .quality-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
 @media (max-width:900px){ .quality-grid{ grid-template-columns:repeat(2,1fr); } }
@@ -172,7 +161,6 @@ ul{list-style:none;}
 .quality-card .num{ font-family:var(--ff-hand); font-size:1.6rem; color:var(--terracotta-deep); }
 .quality-card h4{ font-family:var(--ff-display); font-weight:400; font-size:1.1rem; margin-top:0.4rem; }
 .quality-card p{ font-size:0.85rem; color:rgba(48,28,20,0.62); margin-top:0.4rem; }
-
 /* ============ PROCESS ============ */
 .process-row{ position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:1.4rem; padding-top:1rem; }
 .process-row::before{
@@ -191,7 +179,6 @@ ul{list-style:none;}
 }
 .process-card h5{ font-family:var(--ff-display); font-weight:400; font-size:1.1rem; }
 .process-card p{ font-size:0.84rem; color:rgba(48,28,20,0.62); margin-top:0.3rem; }
-
 /* ============ SIGNATURE DISH SPOTLIGHT ============ */
 .signature{ margin-top:4.5rem; background:var(--white); border-radius:20px; overflow:hidden; border:1px solid var(--line-soft); box-shadow:var(--shadow); display:grid; grid-template-columns:1fr 1.1fr; }
 @media (max-width:900px){ .signature{ grid-template-columns:1fr; } }
@@ -208,14 +195,12 @@ ul{list-style:none;}
 .signature-meta span{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.07em; color:rgba(48,28,20,0.5); font-weight:600; }
 .signature-meta b{ font-family:var(--ff-display); font-weight:400; font-size:1.15rem; color:var(--terracotta-deep); }
 .signature-copy .btn{ margin-top:1.6rem; align-self:flex-start; }
-
 /* ============ STORY ============ */
 .story-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:center; }
 @media (max-width:960px){ .story-wrap{ grid-template-columns:1fr; gap:2rem; } }
 .story-img{ aspect-ratio:4/3; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
 .story-copy h2{ font-family:var(--ff-display); font-weight:400; font-size:clamp(2rem,4vw,2.7rem); }
 .story-copy p{ margin-top:1.1rem; color:rgba(48,28,20,0.7); max-width:460px; }
-
 /* ============ GALLERY (masonry) ============ */
 .gallery-grid{ column-count:3; column-gap:1rem; }
 @media (max-width:900px){ .gallery-grid{ column-count:2; } }
@@ -224,7 +209,6 @@ ul{list-style:none;}
 .gallery-item img{ width:100%; transition:transform .6s ease; }
 .gallery-item:hover img{ transform:scale(1.06); }
 .gallery-cap{ position:absolute; left:0.7rem; bottom:0.7rem; font-family:var(--ff-hand); font-size:1.1rem; color:#fff; background:rgba(41,24,17,0.55); padding:0.25rem 0.7rem; border-radius:14px; }
-
 /* ============ FILTER COFFEE ============ */
 .coffee-wrap{ background:var(--coffee-deep); color:var(--cream); }
 .coffee-inner{ display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:center; }
@@ -235,7 +219,6 @@ ul{list-style:none;}
 .bev-list{ display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.5rem; }
 .bev-chip{ font-size:0.85rem; font-weight:600; padding:0.55rem 1.1rem; border:1.5px solid rgba(251,243,227,0.3); border-radius:22px; }
 .coffee-img{ aspect-ratio:4/5; border-radius:14px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.4); }
-
 /* ============ SPECIALS ============ */
 .board{ background:var(--leaf-deep); border-radius:16px; padding:3rem; position:relative; overflow:hidden; }
 .board::before{ content:""; position:absolute; inset:0; opacity:0.06; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
@@ -248,13 +231,11 @@ ul{list-style:none;}
 .board-edit{ margin-top:2rem; display:flex; gap:0.6rem; justify-content:center; flex-wrap:wrap; position:relative; z-index:2; }
 .board-edit button{ font-size:0.8rem; font-weight:600; color:var(--cream); border:1px solid rgba(251,243,227,0.3); padding:0.5rem 1rem; border-radius:20px; }
 .board-edit button:hover{ background:rgba(251,243,227,0.1); }
-
 /* ============ STATS ============ */
 .stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:3rem 0; }
 @media (max-width:700px){ .stats-grid{ grid-template-columns:repeat(2,1fr); } }
 .stat b{ display:block; font-family:var(--ff-display); font-weight:400; font-size:clamp(1.9rem,4vw,2.7rem); color:var(--terracotta-deep); }
 .stat span{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:rgba(48,28,20,0.6); font-weight:600; }
-
 /* ============ VISIT US ============ */
 .visit-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:stretch; }
 @media (max-width:960px){ .visit-wrap{ grid-template-columns:1fr; gap:2rem; } }
@@ -267,7 +248,6 @@ ul{list-style:none;}
 .map-card{ border-radius:16px; overflow:hidden; background:var(--paper); position:relative; min-height:280px; border:1px solid var(--line-soft); box-shadow:var(--shadow); }
 .map-card iframe{ width:100%; height:100%; min-height:280px; border:0; display:block; filter:sepia(12%) saturate(92%); }
 .map-pin{ position:absolute; top:1rem; left:1rem; z-index:2; font-family:var(--ff-hand); font-size:1.15rem; background:var(--terracotta); color:#fff; padding:0.5rem 1.1rem; border-radius:20px; box-shadow:var(--shadow); pointer-events:none; }
-
 /* ============ EXPERIENCE ============ */
 .exp-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
 @media (max-width:900px){ .exp-grid{ grid-template-columns:repeat(2,1fr); } }
@@ -275,7 +255,6 @@ ul{list-style:none;}
 .exp-item{ display:flex; gap:0.9rem; align-items:flex-start; background:var(--white); padding:1.3rem; border-radius:12px; border:1px solid var(--line-soft); }
 .exp-item .check{ width:22px; height:22px; border-radius:50%; background:var(--leaf); color:#fff; font-size:0.8rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:0.1rem; }
 .exp-item p{ font-size:0.92rem; font-weight:600; }
-
 /* ============ TESTIMONIALS ============ */
 .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
 @media (max-width:900px){ .testi-grid{ grid-template-columns:1fr; } }
@@ -283,7 +262,6 @@ ul{list-style:none;}
 .testi-card .mark{ font-family:var(--ff-hand); font-size:2.2rem; color:var(--terracotta); line-height:1; }
 .testi-card p{ font-size:0.96rem; margin-top:0.4rem; color:var(--coffee-deep); }
 .testi-card cite{ display:block; margin-top:1rem; font-style:normal; font-size:0.82rem; color:rgba(48,28,20,0.55); font-weight:600; }
-
 /* ============ FINAL CTA ============ */
 .final-cta{ background:var(--terracotta); color:#fff; text-align:center; position:relative; overflow:hidden; }
 .final-cta::before{ content:""; position:absolute; inset:0; opacity:0.08; mix-blend-mode:overlay; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
@@ -294,7 +272,6 @@ ul{list-style:none;}
 .final-cta .btn-outline:hover{ background:rgba(255,255,255,0.12); border-color:#fff; }
 .final-cta .btn-primary{ background:var(--coffee-deep); }
 .final-cta .btn-primary:hover{ background:#1c110c; }
-
 /* ============ FOOTER ============ */
 footer{ background:var(--coffee-deep); color:rgba(251,243,227,0.75); padding:4.5rem 6vw 2rem; }
 .foot-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(251,243,227,0.12); }
@@ -305,13 +282,10 @@ footer h5{ font-family:var(--ff-hand); font-size:1.1rem; color:var(--yellow); ma
 footer ul li{ margin-bottom:0.65rem; font-size:0.9rem; }
 footer ul li a:hover{ color:#fff; }
 .foot-bottom{ display:flex; justify-content:space-between; padding-top:1.6rem; font-size:0.78rem; color:rgba(251,243,227,0.4); flex-wrap:wrap; gap:0.6rem; }
-
 @media (prefers-reduced-motion: reduce){ *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; } html{ scroll-behavior:auto; } }
 </style>
 </head>
 <body>
-
-<!-- ============ NAV ============ -->
 <nav id="main-nav">
   <a href="#" class="logo"><span class="dot"></span>Saraswathi Tiffin Room</a>
   <div class="nav-links" id="nav-links">
@@ -325,8 +299,6 @@ footer ul li a:hover{ color:#fff; }
   <a href="#visit" class="btn btn-primary nav-cta">Visit Our Shop →</a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- ============ HERO ============ -->
 <header class="hero" id="home">
   <div class="hero-badge">FRESH • HOT • LOCAL</div>
   <div class="hero-inner">
@@ -339,8 +311,6 @@ footer ul li a:hover{ color:#fff; }
     <div class="hero-status" id="hero-status"><span class="pip"></span><span id="hero-status-text">Checking today's hours…</span></div>
   </div>
 </header>
-
-<!-- ============ MENU ============ -->
 <section class="section" id="menu">
   <div class="section-head reveal">
     <span class="eyebrow">Today's Tiffin</span>
@@ -355,73 +325,57 @@ footer ul li a:hover{ color:#fff; }
     <button class="filter-chip" data-filter="special">Special</button>
     <button class="filter-chip" data-filter="beverages">Beverages</button>
   </div>
-
   <div class="menu-grid reveal">
-
     <div class="menu-card show" data-cat="idli-vada">
       <div class="imgwrap menu-thumb"><span class="menu-tag pop">Popular</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Idli_Sambar.JPG" alt="Idli served with sambar and chutney" onerror="handleImgError(this)"><div class="fallback">Idli</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Idli</h4><span class="veg-dot"></span></div><p>Soft, fluffy steamed rice cakes served with sambar and chutney.</p><div class="menu-price">₹50</div></div>
     </div>
-
     <div class="menu-card show" data-cat="idli-vada">
       <div class="imgwrap menu-thumb"><span class="menu-tag">Serving Now</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Medu_Vada.JPG" alt="Medu vada with sambar and chutney" onerror="handleImgError(this)"><div class="fallback">Medu Vada</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Medu Vada</h4><span class="veg-dot"></span></div><p>Crispy outside, soft inside, served hot with sambar and chutney.</p><div class="menu-price">₹60</div></div>
     </div>
-
     <div class="menu-card show" data-cat="dosa">
       <div class="imgwrap menu-thumb"><span class="menu-tag pop">Popular</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Masala_Dosa_(Bengaluru).JPG" alt="Masala dosa with potato filling" onerror="handleImgError(this)"><div class="fallback">Masala Dosa</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Masala Dosa</h4><span class="veg-dot"></span></div><p>Crispy dosa filled with our traditional potato masala.</p><div class="menu-price">₹80</div></div>
     </div>
-
     <div class="menu-card show" data-cat="dosa">
       <div class="imgwrap menu-thumb"><span class="menu-tag">Serving Now</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plain_Dosa_%26_Vada.jpg" alt="Plain dosa" onerror="handleImgError(this)"><div class="fallback">Plain Dosa</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Plain Dosa</h4><span class="veg-dot"></span></div><p>Thin, golden and crisp South Indian dosa.</p><div class="menu-price">₹60</div></div>
     </div>
-
     <div class="menu-card show" data-cat="dosa">
       <div class="imgwrap menu-thumb"><span class="menu-tag">Serving Now</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_plate_of_South_Indian_Masala_Dosa.jpg" alt="Set dosa served soft and thick" onerror="handleImgError(this)"><div class="fallback">Set Dosa</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Set Dosa</h4><span class="veg-dot"></span></div><p>Soft, thick and fluffy dosas served with chutney and sambar.</p><div class="menu-price">₹70</div></div>
     </div>
-
     <div class="menu-card show" data-cat="dosa">
       <div class="imgwrap menu-thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rava_Dosa_of_Salem.jpg" alt="Rava dosa, crisp semolina dosa" onerror="handleImgError(this)"><div class="fallback">Rava Dosa</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Rava Dosa</h4><span class="veg-dot"></span></div><p>Crispy semolina dosa with traditional seasoning.</p><div class="menu-price">₹85</div></div>
     </div>
-
     <div class="menu-card show" data-cat="breakfast special">
       <div class="imgwrap menu-thumb"><span class="menu-tag">Serving Now</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sweet_pongal.JPG" alt="Ven pongal, South Indian rice and lentil breakfast" onerror="handleImgError(this)"><div class="fallback">Pongal</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Pongal</h4><span class="veg-dot"></span></div><p>Warm, comforting South Indian ven pongal with traditional seasoning.</p><div class="menu-price">₹65</div></div>
     </div>
-
     <div class="menu-card show" data-cat="breakfast">
       <div class="imgwrap menu-thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Poori_with_Potato_Masala.JPG" alt="Poori served with potato masala" onerror="handleImgError(this)"><div class="fallback">Poori</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Poori</h4><span class="veg-dot"></span></div><p>Fluffy golden pooris served with potato masala.</p><div class="menu-price">₹70</div></div>
     </div>
-
     <div class="menu-card show" data-cat="breakfast">
       <div class="imgwrap menu-thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Indian_Upma.JPG" alt="Upma made with semolina and vegetables" onerror="handleImgError(this)"><div class="fallback">Upma</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Upma</h4><span class="veg-dot"></span></div><p>Freshly prepared South Indian breakfast made with semolina and vegetables.</p><div class="menu-price">₹55</div></div>
     </div>
-
     <div class="menu-card show" data-cat="idli-vada special">
       <div class="imgwrap menu-thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sambar.JPG" alt="Vada served with hot sambar" onerror="handleImgError(this)"><div class="fallback">Vada Sambar</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Vada Sambar</h4><span class="veg-dot"></span></div><p>Crispy vada served with hot sambar and chutney.</p><div class="menu-price">₹60</div></div>
     </div>
-
     <div class="menu-card show" data-cat="idli-vada special">
       <div class="imgwrap menu-thumb"><span class="menu-tag pop">Popular</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Idli_and_Medu_Vada.JPG" alt="Idli and vada combination plate" onerror="handleImgError(this)"><div class="fallback">Idli Vada</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Idli Vada</h4><span class="veg-dot"></span></div><p>A classic combination of soft idli and crispy vada.</p><div class="menu-price">₹75</div></div>
     </div>
-
     <div class="menu-card show" data-cat="dosa special">
       <div class="imgwrap menu-thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Idly_sambar_vada.JPG" alt="Dosa and vada combination plate" onerror="handleImgError(this)"><div class="fallback">Dosa Vada</div></div>
       <div class="menu-body"><div class="menu-top"><h4>Dosa Vada</h4><span class="veg-dot"></span></div><p>A satisfying combination of fresh dosa and hot vada.</p><div class="menu-price">₹85</div></div>
     </div>
-
   </div>
 </section>
-
-<!-- ============ FAVOURITES ============ -->
 <section class="section fav-wrap">
   <div class="section-head reveal">
     <span class="eyebrow">Customer Favourites</span>
@@ -434,8 +388,6 @@ footer ul li a:hover{ color:#fff; }
     <div class="fav-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Filter_Kaapi.jpg" alt="Filter Coffee" onerror="handleImgError(this)"><div class="fav-label"><span>Every Table</span><h4>Filter Coffee</h4></div></div>
   </div>
 </section>
-
-<!-- ============ QUALITY ============ -->
 <section class="section" id="about">
   <div class="section-head reveal">
     <span class="eyebrow">Behind The Counter</span>
@@ -449,8 +401,6 @@ footer ul li a:hover{ color:#fff; }
     <div class="quality-card"><div class="num">⑤</div><h4>Freshly Prepared</h4><p>Made through the morning, so it reaches you hot.</p></div>
   </div>
 </section>
-
-<!-- ============ HOW WE MAKE IT ============ -->
 <section class="section" style="background:var(--paper);">
   <div class="section-head reveal">
     <span class="eyebrow">From Kitchen To Table</span>
@@ -463,7 +413,6 @@ footer ul li a:hover{ color:#fff; }
     <div class="process-card"><div class="process-photo"><span class="process-step-num">4</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sambar.JPG" alt="Fresh sambar" onerror="handleImgError(this)"></div><h5>Sambar</h5><p>Fresh sambar is prepared for the day's service.</p></div>
     <div class="process-card"><div class="process-photo"><span class="process-step-num">5</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Indian_Breakfast.jpg" alt="Everything served hot" onerror="handleImgError(this)"></div><h5>Serve</h5><p>Everything comes together hot and fresh at the table.</p></div>
   </div>
-
   <div class="signature reveal">
     <div class="imgwrap signature-photo">
       <span class="signature-ribbon">Signature</span>
@@ -483,8 +432,6 @@ footer ul li a:hover{ color:#fff; }
     </div>
   </div>
 </section>
-
-<!-- ============ SHOP STORY ============ -->
 <section class="section">
   <div class="story-wrap">
     <div class="imgwrap story-img reveal"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Indian_Coffee_House_Palakkad_2.jpg" alt="Inside the tiffin shop" onerror="handleImgError(this)"><div class="fallback">Our Shop</div></div>
@@ -496,8 +443,6 @@ footer ul li a:hover{ color:#fff; }
     </div>
   </div>
 </section>
-
-<!-- ============ GALLERY ============ -->
 <section class="section" id="gallery" style="background:var(--paper);">
   <div class="section-head reveal">
     <span class="eyebrow">A Look Inside</span>
@@ -514,8 +459,6 @@ footer ul li a:hover{ color:#fff; }
     <div class="imgwrap gallery-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plain_dosa_with_tamato_coconut_chutney.jpg" alt="Plain dosa with chutney" onerror="handleImgError(this)"><div class="fallback">Our Kitchen</div><span class="gallery-cap">Our Kitchen</span></div>
   </div>
 </section>
-
-<!-- ============ FILTER COFFEE ============ -->
 <section class="section coffee-wrap">
   <div class="coffee-inner">
     <div class="coffee-copy reveal">
@@ -532,8 +475,6 @@ footer ul li a:hover{ color:#fff; }
     <div class="imgwrap coffee-img reveal"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Filter_Coffee.jpg" alt="South Indian filter coffee in steel tumbler and dabarah" onerror="handleImgError(this)"><div class="fallback">Filter Coffee</div></div>
   </div>
 </section>
-
-<!-- ============ SPECIALS ============ -->
 <section class="section">
   <div class="section-head reveal">
     <span class="eyebrow">On The Board</span>
@@ -553,8 +494,6 @@ footer ul li a:hover{ color:#fff; }
     </div>
   </div>
 </section>
-
-<!-- ============ STATS ============ -->
 <section class="section" style="padding-top:1rem; padding-bottom:5rem;">
   <div class="stats-grid reveal">
     <div class="stat"><b>15+</b><span>Years Serving Locally</span></div>
@@ -563,8 +502,6 @@ footer ul li a:hover{ color:#fff; }
     <div class="stat"><b>100%</b><span>Vegetarian Menu</span></div>
   </div>
 </section>
-
-<!-- ============ SHOP EXPERIENCE ============ -->
 <section class="section">
   <div class="section-head reveal">
     <span class="eyebrow">When You Visit</span>
@@ -579,8 +516,6 @@ footer ul li a:hover{ color:#fff; }
     <div class="exp-item"><span class="check">✓</span><p>Fresh filter coffee</p></div>
   </div>
 </section>
-
-<!-- ============ VISIT US ============ -->
 <section class="section" id="visit" style="background:var(--paper);">
   <div class="section-head reveal">
     <span class="eyebrow">Come Find Us</span>
@@ -600,8 +535,6 @@ footer ul li a:hover{ color:#fff; }
     </div>
   </div>
 </section>
-
-<!-- ============ TESTIMONIALS ============ -->
 <section class="section">
   <div class="section-head reveal">
     <span class="eyebrow">What People Say</span>
@@ -613,8 +546,6 @@ footer ul li a:hover{ color:#fff; }
     <div class="testi-card"><div class="mark">“</div><p>Our regular morning stop whenever we're nearby.</p><cite>— Regular Customer</cite></div>
   </div>
 </section>
-
-<!-- ============ FINAL CTA ============ -->
 <section class="section final-cta">
   <h2>Hungry? Come Have Tiffin.</h2>
   <p>Fresh South Indian breakfast, served hot at our shop every morning.</p>
@@ -623,8 +554,6 @@ footer ul li a:hover{ color:#fff; }
     <a href="#visit" class="btn btn-outline">Visit Us →</a>
   </div>
 </section>
-
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="foot-grid">
     <div class="foot-brand">
@@ -645,7 +574,6 @@ footer ul li a:hover{ color:#fff; }
     <span>demo@gmail.com</span>
   </div>
 </footer>
-
 <script>
 /* ---------- IMAGE FALLBACK ---------- */
 function handleImgError(img){
@@ -653,17 +581,14 @@ function handleImgError(img){
   const wrap = img.closest('.imgwrap');
   if (wrap) wrap.classList.add('fallback-active');
 }
-
 /* ---------- NAV ---------- */
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
 navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 window.addEventListener('resize', () => { if (window.innerWidth > 960) navLinks.classList.remove('open'); });
-
 const mainNav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => mainNav.classList.toggle('scrolled', window.scrollY > 60));
-
 /* ---------- SCROLL REVEAL ---------- */
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -672,7 +597,6 @@ document.querySelectorAll('.reveal').forEach((el,i) => {
   el.style.transitionDelay = `${(i % 6) * 0.06}s`;
   revealObs.observe(el);
 });
-
 /* ---------- MENU FILTER ---------- */
 document.querySelectorAll('.filter-chip').forEach(chip => {
   chip.addEventListener('click', () => {
@@ -685,7 +609,6 @@ document.querySelectorAll('.filter-chip').forEach(chip => {
     });
   });
 });
-
 /* ---------- TODAY'S SPECIAL (owner can update) ---------- */
 document.querySelectorAll('.board-edit button').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -693,7 +616,6 @@ document.querySelectorAll('.board-edit button').forEach(btn => {
     if (slot) slot.textContent = btn.dataset.name;
   });
 });
-
 /* ---------- OPEN / CLOSED STATUS ---------- */
 (function(){
   const el = document.getElementById('hero-status');

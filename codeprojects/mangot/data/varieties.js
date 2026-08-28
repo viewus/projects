@@ -1,0 +1,81 @@
+﻿// data/varieties.js — Export Grade Mango Varieties & Value-Added Products
+const VARIETIES = [
+  {
+    id: 'alphonso',
+    origin: 'India · Ratnagiri & Devgad',
+    name: 'Ratnagiri Alphonso',
+    tag: 'King of Mangoes (GI Tagged)',
+    desc: 'World-renowned for its saffron-golden pulp, rich velvety texture, and irresistible fragrance. Harvested at precise maturity for international export.',
+    season: 'March – June',
+    brix: '18° – 22° Brix',
+    packaging: '3.2 kg / 5 kg corrugated export boxes (foam netted)',
+    img: 'https://images.unsplash.com/photo-1605027990121-cbae9e0642df?auto=format&fit=crop&q=80&w=600',
+    alt: 'Alphonso Mango',
+    badge: 'Premium Grade A+'
+  },
+  {
+    id: 'kesar',
+    origin: 'India · Gir Region, Gujarat',
+    name: 'Gir Kesar',
+    tag: 'Queen of Mangoes (GI Tagged)',
+    desc: 'Distinctive intense aroma, vibrant orange flesh, and sweet-tart balance. Excellent shelf life makes it ideal for global fresh fruit air shipments.',
+    season: 'April – July',
+    brix: '19° – 24° Brix',
+    packaging: '3 kg / 5 kg export cartons',
+    img: 'https://images.unsplash.com/photo-1591073113125-e46713c829ed?auto=format&fit=crop&q=80&w=600',
+    alt: 'Kesar Mango',
+    badge: 'High Demand'
+  },
+  {
+    id: 'ataulfo',
+    origin: 'Mexico & Central America',
+    name: 'Honey Ataulfo',
+    tag: 'Silky & Fibre-Free',
+    desc: 'Golden-skinned mango known for its buttery smooth flesh, miniature seed, and sweet tropical floral notes. Preferred by European and North American gourmet markets.',
+    season: 'February – August',
+    brix: '16° – 20° Brix',
+    packaging: '4 kg / 6 kg standard flat trays',
+    img: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&q=80&w=600',
+    alt: 'Ataulfo Honey Mango',
+    badge: 'Fibre-Free'
+  },
+  {
+    id: 'tommy',
+    origin: 'Americas & Tropical Hubs',
+    name: 'Tommy Atkins',
+    tag: 'Robust & Long Shelf Life',
+    desc: 'Vibrant crimson blush, firm juicy flesh, and outstanding resistance to bruising. Exceptional durability makes it prime for ocean freight container shipments.',
+    season: 'Year-Round Availability',
+    brix: '14° – 17° Brix',
+    packaging: '4 kg / 10 kg reefer export crates',
+    img: 'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&q=80&w=600',
+    alt: 'Tommy Atkins Mango',
+    badge: 'High Transit Durability'
+  },
+  {
+    id: 'banganapalli',
+    origin: 'India · Andhra Pradesh',
+    name: 'Banganapalli (Benishan)',
+    tag: 'Generous & Sweet',
+    desc: 'Large oval fruit with thin golden-yellow edible skin and firm, sweet, fibreless meat. Very popular among Asian diaspora markets across Europe and Middle East.',
+    season: 'April – June',
+    brix: '17° – 21° Brix',
+    packaging: '5 kg export master cartons',
+    img: 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&q=80&w=600',
+    alt: 'Banganapalli Mango',
+    badge: 'Commercial Favorite'
+  },
+  {
+    id: 'pulp',
+    origin: 'Certified Processing Facilities',
+    name: 'Aseptic Mango Pulp & Puree',
+    tag: '100% Natural Processed',
+    desc: 'Commercial-grade Alphonso and Totapuri mango pulp packed in aseptic bags inside steel drums or OTS cans for food processors, dairy, and confectionery industries.',
+    season: 'Year-Round Supply',
+    brix: '28° – 32° Brix (Natural/Sweetened)',
+    packaging: '215 kg Aseptic Drums / 3.1 kg Cans',
+    img: 'https://images.unsplash.com/photo-1605027990121-cbae9e0642df?auto=format&fit=crop&q=80&w=600',
+    alt: 'Aseptic Mango Pulp',
+    badge: 'Industrial Supply'
+  }
+];

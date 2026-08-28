@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — Advaith Homes</title>
+  <meta name="description"
+    content="Advaith Homes buyer's agent services — from full property search to negotiation-only packages. We work exclusively for you." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/commonstandard.css" />
+  <style>
+    .services-hero {
+      padding: calc(var(--nav-h) + 30px) 0 30px;
+      background: radial-gradient(ellipse 60% 80% at 70% 30%, rgba(139, 92, 246, .12) 0%, transparent 60%), var(--bg);
+      text-align: center;
+    }
+
+    .services-hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 16px auto 0;
+    }
+
+    .service-full {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-full:last-child {
+      border-bottom: none;
+    }
+
+    .service-full:nth-child(even) .service-full__visual {
+      order: -1;
+    }
+
+    .service-full__icon {
+      font-size: 4rem;
+      margin-bottom: 24px;
+    }
+
+    .service-full__title {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      margin-bottom: 16px;
+    }
+
+    .service-full__list {
+      margin: 20px 0;
+    }
+
+    .service-full__list li {
+      display: flex;
+      gap: 10px;
+      font-size: .9rem;
+      color: var(--text-secondary);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .service-full__list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .service-full__visual {
+      background: linear-gradient(135deg, var(--client-color-100), var(--client-color-50));
+      border-radius: var(--r-xl);
+      padding: 48px 40px;
+      border: 1px solid var(--client-color-200);
+      text-align: center;
+    }
+
+    .service-full__visual-icon {
+      font-size: 5rem;
+      margin-bottom: 20px;
+    }
+
+    .price-tag {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 20px 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .price-tag__label {
+      font-size: .75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 6px;
+    }
+
+    .price-tag__from {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .price-tag__note {
+      font-size: .78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .packages {
+      background: var(--slate-900);
+      padding: var(--section-py) 0;
+    }
+
+    .packages h2 {
+      color: white;
+    }
+
+    .pkg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .pkg-card {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: var(--r-xl);
+      padding: 36px 28px;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .pkg-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+    }
+
+    .pkg-card--featured {
+      background: linear-gradient(135deg, var(--client-color-800), var(--client-color-600));
+      border-color: var(--client-color-400);
+    }
+
+    .pkg-card__name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .pkg-card__desc {
+      font-size: .875rem;
+      color: rgba(255, 255, 255, .6);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .pkg-card__price {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 24px;
+    }
+
+    .pkg-card__price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .pkg-feature {
+      display: flex;
+      gap: 10px;
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .75);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .pkg-feature::before {
+      content: '✓';
+      color: var(--gold-400);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    @media(max-width:768px) {
+      .service-full {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+
+      .service-full:nth-child(even) .service-full__visual {
+        order: 0
+      }
+
+      .pkg-grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body data-page="services">
+  <div id="nav-placeholder"></div>
+
+  <section class="services-hero">
+    <div class="container">
+      <div class="eyebrow reveal" style="justify-content:center">Our Services</div>
+      <h1 class="reveal reveal-delay-1">Everything You Need<br />to Buy With Confidence</h1>
+      <p class="reveal reveal-delay-2">From initial search to moving day, Advaith Homes provides expert buyer
+        representation across every stage of the UK property purchase process.</p>
+      <div style="margin-top:32px" class="reveal reveal-delay-3">
+        <a href="free-consultation.html" class="btn btn-primary btn-lg">Book Free Consultation →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="service-full">
+        <div>
+          <div class="service-full__icon">🔍</div>
+          <div class="eyebrow reveal">Full Service</div>
+          <h2 class="service-full__title reveal reveal-delay-1">Full Property Search & Acquisition</h2>
+          <p class="reveal reveal-delay-2">Our flagship service — we handle everything from initial brief to keys in
+            hand. You sit back while we do the hard work. Ideal for busy professionals, families, and anyone who wants
+            the best possible outcome.</p>
+          <ul class="service-full__list reveal reveal-delay-3">
+            <li>Detailed buyer brief & requirements analysis</li>
+            <li>Extensive search of all on and off-market listings</li>
+            <li>Professional viewings & expert property assessments</li>
+            <li>Full property research report on shortlisted homes</li>
+            <li>Legal search pack review & planning checks</li>
+            <li>Expert price negotiation using real market data</li>
+            <li>Survey coordination & interpretation</li>
+            <li>Solicitor & conveyancing oversight</li>
+            <li>Support from offer to completion</li>
+          </ul>
+          <a href="free-consultation.html" class="btn btn-primary reveal">Get Started →</a>
+        </div>
+        <div class="service-full__visual reveal reveal-delay-2">
+          <div class="service-full__visual-icon">🏡</div>
+          <div class="price-tag">
+            <div class="price-tag__label">Starting from</div>
+            <div class="price-tag__from">£2,500</div>
+            <div class="price-tag__note">Or % of purchase price</div>
+          </div>
+          <p style="margin-top:20px;font-size:.85rem;color:var(--text-muted)">Average client saving: £18,000+</p>
+        </div>
+      </div>
+
+      <div class="service-full">
+        <div>
+          <div class="service-full__icon">🤝</div>
+          <div class="eyebrow reveal">Negotiation Only</div>
+          <h2 class="service-full__title reveal reveal-delay-1">Found Your Property? Let Us Negotiate</h2>
+          <p class="reveal reveal-delay-2">Already found a property you love? Our negotiation-only service puts our
+            expert negotiators in your corner — often saving our entire fee in a single call.</p>
+          <ul class="service-full__list reveal reveal-delay-3">
+            <li>Independent market valuation & comparable analysis</li>
+            <li>Expert negotiation strategy development</li>
+            <li>Full negotiation with selling agent on your behalf</li>
+            <li>Advice on offer structure and conditions</li>
+            <li>Post-offer legal and survey support</li>
+            <li>Guidance until exchange of contracts</li>
+          </ul>
+          <a href="free-consultation.html" class="btn btn-primary reveal">Get Started →</a>
+        </div>
+        <div class="service-full__visual reveal reveal-delay-2">
+          <div class="service-full__visual-icon">💰</div>
+          <div class="price-tag">
+            <div class="price-tag__label">Starting from</div>
+            <div class="price-tag__from">£995</div>
+            <div class="price-tag__note">Flat fee — no surprises</div>
+          </div>
+          <p style="margin-top:20px;font-size:.85rem;color:var(--text-muted)">Average client saving: £12,000+</p>
+        </div>
+      </div>
+
+      <div class="service-full">
+        <div>
+          <div class="service-full__icon">📋</div>
+          <div class="eyebrow reveal">Research & Due Diligence</div>
+          <h2 class="service-full__title reveal reveal-delay-1">Property Research Report</h2>
+          <p class="reveal reveal-delay-2">A comprehensive investigation of any property — before you commit. We uncover
+            what estate agents don't tell you and what sellers hope you won't find out.</p>
+          <ul class="service-full__list reveal reveal-delay-3">
+            <li>Full planning history check & future development risks</li>
+            <li>Flood, subsidence, and environmental risk assessment</li>
+            <li>Neighbourhood analysis & crime data</li>
+            <li>School catchment & local amenity review</li>
+            <li>Comparable price analysis & market value opinion</li>
+            <li>Building fabric & structural risk indicators</li>
+            <li>Leasehold complexities & service charge review</li>
+            <li>Full written report within 48 hours</li>
+          </ul>
+          <a href="pages/property-research.html" class="btn btn-primary reveal">Learn More →</a>
+        </div>
+        <div class="service-full__visual reveal reveal-delay-2">
+          <div class="service-full__visual-icon">📊</div>
+          <div class="price-tag">
+            <div class="price-tag__label">Starting from</div>
+            <div class="price-tag__from">£395</div>
+            <div class="price-tag__note">Per property report</div>
+          </div>
+          <p style="margin-top:20px;font-size:.85rem;color:var(--text-muted)">Included free in Full Service package</p>
+        </div>
+      </div>
+
+      <div class="service-full">
+        <div>
+          <div class="service-full__icon">⚖️</div>
+          <div class="eyebrow reveal">Legal Support</div>
+          <h2 class="service-full__title reveal reveal-delay-1">Legal Search Packs & Guidance</h2>
+          <p class="reveal reveal-delay-2">Legal searches reveal critical issues that could cost you dearly after
+            purchase. We help you understand what every search means and whether to proceed or negotiate.</p>
+          <ul class="service-full__list reveal reveal-delay-3">
+            <li>Local authority search interpretation</li>
+            <li>Environmental search analysis</li>
+            <li>Water & drainage search review</li>
+            <li>Title deed review & issue spotting</li>
+            <li>Lease review & remaining term advice</li>
+            <li>Planning & building regulations compliance check</li>
+            <li>HS2 & infrastructure impact assessment</li>
+            <li>Referral to specialist solicitors where needed</li>
+          </ul>
+          <a href="pages/legal-search.html" class="btn btn-primary reveal">Learn More →</a>
+        </div>
+        <div class="service-full__visual reveal reveal-delay-2">
+          <div class="service-full__visual-icon">⚖️</div>
+          <div class="price-tag">
+            <div class="price-tag__label">Starting from</div>
+            <div class="price-tag__from">£295</div>
+            <div class="price-tag__note">Per transaction</div>
+          </div>
+          <p style="margin-top:20px;font-size:.85rem;color:var(--text-muted)">Included in Full Service package</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="eyebrow" style="color:var(--gold-300);justify-content:center">Free Consultation</div>
+        <h2>Not Sure Which Service You Need?</h2>
+        <p>Book a free 30-minute consultation and we'll tell you exactly what would help your situation — no pressure,
+          no sales pitch.</p>
+        <div class="cta-actions">
+          <a href="free-consultation.html" class="btn btn-gold btn-lg">Book Free Consultation →</a>
+          <a href="contact.html" class="btn btn-outline-white btn-lg">Ask a Question</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
+</body>
+
+</html>
+

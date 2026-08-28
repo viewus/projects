@@ -1,0 +1,49 @@
+{
+  "title": "What our customers say",
+  "intro": "Reviews collected in store and from delivery follow-ups.",
+
+  "items": [
+    {
+      "name": "Lakshmi Reddy",
+      "role": "Shops weekly",
+      "rating": 5,
+      "text": "The monthly list feature saved me two trips. I pick the family size, print it, and everything is on one page in aisle order.",
+      "avatar": ""
+    },
+    {
+      "name": "Suresh Kumar",
+      "role": "Shops weekly",
+      "rating": 5,
+      "text": "Produce is genuinely fresh — the bananas and greens are clearly same-day, not sitting in a cold room for a week.",
+      "avatar": ""
+    },
+    {
+      "name": "Anita Sharma",
+      "role": "Delivery customer",
+      "rating": 4,
+      "text": "Ordered at four, it arrived by seven the same evening. Everything was packed properly and nothing was substituted without asking.",
+      "avatar": ""
+    },
+    {
+      "name": "Mohammed Irfan",
+      "role": "Shops monthly",
+      "rating": 5,
+      "text": "Bulk staples are cheaper here than the big chains, and they will break a 5 kg bag if you only need two.",
+      "avatar": ""
+    },
+    {
+      "name": "Priya Venkatesh",
+      "role": "New parent",
+      "rating": 5,
+      "text": "The baby care bundle is a real saving, and the staff actually know which cereal suits which age.",
+      "avatar": ""
+    },
+    {
+      "name": "Rajesh Naidu",
+      "role": "Shops weekly",
+      "rating": 4,
+      "text": "Good range for a neighbourhood store. If something is out of stock they tell you when it is due rather than guessing.",
+      "avatar": ""
+    }
+  ]
+}

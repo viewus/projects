@@ -1,0 +1,396 @@
+/* ---------------------------------------------------------------------------
+ * layout.css — grids, page scaffolding and the chrome (header, nav, footer).
+ * ------------------------------------------------------------------------- */
+
+/* ---- grids ----------------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: var(--s5);
+}
+
+/* auto-fill grids: the min column width is the only thing that changes */
+.gridAuto   { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.gridAutoSm { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+.gridAutoLg { grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+
+.grid2 { grid-template-columns: repeat(2, 1fr); }
+.grid3 { grid-template-columns: repeat(3, 1fr); }
+.grid4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Sidebar + content, used by the products page filter rail. */
+.gridSidebar {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: var(--s6);
+  align-items: start;
+}
+
+/* Horizontal scroller for mobile carousels — no JS carousel needed. */
+.scrollRow {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: var(--s4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--s3);
+  scrollbar-width: thin;
+}
+
+.scrollRow > * { scroll-snap-align: start; }
+
+/* ---- header (top utility bar) ------------------------------------------------ */
+
+.siteHeader {
+  background: var(--brandDark);
+  color: rgba(255, 255, 255, .9);
+  font-size: var(--fsSm);
+}
+
+.siteHeaderIn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  min-height: 40px;
+  flex-wrap: wrap;
+}
+
+.headerNote {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  flex-wrap: wrap;
+}
+
+.headerLink {
+  color: rgba(255, 255, 255, .9);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.headerLink:hover { color: #fff; }
+
+/* ---- nav --------------------------------------------------------------------- */
+
+.siteNav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: var(--surface);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--normal) var(--ease), box-shadow var(--normal) var(--ease);
+}
+
+.siteNav.isStuck {
+  border-bottom-color: var(--line);
+  box-shadow: var(--shadowSm);
+}
+
+.siteNavIn {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  min-height: var(--navH);
+}
+
+.navBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s3);
+  font-family: var(--fontHeading);
+  font-size: var(--fsLg);
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.navBrandLogo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: var(--radiusSm);
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  margin-left: auto;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+  padding: var(--s2) var(--s3);
+  border-radius: var(--radiusSm);
+  color: var(--textMid);
+  font-size: var(--fsSm);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+
+.navLink:hover {
+  color: var(--text);
+  background: var(--bgAlt);
+}
+
+.navLink.isActive {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-left: var(--s2);
+}
+
+/* Dropdown (Bootstrap handles the toggling; this is only presentation). */
+.navDropdown {
+  min-width: 220px;
+  padding: var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadowMd);
+}
+
+.navDropdownItem {
+  display: block;
+  padding: var(--s2) var(--s3);
+  border-radius: var(--radiusSm);
+  color: var(--textMid);
+  font-size: var(--fsSm);
+}
+
+.navDropdownItem:hover {
+  background: var(--bgAlt);
+  color: var(--text);
+}
+
+.navDropdownItem.isActive {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.navToggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radiusSm);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 1.25rem;
+}
+
+/* ---- breadcrumb --------------------------------------------------------------- */
+
+.breadcrumb {
+  padding-block: var(--s4);
+  border-bottom: 1px solid var(--lineSoft);
+}
+
+.breadcrumbList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2);
+  font-size: var(--fsSm);
+  color: var(--textDim);
+}
+
+.breadcrumbSep { color: var(--textDim); }
+.breadcrumbLink { color: var(--textMid); }
+.breadcrumbLink:hover { color: var(--brand); }
+.breadcrumbCurrent { color: var(--text); font-weight: 500; }
+
+/* ---- footer -------------------------------------------------------------------- */
+
+.siteFooter {
+  margin-top: var(--s9);
+  background: var(--bgDark);
+  color: rgba(255, 255, 255, .78);
+  padding-top: var(--s8);
+}
+
+.footerTop {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: var(--s6);
+  padding-bottom: var(--s7);
+}
+
+.footerBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s3);
+  color: #fff;
+  font-family: var(--fontHeading);
+  font-size: var(--fsXl);
+  margin-bottom: var(--s3);
+}
+
+.footerLogo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: var(--radiusSm);
+}
+
+.footerAbout {
+  color: rgba(255, 255, 255, .68);
+  font-size: var(--fsSm);
+  max-width: 42ch;
+}
+
+.footerColTitle {
+  color: #fff;
+  font-family: var(--fontBody);
+  font-size: var(--fsSm);
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: var(--s4);
+}
+
+.footerLink {
+  display: block;
+  padding: var(--s1) 0;
+  color: rgba(255, 255, 255, .72);
+  font-size: var(--fsSm);
+}
+
+.footerLink:hover { color: #fff; }
+
+.footerContactLine {
+  display: flex;
+  gap: var(--s2);
+  margin-bottom: var(--s2);
+  font-size: var(--fsSm);
+  color: rgba(255, 255, 255, .72);
+}
+
+.footerContactLink { color: rgba(255, 255, 255, .72); }
+.footerContactLink:hover { color: #fff; }
+
+.footerSocial {
+  display: flex;
+  gap: var(--s2);
+  margin-top: var(--s4);
+}
+
+.footerSocialLink {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .2);
+  color: rgba(255, 255, 255, .8);
+  transition: all var(--fast) var(--ease);
+}
+
+.footerSocialLink:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  flex-wrap: wrap;
+  padding-block: var(--s5);
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  font-size: var(--fsSm);
+  color: rgba(255, 255, 255, .6);
+}
+
+.footerBottomLinks {
+  display: flex;
+  gap: var(--s4);
+  flex-wrap: wrap;
+}
+
+/* ---- floating actions ------------------------------------------------------------ */
+
+.floatingActions {
+  position: fixed;
+  right: var(--s4);
+  bottom: var(--s4);
+  z-index: var(--z-float);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.floatBtn {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 1.35rem;
+  box-shadow: var(--shadowMd);
+  transition: transform var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+
+.floatBtn:hover { transform: translateY(-3px); }
+
+.floatWhatsapp {
+  background: #25d366;
+  border-color: #25d366;
+  color: #fff;
+}
+
+.floatList { position: relative; }
+
+.floatCount {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radiusPill);
+  background: var(--accent);
+  color: #fff;
+  font-size: var(--fsXs);
+  font-weight: 700;
+}
+
+.floatCount:empty,
+.floatCount[data-count="0"] { display: none; }
+
+#backToTop {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all var(--normal) var(--ease);
+}
+
+#backToTop.isVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}

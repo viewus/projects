@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Artisana — Reach out for custom crafts, corporate gifting, and enquiries." />
+  <title>Contact Us — Artisana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="../index.html" class="logo"><span class="logo-icon">✦</span><span class="logo-text">Artisana</span></a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn-nav">Enquire Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?w=1400&q=80')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content container">
+      <span class="section-tag">Let's Talk</span>
+      <h1>Contact Us</h1>
+      <p>We'd love to hear about your project</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section section">
+    <div class="container contact-grid">
+
+      <!-- Contact Info -->
+      <div class="contact-info reveal">
+        <span class="section-tag">Find Us</span>
+        <h2 class="section-title">Get in Touch</h2>
+        <p>Whether you have a grand vision or a simple question, our team is ready to help you bring craft into your life.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+          <div>
+            <strong>Studio Address</strong>
+            <p>14 Artisan Lane, Jubilee Hills,<br/>Hyderabad, Telangana — 500033, India</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+          <div>
+            <strong>Phone</strong>
+            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+          <div>
+            <strong>Email</strong>
+            <p><a href="mailto:demo@gmail.com">demo@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+          <div>
+            <strong>Studio Hours</strong>
+            <p>Mon – Sat: 9:00 AM – 6:00 PM IST</p>
+          </div>
+        </div>
+
+        <div class="social-links contact-social" aria-label="Follow us">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap reveal reveal-delay-1">
+        <form id="contactForm" class="contact-form" novalidate aria-label="Contact form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="fullName" name="name" placeholder="Your full name" required aria-required="true" autocomplete="name" />
+              <span class="field-error" id="nameError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="demo@gmail.com" required aria-required="true" autocomplete="email" />
+              <span class="field-error" id="emailError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interested In <span aria-hidden="true">*</span></label>
+              <select id="service" name="service" required aria-required="true">
+                <option value="" disabled selected>Select a service</option>
+                <option value="custom-crafts">Custom Crafts</option>
+                <option value="corporate-gifting">Corporate Gifting</option>
+                <option value="bulk-orders">Bulk Orders</option>
+                <option value="interior-decor">Interior Decor</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error" id="serviceError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, quantity, timeline, or any questions..." required aria-required="true"></textarea>
+            <span class="field-error" id="messageError" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn-primary btn-submit" id="submitBtn" aria-live="polite">
+            <span class="btn-text">Send Enquiry</span>
+            <span class="btn-spinner" aria-hidden="true" hidden><i class="fas fa-circle-notch fa-spin"></i></span>
+          </button>
+
+          <div class="form-success" id="formSuccess" role="status" hidden>
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <strong>Message sent successfully!</strong>
+            <p>We'll get back to you within one business day.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-section reveal" aria-label="Location map">
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.304622994507!2d78.40800391487768!3d17.431961988059766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c0f2c3c38f%3A0x5d02c8f5e6f3b0ae!2sJubilee%20Hills%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Artisana studio location on Google Maps"
+        aria-label="Google map showing Artisana studio location in Hyderabad"
+      ></iframe>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-icon">✦</span><span class="logo-text">Artisana</span></a>
+        <p>Preserving the art of the hand, one piece at a time.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reach Us</h4>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i> 14 Artisan Lane, Hyderabad</li>
+          <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+          <li><i class="fas fa-envelope"></i> demo@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2025 Artisana. All rights reserved.</p>
+      <p>Crafted with ♥ in India</p>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

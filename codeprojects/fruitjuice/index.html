@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="seo-title">Grove &amp; Glass | Cold-Pressed Juices</title>
+<meta id="seo-description" name="description" content="Cold-pressed juices, freshly prepared daily.">
+<meta id="seo-keywords" name="keywords" content="fresh juice, juice bar">
+<meta id="og-title" property="og:title" content="Grove & Glass">
+<meta id="og-description" property="og:description" content="Cold-pressed juices, freshly prepared daily.">
+<meta id="og-image" property="og:image" content="">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<style>
+  :root{
+    --primary: #1F3A2E;
+    --primary-light: #2E5544;
+    --secondary: #C97C3D;
+    --secondary-light: #E0A15E;
+    --cream: #F6F1E6;
+    --paper: #FCFAF4;
+    --charcoal: #1B1B18;
+    --text: #2A2E28;
+    --text-muted: #6B6F63;
+    --line: rgba(31,58,46,0.14);
+    --shadow: 0 20px 60px -25px rgba(20,30,22,0.35);
+    --radius: 2px;
+    --dur: 700ms;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'Manrope',sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;}
+  ul{list-style:none;margin:0;padding:0;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;margin:0;line-height:1.05;color:var(--primary);}
+  .eyebrow{
+    font-family:'Manrope',sans-serif;
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--secondary);
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--secondary);}
+  .container{max-width:1240px;margin:0 auto;padding:0 32px;}
+  section{position:relative;}
+  .section-pad{padding:120px 0;}
+  @media(max-width:768px){.section-pad{padding:72px 0;}}
+  .center{text-align:center;}
+  .section-head{max-width:720px;margin-bottom:56px;}
+  .section-head.center{margin-left:auto;margin-right:auto;}
+  .section-head h2{font-size:clamp(32px,4.2vw,52px);margin-top:14px;letter-spacing:-.01em;}
+  .section-head p{margin-top:18px;color:var(--text-muted);font-size:17px;line-height:1.7;}
+
+  /* citrus signature motif */
+  .citrus-mark{display:inline-block;}
+  .citrus-mark svg{display:block;}
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 30px;
+    font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
+    border-radius:var(--radius);
+    border:1px solid transparent;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), background .3s, color .3s, border-color .3s;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--primary);color:var(--cream);}
+  .btn-primary:hover{background:var(--primary-light);transform:translateY(-2px);}
+  .btn-outline{background:transparent;color:var(--primary);border-color:var(--primary);}
+  .btn-outline:hover{background:var(--primary);color:var(--cream);transform:translateY(-2px);}
+  .btn-gold{background:var(--secondary);color:#fff;}
+  .btn-gold:hover{background:var(--secondary-light);transform:translateY(-2px);}
+  .btn-ghost-light{background:transparent;color:var(--cream);border-color:rgba(246,241,230,.5);}
+  .btn-ghost-light:hover{background:rgba(246,241,230,.12);}
+
+  /* announcement bar */
+  #announcement{
+    background:var(--charcoal);color:var(--cream);
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    text-align:center;padding:10px 20px;font-weight:600;
+  }
+
+  /* header */
+  header#site-header{
+    position:sticky;top:0;z-index:500;
+    background:rgba(252,250,244,.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+    transition:padding .3s ease, box-shadow .3s ease;
+  }
+  header#site-header.scrolled{box-shadow:0 8px 30px -20px rgba(0,0,0,.25);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:22px 0;transition:padding .3s ease;}
+  header#site-header.scrolled .header-inner{padding:14px 0;}
+  .brand-logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:22px;color:var(--primary);font-weight:600;}
+  .brand-logo .citrus-mark svg{width:26px;height:26px;}
+  nav#main-nav{display:flex;gap:34px;}
+  nav#main-nav a{
+    font-size:13px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;color:var(--text);
+    position:relative;padding:6px 0;transition:color .25s;
+  }
+  nav#main-nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--secondary);transition:width .3s;}
+  nav#main-nav a:hover,nav#main-nav a.active{color:var(--primary);}
+  nav#main-nav a.active::after,nav#main-nav a:hover::after{width:100%;}
+  .header-actions{display:flex;align-items:center;gap:14px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;}
+  .hamburger span{width:24px;height:2px;background:var(--primary);display:block;transition:.3s;}
+
+  /* mobile nav */
+  #mobile-nav{
+    position:fixed;inset:0;background:var(--primary);z-index:900;
+    transform:translateX(100%);transition:transform .5s cubic-bezier(.2,.9,.2,1);
+    display:flex;flex-direction:column;padding:100px 40px 40px;
+  }
+  #mobile-nav.open{transform:translateX(0);}
+  #mobile-nav a{color:var(--cream);font-family:'Fraunces',serif;font-size:28px;padding:14px 0;border-bottom:1px solid rgba(246,241,230,.15);}
+  #mobile-nav-close{position:absolute;top:26px;right:28px;background:none;border:none;color:var(--cream);font-size:26px;}
+  #mobile-nav .mobile-cta{margin-top:30px;}
+
+  /* hero */
+  #hero{
+    min-height:92vh;display:flex;align-items:center;
+    background:linear-gradient(180deg,var(--cream) 0%, var(--paper) 100%);
+    padding-top:60px;overflow:hidden;position:relative;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
+  .hero-copy h1{font-size:clamp(44px,6.4vw,84px);letter-spacing:-.015em;}
+  .hero-copy .eyebrow{margin-bottom:20px;}
+  .hero-copy p.lead{margin-top:26px;font-size:18px;color:var(--text-muted);max-width:480px;line-height:1.75;}
+  .hero-ctas{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
+  .hero-badges{display:flex;gap:34px;margin-top:56px;flex-wrap:wrap;}
+  .hero-badges .badge{font-size:13px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:8px;}
+  .hero-badges .badge i{color:var(--secondary);}
+  .hero-visual{position:relative;}
+  .hero-visual img{width:100%;height:600px;object-fit:cover;border-radius:6px;box-shadow:var(--shadow);}
+  .hero-visual .float-card{
+    position:absolute;bottom:-30px;left:-40px;background:var(--paper);padding:20px 24px;
+    box-shadow:var(--shadow);border-radius:4px;display:flex;align-items:center;gap:14px;max-width:230px;
+  }
+  .hero-visual .float-card .citrus-mark svg{width:38px;height:38px;}
+  .hero-visual .float-card strong{display:block;font-family:'Fraunces',serif;font-size:15px;color:var(--primary);}
+  .hero-visual .float-card span{font-size:12px;color:var(--text-muted);}
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .hero-visual img{height:360px;}
+    .hero-visual .float-card{left:0;}
+  }
+
+  /* banner */
+  #banner{
+    background:var(--primary);color:var(--cream);padding:140px 0;position:relative;
+    background-size:cover;background-position:center;
+  }
+  #banner .banner-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(15,26,20,.92),rgba(15,26,20,.62));}
+  #banner .container{position:relative;z-index:2;max-width:920px;text-align:center;}
+  #banner h2{color:var(--cream);font-size:clamp(30px,4.6vw,54px);}
+  #banner p{margin-top:22px;font-size:18px;color:rgba(246,241,230,.82);line-height:1.8;}
+
+  /* about */
+  #about .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center;}
+  #about .about-img{position:relative;}
+  #about .about-img img{width:100%;height:560px;object-fit:cover;border-radius:4px;}
+  #about .about-img .ring{position:absolute;top:-26px;right:-26px;width:110px;height:110px;}
+  #about p{color:var(--text-muted);font-size:16.5px;line-height:1.85;margin-top:20px;}
+  #about .about-list{margin-top:30px;display:grid;gap:16px;}
+  #about .about-list li{display:flex;gap:12px;font-size:15px;color:var(--text);}
+  #about .about-list i{color:var(--secondary);margin-top:3px;}
+  @media(max-width:900px){#about .about-grid{grid-template-columns:1fr;}#about .about-img img{height:380px;}}
+
+  /* stats */
+  #stats{background:var(--cream);}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;}
+  .stat-num{font-family:'Fraunces',serif;font-size:clamp(36px,4vw,56px);color:var(--primary);}
+  .stat-label{margin-top:8px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:700;}
+  @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:36px 20px;}}
+
+  /* why us */
+  .whyus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .whyus-card{background:var(--paper);padding:38px 28px;}
+  .whyus-card i{font-size:24px;color:var(--secondary);}
+  .whyus-card h4{font-size:18px;margin-top:18px;}
+  .whyus-card p{margin-top:10px;font-size:14px;color:var(--text-muted);line-height:1.7;}
+  @media(max-width:900px){.whyus-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.whyus-grid{grid-template-columns:1fr;}}
+
+  /* signature juices */
+  .sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  .sig-card{background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .4s ease, box-shadow .4s ease;}
+  .sig-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .sig-card .sig-img{height:260px;overflow:hidden;}
+  .sig-card .sig-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .sig-card:hover .sig-img img{transform:scale(1.06);}
+  .sig-card .sig-body{padding:26px;}
+  .sig-card .sig-cat{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);font-weight:700;}
+  .sig-card h3{margin-top:8px;font-size:22px;}
+  .sig-card p{margin-top:10px;color:var(--text-muted);font-size:14.5px;line-height:1.7;}
+  .sig-card .sig-highlight{margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--primary);}
+  @media(max-width:960px){.sig-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:620px){.sig-grid{grid-template-columns:1fr;}}
+
+  /* categories */
+  #categories-bar{position:sticky;top:73px;z-index:60;background:var(--paper);border-bottom:1px solid var(--line);padding:18px 0;}
+  header#site-header.scrolled ~ * #categories-bar{top:57px;}
+  .cat-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
+  .cat-scroll::-webkit-scrollbar{display:none;}
+  .cat-pill{
+    flex:0 0 auto;padding:10px 22px;border:1px solid var(--line);border-radius:30px;
+    font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--text);background:transparent;
+    transition:all .3s ease;
+  }
+  .cat-pill.active,.cat-pill:hover{background:var(--primary);color:var(--cream);border-color:var(--primary);}
+
+  /* juice explore */
+  #juices .juice-toolbar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:40px;flex-wrap:wrap;}
+  .search-box{position:relative;}
+  .search-box input{
+    padding:13px 20px 13px 42px;border:1px solid var(--line);border-radius:30px;min-width:260px;
+    font-family:'Manrope',sans-serif;font-size:14px;background:var(--paper);color:var(--text);
+  }
+  .search-box input:focus{outline:2px solid var(--secondary);outline-offset:1px;}
+  .search-box i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-muted);}
+  .juice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  @media(max-width:1100px){.juice-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:768px){.juice-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.juice-grid{grid-template-columns:1fr;}}
+  .juice-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden;cursor:pointer;
+    transition:transform .4s ease, box-shadow .4s ease, opacity .3s ease;
+  }
+  .juice-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+  .juice-card .jc-img{height:200px;overflow:hidden;position:relative;}
+  .juice-card .jc-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .juice-card:hover .jc-img img{transform:scale(1.08);}
+  .juice-card .jc-badge{
+    position:absolute;top:12px;left:12px;background:rgba(252,250,244,.92);color:var(--primary);
+    font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:20px;
+  }
+  .juice-card .jc-body{padding:20px;}
+  .juice-card .jc-cat{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--secondary);font-weight:700;}
+  .juice-card h4{margin-top:6px;font-size:18px;font-family:'Fraunces',serif;color:var(--primary);}
+  .juice-card p{margin-top:8px;font-size:13.5px;color:var(--text-muted);line-height:1.6;}
+  .juice-card .jc-foot{margin-top:14px;display:flex;justify-content:space-between;align-items:center;}
+  .jc-foot span{font-size:11.5px;font-weight:700;color:var(--primary);}
+  .jc-foot i{color:var(--secondary);}
+  .no-results{text-align:center;padding:60px 20px;color:var(--text-muted);display:none;}
+
+  /* modal */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(17,24,18,.7);z-index:1000;display:none;
+    align-items:center;justify-content:center;padding:24px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:var(--paper);max-width:920px;width:100%;max-height:88vh;overflow-y:auto;border-radius:6px;
+    display:grid;grid-template-columns:1fr 1fr;position:relative;opacity:0;transform:translateY(20px) scale(.98);
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .modal-overlay.open .modal-box{opacity:1;transform:translateY(0) scale(1);}
+  .modal-close{position:absolute;top:18px;right:18px;background:var(--paper);border:none;width:38px;height:38px;border-radius:50%;font-size:18px;z-index:5;box-shadow:0 4px 14px rgba(0,0,0,.15);}
+  .modal-img{height:100%;min-height:320px;}
+  .modal-img img{width:100%;height:100%;object-fit:cover;}
+  .modal-content{padding:40px;}
+  .modal-content .jc-cat{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--secondary);font-weight:700;}
+  .modal-content h3{margin-top:10px;font-size:30px;}
+  .modal-content p.desc{margin-top:14px;color:var(--text-muted);line-height:1.75;}
+  .modal-section{margin-top:22px;}
+  .modal-section h5{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--primary);font-weight:800;margin-bottom:10px;}
+  .tag-list{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag-list span{background:var(--cream);padding:6px 14px;border-radius:20px;font-size:12.5px;color:var(--text);}
+  .modal-content .modal-cta{margin-top:28px;}
+  @media(max-width:700px){.modal-box{grid-template-columns:1fr;}.modal-img{min-height:220px;}}
+
+  /* health */
+  #health{background:var(--primary);color:var(--cream);}
+  #health .section-head h2{color:var(--cream);}
+  #health .section-head p{color:rgba(246,241,230,.75);}
+  #health .eyebrow{color:var(--secondary-light);}
+  #health .eyebrow::before{background:var(--secondary-light);}
+  .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(246,241,230,.14);}
+  .health-card{background:var(--primary);padding:36px 30px;}
+  .health-card i{font-size:26px;color:var(--secondary-light);}
+  .health-card h4{color:var(--cream);font-size:20px;margin-top:16px;}
+  .health-card p{color:rgba(246,241,230,.72);font-size:14.5px;margin-top:10px;line-height:1.7;}
+  @media(max-width:900px){.health-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.health-grid{grid-template-columns:1fr;}}
+
+  /* customisation */
+  .custom-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .custom-grid img{width:100%;height:480px;object-fit:cover;border-radius:4px;}
+  .custom-options{margin-top:26px;display:grid;gap:0;}
+  .custom-options .opt{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);}
+  .custom-options .opt span{font-weight:600;}
+  .custom-options .opt i{color:var(--secondary);}
+  @media(max-width:900px){.custom-grid{grid-template-columns:1fr;}.custom-grid img{height:320px;}}
+
+  /* create-for-you */
+  #create-for-you{background:var(--cream);}
+  .create-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .create-pill{
+    background:var(--paper);border:1px solid var(--line);padding:26px 22px;border-radius:4px;
+    display:flex;justify-content:space-between;align-items:center;transition:.3s;
+  }
+  .create-pill:hover{background:var(--primary);border-color:var(--primary);}
+  .create-pill:hover span, .create-pill:hover i{color:var(--cream);}
+  .create-pill span{font-weight:600;font-size:15px;}
+  .create-pill i{color:var(--secondary);transition:.3s;}
+  @media(max-width:860px){.create-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.create-grid{grid-template-columns:1fr;}}
+
+  /* hygiene */
+  #hygiene{background:var(--charcoal);color:var(--cream);}
+  #hygiene .section-head h2{color:var(--cream);}
+  #hygiene .section-head p{color:rgba(246,241,230,.7);}
+  .hygiene-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .hygiene-card{padding:30px 22px;border:1px solid rgba(246,241,230,.15);border-radius:4px;}
+  .hygiene-card i{font-size:22px;color:var(--secondary-light);}
+  .hygiene-card h4{color:var(--cream);font-size:16px;margin-top:16px;font-family:'Fraunces',serif;font-weight:500;}
+  .hygiene-card p{color:rgba(246,241,230,.65);font-size:13.5px;margin-top:8px;line-height:1.6;}
+  @media(max-width:900px){.hygiene-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.hygiene-grid{grid-template-columns:1fr;}}
+
+  /* quality */
+  .quality-list{border-top:1px solid var(--line);}
+  .quality-row{display:grid;grid-template-columns:90px 1fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--line);align-items:baseline;}
+  .quality-row .qnum{font-family:'Fraunces',serif;font-size:32px;color:var(--secondary);}
+  .quality-row h4{font-size:21px;}
+  .quality-row p{margin-top:8px;color:var(--text-muted);font-size:15px;line-height:1.7;max-width:600px;}
+
+  /* ingredients */
+  #ingredients{background:var(--cream);}
+  .ingredient-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;}
+  .ingredient-item{text-align:center;}
+  .ingredient-item .ring-img{width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:1px solid var(--line);}
+  .ingredient-item .ring-img img{width:100%;height:100%;object-fit:cover;}
+  .ingredient-item span{display:block;margin-top:12px;font-size:13px;font-weight:700;color:var(--primary);}
+  @media(max-width:900px){.ingredient-grid{grid-template-columns:repeat(3,1fr);gap:28px 16px;}}
+
+  /* seasonal */
+  .seasonal-strip{display:flex;gap:20px;overflow-x:auto;padding-bottom:10px;}
+  .seasonal-card{flex:0 0 220px;position:relative;height:280px;border-radius:4px;overflow:hidden;}
+  .seasonal-card img{width:100%;height:100%;object-fit:cover;}
+  .seasonal-card .s-label{
+    position:absolute;bottom:0;left:0;right:0;padding:18px;
+    background:linear-gradient(0deg,rgba(15,26,20,.85),transparent);color:#fff;
+    font-family:'Fraunces',serif;font-size:18px;
+  }
+
+  /* gallery */
+  #gallery{background:var(--paper);}
+  .gallery-grid{column-count:4;column-gap:18px;}
+  .gallery-item{break-inside:avoid;margin-bottom:18px;border-radius:4px;overflow:hidden;cursor:pointer;position:relative;}
+  .gallery-item img{width:100%;display:block;transition:transform .5s ease;}
+  .gallery-item:hover img{transform:scale(1.05);}
+  .gallery-item .g-cap{position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,26,20,.7),transparent 55%);opacity:0;transition:.3s;display:flex;align-items:flex-end;padding:16px;color:#fff;font-size:13px;font-weight:600;}
+  .gallery-item:hover .g-cap{opacity:1;}
+  @media(max-width:960px){.gallery-grid{column-count:3;}}
+  @media(max-width:640px){.gallery-grid{column-count:2;}}
+
+  .lightbox{position:fixed;inset:0;background:rgba(10,14,10,.94);z-index:1100;display:none;align-items:center;justify-content:center;padding:30px;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:4px;}
+  .lightbox-close{position:absolute;top:26px;right:30px;color:#fff;font-size:28px;background:none;border:none;}
+
+  /* experiences */
+  .exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .exp-card{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 26px;}
+  .exp-card i{color:var(--secondary);font-size:22px;}
+  .exp-card h4{font-size:18px;margin-top:16px;}
+  .exp-card p{margin-top:8px;font-size:14px;color:var(--text-muted);line-height:1.7;}
+  @media(max-width:900px){.exp-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.exp-grid{grid-template-columns:1fr;}}
+
+  /* catering */
+  #catering{background:var(--primary);color:var(--cream);position:relative;overflow:hidden;}
+  #catering .section-head h2{color:var(--cream);}
+  #catering .section-head p{color:rgba(246,241,230,.75);}
+  #catering .eyebrow{color:var(--secondary-light);}
+  #catering .eyebrow::before{background:var(--secondary-light);}
+  .catering-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .catering-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .catering-list .c-item{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(246,241,230,.9);padding:10px 0;border-bottom:1px solid rgba(246,241,230,.14);}
+  .catering-list .c-item i{color:var(--secondary-light);}
+  .catering-features{display:flex;flex-direction:column;gap:18px;}
+  .catering-features .f{display:flex;gap:14px;align-items:flex-start;}
+  .catering-features i{color:var(--secondary-light);margin-top:3px;}
+  .catering-features strong{display:block;font-size:15px;}
+  .catering-features span{font-size:13.5px;color:rgba(246,241,230,.7);}
+  @media(max-width:900px){.catering-grid{grid-template-columns:1fr;}.catering-list{grid-template-columns:1fr;}}
+
+  /* testimonials */
+  #testimonials{background:var(--cream);}
+  .testi-track-wrap{overflow:hidden;position:relative;}
+  .testi-track{display:flex;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
+  .testi-slide{flex:0 0 100%;padding:0 8px;}
+  .testi-card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:48px;max-width:760px;margin:0 auto;text-align:center;}
+  .testi-stars{color:var(--secondary);font-size:15px;letter-spacing:3px;}
+  .testi-card blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:24px;line-height:1.5;color:var(--primary);margin:22px 0 0;}
+  .testi-card .who{margin-top:20px;font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;}
+  .testi-nav{display:flex;justify-content:center;gap:10px;margin-top:34px;}
+  .testi-dot{width:9px;height:9px;border-radius:50%;background:var(--line);border:none;padding:0;}
+  .testi-dot.active{background:var(--secondary);}
+
+  /* press */
+  #press{background:var(--paper);padding:70px 0;}
+  .press-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 44px;}
+  .press-item{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:17px;color:var(--text-muted);letter-spacing:.01em;opacity:.85;transition:opacity .3s, color .3s;}
+  .press-item:hover{opacity:1;color:var(--primary);}
+  .press-item i{color:var(--secondary);font-size:15px;}
+
+  /* faq */
+  .faq-list{max-width:820px;margin:0 auto;border-top:1px solid var(--line);}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:26px 4px;text-align:left;font-family:'Fraunces',serif;font-size:18px;color:var(--primary);}
+  .faq-q i{transition:transform .35s ease;color:var(--secondary);}
+  .faq-item.open .faq-q i{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .faq-a p{padding:0 4px 26px;color:var(--text-muted);font-size:15px;line-height:1.75;max-width:680px;}
+
+  /* contact */
+  #contact{background:var(--charcoal);color:var(--cream);}
+  #contact .section-head h2{color:var(--cream);}
+  #contact .eyebrow{color:var(--secondary-light);}
+  #contact .eyebrow::before{background:var(--secondary-light);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .contact-items{display:grid;gap:0;}
+  .contact-row{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid rgba(246,241,230,.15);align-items:flex-start;}
+  .contact-row i{color:var(--secondary-light);font-size:18px;margin-top:3px;}
+  .contact-row strong{display:block;font-size:14px;color:var(--cream);}
+  .contact-row span, .contact-row a{display:block;color:rgba(246,241,230,.7);font-size:14.5px;margin-top:4px;}
+  .contact-ctas{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+  .contact-map-visual{border-radius:4px;overflow:hidden;height:100%;min-height:340px;}
+  .contact-map-visual img{width:100%;height:100%;object-fit:cover;}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+
+  /* contact form */
+  .contact-form-card{
+    background:rgba(246,241,230,.04);border:1px solid rgba(246,241,230,.16);border-radius:6px;padding:36px;
+  }
+  .contact-form-card p.form-lead{color:rgba(246,241,230,.68);font-size:14.5px;line-height:1.7;margin-top:10px;}
+  .form-field{margin-top:20px;}
+  .form-field label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:rgba(246,241,230,.6);margin-bottom:8px;}
+  .form-field input, .form-field select, .form-field textarea{
+    width:100%;padding:13px 16px;background:rgba(252,250,244,.06);border:1px solid rgba(246,241,230,.22);
+    border-radius:4px;color:var(--cream);font-family:'Manrope',sans-serif;font-size:14.5px;
+  }
+  .form-field select option{color:#111;}
+  .form-field input::placeholder, .form-field textarea::placeholder{color:rgba(246,241,230,.35);}
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus{outline:2px solid var(--secondary-light);outline-offset:1px;border-color:var(--secondary-light);}
+  .form-field textarea{resize:vertical;min-height:110px;}
+  .form-error{display:none;color:#E88;font-size:12.5px;margin-top:20px;}
+  .form-error.show{display:block;}
+  .contact-form-card .btn{margin-top:26px;width:100%;}
+  .form-note{margin-top:14px;font-size:12.5px;color:rgba(246,241,230,.45);line-height:1.6;}
+
+  /* map */
+  .map-section{margin-top:60px;}
+  .map-frame-wrap{border-radius:6px;overflow:hidden;border:1px solid rgba(246,241,230,.16);position:relative;}
+  .map-frame-wrap iframe{width:100%;height:420px;border:0;display:block;filter:grayscale(.15) contrast(1.05);}
+  .map-head-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:26px;}
+  .map-head-row .section-head{margin-bottom:0;}
+  @media(max-width:700px){.map-frame-wrap iframe{height:300px;}}
+
+  /* final cta banner */
+  #final-cta{position:relative;padding:120px 0;background-size:cover;background-position:center;overflow:hidden;}
+  #final-cta .fc-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,26,20,.55),rgba(15,26,20,.88));}
+  #final-cta .container{position:relative;z-index:2;text-align:center;max-width:680px;}
+  #final-cta h2{color:var(--cream);font-size:clamp(32px,4.6vw,52px);}
+  #final-cta p{margin-top:18px;color:rgba(246,241,230,.82);font-size:17px;line-height:1.8;}
+  #final-cta .fc-ctas{display:flex;justify-content:center;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  @media(max-width:768px){#final-cta{padding:80px 0;}}
+
+  /* footer */
+  footer{background:#141911;color:rgba(246,241,230,.75);padding:80px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;}
+  .footer-brand .brand-logo{color:var(--cream);}
+  .footer-brand p{margin-top:16px;font-size:14px;line-height:1.8;max-width:280px;color:rgba(246,241,230,.6);}
+  .footer-social{display:flex;gap:12px;margin-top:22px;}
+  .footer-social a{width:36px;height:36px;border:1px solid rgba(246,241,230,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s;}
+  .footer-social a:hover{background:var(--secondary);border-color:var(--secondary);}
+  .footer-col h5{color:var(--cream);font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;}
+  .footer-col li{margin-bottom:12px;font-size:14px;}
+  .footer-col a:hover{color:var(--secondary-light);}
+  .footer-bottom{margin-top:70px;padding-top:26px;border-top:1px solid rgba(246,241,230,.12);display:flex;justify-content:space-between;font-size:13px;color:rgba(246,241,230,.5);flex-wrap:wrap;gap:10px;}
+  @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+
+  /* floating buttons */
+  #whatsapp-float{
+    position:fixed;bottom:28px;right:28px;z-index:400;width:60px;height:60px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25);
+    color:#fff;font-size:26px;
+  }
+  #whatsapp-float::before{
+    content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;
+    animation:pulse 2.4s infinite;
+  }
+  #whatsapp-float i{position:relative;z-index:2;}
+  @keyframes pulse{0%{transform:scale(1);opacity:.6;}100%{transform:scale(1.9);opacity:0;}}
+
+  #back-to-top{
+    position:fixed;bottom:28px;right:100px;z-index:400;width:46px;height:46px;border-radius:50%;
+    background:var(--primary);color:var(--cream);border:none;display:none;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px rgba(0,0,0,.2);opacity:0;transform:translateY(10px);transition:.35s;
+  }
+  #back-to-top.show{display:flex;opacity:1;transform:translateY(0);}
+  @media(max-width:600px){#back-to-top{right:96px;bottom:22px;width:40px;height:40px;}#whatsapp-float{width:52px;height:52px;bottom:22px;right:20px;}}
+
+  :focus-visible{outline:2px solid var(--secondary);outline-offset:3px;}
+
+  @media(max-width:960px){
+    nav#main-nav, .header-actions .btn{display:none;}
+    .hamburger{display:flex;}
+  }
+  @media(max-width:960px){
+    .hero-visual .float-card{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div id="announcement"></div>
+
+  <header id="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-logo" id="logo-slot"></a>
+      <nav id="main-nav"></nav>
+      <div class="header-actions">
+        <a class="btn btn-outline" id="header-call-btn" href="#"><i class="fa-solid fa-phone"></i> Call Us</a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-nav">
+    <button id="mobile-nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <nav id="mobile-nav-links"></nav>
+    <a class="btn btn-gold mobile-cta" id="mobile-whatsapp-btn" href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+
+  <section id="hero"></section>
+
+  <section id="banner"></section>
+
+  <section id="about" class="section-pad"></section>
+
+  <section id="stats" class="section-pad"></section>
+
+  <section id="whyus" class="section-pad"></section>
+
+  <section id="signature" class="section-pad"></section>
+
+  <div id="categories-bar"><div class="container"><div class="cat-scroll" id="cat-scroll"></div></div></div>
+
+  <section id="juices" class="section-pad">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <span class="eyebrow">Full Menu</span>
+        <h2>Explore Our Juices</h2>
+        <p>The complete collection — filter by category or search for something specific.</p>
+      </div>
+      <div class="juice-toolbar">
+        <span id="juice-count" style="font-size:13px;color:var(--text-muted);font-weight:600;"></span>
+        <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="juice-search" placeholder="Search juices, ingredients..." aria-label="Search juices"></div>
+      </div>
+      <div class="juice-grid" id="juice-grid"></div>
+      <p class="no-results" id="no-results">No juices match your search — try a different term.</p>
+    </div>
+  </section>
+
+  <section id="health" class="section-pad"></section>
+
+  <section id="customisation" class="section-pad"></section>
+
+  <section id="create-for-you" class="section-pad"></section>
+
+  <section id="hygiene" class="section-pad"></section>
+
+  <section id="quality" class="section-pad"></section>
+
+  <section id="ingredients" class="section-pad"></section>
+
+  <section id="seasonal" class="section-pad"></section>
+
+  <section id="gallery" class="section-pad"></section>
+
+  <section id="experiences" class="section-pad"></section>
+
+  <section id="catering" class="section-pad"></section>
+
+  <section id="testimonials" class="section-pad"></section>
+
+  <section id="press" class="section-pad"></section>
+
+  <section id="faq" class="section-pad"></section>
+
+  <section id="contact" class="section-pad"></section>
+
+  <section id="final-cta"></section>
+
+  <footer id="site-footer"></footer>
+</div>
+
+<!-- Juice detail modal -->
+<div class="modal-overlay" id="juice-modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-img"><img id="modal-img" src="" alt=""></div>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+</div>
+
+<!-- Gallery lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<a id="whatsapp-float" href="#" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script id="website-data" type="application/json">
+{
+  "brand": {
+    "name": "Grove & Glass",
+    "shortName": "Grove & Glass",
+    "logoMark": "citrus",
+    "tagline": "Pressed for the Morning Ahead",
+    "description": "Grove & Glass is a small-batch juice bar built around one idea: fruit tastes best the day it's cut. Every bottle is pressed to order from produce sourced that morning, with nothing added and nothing hidden.",
+    "location": "Indiranagar, Bangalore",
+    "founded": "2019"
+  },
+
+  "seo": {
+    "title": "Grove & Glass | Cold-Pressed Juices, Bangalore",
+    "description": "Small-batch cold-pressed juices made fresh daily in Indiranagar, Bangalore. Explore signature blends, custom juices and event catering.",
+    "keywords": ["fresh juice", "cold pressed juice bangalore", "juice bar indiranagar", "customised juices", "juice catering"],
+    "ogImage": "https://images.unsplash.com/photo-1546173159-315724a31696?q=80&w=1200&auto=format&fit=crop"
+  },
+
+  "navigation": [
+    { "label": "Home", "target": "#hero" },
+    { "label": "About", "target": "#about" },
+    { "label": "Juices", "target": "#juices" },
+    { "label": "Health", "target": "#health" },
+    { "label": "Hygiene", "target": "#hygiene" },
+    { "label": "Gallery", "target": "#gallery" },
+    { "label": "Contact", "target": "#contact" }
+  ],
+
+  "announcement": "Freshly Pressed Every Morning \u2022 No Added Sugar \u2022 No Preservatives",
+
+  "hero": {
+    "eyebrow": "Cold-Pressed, Since 2019",
+    "title": "Freshness, poured with purpose.",
+    "subtitle": "Cold-pressed juices crafted daily from real fruit — no shortcuts, no syrups, no compromise.",
+    "primaryCta": { "label": "Explore Our Juices", "target": "#juices" },
+    "secondaryCta": { "label": "Talk to Us", "target": "#contact" },
+    "image": "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?q=80&w=1200&auto=format&fit=crop",
+    "floatCard": { "title": "Pressed This Morning", "subtitle": "Beet Awakening \u00b7 6:40 AM batch" },
+    "badges": [
+      { "icon": "fa-solid fa-seedling", "label": "100% Real Fruit" },
+      { "icon": "fa-solid fa-droplet", "label": "Freshly Pressed" },
+      { "icon": "fa-solid fa-leaf", "label": "Quality Ingredients" }
+    ]
+  },
+
+  "banner": {
+    "title": "Not just a juice. A fresher way to feel good.",
+    "text": "From naturally refreshing single-fruit presses to thoughtfully built combinations, every glass at Grove & Glass starts with the same question: what does this fruit taste like at its best?",
+    "image": "https://images.unsplash.com/photo-1610970881699-44a5587cabec?q=80&w=1600&auto=format&fit=crop"
+  },
+
+  "stats": [
+    { "number": "100%", "label": "Fresh Ingredients" },
+    { "number": "22+", "label": "Juice Varieties" },
+    { "number": "10K+", "label": "Happy Customers" },
+    { "number": "Daily", "label": "Fresh Batches" }
+  ],
+
+  "about": {
+    "eyebrow": "About Us",
+    "title": "Freshness with purpose",
+    "paragraphs": [
+      "Grove & Glass began as a single counter and a cold-press machine, built on the belief that a juice should taste like the fruit it came from — nothing rounded off with sugar, nothing stretched with water.",
+      "Every morning our team sources fruit from local markets, washes and presses it in small batches, and serves it the same day. What isn't sold fresh, isn't sold at all."
+    ],
+    "points": [
+      "Fruit sourced fresh each morning",
+      "Cold-pressed in small batches",
+      "No added sugar, water or preservatives",
+      "Served the same day it's pressed"
+    ],
+    "image": "https://images.unsplash.com/photo-1600718374662-0483d2b9da44?q=80&w=1200&auto=format&fit=crop",
+    "cta": { "label": "Discover Our Story", "target": "#contact" }
+  },
+
+  "whyUs": {
+    "eyebrow": "Why Grove & Glass",
+    "title": "What sets a fresh glass apart",
+    "text": "Small details, done consistently, are the whole difference between an average juice and a great one.",
+    "points": [
+      { "icon": "fa-solid fa-sun", "title": "Pressed That Morning", "description": "Every batch is pressed the same day it's served — nothing held over from yesterday." },
+      { "icon": "fa-solid fa-ban", "title": "No Added Sugar", "description": "Sweetness comes from the fruit itself, never from syrup or concentrate." },
+      { "icon": "fa-solid fa-flask", "title": "Small Batches Only", "description": "We press in small quantities through the day rather than one large morning run." },
+      { "icon": "fa-solid fa-magnifying-glass", "title": "Transparent Sourcing", "description": "Ask us where any fruit came from — we know our suppliers by name." }
+    ]
+  },
+
+  "signatureJuices": [
+    {
+      "id": "sig-sunrise-citrus",
+      "name": "Sunrise Citrus",
+      "description": "A bright morning blend of orange, pineapple and lime.",
+      "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?q=80&w=800&auto=format&fit=crop",
+      "highlight": "Vitamin C Rich",
+      "category": "Citrus"
+    },
+    {
+      "id": "sig-emerald-detox",
+      "name": "Emerald Detox",
+      "description": "Cucumber, kale, green apple and mint, cold-pressed.",
+      "image": "https://images.unsplash.com/photo-1610397648930-477b8c7f0943?q=80&w=800&auto=format&fit=crop",
+      "highlight": "Deep Hydration",
+      "category": "Detox"
+    },
+    {
+      "id": "sig-beet-awakening",
+      "name": "Beet Awakening",
+      "description": "Beetroot, carrot, ginger and orange for a natural lift.",
+      "image": "https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?q=80&w=800&auto=format&fit=crop",
+      "highlight": "Natural Energy",
+      "category": "Energy"
+    },
+    {
+      "id": "sig-tropic-haze",
+      "name": "Tropic Haze",
+      "description": "Mango, pineapple and passionfruit, pressed together.",
+      "image": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?q=80&w=800&auto=format&fit=crop",
+      "highlight": "Antioxidant Rich",
+      "category": "Seasonal"
+    },
+    {
+      "id": "sig-pomegranate-bloom",
+      "name": "Pomegranate Bloom",
+      "description": "Pomegranate, apple and beetroot, deep and rounded.",
+      "image": "https://images.unsplash.com/photo-1613478223719-8bb45b19a0e9?q=80&w=800&auto=format&fit=crop",
+      "highlight": "Antioxidant Rich",
+      "category": "Special Blends"
+    }
+  ],
+
+  "categories": ["All", "Fruit Juices", "Citrus", "Detox", "Energy", "Seasonal", "Milkshakes", "Smoothies", "Special Blends"],
+
+  "juices": [
+    { "id": "j-01", "name": "Sunrise Citrus", "description": "Orange, pineapple and lime pressed together for a bright start.", "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?q=80&w=700&auto=format&fit=crop", "ingredients": ["Orange", "Pineapple", "Lime"], "highlight": "Vitamin C Rich", "category": "Citrus", "veg": true, "tags": ["citrus", "morning", "vitamin c"], "bestTime": "Morning", "lovedFor": "A zesty, no-fuss way to start the day." },
+    { "id": "j-02", "name": "Emerald Detox", "description": "Cucumber, kale, green apple and mint — light and hydrating.", "image": "https://images.unsplash.com/photo-1610397648930-477b8c7f0943?q=80&w=700&auto=format&fit=crop", "ingredients": ["Cucumber", "Kale", "Green Apple", "Mint"], "highlight": "Deep Hydration", "category": "Detox", "veg": true, "tags": ["detox", "green", "hydration"], "bestTime": "Late Morning", "lovedFor": "Clean, grassy and refreshing without being bitter." },
+    { "id": "j-03", "name": "Beet Awakening", "description": "Beetroot, carrot, ginger and orange for a natural lift.", "image": "https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?q=80&w=700&auto=format&fit=crop", "ingredients": ["Beetroot", "Carrot", "Ginger", "Orange"], "highlight": "Natural Energy", "category": "Energy", "veg": true, "tags": ["energy", "beet", "ginger"], "bestTime": "Pre-Workout", "lovedFor": "Earthy sweetness with a warm ginger kick." },
+    { "id": "j-04", "name": "Tropic Haze", "description": "Mango, pineapple and passionfruit, pressed together.", "image": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?q=80&w=700&auto=format&fit=crop", "ingredients": ["Mango", "Pineapple", "Passionfruit"], "highlight": "Antioxidant Rich", "category": "Seasonal", "veg": true, "tags": ["tropical", "mango", "seasonal"], "bestTime": "Afternoon", "lovedFor": "Tastes like a holiday in a glass." },
+    { "id": "j-05", "name": "Pomegranate Bloom", "description": "Pomegranate, apple and beetroot, deep and rounded.", "image": "https://images.unsplash.com/photo-1613478223719-8bb45b19a0e9?q=80&w=700&auto=format&fit=crop", "ingredients": ["Pomegranate", "Apple", "Beetroot"], "highlight": "Antioxidant Rich", "category": "Special Blends", "veg": true, "tags": ["pomegranate", "antioxidant"], "bestTime": "Evening", "lovedFor": "Rich colour, deep flavour, no added sugar." },
+    { "id": "j-06", "name": "Mosambi Mint", "description": "Sweet lime pressed fresh with a hint of mint.", "image": "https://images.unsplash.com/photo-1621263764928-df1444c5e859?q=80&w=700&auto=format&fit=crop", "ingredients": ["Mosambi", "Mint"], "highlight": "Refreshing", "category": "Citrus", "veg": true, "tags": ["mosambi", "mint", "classic"], "bestTime": "Midday", "lovedFor": "A cooling classic, made properly." },
+    { "id": "j-07", "name": "Watermelon Cooler", "description": "Chilled watermelon with a whisper of lime.", "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=700&auto=format&fit=crop", "ingredients": ["Watermelon", "Lime"], "highlight": "Hydration", "category": "Fruit Juices", "veg": true, "tags": ["watermelon", "summer"], "bestTime": "Hot Afternoons", "lovedFor": "As simple and refreshing as it sounds." },
+    { "id": "j-08", "name": "Pineapple Ginger Zing", "description": "Pineapple pressed with fresh ginger for a sharp finish.", "image": "https://images.unsplash.com/photo-1585059895524-72359e06133a?q=80&w=700&auto=format&fit=crop", "ingredients": ["Pineapple", "Ginger"], "highlight": "Natural Energy", "category": "Energy", "veg": true, "tags": ["pineapple", "ginger"], "bestTime": "Pre-Workout", "lovedFor": "Sweet, sharp and genuinely energising." },
+    { "id": "j-09", "name": "Tender Coconut Splice", "description": "Fresh tender coconut water, served as it comes.", "image": "https://images.unsplash.com/photo-1541599468348-e96984315921?q=80&w=700&auto=format&fit=crop", "ingredients": ["Tender Coconut"], "highlight": "Hydration", "category": "Seasonal", "veg": true, "tags": ["coconut", "electrolytes"], "bestTime": "Anytime", "lovedFor": "Nothing added — just the coconut." },
+    { "id": "j-10", "name": "Mango Smoothie Bowl Press", "description": "Alphonso mango blended thick with a touch of banana.", "image": "https://images.unsplash.com/photo-1502741224143-90386d7f8c82?q=80&w=700&auto=format&fit=crop", "ingredients": ["Mango", "Banana"], "highlight": "Fruit-Based", "category": "Smoothies", "veg": true, "tags": ["mango", "smoothie", "thick"], "bestTime": "Breakfast", "lovedFor": "Thick, spoonable and unapologetically mango." },
+    { "id": "j-11", "name": "Berry Kefir Smoothie", "description": "Mixed berries blended with cultured yoghurt.", "image": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?q=80&w=700&auto=format&fit=crop", "ingredients": ["Mixed Berries", "Yoghurt"], "highlight": "Fruit-Based", "category": "Smoothies", "veg": true, "tags": ["berries", "yoghurt", "smoothie"], "bestTime": "Breakfast", "lovedFor": "Tangy, creamy and full of berries." },
+    { "id": "j-12", "name": "Cold Brew Banana Shake", "description": "House cold brew blended with banana and milk.", "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=700&auto=format&fit=crop", "ingredients": ["Cold Brew Coffee", "Banana", "Milk"], "highlight": "Refreshing", "category": "Milkshakes", "veg": true, "tags": ["coffee", "banana", "shake"], "bestTime": "Afternoon", "lovedFor": "A proper pick-me-up, not too sweet." }
+  ],
+
+  "healthBenefits": [
+    { "icon": "fa-solid fa-lemon", "title": "Vitamin C", "description": "A refreshing source of vitamin C from citrus fruits like orange, mosambi and lime.", "recommendedJuiceIds": ["j-01", "j-06"] },
+    { "icon": "fa-solid fa-droplet", "title": "Hydration", "description": "Naturally water-rich fruits and vegetables that help top up hydration through the day.", "recommendedJuiceIds": ["j-07", "j-09"] },
+    { "icon": "fa-solid fa-bolt", "title": "Natural Energy", "description": "Beetroot, ginger and pineapple combinations that make a great addition before activity.", "recommendedJuiceIds": ["j-03", "j-08"] },
+    { "icon": "fa-solid fa-shield-heart", "title": "Antioxidant Rich", "description": "Deep-coloured fruits like pomegranate and mango naturally contain antioxidant compounds.", "recommendedJuiceIds": ["j-04", "j-05"] },
+    { "icon": "fa-solid fa-wind", "title": "Refreshing", "description": "Light, cooling blends built for warm afternoons and post-lunch slumps.", "recommendedJuiceIds": ["j-06", "j-07"] },
+    { "icon": "fa-solid fa-apple-whole", "title": "Fruit-Based", "description": "A great addition to a balanced lifestyle, made from whole fruit rather than concentrate.", "recommendedJuiceIds": ["j-10", "j-11"] }
+  ],
+
+  "customisation": {
+    "eyebrow": "Make It Yours",
+    "title": "Your juice. Your way.",
+    "text": "Want something lighter? More citrus? Less sweet? A specific combination you've had before? We can explore customised juice combinations based on your preferences.",
+    "image": "https://images.unsplash.com/photo-1600718374662-0483d2b9da44?q=80&w=900&auto=format&fit=crop",
+    "options": [
+      { "label": "Custom Fruit Blends", "icon": "fa-solid fa-blender" },
+      { "label": "Sugar Preference", "icon": "fa-solid fa-cubes-stacked" },
+      { "label": "Ingredient Preferences", "icon": "fa-solid fa-list-check" },
+      { "label": "Seasonal Combinations", "icon": "fa-solid fa-sun" },
+      { "label": "Personalised Mixes", "icon": "fa-solid fa-wand-magic-sparkles" }
+    ],
+    "cta": { "label": "Talk About Your Juice" }
+  },
+
+  "createForYou": {
+    "eyebrow": "Enquire",
+    "title": "What can we create for you?",
+    "options": [
+      "Daily Refreshment",
+      "Healthy Choice",
+      "Post-Workout Refreshment",
+      "Party Juices",
+      "Office Events",
+      "Birthday Events",
+      "Wedding Events",
+      "Corporate Catering",
+      "Custom Juice Bar"
+    ]
+  },
+
+  "hygiene": {
+    "eyebrow": "Our Promise",
+    "title": "Freshness starts with hygiene.",
+    "text": "Every glass passes through a process we take seriously — clean spaces, clean hands, clean fruit.",
+    "image": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1200&auto=format&fit=crop",
+    "points": [
+      { "icon": "fa-solid fa-broom", "title": "Clean Preparation Area", "description": "Surfaces sanitised before and after every batch." },
+      { "icon": "fa-solid fa-water", "title": "Freshly Washed Fruits", "description": "All produce is rinsed thoroughly before pressing." },
+      { "icon": "fa-solid fa-gears", "title": "Clean Equipment", "description": "Press and blending equipment cleaned between uses." },
+      { "icon": "fa-solid fa-snowflake", "title": "Safe Storage", "description": "Produce and juices stored at controlled temperatures." },
+      { "icon": "fa-solid fa-clock", "title": "Fresh Preparation", "description": "Juices are pressed close to serving time, not held for hours." },
+      { "icon": "fa-solid fa-box-open", "title": "Hygienic Packaging", "description": "Sealed bottles and cups packed in a clean station." },
+      { "icon": "fa-solid fa-spray-can-sparkles", "title": "Regular Cleaning", "description": "A documented cleaning routine followed through the day." }
+    ]
+  },
+
+  "quality": {
+    "eyebrow": "Our Quality",
+    "title": "Quality you can see. Freshness you can taste.",
+    "steps": [
+      { "number": "01", "title": "Carefully Selected Fruits", "description": "We choose fruit for ripeness and quality, not just availability." },
+      { "number": "02", "title": "Fresh Preparation", "description": "Each order is pressed or blended fresh, not pre-made in bulk." },
+      { "number": "03", "title": "Quality Ingredients", "description": "No concentrates, no artificial flavouring, no shortcuts." },
+      { "number": "04", "title": "Clean Equipment", "description": "Every tool and surface is cleaned between batches." },
+      { "number": "05", "title": "Consistent Standards", "description": "The same recipe, the same care, glass after glass." }
+    ]
+  },
+
+  "ingredients": {
+    "eyebrow": "What Goes In",
+    "title": "Ingredients we build with",
+    "items": [
+      { "name": "Fresh Fruits", "image": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?q=80&w=400&auto=format&fit=crop" },
+      { "name": "Natural Herbs", "image": "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b3c?q=80&w=400&auto=format&fit=crop" },
+      { "name": "Root Vegetables", "image": "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?q=80&w=400&auto=format&fit=crop" },
+      { "name": "Fresh Ginger", "image": "https://images.unsplash.com/photo-1615485500704-8e990f9900f7?q=80&w=400&auto=format&fit=crop" },
+      { "name": "Quality Dairy", "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=400&auto=format&fit=crop" },
+      { "name": "Seasonal Produce", "image": "https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=400&auto=format&fit=crop" }
+    ]
+  },
+
+  "seasonal": {
+    "enabled": true,
+    "eyebrow": "Right Now",
+    "title": "Seasonal favourites",
+    "items": [
+      { "name": "Mango", "image": "https://images.unsplash.com/photo-1591073113125-e46713c829ed?q=80&w=500&auto=format&fit=crop" },
+      { "name": "Watermelon", "image": "https://images.unsplash.com/photo-1563114773-84221bd62daa?q=80&w=500&auto=format&fit=crop" },
+      { "name": "Tender Coconut", "image": "https://images.unsplash.com/photo-1580910051070-c14e60b96bc6?q=80&w=500&auto=format&fit=crop" },
+      { "name": "Pomegranate", "image": "https://images.unsplash.com/photo-1541344999736-83eca272f6fc?q=80&w=500&auto=format&fit=crop" },
+      { "name": "Mosambi", "image": "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=500&auto=format&fit=crop" },
+      { "name": "Pineapple", "image": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=500&auto=format&fit=crop" }
+    ]
+  },
+
+  "gallery": [
+    { "image": "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?q=80&w=700&auto=format&fit=crop", "caption": "Fresh press, every morning", "category": "Juices" },
+    { "image": "https://images.unsplash.com/photo-1610397648930-477b8c7f0943?q=80&w=700&auto=format&fit=crop", "caption": "Emerald Detox in the making", "category": "Preparation" },
+    { "image": "https://images.unsplash.com/photo-1600718374662-0483d2b9da44?q=80&w=700&auto=format&fit=crop", "caption": "Sourcing fruit fresh", "category": "Ingredients" },
+    { "image": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?q=80&w=700&auto=format&fit=crop", "caption": "Tropic Haze, freshly poured", "category": "Juices" },
+    { "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=700&auto=format&fit=crop", "caption": "Our counter in Indiranagar", "category": "Shop" },
+    { "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=700&auto=format&fit=crop", "caption": "Behind the press", "category": "Preparation" },
+    { "image": "https://images.unsplash.com/photo-1610970881699-44a5587cabec?q=80&w=700&auto=format&fit=crop", "caption": "Bottled and ready", "category": "Packaging" },
+    { "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=700&auto=format&fit=crop", "caption": "Watermelon season", "category": "Ingredients" },
+    { "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=700&auto=format&fit=crop", "caption": "A quiet corner to enjoy your glass", "category": "Shop" }
+  ],
+
+  "experiences": [
+    { "icon": "fa-solid fa-sun", "title": "Daily Refresh", "description": "A fresh glass for your everyday routine, ready when you are." },
+    { "icon": "fa-solid fa-briefcase", "title": "Office Refreshments", "description": "Fresh juices delivered for teams and workplaces." },
+    { "icon": "fa-solid fa-champagne-glasses", "title": "Celebrations", "description": "A refreshing, thoughtful addition to special occasions." },
+    { "icon": "fa-solid fa-martini-glass-citrus", "title": "Custom Juice Bar", "description": "Freshly prepared combinations set up live at your event." }
+  ],
+
+  "catering": {
+    "eyebrow": "For Your Occasion",
+    "title": "Juice for your occasion",
+    "text": "From an office morning to a wedding weekend, we bring the same fresh-pressed standard to events of any size.",
+    "image": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1000&auto=format&fit=crop",
+    "occasions": ["Birthdays", "Weddings", "Corporate Events", "Office Gatherings", "Private Parties", "Fitness Events", "School / College Events"],
+    "features": [
+      { "icon": "fa-solid fa-list-ul", "title": "Custom Menu", "description": "Built around your guests and the occasion." },
+      { "icon": "fa-solid fa-layer-group", "title": "Bulk Preparation", "description": "Freshly prepared in the quantities you need." },
+      { "icon": "fa-solid fa-store", "title": "Event Setup", "description": "A juice counter set up on-site for your event." },
+      { "icon": "fa-solid fa-martini-glass", "title": "Juice Bar Experience", "description": "Live pressing so guests see it made fresh." }
+    ],
+    "cta": { "label": "Enquire for Your Event" }
+  },
+
+  "testimonials": [
+    { "rating": 5, "quote": "Fresh, clean and beautifully prepared. The quality really stands out from anything else nearby.", "name": "Ananya R." },
+    { "rating": 5, "quote": "The Beet Awakening has become part of my morning routine. You can genuinely taste the difference.", "name": "Karthik M." },
+    { "rating": 5, "quote": "We used them for our office wellness week — the custom juice bar was a huge hit with the team.", "name": "Priya S." },
+    { "rating": 5, "quote": "Ordered for a birthday and the setup was spotless. Guests kept asking where we got it from.", "name": "Rohit V." },
+    { "rating": 5, "quote": "Simple ingredients, done properly. It's rare to find a juice place this consistent.", "name": "Meera D." }
+  ],
+
+  "press": {
+    "eyebrow": "As Featured In",
+    "title": "Word's getting around",
+    "mentions": [
+      { "name": "The Daily Table", "icon": "fa-solid fa-newspaper" },
+      { "name": "Bangalore Weekly", "icon": "fa-solid fa-city" },
+      { "name": "Fresh Life Journal", "icon": "fa-solid fa-leaf" },
+      { "name": "City Wellness Guide", "icon": "fa-solid fa-heart-pulse" },
+      { "name": "The Local Table", "icon": "fa-solid fa-utensils" }
+    ]
+  },
+
+  "faq": [
+    { "question": "Are the juices freshly prepared?", "answer": "Yes — every juice is pressed or blended to order, in small batches, close to the time it's served." },
+    { "question": "What fruits do you use?", "answer": "We source seasonal, market-fresh fruits and vegetables each morning, prioritising ripeness and quality." },
+    { "question": "Can I customise my juice?", "answer": "Absolutely. Message us on WhatsApp with your preferences and we'll talk through the options." },
+    { "question": "Do you offer less-sugar options?", "answer": "Yes, we can adjust sweetness and suggest combinations that are naturally lighter." },
+    { "question": "Do you provide event or catering services?", "answer": "Yes, from small office gatherings to weddings — see our Events & Catering section for details." },
+    { "question": "Do you offer seasonal juices?", "answer": "Yes, our seasonal selection changes through the year based on what's freshest." },
+    { "question": "How can I enquire about a custom juice?", "answer": "Tap any 'Ask About This Juice' or 'Talk to Us' button to start a WhatsApp conversation with our team." },
+    { "question": "Where is Grove & Glass located?", "answer": "We're on 12th Main in Indiranagar, Bangalore \u2014 see the map in the Contact section below, or tap 'Get Directions' to open it in Google Maps." },
+    { "question": "Do I need to visit in person to place an order?", "answer": "Not necessarily \u2014 you can call or WhatsApp us directly, or fill in the contact form and we'll get back to you with the details." }
+  ],
+
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Let's make something fresh.",
+    "phone": "987654321",
+    "whatsapp": "91987654321",
+    "email": "demo@gmail.com",
+    "address": "123, Demo Street - 123456",
+    "hours": "Mon \u2013 Sun, 7:00 AM \u2013 9:00 PM",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=900&auto=format&fit=crop",
+    "mapEmbedUrl": ""
+  },
+
+  "contactForm": {
+    "eyebrow": "Send A Message",
+    "title": "Prefer to write it out?",
+    "text": "Fill in a few details and we'll pick it up on WhatsApp \u2014 no login, no waiting on email.",
+    "reasons": ["General Enquiry", "Custom Juice", "Event / Catering", "Feedback"],
+    "fields": {
+      "name": { "label": "Your Name", "placeholder": "e.g. Ananya Rao" },
+      "phone": { "label": "Phone Number", "placeholder": "e.g. 98765 43210" },
+      "message": { "label": "Message", "placeholder": "Tell us a little about what you need..." }
+    },
+    "submitLabel": "Send via WhatsApp",
+    "note": "Sending this opens WhatsApp with your details pre-filled \u2014 nothing is submitted automatically."
+  },
+
+  "map": {
+    "eyebrow": "Find Us",
+    "title": "Visit the counter",
+    "directionsLabel": "Get Directions"
+  },
+
+  "whatsappMessages": {
+    "general": "Hello Grove & Glass,\n\nI would like to know more about your juices.\n\nThank you.",
+    "juice": "Hello Grove & Glass,\n\nI would like to know more about:\n\nJuice: {juiceName}\n\nPlease share the available options and details.\n\nThank you.",
+    "custom": "Hello Grove & Glass,\n\nI am interested in a customised juice.\n\nPlease share the available options.\n\nThank you.",
+    "createForYou": "Hello Grove & Glass,\n\nI'm interested in: {option}\n\nCould you share more details?\n\nThank you.",
+    "event": "Hello Grove & Glass,\n\nI am interested in juice services for an event.\n\nEvent Type:\nExpected Guests:\nDate:\n\nPlease share the available options.\n\nThank you."
+  },
+
+  "socialLinks": [
+    { "platform": "Instagram", "url": "#", "icon": "fa-brands fa-instagram" },
+    { "platform": "Facebook", "url": "#", "icon": "fa-brands fa-facebook" },
+    { "platform": "YouTube", "url": "#", "icon": "fa-brands fa-youtube" }
+  ],
+
+  "footer": {
+    "categoriesHeading": "Categories",
+    "linksHeading": "Explore",
+    "contactHeading": "Contact",
+    "copyright": "Grove & Glass. All rights reserved."
+  },
+
+  "finalCta": {
+    "title": "Ready for a fresher glass?",
+    "text": "Call ahead, WhatsApp us your order, or just walk in — we'll have something fresh pressed and waiting.",
+    "image": "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?q=80&w=1600&auto=format&fit=crop",
+    "primaryCta": { "label": "WhatsApp Us" },
+    "secondaryCta": { "label": "Call Us" }
+  },
+
+  "theme": {
+    "primary": "#1F3A2E",
+    "primaryLight": "#2E5544",
+    "secondary": "#C97C3D",
+    "secondaryLight": "#E0A15E",
+    "cream": "#F6F1E6",
+    "paper": "#FCFAF4",
+    "charcoal": "#1B1B18",
+    "text": "#2A2E28",
+    "textMuted": "#6B6F63"
+  },
+
+  "animations": { "enabled": true, "duration": 700, "once": true },
+
+  "sectionVisibility": {
+    "announcement": true,
+    "hero": true,
+    "banner": true,
+    "about": true,
+    "stats": true,
+    "whyUs": true,
+    "signatureJuices": true,
+    "categories": true,
+    "juices": true,
+    "health": true,
+    "customisation": true,
+    "createForYou": true,
+    "hygiene": true,
+    "quality": true,
+    "ingredients": true,
+    "seasonal": true,
+    "gallery": true,
+    "experiences": true,
+    "catering": true,
+    "testimonials": true,
+    "press": true,
+    "faq": true,
+    "contact": true,
+    "finalCta": true
+  }
+}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  var data = JSON.parse(document.getElementById("website-data").textContent);
+  var vis = data.sectionVisibility || {};
+  var currentFilter = "All";
+  var currentSearch = "";
+  var testiIndex = 0;
+
+  /* ---------- citrus signature SVG mark ---------- */
+  function citrusMark(size){
+    size = size || 32;
+    return '<span class="citrus-mark"><svg width="'+size+'" height="'+size+'" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+      '<circle cx="20" cy="20" r="18" stroke="var(--secondary)" stroke-width="1.4"/>' +
+      '<g stroke="var(--secondary)" stroke-width="1.1">' +
+      '<path d="M20 3 L20 37"/><path d="M20 3 L20 37" transform="rotate(30 20 20)"/>' +
+      '<path d="M20 3 L20 37" transform="rotate(60 20 20)"/><path d="M20 3 L20 37" transform="rotate(90 20 20)"/>' +
+      '<path d="M20 3 L20 37" transform="rotate(120 20 20)"/><path d="M20 3 L20 37" transform="rotate(150 20 20)"/>' +
+      '</g><circle cx="20" cy="20" r="5" fill="var(--secondary)"/></svg></span>';
+  }
+
+  /* ---------- helpers ---------- */
+  function waLink(message){
+    return "https://wa.me/" + data.contact.whatsapp + "?text=" + encodeURIComponent(message);
+  }
+  function telLink(){ return "tel:+91" + data.contact.phone; }
+  function esc(s){ return $("<div>").text(s == null ? "" : s).html(); }
+
+  function applyTheme(){
+    var root = document.documentElement.style;
+    var t = data.theme;
+    root.setProperty("--primary", t.primary);
+    root.setProperty("--primary-light", t.primaryLight);
+    root.setProperty("--secondary", t.secondary);
+    root.setProperty("--secondary-light", t.secondaryLight);
+    root.setProperty("--cream", t.cream);
+    root.setProperty("--paper", t.paper);
+    root.setProperty("--charcoal", t.charcoal);
+    root.setProperty("--text", t.text);
+    root.setProperty("--text-muted", t.textMuted);
+    root.setProperty("--dur", (data.animations.duration || 700) + "ms");
+  }
+
+  function applySEO(){
+    document.title = data.seo.title;
+    document.getElementById("seo-title").textContent = data.seo.title;
+    $("#seo-description").attr("content", data.seo.description);
+    $("#seo-keywords").attr("content", (data.seo.keywords || []).join(", "));
+    $("#og-title").attr("content", data.seo.title);
+    $("#og-description").attr("content", data.seo.description);
+    $("#og-image").attr("content", data.seo.ogImage);
+  }
+
+  function renderAnnouncement(){
+    if(!vis.announcement){ $("#announcement").hide(); return; }
+    $("#announcement").text(data.announcement);
+  }
+
+  function renderNavigation(){
+    var $nav = $("#main-nav").empty();
+    var $mnav = $("#mobile-nav-links").empty();
+    data.navigation.forEach(function(item){
+      $nav.append($("<a>").attr("href", item.target).attr("data-target", item.target).text(item.label));
+      $mnav.append($("<a>").attr("href", item.target).attr("data-target", item.target).text(item.label));
+    });
+    $("#logo-slot").html(citrusMark(26) + "<span>" + esc(data.brand.shortName) + "</span>");
+    $("#header-call-btn").attr("href", telLink());
+    $("#mobile-whatsapp-btn").attr("href", waLink(data.whatsappMessages.general));
+  }
+
+  function renderHero(){
+    if(!vis.hero){ $("#hero").hide(); return; }
+    var h = data.hero;
+    var badges = h.badges.map(function(b){
+      return '<span class="badge"><i class="'+b.icon+'"></i>'+esc(b.label)+'</span>';
+    }).join("");
+    $("#hero").html(
+      '<div class="container hero-grid">' +
+        '<div class="hero-copy" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(h.eyebrow)+'</span>' +
+          '<h1>'+esc(h.title)+'</h1>' +
+          '<p class="lead">'+esc(h.subtitle)+'</p>' +
+          '<div class="hero-ctas">' +
+            '<a class="btn btn-primary" href="'+h.primaryCta.target+'" data-target="'+h.primaryCta.target+'">'+esc(h.primaryCta.label)+'</a>' +
+            '<a class="btn btn-outline" href="'+h.secondaryCta.target+'" data-target="'+h.secondaryCta.target+'">'+esc(h.secondaryCta.label)+'</a>' +
+          '</div>' +
+          '<div class="hero-badges">'+badges+'</div>' +
+        '</div>' +
+        '<div class="hero-visual" data-aos="fade-left">' +
+          '<img src="'+h.image+'" alt="'+esc(h.title)+'" loading="lazy">' +
+          '<div class="float-card">'+citrusMark(38)+'<div><strong>'+esc(h.floatCard.title)+'</strong><span>'+esc(h.floatCard.subtitle)+'</span></div></div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function renderBanner(){
+    if(!vis.banner){ $("#banner").hide(); return; }
+    var b = data.banner;
+    $("#banner").css("background-image", "url('"+b.image+"')")
+      .html('<div class="banner-overlay"></div><div class="container" data-aos="fade-up"><h2>'+esc(b.title)+'</h2><p>'+esc(b.text)+'</p></div>');
+  }
+
+  function renderAbout(){
+    if(!vis.about){ $("#about").hide(); return; }
+    var a = data.about;
+    var points = a.points.map(function(p){ return '<li><i class="fa-solid fa-check"></i>'+esc(p)+'</li>'; }).join("");
+    var paras = a.paragraphs.map(function(p){ return '<p>'+esc(p)+'</p>'; }).join("");
+    $("#about").html(
+      '<div class="container about-grid">' +
+        '<div class="about-img" data-aos="fade-right"><img src="'+a.image+'" alt="About '+esc(data.brand.name)+'" loading="lazy">' +
+          '<div class="ring">'+citrusMark(110)+'</div></div>' +
+        '<div data-aos="fade-left">' +
+          '<span class="eyebrow">'+esc(a.eyebrow)+'</span>' +
+          '<h2 style="font-size:clamp(30px,4vw,46px);margin-top:14px;">'+esc(a.title)+'</h2>' +
+          paras +
+          '<ul class="about-list">'+points+'</ul>' +
+          '<a class="btn btn-primary" style="margin-top:30px;" href="'+a.cta.target+'">'+esc(a.cta.label)+'</a>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function renderStats(){
+    if(!vis.stats){ $("#stats").hide(); return; }
+    var html = data.stats.map(function(s){
+      return '<div data-aos="fade-up"><div class="stat-num" data-count="'+esc(s.number)+'">0</div><div class="stat-label">'+esc(s.label)+'</div></div>';
+    }).join("");
+    $("#stats").html('<div class="container stats-grid">'+html+'</div>');
+  }
+
+  function animateCounters(){
+    $(".stat-num").each(function(){
+      var $el = $(this);
+      if($el.data("done")) return;
+      var raw = $el.data("count").toString();
+      var match = raw.match(/[\d.]+/);
+      if(!match){ $el.text(raw); $el.data("done", true); return; }
+      var num = parseFloat(match[0]);
+      var suffix = raw.replace(match[0], "");
+      var current = 0;
+      var steps = 40;
+      var inc = num / steps;
+      $el.data("done", true);
+      var i = 0;
+      var timer = setInterval(function(){
+        i++;
+        current += inc;
+        if(i >= steps){ clearInterval(timer); current = num; }
+        var display = (num % 1 === 0) ? Math.round(current) : current.toFixed(1);
+        $el.text(display + suffix);
+      }, 25);
+    });
+  }
+
+  function renderWhyUs(){
+    if(!vis.whyUs){ $("#whyus").hide(); return; }
+    var w = data.whyUs;
+    var cards = w.points.map(function(p){
+      return '<div class="whyus-card" data-aos="fade-up"><i class="'+p.icon+'"></i><h4>'+esc(p.title)+'</h4><p>'+esc(p.description)+'</p></div>';
+    }).join("");
+    $("#whyus").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(w.eyebrow)+'</span>' +
+          '<h2>'+esc(w.title)+'</h2>' +
+          '<p>'+esc(w.text)+'</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="container"><div class="whyus-grid">'+cards+'</div></div>'
+    );
+  }
+
+  function renderSignatureJuices(){
+    if(!vis.signatureJuices){ $("#signature").hide(); return; }
+    var cards = data.signatureJuices.map(function(j, i){
+      return '<div class="sig-card" data-aos="fade-up" data-aos-delay="'+(i*80)+'">' +
+        '<div class="sig-img"><img src="'+j.image+'" alt="'+esc(j.name)+'" loading="lazy"></div>' +
+        '<div class="sig-body">' +
+          '<span class="sig-cat">'+esc(j.category)+'</span>' +
+          '<h3>'+esc(j.name)+'</h3>' +
+          '<p>'+esc(j.description)+'</p>' +
+          '<span class="sig-highlight"><i class="fa-solid fa-star"></i>'+esc(j.highlight)+'</span>' +
+        '</div></div>';
+    }).join("");
+    $("#signature").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">Fan Favourites</span>' +
+          '<h2>Our Signature Juices</h2>' +
+          '<p>A few favourites crafted with our own touch.</p>' +
+        '</div>' +
+        '<div class="sig-grid">'+cards+'</div>' +
+      '</div>'
+    );
+  }
+
+  function renderCategories(){
+    if(!vis.categories){ $("#categories-bar").hide(); return; }
+    var $bar = $("#cat-scroll").empty();
+    data.categories.forEach(function(c){
+      var $p = $('<button class="cat-pill">').text(c).attr("data-cat", c);
+      if(c === currentFilter) $p.addClass("active");
+      $bar.append($p);
+    });
+  }
+
+  function matchesSearch(j, term){
+    if(!term) return true;
+    term = term.toLowerCase();
+    var hay = [j.name, j.description, j.category].concat(j.ingredients || [], j.tags || []).join(" ").toLowerCase();
+    return hay.indexOf(term) !== -1;
+  }
+
+  function renderJuices(){
+    if(!vis.juices){ $("#juices").hide(); return; }
+    var $grid = $("#juice-grid").empty();
+    var filtered = data.juices.filter(function(j){
+      var catOk = (currentFilter === "All") || (j.category === currentFilter);
+      return catOk && matchesSearch(j, currentSearch);
+    });
+
+    $("#juice-count").text(filtered.length + (filtered.length === 1 ? " juice" : " juices"));
+    $("#no-results").toggle(filtered.length === 0);
+
+    filtered.forEach(function(j, i){
+      var card = $(
+        '<div class="juice-card" data-aos="fade-up" data-aos-delay="'+((i%4)*70)+'" data-id="'+j.id+'" tabindex="0" role="button" aria-label="View '+esc(j.name)+' details">' +
+          '<div class="jc-img"><img src="'+j.image+'" alt="'+esc(j.name)+'" loading="lazy">' +
+            (j.veg ? '<span class="jc-badge"><i class="fa-solid fa-leaf"></i> Natural</span>' : '') +
+          '</div>' +
+          '<div class="jc-body">' +
+            '<span class="jc-cat">'+esc(j.category)+'</span>' +
+            '<h4>'+esc(j.name)+'</h4>' +
+            '<p>'+esc(j.description)+'</p>' +
+            '<div class="jc-foot"><span>'+esc(j.highlight)+'</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div>' +
+          '</div>' +
+        '</div>'
+      );
+      $grid.append(card);
+    });
+    if(data.animations.enabled) AOS.refreshHard();
+  }
+
+  function initializeFilters(){
+    $("#cat-scroll").on("click", ".cat-pill", function(){
+      currentFilter = $(this).data("cat");
+      $(".cat-pill").removeClass("active");
+      $(this).addClass("active");
+      renderJuices();
+    });
+    $("#juice-search").on("input", function(){
+      currentSearch = $(this).val();
+      renderJuices();
+    });
+  }
+
+  function initializeSearch(){ /* handled inside initializeFilters via input event */ }
+
+  function renderHealth(){
+    if(!vis.health){ $("#health").hide(); return; }
+    var cards = data.healthBenefits.map(function(h){
+      return '<div class="health-card" data-aos="fade-up"><i class="'+h.icon+'"></i><h4>'+esc(h.title)+'</h4><p>'+esc(h.description)+'</p></div>';
+    }).join("");
+    $("#health").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">Health &amp; Wellness</span>' +
+          '<h2>Good for your day.<br>Good for your body.</h2>' +
+          '<p>A quick guide to what our juices naturally bring to your routine.</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="health-grid">'+cards+'</div>'
+    );
+  }
+
+  function renderCustomisation(){
+    if(!vis.customisation){ $("#customisation").hide(); return; }
+    var c = data.customisation;
+    var opts = c.options.map(function(o){
+      return '<div class="opt"><span>'+esc(o.label)+'</span><i class="'+o.icon+'"></i></div>';
+    }).join("");
+    $("#customisation").html(
+      '<div class="container custom-grid">' +
+        '<div data-aos="fade-right"><img src="'+c.image+'" alt="Custom juice" loading="lazy"></div>' +
+        '<div data-aos="fade-left">' +
+          '<span class="eyebrow">'+esc(c.eyebrow)+'</span>' +
+          '<h2 style="font-size:clamp(30px,4vw,46px);margin-top:14px;">'+esc(c.title)+'</h2>' +
+          '<p style="color:var(--text-muted);margin-top:16px;font-size:16px;line-height:1.8;">'+esc(c.text)+'</p>' +
+          '<div class="custom-options">'+opts+'</div>' +
+          '<a class="btn btn-gold" style="margin-top:30px;" id="custom-cta">'+esc(c.cta.label)+'</a>' +
+        '</div>' +
+      '</div>'
+    );
+    $("#custom-cta").attr("href", waLink(data.whatsappMessages.custom));
+  }
+
+  function renderCreateForYou(){
+    if(!vis.createForYou){ $("#create-for-you").hide(); return; }
+    var c = data.createForYou;
+    var pills = c.options.map(function(o){
+      return '<a class="create-pill" href="'+waLink(data.whatsappMessages.createForYou.replace("{option}", o))+'" data-aos="fade-up"><span>'+esc(o)+'</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
+    }).join("");
+    $("#create-for-you").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(c.eyebrow)+'</span>' +
+          '<h2>'+esc(c.title)+'</h2>' +
+        '</div>' +
+        '<div class="create-grid">'+pills+'</div>' +
+      '</div>'
+    );
+  }
+
+  function renderHygiene(){
+    if(!vis.hygiene){ $("#hygiene").hide(); return; }
+    var h = data.hygiene;
+    var cards = h.points.map(function(p){
+      return '<div class="hygiene-card" data-aos="fade-up"><i class="'+p.icon+'"></i><h4>'+esc(p.title)+'</h4><p>'+esc(p.description)+'</p></div>';
+    }).join("");
+    $("#hygiene").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(h.eyebrow)+'</span>' +
+          '<h2>'+esc(h.title)+'</h2>' +
+          '<p>'+esc(h.text)+'</p>' +
+        '</div>' +
+        '<div class="hygiene-grid">'+cards+'</div>' +
+      '</div>'
+    );
+  }
+
+  function renderQuality(){
+    if(!vis.quality){ $("#quality").hide(); return; }
+    var q = data.quality;
+    var rows = q.steps.map(function(s){
+      return '<div class="quality-row" data-aos="fade-up"><div class="qnum">'+esc(s.number)+'</div><div><h4>'+esc(s.title)+'</h4><p>'+esc(s.description)+'</p></div></div>';
+    }).join("");
+    $("#quality").html(
+      '<div class="container">' +
+        '<div class="section-head" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(q.eyebrow)+'</span>' +
+          '<h2>'+esc(q.title)+'</h2>' +
+        '</div>' +
+        '<div class="quality-list">'+rows+'</div>' +
+      '</div>'
+    );
+  }
+
+  function renderIngredients(){
+    if(!vis.ingredients){ $("#ingredients").hide(); return; }
+    var ing = data.ingredients;
+    var items = ing.items.map(function(i){
+      return '<div class="ingredient-item" data-aos="zoom-in"><div class="ring-img"><img src="'+i.image+'" alt="'+esc(i.name)+'" loading="lazy"></div><span>'+esc(i.name)+'</span></div>';
+    }).join("");
+    $("#ingredients").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(ing.eyebrow)+'</span>' +
+          '<h2>'+esc(ing.title)+'</h2>' +
+        '</div>' +
+        '<div class="ingredient-grid">'+items+'</div>' +
+      '</div>'
+    );
+  }
+
+  function renderSeasonal(){
+    if(!vis.seasonal || !data.seasonal || !data.seasonal.enabled){ $("#seasonal").hide(); return; }
+    var s = data.seasonal;
+    var cards = s.items.map(function(i){
+      return '<div class="seasonal-card" data-aos="fade-up"><img src="'+i.image+'" alt="'+esc(i.name)+'" loading="lazy"><div class="s-label">'+esc(i.name)+'</div></div>';
+    }).join("");
+    $("#seasonal").html(
+      '<div class="container">' +
+        '<div class="section-head" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(s.eyebrow)+'</span>' +
+          '<h2>'+esc(s.title)+'</h2>' +
+        '</div>' +
+        '<div class="seasonal-strip">'+cards+'</div>' +
+      '</div>'
+    );
+  }
+
+  function renderGallery(){
+    if(!vis.gallery){ $("#gallery").hide(); return; }
+    var items = data.gallery.map(function(g, i){
+      return '<div class="gallery-item" data-aos="fade-up" data-aos-delay="'+((i%4)*60)+'" data-img="'+g.image+'" data-cap="'+esc(g.caption)+'">' +
+        '<img src="'+g.image+'" alt="'+esc(g.caption)+'" loading="lazy"><div class="g-cap">'+esc(g.caption)+'</div></div>';
+    }).join("");
+    $("#gallery").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">A Look Inside</span>' +
+          '<h2>Gallery</h2>' +
+          '<p>Fruit, process and the people behind the counter.</p>' +
+        '</div>' +
+        '<div class="gallery-grid">'+items+'</div>' +
+      '</div>'
+    );
+  }
+
+  function renderExperiences(){
+    if(!vis.experiences){ $("#experiences").hide(); return; }
+    var cards = data.experiences.map(function(e){
+      return '<div class="exp-card" data-aos="fade-up"><i class="'+e.icon+'"></i><h4>'+esc(e.title)+'</h4><p>'+esc(e.description)+'</p></div>';
+    }).join("");
+    $("#experiences").html(
+      '<div class="container">' +
+        '<div class="section-head" data-aos="fade-up">' +
+          '<span class="eyebrow">Ways To Enjoy</span>' +
+          '<h2>Juice Experiences</h2>' +
+        '</div>' +
+      '</div>' +
+      '<div class="exp-grid">'+cards+'</div>'
+    );
+  }
+
+  function renderCatering(){
+    if(!vis.catering){ $("#catering").hide(); return; }
+    var c = data.catering;
+    var occ = c.occasions.map(function(o){ return '<div class="c-item"><i class="fa-solid fa-circle-check"></i>'+esc(o)+'</div>'; }).join("");
+    var feats = c.features.map(function(f){
+      return '<div class="f"><i class="'+f.icon+'"></i><div><strong>'+esc(f.title)+'</strong><span>'+esc(f.description)+'</span></div></div>';
+    }).join("");
+    $("#catering").html(
+      '<div class="container">' +
+        '<div class="section-head" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(c.eyebrow)+'</span>' +
+          '<h2>'+esc(c.title)+'</h2>' +
+          '<p>'+esc(c.text)+'</p>' +
+        '</div>' +
+        '<div class="catering-grid">' +
+          '<div class="catering-list" data-aos="fade-right">'+occ+'</div>' +
+          '<div data-aos="fade-left"><div class="catering-features">'+feats+'</div>' +
+            '<a class="btn btn-gold" style="margin-top:30px;" id="catering-cta">'+esc(c.cta.label)+'</a></div>' +
+        '</div>' +
+      '</div>'
+    );
+    $("#catering-cta").attr("href", waLink(data.whatsappMessages.event));
+  }
+
+  function renderTestimonials(){
+    if(!vis.testimonials){ $("#testimonials").hide(); return; }
+    var slides = data.testimonials.map(function(t){
+      var stars = '<span class="testi-stars">'+"★".repeat(t.rating)+"☆".repeat(5-t.rating)+'</span>';
+      return '<div class="testi-slide"><div class="testi-card">'+stars+'<blockquote>&ldquo;'+esc(t.quote)+'&rdquo;</blockquote><div class="who">'+esc(t.name)+'</div></div></div>';
+    }).join("");
+    var dots = data.testimonials.map(function(_, i){ return '<button class="testi-dot'+(i===0?" active":"")+'" data-i="'+i+'" aria-label="Go to testimonial '+(i+1)+'"></button>'; }).join("");
+    $("#testimonials").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">In Their Words</span>' +
+          '<h2>Testimonials</h2>' +
+        '</div>' +
+        '<div class="testi-track-wrap" data-aos="fade-up"><div class="testi-track" id="testi-track">'+slides+'</div></div>' +
+        '<div class="testi-nav">'+dots+'</div>' +
+      '</div>'
+    );
+  }
+
+  function renderPress(){
+    if(!vis.press){ $("#press").hide(); return; }
+    var p = data.press;
+    var items = p.mentions.map(function(m){
+      return '<div class="press-item" data-aos="fade-up"><i class="'+m.icon+'"></i>'+esc(m.name)+'</div>';
+    }).join("");
+    $("#press").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(p.eyebrow)+'</span>' +
+          '<h2 style="font-size:clamp(24px,3vw,34px);">'+esc(p.title)+'</h2>' +
+        '</div>' +
+        '<div class="press-strip">'+items+'</div>' +
+      '</div>'
+    );
+  }
+
+  function goToTesti(i){
+    var total = data.testimonials.length;
+    testiIndex = (i + total) % total;
+    $("#testi-track").css("transform", "translateX(-"+(testiIndex*100)+"%)");
+    $(".testi-dot").removeClass("active").eq(testiIndex).addClass("active");
+  }
+
+  function initializeTestimonials(){
+    $("#testimonials").on("click", ".testi-dot", function(){ goToTesti($(this).data("i")); });
+    setInterval(function(){ if(vis.testimonials) goToTesti(testiIndex + 1); }, 6000);
+  }
+
+  function renderFAQ(){
+    if(!vis.faq){ $("#faq").hide(); return; }
+    var items = data.faq.map(function(f, i){
+      return '<div class="faq-item" data-aos="fade-up">' +
+        '<button class="faq-q" data-i="'+i+'" aria-expanded="false">'+esc(f.question)+'<i class="fa-solid fa-plus"></i></button>' +
+        '<div class="faq-a"><p>'+esc(f.answer)+'</p></div>' +
+      '</div>';
+    }).join("");
+    $("#faq").html(
+      '<div class="container">' +
+        '<div class="section-head center" data-aos="fade-up">' +
+          '<span class="eyebrow">Questions</span>' +
+          '<h2>Frequently Asked</h2>' +
+        '</div>' +
+        '<div class="faq-list">'+items+'</div>' +
+      '</div>'
+    );
+  }
+
+  function initializeFAQ(){
+    $("#faq").on("click", ".faq-q", function(){
+      var $item = $(this).closest(".faq-item");
+      var $answer = $item.find(".faq-a");
+      var isOpen = $item.hasClass("open");
+      $(".faq-item.open").removeClass("open").find(".faq-a").css("max-height", 0).prev().attr("aria-expanded", "false");
+      if(!isOpen){
+        $item.addClass("open");
+        $(this).attr("aria-expanded", "true");
+        $answer.css("max-height", $answer.get(0).scrollHeight + "px");
+      }
+    });
+  }
+
+  function renderContact(){
+    if(!vis.contact){ $("#contact").hide(); return; }
+    var c = data.contact;
+    var cf = data.contactForm;
+    var reasonOptions = cf.reasons.map(function(r){ return '<option value="'+esc(r)+'">'+esc(r)+'</option>'; }).join("");
+
+    $("#contact").html(
+      '<div class="container">' +
+        '<div class="section-head" data-aos="fade-up">' +
+          '<span class="eyebrow">'+esc(c.eyebrow)+'</span>' +
+          '<h2>'+esc(c.title)+'</h2>' +
+        '</div>' +
+        '<div class="contact-grid">' +
+          '<div data-aos="fade-right">' +
+            '<div class="contact-items">' +
+              '<div class="contact-row"><i class="fa-solid fa-phone"></i><div><strong>Call Us</strong><a href="'+telLink()+'">+91 '+esc(c.phone)+'</a></div></div>' +
+              '<div class="contact-row"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp</strong><a id="contact-wa" href="#">+91 '+esc(c.phone)+'</a></div></div>' +
+              '<div class="contact-row"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><a href="mailto:'+esc(c.email)+'">'+esc(c.email)+'</a></div></div>' +
+              '<div class="contact-row"><i class="fa-solid fa-location-dot"></i><div><strong>Address</strong><span>'+esc(c.address)+'</span></div></div>' +
+              '<div class="contact-row"><i class="fa-solid fa-clock"></i><div><strong>Opening Hours</strong><span>'+esc(c.hours)+'</span></div></div>' +
+            '</div>' +
+            '<div class="contact-ctas">' +
+              '<a class="btn btn-primary" href="'+telLink()+'"><i class="fa-solid fa-phone"></i> Call Us</a>' +
+              '<a class="btn btn-gold" id="contact-wa-btn" href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="contact-form-card" data-aos="fade-left">' +
+            '<span class="eyebrow">'+esc(cf.eyebrow)+'</span>' +
+            '<h3 style="font-size:22px;color:var(--cream);margin-top:10px;">'+esc(cf.title)+'</h3>' +
+            '<p class="form-lead">'+esc(cf.text)+'</p>' +
+            '<form id="contact-form" novalidate>' +
+              '<div class="form-field"><label for="cf-name">'+esc(cf.fields.name.label)+'</label>' +
+                '<input type="text" id="cf-name" placeholder="'+esc(cf.fields.name.placeholder)+'" required></div>' +
+              '<div class="form-field"><label for="cf-phone">'+esc(cf.fields.phone.label)+'</label>' +
+                '<input type="tel" id="cf-phone" placeholder="'+esc(cf.fields.phone.placeholder)+'" required></div>' +
+              '<div class="form-field"><label for="cf-reason">Reason</label>' +
+                '<select id="cf-reason">'+reasonOptions+'</select></div>' +
+              '<div class="form-field"><label for="cf-message">'+esc(cf.fields.message.label)+'</label>' +
+                '<textarea id="cf-message" placeholder="'+esc(cf.fields.message.placeholder)+'" required></textarea></div>' +
+              '<p class="form-error" id="cf-error">Please add your name, phone number and a short message before sending.</p>' +
+              '<button type="submit" class="btn btn-gold"><i class="fa-brands fa-whatsapp"></i> '+esc(cf.submitLabel)+'</button>' +
+              '<p class="form-note">'+esc(cf.note)+'</p>' +
+            '</form>' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="map-section" data-aos="fade-up">' +
+          '<div class="map-head-row">' +
+            '<div class="section-head">' +
+              '<span class="eyebrow">'+esc(data.map.eyebrow)+'</span>' +
+              '<h2 style="font-size:clamp(26px,3.4vw,38px);">'+esc(data.map.title)+'</h2>' +
+            '</div>' +
+            '<a class="btn btn-ghost-light" id="directions-btn" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-diamond-turn-right"></i> '+esc(data.map.directionsLabel)+'</a>' +
+          '</div>' +
+          '<div class="map-frame-wrap"><iframe id="contact-map-iframe" src="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Grove & Glass location map"></iframe></div>' +
+        '</div>' +
+      '</div>'
+    );
+
+    $("#contact-wa, #contact-wa-btn").attr("href", waLink(data.whatsappMessages.general));
+
+    var mapSrc = c.mapEmbedUrl && c.mapEmbedUrl.length
+      ? c.mapEmbedUrl
+      : "https://www.google.com/maps?q=" + encodeURIComponent(c.address) + "&output=embed";
+    $("#contact-map-iframe").attr("src", mapSrc);
+    $("#directions-btn").attr("href", "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(c.address));
+  }
+
+  function initializeContactForm(){
+    $(document).on("submit", "#contact-form", function(e){
+      e.preventDefault();
+      var name = $("#cf-name").val().trim();
+      var phone = $("#cf-phone").val().trim();
+      var reason = $("#cf-reason").val();
+      var message = $("#cf-message").val().trim();
+
+      if(!name || !phone || !message){
+        $("#cf-error").addClass("show");
+        return;
+      }
+      $("#cf-error").removeClass("show");
+
+      var text = "Hello Grove & Glass,\n\n" +
+        "Name: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Reason: " + reason + "\n\n" +
+        message + "\n\n" +
+        "Thank you.";
+
+      window.open(waLink(text), "_blank");
+    });
+  }
+
+  function renderFooter(){
+    var f = data.footer;
+    var navLinks = data.navigation.map(function(n){ return '<li><a href="'+n.target+'" data-target="'+n.target+'">'+esc(n.label)+'</a></li>'; }).join("");
+    var catLinks = data.categories.filter(function(c){ return c !== "All"; }).slice(0,6).map(function(c){
+      return '<li><a href="#juices" data-cat-link="'+esc(c)+'">'+esc(c)+'</a></li>';
+    }).join("");
+    var social = data.socialLinks.map(function(s){ return '<a href="'+s.url+'" aria-label="'+esc(s.platform)+'"><i class="'+s.icon+'"></i></a>'; }).join("");
+    $("#site-footer").html(
+      '<div class="container">' +
+        '<div class="footer-grid">' +
+          '<div class="footer-brand">' +
+            '<div class="brand-logo">'+citrusMark(24)+'<span>'+esc(data.brand.shortName)+'</span></div>' +
+            '<p>'+esc(data.brand.description)+'</p>' +
+            '<div class="footer-social">'+social+'</div>' +
+          '</div>' +
+          '<div class="footer-col"><h5>'+esc(f.linksHeading)+'</h5><ul>'+navLinks+'</ul></div>' +
+          '<div class="footer-col"><h5>'+esc(f.categoriesHeading)+'</h5><ul>'+catLinks+'</ul></div>' +
+          '<div class="footer-col"><h5>'+esc(f.contactHeading)+'</h5><ul>' +
+            '<li><a href="'+telLink()+'">+91 '+esc(data.contact.phone)+'</a></li>' +
+            '<li><a href="'+waLink(data.whatsappMessages.general)+'">WhatsApp Us</a></li>' +
+            '<li><a href="mailto:'+esc(data.contact.email)+'">'+esc(data.contact.email)+'</a></li>' +
+            '<li>'+esc(data.contact.address)+'</li>' +
+          '</ul></div>' +
+        '</div>' +
+        '<div class="footer-bottom"><span>&copy; '+new Date().getFullYear()+' '+esc(f.copyright)+'</span><span>'+esc(data.brand.location)+'</span></div>' +
+      '</div>'
+    );
+  }
+
+  function renderFinalCta(){
+    if(!vis.finalCta){ $("#final-cta").hide(); return; }
+    var fc = data.finalCta;
+    $("#final-cta").css("background-image", "url('"+fc.image+"')").html(
+      '<div class="fc-overlay"></div>' +
+      '<div class="container" data-aos="fade-up">' +
+        '<h2>'+esc(fc.title)+'</h2>' +
+        '<p>'+esc(fc.text)+'</p>' +
+        '<div class="fc-ctas">' +
+          '<a class="btn btn-gold" id="fc-whatsapp" href="#"><i class="fa-brands fa-whatsapp"></i> '+esc(fc.primaryCta.label)+'</a>' +
+          '<a class="btn btn-ghost-light" href="'+telLink()+'"><i class="fa-solid fa-phone"></i> '+esc(fc.secondaryCta.label)+'</a>' +
+        '</div>' +
+      '</div>'
+    );
+    $("#fc-whatsapp").attr("href", waLink(data.whatsappMessages.general));
+  }
+
+  function renderFloatingWhatsApp(){
+    $("#whatsapp-float").attr("href", waLink(data.whatsappMessages.general));
+  }
+
+  /* ---------- interactions ---------- */
+  function initializeNavigation(){
+    $(document).on("click", "a[data-target]", function(e){
+      var target = $(this).data("target");
+      if(target && target.charAt(0) === "#"){
+        e.preventDefault();
+        $("#mobile-nav").removeClass("open");
+        var $t = $(target);
+        if($t.length){
+          $("html,body").animate({ scrollTop: $t.offset().top - 64 }, 700);
+        }
+      }
+    });
+    $(document).on("click", "[data-cat-link]", function(e){
+      e.preventDefault();
+      currentFilter = $(this).data("cat-link");
+      $("html,body").animate({ scrollTop: $("#juices").offset().top - 64 }, 700, function(){
+        renderCategories();
+        renderJuices();
+      });
+    });
+
+    $(window).on("scroll", function(){
+      var scrollTop = $(window).scrollTop();
+      $("#site-header").toggleClass("scrolled", scrollTop > 40);
+      $("#back-to-top").toggleClass("show", scrollTop > 600);
+
+      var current = "";
+      $("section[id]").each(function(){
+        var top = $(this).offset().top - 120;
+        if(scrollTop >= top) current = "#" + $(this).attr("id");
+      });
+      $("#main-nav a").removeClass("active").each(function(){
+        if($(this).data("target") === current) $(this).addClass("active");
+      });
+
+      if($("#stats").length && !window.__statsAnimated){
+        var statsTop = $("#stats").offset() ? $("#stats").offset().top : 0;
+        if(scrollTop + $(window).height() > statsTop + 80){
+          window.__statsAnimated = true;
+          animateCounters();
+        }
+      }
+    });
+
+    $("#hamburger-btn").on("click", function(){ $("#mobile-nav").addClass("open"); });
+    $("#mobile-nav-close").on("click", function(){ $("#mobile-nav").removeClass("open"); });
+  }
+
+  function initializeJuiceModal(){
+    $("#juice-grid").on("click keypress", ".juice-card", function(e){
+      if(e.type === "keypress" && e.which !== 13) return;
+      openJuiceModal($(this).data("id"));
+    });
+    $("#modal-close-btn, #juice-modal").on("click", function(e){
+      if(e.target.id === "juice-modal" || e.target.id === "modal-close-btn" || $(e.target).closest("#modal-close-btn").length){
+        closeJuiceModal();
+      }
+    });
+    $(document).on("keydown", function(e){
+      if(e.key === "Escape"){ closeJuiceModal(); closeLightbox(); }
+    });
+  }
+
+  function openJuiceModal(id){
+    var j = data.juices.find(function(x){ return x.id === id; });
+    if(!j) return;
+    $("#modal-img").attr("src", j.image).attr("alt", j.name);
+    var ingredients = j.ingredients.map(function(i){ return "<span>"+esc(i)+"</span>"; }).join("");
+    var whatsMsg = data.whatsappMessages.juice.replace("{juiceName}", j.name);
+    $("#modal-content").html(
+      '<span class="jc-cat">'+esc(j.category)+'</span>' +
+      '<h3>'+esc(j.name)+'</h3>' +
+      '<p class="desc">'+esc(j.description)+'</p>' +
+      '<div class="modal-section"><h5>Ingredients</h5><div class="tag-list">'+ingredients+'</div></div>' +
+      '<div class="modal-section"><h5>Why You\'ll Love It</h5><p style="color:var(--text-muted);font-size:14.5px;line-height:1.7;">'+esc(j.lovedFor)+'</p></div>' +
+      '<div class="modal-section"><h5>Health Highlight</h5><div class="tag-list"><span>'+esc(j.highlight)+'</span></div></div>' +
+      '<div class="modal-section"><h5>Best Time To Enjoy</h5><div class="tag-list"><span>'+esc(j.bestTime)+'</span></div></div>' +
+      '<a class="btn btn-gold modal-cta" href="'+waLink(whatsMsg)+'"><i class="fa-brands fa-whatsapp"></i> Ask About This Juice</a>'
+    );
+    $("#juice-modal").addClass("open");
+    $("body").css("overflow", "hidden");
+  }
+  function closeJuiceModal(){
+    $("#juice-modal").removeClass("open");
+    $("body").css("overflow", "");
+  }
+
+  function initializeGalleryLightbox(){
+    $("#gallery").on("click", ".gallery-item", function(){
+      $("#lightbox-img").attr("src", $(this).data("img")).attr("alt", $(this).data("cap"));
+      $("#lightbox").addClass("open");
+    });
+    $("#lightbox-close-btn, #lightbox").on("click", function(e){
+      if(e.target.id === "lightbox" || e.target.id === "lightbox-close-btn" || $(e.target).closest("#lightbox-close-btn").length){
+        closeLightbox();
+      }
+    });
+  }
+  function closeLightbox(){ $("#lightbox").removeClass("open"); }
+
+  function initializeBackToTop(){
+    $("#back-to-top").on("click", function(){
+      $("html,body").animate({ scrollTop: 0 }, 700);
+    });
+  }
+
+  function initializeAnimations(){
+    if(data.animations && data.animations.enabled){
+      AOS.init({ duration: data.animations.duration || 700, once: data.animations.once !== false, offset: 60, easing: "ease-out-cubic" });
+    }
+  }
+
+  /* ---------- boot ---------- */
+  function loadData(){
+    applyTheme();
+    applySEO();
+    renderAnnouncement();
+    renderNavigation();
+    renderHero();
+    renderBanner();
+    renderAbout();
+    renderStats();
+    renderWhyUs();
+    renderSignatureJuices();
+    renderCategories();
+    renderJuices();
+    renderHealth();
+    renderCustomisation();
+    renderCreateForYou();
+    renderHygiene();
+    renderQuality();
+    renderIngredients();
+    renderSeasonal();
+    renderGallery();
+    renderExperiences();
+    renderCatering();
+    renderTestimonials();
+    renderPress();
+    renderFAQ();
+    renderContact();
+    renderFinalCta();
+    renderFooter();
+    renderFloatingWhatsApp();
+
+    initializeFilters();
+    initializeSearch();
+    initializeJuiceModal();
+    initializeGalleryLightbox();
+    initializeNavigation();
+    initializeTestimonials();
+    initializeFAQ();
+    initializeContactForm();
+    initializeBackToTop();
+    initializeAnimations();
+  }
+
+  $(document).ready(loadData);
+})();
+</script>
+
+</body>
+</html>

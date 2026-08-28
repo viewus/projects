@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Artisana Gallery — Browse our curated collection of handmade Indian crafts." />
+  <title>Gallery — Artisana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="../index.html" class="logo"><span class="logo-icon">✦</span><span class="logo-text">Artisana</span></a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn-nav">Enquire Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1400&q=80')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content container">
+      <span class="section-tag">Visual Stories</span>
+      <h1>Our Gallery</h1>
+      <p>Craft told through images</p>
+    </div>
+  </section>
+
+  <!-- Filter -->
+  <section class="gallery-section section">
+    <div class="container">
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wood">Wood</button>
+        <button class="filter-btn" data-filter="clay">Clay & Terracotta</button>
+        <button class="filter-btn" data-filter="textile">Textile</button>
+        <button class="filter-btn" data-filter="metal">Metal</button>
+        <button class="filter-btn" data-filter="painting">Painting</button>
+      </div>
+
+      <div class="masonry-grid" id="galleryGrid">
+        <div class="masonry-item reveal" data-category="wood" tabindex="0" role="button" aria-label="Open Kondapalli Dancer image">
+          <img src="https://images.unsplash.com/photo-1610701596061-2ecf227e85b2?w=400&q=75" alt="Kondapalli Dancer wooden toy" loading="lazy" />
+          <div class="masonry-overlay"><span>Kondapalli Dancer</span><small>Wood · Andhra Pradesh</small></div>
+        </div>
+        <div class="masonry-item reveal reveal-delay-1" data-category="clay" tabindex="0" role="button" aria-label="Open Terracotta Horses image">
+          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&q=75" alt="Terracotta horses Bankura" loading="lazy" />
+          <div class="masonry-overlay"><span>Bankura Horses</span><small>Terracotta · West Bengal</small></div>
+        </div>
+        <div class="masonry-item masonry-item--tall reveal" data-category="textile" tabindex="0" role="button" aria-label="Open Banarasi Weave image">
+          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&q=75" alt="Banarasi silk weave" loading="lazy" />
+          <div class="masonry-overlay"><span>Banarasi Silk</span><small>Textile · Varanasi</small></div>
+        </div>
+        <div class="masonry-item reveal reveal-delay-2" data-category="metal" tabindex="0" role="button" aria-label="Open Dhokra Figurine image">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=400&q=75" alt="Dhokra brass figurine" loading="lazy" />
+          <div class="masonry-overlay"><span>Dhokra Elephant</span><small>Brass · Chhattisgarh</small></div>
+        </div>
+        <div class="masonry-item reveal" data-category="painting" tabindex="0" role="button" aria-label="Open Kalamkari Art image">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=400&q=75" alt="Kalamkari painting" loading="lazy" />
+          <div class="masonry-overlay"><span>Kalamkari Panel</span><small>Painting · Srikalahasti</small></div>
+        </div>
+        <div class="masonry-item masonry-item--wide reveal reveal-delay-1" data-category="wood" tabindex="0" role="button" aria-label="Open Sandalwood Carving image">
+          <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&q=75" alt="Sandalwood carving Mysore" loading="lazy" />
+          <div class="masonry-overlay"><span>Sandalwood Carving</span><small>Wood · Mysore</small></div>
+        </div>
+        <div class="masonry-item reveal reveal-delay-2" data-category="clay" tabindex="0" role="button" aria-label="Open Pottery Vase image">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=400&q=75" alt="Handmade pottery vase" loading="lazy" />
+          <div class="masonry-overlay"><span>Raku Pottery</span><small>Clay · Khurja</small></div>
+        </div>
+        <div class="masonry-item reveal" data-category="textile" tabindex="0" role="button" aria-label="Open Block Print Cloth image">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75" alt="Hand block printed fabric" loading="lazy" />
+          <div class="masonry-overlay"><span>Block Print Yardage</span><small>Textile · Bagru</small></div>
+        </div>
+        <div class="masonry-item masonry-item--tall reveal reveal-delay-3" data-category="metal" tabindex="0" role="button" aria-label="Open Bell Metal image">
+          <img src="https://images.unsplash.com/photo-1622473590773-f588134b6ce7?w=400&q=75" alt="Bell metal craft Odisha" loading="lazy" />
+          <div class="masonry-overlay"><span>Bell Metal Lamp</span><small>Metal · Odisha</small></div>
+        </div>
+        <div class="masonry-item reveal reveal-delay-1" data-category="painting" tabindex="0" role="button" aria-label="Open Madhubani Painting image">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=400&q=75" alt="Madhubani folk painting" loading="lazy" />
+          <div class="masonry-overlay"><span>Madhubani Canvas</span><small>Painting · Bihar</small></div>
+        </div>
+        <div class="masonry-item reveal" data-category="wood" tabindex="0" role="button" aria-label="Open Lacquerware image">
+          <img src="https://images.unsplash.com/photo-1530982011887-3cc11cc85693?w=400&q=75" alt="Etikoppaka lacquerware" loading="lazy" />
+          <div class="masonry-overlay"><span>Etikoppaka Toys</span><small>Lacquerware · Andhra</small></div>
+        </div>
+        <div class="masonry-item reveal reveal-delay-2" data-category="clay" tabindex="0" role="button" aria-label="Open Blue Pottery image">
+          <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=400&q=75" alt="Blue pottery Jaipur" loading="lazy" />
+          <div class="masonry-overlay"><span>Blue Pottery Dish</span><small>Clay · Jaipur</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption">
+        <strong id="lightboxTitle"></strong>
+        <span id="lightboxSub"></span>
+      </div>
+    </div>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <section class="cta-banner reveal">
+    <div class="cta-inner container">
+      <h2>Inspired by what you see?</h2>
+      <p>Every piece shown can be commissioned or customised</p>
+      <a href="contact.html" class="btn-primary btn-large">Commission a Piece</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-icon">✦</span><span class="logo-text">Artisana</span></a>
+        <p>Preserving the art of the hand, one piece at a time.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reach Us</h4>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i> 14 Artisan Lane, Hyderabad</li>
+          <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+          <li><i class="fas fa-envelope"></i> demo@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2025 Artisana. All rights reserved.</p>
+      <p>Crafted with ♥ in India</p>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+/**
+ * assets/js/main.js
+ * Shared logic: nav rendering, active link, scroll shrink, fade-in, footer, WhatsApp
+ * All links use relative paths so the site works on any GitHub Pages sub-path.
+ */
+
+/* ─── NAV ─────────────────────────────────────────────────────────────── */
+function renderNav(activePage) {
+  const nav = document.getElementById('main-nav');
+  if (!nav || typeof SITE === 'undefined') return;
+
+  const links = SITE.navLinks.map(link => {
+    const isActive = link.page === activePage;
+    const cls = [isActive ? 'active' : '', link.cta ? 'nav-cta-btn' : ''].filter(Boolean).join(' ');
+    return `<li><a href="${link.href}"${cls ? ` class="${cls}"` : ''}>${link.label}</a></li>`;
+  }).join('');
+
+  nav.innerHTML = `
+    <a href="./index.html" class="nav-logo">
+      <div class="nav-logo-icon">&#x1F96D;</div>
+      <span class="nav-brand-text">MANGOT</span>
+    </a>
+    <ul class="nav-links" id="nav-links">${links}</ul>
+    <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>`;
+}
+
+function toggleNav() {
+  const links = document.getElementById('nav-links');
+  const btn   = document.getElementById('hamburger');
+  links?.classList.toggle('open');
+  btn?.classList.toggle('open');
+}
+
+window.toggleNav = toggleNav;
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 960) {
+    document.getElementById('nav-links')?.classList.remove('open');
+    document.getElementById('hamburger')?.classList.remove('open');
+  }
+});
+
+/* Close mobile nav on link click */
+document.addEventListener('click', e => {
+  if (e.target.closest('#nav-links a')) {
+    document.getElementById('nav-links')?.classList.remove('open');
+    document.getElementById('hamburger')?.classList.remove('open');
+  }
+});
+
+/* Scroll: shrink nav + active class */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('main-nav');
+  if (!nav) return;
+  if (window.scrollY > 40) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+/* ─── FOOTER ──────────────────────────────────────────────────────────── */
+function renderFooter() {
+  const footer = document.getElementById('main-footer');
+  if (!footer || typeof SITE === 'undefined') return;
+
+  const cols = Object.entries(SITE.footerLinks).map(([heading, links]) => `
+    <div class="footer-col">
+      <h4>${heading}</h4>
+      <ul>${links.map(l => `<li><a href="${l.href}">${l.label}</a></li>`).join('')}</ul>
+    </div>`).join('');
+
+  const social = SITE.social.map(s =>
+    `<a class="f-social-btn" href="${s.href}" aria-label="${s.label}">${s.icon}</a>`
+  ).join('');
+
+  footer.innerHTML = `
+    <div class="footer-grain-overlay" aria-hidden="true"></div>
+    <div class="footer-grass-decor" aria-hidden="true"></div>
+    <div class="footer-tree-art" aria-hidden="true"></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="f-logo"><div class="nav-logo-icon" style="width:34px;height:34px;font-size:1.1rem">&#x1F96D;</div> MANGOT</div>
+        <p>${SITE.description}</p>
+        <div class="footer-social">${social}</div>
+      </div>
+      ${cols}
+    </div>
+    <div class="footer-bottom">
+      <span>${SITE.copyright}</span>
+      <span>Global Export Hubs: BOM &middot; LHR &middot; DXB &middot; AMS</span>
+    </div>`;
+}
+
+/* ─── WHATSAPP FLOAT ──────────────────────────────────────────────────── */
+function renderWhatsApp() {
+  const el = document.getElementById('whatsapp-float');
+  if (!el || typeof SITE === 'undefined') return;
+  el.href = SITE.whatsapp;
+  el.target = '_blank';
+  el.rel = 'noopener';
+  el.innerHTML = `
+    <div class="wa-tooltip">Chat with us! &#x1F96D;</div>
+    <svg viewBox="0 0 32 32"><path fill="currentColor"
+      d="M16 2a13.79 13.79 0 0 0-11.85 20.8L2 30l7.45-1.95A13.73 13.73 0 0 0 16
+      30c7.61 0 13.8-6.19 13.8-13.8A13.84 13.84 0 0 0 16 2zm6.65 19.38c-.3.84-1.49
+      1.54-2.45 1.76-.66.15-1.53.27-4.43-.93-3.71-1.54-6.1-5.32-6.29-5.57s-1.52-2.02
+      -1.52-3.85 1-2.73 1.35-3.1.7-.46.93-.46.45 0 .64.01c.19 0 .45-.07.7.53.26.63.89
+      2.16.96 2.31s.12.33.02.53-.15.3-.3.47-.3.34-.45.51-.33.36-.14.68c.19.32.83 1.36
+      1.78 2.21 1.23 1.09 2.26 1.43 2.58 1.59s.53.13.73-.09.85-.99 1.08-1.33.45-.28.76
+      -.17 1.95.92 2.28 1.08.55.25.63.38.12.78-.18 1.62z"/></svg>`;
+}
+
+/* ─── FADE IN ON SCROLL ───────────────────────────────────────────────── */
+let fadeObserver = null;
+
+function initFadeIn() {
+  if (!fadeObserver) {
+    fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.08 });
+  }
+
+  document.querySelectorAll('.fade-up:not(.observed),.fade-left:not(.observed),.fade-right:not(.observed)').forEach(el => {
+    el.classList.add('observed');
+    fadeObserver.observe(el);
+  });
+
+  /* Stagger children */
+  document.querySelectorAll(
+    '.steps-grid .step-card,.variety-card,.incentive-card,.hire-card,.process-card'
+  ).forEach((el, i) => {
+    if (!el.style.transitionDelay) {
+      el.style.transitionDelay = `${(i % 6) * 0.07}s`;
+    }
+  });
+}
+
+window.initFadeIn = initFadeIn;
+
+/* ─── MARQUEE DATA INJECT ─────────────────────────────────────────────── */
+function renderMarquee() {
+  const track = document.querySelector('.marquee-track');
+  if (!track || typeof MARQUEE_ITEMS === 'undefined') return;
+  const items = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS]; // duplicate for seamless loop
+  track.innerHTML = items.map(item =>
+    `<span class="marquee-item">${item}</span><span class="marquee-sep">&#10022;</span>`
+  ).join('');
+}
+
+/* ─── INIT ────────────────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const page = document.body.dataset.page || 'home';
+  renderNav(page);
+  renderFooter();
+  renderWhatsApp();
+  renderMarquee();
+  initFadeIn();
+});

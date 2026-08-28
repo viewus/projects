@@ -1,0 +1,332 @@
+/* ---------------------------------------------------------------------------
+ * renderers/banners.js — hero carousel, trust bars and promotional sections.
+ *
+ * heroCarousel   rotating hero slides
+ * trustBar       the "fresh daily / free delivery / easy returns" strip
+ * promoBanner    a full-width promotional band
+ * dealOfDay      single featured deal with a live countdown
+ * categoryStrip  quick category pills
+ * howItWorks     numbered steps
+ *
+ * The carousel is hand-rolled rather than Bootstrap's, because Bootstrap's
+ * carousel needs its markup structure and classes, which would leak framework
+ * naming into JSON-driven templates. This one is ~90 lines and themeable.
+ * ------------------------------------------------------------------------- */
+(function (window, $) {
+  "use strict";
+
+  var RS = window.RS || (window.RS = {});
+  var reg = RS.registerComponent;
+
+  function cta(button, className) {
+    if (!button || !button.label) return "";
+    return '<a class="btn ' + (className || "btnPrimary") + '" href="' +
+      RS.escape(RS.href(button.route || button.href)) + '">' + RS.escape(button.label) + "</a>";
+  }
+
+  /* ========================= HERO CAROUSEL ================================= */
+
+  reg("heroCarousel", function (data) {
+    if (!data || !data.slides || !data.slides.length) return "";
+
+    var slides = data.slides.map(function (slide, i) {
+      var stats = (slide.stats || []).map(function (stat) {
+        return '<div><span class="heroStatValue">' + RS.escape(stat.value) + "</span>" +
+          '<span class="heroStatLabel">' + RS.escape(stat.label) + "</span></div>";
+      }).join("");
+
+      return '<div class="carouselSlide' + (i === 0 ? " isActive" : "") + '"' +
+        ' role="group" aria-roledescription="slide"' +
+        ' aria-label="Slide ' + (i + 1) + " of " + data.slides.length + '"' +
+        (i === 0 ? "" : ' aria-hidden="true"') + ">" +
+        '<div class="wrap heroIn">' +
+        "<div class='carouselCopy'>" +
+        (slide.eyebrow ? '<span class="eyebrow">' + RS.escape(slide.eyebrow) + "</span>" : "") +
+        (i === 0 ? "<h1" : "<h2") + ' class="heroTitle">' + RS.escape(slide.title) +
+        (i === 0 ? "</h1>" : "</h2>") +
+        '<p class="heroText">' + RS.escape(slide.text) + "</p>" +
+        '<div class="heroActions">' +
+        cta(slide.primaryCta, "btnPrimary btnLg") +
+        cta(slide.secondaryCta, "btnOutline btnLg") +
+        "</div>" +
+        (stats ? '<div class="heroStats">' + stats + "</div>" : "") +
+        "</div>" +
+        '<div class="heroMedia carouselMedia">' +
+        '<img class="heroImage" ' + RS.imgAttrs(slide.image, slide.title, slide.color || "#1f7a4d") +
+        ' alt="' + RS.escape(slide.imageAlt || "") + '"' +
+        (i === 0 ? ' fetchpriority="high"' : ' loading="lazy"') +
+        ' width="1000" height="750">' +
+        "</div></div></div>";
+    }).join("");
+
+    var dots = data.slides.map(function (slide, i) {
+      return '<button class="carouselDot' + (i === 0 ? " isActive" : "") + '" type="button"' +
+        ' data-slide="' + i + '" aria-label="Go to slide ' + (i + 1) + '"' +
+        (i === 0 ? ' aria-current="true"' : "") + "></button>";
+    }).join("");
+
+    return '<div class="carousel" id="heroCarousel"' +
+      ' data-autoplay="' + (data.autoplayMs || 6000) + '"' +
+      ' role="region" aria-roledescription="carousel" aria-label="' +
+      RS.escape(data.label || "Featured offers") + '">' +
+      '<div class="carouselTrack">' + slides + "</div>" +
+
+      '<button class="carouselArrow carouselPrev" type="button" data-carousel="prev"' +
+      ' aria-label="Previous slide"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>' +
+      '<button class="carouselArrow carouselNext" type="button" data-carousel="next"' +
+      ' aria-label="Next slide"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>' +
+
+      '<div class="carouselDots" role="tablist">' + dots + "</div>" +
+      "</div>";
+  });
+
+  /**
+   * Carousel behaviour.
+   *
+   * Autoplay is suspended while the pointer is over it, while focus is inside
+   * it, and entirely when the visitor has asked for reduced motion — a hero
+   * that keeps moving under someone reading it is the commonest accessibility
+   * complaint about carousels.
+   */
+  function initCarousel() {
+    var $carousel = $("#heroCarousel");
+    if (!$carousel.length || $carousel.data("bound")) return;
+    $carousel.data("bound", true);
+
+    var $slides = $carousel.find(".carouselSlide");
+    var $dots = $carousel.find(".carouselDot");
+    var count = $slides.length;
+    if (count < 2) {
+      $carousel.find(".carouselArrow, .carouselDots").remove();
+      return;
+    }
+
+    var current = 0;
+    var timer = null;
+    var delay = parseInt($carousel.attr("data-autoplay"), 10) || 6000;
+
+    function show(next) {
+      current = (next + count) % count;
+
+      $slides.each(function (i) {
+        var active = i === current;
+        $(this).toggleClass("isActive", active).attr("aria-hidden", active ? null : "true");
+      });
+
+      $dots.each(function (i) {
+        var active = i === current;
+        $(this).toggleClass("isActive", active).attr("aria-current", active ? "true" : null);
+      });
+    }
+
+    function start() {
+      if (RS.reducedMotion()) return;
+      stop();
+      timer = setInterval(function () { show(current + 1); }, delay);
+    }
+
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    $carousel.on("click", "[data-carousel]", function () {
+      show(current + ($(this).attr("data-carousel") === "next" ? 1 : -1));
+      start();
+    });
+
+    $carousel.on("click", "[data-slide]", function () {
+      show(parseInt($(this).attr("data-slide"), 10));
+      start();
+    });
+
+    $carousel.on("mouseenter focusin", stop).on("mouseleave focusout", start);
+
+    $carousel.on("keydown", function (e) {
+      if (e.key === "ArrowRight") { show(current + 1); start(); }
+      if (e.key === "ArrowLeft") { show(current - 1); start(); }
+    });
+
+    // Touch swipe — the hero is most often seen on a phone.
+    var startX = null;
+    $carousel.on("touchstart", function (e) {
+      startX = e.originalEvent.touches[0].clientX;
+    }).on("touchend", function (e) {
+      if (startX === null) return;
+      var dx = e.originalEvent.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 45) { show(current + (dx < 0 ? 1 : -1)); start(); }
+      startX = null;
+    });
+
+    // Pause when the tab is hidden, so a backgrounded page is not animating.
+    $(document).on("visibilitychange", function () {
+      if (document.hidden) stop(); else start();
+    });
+
+    start();
+  }
+
+  $(document).on("rs:sectionsRendered", initCarousel);
+
+  /* ========================= TRUST BAR ===================================== */
+
+  reg("trustBar", function (data) {
+    if (!data || !data.items) return "";
+
+    var items = data.items.map(function (item, i) {
+      return '<div class="trustItem staggerItem" style="--cardIndex:' + i + '">' +
+        '<span class="trustIcon"><i class="bi ' + RS.escape(item.icon || "bi-check-circle") +
+        '" aria-hidden="true"></i></span>' +
+        "<span><strong class='trustTitle'>" + RS.escape(item.title) + "</strong>" +
+        "<span class='trustText'>" + RS.escape(item.text) + "</span></span></div>";
+    }).join("");
+
+    return '<div class="wrap"><div class="trustBar">' + items + "</div></div>";
+  });
+
+  /* ========================= PROMO BANNER ================================== */
+
+  reg("promoBanner", function (data) {
+    if (!data) return "";
+
+    return '<div class="wrap"><div class="promoBanner" style="--promoColor:' +
+      RS.escape(data.color || "var(--brand)") + '" data-reveal>' +
+      '<div class="promoBannerCopy">' +
+      (data.eyebrow ? '<span class="promoBannerTag">' + RS.escape(data.eyebrow) + "</span>" : "") +
+      "<h2 class='promoBannerTitle'>" + RS.escape(data.title) + "</h2>" +
+      "<p class='promoBannerText'>" + RS.escape(data.text) + "</p>" +
+      cta(data.cta, "btnAccent btnLg") +
+      "</div>" +
+      (data.image
+        ? '<div class="promoBannerMedia"><img ' + RS.imgAttrs(data.image, data.title, data.color) +
+          ' alt="' + RS.escape(data.imageAlt || "") + '" loading="lazy" width="600" height="400"></div>'
+        : "") +
+      "</div></div>";
+  });
+
+  /* ========================= DEAL OF THE DAY =============================== */
+
+  reg("dealOfDay", function (data, cfg) {
+    if (!data) return "";
+
+    return RS.json("data/products.json").then(function (productData) {
+      var product = (productData.items || [])
+        .filter(function (p) { return p.slug === data.productSlug; })[0];
+      if (!product) return "";
+
+      var off = RS.discountPercent(product.mrp, product.price);
+
+      return '<div class="wrap"><div class="dealCard" data-reveal>' +
+        '<div class="dealMedia">' +
+        '<img ' + RS.imgAttrs(product.image, product.name) +
+        ' alt="' + RS.escape(product.name) + '" loading="lazy" width="600" height="450">' +
+        (off > 0 ? '<span class="dealBadge">' + off + "% off</span>" : "") +
+        "</div>" +
+
+        '<div class="dealBody">' +
+        '<span class="eyebrow">' + RS.escape(data.eyebrow || "Deal of the day") + "</span>" +
+        "<h2>" + RS.escape(product.name) + "</h2>" +
+        '<p class="cardText">' + RS.escape(product.description || "") + "</p>" +
+
+        '<div class="productCardPrice">' +
+        '<span class="priceNow" style="font-size:var(--fs2xl)">' +
+        RS.escape(RS.money(product.price, cfg)) + "</span>" +
+        (off > 0 ? '<span class="priceWas">' + RS.escape(RS.money(product.mrp, cfg)) + "</span>" : "") +
+        "</div>" +
+
+        '<div class="dealTimer" id="dealTimer" data-ends="' + RS.escape(data.endsAt || "") + '"></div>' +
+
+        '<div class="heroActions">' +
+        '<button class="btn btnPrimary btnLg" type="button" data-add-to-list="' +
+        RS.escape(product.slug) + '" data-name="' + RS.escape(product.name) +
+        '" data-unit="' + RS.escape(product.unit || "") + '" data-category="' +
+        RS.escape(product.category) + '"><i class="bi bi-plus-lg" aria-hidden="true"></i> Add to list</button>' +
+        '<a class="btn btnOutline btnLg" href="' + RS.escape(RS.detailHref("product", product.slug)) +
+        '">View details</a>' +
+        "</div></div></div></div>";
+    });
+  });
+
+  /**
+   * Countdown for the deal section.
+   *
+   * A daily deal with no fixed end date counts down to midnight tonight, which
+   * is what "today only" actually means — rather than showing a stale date the
+   * client forgot to update.
+   */
+  function initDealTimer() {
+    var $timer = $("#dealTimer");
+    if (!$timer.length) return;
+
+    var ends = $timer.attr("data-ends");
+    var target = ends ? new Date(ends) : null;
+
+    if (!target || isNaN(target.getTime())) {
+      target = new Date();
+      target.setHours(23, 59, 59, 999);
+    }
+
+    function tick() {
+      var left = target - new Date();
+
+      if (left <= 0) {
+        $timer.html('<span class="dealTimerOver">This deal has ended</span>');
+        clearInterval(handle);
+        return;
+      }
+
+      var h = Math.floor(left / 3600000);
+      var m = Math.floor((left % 3600000) / 60000);
+      var s = Math.floor((left % 60000) / 1000);
+
+      function pad(n) { return String(n).padStart(2, "0"); }
+
+      $timer.html(
+        '<span class="dealTimerLabel">Ends in</span>' +
+        '<span class="dealTimerUnit">' + pad(h) + '<small>hrs</small></span>' +
+        '<span class="dealTimerUnit">' + pad(m) + '<small>min</small></span>' +
+        '<span class="dealTimerUnit">' + pad(s) + '<small>sec</small></span>'
+      );
+    }
+
+    var handle = setInterval(tick, 1000);
+    tick();
+  }
+
+  $(document).on("rs:sectionsRendered", initDealTimer);
+
+  /* ========================= CATEGORY STRIP =============================== */
+
+  reg("categoryStrip", function (data) {
+    if (!data || !data.items) return "";
+
+    var pills = data.items.map(function (cat, i) {
+      return '<a class="catPill staggerItem" style="--cardIndex:' + i +
+        ';--pillColor:' + RS.escape(cat.color || "var(--brand)") + '" href="' +
+        RS.escape(RS.href("products") + "?category=" + encodeURIComponent(cat.slug)) + '">' +
+        '<span class="catPillIcon"><i class="bi ' + RS.escape(cat.icon || "bi-basket") +
+        '" aria-hidden="true"></i></span>' +
+        '<span class="catPillName">' + RS.escape(cat.name) + "</span></a>";
+    }).join("");
+
+    return '<div class="wrap" data-reveal>' + RS.sectionHeadRow(data) +
+      '<div class="catPillRow">' + pills + "</div></div>";
+  });
+
+  /* ========================= HOW IT WORKS ================================== */
+
+  reg("howItWorks", function (data) {
+    if (!data || !data.steps) return "";
+
+    var steps = data.steps.map(function (step, i) {
+      return '<div class="stepCard staggerItem" style="--cardIndex:' + i + '">' +
+        '<span class="stepNumber">' + (i + 1) + "</span>" +
+        '<i class="bi ' + RS.escape(step.icon || "bi-dot") + ' stepIcon" aria-hidden="true"></i>' +
+        "<h3 class='cardTitle'>" + RS.escape(step.title) + "</h3>" +
+        "<p class='cardText'>" + RS.escape(step.text) + "</p></div>";
+    }).join("");
+
+    return '<div class="wrap" data-reveal>' + RS.sectionHead(data, true) +
+      '<div class="stepRow">' + steps + "</div></div>";
+  });
+
+})(window, jQuery);

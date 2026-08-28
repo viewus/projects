@@ -1,0 +1,221 @@
+{
+  "_note": "Drives the Shopping Planner, Monthly Grocery, Healthy Shopping and Festival features. Quantities are per household per month unless the list says otherwise — they are starting points a shopper edits, not prescriptions.",
+
+  "planner": {
+    "title": "Build your shopping list",
+    "intro": "Pick a household type and we'll generate a starting list. Adjust quantities, tick items off in the aisle, print it or send it to yourself.",
+    "chooseLabel": "Who are you shopping for?",
+    "generateLabel": "Generate my list",
+    "addAllLabel": "Add all to my list",
+    "profiles": [
+      {
+        "id": "single",
+        "name": "Single",
+        "icon": "bi-person",
+        "description": "One adult, cooking most days",
+        "people": 1,
+        "estimatedBudget": 3200
+      },
+      {
+        "id": "couple",
+        "name": "Couple",
+        "icon": "bi-people",
+        "description": "Two adults, no children",
+        "people": 2,
+        "estimatedBudget": 5400
+      },
+      {
+        "id": "family",
+        "name": "Family",
+        "icon": "bi-house-heart",
+        "description": "Two adults and two children",
+        "people": 4,
+        "estimatedBudget": 9800
+      },
+      {
+        "id": "joint",
+        "name": "Joint family",
+        "icon": "bi-house-door",
+        "description": "Six or more under one roof",
+        "people": 6,
+        "estimatedBudget": 14500
+      },
+      {
+        "id": "bachelor",
+        "name": "Bachelor",
+        "icon": "bi-cup-straw",
+        "description": "Minimal cooking, quick meals",
+        "people": 1,
+        "estimatedBudget": 2400
+      },
+      {
+        "id": "office",
+        "name": "Office pantry",
+        "icon": "bi-briefcase",
+        "description": "Tea, coffee and snacks for a team",
+        "people": 12,
+        "estimatedBudget": 6200
+      }
+    ]
+  },
+
+  "monthly": {
+    "title": "Monthly grocery lists",
+    "intro": "A month of staples, sized by household. Start from one of these and edit down.",
+    "lists": [
+      {
+        "id": "single",
+        "name": "Single — one month",
+        "description": "The basics for one adult cooking five or six nights a week.",
+        "items": [
+          { "name": "Basmati Rice", "slug": "basmati-rice", "qty": 1, "unit": "5 kg", "category": "staples-grains" },
+          { "name": "Whole Wheat Atta", "slug": "atta-whole-wheat", "qty": 1, "unit": "5 kg", "category": "staples-grains" },
+          { "name": "Toor Dal", "slug": "toor-dal", "qty": 1, "unit": "1 kg", "category": "staples-grains" },
+          { "name": "Sunflower Oil", "slug": "sunflower-oil", "qty": 1, "unit": "1 L", "category": "staples-grains" },
+          { "name": "Full Cream Milk", "slug": "milk-full-cream", "qty": 30, "unit": "500 ml", "category": "dairy-eggs" },
+          { "name": "Farm Eggs", "slug": "eggs-farm", "qty": 4, "unit": "6 pieces", "category": "dairy-eggs" },
+          { "name": "Premium Leaf Tea", "slug": "tea-premium", "qty": 1, "unit": "500 g", "category": "snacks-beverages" },
+          { "name": "Refined Sugar", "slug": "sugar-refined", "qty": 1, "unit": "1 kg", "category": "staples-grains" },
+          { "name": "Detergent Powder", "slug": "detergent-powder", "qty": 1, "unit": "2 kg", "category": "household" },
+          { "name": "Bathing Soap (4 pack)", "slug": "soap-multipack", "qty": 1, "unit": "4 × 100 g", "category": "personal-care" }
+        ]
+      },
+      {
+        "id": "family",
+        "name": "Family of four — one month",
+        "description": "Two adults, two children. The list most of our customers start from.",
+        "items": [
+          { "name": "Basmati Rice", "slug": "basmati-rice", "qty": 2, "unit": "5 kg", "category": "staples-grains" },
+          { "name": "Whole Wheat Atta", "slug": "atta-whole-wheat", "qty": 3, "unit": "5 kg", "category": "staples-grains" },
+          { "name": "Toor Dal", "slug": "toor-dal", "qty": 3, "unit": "1 kg", "category": "staples-grains" },
+          { "name": "Sunflower Oil", "slug": "sunflower-oil", "qty": 3, "unit": "1 L", "category": "staples-grains" },
+          { "name": "Full Cream Milk", "slug": "milk-full-cream", "qty": 60, "unit": "500 ml", "category": "dairy-eggs" },
+          { "name": "Fresh Curd", "slug": "curd-cup", "qty": 8, "unit": "400 g", "category": "dairy-eggs" },
+          { "name": "Farm Eggs", "slug": "eggs-farm", "qty": 8, "unit": "6 pieces", "category": "dairy-eggs" },
+          { "name": "Salted Butter", "slug": "butter-salted", "qty": 4, "unit": "100 g", "category": "dairy-eggs" },
+          { "name": "Premium Leaf Tea", "slug": "tea-premium", "qty": 2, "unit": "500 g", "category": "snacks-beverages" },
+          { "name": "Marie Gold Biscuits", "slug": "marie-biscuits", "qty": 6, "unit": "300 g", "category": "snacks-beverages" },
+          { "name": "Refined Sugar", "slug": "sugar-refined", "qty": 3, "unit": "1 kg", "category": "staples-grains" },
+          { "name": "Detergent Powder", "slug": "detergent-powder", "qty": 2, "unit": "2 kg", "category": "household" },
+          { "name": "Dishwash Gel", "slug": "dishwash-gel", "qty": 2, "unit": "750 ml", "category": "household" },
+          { "name": "Herbal Toothpaste", "slug": "herbal-toothpaste", "qty": 2, "unit": "200 g", "category": "personal-care" },
+          { "name": "Bathing Soap (4 pack)", "slug": "soap-multipack", "qty": 2, "unit": "4 × 100 g", "category": "personal-care" }
+        ]
+      },
+      {
+        "id": "joint",
+        "name": "Joint family — one month",
+        "description": "Six or more. Bulk packs throughout.",
+        "items": [
+          { "name": "Basmati Rice", "slug": "basmati-rice", "qty": 4, "unit": "5 kg", "category": "staples-grains" },
+          { "name": "Whole Wheat Atta", "slug": "atta-whole-wheat", "qty": 5, "unit": "5 kg", "category": "staples-grains" },
+          { "name": "Toor Dal", "slug": "toor-dal", "qty": 5, "unit": "1 kg", "category": "staples-grains" },
+          { "name": "Sunflower Oil", "slug": "sunflower-oil", "qty": 5, "unit": "1 L", "category": "staples-grains" },
+          { "name": "Full Cream Milk", "slug": "milk-full-cream", "qty": 90, "unit": "500 ml", "category": "dairy-eggs" },
+          { "name": "Fresh Curd", "slug": "curd-cup", "qty": 15, "unit": "400 g", "category": "dairy-eggs" },
+          { "name": "Farm Eggs", "slug": "eggs-farm", "qty": 15, "unit": "6 pieces", "category": "dairy-eggs" },
+          { "name": "Refined Sugar", "slug": "sugar-refined", "qty": 5, "unit": "1 kg", "category": "staples-grains" },
+          { "name": "Detergent Powder", "slug": "detergent-powder", "qty": 3, "unit": "2 kg", "category": "household" },
+          { "name": "Floor Cleaner", "slug": "floor-cleaner", "qty": 2, "unit": "1 L", "category": "household" }
+        ]
+      },
+      {
+        "id": "office",
+        "name": "Office pantry — one month",
+        "description": "A team of about twelve, tea and snacks only.",
+        "items": [
+          { "name": "Premium Leaf Tea", "slug": "tea-premium", "qty": 3, "unit": "500 g", "category": "snacks-beverages" },
+          { "name": "Filter Coffee Powder", "slug": "filter-coffee", "qty": 3, "unit": "250 g", "category": "snacks-beverages" },
+          { "name": "Full Cream Milk", "slug": "milk-full-cream", "qty": 60, "unit": "500 ml", "category": "dairy-eggs" },
+          { "name": "Refined Sugar", "slug": "sugar-refined", "qty": 4, "unit": "1 kg", "category": "staples-grains" },
+          { "name": "Marie Gold Biscuits", "slug": "marie-biscuits", "qty": 12, "unit": "300 g", "category": "snacks-beverages" },
+          { "name": "Mixed Namkeen", "slug": "mixed-namkeen", "qty": 6, "unit": "400 g", "category": "snacks-beverages" },
+          { "name": "Kitchen Towel Roll", "slug": "kitchen-towel", "qty": 4, "unit": "2 rolls", "category": "household" }
+        ]
+      }
+    ]
+  },
+
+  "healthy": {
+    "title": "Healthy shopping",
+    "intro": "Filtered views of the catalogue for common dietary goals. Every list is built from the same products page — nothing here is a separate range.",
+    "lists": [
+      { "id": "low-sugar", "name": "Low sugar", "icon": "bi-heart-pulse", "tag": "low-sugar", "description": "Unsweetened, jaggery-sweetened and naturally low-sugar picks." },
+      { "id": "low-fat", "name": "Low fat", "icon": "bi-activity", "tag": "low-fat", "description": "Lighter oils, lean choices and fresh produce." },
+      { "id": "organic", "name": "Organic", "icon": "bi-flower1", "tag": "organic", "description": "Certified organic and direct-from-grower lines." },
+      { "id": "protein-rich", "name": "Protein rich", "icon": "bi-egg-fried", "tag": "protein-rich", "description": "Dals, dairy, paneer and eggs." },
+      { "id": "kids", "name": "For kids", "icon": "bi-emoji-smile", "tag": "kids", "description": "Lunchbox staples and gentler snacks." },
+      { "id": "seniors", "name": "For seniors", "icon": "bi-person-hearts", "tag": "seniors", "description": "Easy-to-digest grains and softer textures." }
+    ]
+  },
+
+  "festival": {
+    "title": "Festival shopping",
+    "intro": "Starter lists for the occasions we get asked about most. Add the whole list, then edit it down.",
+    "lists": [
+      { "id": "diwali", "name": "Diwali", "icon": "bi-stars", "items": [
+        { "name": "Basmati Rice", "qty": 2, "unit": "5 kg", "category": "staples-grains" },
+        { "name": "Sunflower Oil", "qty": 3, "unit": "1 L", "category": "staples-grains" },
+        { "name": "Refined Sugar", "qty": 3, "unit": "1 kg", "category": "staples-grains" },
+        { "name": "Salted Butter", "qty": 4, "unit": "100 g", "category": "dairy-eggs" },
+        { "name": "Mixed Namkeen", "qty": 4, "unit": "400 g", "category": "snacks-beverages" }
+      ] },
+      { "id": "pongal", "name": "Pongal", "icon": "bi-sun", "items": [
+        { "name": "Basmati Rice", "qty": 2, "unit": "5 kg", "category": "staples-grains" },
+        { "name": "Toor Dal", "qty": 2, "unit": "1 kg", "category": "staples-grains" },
+        { "name": "Refined Sugar", "qty": 2, "unit": "1 kg", "category": "staples-grains" },
+        { "name": "Full Cream Milk", "qty": 6, "unit": "500 ml", "category": "dairy-eggs" }
+      ] },
+      { "id": "ugadi", "name": "Ugadi", "icon": "bi-flower2", "items": [
+        { "name": "Whole Wheat Atta", "qty": 1, "unit": "5 kg", "category": "staples-grains" },
+        { "name": "Refined Sugar", "qty": 2, "unit": "1 kg", "category": "staples-grains" },
+        { "name": "Robusta Bananas", "qty": 2, "unit": "1 dozen", "category": "fruits-vegetables" }
+      ] },
+      { "id": "ramadan", "name": "Ramadan", "icon": "bi-moon-stars", "items": [
+        { "name": "Basmati Rice", "qty": 2, "unit": "5 kg", "category": "staples-grains" },
+        { "name": "Farm Eggs", "qty": 6, "unit": "6 pieces", "category": "dairy-eggs" },
+        { "name": "Shimla Apples", "qty": 2, "unit": "1 kg", "category": "fruits-vegetables" },
+        { "name": "Fresh Curd", "qty": 8, "unit": "400 g", "category": "dairy-eggs" }
+      ] },
+      { "id": "christmas", "name": "Christmas", "icon": "bi-tree", "items": [
+        { "name": "Whole Wheat Atta", "qty": 1, "unit": "5 kg", "category": "staples-grains" },
+        { "name": "Salted Butter", "qty": 6, "unit": "100 g", "category": "dairy-eggs" },
+        { "name": "Refined Sugar", "qty": 2, "unit": "1 kg", "category": "staples-grains" },
+        { "name": "Farm Eggs", "qty": 4, "unit": "6 pieces", "category": "dairy-eggs" }
+      ] },
+      { "id": "housewarming", "name": "Housewarming", "icon": "bi-house-heart", "items": [
+        { "name": "Basmati Rice", "qty": 1, "unit": "5 kg", "category": "staples-grains" },
+        { "name": "Refined Sugar", "qty": 1, "unit": "1 kg", "category": "staples-grains" },
+        { "name": "Full Cream Milk", "qty": 4, "unit": "500 ml", "category": "dairy-eggs" },
+        { "name": "Coconut Hair Oil", "qty": 1, "unit": "500 ml", "category": "personal-care" }
+      ] }
+    ]
+  },
+
+  "budget": {
+    "title": "Budget calculator",
+    "intro": "Enter a monthly budget and household size for a rough split across categories. These are averages from our own basket data — treat them as a starting point, not a rule.",
+    "budgetLabel": "Monthly budget",
+    "peopleLabel": "People in the household",
+    "calculateLabel": "Work out my split",
+    "_todoNote": "TODO: this splits by fixed percentages. A fuller version would optimise an actual basket against the budget using live prices and preferred brands.",
+    "split": [
+      { "category": "staples-grains", "label": "Staples & grains", "percent": 30 },
+      { "category": "fruits-vegetables", "label": "Fruits & vegetables", "percent": 20 },
+      { "category": "dairy-eggs", "label": "Dairy & eggs", "percent": 18 },
+      { "category": "snacks-beverages", "label": "Snacks & beverages", "percent": 12 },
+      { "category": "household", "label": "Household", "percent": 10 },
+      { "category": "personal-care", "label": "Personal care", "percent": 10 }
+    ]
+  },
+
+  "seasonal": {
+    "title": "Seasonal shopping",
+    "lists": [
+      { "id": "summer", "name": "Summer", "icon": "bi-sun", "tags": ["fresh", "low-fat"] },
+      { "id": "monsoon", "name": "Monsoon", "icon": "bi-cloud-rain", "tags": ["everyday", "staple"] },
+      { "id": "winter", "name": "Winter", "icon": "bi-snow", "tags": ["protein-rich", "family"] },
+      { "id": "school", "name": "School reopening", "icon": "bi-backpack", "tags": ["kids", "snack"] }
+    ]
+  }
+}

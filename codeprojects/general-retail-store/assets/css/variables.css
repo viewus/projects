@@ -1,0 +1,125 @@
+/* ---------------------------------------------------------------------------
+ * variables.css — every colour, size and easing in one place.
+ *
+ * These are DEFAULTS. app.js reads data/theme.json at boot and writes matching
+ * custom properties onto :root, which override everything here. That is what
+ * makes a re-skin a JSON edit rather than a CSS edit — so never hardcode a
+ * colour anywhere else in this stylesheet set; always reference a token.
+ *
+ * Dark mode redefines only the tokens whose ROLE changes. Any token defined
+ * once here keeps working in both schemes.
+ * ------------------------------------------------------------------------- */
+
+:root {
+  /* ---- brand ---- */
+  --brand: #1f7a4d;
+  --brandDark: #145c39;
+  --brandLight: #e8f4ee;
+  --accent: #f0803c;
+  --accentDark: #d3661f;
+
+  /* ---- status ---- */
+  --success: #1f7a4d;
+  --warning: #d98324;
+  --danger: #c0392b;
+  --info: #2a6f97;
+
+  /* ---- surfaces ---- */
+  --bg: #ffffff;
+  --bgAlt: #f7f8f6;
+  --bgSunk: #eef0ec;
+  --bgDark: #10231a;
+  --surface: #ffffff;
+
+  /* ---- text ---- */
+  --text: #16201a;
+  --textMid: #55605a;
+  --textDim: #869089;
+  --textOnBrand: #ffffff;
+
+  /* ---- lines ---- */
+  --line: #e3e7e3;
+  --lineSoft: #eef1ee;
+  --ring: rgba(31, 122, 77, .18);
+
+  /* ---- type ---- */
+  --fontHeading: "Fraunces", Georgia, serif;
+  --fontBody: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fsXs: .75rem;
+  --fsSm: .875rem;
+  --fsBase: 1rem;
+  --fsLg: 1.125rem;
+  --fsXl: 1.375rem;
+  --fs2xl: 1.75rem;
+  --fs3xl: 2.25rem;
+  --fs4xl: clamp(2.25rem, 5vw, 3.5rem);
+
+  /* ---- spacing (4px scale) ---- */
+  --s1: .25rem;
+  --s2: .5rem;
+  --s3: .75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4rem;
+  --s9: 6rem;
+
+  /* ---- shape ---- */
+  --radius: 14px;
+  --radiusSm: 8px;
+  --radiusLg: 22px;
+  --radiusPill: 999px;
+
+  /* ---- elevation ---- */
+  --shadowSm: 0 1px 2px rgba(16, 32, 26, .06);
+  --shadowMd: 0 8px 24px -10px rgba(16, 32, 26, .18);
+  --shadowLg: 0 24px 56px -20px rgba(16, 32, 26, .26);
+
+  /* ---- motion ---- */
+  --ease: cubic-bezier(.2, .7, .3, 1);
+  --fast: .16s;
+  --normal: .28s;
+  --slow: .5s;
+
+  /* ---- layout ---- */
+  --maxw: 1240px;
+  --gutter: 1.25rem;
+  --navH: 68px;
+  --z-nav: 100;
+  --z-float: 200;
+  --z-toast: 300;
+  --z-modal: 400;
+}
+
+/* ---------------------------------------------------------------------------
+ * Dark scheme. Only role-changing tokens are redefined; brand hues are lifted
+ * slightly because a mid-tone green that reads well on white goes muddy on a
+ * dark ground.
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] {
+  --brand: #4cb582;
+  --brandDark: #3a9c6c;
+  --brandLight: #163a2a;
+  --accent: #ff9a5c;
+  --accentDark: #f0803c;
+
+  --bg: #0e1512;
+  --bgAlt: #141d19;
+  --bgSunk: #101815;
+  --surface: #16211c;
+
+  --text: #eef2ef;
+  --textMid: #a9b4ad;
+  --textDim: #77837c;
+  --textOnBrand: #08130d;
+
+  --line: #253029;
+  --lineSoft: #1c2721;
+  --ring: rgba(76, 181, 130, .28);
+
+  --shadowSm: 0 1px 2px rgba(0, 0, 0, .5);
+  --shadowMd: 0 10px 30px -12px rgba(0, 0, 0, .7);
+  --shadowLg: 0 28px 64px -24px rgba(0, 0, 0, .8);
+}

@@ -1,0 +1,30 @@
+{
+  "_note": "Re-skin the whole site from here. app.js writes every token below onto :root as a CSS custom property at boot, overriding the defaults in assets/css/variables.css. Names must match the token names in that file.",
+
+  "preset": "",
+  "_presetNote": "Leave empty to use the tokens below. Set to 'citrus', 'berry' or 'ocean' to use a ready-made palette from assets/css/theme.css instead.",
+
+  "fontHeading": "\"Fraunces\", Georgia, serif",
+  "fontBody": "\"Inter\", system-ui, -apple-system, sans-serif",
+  "radius": "14px",
+
+  "tokens": {
+    "brand": "#1f7a4d",
+    "brandDark": "#145c39",
+    "brandLight": "#e8f4ee",
+    "accent": "#f0803c",
+    "accentDark": "#d3661f"
+  },
+
+  "_swatchNote": "Category tile colours, used by the generated SVG placeholder when a remote image is unavailable.",
+  "swatches": {
+    "fruits-vegetables": "#4a9d5f",
+    "dairy-eggs": "#e8b04b",
+    "staples-grains": "#c98b3a",
+    "snacks-beverages": "#d4644a",
+    "bakery": "#b8763f",
+    "household": "#5b8fb9",
+    "personal-care": "#a06bb5",
+    "baby-care": "#e08fa8"
+  }
+}

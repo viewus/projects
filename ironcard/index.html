@@ -1,20 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Loading…</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
 <style>
 /* ============================================================
    ROOT / THEME VARIABLES (populated further by JS from JSON)
@@ -37,7 +32,6 @@
   --dur: 800ms;
   --ease: cubic-bezier(.16,.84,.44,1);
 }
-
 *,*::before,*::after{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 @media (prefers-reduced-motion: reduce){
@@ -63,13 +57,11 @@ h1,h2,h3,h4,p{margin:0;}
   padding:0 32px;
 }
 @media (max-width:768px){ .container{padding:0 20px;} }
-
 /* focus states for accessibility */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
   outline:2px solid var(--primary);
   outline-offset:3px;
 }
-
 .section-label{
   display:inline-flex;
   align-items:center;
@@ -110,11 +102,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .section-head.center{ text-align:center; margin-left:auto; margin-right:auto; }
 .section-head.center .section-sub{ margin-left:auto; margin-right:auto; }
 .section-head.center .section-label::before{ display:none; }
-
 section{ position:relative; }
 .pad{ padding:110px 0; }
 @media (max-width:768px){ .pad{ padding:72px 0; } }
-
 /* blueprint corner bracket – signature motif */
 .spec-frame{ position:relative; }
 .spec-frame::before, .spec-frame::after{
@@ -126,7 +116,6 @@ section{ position:relative; }
 }
 .spec-frame::before{ top:-10px; left:-10px; border-right:none; border-bottom:none; }
 .spec-frame::after{ bottom:-10px; right:-10px; border-left:none; border-top:none; }
-
 .btn{
   display:inline-flex;
   align-items:center;
@@ -148,7 +137,6 @@ section{ position:relative; }
 .btn-dark{ background:var(--dark); color:var(--white); }
 .btn-dark:hover{ background:var(--accent); transform:translateY(-3px); }
 .btn-block{ width:100%; justify-content:center; }
-
 /* ============================================================
    ANNOUNCEMENT BAR
    ============================================================ */
@@ -163,7 +151,6 @@ section{ position:relative; }
   border-bottom:1px solid var(--line);
 }
 #announcement strong{ color:var(--primary); font-weight:600; }
-
 /* ============================================================
    HEADER
    ============================================================ */
@@ -197,7 +184,6 @@ section{ position:relative; }
 }
 .brand-name{ font-family:var(--font-heading); font-weight:800; font-size:18px; letter-spacing:-.01em; line-height:1.1; }
 .brand-tag{ display:block; font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--primary); margin-top:2px; }
-
 .main-nav{ display:flex; align-items:center; gap:34px; }
 .main-nav a{
   color:rgba(255,255,255,.78);
@@ -214,14 +200,12 @@ section{ position:relative; }
 }
 .main-nav a:hover, .main-nav a.active{ color:var(--white); }
 .main-nav a:hover::after, .main-nav a.active::after{ width:100%; }
-
 .header-actions{ display:flex; align-items:center; gap:22px; }
 .header-phone{ display:flex; align-items:center; gap:10px; color:var(--white); }
 .header-phone i{ color:var(--primary); font-size:16px; }
 .header-phone-text{ display:flex; flex-direction:column; line-height:1.2; }
 .header-phone-label{ font-size:10px; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; }
 .header-phone-num{ font-weight:700; font-size:14px; }
-
 .hamburger{
   display:none;
   flex-direction:column; gap:5px;
@@ -231,7 +215,6 @@ section{ position:relative; }
 .hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2){ opacity:0; }
 .hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
-
 @media (max-width:1024px){
   .main-nav{ position:fixed; top:0; right:-100%; height:100vh; width:78%; max-width:340px;
     background:var(--dark-2); flex-direction:column; align-items:flex-start; justify-content:center;
@@ -246,7 +229,6 @@ section{ position:relative; }
 @media (max-width:560px){
   .header-quote-btn{ display:none; }
 }
-
 /* ============================================================
    HERO
    ============================================================ */
@@ -276,7 +258,6 @@ section{ position:relative; }
   padding:170px 32px 100px;
 }
 @media (max-width:768px){ .hero-inner{ padding:150px 20px 70px; } }
-
 .hero-eyebrow{
   font-family:var(--font-mono);
   font-size:13px; letter-spacing:.22em; text-transform:uppercase;
@@ -284,7 +265,6 @@ section{ position:relative; }
   display:flex; align-items:center; gap:12px;
 }
 .hero-eyebrow::before{ content:''; width:34px; height:2px; background:var(--primary); }
-
 .hero-title{
   font-family:var(--font-heading);
   font-weight:800;
@@ -294,7 +274,6 @@ section{ position:relative; }
   max-width:900px;
 }
 .hero-title em{ font-style:normal; color:var(--primary); }
-
 .hero-subtitle{
   margin-top:26px;
   font-size:17px;
@@ -303,7 +282,6 @@ section{ position:relative; }
   max-width:520px;
 }
 .hero-actions{ display:flex; gap:18px; margin-top:42px; flex-wrap:wrap; }
-
 .hero-meta{
   display:flex; gap:44px; margin-top:64px; flex-wrap:wrap;
   border-top:1px solid rgba(255,255,255,.16);
@@ -313,7 +291,6 @@ section{ position:relative; }
 .hero-meta-icon{ color:var(--primary); font-size:22px; }
 .hero-meta-num{ font-family:var(--font-heading); font-weight:800; font-size:22px; line-height:1; }
 .hero-meta-label{ font-size:12.5px; color:rgba(255,255,255,.6); margin-top:4px; }
-
 /* diagonal steel-plate divider signature */
 .hero-plate{
   position:absolute; right:0; bottom:0; top:0; width:38%;
@@ -324,7 +301,6 @@ section{ position:relative; }
   display:none;
 }
 @media (min-width:1100px){ .hero-plate{ display:block; } }
-
 /* ============================================================
    STATS STRIP
    ============================================================ */
@@ -349,7 +325,6 @@ section{ position:relative; }
   .stat-item:nth-child(odd){ border-right:1px solid var(--line); }
   .stat-item:nth-last-child(-n+2){ border-bottom:none; }
 }
-
 /* ============================================================
    ABOUT
    ============================================================ */
@@ -366,19 +341,16 @@ section{ position:relative; }
 }
 .about-media-tag .n{ font-size:30px; line-height:1; }
 .about-media-tag .l{ font-size:11px; font-family:var(--font-mono); letter-spacing:.08em; text-transform:uppercase; margin-top:6px; font-weight:600; }
-
 .about-body p{ font-size:16px; line-height:1.8; color:var(--steel); margin-top:20px; }
 .about-pillars{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:36px; }
 .about-pillar{ border-left:2px solid var(--primary); padding-left:16px; }
 .about-pillar h4{ font-family:var(--font-heading); font-weight:700; font-size:15px; color:var(--dark); margin-bottom:6px; }
 .about-pillar p{ margin-top:0; font-size:14px; }
-
 @media (max-width:900px){
   #about .about-grid{ grid-template-columns:1fr; gap:56px; }
   .about-media img{ height:380px; }
   .about-pillars{ grid-template-columns:1fr; }
 }
-
 /* ============================================================
    SERVICES
    ============================================================ */
@@ -408,10 +380,8 @@ section{ position:relative; }
 .service-icon{ font-size:28px; color:var(--accent); transition:color .35s; }
 .service-title{ font-family:var(--font-heading); font-weight:700; font-size:18px; margin-top:22px; color:var(--dark); transition:color .35s; }
 .service-desc{ font-size:14px; line-height:1.65; color:var(--steel); margin-top:12px; transition:color .35s; }
-
 @media (max-width:1024px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:560px){ .services-grid{ grid-template-columns:1fr; } }
-
 /* ============================================================
    PROJECTS
    ============================================================ */
@@ -429,7 +399,6 @@ section{ position:relative; }
 }
 .filter-btn:hover{ border-color:var(--accent); color:var(--accent); }
 .filter-btn.active{ background:var(--dark); border-color:var(--dark); color:var(--white); }
-
 .projects-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
 .project-card{
   position:relative; border-radius:2px; overflow:hidden;
@@ -453,10 +422,8 @@ section{ position:relative; }
 }
 .project-title{ font-family:var(--font-heading); font-weight:700; font-size:19px; }
 .project-meta{ font-size:13px; color:rgba(255,255,255,.7); margin-top:8px; display:flex; gap:14px; }
-
 @media (max-width:900px){ .projects-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:600px){ .projects-grid{ grid-template-columns:1fr; } .project-card{ height:320px; } }
-
 /* ============================================================
    WHY US
    ============================================================ */
@@ -469,7 +436,6 @@ section{ position:relative; }
 .why-desc{ font-size:14px; color:rgba(255,255,255,.62); line-height:1.65; margin-top:10px; }
 @media (max-width:900px){ .why-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:560px){ .why-grid{ grid-template-columns:1fr; } }
-
 /* ============================================================
    PROCESS (blueprint spec-sheet timeline)
    ============================================================ */
@@ -497,7 +463,6 @@ section{ position:relative; }
   .process-track::before{ display:none; }
 }
 @media (max-width:640px){ .process-grid{ grid-template-columns:1fr 1fr; } }
-
 /* ============================================================
    INDUSTRIES
    ============================================================ */
@@ -512,7 +477,6 @@ section{ position:relative; }
 .industry-icon{ font-size:30px; color:var(--accent); }
 .industry-title{ font-family:var(--font-heading); font-weight:700; font-size:15px; margin-top:16px; color:var(--dark); }
 @media (max-width:900px){ .industries-grid{ grid-template-columns:repeat(2,1fr); } }
-
 /* ============================================================
    CERTIFICATIONS
    ============================================================ */
@@ -522,7 +486,6 @@ section{ position:relative; }
 .cert-item i{ font-size:26px; color:var(--primary); }
 .cert-name{ font-family:var(--font-heading); font-weight:700; font-size:14.5px; }
 .cert-sub{ font-size:11.5px; color:rgba(255,255,255,.5); margin-top:2px; }
-
 /* ============================================================
    TESTIMONIALS
    ============================================================ */
@@ -539,7 +502,6 @@ section{ position:relative; }
 .testi-company{ font-size:12.5px; color:var(--steel); }
 .swiper-pagination-bullet{ background:var(--steel); opacity:.4; }
 .swiper-pagination-bullet-active{ background:var(--accent); opacity:1; }
-
 /* ============================================================
    GALLERY
    ============================================================ */
@@ -564,7 +526,6 @@ section{ position:relative; }
   .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:150px; }
   .gallery-item.big{ grid-column:span 2; grid-row:span 1; height:150px;}
 }
-
 .lightbox{
   position:fixed; inset:0; background:rgba(10,9,8,.95); z-index:2000;
   display:none; align-items:center; justify-content:center; padding:40px;
@@ -575,7 +536,6 @@ section{ position:relative; }
   position:absolute; top:24px; right:32px; background:none; border:none;
   color:var(--white); font-size:28px;
 }
-
 /* ============================================================
    FAQ
    ============================================================ */
@@ -591,7 +551,6 @@ section{ position:relative; }
 .faq-item.open .faq-q i{ transform:rotate(45deg); }
 .faq-a{ max-height:0; overflow:hidden; transition:max-height .35s var(--ease); }
 .faq-a-inner{ padding:0 4px 24px; font-size:14.5px; line-height:1.75; color:var(--steel); }
-
 /* ============================================================
    QUOTE / CONTACT
    ============================================================ */
@@ -614,7 +573,6 @@ section{ position:relative; }
   transition:background .3s, border-color .3s;
 }
 .social-row a:hover{ background:var(--primary); border-color:var(--primary); color:var(--dark); }
-
 .quote-form{ background:var(--white); border-radius:3px; padding:40px; color:var(--text); }
 .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 .form-group{ margin-bottom:18px; }
@@ -635,7 +593,6 @@ section{ position:relative; }
 .form-success.show{ display:flex; }
 @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; gap:48px; } }
 @media (max-width:560px){ .form-row{ grid-template-columns:1fr; } .quote-form{ padding:26px; } }
-
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -652,7 +609,6 @@ section{ position:relative; }
 .footer-bottom .social-row a{ width:34px; height:34px; }
 @media (max-width:900px){ .footer-grid{ grid-template-columns:1fr 1fr; gap:40px; } }
 @media (max-width:560px){ .footer-grid{ grid-template-columns:1fr; } }
-
 /* ============================================================
    FLOATING ACTIONS
    ============================================================ */
@@ -670,19 +626,16 @@ section{ position:relative; }
   transition:opacity .3s, transform .3s;
 }
 .fab-top.show{ opacity:1; pointer-events:auto; transform:translateY(0); }
-
 /* ============================================================
    AOS OVERRIDE - subtlety
    ============================================================ */
 [data-aos]{ pointer-events:auto; }
-
 /* error state */
 #config-error{
   display:none; min-height:100vh; align-items:center; justify-content:center; flex-direction:column;
   text-align:center; padding:40px; font-family:var(--font-body);
 }
 #config-error.show{ display:flex; }
-
 /* skip link */
 .skip-link{
   position:absolute; left:-999px; top:0; background:var(--primary); color:var(--dark); padding:12px 20px; z-index:3000; font-weight:700;
@@ -691,17 +644,12 @@ section{ position:relative; }
 </style>
 </head>
 <body>
-
 <a href="#main-content" class="skip-link">Skip to main content</a>
-
 <div id="config-error">
   <h1 style="font-family:var(--font-heading); font-weight:800; font-size:24px;">Website configuration could not be loaded.</h1>
   <p style="color:var(--steel); margin-top:12px;">Please check back shortly, or contact the site owner.</p>
 </div>
-
 <div id="app"></div>
-
-<!-- ================= JSON DATA (single source of truth) ================= -->
 <script id="website-data" type="application/json">
 {
   "company": {
@@ -717,14 +665,12 @@ section{ position:relative; }
     "experience": "18+ Years",
     "founded": "2007"
   },
-
   "seo": {
     "title": "Ironclad Structures | Construction & Civil Engineering, Bengaluru",
     "description": "Ironclad Structures delivers residential, commercial and industrial construction across South India — 18+ years, 260+ projects, in-house quality control.",
     "keywords": ["construction company bengaluru", "civil engineering contractor", "commercial construction india", "industrial construction", "builders bengaluru"],
     "ogImage": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop"
   },
-
   "navigation": [
     { "label": "Home", "target": "#home" },
     { "label": "About", "target": "#about" },
@@ -734,7 +680,6 @@ section{ position:relative; }
     { "label": "Process", "target": "#process" },
     { "label": "Contact", "target": "#contact" }
   ],
-
   "hero": {
     "eyebrow": "Structural & Civil Contractors — Est. 2007",
     "titleLine1": "Every load",
@@ -750,14 +695,12 @@ section{ position:relative; }
       { "icon": "fa-solid fa-building", "num": "18 yrs", "label": "In continuous operation" }
     ]
   },
-
   "stats": [
     { "number": 18, "suffix": "+", "label": "Years of Operation" },
     { "number": 264, "suffix": "+", "label": "Projects Delivered" },
     { "number": 132, "suffix": "+", "label": "Engineers & Tradespeople" },
     { "number": 98, "suffix": "%", "label": "On-Schedule Handover Rate" }
   ],
-
   "about": {
     "label": "About Ironclad",
     "heading": "We treat every drawing as a promise.",
@@ -771,7 +714,6 @@ section{ position:relative; }
       { "title": "Fixed-price contracts", "text": "Quoted scope, quoted number, no silent additions." }
     ]
   },
-
   "services": [
     {
       "title": "Residential Construction",
@@ -822,7 +764,6 @@ section{ position:relative; }
       "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop"
     }
   ],
-
   "projects": [
     {
       "id": "proj-001",
@@ -879,7 +820,6 @@ section{ position:relative; }
       "description": "Heavy-machinery manufacturing floor with reinforced foundations rated for CNC vibration loads."
     }
   ],
-
   "whyUs": [
     { "icon": "fa-solid fa-user-tie", "title": "Engineer-Led Teams", "text": "Every site is run by a licensed structural engineer, not a scheduler." },
     { "icon": "fa-solid fa-clipboard-check", "title": "Documented QC", "text": "Weekly third-party inspection reports shared directly with you." },
@@ -890,7 +830,6 @@ section{ position:relative; }
     { "icon": "fa-solid fa-people-group", "title": "Single Point of Contact", "text": "One project lead owns your build from groundbreaking to handover." },
     { "icon": "fa-solid fa-headset", "title": "Post-Handover Support", "text": "12-month defect liability period with a dedicated response line." }
   ],
-
   "process": [
     { "title": "Consultation", "description": "Site visit, requirement study and feasibility review with our engineers." },
     { "title": "Planning & Design", "description": "Structural drawings, material specification and municipal approvals." },
@@ -899,7 +838,6 @@ section{ position:relative; }
     { "title": "Quality Inspection", "description": "Independent third-party inspection at every structural milestone." },
     { "title": "Handover", "description": "Final walkthrough, documentation handoff and defect liability period." }
   ],
-
   "industries": [
     { "icon": "fa-solid fa-house", "title": "Residential" },
     { "icon": "fa-solid fa-building", "title": "Commercial" },
@@ -910,7 +848,6 @@ section{ position:relative; }
     { "icon": "fa-solid fa-store", "title": "Retail" },
     { "icon": "fa-solid fa-road", "title": "Infrastructure" }
   ],
-
   "certifications": [
     { "icon": "fa-solid fa-certificate", "name": "ISO 9001:2015", "sub": "Quality Management" },
     { "icon": "fa-solid fa-shield-halved", "name": "ISO 45001:2018", "sub": "Occupational Safety" },
@@ -918,7 +855,6 @@ section{ position:relative; }
     { "icon": "fa-solid fa-award", "name": "CIDC Grade A", "sub": "Construction Industry Development Council" },
     { "icon": "fa-solid fa-building-shield", "name": "MSME Registered", "sub": "Govt. of India" }
   ],
-
   "testimonials": [
     {
       "name": "Rajesh Kumar",
@@ -949,7 +885,6 @@ section{ position:relative; }
       "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300&auto=format&fit=crop"
     }
   ],
-
   "gallery": [
     { "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=900&auto=format&fit=crop", "big": true, "alt": "Structural steel frame under construction at dusk" },
     { "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop", "alt": "Architect reviewing blueprints on site" },
@@ -960,7 +895,6 @@ section{ position:relative; }
     { "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=900&auto=format&fit=crop", "big": true, "alt": "Modern commercial office exterior" },
     { "image": "https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=600&auto=format&fit=crop", "alt": "Road infrastructure construction" }
   ],
-
   "faq": [
     { "question": "How do I request a quotation?", "answer": "Fill out the quote form at the bottom of this page with your project type and rough budget, or call our office directly. Our estimation team typically responds within one business day with next steps for a site visit." },
     { "question": "Do you provide fixed-price contracts?", "answer": "Yes. After our estimation phase we issue an itemised, fixed-price quotation. Any changes to the agreed scope go through a documented change-order process before work proceeds." },
@@ -969,7 +903,6 @@ section{ position:relative; }
     { "question": "Do you handle municipal approvals?", "answer": "Yes, our planning team manages the full approval process, including structural sanction and occupancy certification, as part of our commercial and residential contracts." },
     { "question": "What happens if a defect appears after handover?", "answer": "Every project includes a 12-month defect liability period with a dedicated response line. Reported issues are inspected within 5 working days." }
   ],
-
   "contact": {
     "heading": "Have a project on the drawing board?",
     "subheading": "Tell us the scope and we'll come back with a realistic timeline and a fixed-price estimate — no obligation.",
@@ -978,19 +911,16 @@ section{ position:relative; }
     "budgetRanges": ["Under ₹25 Lakh", "₹25 Lakh – ₹1 Crore", "₹1 Crore – ₹5 Crore", "Above ₹5 Crore"],
     "requiredFields": ["name", "phone", "email", "projectType"]
   },
-
   "socialLinks": [
     { "platform": "Facebook", "icon": "fa-brands fa-facebook-f", "url": "https://facebook.com" },
     { "platform": "Instagram", "icon": "fa-brands fa-instagram", "url": "https://instagram.com" },
     { "platform": "LinkedIn", "icon": "fa-brands fa-linkedin-in", "url": "https://linkedin.com" },
     { "platform": "YouTube", "icon": "fa-brands fa-youtube", "url": "https://youtube.com" }
   ],
-
   "quickActions": {
     "call": { "enabled": true, "number": "+919876543210" },
     "whatsapp": { "enabled": true, "number": "919876543210", "message": "Hi, I'd like to enquire about a construction project." }
   },
-
   "theme": {
     "primary": "#F4A623",
     "accent": "#E85D2C",
@@ -1001,13 +931,11 @@ section{ position:relative; }
     "text": "#2A2622",
     "steel": "#6B6560"
   },
-
   "animations": {
     "enabled": true,
     "duration": 700,
     "once": true
   },
-
   "sectionVisibility": {
     "announcement": true,
     "hero": true,
@@ -1024,21 +952,15 @@ section{ position:relative; }
     "faq": true,
     "contact": true
   },
-
   "announcement": "Currently booking new site consultations for Q1 — <strong>18+ years, 264+ projects delivered.</strong>"
 }
 </script>
-
-<!-- ================= LIBRARIES ================= -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<!-- ================= APPLICATION LOGIC ================= -->
 <script>
 (function(){
   "use strict";
-
   /* ---------- Load & validate JSON ---------- */
   let data;
   try{
@@ -1052,7 +974,6 @@ section{ position:relative; }
     document.getElementById('app').style.display = 'none';
     return;
   }
-
   const esc = function(str){
     if(str === undefined || str === null) return '';
     return String(str).replace(/[&<>"']/g, function(c){
@@ -1060,7 +981,6 @@ section{ position:relative; }
     });
   };
   const visible = function(key){ return !!(data.sectionVisibility && data.sectionVisibility[key]); };
-
   /* ---------- Theme -> CSS variables ---------- */
   (function applyTheme(){
     const t = data.theme || {};
@@ -1074,7 +994,6 @@ section{ position:relative; }
     if(t.text) root.setProperty('--text', t.text);
     if(t.steel) root.setProperty('--steel', t.steel);
   })();
-
   /* ---------- SEO / head ---------- */
   (function applySEO(){
     const seo = data.seo || {};
@@ -1096,14 +1015,11 @@ section{ position:relative; }
       document.head.appendChild(tag);
     });
   })();
-
   /* ================= RENDERERS ================= */
-
   function renderAnnouncement(){
     if(!visible('announcement') || !data.announcement) return '';
     return '<div id="announcement">'+ data.announcement.replace(/<(?!\/?strong)[^>]*>/g,'') +'</div>';
   }
-
   function renderHeader(){
     const c = data.company;
     const navHtml = (data.navigation||[]).map(function(item){
@@ -1131,7 +1047,6 @@ section{ position:relative; }
     '</header>'+
     '<div class="nav-overlay" id="nav-overlay"></div>';
   }
-
   function renderHero(){
     if(!visible('hero')) return '';
     const h = data.hero;
@@ -1157,7 +1072,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderStats(){
     if(!visible('stats')) return '';
     const items = (data.stats||[]).map(function(s, i){
@@ -1167,7 +1081,6 @@ section{ position:relative; }
     }).join('');
     return '<section id="stats"><div class="container"><div class="stats-grid">'+items+'</div></div></section>';
   }
-
   function renderAbout(){
     if(!visible('about')) return '';
     const a = data.about;
@@ -1193,7 +1106,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderServices(){
     if(!visible('services')) return '';
     function renderService(s, i){
@@ -1218,7 +1130,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderProjects(){
     if(!visible('projects')) return '';
     const projects = data.projects||[];
@@ -1248,7 +1159,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderWhyUs(){
     if(!visible('whyUs')) return '';
     const items = (data.whyUs||[]).map(function(w, i){
@@ -1269,7 +1179,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderProcess(){
     if(!visible('process')) return '';
     const items = (data.process||[]).map(function(p, i){
@@ -1291,7 +1200,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderIndustries(){
     if(!visible('industries')) return '';
     const items = (data.industries||[]).map(function(ind, i){
@@ -1311,7 +1219,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderCertifications(){
     if(!visible('certifications')) return '';
     const items = (data.certifications||[]).map(function(c){
@@ -1320,7 +1227,6 @@ section{ position:relative; }
     }).join('');
     return '<section id="certifications"><div class="container"><div class="cert-row">'+items+'</div></div></section>';
   }
-
   function renderTestimonials(){
     if(!visible('testimonials')) return '';
     const slides = (data.testimonials||[]).map(function(t){
@@ -1348,7 +1254,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderGallery(){
     if(!visible('gallery')) return '';
     const items = (data.gallery||[]).map(function(g, i){
@@ -1369,7 +1274,6 @@ section{ position:relative; }
       '<div class="lightbox" id="lightbox"><button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button><img id="lightbox-img" src="" alt=""></div>'+
     '</section>';
   }
-
   function renderFAQ(){
     if(!visible('faq')) return '';
     const items = (data.faq||[]).map(function(f, i){
@@ -1391,7 +1295,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderContact(){
     if(!visible('contact')) return '';
     const c = data.company;
@@ -1438,7 +1341,6 @@ section{ position:relative; }
       '</div>'+
     '</section>';
   }
-
   function renderFooter(){
     const c = data.company;
     const navLinks = (data.navigation||[]).map(function(n){ return '<li><a href="'+esc(n.target)+'">'+esc(n.label)+'</a></li>'; }).join('');
@@ -1471,7 +1373,6 @@ section{ position:relative; }
       '</div>'+
     '</footer>';
   }
-
   function renderFloatingActions(){
     const qa = data.quickActions || {};
     let html = '<div class="floating-actions">';
@@ -1486,7 +1387,6 @@ section{ position:relative; }
     html += '</div>';
     return html;
   }
-
   /* ================= ASSEMBLE PAGE ================= */
   const appHtml =
     renderAnnouncement() +
@@ -1508,17 +1408,13 @@ section{ position:relative; }
     '</main>' +
     renderFooter() +
     renderFloatingActions();
-
   document.getElementById('app').innerHTML = appHtml;
-
   /* ================= INTERACTIVITY (jQuery) ================= */
   $(function(){
-
     /* AOS init */
     if(data.animations && data.animations.enabled && window.AOS){
       AOS.init({ duration: data.animations.duration || 700, once: data.animations.once !== false, offset: 60 });
     }
-
     /* Mobile menu */
     const $hamburger = $('#hamburger');
     const $nav = $('#main-nav');
@@ -1535,7 +1431,6 @@ section{ position:relative; }
       $overlay.toggleClass('open');
     });
     $overlay.on('click', closeMenu);
-
     /* Smooth scroll + close mobile menu */
     $(document).on('click', 'a[href^="#"]', function(e){
       const targetSel = $(this).attr('href');
@@ -1547,7 +1442,6 @@ section{ position:relative; }
         $('html, body').animate({ scrollTop: $target.offset().top - 78 }, 600);
       }
     });
-
     /* Header scroll state */
     const $header = $('#site-header');
     const $backTop = $('#back-to-top');
@@ -1557,7 +1451,6 @@ section{ position:relative; }
       $backTop.toggleClass('show', st > 500);
       updateActiveNav();
     });
-
     /* Active nav on scroll */
     const $sections = $('main section[id]');
     const $navLinks = $('.nav-link');
@@ -1573,12 +1466,10 @@ section{ position:relative; }
       if(currentId){ $navLinks.filter('[href="'+currentId+'"]').addClass('active'); }
     }
     updateActiveNav();
-
     /* Back to top */
     $backTop.on('click', function(){
       $('html, body').animate({ scrollTop: 0 }, 600);
     });
-
     /* Animated counters */
     let countersStarted = false;
     function animateCounters(){
@@ -1604,7 +1495,6 @@ section{ position:relative; }
     }
     $(window).on('scroll', animateCounters);
     animateCounters();
-
     /* Project filters */
     $('.filter-btn').on('click', function(){
       const filter = $(this).data('filter');
@@ -1625,7 +1515,6 @@ section{ position:relative; }
         });
       }, 260);
     });
-
     /* FAQ accordion */
     $('.faq-q').on('click', function(){
       const $item = $(this).closest('.faq-item');
@@ -1645,7 +1534,6 @@ section{ position:relative; }
         $(this).attr('aria-expanded','true');
       }
     });
-
     /* Gallery lightbox */
     const $lightbox = $('#lightbox');
     const $lightboxImg = $('#lightbox-img');
@@ -1661,7 +1549,6 @@ section{ position:relative; }
       if(e.target.id === 'lightbox-close' || e.target.id === 'lightbox'){ $lightbox.removeClass('open'); }
     });
     $(document).on('keydown', function(e){ if(e.key === 'Escape'){ $lightbox.removeClass('open'); } });
-
     /* Testimonials swiper */
     if(window.Swiper){
       new Swiper('.testi-swiper', {
@@ -1676,7 +1563,6 @@ section{ position:relative; }
         }
       });
     }
-
     /* Quote form validation (frontend-only) */
     const requiredFields = (data.contact && data.contact.requiredFields) || ['name','phone','email'];
     $('#quote-form').on('submit', function(e){
@@ -1684,14 +1570,12 @@ section{ position:relative; }
       let valid = true;
       const $form = $(this);
       $form.find('.form-group').removeClass('error');
-
       function fail($input){
         $input.closest('.form-group').addClass('error');
         valid = false;
       }
       function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
       function isPhone(v){ return /^[+]?[\d\s()-]{7,18}$/.test(v); }
-
       requiredFields.forEach(function(field){
         const $input = $form.find('[name="'+field+'"]');
         if(!$input.length) return;
@@ -1700,21 +1584,16 @@ section{ position:relative; }
         if(field === 'email' && !isEmail(val)){ fail($input); }
         if(field === 'phone' && !isPhone(val)){ fail($input); }
       });
-
       if(!valid){
         $form.find('.form-group.error').first().find('input, select, textarea').trigger('focus');
         return;
       }
-
       $('#form-success').addClass('show');
       $form[0].reset();
       $('html, body').animate({ scrollTop: $('#form-success').offset().top - 120 }, 400);
     });
-
   });
-
 })();
 </script>
-
 </body>
 </html>

@@ -1,0 +1,62 @@
+/* ============================================================
+   menuRenderer.js — reusable renderer for the food/menu card
+   pattern. Pure function of a menuItem object from JSON; holds
+   no restaurant-specific content itself.
+   ============================================================ */
+
+/**
+ * Render one premium food card from a menuItem JSON object.
+ * @param {Object} item - a menuItems[] entry from restaurant.json
+ * @param {Object} settings - restaurant.settings (currency symbol etc.)
+ */
+function renderFoodCard(item, settings) {
+  const currency = get(settings, "currencySymbol", "₹");
+  const hasDiscount = item.discountPrice != null && item.discountPrice < item.price;
+  const dietClass = item.isVeg ? "veg" : "nonveg";
+  const dietLabel = item.isVeg ? "Vegetarian" : "Non-Vegetarian";
+
+  const badgeRow =
+    '<div class="foodBadgeRow">' +
+      '<span class="dietDot ' + dietClass + '" title="' + dietLabel + '" aria-label="' + dietLabel + '"></span>' +
+      (item.isBestseller ? '<span class="bestsellerTag">Bestseller</span>' : "<span></span>") +
+    "</div>";
+
+  const discountTag = hasDiscount
+    ? '<span class="discountTag">' + Math.round(100 - (item.discountPrice / item.price) * 100) + '% OFF</span>'
+    : "";
+
+  const priceMarkup = hasDiscount
+    ? '<span class="priceNow">' + formatPrice(item.discountPrice, currency) + '</span><span class="priceOld">' + formatPrice(item.price, currency) + '</span>'
+    : '<span class="priceNow">' + formatPrice(item.price, currency) + '</span>';
+
+  return (
+    '<article class="foodCard" data-reveal data-item-id="' + escapeHtml(item.id) + '" data-category="' + escapeHtml(item.categoryId) + '">' +
+      '<div class="foodImageWrap">' +
+        '<img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.name) + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + IMAGE_FALLBACK_PATH + '\';">' +
+        badgeRow +
+        discountTag +
+      "</div>" +
+      '<div class="foodCardBody">' +
+        '<div class="foodCardTop"><h3 class="foodName">' + escapeHtml(item.name) + "</h3></div>" +
+        '<p class="foodDesc">' + escapeHtml(item.description) + "</p>" +
+        '<div class="foodMetaRow">' +
+          '<span class="foodRating"><i class="fa-solid fa-star"></i>' + Number(item.rating).toFixed(1) + "</span>" +
+          (item.spiceLevel > 0 ? spiceLevelMarkup(item.spiceLevel) : "") +
+          (item.preparationTime ? '<span class="prepTime"><i class="fa-regular fa-clock"></i> ' + escapeHtml(item.preparationTime) + "</span>" : "") +
+        "</div>" +
+        '<div class="foodBottomRow">' +
+          '<div class="foodPricing">' + priceMarkup + "</div>" +
+          '<button type="button" class="addBtn" data-add-item="' + escapeHtml(item.id) + '" aria-label="Add ' + escapeHtml(item.name) + ' to order">' +
+            '<i class="fa-solid fa-plus"></i><span>Add</span>' +
+          "</button>" +
+        "</div>" +
+      "</div>" +
+    "</article>"
+  );
+}
+
+/** Render a list of menu items into an HTML string. */
+function renderFoodCards(items, settings) {
+  if (!items || !items.length) return "";
+  return items.map((item) => renderFoodCard(item, settings)).join("");
+}

@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cokernut | Fresh Cracked Tender Coconut Water UK</title>
+  <meta name="description"
+    content="Cokernut serves real tender coconut water, cracked live in front of you. 100% natural, zero additives. Book our live cracking stall for weddings, corporate events and parties across the UK." />
+  <meta name="keywords"
+    content="tender coconut water, fresh coconut UK, cracked coconut, event catering, healthy drinks, Cokernut, coconut water London, wedding coconut bar" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cokernut | 100% Fresh Cracked Tender Coconut Water" />
+  <meta property="og:description" content="Cracked live at your event or found at our UK stalls. Nature sealed it — we just crack it open." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=1200&h=630&fit=crop" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodService",
+    "name": "Cokernut",
+    "url": "https://cokernut.co.uk/",
+    "telephone": "+44 7887 699 208",
+    "description": "Fresh cracked tender coconut water service in the UK. 100% natural refreshment for events, weddings and festivals.",
+    "areaServed": "United Kingdom",
+    "provider": { "@type": "Organization", "name": "Cokernut" }
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%A5%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --husk-dark: #2A1C12;
+      --husk: #4A3220;
+      --husk-mid: #6E4B2E;
+      --husk-light: #A87A4C;
+      --coir: #C9A06A;
+      --cream: #F6EEDC;
+      --cream-soft: #FBF6EA;
+      --water: #E4EFDA;
+      --water-deep: #cfe4bd;
+      --palm: #3C6E40;
+      --palm-deep: #274B2C;
+      --palm-bright: #5E9A55;
+      --gold: #D9A441;
+      --gold-deep: #B9822C;
+      --text: #2A1D12;
+      --text-muted: #7C6B54;
+      --shadow: rgba(42, 28, 18, 0.18);
+      --line: rgba(74, 50, 32, 0.14);
+    }
+
+    * , *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      position: relative;
+    }
+
+    h1, h2, h3, .display { font-family: 'Fraunces', serif; }
+
+    /* GRAIN + FIBER TEXTURE OVERLAY */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: repeating-linear-gradient(118deg, rgba(74,50,32,0.025) 0px, rgba(74,50,32,0.025) 1px, transparent 1px, transparent 5px);
+      pointer-events: none;
+      z-index: 9997;
+    }
+
+    .fiber-bg {
+      background-image:
+        repeating-linear-gradient(100deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 2px, transparent 7px),
+        repeating-linear-gradient(15deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 1px, transparent 2px, transparent 9px);
+    }
+
+    section { padding: 6.5rem 4rem; position: relative; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 4rem;
+      background: rgba(42, 28, 18, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 2px solid rgba(201, 160, 106, 0.22);
+      transition: all 0.3s;
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 800;
+      color: var(--gold); text-decoration: none; letter-spacing: 0.02em;
+    }
+
+    .nav-logo-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, var(--coir), var(--husk-mid) 60%, var(--husk-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+      animation: wobble 4s ease-in-out infinite; border: 2px solid rgba(255,255,255,0.15);
+    }
+
+    @keyframes wobble { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+
+    .nav-logo span { color: var(--cream-soft); font-weight: 400; font-style: italic; }
+
+    .nav-links { display: flex; gap: 0.2rem; list-style: none; align-items: center; }
+
+    .nav-links a {
+      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+      color: rgba(246, 238, 220, 0.75); text-decoration: none; padding: 0.5rem 0.85rem;
+      border-radius: 20px; transition: all 0.25s; font-family: 'Manrope', sans-serif;
+    }
+
+    .nav-links a:hover { background: rgba(201, 160, 106, 0.15); color: var(--gold); }
+
+    .nav-cta-btn {
+      background: var(--gold) !important; color: var(--husk-dark) !important; font-weight: 800 !important;
+      padding: 0.55rem 1.4rem !important; border-radius: 25px !important;
+      box-shadow: 0 4px 15px rgba(217, 164, 65, 0.4) !important;
+    }
+    .nav-cta-btn:hover { background: #eab85f !important; transform: translateY(-1px); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); border-radius: 2px; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh; position: relative; overflow: hidden;
+      display: flex; align-items: center; padding-top: 80px;
+      background:
+        radial-gradient(ellipse at 20% 110%, rgba(94,154,85,0.25), transparent 55%),
+        linear-gradient(160deg, #1C120B 0%, #2A1C12 30%, #4A3220 70%, #6E4B2E 100%);
+    }
+
+    .hero-husk-fibers {
+      position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+      background-image: repeating-linear-gradient(78deg, rgba(201,160,106,0.05) 0px, rgba(201,160,106,0.05) 2px, transparent 2px, transparent 14px);
+    }
+
+    .hero-bubbles { position: absolute; inset: 0; pointer-events: none; }
+    .bubble { position: absolute; border-radius: 50%; background: rgba(94, 154, 85, 0.08); animation: rise linear infinite; }
+    .bubble:nth-child(1) { width: 70px; height: 70px; left: 10%; animation-duration: 9s; }
+    .bubble:nth-child(2) { width: 110px; height: 110px; left: 26%; animation-duration: 12s; animation-delay: 2s; }
+    .bubble:nth-child(3) { width: 55px; height: 55px; left: 52%; animation-duration: 10s; animation-delay: 4s; }
+    .bubble:nth-child(4) { width: 90px; height: 90px; left: 72%; animation-duration: 14s; animation-delay: 1s; }
+    .bubble:nth-child(5) { width: 45px; height: 45px; left: 86%; animation-duration: 8s; animation-delay: 3s; }
+
+    @keyframes rise {
+      0% { transform: translateY(110vh) scale(0); opacity: 0; }
+      10% { opacity: 1; } 90% { opacity: 0.3; }
+      100% { transform: translateY(-20vh) scale(1); opacity: 0; }
+    }
+
+    .hero-deco { position: absolute; opacity: 0.05; font-size: 24rem; line-height: 1; pointer-events: none; }
+    .hero-deco.d1 { top: -70px; right: -90px; transform: rotate(18deg); }
+    .hero-deco.d2 { bottom: -110px; left: -100px; transform: rotate(-16deg); }
+
+    .hero-inner {
+      width: 100%; max-width: 1300px; margin: 0 auto; display: grid;
+      grid-template-columns: 1fr 1fr; align-items: center; padding: 4rem; gap: 3rem;
+      position: relative; z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(94, 154, 85, 0.15); border: 1px solid rgba(94, 154, 85, 0.35);
+      color: var(--palm-bright); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 20px; margin-bottom: 1.6rem;
+    }
+
+    .hero-title {
+      font-family: 'Fraunces', serif; font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 700;
+      line-height: 1.03; color: var(--cream-soft); margin-bottom: 0.6rem;
+    }
+    .hero-title .accent { color: var(--gold); display: block; font-style: italic; font-weight: 500; }
+
+    .hero-subtitle {
+      font-size: 1rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(201, 160, 106, 0.85); margin-bottom: 1.5rem;
+    }
+
+    .hero-desc { font-size: 1rem; line-height: 1.75; color: rgba(246, 238, 220, 0.72); margin-bottom: 2.5rem; max-width: 480px; }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--husk-dark);
+      font-weight: 800; font-size: 0.88rem; padding: 0.9rem 2rem; border-radius: 30px; text-decoration: none;
+      border: none; cursor: pointer; box-shadow: 0 6px 24px rgba(217, 164, 65, 0.4); transition: all 0.3s;
+      font-family: 'Manrope', sans-serif;
+    }
+    .btn-gold:hover { background: #ecc06e; transform: translateY(-3px); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--cream-soft);
+      font-weight: 700; font-size: 0.88rem; padding: 0.9rem 2rem; border-radius: 30px; text-decoration: none;
+      cursor: pointer; border: 2px solid rgba(246, 238, 220, 0.3); transition: all 0.3s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-badges { display: flex; gap: 1.4rem; margin-top: 2.5rem; flex-wrap: wrap; }
+    .badge-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.74rem; font-weight: 700; color: rgba(246, 238, 220, 0.65); }
+
+    .hero-right { display: flex; align-items: center; justify-content: center; position: relative; }
+    .hero-cup-wrap { position: relative; }
+    .floating-leaf { position: absolute; font-size: 2.2rem; animation: floaty 5s ease-in-out infinite; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.35)); }
+    .fl1 { top: 5%; left: -10%; animation-delay: 0s; }
+    .fl2 { bottom: 10%; right: -8%; animation-delay: 1.5s; }
+    .fl3 { top: 45%; right: -20%; animation-delay: 3s; }
+    @keyframes floaty { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-16px) rotate(8deg); } }
+
+    .coconut-orb {
+      width: 300px; height: 300px; border-radius: 50%; position: relative;
+      background: radial-gradient(circle at 32% 28%, #E9DFC8 0%, var(--cream) 30%, var(--coir) 68%, var(--husk-mid) 100%);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.5), inset 0 -20px 40px rgba(42,28,18,0.35), inset 0 15px 25px rgba(255,255,255,0.25);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .coconut-orb::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50%; opacity: 0.5;
+      background-image: repeating-radial-gradient(circle at 40% 35%, rgba(74,50,32,0.12) 0px, rgba(74,50,32,0.12) 2px, transparent 3px, transparent 9px);
+    }
+    .coconut-orb-text { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.1rem; color: var(--husk-dark); text-align: center; letter-spacing: 0.05em; position: relative; z-index: 1; }
+    .coconut-orb-text small { display: block; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--palm-deep); margin-top: 0.3rem; }
+
+    /* MARQUEE */
+    .marquee-wrap { background: var(--husk-dark); overflow: hidden; padding: 1rem 0; border-top: 1px solid rgba(201,160,106,0.15); border-bottom: 1px solid rgba(201,160,106,0.15); }
+    .marquee-track { display: flex; width: max-content; animation: marquee-scroll 32s linear infinite; }
+    @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .marquee-item { font-family: 'Fraunces', serif; font-weight: 600; font-style: italic; font-size: 1.15rem; color: rgba(246,238,220,0.8); white-space: nowrap; padding: 0 1rem; }
+    .marquee-sep { color: var(--gold); padding: 0 0.5rem; }
+
+    /* SECTION HEADERS */
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--palm-deep); margin-bottom: 1rem;
+    }
+    .section-tag::before { content: '🥥'; font-size: 0.9rem; }
+    .section-title { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 700; color: var(--husk-dark); line-height: 1.15; }
+    .section-title .accent { color: var(--gold-deep); font-style: italic; font-weight: 500; }
+    .section-body { font-size: 1rem; color: var(--text-muted); line-height: 1.7; max-width: 640px; }
+
+    .reviews-header, .faq-header, .franchise-inner, .build-header, .how-header, .hire-header { text-align: center; margin: 0 auto 3.5rem; }
+    .reviews-header .section-body, .faq-header .section-body, .franchise-inner .section-body, .build-header .section-body, .how-header .section-body, .hire-header .section-body { margin: 0 auto; }
+
+    /* HOW TO ORDER - STEPS */
+    #how-to-order { background: var(--cream); }
+    .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; max-width: 1300px; margin: 0 auto; position: relative; }
+    .step-card {
+      background: var(--cream-soft); border: 1px solid var(--line); border-radius: 22px; padding: 1.8rem 1.4rem;
+      text-align: center; transition: all 0.3s; position: relative; box-shadow: 0 4px 18px rgba(42,28,18,0.05);
+    }
+    .step-card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px var(--shadow); border-color: var(--gold); }
+    .step-num {
+      width: 3.2rem; height: 3.2rem; border-radius: 50%; background: var(--husk-dark); color: var(--gold);
+      font-family: 'Fraunces', serif; font-weight: 800; font-size: 1.2rem; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 1rem;
+    }
+    .step-emoji { font-size: 1.6rem; margin-bottom: 0.6rem; }
+    .step-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--husk-dark); }
+    .step-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
+    .shakking-leaf { display: inline-block; animation: shake 2.6s ease-in-out infinite; }
+    @keyframes shake { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-10deg); } 75% { transform: rotate(10deg); } }
+
+    /* REVIEWS */
+    #reviews { background: var(--husk-dark); color: var(--cream-soft); }
+    #reviews .section-title { color: var(--cream-soft); }
+    #reviews .section-tag { color: var(--palm-bright); }
+    #reviews .section-tag::before { content: '⭐'; }
+    #reviews .section-body { color: rgba(246,238,220,0.65); }
+    .reviews-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(201,160,106,0.15); border-radius: 28px; padding: 2.5rem 3rem; }
+    .reviews-track { flex: 1; position: relative; height: 220px; }
+    .review-card {
+      position: absolute; inset: 0; display: flex; gap: 1.5rem; align-items: center;
+      opacity: 0; transform: translateY(15px); transition: all 0.5s ease; pointer-events: none;
+    }
+    .review-card.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .review-avatar { width: 130px; height: 130px; border-radius: 24px; overflow: hidden; flex-shrink: 0; border: 3px solid var(--gold); }
+    .review-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .review-rating { margin-bottom: 0.6rem; font-size: 0.9rem; }
+    .review-text { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; line-height: 1.55; color: var(--cream-soft); margin-bottom: 1rem; }
+    .review-name { font-weight: 800; color: var(--gold); }
+    .review-subtitle { font-size: 0.75rem; color: rgba(246,238,220,0.5); }
+    .reviews-nav-vertical { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; border-left: 1px solid rgba(201,160,106,0.2); padding-left: 1.5rem; }
+    .nav-dots { display: flex; flex-direction: column; gap: 0.5rem; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(246,238,220,0.25); cursor: pointer; transition: all 0.3s; }
+    .dot.active { background: var(--gold); height: 24px; }
+    .nav-arrows { display: flex; flex-direction: column; gap: 0.5rem; }
+    .v-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(201,160,106,0.3); background: transparent; color: var(--gold); cursor: pointer; font-size: 1rem; transition: all 0.25s; }
+    .v-btn:hover { background: var(--gold); color: var(--husk-dark); }
+
+    /* BUILD YOUR COCONUT */
+    #build { background: var(--cream); }
+    .build-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; max-width: 1200px; margin: 0 auto; }
+    .option-card { background: var(--cream-soft); border: 1px solid var(--line); border-radius: 24px; padding: 2rem; box-shadow: 0 4px 18px rgba(42,28,18,0.05); }
+    .option-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.4rem; }
+    .option-num { width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--water); color: var(--palm-deep); font-family: 'Fraunces', serif; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .option-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.35rem; color: var(--husk-dark); }
+    .option-sub { font-size: 0.78rem; color: var(--text-muted); }
+    .price-rows { display: flex; flex-direction: column; gap: 0.6rem; }
+    .price-row { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.1rem; border-radius: 14px; background: var(--cream); border: 1px solid transparent; transition: all 0.2s; }
+    .price-row.featured { background: var(--water); border-color: rgba(60,110,64,0.25); }
+    .row-left { display: flex; align-items: center; gap: 0.8rem; }
+    .row-icon { font-size: 1.3rem; }
+    .row-name { font-weight: 700; font-size: 0.9rem; color: var(--husk-dark); }
+    .row-desc { font-size: 0.72rem; color: var(--text-muted); }
+    .row-price { font-family: 'Fraunces', serif; font-weight: 700; color: var(--gold-deep); white-space: nowrap; }
+    .row-right { display: flex; align-items: center; gap: 0.6rem; }
+    .row-badge { background: var(--palm); color: var(--cream-soft); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.06em; padding: 0.25rem 0.6rem; border-radius: 20px; text-transform: uppercase; }
+    .flavour-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
+    .flavour-chip { background: var(--cream); border: 1px solid var(--line); border-radius: 18px; padding: 1.2rem 0.8rem; text-align: center; transition: all 0.25s; }
+    .flavour-chip:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .chip-emoji { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+    .chip-name { font-weight: 800; font-size: 0.85rem; margin-bottom: 0.2rem; color: var(--husk-dark); }
+    .chip-price { font-size: 0.68rem; color: var(--text-muted); }
+    .chip-price.free { color: var(--palm-deep); font-weight: 700; }
+
+    /* BENEFITS */
+    #benefits { background: var(--husk-dark); color: var(--cream-soft); }
+    .benefits-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; max-width: 1300px; margin: 0 auto; align-items: center; }
+    #benefits .section-tag { color: var(--gold); }
+    #benefits .section-tag::before { content: '💧'; }
+    #benefits .section-title { color: var(--cream-soft); }
+    #benefits .section-body { color: rgba(246,238,220,0.65); }
+    .benefits-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.4rem; }
+    .benefit-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .benefit-icon { width: 3rem; height: 3rem; border-radius: 14px; background: rgba(94,154,85,0.15); border: 1px solid rgba(94,154,85,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .b-title { font-weight: 800; margin-bottom: 0.25rem; color: var(--cream-soft); }
+    .b-desc { font-size: 0.85rem; color: rgba(246,238,220,0.55); line-height: 1.6; }
+    .promise-card {
+      background: linear-gradient(160deg, rgba(94,154,85,0.12), rgba(255,255,255,0.02));
+      border: 1px solid rgba(201,160,106,0.25); border-radius: 28px; padding: 3rem 2.5rem; text-align: center; width: 100%;
+    }
+    .promise-icon { font-size: 2.5rem; }
+    .promise-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.6rem; margin: 0.8rem 0 0.3rem; color: var(--cream-soft); }
+    .promise-sub { color: var(--gold); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+    .promise-tags { display: flex; flex-direction: column; gap: 0.6rem; }
+    .promise-tag { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 0.6rem; border-radius: 12px; font-size: 0.82rem; color: rgba(246,238,220,0.8); }
+
+    /* STORY */
+    #story { background: var(--cream); }
+    .story-inner { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem; max-width: 1300px; margin: 0 auto; align-items: center; }
+    .story-visual { position: relative; height: 380px; }
+    .story-main-card {
+      position: absolute; top: 0; left: 0; width: 78%; height: 82%; border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+      background: radial-gradient(circle at 32% 28%, #EFE6D0, var(--coir) 65%, var(--husk-mid));
+      box-shadow: 0 25px 50px var(--shadow); display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .story-main-card svg { position: relative; z-index: 1; }
+    .story-secondary-card {
+      position: absolute; bottom: 0; right: 0; width: 62%; background: var(--husk-dark); color: var(--cream-soft);
+      border-radius: 20px; padding: 1.6rem; box-shadow: 0 20px 40px var(--shadow);
+    }
+    .story-quote { font-family: 'Fraunces', serif; font-style: italic; font-size: 0.95rem; line-height: 1.6; }
+    .story-year-badge {
+      position: absolute; top: 10%; right: 5%; width: 100px; height: 100px; border-radius: 50%;
+      background: var(--gold); color: var(--husk-dark); display: flex; align-items: center; justify-content: center;
+      text-align: center; font-family: 'Fraunces', serif; font-weight: 800; font-size: 0.85rem; line-height: 1.2;
+      box-shadow: 0 15px 30px rgba(217,164,65,0.4); animation: wobble 5s ease-in-out infinite;
+    }
+    .story-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+    .story-fact { background: var(--cream-soft); border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem; }
+    .fact-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .fact-title { font-weight: 800; font-size: 0.88rem; margin-bottom: 0.2rem; color: var(--husk-dark); }
+    .fact-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* HIRE */
+    #hire { background: var(--water); }
+    .hire-container { max-width: 1300px; margin: 0 auto; }
+    #hire .section-tag { color: var(--palm-deep); }
+    #hire .section-tag::before { content: '🎪'; }
+    .hire-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; margin-bottom: 2.5rem; }
+    .hire-card { background: var(--cream-soft); border: 1px solid var(--line); border-radius: 24px; padding: 2rem; transition: all 0.3s; }
+    .hire-card:hover { transform: translateY(-6px); box-shadow: 0 16px 34px var(--shadow); }
+    .h-card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .hire-card h3 { font-family: 'Fraunces', serif; font-weight: 700; margin-bottom: 0.6rem; color: var(--husk-dark); }
+    .hire-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
+    .h-card-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .h-card-list li { font-size: 0.78rem; color: var(--palm-deep); font-weight: 700; padding-left: 1.2rem; position: relative; }
+    .h-card-list li::before { content: '🥥'; position: absolute; left: 0; font-size: 0.7rem; }
+    .hire-features-bar { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem; background: var(--husk-dark); border-radius: 24px; padding: 2rem; margin-bottom: 2.5rem; }
+    .h-feature { display: flex; align-items: center; gap: 0.7rem; }
+    .hf-icon { font-size: 1.5rem; }
+    .hf-text { font-size: 0.8rem; font-weight: 700; color: var(--cream-soft); }
+    .hire-cta { text-align: center; }
+
+    /* FRANCHISE */
+    #franchise { padding: 3rem 0; background: var(--gold); }
+    .franchise-inner { padding: 0 4rem; }
+    #franchise .section-tag { justify-content: center; color: var(--husk-dark); }
+    #franchise .section-tag::before { content: '🌴'; }
+    .juice-showcase { position: relative; height: 460px; margin: 2rem 0; }
+    .showcase-container { position: relative; width: 100%; height: 100%; perspective: 1200px; transform-style: preserve-3d; }
+    .showcase-card {
+      position: absolute; top: 50%; left: 50%; width: 300px; height: 420px; border-radius: 24px; overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3); transition: all 0.5s cubic-bezier(.2,.9,.3,1);
+      transform: translate(-50%, -50%) scale(0.7); opacity: 0;
+    }
+    .showcase-card img { width: 100%; height: 100%; object-fit: cover; }
+    .showcase-card.active { transform: translate(-50%, -50%) scale(1); opacity: 1; z-index: 5; }
+    .showcase-card.prev { transform: translate(calc(-50% - 220px), -50%) rotateY(30deg) scale(0.85); opacity: 0.5; z-index: 3; }
+    .showcase-card.next { transform: translate(calc(-50% + 220px), -50%) rotateY(-30deg) scale(0.85); opacity: 0.5; z-index: 3; }
+    .showcase-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: var(--cream-soft); transform: translateY(20px); opacity: 0; transition: all 0.4s; }
+    .showcase-card.active .showcase-info { transform: translateY(0); opacity: 1; }
+    .showcase-info h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); }
+    .showcase-info p { font-size: 0.88rem; opacity: 0.9; }
+    .showcase-controls { position: absolute; top: 50%; left: 50%; width: 100%; max-width: 1100px; transform: translate(-50%,-50%); display: flex; justify-content: space-between; padding: 0 1rem; pointer-events: none; z-index: 20; }
+    .s-btn { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--husk-dark); background: rgba(255,255,255,0.92); color: var(--husk-dark); cursor: pointer; font-size: 1.25rem; transition: all 0.3s; display: flex; align-items: center; justify-content: center; pointer-events: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+    .s-btn:hover { background: var(--husk-dark); color: var(--gold); }
+    .franchise-marquee { margin-top: 1.5rem; padding: 0.6rem 0; background: rgba(42,28,18,0.06); border-top: 1px solid rgba(42,28,18,0.12); border-bottom: 1px solid rgba(42,28,18,0.12); overflow: hidden; }
+    .franchise-track { display: flex; width: max-content; animation: scroll-franchise 40s linear infinite; }
+    @keyframes scroll-franchise { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .f-item { padding: 0 3rem; display: flex; align-items: center; gap: 0.8rem; white-space: nowrap; }
+    .f-icon { font-size: 1.4rem; }
+    .f-name { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: var(--husk-dark); opacity: 0.85; }
+    .franchise-contact { text-align: center; margin-top: 1.6rem; }
+    .contact-pill { display: inline-block; background: var(--husk-dark); color: var(--gold); font-weight: 800; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; }
+
+    /* FAQ */
+    #faq { background: var(--cream); }
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.9rem; }
+    .faq-item { background: var(--cream-soft); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 1.6rem; background: none; border: none; cursor: pointer; font-family: 'Fraunces', serif; font-weight: 700; font-size: 1rem; color: var(--husk-dark); text-align: left; }
+    .faq-icon { width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--water); color: var(--palm-deep); display: flex; align-items: center; justify-content: center; font-weight: 800; transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); background: var(--gold); color: var(--husk-dark); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.active .faq-answer { max-height: 220px; }
+    .faq-answer p { padding: 0 1.6rem 1.4rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+    iframe { display: block; filter: sepia(0.15) saturate(0.9); }
+
+    /* CONTACT */
+    #contact { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: var(--cream); align-items: start; max-width: 1300px; margin: 0 auto; }
+    .contact-detail { display: flex; gap: 1rem; align-items: center; background: var(--cream-soft); border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem; margin-bottom: 1rem; }
+    .cd-icon { width: 3rem; height: 3rem; border-radius: 12px; background: var(--water); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .cd-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--palm-deep); }
+    .cd-val { font-weight: 700; color: var(--husk-dark); }
+    .contact-form { background: var(--husk-dark); border-radius: 28px; padding: 2.5rem; }
+    .form-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.4rem; color: var(--cream-soft); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-label { display: block; font-size: 0.75rem; font-weight: 700; color: rgba(246,238,220,0.6); margin-bottom: 0.4rem; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(201,160,106,0.25); border-radius: 12px;
+      padding: 0.8rem 1rem; color: var(--cream-soft); font-family: 'Manrope', sans-serif; font-size: 0.9rem;
+    }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(246,238,220,0.35); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); }
+    .form-submit {
+      width: 100%; background: var(--gold); color: var(--husk-dark); font-weight: 800; border: none; padding: 1rem;
+      border-radius: 30px; cursor: pointer; font-size: 0.9rem; transition: all 0.3s; margin-top: 0.5rem;
+      font-family: 'Manrope', sans-serif;
+    }
+    .form-submit:hover { background: #ecc06e; }
+    .form-submit.is-success { background: var(--palm-bright) !important; color: var(--cream-soft) !important; }
+    .form-submit:disabled { cursor: not-allowed; opacity: 0.85; }
+    .form-status { display: none; margin-top: 1rem; padding: 0.8rem 1rem; border-radius: 10px; font-size: 0.82rem; font-weight: 700; background: rgba(255,255,255,0.06); }
+    .form-status.success { color: var(--palm-bright); }
+    .form-status.error { color: #e08a7d; }
+
+    /* FOOTER */
+    footer { background: var(--husk-dark); padding: 4rem 4rem 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(201,160,106,0.14); margin-bottom: 2rem; }
+    .footer-brand .f-logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 800; color: var(--gold); margin-bottom: 0.8rem; }
+    .footer-brand .f-logo span { color: var(--cream-soft); font-style: italic; font-weight: 400; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; color: rgba(246,238,220,0.55); max-width: 280px; margin-bottom: 1.5rem; }
+    .footer-social { display: flex; gap: 0.7rem; }
+    .f-social-btn { width: 38px; height: 38px; border-radius: 10px; background: rgba(201,160,106,0.1); border: 1px solid rgba(201,160,106,0.18); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; }
+    .f-social-btn:hover { background: rgba(201,160,106,0.22); border-color: var(--gold); }
+    .footer-col h4 { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul a { font-size: 0.83rem; color: rgba(246,238,220,0.5); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; align-items: center; justify-content: center; font-size: 0.72rem; color: rgba(246,238,220,0.3); }
+
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-left { opacity: 0; transform: translateX(-28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-left.visible { opacity: 1; transform: translateX(0); }
+    .fade-right { opacity: 0; transform: translateX(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25d366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(37,211,102,0.4); z-index: 9999; transition: all 0.4s cubic-bezier(.175,.885,.32,1.275); text-decoration: none; }
+    .whatsapp-float svg { width: 32px; height: 32px; }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 15px 40px rgba(37,211,102,0.6); }
+    .wa-tooltip { position: absolute; right: 90px; background: rgba(255,255,255,0.95); color: var(--husk-dark); padding: 0.7rem 1.3rem; border-radius: 50px; font-size: 0.92rem; font-weight: 700; white-space: nowrap; box-shadow: 0 10px 30px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transition: all 0.4s cubic-bezier(.175,.885,.32,1.275); pointer-events: none; }
+    .whatsapp-float:hover .wa-tooltip { opacity: 1; visibility: visible; right: 85px; }
+
+    /* MOBILE */
+    @media (max-width: 960px) {
+      nav { padding: 0.9rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+        padding: 1rem 1.25rem 1.25rem; background: rgba(28,18,11,0.98); gap: 0.5rem; border-top: 1px solid rgba(201,160,106,0.18);
+      }
+      .nav-links.open li { list-style: none; }
+      .nav-links.open a { display: block; text-align: center; padding: 0.85rem 1rem; }
+      section, #contact { padding: 4rem 1.25rem; }
+      .hero-inner { grid-template-columns: 1fr; padding: 3rem 1.5rem; text-align: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .hero-btns { justify-content: center; }
+      .hero-badges { justify-content: center; }
+      .hero-right { display: none; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .build-grid { grid-template-columns: 1fr; }
+      .flavour-grid { grid-template-columns: 1fr 1fr; }
+      .benefits-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .story-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .story-visual { height: 300px; }
+      .hire-grid { grid-template-columns: 1fr; }
+      .hire-features-bar { flex-direction: column; align-items: flex-start; }
+      #contact { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .reviews-container { flex-direction: column; padding: 2rem 1.5rem; }
+      .reviews-track { height: 320px; }
+      .review-card { flex-direction: column; text-align: center; }
+      .reviews-nav-vertical { flex-direction: row; border-left: none; border-top: 1px solid rgba(201,160,106,0.2); padding: 1.2rem 0 0; justify-content: center; }
+      .nav-dots, .nav-arrows { flex-direction: row; }
+      .showcase-card { width: 240px; height: 340px; }
+      .showcase-card.prev { transform: translate(calc(-50% - 130px), -50%) rotateY(30deg) scale(0.8); }
+      .showcase-card.next { transform: translate(calc(-50% + 130px), -50%) rotateY(-30deg) scale(0.8); }
+      .juice-showcase { height: 400px; }
+      .franchise-inner { padding: 0 1.25rem; }
+      .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
+      .wa-tooltip { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .flavour-grid { grid-template-columns: 1fr 1fr; }
+      .story-facts { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: clamp(2.1rem, 12vw, 3rem); }
+      .price-row { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">🥥</div>
+      COKER<span>nut</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#how-to-order">How to Order</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#build">Build Yours</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#hire">Events</a></li>
+      <li><a href="#franchise">Franchise</a></li>
+      <li><a href="#contact" class="nav-cta-btn">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="fade-up">
+    <div class="hero-husk-fibers"></div>
+    <div class="hero-bubbles">
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+      <div class="bubble"></div><div class="bubble"></div>
+    </div>
+    <div class="hero-deco d1">🥥</div>
+    <div class="hero-deco d2">🌴</div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-tag">100% Farm-Fresh · Cracked Live · Zero Additives</div>
+        <h1 class="hero-title">Cracked Fresh.<span class="accent">Poured Cool.</span></h1>
+        <div class="hero-subtitle">Cokernut</div>
+        <p class="hero-desc">Real tender coconut water, cracked open right in front of you and served with a scoop of
+          fresh malai. No syrups, no concentrate — just what nature already sealed inside the shell.</p>
+        <div class="hero-btns">
+          <a href="#build" class="btn-gold">🥥 Build Your Coconut</a>
+          <a href="#hire" class="btn-outline">Hire for Events →</a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge-item fade-left" style="transition-delay:0s;">No Added Sugar</span>
+          <span class="badge-item fade-left" style="transition-delay:0.10s;">No Concentrate</span>
+          <span class="badge-item fade-left" style="transition-delay:0.20s;">Cracked Live</span>
+          <span class="badge-item fade-left" style="transition-delay:0.30s;">Served Ice-Cold</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-cup-wrap">
+          <div class="coconut-orb">
+            <div class="coconut-orb-text">COKERNUT<small>TENDER &amp; TRUE</small></div>
+          </div>
+          <div class="floating-leaf fl1">🌴</div>
+          <div class="floating-leaf fl2">🍃</div>
+          <div class="floating-leaf fl3">🥥</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Cracked to Order</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Zero Additives</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Nature's Electrolyte Drink</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Served Ice-Cold</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Build Your Coconut</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Events &amp; Hire</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Farm-Fresh Daily</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Cracked to Order</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Zero Additives</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Nature's Electrolyte Drink</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Served Ice-Cold</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Build Your Coconut</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Events &amp; Hire</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Farm-Fresh Daily</span><span class="marquee-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- HOW TO ORDER -->
+  <section id="how-to-order">
+    <div class="how-header fade-up">
+      <div class="section-tag">Simple &amp; Easy</div>
+      <h2 class="section-title">How to <span class="accent">Order</span></h2>
+      <p class="section-body">Build your perfect tender coconut in just 5 steps. Cracked live, just for you.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card fade-up">
+        <div class="step-num">1</div>
+        <div class="step-emoji">📏</div>
+        <div class="step-title">Select Size</div>
+        <div class="step-desc">Choose from Petite 300ml right up to Party Cooler 2L — perfect for every occasion</div>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">2</div>
+        <div class="step-emoji">🥥</div>
+        <div class="step-title">Select Coconut</div>
+        <div class="step-desc">Tender Green (light, sweet water) or King Coconut, richer in malai (+£1.00)</div>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">3</div>
+        <div class="step-emoji">🥤</div>
+        <div class="step-title">Select Style</div>
+        <div class="step-desc">Straight From the Shell with a straw, or Strained &amp; Chilled in a cup (+£0.50)</div>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">4</div>
+        <div class="step-emoji">🌿</div>
+        <div class="step-title">Select Add-in</div>
+        <div class="step-desc">Pure Water (free), a Malai Scoop, Jaggery Kick or a Tropical Twist (+£0.50–£1.00)</div>
+      </div>
+      <div class="step-card fade-up" style="border-color:var(--gold);">
+        <div class="step-num" style="background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:var(--husk-dark)">5</div>
+        <div class="step-emoji shakking-leaf">🎉</div>
+        <div class="step-title">Enjoy!</div>
+        <div class="step-desc">Served ice-cold, shell or cup, sip pure hydration straight from nature</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="reviews-header fade-up">
+      <div class="section-tag">Happy Customers</div>
+      <h2 class="section-title">What Our <span class="accent">Fans Say</span></h2>
+      <p class="section-body">Real reviews from our tender coconut lovers. Join the fresh water community!</p>
+    </div>
+    <div class="reviews-container">
+      <div class="reviews-track" id="reviews-track">
+        <div class="review-card fade-up active">
+          <div class="review-avatar"><img src="https://i.pravatar.cc/300?u=11" alt="User"></div>
+          <div class="review-content">
+            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"The freshest coconut water I've had in the UK. Watching it get cracked open right
+              there was half the fun — and the malai scoop is unreal."</p>
+            <div class="review-meta">
+              <div class="review-name">Priya Nair</div>
+              <div class="review-subtitle">Verified Customer</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-up">
+          <div class="review-avatar"><img src="https://i.pravatar.cc/300?u=12" alt="User"></div>
+          <div class="review-content">
+            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Tastes exactly like the coconuts back home. No syrup, no fuss, just cracked and
+              poured. So naturally refreshing after a run."</p>
+            <div class="review-meta">
+              <div class="review-name">Daniel Osei</div>
+              <div class="review-subtitle">Verified Customer</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-up">
+          <div class="review-avatar"><img src="https://i.pravatar.cc/300?u=13" alt="User"></div>
+          <div class="review-content">
+            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"We hired Cokernut for our wedding and guests could not stop talking about the
+              live cracking stall. Unique, healthy and genuinely delicious."</p>
+            <div class="review-meta">
+              <div class="review-name">Emma Wright</div>
+              <div class="review-subtitle">Event Client</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-nav-vertical">
+        <div class="nav-dots" id="nav-dots">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <div class="nav-arrows">
+          <button class="v-btn" id="rev-prev">↑</button>
+          <button class="v-btn" id="rev-next">↓</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD YOUR COCONUT -->
+  <section id="build">
+    <div class="build-header fade-up">
+      <div class="section-tag">Full Menu</div>
+      <h2 class="section-title">Build Your <span class="accent">Coconut</span></h2>
+      <p class="section-body">Mix and match size, coconut type, style and add-ins. All prices in GBP.</p>
+    </div>
+    <div class="build-grid">
+      <!-- SIZES -->
+      <div class="option-card fade-left">
+        <div class="option-header">
+          <div class="option-num">1</div>
+          <div>
+            <div class="option-title">Size</div>
+            <div class="option-sub">Pick your pour</div>
+          </div>
+        </div>
+        <div class="price-rows">
+          <div class="price-row">
+            <div class="row-left"><div class="row-icon">🥥</div>
+              <div><div class="row-name">Petite (300ml)</div><div class="row-desc">A light, quick refresher — great for first-timers</div></div>
+            </div>
+            <div class="row-price">£4.00</div>
+          </div>
+          <div class="price-row featured">
+            <div class="row-left"><div class="row-icon">🥥</div>
+              <div><div class="row-name">Regular (500ml)</div><div class="row-desc">Our most-loved size — a whole tender coconut</div></div>
+            </div>
+            <div class="row-right"><span class="row-badge">Popular</span><div class="row-price">£5.50</div></div>
+          </div>
+          <div class="price-row">
+            <div class="row-left"><div class="row-icon">🥤</div>
+              <div><div class="row-name">King (750ml)</div><div class="row-desc">A bigger coconut with extra malai</div></div>
+            </div>
+            <div class="row-price">£7.50</div>
+          </div>
+          <div class="price-row">
+            <div class="row-left"><div class="row-icon">🫙</div>
+              <div><div class="row-name">Family Jug (1.2L)</div><div class="row-desc">Strained from two coconuts — great for sharing</div></div>
+            </div>
+            <div class="row-price">£11.00</div>
+          </div>
+          <div class="price-row featured">
+            <div class="row-left"><div class="row-icon">🍾</div>
+              <div><div class="row-name">Party Cooler (2L)</div><div class="row-desc">Ideal for group gatherings</div></div>
+            </div>
+            <div class="row-right"><span class="row-badge">Best Value</span><div class="row-price">£17.00</div></div>
+          </div>
+        </div>
+      </div>
+      <!-- COCONUT TYPE + STYLE -->
+      <div class="option-card fade-right">
+        <div class="option-header">
+          <div class="option-num">2</div>
+          <div><div class="option-title">Coconut Type</div><div class="option-sub">Choose your nut</div></div>
+        </div>
+        <div class="price-rows" style="margin-bottom:2rem;">
+          <div class="price-row featured">
+            <div class="row-left"><div class="row-icon">🥥</div>
+              <div><div class="row-name">Tender Green</div><div class="row-desc">Light, sweet, mostly pure water</div></div>
+            </div><span class="row-badge">Included</span>
+          </div>
+          <div class="price-row">
+            <div class="row-left"><div class="row-icon">🌰</div>
+              <div><div class="row-name">King Coconut</div><div class="row-desc">Richer, creamier — thicker malai flesh</div></div>
+            </div>
+            <div class="row-price">+£1.00</div>
+          </div>
+        </div>
+        <div class="option-header" style="margin-top:0.5rem;">
+          <div class="option-num">3</div>
+          <div><div class="option-title">Style</div><div class="option-sub">How it's served</div></div>
+        </div>
+        <div class="price-rows">
+          <div class="price-row featured">
+            <div class="row-left"><div class="row-icon">🪵</div>
+              <div><div class="row-name">Straight From the Shell</div><div class="row-desc">Husk intact, straw &amp; spoon included</div></div>
+            </div><span class="row-badge">Included</span>
+          </div>
+          <div class="price-row">
+            <div class="row-left"><div class="row-icon">✨</div>
+              <div><div class="row-name">Strained &amp; Chilled</div><div class="row-desc">Poured fresh over ice into a cup — no mess</div></div>
+            </div>
+            <div class="row-price">+£0.50</div>
+          </div>
+        </div>
+      </div>
+      <!-- ADD-INS -->
+      <div class="option-card fade-up" style="grid-column:1/-1;">
+        <div class="option-header">
+          <div class="option-num">4</div>
+          <div><div class="option-title">Add-in</div><div class="option-sub">Pick your finish</div></div>
+        </div>
+        <div class="flavour-grid">
+          <div class="flavour-chip"><span class="chip-emoji shakking-leaf">💧</span><div class="chip-name">Pure Water</div><div class="chip-price free">Included — Clean &amp; natural</div></div>
+          <div class="flavour-chip"><span class="chip-emoji shakking-leaf">🥄</span><div class="chip-name">Malai Scoop</div><div class="chip-price">+£0.50 · Fresh coconut flesh</div></div>
+          <div class="flavour-chip"><span class="chip-emoji shakking-leaf">🍯</span><div class="chip-name">Jaggery Kick</div><div class="chip-price">+£0.50 · Warm natural sweetness</div></div>
+          <div class="flavour-chip"><span class="chip-emoji shakking-leaf">🌱</span><div class="chip-name">Mint-Lime</div><div class="chip-price">+£0.50 · Zesty &amp; cooling</div></div>
+          <div class="flavour-chip"><span class="chip-emoji shakking-leaf">🍍</span><div class="chip-name">Pineapple Twist</div><div class="chip-price">+£1.00 · Tropical Blend</div></div>
+          <div class="flavour-chip"><span class="chip-emoji shakking-leaf">🍈</span><div class="chip-name">Chikoo (Sapota)</div><div class="chip-price">+£1.00 · Tropical Blend</div></div>
+          <div class="flavour-chip"><span class="chip-emoji shakking-leaf">🌸</span><div class="chip-name">Rose &amp; Cardamom</div><div class="chip-price">+£1.00 · Fragrant Blend</div></div>
+          <div class="flavour-chip"><span class="chip-emoji shakking-leaf">🌶️</span><div class="chip-name">Chilli-Lime Rim</div><div class="chip-price">+£0.50 · Bold &amp; tangy</div></div>
+        </div>
+        <p style="margin-top:1.2rem;font-size:0.72rem;color:var(--text-muted);font-style:italic;">* As coconuts are a
+          natural product, slight variation in water sweetness and flesh thickness may occur nut to nut.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits">
+    <div class="benefits-inner">
+      <div class="fade-left">
+        <div class="section-tag">Good for You</div>
+        <h2 class="section-title">Why Tender Coconut is <span class="accent" style="color:var(--gold);">Loved Worldwide</span></h2>
+        <p class="section-body" style="color:rgba(246,238,220,0.65);">Tender coconut water isn't just refreshing — it's
+          nature's own isotonic drink. Enjoyed across tropical cultures for thousands of years.</p>
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon">⚡</div>
+            <div><div class="b-title">Natural Electrolyte Boost</div><div class="b-desc">Rich in potassium and natural salts — nature's own rehydration drink.</div></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">💧</div>
+            <div><div class="b-title">Deep Hydration</div><div class="b-desc">Low in sugar and fat, perfect for cooling down and rehydrating naturally.</div></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🫀</div>
+            <div><div class="b-title">Supports Heart Health</div><div class="b-desc">Potassium content helps support healthy blood pressure and circulation.</div></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🌿</div>
+            <div><div class="b-title">Rich in Natural Minerals</div><div class="b-desc">Contains magnesium, calcium and antioxidants your body loves.</div></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🛡️</div>
+            <div><div class="b-title">Boosts Immunity &amp; Digestion</div><div class="b-desc">Traditionally used to aid digestion and support overall wellness.</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;" class="fade-right">
+        <div class="promise-card">
+          <span class="promise-icon">🥥</span>
+          <div class="promise-title">Our Promise</div>
+          <div class="promise-sub">Cracked Fresh. Poured Cool.</div>
+          <div class="promise-tags">
+            <div class="promise-tag">No added sugar</div>
+            <div class="promise-tag">No concentrate or syrups</div>
+            <div class="promise-tag">Pure, natural hydration</div>
+            <div class="promise-tag">Cracked live at every order</div>
+            <div class="promise-tag">Served ice-cold, always fresh</div>
+          </div>
+          <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(217,164,65,0.15);">
+            <p style="font-size:0.75rem;color:rgba(246,238,220,0.45);font-style:italic;line-height:1.6;">Known in
+              Sanskrit as Kalpavriksha, "the tree that gives everything" — every part of the coconut is put to use.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="story-inner">
+      <div class="story-visual fade-left">
+        <div class="story-main-card">
+          <svg width="150" height="170" viewBox="0 0 150 170" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="75" cy="95" rx="55" ry="60" fill="rgba(74,50,32,0.18)" />
+            <ellipse cx="75" cy="95" rx="40" ry="45" fill="rgba(255,255,255,0.25)" />
+            <path d="M40 40 Q75 10 110 42" stroke="rgba(60,110,64,0.5)" stroke-width="5" fill="none" stroke-linecap="round" />
+            <path d="M55 25 Q75 2 100 24" stroke="rgba(60,110,64,0.4)" stroke-width="4" fill="none" stroke-linecap="round" />
+            <text x="75" y="160" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="9" fill="rgba(42,28,18,0.45)" letter-spacing="2">COKERNUT</text>
+          </svg>
+        </div>
+        <div class="story-secondary-card">
+          <p class="story-quote">"The coconut — nature's most generous gift. Water, flesh, oil and fibre, all from one nut."</p>
+        </div>
+        <div class="story-year-badge"><span>4,000+<br />Years<br />of Coconut</span></div>
+      </div>
+      <div class="fade-right">
+        <div class="section-tag">The Story of the Coconut</div>
+        <h2 class="section-title">Beyond the <span class="accent">Water</span></h2>
+        <p class="section-body" style="margin-top:1rem;">Known as Kalpavriksha — "the tree that gives everything" — the
+          coconut palm has been cherished for over 4,000 years across South and Southeast Asia and now grows across
+          the tropics. Every part of the fruit finds a use.</p>
+        <p class="section-body" style="margin-top:1rem;font-size:0.9rem;">Beyond the water, coconuts give us coir rope
+          from the husk, bowls and charcoal from the shell, and virgin oil from the flesh. At Cokernut, even our
+          leftover husks are biodegradable — a truly sustainable crop.</p>
+        <div class="story-facts">
+          <div class="story-fact"><div class="fact-icon">🪢</div><div class="fact-title">Coir Rope</div><div class="fact-desc">Husk fibre spun into rope &amp; matting</div></div>
+          <div class="story-fact"><div class="fact-icon">🫙</div><div class="fact-title">Shell Bowls</div><div class="fact-desc">Hard shell reused as bowls &amp; charcoal</div></div>
+          <div class="story-fact"><div class="fact-icon">🧴</div><div class="fact-title">Virgin Oil</div><div class="fact-desc">Cold-pressed from mature coconut flesh</div></div>
+          <div class="story-fact"><div class="fact-icon">🌱</div><div class="fact-title">Eco Husk</div><div class="fact-desc">Biodegradable — fully sustainable crop</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIRE -->
+  <section id="hire">
+    <div class="hire-container">
+      <div class="hire-header fade-up">
+        <div class="section-tag">Live Cracking Stall Hire</div>
+        <h2 class="section-title">Bring Us to <span class="accent">Your Event</span></h2>
+        <p class="section-body">Elevate your celebration with our premium live-cracked tender coconut experience. A
+          unique, healthy and refreshing stall that your guests will love.</p>
+      </div>
+      <div class="hire-grid">
+        <div class="hire-card fade-up">
+          <div class="h-card-icon">💒</div>
+          <h3>Weddings</h3>
+          <p>Add a traditional and healthy touch to your big day. We crack fresh coconuts live during your reception or ceremony.</p>
+          <ul class="h-card-list"><li>Reception Drinks</li><li>Mehndi &amp; Sangeet</li><li>Post-Ceremony Refreshment</li></ul>
+        </div>
+        <div class="hire-card fade-up">
+          <div class="h-card-icon">🏢</div>
+          <h3>Corporate Events</h3>
+          <p>Perfect for office wellness days, product launches and conferences. A healthy alternative to sugary sodas.</p>
+          <ul class="h-card-list"><li>Office Wellness Days</li><li>Product Launches</li><li>Exhibitions &amp; Fairs</li></ul>
+        </div>
+        <div class="hire-card fade-up">
+          <div class="h-card-icon">🎉</div>
+          <h3>Private &amp; Beach Parties</h3>
+          <p>From birthdays to garden parties, we bring the tropical vibe. Freshly cracked coconuts for guests of all ages.</p>
+          <ul class="h-card-list"><li>Birthday Parties</li><li>Community Festivals</li><li>Garden &amp; BBQ Events</li></ul>
+        </div>
+      </div>
+      <div class="hire-features-bar fade-up">
+        <div class="h-feature"><span class="hf-icon">🥥</span><div class="hf-text">Cracked Live On-Site</div></div>
+        <div class="h-feature"><span class="hf-icon">❄️</span><div class="hf-text">Naturally Chilled</div></div>
+        <div class="h-feature"><span class="hf-icon">🥤</span><div class="hf-text">Unlimited Serving Options</div></div>
+        <div class="h-feature"><span class="hf-icon">🛡️</span><div class="hf-text">Fully Insured &amp; Certified</div></div>
+      </div>
+      <div class="hire-cta fade-up"><a href="#contact" class="btn-gold">Get a Custom Quote →</a></div>
+    </div>
+  </section>
+
+  <!-- FRANCHISE -->
+  <section id="franchise">
+    <div class="franchise-inner fade-up">
+      <div class="section-tag">Grow With Us</div>
+      <h2 class="section-title">Franchise <span class="accent" style="color:var(--husk-dark);font-style:normal;">Opportunities</span></h2>
+      <p class="section-body" style="color:rgba(42,28,18,0.7);">Be part of the fresh coconut revolution. Bring the live
+        cracking experience to your city. Tap below to see our growing range.</p>
+
+      <div class="juice-showcase">
+        <div class="showcase-container" id="showcase-track">
+          <div class="showcase-card active" data-index="0">
+            <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&q=80&w=600" alt="Tender Green">
+            <div class="showcase-info"><h3>Tender Green</h3><p>Fresh &amp; Naturally Sweet</p></div>
+          </div>
+          <div class="showcase-card next" data-index="1">
+            <img src="https://images.unsplash.com/photo-1580910051070-2c0c2d1f3d09?auto=format&fit=crop&q=80&w=600" alt="King Coconut">
+            <div class="showcase-info"><h3>King Coconut</h3><p>Rich &amp; Creamy Malai</p></div>
+          </div>
+          <div class="showcase-card" data-index="2">
+            <img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?auto=format&fit=crop&q=80&w=600" alt="Malai Delight">
+            <div class="showcase-info"><h3>Malai Delight</h3><p>Scooped Fresh Flesh</p></div>
+          </div>
+          <div class="showcase-card prev" data-index="3">
+            <img src="https://images.unsplash.com/photo-1621622339772-e78c47578838?auto=format&fit=crop&q=80&w=600" alt="Jaggery Twist">
+            <div class="showcase-info"><h3>Jaggery Twist</h3><p>Warm Natural Sweetness</p></div>
+          </div>
+        </div>
+        <div class="showcase-controls">
+          <button class="s-btn" id="showcase-prev">←</button>
+          <button class="s-btn" id="showcase-next">→</button>
+        </div>
+      </div>
+
+      <div class="franchise-marquee">
+        <div class="franchise-track">
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">London Central</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Manchester Hub</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Birmingham West</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Leeds North</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Glasgow Fresh</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Cardiff Bay</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">London Central</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Manchester Hub</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Birmingham West</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Leeds North</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Glasgow Fresh</span></div>
+          <div class="f-item"><span class="f-icon">📍</span><span class="f-name">Cardiff Bay</span></div>
+        </div>
+      </div>
+
+      <div class="franchise-contact"><a href="tel:+447887699208" class="contact-pill">📞 +44 7887 699 208</a></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="faq-header fade-up">
+      <div class="section-tag">Questions?</div>
+      <h2 class="section-title">Common <span class="accent">Queries</span></h2>
+      <p class="section-body">Everything you need to know about our fresh tender coconut water and services.</p>
+    </div>
+    <div class="faq-grid fade-up">
+      <div class="faq-item active">
+        <button class="faq-question">Do you add any sugar or preservatives?<div class="faq-icon">+</div></button>
+        <div class="faq-answer"><p>No, absolutely not. Our coconut water is 100% natural, cracked live from the shell.
+          The sweetness comes entirely from the coconut itself.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How long does it stay fresh after cracking?<div class="faq-icon">+</div></button>
+        <div class="faq-answer"><p>Tender coconut water is best enjoyed immediately after cracking. Kept chilled, it
+          stays fresh for up to 24 hours — we always recommend drinking it cold and fresh!</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What events can I hire you for?<div class="faq-icon">+</div></button>
+        <div class="faq-answer"><p>We cater for weddings, birthdays, corporate gatherings, festivals and community
+          events across the UK. Our live cracking stall is always a huge hit!</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is tender coconut sustainable?<div class="faq-icon">+</div></button>
+        <div class="faq-answer"><p>Yes! The coconut palm is a highly sustainable crop. Even the husk and shell are
+          biodegradable and can be used for coir rope, compost or biochar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d120560.61893157221!2d73.17017714511401!3d19.21618509484755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3be792574416f8f3%3A0x7663c40ae0d632a6!2sshanti+sagar+resort+map!3m2!1d19.2161984!2d73.2402176!5e0!3m2!1sen!2sin!4v1499686069577"
+    width="100%" height="350" frameborder="0" style="border:0" allowfullscreen>
+  </iframe>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="fade-left">
+      <div class="section-tag">Say Hello</div>
+      <h2 class="section-title">Get in <span class="accent">Touch</span></h2>
+      <p class="section-body" style="margin-top:0.8rem;margin-bottom:2rem;">Questions about our coconuts, booking us
+        for your event, or interested in franchise opportunities? We'd love to hear from you.</p>
+      <div class="contact-detail">
+        <div class="cd-icon">📞</div>
+        <div><div class="cd-label">Call Us</div><div class="cd-val">+44 7887 699 208</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">🌐</div>
+        <div><div class="cd-label">Website</div><div class="cd-val">www.cokernut.co.uk</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">🎪</div>
+        <div><div class="cd-label">Events &amp; Hire</div><div class="cd-val">Available across the UK for events, weddings &amp; community gatherings</div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">🤝</div>
+        <div><div class="cd-label">Franchise</div><div class="cd-val">Franchise enquiries warmly welcomed — reach out today</div></div>
+      </div>
+    </div>
+    <div class="contact-form fade-right">
+      <div class="form-title">Send Us a Message 🥥</div>
+      <div class="form-group"><label class="form-label">Full Name</label><input type="text" id="name" class="form-input" placeholder="Your name" /></div>
+      <div class="form-group"><label class="form-label">Email Address</label><input type="email" id="email" class="form-input" placeholder="demo@gmail.com" /></div>
+      <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" id="phone" class="form-input" placeholder="+44 ..." /></div>
+      <div class="form-group"><label class="form-label">I'm enquiring about</label>
+        <select id="enquiry-type" class="form-select">
+          <option value="">Select enquiry type...</option>
+          <option>General Enquiry</option>
+          <option>Event / Stall Hire</option>
+          <option>Franchise Opportunity</option>
+          <option>Something Else</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell us more — event date, location, expected guests..."></textarea></div>
+      <button class="form-submit" type="button" id="submitBtn"><span id="btnText">Send Message 🥥</span></button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="f-logo">Coker<span>nut</span> 🥥</div>
+        <p>Real tender coconut water, cracked live, served cool. No added sugar, no concentrate — just pure natural
+          hydration wherever you are.</p>
+        <div class="footer-social">
+          <a class="f-social-btn" href="#">📸</a>
+          <a class="f-social-btn" href="#">📘</a>
+          <a class="f-social-btn" href="#">🎵</a>
+          <a class="f-social-btn" href="#">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Our Coconut</h4>
+        <ul>
+          <li><a href="#build">Build Your Coconut</a></li>
+          <li><a href="#build">Sizes &amp; Pricing</a></li>
+          <li><a href="#build">Coconut Types</a></li>
+          <li><a href="#build">Add-ins</a></li>
+          <li><a href="#benefits">Health Benefits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#hire">Event Hire</a></li>
+          <li><a href="#hire">Weddings</a></li>
+          <li><a href="#hire">Parties &amp; Gatherings</a></li>
+          <li><a href="#franchise">Franchise</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom fade-up">
+      <span>© 2025 Cokernut. Cracked Fresh. Poured Cool.</span>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/447887699208" class="whatsapp-float" target="_blank">
+    <div class="wa-tooltip">Chat with us! 🥥</div>
+    <svg viewBox="0 0 32 32">
+      <path fill="currentColor" d="M16 2a13.79 13.79 0 0 0-11.85 20.8L2 30l7.45-1.95A13.73 13.73 0 0 0 16 30c7.61 0 13.8-6.19 13.8-13.8A13.84 13.84 0 0 0 16 2zm6.65 19.38c-.3.84-1.49 1.54-2.45 1.76-.66.15-1.53.27-4.43-.93-3.71-1.54-6.1-5.32-6.29-5.57s-1.52-2.02-1.52-3.85 1-2.73 1.35-3.1.7-.46.93-.46.45 0 .64.01c.19 0 .45-.07.7.53.26.63.89 2.16.96 2.31s.12.33.02.53-.15.3-.3.47-.3.34-.45.51-.33.36-.14.68c.19.32.83 1.36 1.78 2.21 1.23 1.09 2.26 1.43 2.58 1.59s.53.13.73-.09.85-.99 1.08-1.33.45-.28.76-.17 1.95.92 2.28 1.08.55.25.63.38.12.78-.18 1.62z"></path>
+    </svg>
+  </a>
+
+  <script>
+    const API_URL = "https://script.google.com/macros/s/AKfycbzl717Y-4DxUNX1p-sK6bmb0_yUVCtVSWH_HDMqNWlGJF7_E7YjT9WoV8ql8LxV00Q6Pg/exec";
+
+    function toggleNav() { document.getElementById('nav-links').classList.toggle('open'); }
+    window.addEventListener('resize', () => { if (window.innerWidth > 960) document.getElementById('nav-links').classList.remove('open'); });
+    document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open')); });
+
+    const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el => obs.observe(el));
+    document.querySelectorAll('.steps-grid .step-card,.flavour-grid .flavour-chip,.benefits-list .benefit-item').forEach((el, i) => { el.style.transitionDelay = `${i * 0.07}s`; });
+
+    // CONTACT FORM
+    const submitBtnEl = document.getElementById('submitBtn');
+    if (submitBtnEl) submitBtnEl.addEventListener('click', submitForm);
+
+    function submitForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const type = document.getElementById('enquiry-type').value.trim();
+      const query = document.querySelector('.form-textarea').value.trim();
+      const btn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+
+      if (!name || !email || !query) {
+        showStatus('Please fill in your name, email, and message.', 'error');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.classList.remove('is-success');
+      btnText.textContent = 'Sending...';
+      showStatus('', '');
+
+      fetch(API_URL, {
+        method: 'POST',
+        body: JSON.stringify({ action: 'add_lead', name, email, phone, query: (type ? `[${type}] ` : '') + query })
+      })
+        .then(r => r.json())
+        .then(() => {
+          btn.classList.add('is-success');
+          btnText.textContent = "Sent! We'll be in touch soon";
+          showStatus("Message sent successfully. We'll contact you soon.", 'success');
+          ['name', 'email', 'phone'].forEach(id => { const f = document.getElementById(id); if (f) f.value = ''; });
+          document.querySelector('.form-textarea').value = '';
+          document.getElementById('enquiry-type').value = '';
+          setTimeout(() => { btn.disabled = false; btn.classList.remove('is-success'); btnText.textContent = 'Send Message 🥥'; }, 4500);
+        })
+        .catch(() => {
+          btn.disabled = false;
+          btn.classList.remove('is-success');
+          btnText.textContent = 'Send Message 🥥';
+          showStatus('Something went wrong. Please call us on +44 7887 699 208.', 'error');
+        });
+    }
+
+    function showStatus(message, type) {
+      const status = document.getElementById('formStatus') || (() => {
+        const el = document.createElement('div');
+        el.id = 'formStatus'; el.className = 'form-status';
+        document.querySelector('.contact-form').appendChild(el);
+        return el;
+      })();
+      if (!message) { status.textContent = ''; status.className = 'form-status'; status.style.display = 'none'; return; }
+      status.textContent = message;
+      status.className = `form-status ${type}`;
+      status.style.display = 'block';
+    }
+
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('main-nav');
+      const compact = window.innerWidth <= 960;
+      if (window.scrollY > 80) {
+        nav.style.padding = compact ? '0.6rem 1rem' : '0.6rem 4rem';
+        nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.35)';
+      } else {
+        nav.style.padding = compact ? '0.9rem 1.5rem' : '1rem 4rem';
+        nav.style.boxShadow = 'none';
+      }
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const isOpen = faqItem.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+        if (!isOpen) faqItem.classList.add('active');
+      });
+    });
+
+    // Reviews Carousel
+    const track = document.getElementById('reviews-track');
+    const prevBtn = document.getElementById('rev-prev');
+    const nextBtn = document.getElementById('rev-next');
+    let index = 0;
+    let isRevAnimating = false;
+
+    function updateCarousel(newIndex) {
+      if (!track || isRevAnimating) return;
+      const cards = document.querySelectorAll('.review-card');
+      const dots = document.querySelectorAll('.dot');
+      if (newIndex < 0) newIndex = cards.length - 1;
+      if (newIndex >= cards.length) newIndex = 0;
+      if (newIndex === index && cards[index].classList.contains('active')) return;
+      isRevAnimating = true;
+      cards.forEach(c => c.classList.remove('active'));
+      setTimeout(() => {
+        index = newIndex;
+        cards[index].classList.add('active');
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        isRevAnimating = false;
+      }, 350);
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', () => updateCarousel(index + 1));
+    if (prevBtn) prevBtn.addEventListener('click', () => updateCarousel(index - 1));
+    document.querySelectorAll('.dot').forEach((dot, i) => dot.addEventListener('click', () => updateCarousel(i)));
+
+    let autoSlide = setInterval(() => { if (!isRevAnimating) updateCarousel(index + 1); }, 6000);
+    const carouselWrap = document.querySelector('.reviews-container');
+    if (carouselWrap) {
+      carouselWrap.addEventListener('mouseenter', () => clearInterval(autoSlide));
+      carouselWrap.addEventListener('mouseleave', () => { autoSlide = setInterval(() => { if (!isRevAnimating) updateCarousel(index + 1); }, 6000); });
+    }
+    window.addEventListener('resize', () => updateCarousel(index));
+
+    // --- SHOWCASE (Cover Flow) ---
+    const showcaseCards = document.querySelectorAll('.showcase-card');
+    const sNext = document.getElementById('showcase-next');
+    const sPrev = document.getElementById('showcase-prev');
+    let sIndex = 0;
+
+    function updateShowcase() {
+      if (!showcaseCards.length) return;
+      showcaseCards.forEach((card, i) => {
+        card.classList.remove('active', 'prev', 'next');
+        if (i === sIndex) card.classList.add('active');
+        else if (i === (sIndex - 1 + showcaseCards.length) % showcaseCards.length) card.classList.add('prev');
+        else if (i === (sIndex + 1) % showcaseCards.length) card.classList.add('next');
+      });
+    }
+    if (sNext) sNext.addEventListener('click', () => { sIndex = (sIndex + 1) % showcaseCards.length; updateShowcase(); });
+    if (sPrev) sPrev.addEventListener('click', () => { sIndex = (sIndex - 1 + showcaseCards.length) % showcaseCards.length; updateShowcase(); });
+
+    let sAutoSlide = setInterval(() => { sIndex = (sIndex + 1) % showcaseCards.length; updateShowcase(); }, 5000);
+    const sContainer = document.querySelector('.juice-showcase');
+    if (sContainer) {
+      sContainer.addEventListener('mouseenter', () => clearInterval(sAutoSlide));
+      sContainer.addEventListener('mouseleave', () => { sAutoSlide = setInterval(() => { sIndex = (sIndex + 1) % showcaseCards.length; updateShowcase(); }, 5000); });
+    }
+    updateShowcase();
+
+    // Franchise marquee pause when offscreen
+    const franchiseSection = document.getElementById('franchise');
+    const fObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        const ftrack = document.querySelector('.franchise-track');
+        if (!ftrack) return;
+        ftrack.style.animationPlayState = e.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0.1 });
+    if (franchiseSection) fObs.observe(franchiseSection);
+  </script>
+</body>
+
+</html>

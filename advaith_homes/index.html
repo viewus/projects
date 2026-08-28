@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,16 +9,12 @@
   <meta name="keywords"
     content="buyer's agent UK, property search UK, home buying expert, UK real estate agent, find a home UK, Advaith Homes, London property search, buyer's advocate" />
   <link rel="canonical" href="https://advaithhomes.co.uk/" />
-
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://advaithhomes.co.uk/" />
   <meta property="og:title" content="Advaith Homes | Your Trusted UK Buyer's Advocate" />
   <meta property="og:description"
     content="We work exclusively for you — finding and negotiating your perfect UK home while saving you thousands." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&fit=crop" />
-
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://advaithhomes.co.uk/" />
   <meta property="twitter:title" content="UK's #1 Dedicated Buyer's Agent | Advaith Homes" />
@@ -27,8 +22,6 @@
     content="Stop overpaying for property. Get an expert negotiator in your corner with Advaith Homes." />
   <meta property="twitter:image"
     content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&fit=crop" />
-
-  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,17 +43,11 @@
     ]
   }
   </script>
-
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/commonstandard.css" />
-
+  <link rel="stylesheet" href="css/main.min.css" />
+  <link rel="stylesheet" href="css/commonstandard.min.css" />
 </head>
-
 <body data-page="home">
-
   <div id="nav-placeholder"></div>
-
-  <!-- ── BREAKING NEWS TICKER ── -->
   <div class="news-ticker" id="news-ticker" role="region" aria-label="Housing market news">
     <div class="news-ticker__label">
       <span class="news-ticker__pulse"></span>
@@ -68,13 +55,10 @@
     </div>
     <div class="news-ticker__track-wrap">
       <div class="news-ticker__track" id="newsTickerTrack">
-        <!-- Injected via JS -->
       </div>
     </div>
     <button class="news-ticker__close" id="newsTickerClose" aria-label="Close news ticker">✕</button>
   </div>
-
-  <!-- ── HERO ── -->
   <section class="hero">
     <div class="container">
       <div class="hero__inner">
@@ -109,7 +93,6 @@
             </div>
           </div>
         </div>
-
         <div class="hero__visual reveal reveal-delay-2">
           <div class="hero__img-wrap">
             <img src="images/hero-home.png" alt="Premium UK Home" class="hero__premium-img" />
@@ -150,8 +133,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── TICKER ── -->
   <div class="ticker">
     <div class="ticker__track" id="tickerTrack">
       <div class="ticker__item"><span class="ticker__dot"></span> We work for YOU — not the seller</div>
@@ -162,7 +143,6 @@
       <div class="ticker__item"><span class="ticker__dot"></span> Expert negotiators on your side</div>
       <div class="ticker__item"><span class="ticker__dot"></span> Independent of all estate agents</div>
       <div class="ticker__item"><span class="ticker__dot"></span> Full legal & financial guidance</div>
-      <!-- duplicate for infinite loop -->
       <div class="ticker__item"><span class="ticker__dot"></span> We work for YOU — not the seller</div>
       <div class="ticker__item"><span class="ticker__dot"></span> 500+ successful UK home purchases</div>
       <div class="ticker__item"><span class="ticker__dot"></span> Average £18,000 saved per buyer</div>
@@ -173,8 +153,6 @@
       <div class="ticker__item"><span class="ticker__dot"></span> Full legal & financial guidance</div>
     </div>
   </div>
-
-  <!-- ── WHY YOU NEED US ── -->
   <section class="section" id="why-us-section">
     <div class="container">
       <div style="text-align:center;max-width:700px;margin:0 auto">
@@ -187,11 +165,7 @@
           expert by your side, you gain access to exclusive opportunities, save time, and secure the best possible
           outcome, ensuring your investment is well-protected.</p>
       </div>
-
-      <!-- Cards rendered dynamically from data/why-us.json -->
       <div class="why-grid" id="why-grid"></div>
-
-      <!-- Learn More CTA -->
       <div class="reveal" style="text-align:center;margin-top:40px">
         <a href="pages/detail.html?page=why-us" class="btn btn-primary reveal visible">
           <span>Learn More</span>
@@ -202,8 +176,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── GUIDING ── -->
   <section class="section guiding">
     <div class="container">
       <div class="guiding__inner">
@@ -291,8 +263,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── STATS ── -->
   <section class="stats">
     <div class="container">
       <div class="stats__grid">
@@ -311,8 +281,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── DIFFERENCE ── -->
   <section class="section">
     <div class="container">
       <div style="text-align:center;max-width:640px;margin:0 auto">
@@ -365,8 +333,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── FEATURED PROPERTIES (3D CAROUSEL) ── -->
   <section class="section carousel-section">
     <div class="container">
       <div style="text-align:center;max-width:640px;margin:0 auto 40px">
@@ -374,7 +340,6 @@
         <h2 class="reveal reveal-delay-1">Our Featured Properties</h2>
         <p class="reveal reveal-delay-2">A selection of premium homes we have successfully secured for our clients.</p>
       </div>
-
       <div class="coverflow-container reveal reveal-delay-2">
         <button class="coverflow-btn prev" aria-label="Previous property">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -383,7 +348,6 @@
             <polyline points="12 19 5 12 12 5"></polyline>
           </svg>
         </button>
-
         <div class="coverflow-slider">
           <div class="coverflow-item">
             <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Luxury Home 1">
@@ -426,7 +390,6 @@
             </div>
           </div>
         </div>
-
         <button class="coverflow-btn next" aria-label="Next property">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -437,8 +400,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── REUSABLE SERVICES GRID ── -->
   <section class="feature-section">
     <div class="container">
       <div style="text-align: center; margin-bottom: 60px;">
@@ -449,9 +410,7 @@
           <span style="color:var(--accent)">ADVAITH HOMES</span>
         </h2>
       </div>
-
       <div class="feature-grid">
-        <!-- Row 1 -->
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-card__img-wrap">
             <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Property Search"
@@ -461,7 +420,6 @@
           <p class="feature-card__desc">Use the knowledge of the local market and networks to access a wide range of
             properties, including those that may not be publicly advertised.</p>
         </div>
-
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-card__img-wrap">
             <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="Negotiations"
@@ -471,7 +429,6 @@
           <p class="feature-card__desc">Negotiate the purchase price and terms on behalf of the clients. The expertise
             and negotiation skills can often result in better terms and lower prices.</p>
         </div>
-
         <div class="feature-card reveal reveal-delay-3">
           <div class="feature-card__img-wrap">
             <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&q=80" alt="Market Analysis"
@@ -481,8 +438,6 @@
           <p class="feature-card__desc">Provide buyers with detailed analysis and insights on the local market,
             including schools, crime rates, neighborhoods, amenities, and price trends.</p>
         </div>
-
-        <!-- Row 2 -->
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-card__img-wrap">
             <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Paperwork"
@@ -492,7 +447,6 @@
           <p class="feature-card__desc">Coordinate with various professionals needed during the purchase process and
             handle all paperwork to ensure aspects of the buying process are handled efficiently.</p>
         </div>
-
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-card__img-wrap">
             <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" alt="Dispute Resolution"
@@ -502,7 +456,6 @@
           <p class="feature-card__desc">If any disputes arise during the purchasing process, we act as mediators between
             the buyers and other parties, such as Estate Agents or sellers.</p>
         </div>
-
         <div class="feature-card reveal reveal-delay-3">
           <div class="feature-card__img-wrap">
             <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&q=80" alt="Post-Purchase Support"
@@ -515,8 +468,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── DREAM PROPERTY (SERVICES PREVIEW) ── -->
   <section class="dream">
     <div class="container">
       <div class="grid-3">
@@ -576,8 +527,6 @@
         →</a>
     </div>
   </section>
-
-  <!-- ── RESOURCES ── -->
   <section class="section video-section">
     <div class="container">
       <div style="text-align:center;max-width:640px;margin:0 auto">
@@ -611,15 +560,12 @@
       </div>
     </div>
   </section>
-
-  <!-- ── TESTIMONIALS ── -->
   <section class="section testimonial-section">
     <div class="container">
       <div style="text-align:center;max-width:640px;margin:0 auto 60px">
         <div class="eyebrow reveal">Success Stories</div>
         <h2 class="reveal reveal-delay-1">Hear From Our Happy Buyers</h2>
       </div>
-
       <div class="testimonial-container reveal">
         <div class="testimonial-slider" id="testimonialSlider">
           <div class="testimonial-slide active">
@@ -863,7 +809,6 @@
             </div>
           </div>
         </div>
-
         <div class="testimonial-nav-wrap">
           <div class="testimonial-nav" id="testimonialNav">
             <div class="testimonial-dot active"></div>
@@ -873,7 +818,6 @@
             <div class="testimonial-dot"></div>
             <div class="testimonial-dot"></div>
           </div>
-
           <div class="testimonial-controls">
             <button class="testimonial-arrow prev" id="testimonialPrev">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -890,8 +834,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── FAQs ── -->
   <section class="section">
     <div class="container">
       <div style="text-align:center;max-width:600px;margin:0 auto">
@@ -970,8 +912,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── FINAL CTA ── -->
   <section class="cta-section">
     <div class="container">
       <div class="cta-inner reveal">
@@ -987,12 +927,9 @@
       </div>
     </div>
   </section>
-
   <div id="footer-placeholder"></div>
-  <script src="js/components.js"></script>
-
-  <!-- Why You Need Us — data loaded from data/why-us.js (no CORS, works locally) -->
-  <script src="data/why-us.js"></script>
+  <script src="js/components.min.js"></script>
+  <script src="data/why-us.min.js"></script>
   <script>
     (function () {
       const data = WHY_US_DATA;
@@ -1015,21 +952,16 @@
       }
     })();
   </script>
-
-
   <script>
     // 3D Coverflow Carousel Logic
     document.addEventListener('DOMContentLoaded', () => {
       const items = document.querySelectorAll('.coverflow-item');
       if (!items.length) return;
-
       let currentIndex = 0;
       const totalItems = items.length;
-
       function updateCoverflow() {
         items.forEach((item, index) => {
           item.classList.remove('active', 'prev', 'next', 'prev-hidden', 'next-hidden');
-
           if (index === currentIndex) {
             item.classList.add('active');
           } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
@@ -1043,30 +975,25 @@
           }
         });
       }
-
       document.querySelector('.coverflow-btn.prev')?.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + totalItems) % totalItems;
         updateCoverflow();
       });
-
       document.querySelector('.coverflow-btn.next')?.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % totalItems;
         updateCoverflow();
       });
-
       items.forEach((item, index) => {
         item.addEventListener('click', () => {
           currentIndex = index;
           updateCoverflow();
         });
       });
-
       // Auto-play (optional)
       let autoPlay = setInterval(() => {
         currentIndex = (currentIndex + 1) % totalItems;
         updateCoverflow();
       }, 5000);
-
       const container = document.querySelector('.coverflow-container');
       if (container) {
         container.addEventListener('mouseenter', () => clearInterval(autoPlay));
@@ -1077,57 +1004,47 @@
           }, 5000);
         });
       }
-
       // Initialize
       updateCoverflow();
-
       // Testimonial Slider Logic
       const slides = document.querySelectorAll('.testimonial-slide');
       const dots = document.querySelectorAll('.testimonial-dot');
       const prevBtn = document.getElementById('testimonialPrev');
       const nextBtn = document.getElementById('testimonialNext');
       let tIndex = 0;
-
       function showTestimonial(index) {
         slides.forEach(s => s.classList.remove('active'));
         dots.forEach(d => d.classList.remove('active'));
-
         tIndex = (index + slides.length) % slides.length;
         slides[tIndex].classList.add('active');
         dots[tIndex].classList.add('active');
       }
-
       nextBtn?.addEventListener('click', () => showTestimonial(tIndex + 1));
       prevBtn?.addEventListener('click', () => showTestimonial(tIndex - 1));
-
       dots.forEach((dot, i) => {
         dot.addEventListener('click', () => showTestimonial(i));
       });
-
       // Auto-play testimonials
       setInterval(() => {
         showTestimonial(tIndex + 1);
       }, 8000);
     });
   </script>
-  <script src="dailynews/news.js"></script>
+  <script src="dailynews/news.min.js"></script>
   <script>
     // Dynamic News Ticker Logic
     document.addEventListener('DOMContentLoaded', () => {
       const track = document.getElementById('newsTickerTrack');
       // Fix: const doesn't attach to window, check NEWS_DATA directly
       if (!track || typeof NEWS_DATA === 'undefined') return;
-
       const itemsHtml = NEWS_DATA.map(art => `
         <a href="pages/news.html?id=${art.id}" class="news-ticker__item">
           <span class="news-ticker__tag news-ticker__tag--${art.tagClass.split('-')[1]}">${art.tag}</span>
           ${art.title}
         </a>
       `).join('');
-
       // Inject twice for seamless loop
       track.innerHTML = itemsHtml + itemsHtml;
-
       // Close Logic
       const closeBtn = document.getElementById('newsTickerClose');
       const ticker = document.getElementById('news-ticker');
@@ -1138,5 +1055,4 @@
     });
   </script>
 </body>
-
 </html>

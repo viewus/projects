@@ -1,0 +1,18 @@
+﻿// data/form-config.js — Contact & Export Quotation Form Configuration
+const FORM_CONFIG = {
+  apiUrl: 'https://script.google.com/macros/s/AKfycbzl717Y-4DxUNX1p-sK6bmb0_yUVCtVSWH_HDMqNWlGJF7_E7YjT9WoV8ql8LxV00Q6Pg/exec',
+  enquiryTypes: [
+    'International Export Enquiry',
+    'Wholesale / B2B Bulk Order',
+    'Aseptic Mango Pulp & Processing',
+    'Sample Box Request',
+    'General Enquiry',
+  ],
+  fields: [
+    { id: 'f-name', label: 'Full Name / Company', type: 'text', placeholder: 'Your name or organization', required: true },
+    { id: 'f-email', label: 'Business Email', type: 'email', placeholder: 'name@company.com', required: true },
+    { id: 'f-phone', label: 'Phone / WhatsApp', type: 'tel', placeholder: '+44 / +1 / +91 ...', required: false },
+  ],
+  successMsg: "Enquiry submitted successfully! Our export desk will contact you within 24 hours. 🥭",
+  errorMsg: 'Submission failed. Please email export@mangot.co.uk or call +44 7887 699 208.',
+};

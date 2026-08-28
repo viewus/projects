@@ -1,0 +1,14 @@
+<!-- Customer review. Filled by renderers/content.js from data/testimonials.json.
+     The avatar falls back to a generated initial tile when no photo is set. -->
+<article class="reviewCard staggerItem" style="--cardIndex: {{index}}">
+  <div class="reviewStars" aria-label="{{rating}} out of 5">{{starsHtml}}</div>
+  <p class="reviewText">{{text}}</p>
+
+  <div class="reviewPerson">
+    <img class="reviewAvatar" {{imgAttrsHtml}} alt="" loading="lazy" width="44" height="44">
+    <span>
+      <span class="reviewName">{{name}}</span><br>
+      <span class="reviewRole">{{role}}</span>
+    </span>
+  </div>
+</article>

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | AR Plants & Seeds</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/pages.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><span class="logo-ar">AR</span><span class="logo-text">Plants &amp; Seeds</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=1600&auto=format&fit=crop" alt="Contact" />
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span>Contact</div>
+      <p class="section-eyebrow" style="color:var(--green-light)">Let's Connect</p>
+      <h1>We'd Love to <em>Hear from You</em></h1>
+    </div>
+  </section>
+
+  <section class="section-pad reveal">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Left: Info + Map -->
+        <div class="contact-info reveal-item">
+          <p class="section-eyebrow">Get in Touch</p>
+          <h2>Visit Us, Call Us,<br />or Write to Us</h2>
+          <p>Whether you're looking for a consultation, a custom plant order, or simply want to talk plants — our team is here for you.</p>
+          <div class="info-items">
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <strong>Address</strong>
+                <span>123 Green Lane, Sadashivanagar,<br />Bangalore — 560080, Karnataka, India</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div>
+                <strong>Phone</strong>
+                <span>+91 98765 43210<br />+91 80 1234 5678</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div>
+                <strong>Email</strong>
+                <span>demo@gmail.com<br />demo@gmail.com</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">⏰</div>
+              <div>
+                <strong>Working Hours</strong>
+                <span>Monday – Saturday: 9:00 AM – 7:00 PM<br />Sunday: 10:00 AM – 4:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links" style="margin-bottom:24px">
+            <a href="#" style="font-size:1.5rem" aria-label="Instagram">📸</a>
+            <a href="#" style="font-size:1.5rem" aria-label="Facebook">👍</a>
+            <a href="#" style="font-size:1.5rem" aria-label="YouTube">▶️</a>
+            <a href="#" style="font-size:1.5rem" aria-label="Pinterest">📌</a>
+          </div>
+
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0!2d77.5946!3d13.0052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae167b9e5a7b8d%3A0x1a4f1dd7af3a2b5!2sSadashivanagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="AR Plants & Seeds Location">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form-wrap reveal-item">
+          <h3>Send Us a Message</h3>
+          <p>Fill in the form below and we'll get back to you within 24 hours.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" />
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="demo@gmail.com" autocomplete="email" />
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="service">Service Interested In</label>
+                <select id="service" name="service">
+                  <option value="">Select a service…</option>
+                  <option>Plant Consultation</option>
+                  <option>Garden Design &amp; Setup</option>
+                  <option>Seed Supply</option>
+                  <option>Maintenance &amp; Aftercare</option>
+                  <option>Corporate Greening</option>
+                  <option>Rare Plant Sourcing</option>
+                  <option>Other</option>
+                </select>
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group full">
+                <label for="query">Your Message *</label>
+                <textarea id="query" name="query" placeholder="Tell us about your requirements, the type of plants you're interested in, or any questions you have…"></textarea>
+                <span class="field-error"></span>
+              </div>
+            </div>
+            <button type="submit" class="form-submit">
+              <span class="spinner"></span>
+              Send Message
+            </button>
+          </form>
+
+          <div id="formSuccess">
+            <div class="success-icon">🌿</div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. Our team will get back to you within 24 hours. In the meantime, feel free to explore our gallery or portfolio.</p>
+            <div style="display:flex;gap:12px;margin-top:16px;justify-content:center">
+              <a href="gallery.html" class="btn btn-green-outline">View Gallery</a>
+              <a href="portfolio.html" class="btn btn-primary">See Portfolio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="../index.html" class="footer-logo"><span class="logo-ar">AR</span><span class="logo-text">Plants &amp; Seeds</span></a><p>Bringing Life to Plants,<br />Strength to Nature.</p><div class="social-links"><a href="#">📸</a><a href="#">👍</a><a href="#">▶️</a></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Our Specialties</h4><ul><li><a href="#">Indoor Plants</a></li><li><a href="#">Outdoor Plants</a></li><li><a href="#">Rare &amp; Exotic</a></li><li><a href="#">Seeds</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul class="footer-contact"><li>📍 123 Green Lane, Bangalore</li><li>📞 +91 98765 43210</li><li>✉️ demo@gmail.com</li><li>⏰ Mon–Sat: 9am – 7pm</li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 AR Plants &amp; Seeds. All rights reserved. | Crafted with 🌿 in Bangalore.</p></div>
+    </div>
+  </footer>
+  <div class="toast" id="toast"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+{
+  "_note": "SINGLE SOURCE OF TRUTH for page metadata. IMPORTANT: assets/js/seo.js does NOT inject title/description/canonical — those are written statically into each page's <head> so crawlers and link-preview scrapers (WhatsApp, LinkedIn) can read them without running JavaScript. When you change a value here, mirror it into that page's head. See README.md, 'Editing SEO'.",
+
+  "global": {
+    "businessType": "GroceryStore",
+    "priceRange": "₹₹",
+    "titleSuffix": " | FreshCart",
+    "defaultDescription": "Everyday groceries, fresh produce and household essentials — fairly priced and delivered locally."
+  },
+
+  "pages": {
+    "home": {
+      "title": "FreshCart | Everyday Groceries, Fresh Produce & Household Essentials",
+      "description": "Neighbourhood grocery store stocking fresh produce, staples, dairy and household essentials. Free local delivery above ₹499, same-day before 6 pm.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/"
+    },
+    "products": {
+      "title": "All Products | FreshCart",
+      "description": "Browse the full range — fruit and vegetables, dairy, staples, snacks, bakery, household, personal and baby care. Search, filter and compare prices.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/products.html"
+    },
+    "categories": {
+      "title": "Shop by Category | FreshCart",
+      "description": "Eight aisles covering the weekly shop, from the fresh counter to household refills.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/categories.html"
+    },
+    "offers": {
+      "title": "Today's Offers & Deals | FreshCart",
+      "description": "Current grocery offers, refreshed every Friday. Staples, fresh produce, household and baby care deals.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/offers.html"
+    },
+    "planner": {
+      "title": "Shopping Planner | FreshCart",
+      "description": "Pick your household type and generate a starting shopping list. Adjust it, tick items off in the aisle, print or share.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/planner.html"
+    },
+    "monthlyGrocery": {
+      "title": "Monthly Grocery Lists & Budget Calculator | FreshCart",
+      "description": "Ready-made monthly grocery lists by household size, plus a budget calculator that splits your spend across categories.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/monthly-grocery.html"
+    },
+    "healthyShopping": {
+      "title": "Healthy Shopping | FreshCart",
+      "description": "Low sugar, low fat, organic, protein rich, kids and seniors — filtered views of our full range.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/healthy-shopping.html"
+    },
+    "recipes": {
+      "title": "Recipes & Ingredient Lists | FreshCart",
+      "description": "Pick a dish and turn it into a shopping list — every ingredient added in one tap.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/recipes.html"
+    },
+    "blogs": {
+      "title": "Shopping Tips & Kitchen Advice | FreshCart Blog",
+      "description": "Storage advice, budget planning, seasonal buying and label reading — practical notes from the shop floor.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/blogs.html"
+    },
+    "about": {
+      "title": "About Us | FreshCart",
+      "description": "A neighbourhood store buying direct from local growers, stocking honestly labelled everyday groceries.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/about.html"
+    },
+    "contact": {
+      "title": "Contact & Store Location | FreshCart",
+      "description": "Address, opening hours, phone and directions. Free customer parking behind the store.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/contact.html"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions | FreshCart",
+      "description": "Delivery areas, payment methods, returns, freshness and store services — answered.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/faq.html"
+    },
+    "privacy": {
+      "title": "Privacy Policy | FreshCart",
+      "description": "What data this site collects, why, and how to ask for it to be removed.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/privacy.html"
+    },
+    "terms": {
+      "title": "Terms of Use | FreshCart",
+      "description": "The terms under which this website and our ordering service are provided.",
+      "canonical": "https://projects.akhileshravuri.online/general-retail-store/pages/terms.html"
+    }
+  }
+}

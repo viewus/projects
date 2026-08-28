@@ -1,0 +1,310 @@
+/* ---------------------------------------------------------------------------
+ * renderers/sections.js — the general-purpose section types.
+ *
+ * hero, pageHead, featureRow, statRow, richText, legalDoc, notFound,
+ * storeInfo, plannerTeaser, gallery, brandStrip.
+ *
+ * Every function here is registered under the name sections.json uses in its
+ * "component" field, and returns markup (or a promise of it). None of them
+ * touch the DOM directly — render.js decides where the result goes.
+ * ------------------------------------------------------------------------- */
+(function (window, $) {
+  "use strict";
+
+  var RS = window.RS || (window.RS = {});
+  var reg = RS.registerComponent;
+
+  /* ---------- shared bits ---------------------------------------------------- */
+
+  /** Standard section heading block, used by nearly every section. */
+  function head(data, center) {
+    if (!data || (!data.title && !data.intro)) return "";
+
+    return '<div class="sectionHead' + (center ? " isCenter" : "") + '">' +
+      (data.eyebrow ? '<span class="eyebrow">' + RS.escape(data.eyebrow) + "</span>" : "") +
+      (data.title ? '<h2 class="sectionTitle">' + RS.escape(data.title) + "</h2>" : "") +
+      (data.intro ? '<p class="sectionIntro">' + RS.escape(data.intro) + "</p>" : "") +
+      "</div>";
+  }
+
+  /** Heading with an action link pushed right — used by the home-page rows. */
+  function headRow(data) {
+    if (!data) return "";
+
+    var link = data.linkLabel
+      ? '<a class="linkArrow" href="' + RS.escape(RS.href(data.linkRoute || data.linkHref)) + '">' +
+        RS.escape(data.linkLabel) + ' <i class="bi bi-arrow-right" aria-hidden="true"></i></a>'
+      : "";
+
+    return '<div class="sectionHeadRow"><div>' +
+      (data.title ? '<h2 class="sectionTitle">' + RS.escape(data.title) + "</h2>" : "") +
+      (data.intro ? '<p class="sectionIntro">' + RS.escape(data.intro) + "</p>" : "") +
+      "</div>" + link + "</div>";
+  }
+
+  /** Render a [{type:"p"|"h", text}] block list into prose markup. */
+  function blocks(list) {
+    return (list || []).map(function (block) {
+      if (block.type === "h") return "<h2>" + RS.escape(block.text) + "</h2>";
+      if (block.type === "h3") return "<h3>" + RS.escape(block.text) + "</h3>";
+      if (block.type === "ul") {
+        return "<ul>" + (block.items || []).map(function (item) {
+          return "<li>" + RS.escape(item) + "</li>";
+        }).join("") + "</ul>";
+      }
+      return "<p>" + RS.escape(block.text) + "</p>";
+    }).join("");
+  }
+
+  RS.sectionHead = head;
+  RS.sectionHeadRow = headRow;
+  RS.renderBlocks = blocks;
+
+  /** Turn a {label, route} object into a button. */
+  function cta(button, className) {
+    if (!button || !button.label) return "";
+    return '<a class="btn ' + (className || "btnPrimary") + '" href="' +
+      RS.escape(RS.href(button.route || button.href)) + '">' + RS.escape(button.label) + "</a>";
+  }
+
+  /* ---------- hero ----------------------------------------------------------- */
+
+  reg("hero", function (data) {
+    if (!data) return "";
+
+    var stats = (data.stats || []).map(function (stat) {
+      return "<div><span class='heroStatValue'>" + RS.escape(stat.value) + "</span>" +
+        "<span class='heroStatLabel'>" + RS.escape(stat.label) + "</span></div>";
+    }).join("");
+
+    return '<div class="hero"><div class="wrap heroIn">' +
+      '<div data-reveal>' +
+      (data.eyebrow ? '<span class="eyebrow">' + RS.escape(data.eyebrow) + "</span>" : "") +
+      '<h1 class="heroTitle">' + RS.escape(data.title) + "</h1>" +
+      '<p class="heroText">' + RS.escape(data.text) + "</p>" +
+      '<div class="heroActions">' +
+      cta(data.primaryCta, "btnPrimary btnLg") +
+      cta(data.secondaryCta, "btnOutline btnLg") +
+      "</div>" +
+      (stats ? '<div class="heroStats">' + stats + "</div>" : "") +
+      "</div>" +
+      '<div class="heroMedia" data-reveal>' +
+      '<img class="heroImage" ' + RS.imgAttrs(data.image, data.title, "#1f7a4d") +
+      ' alt="' + RS.escape(data.imageAlt || "") + '" width="1000" height="750" fetchpriority="high">' +
+      "</div>" +
+      "</div></div>";
+  });
+
+  /* ---------- pageHead -------------------------------------------------------- */
+
+  reg("pageHead", function (data) {
+    if (!data) return "";
+    return '<div class="wrap">' +
+      '<h1 class="sectionTitle">' + RS.escape(data.title) + "</h1>" +
+      (data.intro ? '<p class="lede">' + RS.escape(data.intro) + "</p>" : "") +
+      "</div>";
+  });
+
+  /* ---------- featureRow ------------------------------------------------------ */
+
+  reg("featureRow", function (data) {
+    if (!data || !data.items) return "";
+
+    var cards = data.items.map(function (item, i) {
+      return '<div class="featureCard staggerItem" style="--cardIndex:' + i + '">' +
+        '<span class="featureCardIcon"><i class="bi ' + RS.escape(item.icon || "bi-dot") +
+        '" aria-hidden="true"></i></span>' +
+        "<div><h3 class='cardTitle'>" + RS.escape(item.title) + "</h3>" +
+        "<p class='cardText'>" + RS.escape(item.text) + "</p></div></div>";
+    }).join("");
+
+    return '<div class="wrap" data-reveal>' + head(data, true) +
+      '<div class="grid gridAuto">' + cards + "</div></div>";
+  });
+
+  /* ---------- statRow --------------------------------------------------------- */
+
+  reg("statRow", function (data) {
+    if (!data || !data.items) return "";
+
+    var tiles = data.items.map(function (item, i) {
+      return '<div class="statTile staggerItem" style="--cardIndex:' + i + '">' +
+        '<span class="statTileValue">' + RS.escape(item.value) + "</span>" +
+        '<span class="statTileLabel">' + RS.escape(item.label) + "</span></div>";
+    }).join("");
+
+    return '<div class="wrap" data-reveal>' + head(data, true) +
+      '<div class="grid gridAutoSm">' + tiles + "</div></div>";
+  });
+
+  /* ---------- richText / legalDoc --------------------------------------------- */
+
+  reg("richText", function (data) {
+    if (!data) return "";
+    return '<div class="wrap"><div class="prose" data-reveal>' +
+      head(data) + blocks(data.blocks) + "</div></div>";
+  });
+
+  reg("legalDoc", function (data, cfg) {
+    if (!data) return "";
+
+    var updated = data.updated
+      ? '<p class="textDim">Last updated ' + RS.escape(RS.formatDate(data.updated,
+          RS.get(cfg, "currency.locale"))) + "</p>"
+      : "";
+
+    return '<div class="wrap"><div class="prose">' +
+      "<h1>" + RS.escape(data.title) + "</h1>" + updated +
+      blocks(data.blocks) + "</div></div>";
+  });
+
+  /* ---------- notFound --------------------------------------------------------- */
+
+  reg("notFound", function (data) {
+    if (!data) return "";
+
+    return '<div class="wrap textCenter" style="padding-block: var(--s9)">' +
+      '<p class="eyebrow" style="font-size:var(--fs3xl)">' + RS.escape(data.code) + "</p>" +
+      "<h1>" + RS.escape(data.title) + "</h1>" +
+      '<p class="lede" style="margin-inline:auto">' + RS.escape(data.text) + "</p>" +
+      '<div class="heroActions" style="justify-content:center; margin-top:var(--s5)">' +
+      cta(data.primaryCta, "btnPrimary btnLg") +
+      cta(data.secondaryCta, "btnOutline btnLg") +
+      "</div></div>";
+  });
+
+  /* ---------- plannerTeaser ----------------------------------------------------- */
+
+  reg("plannerTeaser", function (data) {
+    if (!data) return "";
+
+    var points = (data.points || []).map(function (point) {
+      return '<li class="featureCard" style="padding:var(--s3) var(--s4)">' +
+        '<i class="bi bi-check2-circle" style="color:var(--brand)" aria-hidden="true"></i> ' +
+        RS.escape(point) + "</li>";
+    }).join("");
+
+    return '<div class="wrap heroIn" data-reveal>' +
+      "<div>" +
+      (data.eyebrow ? '<span class="eyebrow">' + RS.escape(data.eyebrow) + "</span>" : "") +
+      "<h2>" + RS.escape(data.title) + "</h2>" +
+      '<p class="lede">' + RS.escape(data.text) + "</p>" +
+      '<ul class="stack" style="margin-block:var(--s5)">' + points + "</ul>" +
+      cta(data.cta, "btnPrimary btnLg") +
+      "</div>" +
+      '<div class="heroMedia">' +
+      '<img class="heroImage" ' + RS.imgAttrs(data.image, data.title, "#1f7a4d") +
+      ' alt="' + RS.escape(data.imageAlt || "") + '" loading="lazy" width="900" height="675">' +
+      "</div></div>";
+  });
+
+  /* ---------- gallery ------------------------------------------------------------ */
+
+  reg("gallery", function (data) {
+    if (!data || !data.items) return "";
+
+    var tiles = data.items.map(function (item, i) {
+      return '<figure class="categoryCard staggerItem" style="--cardIndex:' + i + '">' +
+        '<img class="categoryCardImage" ' + RS.imgAttrs(item.image, item.caption) +
+        ' alt="' + RS.escape(item.alt || item.caption || "") + '" loading="lazy" width="800" height="800">' +
+        '<figcaption class="categoryCardOverlay">' +
+        '<span class="categoryCardTitle">' + RS.escape(item.caption || "") + "</span>" +
+        "</figcaption></figure>";
+    }).join("");
+
+    return '<div class="wrap" data-reveal>' + head(data, true) +
+      '<div class="grid gridAuto">' + tiles + "</div></div>";
+  });
+
+  /* ---------- brandStrip ---------------------------------------------------------- */
+
+  reg("brandStrip", function (data) {
+    if (!data || !data.items) return "";
+
+    // Brand logos are optional in the JSON. Where one is missing we render the
+    // name as a wordmark rather than a broken image — which is also the honest
+    // default for a template that ships without a client's real logo files.
+    var logos = data.items.map(function (brand) {
+      if (brand.logo) {
+        return '<img class="brandLogo" ' + RS.imgAttrs(RS.path(brand.logo), brand.name) +
+          ' alt="' + RS.escape(brand.name) + '" loading="lazy" height="46">';
+      }
+      return '<span class="brandLogo" style="display:grid;place-items:center;' +
+        'font-family:var(--fontHeading);font-size:var(--fsLg);color:var(--textDim);' +
+        'filter:none;opacity:.75">' + RS.escape(brand.name) + "</span>";
+    }).join("");
+
+    return '<div class="wrap" data-reveal>' + head(data, true) +
+      '<div class="brandStrip">' + logos + "</div></div>";
+  });
+
+  /* ---------- storeInfo ------------------------------------------------------------ */
+
+  reg("storeInfo", function (data, cfg, section) {
+    var contact = (cfg && cfg.contact) || {};
+    var info = data || {};
+
+    // The Google Maps embed is a third-party iframe costing several hundred KB
+    // and a chain of external requests. It earns that on the contact page,
+    // where finding the shop is the point; it does not earn it on the home
+    // page, where it would drag the Lighthouse score for a section most
+    // visitors scroll past. Opt in per section via "showMap": true.
+    var showMap = section && section.showMap === true;
+
+    var hours = (contact.openingHours || []).map(function (row) {
+      return '<p class="cardText">' + RS.escape(row.label) + "</p>";
+    }).join("");
+
+    return '<div class="wrap" data-reveal>' + head(info, true) +
+      '<div class="grid grid2" style="align-items:start">' +
+
+      '<div class="stack">' +
+      '<div class="featureCard"><span class="featureCardIcon">' +
+      '<i class="bi bi-geo-alt" aria-hidden="true"></i></span><div>' +
+      "<h3 class='cardTitle'>Address</h3>" +
+      "<p class='cardText'>" + RS.escape(contact.addressFull || "") + "</p>" +
+      (contact.mapLink
+        ? '<a class="linkArrow" href="' + RS.escape(contact.mapLink) +
+          '" target="_blank" rel="noopener">' + RS.escape(info.directionsLabel || "Get directions") +
+          ' <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>'
+        : "") +
+      "</div></div>" +
+
+      '<div class="featureCard"><span class="featureCardIcon">' +
+      '<i class="bi bi-clock" aria-hidden="true"></i></span><div>' +
+      "<h3 class='cardTitle'>" + RS.escape(info.hoursTitle || "Opening hours") + "</h3>" +
+      hours + "</div></div>" +
+
+      '<div class="featureCard"><span class="featureCardIcon">' +
+      '<i class="bi bi-telephone" aria-hidden="true"></i></span><div>' +
+      "<h3 class='cardTitle'>" + RS.escape(info.contactTitle || "Contact") + "</h3>" +
+      '<p class="cardText"><a href="tel:' + RS.escape(String(contact.phone || "").replace(/[^\d+]/g, "")) +
+      '">' + RS.escape(contact.phone || "") + "</a></p>" +
+      '<p class="cardText"><a href="mailto:' + RS.escape(contact.email || "") + '">' +
+      RS.escape(contact.email || "") + "</a></p>" +
+      "</div></div>" +
+
+      (contact.parking
+        ? '<div class="featureCard"><span class="featureCardIcon">' +
+          '<i class="bi bi-p-square" aria-hidden="true"></i></span><div>' +
+          "<h3 class='cardTitle'>" + RS.escape(info.parkingTitle || "Parking") + "</h3>" +
+          "<p class='cardText'>" + RS.escape(contact.parking) + "</p></div></div>"
+        : "") +
+      "</div>" +
+
+      (showMap && contact.mapEmbed
+        ? '<iframe class="mapEmbed" src="' + RS.escape(contact.mapEmbed) +
+          '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ' +
+          'title="Map showing the store location" allowfullscreen></iframe>'
+        : contact.mapLink
+          ? '<a class="mapCard" href="' + RS.escape(contact.mapLink) +
+            '" target="_blank" rel="noopener">' +
+            '<i class="bi bi-map" aria-hidden="true"></i>' +
+            "<span><strong>Open in Google Maps</strong>" +
+            "<small>" + RS.escape(contact.addressFull || "") + "</small></span>" +
+            '<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>'
+          : "") +
+      "</div></div>";
+  });
+
+})(window, jQuery);

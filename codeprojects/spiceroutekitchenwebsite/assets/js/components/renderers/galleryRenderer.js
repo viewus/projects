@@ -1,0 +1,83 @@
+/* ============================================================
+   galleryRenderer.js — reusable gallery grid item + lightbox
+   controller. Category label comes entirely from JSON.
+   ============================================================ */
+
+function renderGalleryItem(photo, index) {
+  return (
+    '<figure class="galleryItem" data-reveal="zoom" data-index="' + index + '" tabindex="0" role="button" aria-label="View ' + escapeHtml(photo.alt) + '">' +
+      '<img src="' + escapeHtml(photo.image) + '" alt="' + escapeHtml(photo.alt) + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + IMAGE_FALLBACK_PATH + '\';">' +
+      '<figcaption class="galleryOverlay"><i class="fa-solid fa-expand"></i>' + escapeHtml(photo.alt) + "</figcaption>" +
+    "</figure>"
+  );
+}
+
+function renderGallery(photos) {
+  return (photos || []).map(renderGalleryItem).join("");
+}
+
+/**
+ * Wires up the lightbox for a rendered gallery. Call once after
+ * renderGallery() has been inserted into the DOM.
+ */
+function initLightbox(photos) {
+  const $lightbox = $("#lightbox");
+  const $image = $("#lightboxImage");
+  const $caption = $("#lightboxCaption");
+  let currentIndex = 0;
+
+  function open(index) {
+    currentIndex = index;
+    show();
+    $lightbox.prop("hidden", false);
+    $("body").css("overflow", "hidden");
+  }
+
+  function show() {
+    const photo = photos[currentIndex];
+    if (!photo) return;
+    $image
+      .attr("alt", photo.alt)
+      .attr("onerror", "this.onerror=null;this.src='" + IMAGE_FALLBACK_PATH + "';")
+      .attr("src", photo.image);
+    $caption.text(photo.alt);
+  }
+
+  function close() {
+    $lightbox.prop("hidden", true);
+    $("body").css("overflow", "");
+  }
+
+  function next() {
+    currentIndex = (currentIndex + 1) % photos.length;
+    show();
+  }
+
+  function prev() {
+    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+    show();
+  }
+
+  $("#galleryGrid").on("click", ".galleryItem", function () {
+    open(Number($(this).data("index")));
+  });
+  $("#galleryGrid").on("keydown", ".galleryItem", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      open(Number($(this).data("index")));
+    }
+  });
+
+  $("#lightboxClose").on("click", close);
+  $("#lightboxNext").on("click", next);
+  $("#lightboxPrev").on("click", prev);
+  $lightbox.on("click", function (e) {
+    if (e.target === this) close();
+  });
+  $(document).on("keydown", function (e) {
+    if ($lightbox.prop("hidden")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+  });
+}
