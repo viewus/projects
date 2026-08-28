@@ -27,47 +27,47 @@
         --f: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
         --fd: "Space Grotesk", sans-serif;
         --fm: "JetBrains Mono", monospace;
-        --bg: #07080d;
-        --bs: #0e1019;
-        --bs2: #131621;
-        --bc: #0d0f1a;
-        --bch: #111422;
-        --bi: #0a0c15;
-        --b1: rgba(255, 255, 255, 0.06);
-        --b2: rgba(255, 255, 255, 0.11);
-        --t1: #f1f3fa;
-        --t2: #8b93b0;
-        --t3: #4e566e;
-        --br: #7b6cf6;
-        --br2: #c084fc;
-        --brd: linear-gradient(135deg, #7b6cf6, #c084fc);
-        --brg: rgba(123, 108, 246, 0.22);
-        --gr: #22c55e;
+        --bg: #090a0f;
+        --bs: #11131b;
+        --bs2: #161824;
+        --bc: #11131e;
+        --bch: #161a29;
+        --bi: #0d0f18;
+        --b1: rgba(255, 255, 255, 0.08);
+        --b2: rgba(255, 255, 255, 0.15);
+        --t1: #f8fafc;
+        --t2: #94a3b8;
+        --t3: #64748b;
+        --br: #2563eb;
+        --br2: #0ea5e9;
+        --brd: linear-gradient(135deg, #2563eb, #0ea5e9);
+        --brg: rgba(37, 99, 235, 0.22);
+        --gr: #10b981;
         --sc: 0 1px 3px rgba(0, 0, 0, 0.5), 0 8px 28px rgba(0, 0, 0, 0.38);
-        --su: 0 2px 6px rgba(0, 0, 0, 0.6), 0 20px 48px rgba(0, 0, 0, 0.5);
-        --r: 2px;
+        --su: 0 4px 12px rgba(0, 0, 0, 0.6), 0 20px 48px rgba(0, 0, 0, 0.5);
+        --r: 8px;
         --e: cubic-bezier(0.16, 1, 0.3, 1);
-        --ft: 0.16s var(--e);
-        --nt: 0.26s var(--e);
+        --ft: 0.18s var(--e);
+        --nt: 0.28s var(--e);
       }
       [data-theme="light"] {
-        --bg: #f0f1f6;
-        --bs: #fff;
-        --bs2: #f8f9fc;
-        --bc: #fff;
-        --bch: #fafbff;
-        --bi: #fff;
-        --b1: rgba(10, 12, 30, 0.08);
-        --b2: rgba(10, 12, 30, 0.14);
-        --t1: #0f1120;
-        --t2: #4e566e;
-        --t3: #9ca3af;
-        --br: #5b4de8;
-        --br2: #a855f7;
-        --brd: linear-gradient(135deg, #5b4de8, #a855f7);
-        --brg: rgba(91, 77, 232, 0.12);
-        --sc: 0 1px 3px rgba(10, 12, 30, 0.06), 0 6px 20px rgba(10, 12, 30, 0.07);
-        --su: 0 2px 6px rgba(10, 12, 30, 0.08), 0 16px 40px rgba(10, 12, 30, 0.1);
+        --bg: #f8fafc;
+        --bs: #ffffff;
+        --bs2: #f1f5f9;
+        --bc: #ffffff;
+        --bch: #f8fafc;
+        --bi: #ffffff;
+        --b1: rgba(15, 23, 42, 0.08);
+        --b2: rgba(15, 23, 42, 0.15);
+        --t1: #0f172a;
+        --t2: #475569;
+        --t3: #94a3b8;
+        --br: #2563eb;
+        --br2: #0284c7;
+        --brd: linear-gradient(135deg, #2563eb, #0284c7);
+        --brg: rgba(37, 99, 235, 0.15);
+        --sc: 0 1px 3px rgba(15, 23, 42, 0.06), 0 6px 20px rgba(15, 23, 42, 0.07);
+        --su: 0 2px 6px rgba(15, 23, 42, 0.08), 0 16px 40px rgba(15, 23, 42, 0.1);
       }
       *,
       *::before,
@@ -131,26 +131,28 @@
         height: 580px;
         top: -160px;
         left: 5%;
-        background: radial-gradient(circle, #7b6cf6, #c084fc);
+        background: radial-gradient(circle, #1e3a8a, #0284c7);
+        opacity: 0.14;
       }
       .ob {
         width: 440px;
         height: 440px;
         top: 45%;
         right: -80px;
-        background: radial-gradient(circle, #ec4899, #f97316);
+        background: radial-gradient(circle, #0f766e, #0369a1);
         animation-duration: 31s;
         animation-delay: -8s;
-        opacity: 0.15;
+        opacity: 0.12;
       }
       .oc {
         width: 500px;
         height: 500px;
         bottom: -100px;
         left: 30%;
-        background: radial-gradient(circle, #3b82f6, #06b6d4);
+        background: radial-gradient(circle, #1d4ed8, #0d9488);
         animation-duration: 21s;
         animation-delay: -14s;
+        opacity: 0.10;
       }
       @keyframes drift {
         0% {
@@ -279,29 +281,31 @@
         display: inline-flex;
         align-items: center;
         gap: 7px;
-        padding: 7px 15px;
-        background: var(--brd);
-        color: #fff !important;
+        padding: 7px 16px;
+        background: #ffffff;
+        color: #090a0f !important;
         font-family: var(--fd);
         font-size: 13px;
-        font-weight: 600;
+        font-weight: 700;
         text-decoration: none;
-        border-radius: var(--r);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 2px 10px var(--brg);
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
         transition: all var(--ft);
       }
       .connect-btn:hover {
+        background: #e2e8f0;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px var(--brg);
-        filter: brightness(1.1);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
       }
       @media (max-width: 580px) {
-        .connect-btn span {
-          display: none;
-        }
         .connect-btn {
-          padding: 8px 12px;
+          padding: 6px 11px;
+          font-size: 11.5px;
+          gap: 5px;
+        }
+        .connect-btn span {
+          display: inline;
         }
       }
       .cc {
@@ -1220,6 +1224,201 @@
         transform: scale(1.1) translateY(-2px);
         box-shadow: 0 8px 24px var(--brg);
       }
+      /* =========================================================
+         MOBILE RESPONSIVE ENHANCEMENTS
+         ========================================================= */
+      .bn {
+        font-family: var(--fd);
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: -0.02em;
+        color: var(--t1);
+        white-space: nowrap;
+      }
+      .connect-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      @media (max-width: 768px) {
+        .w {
+          padding: 0 14px;
+        }
+        .sh {
+          height: 54px;
+        }
+        .ctrl {
+          top: 54px;
+        }
+        .bm {
+          width: 30px;
+          height: 30px;
+          font-size: 11px;
+        }
+        .bn {
+          font-size: 13.5px;
+          white-space: nowrap;
+        }
+        .bsub {
+          display: none;
+        }
+        .ne {
+          gap: 6px;
+        }
+        .connect-btn {
+          padding: 5px 10px;
+          font-size: 11px;
+          height: 30px;
+          gap: 5px;
+          border-radius: 6px;
+          white-space: nowrap;
+        }
+        .ib {
+          width: 30px;
+          height: 30px;
+          font-size: 12px;
+          border-radius: 6px;
+        }
+        .cti {
+          padding: 8px 0 4px;
+          gap: 6px;
+        }
+        .sw {
+          min-width: 0;
+          flex: 1 1 auto;
+        }
+        .sb {
+          height: 38px;
+          font-size: 12.5px;
+          padding: 0 32px 0 32px;
+          border-radius: 6px;
+        }
+        .si {
+          left: 10px;
+          font-size: 11.5px;
+        }
+        .sk {
+          display: none;
+        }
+        .vt {
+          display: none;
+        }
+        .fr {
+          padding: 4px 0 8px;
+          gap: 5px;
+        }
+        .fc {
+          height: 28px;
+          padding: 0 10px;
+          font-size: 11px;
+          gap: 4px;
+          border-radius: 6px;
+        }
+        .fct {
+          font-size: 9px;
+          padding: 1px 4px;
+        }
+        .stb {
+          padding: 6px 0 12px;
+          font-size: 11.5px;
+        }
+        .pg {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          padding-bottom: 74px;
+        }
+        .cb {
+          height: 100px;
+          padding: 10px 14px;
+        }
+        .mo {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+          border-radius: 6px;
+        }
+        .cbdy {
+          padding: 13px 14px 15px;
+        }
+        .cn {
+          font-size: 15.5px;
+        }
+        .cd {
+          font-size: 12.5px;
+          line-height: 1.5;
+          margin-bottom: 10px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .tr {
+          gap: 4px;
+          margin-bottom: 12px;
+        }
+        .ptg {
+          font-size: 10px;
+          padding: 2px 6px;
+        }
+        .cf {
+          padding-top: 10px;
+        }
+        .lb {
+          padding: 5px 12px;
+          font-size: 11.5px;
+          border-radius: 6px;
+        }
+        .db {
+          padding: 5px 10px;
+          font-size: 11.5px;
+          border-radius: 6px;
+        }
+        .whatsapp-float {
+          bottom: 16px;
+          right: 16px;
+          width: 48px;
+          height: 48px;
+          font-size: 24px;
+        }
+        .whatsapp-float .wa-tooltip {
+          display: none;
+        }
+        .scroll-top-btn {
+          bottom: 72px;
+          right: 22px;
+          width: 36px;
+          height: 36px;
+          font-size: 12px;
+        }
+        .mbg {
+          padding: 10px;
+        }
+        .mbox {
+          border-radius: 10px;
+          max-height: 88vh;
+        }
+        .mb {
+          padding: 14px 14px 18px;
+        }
+        .mbn {
+          height: 88px;
+          padding: 14px;
+        }
+        .mtl {
+          font-size: 17px;
+        }
+        .mds {
+          font-size: 12.5px;
+        }
+      }
+      @media (max-width: 380px) {
+        .bn {
+          font-size: 12.5px;
+        }
+        .connect-btn {
+          padding: 4px 8px;
+          font-size: 10.5px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1625,8 +1824,37 @@
             return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
           });
         }
+        var isSiteAvailable = null;
+        function checkSiteUrl() {
+          var url = "https://crafted-webworks.github.io/";
+          var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+          var tid = ctrl ? setTimeout(function () { ctrl.abort(); }, 4000) : null;
+          fetch(url, { method: "HEAD", mode: "no-cors", signal: ctrl ? ctrl.signal : undefined })
+            .then(function () {
+              if (tid) clearTimeout(tid);
+              isSiteAvailable = true;
+              var b = document.getElementById("vSiteBtn");
+              if (b) b.style.display = "inline-flex";
+            })
+            .catch(function () {
+              if (tid) clearTimeout(tid);
+              var img = new Image();
+              img.onload = function () {
+                isSiteAvailable = true;
+                var b = document.getElementById("vSiteBtn");
+                if (b) b.style.display = "inline-flex";
+              };
+              img.onerror = function () {
+                isSiteAvailable = false;
+                var b = document.getElementById("vSiteBtn");
+                if (b) b.style.display = "none";
+              };
+              img.src = url + "favicon.ico?" + Date.now();
+            });
+        }
         function rNav() {
           var th = document.documentElement.dataset.theme;
+          var btnStyle = isSiteAvailable === true ? "display:inline-flex;" : (isSiteAvailable === false ? "display:none;" : "display:none;");
           document.getElementById("nI").innerHTML =
             '<a class="bl" href="' +
             e(D.brand.href) +
@@ -1640,7 +1868,7 @@
             e(D.brand.subtitle) +
             "</div></div></a>" +
             '<div class="ne">' +
-            '<a class="connect-btn" href="https://crafted-webworks.github.io/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View My Site</span></a>' +
+            '<a class="connect-btn" id="vSiteBtn" href="https://crafted-webworks.github.io/" target="_blank" rel="noopener noreferrer" style="' + btnStyle + '"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Site</span></a>' +
             '<button class="ib" id="tbtn" type="button" aria-label="Toggle theme"><i class="fa-solid fa-' +
             (th === "dark" ? "sun" : "moon") +
             '"></i></button></div>';
@@ -1686,9 +1914,9 @@
           var fl = p.badge && p.badge.toLowerCase() === "flagship";
           var bCls = fl ? "fl" : (isLive ? "live" : "");
           var bTxt = isLive ? '<span class="live-dot"></span> ' + e(p.badge) : e(p.badge);
-          var a1 = p.accent[0] || "#7b6cf6",
-            a2 = p.accent[1] || "#c084fc";
-          var ag = a1.startsWith("#") ? a1 + "2a" : "rgba(123,108,246,.16)";
+          var a1 = p.accent[0] || "#2563eb",
+            a2 = p.accent[1] || "#0ea5e9";
+          var ag = a1.startsWith("#") ? a1 + "2a" : "rgba(37,99,235,.16)";
           return (
             '<article class="pc" style="--a1:' +
             a1 +
@@ -1701,11 +1929,7 @@
             'ms;">' +
             '<div class="cb"><div class="bb">' +
             (p.badge ? '<span class="tb ' + bCls + '">' + bTxt + "</span>" : "<span></span>") +
-            '<span class="pp"><i class="fa-regular fa-file-lines"></i> ' +
-            p.pages +
-            " " +
-            (p.pages === 1 ? "Page" : "Pages") +
-            "</span></div>" +
+            "</div>" +
             '<div class="mo">' +
             e(p.monogram) +
             "</div></div>" +
@@ -1796,8 +2020,8 @@
             });
         }
         function oModal(p) {
-          var a1 = p.accent[0] || "#7b6cf6",
-            a2 = p.accent[1] || "#c084fc";
+          var a1 = p.accent[0] || "#2563eb",
+            a2 = p.accent[1] || "#0ea5e9";
           mbox.innerHTML =
             '<div class="mbn" style="--mg:linear-gradient(135deg,' +
             a1 +
@@ -1816,15 +2040,6 @@
             '<p class="mds">' +
             e(p.tagline) +
             "</p>" +
-            '<div class="mtr"><div><div class="mn">' +
-            p.pages +
-            '</div><div class="ml">Pages</div></div>' +
-            '<div><div class="mn">' +
-            (p.year || "--") +
-            '</div><div class="ml">Year</div></div>' +
-            '<div><div class="mn">' +
-            e(p.badge || "Standard") +
-            '</div><div class="ml">Edition</div></div></div>' +
             '<div class="tr" style="margin-bottom:18px;">' +
             p.tags
               .filter(Boolean)
@@ -1966,6 +2181,7 @@
         modal = document.getElementById("modal");
         mbox = document.getElementById("mbox");
         iTheme();
+        checkSiteUrl();
         rCtrl();
         rFlt();
         render();
