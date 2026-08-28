@@ -703,6 +703,24 @@
         border-color: rgba(255, 255, 255, 0.5);
         box-shadow: 0 1px 8px rgba(245, 158, 11, 0.4);
       }
+      .tb.live {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.95), rgba(16, 185, 129, 0.95));
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 1px 10px rgba(34, 197, 94, 0.5);
+      }
+      .live-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #fff;
+        display: inline-block;
+        animation: livePulse 1.5s infinite;
+      }
+      @keyframes livePulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.4); opacity: 0.6; }
+      }
       .pp {
         display: inline-flex;
         align-items: center;
@@ -1134,19 +1152,6 @@
             "tags": ["Single-page", "Live Catering", "Natural Beverage", "SEO"]
           },
           {
-            "id": "advaith-homes",
-            "name": "Advaith Homes",
-            "monogram": "A",
-            "tagline": "The UK's dedicated buyer's agent - working exclusively for property buyers to search, negotiate, conduct legal checks and secure dream homes.",
-            "category": "Real Estate",
-            "badge": "Flagship",
-            "path": "advaith_homes/",
-            "pages": 21,
-            "year": 2026,
-            "accent": ["#1f3a5f", "#4a7fb5"],
-            "tags": ["Multi-page", "Blog & News", "Lead Capture", "SEO", "Calculators"]
-          },
-          {
             "id": "live-house",
             "name": "Living Home",
             "monogram": "L",
@@ -1158,6 +1163,19 @@
             "year": 2026,
             "accent": ["#4a3728", "#b08968"],
             "tags": ["Single-page", "Showcase", "Solid Wood", "Furniture"]
+          },
+          {
+            "id": "advaith-homes",
+            "name": "Advaith Homes",
+            "monogram": "A",
+            "tagline": "The UK's dedicated buyer's agent - working exclusively for property buyers to search, negotiate, conduct legal checks and secure dream homes.",
+            "category": "Real Estate",
+            "badge": "Live Site",
+            "path": "http://advaithhomes.co.uk/",
+            "pages": 21,
+            "year": 2026,
+            "accent": ["#1f3a5f", "#4a7fb5"],
+            "tags": ["Live Site", "Multi-page", "Blog & News", "Lead Capture", "SEO"]
           },
           {
             "id": "wallstudio",
@@ -1563,7 +1581,10 @@
             .join("");
         }
         function cHtml(p, i) {
+          var isLive = p.badge && (p.badge.toLowerCase() === "live site" || p.badge.toLowerCase().indexOf("live") > -1);
           var fl = p.badge && p.badge.toLowerCase() === "flagship";
+          var bCls = fl ? "fl" : (isLive ? "live" : "");
+          var bTxt = isLive ? '<span class="live-dot"></span> ' + e(p.badge) : e(p.badge);
           var a1 = p.accent[0] || "#7b6cf6",
             a2 = p.accent[1] || "#c084fc";
           var ag = a1.startsWith("#") ? a1 + "2a" : "rgba(123,108,246,.16)";
@@ -1578,7 +1599,7 @@
             i * 26 +
             'ms;">' +
             '<div class="cb"><div class="bb">' +
-            (p.badge ? '<span class="tb ' + (fl ? "fl" : "") + '">' + e(p.badge) + "</span>" : "<span></span>") +
+            (p.badge ? '<span class="tb ' + bCls + '">' + bTxt + "</span>" : "<span></span>") +
             '<span class="pp"><i class="fa-regular fa-file-lines"></i> ' +
             p.pages +
             " " +
