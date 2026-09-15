@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Architectural Archive &amp; Landmark Monuments | RELINTER Systems</title>
+<meta name="description" content="Explore Relinter's archive of landmark architectural fenestration projects across India: seaside villas in Alibaug and Goa, high-rise penthouses in Mumbai, and corporate glass towers.">
+
+<link rel="stylesheet" href="css/relinter.css">
+</head>
+
+<body>
+
+<!-- Top Scroll Progress Bar -->
+<div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+<!-- 1. Master Architectural Sliding Glass Doors Preloader -->
+<div id="doorPreloader" class="relinter-preloader" aria-live="polite">
+  <div class="preloader-top-track"></div>
+
+  <div class="door-shutter-container">
+    <!-- Left Sliding Door Sash -->
+    <div class="door-shutter shutter-left">
+      <div class="door-glass-pane">
+        <div class="door-glass-reflection"></div>
+      </div>
+      <div class="door-interlock-stile">
+        <div class="door-pull-handle"></div>
+      </div>
+    </div>
+
+    <!-- Right Sliding Door Sash -->
+    <div class="door-shutter shutter-right">
+      <div class="door-glass-pane">
+        <div class="door-glass-reflection"></div>
+      </div>
+      <div class="door-interlock-stile">
+        <div class="door-pull-handle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preloader-bottom-track"></div>
+
+  <div class="preloader-center-emblem">
+    <div class="preloader-brand-crest">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="crest-svg">
+        <circle cx="24" cy="24" r="22" stroke="url(#crestGoldGradProj)" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <path d="M15 12h14a7 7 0 0 1 7 7 7 7 0 0 1-4.48 6.55L36 34h-6l-5.3-7.5H21V34H15V12zm6 6v6h8a2.5 2.5 0 0 0 0-5H21z" fill="url(#crestGoldGradProj)" />
+        <defs>
+          <linearGradient id="crestGoldGradProj" x1="12" y1="10" x2="36" y2="34" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFE8A3"/>
+            <stop offset="0.5" stop-color="#F3C978"/>
+            <stop offset="1" stop-color="#B88E3E"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <h2 class="door-brand-title">RELINTER</h2>
+    <p class="door-brand-sub">ARCHITECTURAL SYSTEMS • EST. 2004</p>
+
+    <div class="door-track-bar">
+      <div class="door-track-fill" id="doorTrackFill"></div>
+    </div>
+
+    <div class="preloader-status-row">
+      <span class="preloader-status-msg" id="doorTelemetry">CALIBRATING 18MM SIGHTLINES...</span>
+      <span class="preloader-counter" id="preloaderPercent">0%</span>
+    </div>
+  </div>
+</div>
+
+<!-- Top Status Strip -->
+<div class="top-status-strip">
+  <span>✦ Relinter Virgin 6063-T6 Primary Alloy</span>
+  <span>✦ European Multi-Point Security Locking RC3</span>
+  <span>✦ Qualicoat Class-2 30-Year Marine UV Warranty</span>
+  <span>✦ Nationwide Turnkey Installation</span>
+</div>
+
+<!-- 2. Luxury Maison Sticky Navigation Header -->
+<header class="skyla-header" id="skylaHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="brand-cluster">
+      <div class="brand-logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M4 4h9a5 5 0 0 1 5 5 5 5 0 0 1-3.2 4.68L19 20h-4l-3.8-6H8v6H4V4zm4 4v3.5h5a1.75 1.75 0 0 0 0-3.5H8z"/></svg>
+      </div>
+      <div>
+        <span class="brand-wordmark">RELINTER</span>
+        <span class="brand-byline">ARCHITECTURAL SYSTEMS</span>
+      </div>
+    </a>
+
+    <ul class="nav-links-wrap">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="products.html">Systems Matrix</a></li>
+      <li><a href="projects.html" class="active">Architectural Archive</a></li>
+      <li><a href="about.html">Engineering &amp; CNC</a></li>
+      <li><a href="contact.html">Architect &amp; BOQ Portal</a></li>
+    </ul>
+
+    <div class="header-action-stack">
+      <a href="contact.html" class="btn-skyla btn-skyla-gold btn-header-cta">BOOK SITE SURVEY</a>
+      <button class="mobile-toggle-btn" id="mobileMenuOpen" aria-label="Open Mobile Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-curtain" id="mobileNavDrawer">
+  <button class="mobile-close-btn" id="mobileMenuClose" aria-label="Close Mobile Menu">✕</button>
+  <a href="index.html" class="mob-link">OVERVIEW</a>
+  <a href="products.html" class="mob-link">SYSTEMS MATRIX</a>
+  <a href="projects.html" class="mob-link active">ARCHITECTURAL ARCHIVE</a>
+  <a href="about.html" class="mob-link">ENGINEERING &amp; CNC</a>
+  <a href="contact.html" class="mob-link" style="color:var(--gold-primary);">ARCHITECT &amp; BOQ PORTAL</a>
+</div>
+
+<main>
+
+  <!-- Projects Hero -->
+  <section class="section-pad text-center" style="background: radial-gradient(circle at 50% 10%, rgba(243, 201, 120, 0.1) 0%, var(--bg-void) 70%);">
+    <div class="container reveal-fade-up">
+      <div class="kicker-tag float-badge" style="margin: 0 auto 20px;"><span class="dot"></span> OVER 850+ MONUMENTAL EXECUTIONS</div>
+      
+      <div class="title-aura-wrap">
+        <h1 class="hero-kinetic-title">
+          THE ARCHITECTURAL<br>
+          <em>ARCHIVE.</em>
+        </h1>
+      </div>
+
+      <div class="title-divider-beam"></div>
+
+      <p class="desc-lead" style="margin: 0 auto 32px;">
+        Explore how India's most celebrated architects use Relinter's ultra-slim 18mm minimalist sliding portals and structural glass facades to eliminate boundaries between living spaces and natural horizons.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Masonry Grid with Fresh High-Res Architecture Photography -->
+  <section class="section-pad pt-0" style="background: var(--bg-void);">
+    <div class="container">
+      <div class="projects-masonry-grid">
+
+        <!-- Project 1: Villa Serenity, Alibaug -->
+        <div class="project-card shimmer-card reveal-fade-up reveal-delay-1" data-lightbox-index="0">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1400&q=90&fm=webp" alt="Villa Serenity Alibaug" class="project-card-img" loading="lazy">
+          <div class="project-card-curtain"></div>
+          <div class="project-card-content">
+            <span class="project-meta-pill">RESIDENTIAL VILLA • ALIBAUG</span>
+            <h3 class="project-card-title">Villa Serenity</h3>
+            <p class="project-card-location">REL-SL18 Slim Sliders • 4.2m Continuous Height • Concealed Zero-Floor Track</p>
+          </div>
+        </div>
+
+        <!-- Project 2: The Elysium Penthouse, Mumbai -->
+        <div class="project-card shimmer-card reveal-fade-up reveal-delay-2" data-lightbox-index="1">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=90&fm=webp" alt="The Elysium Penthouse Mumbai" class="project-card-img" loading="lazy">
+          <div class="project-card-curtain"></div>
+          <div class="project-card-content">
+            <span class="project-meta-pill">PENTHOUSE SUITE • WORLI MUMBAI</span>
+            <h3 class="project-card-title">The Elysium Penthouse</h3>
+            <p class="project-card-location">REL-LS150 Grand Lift &amp; Slide • Class C5 3500 Pa Cyclonic Wind • 44 dB Sound Shield</p>
+          </div>
+        </div>
+
+        <!-- Project 3: Solarium Coast Villa, Goa -->
+        <div class="project-card shimmer-card reveal-fade-up reveal-delay-3" data-lightbox-index="2">
+          <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1400&q=90&fm=webp" alt="Solarium Coast Villa Goa" class="project-card-img" loading="lazy">
+          <div class="project-card-curtain"></div>
+          <div class="project-card-content">
+            <span class="project-meta-pill">COASTAL RETREAT • ASSAGAO GOA</span>
+            <h3 class="project-card-title">Solarium Coast Villa</h3>
+            <p class="project-card-location">REL-BF75 8-Panel Bi-Fold • 12m Clear Aperture • Decoral Teak Finish</p>
+          </div>
+        </div>
+
+        <!-- Project 4: Cyber Tower One, Hyderabad -->
+        <div class="project-card shimmer-card reveal-fade-up reveal-delay-1" data-lightbox-index="3">
+          <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1400&q=90&fm=webp" alt="Cyber Tower One Hyderabad" class="project-card-img" loading="lazy">
+          <div class="project-card-curtain"></div>
+          <div class="project-card-content">
+            <span class="project-meta-pill">COMMERCIAL FACADE • HYDERABAD</span>
+            <h3 class="project-card-title">Cyber Tower One</h3>
+            <p class="project-card-location">REL-CW50 Unitized Curtain Wall • 45,000 m² • LEED Platinum Certification</p>
+          </div>
+        </div>
+
+        <!-- Project 5: Mist Ridge Sanctuary, Munnar -->
+        <div class="project-card shimmer-card reveal-fade-up reveal-delay-2" data-lightbox-index="4">
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1400&q=90&fm=webp" alt="Mist Ridge Sanctuary Munnar" class="project-card-img" loading="lazy">
+          <div class="project-card-curtain"></div>
+          <div class="project-card-content">
+            <span class="project-meta-pill">LUXURY RESORT • MUNNAR HILLS</span>
+            <h3 class="project-card-title">Mist Ridge Sanctuary</h3>
+            <p class="project-card-location">REL-CS65 34mm Thermal Break Casements • Condensation-Free Argon Double Glazing</p>
+          </div>
+        </div>
+
+        <!-- Project 6: Omnia Global HQ, BKC -->
+        <div class="project-card shimmer-card reveal-fade-up reveal-delay-3" data-lightbox-index="5">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=90&fm=webp" alt="Omnia Global HQ BKC" class="project-card-img" loading="lazy">
+          <div class="project-card-curtain"></div>
+          <div class="project-card-content">
+            <span class="project-meta-pill">CORPORATE HEADQUARTERS • BKC MUMBAI</span>
+            <h3 class="project-card-title">Omnia Global Executive Floor</h3>
+            <p class="project-card-location">REL-PT30 Partitions • 42 dB Speech Privacy • Concealed Magnetic Soft-Close</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Architect Testimonials -->
+  <section class="section-pad" style="background: var(--bg-deep);">
+    <div class="container">
+      <div class="section-header-center reveal-fade-up">
+        <div class="kicker-tag"><span class="dot"></span> ARCHITECTURAL COLLABORATIONS</div>
+        <div class="title-aura-wrap">
+          <h2 class="title-display">Endorsed by India's Premier <span class="title-accent">Designers</span></h2>
+        </div>
+        <div class="title-divider-beam"></div>
+      </div>
+
+      <div class="commentary-grid">
+        
+        <!-- Commentary 1 -->
+        <div class="commentary-card shimmer-card reveal-fade-up reveal-delay-1">
+          <div>
+            <div class="commentary-header">
+              <div class="commentary-rating">★★★★★</div>
+              <span class="commentary-system-tag">REL-SL18 MINIMALIST</span>
+            </div>
+            <div class="commentary-quote-mark">“</div>
+            <p class="commentary-quote-text">
+              Relinter's 18mm minimalist sliding doors transformed our Alibaug cliff villa. The floor threshold is genuinely 100% flush, and the effortless feather-light glide of 500kg panels is pure engineering artistry.
+            </p>
+          </div>
+          <div class="commentary-author-wrap">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=85&fm=webp" alt="Rahul Kapadia" class="commentary-avatar" loading="lazy">
+            <div>
+              <h4 class="commentary-author-name">Rahul Kapadia</h4>
+              <p class="commentary-author-role">Principal Architect • Kapadia Studio Mumbai</p>
+              <span class="commentary-project-pill">✦ VERIFIED: VILLA OASIS • ALIBAUG</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Commentary 2 -->
+        <div class="commentary-card shimmer-card reveal-fade-up reveal-delay-2">
+          <div>
+            <div class="commentary-header">
+              <div class="commentary-rating">★★★★★</div>
+              <span class="commentary-system-tag">REL-LS150 LIFT &amp; SLIDE</span>
+            </div>
+            <div class="commentary-quote-mark">“</div>
+            <p class="commentary-quote-text">
+              For our 52-storey Worli tower, wind-load resistance and acoustic isolation were non-negotiable. Relinter's Grand Lift &amp; Slide delivered flawless Class C5 storm ratings and laboratory-proven 44 dB silencing.
+            </p>
+          </div>
+          <div class="commentary-author-wrap">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&q=85&fm=webp" alt="Ananya Mukherjee" class="commentary-avatar" loading="lazy">
+            <div>
+              <h4 class="commentary-author-name">Ananya Mukherjee</h4>
+              <p class="commentary-author-role">Director of Design • Urban Skyline Developers</p>
+              <span class="commentary-project-pill">✦ VERIFIED: HORIZON PENTHOUSE • WORLI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Commentary 3 -->
+        <div class="commentary-card shimmer-card reveal-fade-up reveal-delay-3">
+          <div>
+            <div class="commentary-header">
+              <div class="commentary-rating">★★★★★</div>
+              <span class="commentary-system-tag">REL-CW50 CURTAIN WALL</span>
+            </div>
+            <div class="commentary-quote-mark">“</div>
+            <p class="commentary-quote-text">
+              The German 5-axis CNC precision and direct BOQ support made executing our LEED Platinum commercial facade on schedule seamless. Their engineering atelier is unmatched anywhere in India.
+            </p>
+          </div>
+          <div class="commentary-author-wrap">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=85&fm=webp" alt="Sanjay Reddy" class="commentary-avatar" loading="lazy">
+            <div>
+              <h4 class="commentary-author-name">Sanjay Reddy</h4>
+              <p class="commentary-author-role">Lead Facade Consultant • Apex BuildTech Hyderabad</p>
+              <span class="commentary-project-pill">✦ VERIFIED: APEX IT TECH PARK • BENGALURU</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Fullscreen Lightbox Modal -->
+<div class="skyla-lightbox-overlay" id="lightboxOverlay">
+  <div class="lightbox-modal-box">
+    <div class="lightbox-top-bar">
+      <span class="project-meta-pill" id="lbIndexTag">RELINTER ARCHIVE • 2026</span>
+      <button class="mobile-close-btn" id="lightboxClose" style="position:static; width:36px; height:36px; font-size:1rem;">✕</button>
+    </div>
+    <div class="lightbox-stage">
+      <button class="lb-arrow-btn lb-arrow-prev" id="lbPrev">‹</button>
+      <img src="" alt="Monumental Project" id="lbImage" class="lightbox-img-el">
+      <button class="lb-arrow-btn lb-arrow-next" id="lbNext">›</button>
+    </div>
+    <div class="lightbox-bottom-caption">
+      <div>
+        <div id="lbTag" style="font-family:var(--font-mono); font-size:0.7rem; color:var(--gold-primary); text-transform:uppercase;"></div>
+        <h4 id="lbTitle" style="font-family:var(--font-display); font-size:1.2rem; color:#FFF;"></h4>
+        <p id="lbDesc" style="font-size:0.84rem; color:var(--text-secondary);"></p>
+      </div>
+      <a href="contact.html" class="btn-skyla btn-skyla-gold" style="padding:8px 20px; font-size:0.75rem;">BOOK CONSULTATION</a>
+    </div>
+  </div>
+</div>
+
+<!-- Maison Footer -->
+<footer class="skyla-footer">
+  <div class="container">
+    <div class="footer-grid-top">
+      <div class="footer-col">
+        <span class="brand-wordmark" style="font-size: 1.6rem; display: block; margin-bottom: 4px;">RELINTER</span>
+        <span class="brand-byline" style="margin-bottom: 14px;">ARCHITECTURAL SYSTEMS • EST. 2004</span>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.7; max-width: 320px;">
+          Manufacturer and certified installer of precision architectural aluminium windows, minimalist sliding portals, and structural curtain wall facades across India.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>SYSTEMS</h5>
+        <ul>
+          <li><a href="products.html">18mm Minimalist Sliding</a></li>
+          <li><a href="products.html">Concertina Slide &amp; Fold</a></li>
+          <li><a href="products.html">Grand Lift &amp; Slide 800kg</a></li>
+          <li><a href="products.html">Acoustic Casements 48dB</a></li>
+          <li><a href="products.html">Structural Curtain Wall CW50</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>ATELIER &amp; COMPANY</h5>
+        <ul>
+          <li><a href="about.html">About Relinter Systems</a></li>
+          <li><a href="projects.html">Project Archive</a></li>
+          <li><a href="about.html#cnc">German CNC Machining Hub</a></li>
+          <li><a href="about.html#quality">Primary 6063-T6 Standards</a></li>
+          <li><a href="contact.html">Contact Atelier</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>ARCHITECT CONCIERGE</h5>
+        <ul>
+          <li><a href="contact.html#estimator" style="color:var(--gold-primary); font-weight:700;">Live BOQ Calculator ↗</a></li>
+          <li><a href="tel:+918073756688">+91 80737 56688</a></li>
+          <li><a href="mailto:projects@relinter.com">projects@relinter.com</a></li>
+          <li><span style="color:var(--text-muted); font-size:0.82rem;">Bengaluru • Hyderabad • Mumbai • Goa</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-sub-bar">
+      <div>© 2026 Relinter Architectural Systems Pvt. Ltd. All Rights Reserved.</div>
+      <div>Engineered with Primary 6063-T6 Alloy &amp; European Hardware.</div>
+      <div style="display: flex; gap: 20px;">
+        <a href="about.html" style="color:var(--text-muted); text-decoration:none;">Quality Charter</a>
+        <a href="contact.html" style="color:var(--text-muted); text-decoration:none;">IS:875 Test Certificates</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/relinter.js"></script>
+</body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Architectural Systems &amp; Typologies | RELINTER Systems</title>
+<meta name="description" content="Explore Relinter's comprehensive architectural aluminium systems portfolio: 18mm Minimalist Sliding Systems, Concertina Bi-Folds, Grand Lift &amp; Slide, and Structural Facades.">
+
+<link rel="stylesheet" href="css/relinter.css">
+</head>
+
+<body>
+
+<!-- Top Scroll Progress Bar -->
+<div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+<!-- 1. Master Architectural Sliding Glass Doors Preloader -->
+<div id="doorPreloader" class="relinter-preloader" aria-live="polite">
+  <div class="preloader-top-track"></div>
+
+  <div class="door-shutter-container">
+    <!-- Left Sliding Door Sash -->
+    <div class="door-shutter shutter-left">
+      <div class="door-glass-pane">
+        <div class="door-glass-reflection"></div>
+      </div>
+      <div class="door-interlock-stile">
+        <div class="door-pull-handle"></div>
+      </div>
+    </div>
+
+    <!-- Right Sliding Door Sash -->
+    <div class="door-shutter shutter-right">
+      <div class="door-glass-pane">
+        <div class="door-glass-reflection"></div>
+      </div>
+      <div class="door-interlock-stile">
+        <div class="door-pull-handle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preloader-bottom-track"></div>
+
+  <div class="preloader-center-emblem">
+    <div class="preloader-brand-crest">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="crest-svg">
+        <circle cx="24" cy="24" r="22" stroke="url(#crestGoldGradProd)" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <path d="M15 12h14a7 7 0 0 1 7 7 7 7 0 0 1-4.48 6.55L36 34h-6l-5.3-7.5H21V34H15V12zm6 6v6h8a2.5 2.5 0 0 0 0-5H21z" fill="url(#crestGoldGradProd)" />
+        <defs>
+          <linearGradient id="crestGoldGradProd" x1="12" y1="10" x2="36" y2="34" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFE8A3"/>
+            <stop offset="0.5" stop-color="#F3C978"/>
+            <stop offset="1" stop-color="#B88E3E"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <h2 class="door-brand-title">RELINTER</h2>
+    <p class="door-brand-sub">ARCHITECTURAL SYSTEMS • EST. 2004</p>
+
+    <div class="door-track-bar">
+      <div class="door-track-fill" id="doorTrackFill"></div>
+    </div>
+
+    <div class="preloader-status-row">
+      <span class="preloader-status-msg" id="doorTelemetry">CALIBRATING 18MM SIGHTLINES...</span>
+      <span class="preloader-counter" id="preloaderPercent">0%</span>
+    </div>
+  </div>
+</div>
+
+<!-- Top Status Strip -->
+<div class="top-status-strip">
+  <span>✦ Relinter Virgin 6063-T6 Primary Alloy</span>
+  <span>✦ European Multi-Point Security Locking RC3</span>
+  <span>✦ Qualicoat Class-2 30-Year Marine UV Warranty</span>
+  <span>✦ Nationwide Turnkey Installation</span>
+</div>
+
+<!-- 2. Luxury Maison Sticky Navigation Header -->
+<header class="skyla-header" id="skylaHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="brand-cluster">
+      <div class="brand-logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M4 4h9a5 5 0 0 1 5 5 5 5 0 0 1-3.2 4.68L19 20h-4l-3.8-6H8v6H4V4zm4 4v3.5h5a1.75 1.75 0 0 0 0-3.5H8z"/></svg>
+      </div>
+      <div>
+        <span class="brand-wordmark">RELINTER</span>
+        <span class="brand-byline">ARCHITECTURAL SYSTEMS</span>
+      </div>
+    </a>
+
+    <ul class="nav-links-wrap">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="products.html" class="active">Systems Matrix</a></li>
+      <li><a href="projects.html">Architectural Archive</a></li>
+      <li><a href="about.html">Engineering &amp; CNC</a></li>
+      <li><a href="contact.html">Architect &amp; BOQ Portal</a></li>
+    </ul>
+
+    <div class="header-action-stack">
+      <a href="contact.html" class="btn-skyla btn-skyla-gold btn-header-cta">BOOK SITE SURVEY</a>
+      <button class="mobile-toggle-btn" id="mobileMenuOpen" aria-label="Open Mobile Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-curtain" id="mobileNavDrawer">
+  <button class="mobile-close-btn" id="mobileMenuClose" aria-label="Close Mobile Menu">✕</button>
+  <a href="index.html" class="mob-link">OVERVIEW</a>
+  <a href="products.html" class="mob-link active">SYSTEMS MATRIX</a>
+  <a href="projects.html" class="mob-link">ARCHITECTURAL ARCHIVE</a>
+  <a href="about.html" class="mob-link">ENGINEERING &amp; CNC</a>
+  <a href="contact.html" class="mob-link" style="color:var(--gold-primary);">ARCHITECT &amp; BOQ PORTAL</a>
+</di  <!-- Products Hero -->
+  <section class="section-pad text-center" style="background: radial-gradient(circle at 50% 10%, rgba(243, 201, 120, 0.1) 0%, var(--bg-void) 70%);">
+    <div class="container reveal-fade-up">
+      <div class="kicker-tag float-badge" style="margin: 0 auto 20px;"><span class="dot"></span> 6 ENGINEERED TYPOLOGIES</div>
+      
+      <div class="title-aura-wrap">
+        <h1 class="hero-kinetic-title">
+          RELINTER SYSTEMS<br>
+          <em>ENGINEERED FOR SCALE.</em>
+        </h1>
+      </div>
+
+      <div class="title-divider-beam"></div>
+
+      <p class="desc-lead" style="margin: 0 auto 32px;">
+        Extruded exclusively from primary 6063-T6 aerospace-grade virgin billets. Featuring 18mm ultra-slim sightlines, PA66 thermal breaks, and multi-point European security cams.
+      </p>
+
+      <div class="systems-filter-bar reveal-fade-up reveal-delay-2">
+        <button class="filter-pill-btn active" data-filter="all">All Systems (6)</button>
+        <button class="filter-pill-btn" data-filter="sliding">18mm Minimalist Sliding</button>
+        <button class="filter-pill-btn" data-filter="bifold">Concertina Bi-Fold</button>
+        <button class="filter-pill-btn" data-filter="liftslide">Grand Lift &amp; Slide</button>
+        <button class="filter-pill-btn" data-filter="casement">Acoustic Casements</button>
+        <button class="filter-pill-btn" data-filter="facades">Curtain Wall CW50</button>
+        <button class="filter-pill-btn" data-filter="partitions">Demountable Partitions</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Systems Cards Grid -->
+  <section class="section-pad pt-0" style="background: var(--bg-void);">
+    <div class="container">
+      <div class="systems-card-grid" id="systemsCatalogGrid">
+
+        <!-- 1. Minimalist Sliding Door -->
+        <div class="system-card shimmer-card reveal-fade-up reveal-delay-1" data-category="sliding" data-lightbox-index="0">
+          <div class="system-card-media">
+            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&fm=webp&q=90" alt="18mm Minimalist Sliding System" class="system-card-img" loading="lazy">
+            <div class="system-pill-tag">18MM SIGHTLINE</div>
+          </div>
+          <div class="system-card-body">
+            <div>
+              <span class="system-num-code">SYSTEM CODE: REL-SL18-PRO</span>
+              <h3 class="system-card-title">Minimalist Slim Sliding System</h3>
+              <p class="system-card-desc">
+                Concealed floor sub-frames with an 18mm visible vertical interlock profile. Supports up to 600kg sash weight on tandem stainless steel bogie rollers with 100% flush floor transitions.
+              </p>
+              
+              <div class="system-specs-table">
+                <div class="spec-item"><span>Visible Stile</span><span>18 mm</span></div>
+                <div class="spec-item"><span>Max Height</span><span>4,200 mm</span></div>
+                <div class="spec-item"><span>Thermal Value</span><span>1.1 W/m²K</span></div>
+                <div class="spec-item"><span>Acoustic Rw</span><span>42 dB Shield</span></div>
+              </div>
+            </div>
+
+            <div class="system-card-actions">
+              <a href="contact.html#estimator" class="btn-skyla btn-skyla-glass" style="padding:8px 18px; font-size:0.75rem;">BOQ ESTIMATOR</a>
+              <a href="contact.html" class="btn-skyla btn-skyla-gold" style="padding:8px 18px; font-size:0.75rem;">REQUEST SPEC KIT ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Concertina Bi-Fold -->
+        <div class="system-card shimmer-card reveal-fade-up reveal-delay-2" data-category="bifold" data-lightbox-index="1">
+          <div class="system-card-media">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&fm=webp&q=90" alt="Concertina Bi-Fold Wall System" class="system-card-img" loading="lazy">
+            <div class="system-pill-tag">95% CLEAR APERTURE</div>
+          </div>
+          <div class="system-card-body">
+            <div>
+              <span class="system-num-code">SYSTEM CODE: REL-BF75-HEAVY</span>
+              <h3 class="system-card-title">Concertina Bi-Fold System</h3>
+              <p class="system-card-desc">
+                Full-width panoramic folding wall delivering up to 95% unobstructed aperture opening. Top-hung heavy duty stainless steel carrier guides with flush bottom floor track integration.
+              </p>
+              
+              <div class="system-specs-table">
+                <div class="spec-item"><span>Profile Depth</span><span>75 mm</span></div>
+                <div class="spec-item"><span>Max Height</span><span>3,600 mm</span></div>
+                <div class="spec-item"><span>Leaf Count</span><span>2 to 14 Panels</span></div>
+                <div class="spec-item"><span>Thermal Value</span><span>1.3 W/m²K</span></div>
+              </div>
+            </div>
+
+            <div class="system-card-actions">
+              <a href="contact.html#estimator" class="btn-skyla btn-skyla-glass" style="padding:8px 18px; font-size:0.75rem;">BOQ ESTIMATOR</a>
+              <a href="contact.html" class="btn-skyla btn-skyla-gold" style="padding:8px 18px; font-size:0.75rem;">REQUEST SPEC KIT ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Grand Lift & Slide -->
+        <div class="system-card shimmer-card reveal-fade-up reveal-delay-3" data-category="liftslide" data-lightbox-index="2">
+          <div class="system-card-media">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&fm=webp&q=90" alt="Grand Lift and Slide Door" class="system-card-img" loading="lazy">
+            <div class="system-pill-tag">CYCLONIC 3500 PA</div>
+          </div>
+          <div class="system-card-body">
+            <div>
+              <span class="system-num-code">SYSTEM CODE: REL-LS150-MAX</span>
+              <h3 class="system-card-title">Grand Lift &amp; Slide System</h3>
+              <p class="system-card-desc">
+                Engineered for extreme coastal wind loads and penthouse elevations. Mechanical lever handle elevates the sash onto precision ball-bearing runners for effortless feather-light glide.
+              </p>
+              
+              <div class="system-specs-table">
+                <div class="spec-item"><span>Max Sash Weight</span><span>800 kg / Leaf</span></div>
+                <div class="spec-item"><span>Wind Load</span><span>Class C5 (3500 Pa)</span></div>
+                <div class="spec-item"><span>Acoustic Rw</span><span>44 dB Studio</span></div>
+                <div class="spec-item"><span>Thermal Value</span><span>1.0 W/m²K</span></div>
+              </div>
+            </div>
+
+            <div class="system-card-actions">
+              <a href="contact.html#estimator" class="btn-skyla btn-skyla-glass" style="padding:8px 18px; font-size:0.75rem;">BOQ ESTIMATOR</a>
+              <a href="contact.html" class="btn-skyla btn-skyla-gold" style="padding:8px 18px; font-size:0.75rem;">REQUEST SPEC KIT ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Acoustic Casement & Tilt-Turn -->
+        <div class="system-card shimmer-card reveal-fade-up reveal-delay-1" data-category="casement" data-lightbox-index="3">
+          <div class="system-card-media">
+            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&fm=webp&q=90" alt="Acoustic Casement Windows" class="system-card-img" loading="lazy">
+            <div class="system-pill-tag">48 DB ATTENUATION</div>
+          </div>
+          <div class="system-card-body">
+            <div>
+              <span class="system-num-code">SYSTEM CODE: REL-CS65-AERO</span>
+              <h3 class="system-card-title">Acoustic Casement &amp; Tilt-Turn</h3>
+              <p class="system-card-desc">
+                Precision European multi-point perimeter compression seals. Triple-gasket EPDM barrier delivers studio-grade sound reduction and total atmospheric isolation.
+              </p>
+              
+              <div class="system-specs-table">
+                <div class="spec-item"><span>Profile Depth</span><span>65 mm / 75 mm</span></div>
+                <div class="spec-item"><span>Hardware</span><span>Sobinco / G-U</span></div>
+                <div class="spec-item"><span>Sound Attenuation</span><span>48 dB (Rw)</span></div>
+                <div class="spec-item"><span>Thermal Value</span><span>0.95 W/m²K</span></div>
+              </div>
+            </div>
+
+            <div class="system-card-actions">
+              <a href="contact.html#estimator" class="btn-skyla btn-skyla-glass" style="padding:8px 18px; font-size:0.75rem;">BOQ ESTIMATOR</a>
+              <a href="contact.html" class="btn-skyla btn-skyla-gold" style="padding:8px 18px; font-size:0.75rem;">REQUEST SPEC KIT ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Structural Curtain Wall Facades -->
+        <div class="system-card shimmer-card reveal-fade-up reveal-delay-2" data-category="facades" data-lightbox-index="4">
+          <div class="system-card-media">
+            <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&fm=webp&q=90" alt="Structural Curtain Wall Facades" class="system-card-img" loading="lazy">
+            <div class="system-pill-tag">STRUCTURAL GLAZING</div>
+          </div>
+          <div class="system-card-body">
+            <div>
+              <span class="system-num-code">SYSTEM CODE: REL-CW50-MONO</span>
+              <h3 class="system-card-title">Structural Curtain Wall Facades</h3>
+              <p class="system-card-desc">
+                Engineered mullion-transom grid curtain walling for double-height atrium villas and commercial glass towers with unitized factory-assembled modules.
+              </p>
+              
+              <div class="system-specs-table">
+                <div class="spec-item"><span>Grid Face</span><span>50 mm / 60 mm</span></div>
+                <div class="spec-item"><span>Span Height</span><span>Continuous Multi-Story</span></div>
+                <div class="spec-item"><span>Thermal Break</span><span>34mm Polyamide</span></div>
+                <div class="spec-item"><span>Wind Load</span><span>Class E4 (4000 Pa)</span></div>
+              </div>
+            </div>
+
+            <div class="system-card-actions">
+              <a href="contact.html#estimator" class="btn-skyla btn-skyla-glass" style="padding:8px 18px; font-size:0.75rem;">BOQ ESTIMATOR</a>
+              <a href="contact.html" class="btn-skyla btn-skyla-gold" style="padding:8px 18px; font-size:0.75rem;">REQUEST SPEC KIT ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Demountable Glass Partitions -->
+        <div class="system-card shimmer-card reveal-fade-up reveal-delay-3" data-category="partitions" data-lightbox-index="5">
+          <div class="system-card-media">
+            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&fm=webp&q=90" alt="Demountable Acoustic Glass Partitions" class="system-card-img" loading="lazy">
+            <div class="system-pill-tag">FLUSH FRAMELESS</div>
+          </div>
+          <div class="system-card-body">
+            <div>
+              <span class="system-num-code">SYSTEM CODE: REL-PT30-SLIM</span>
+              <h3 class="system-card-title">Demountable Acoustic Partitions</h3>
+              <p class="system-card-desc">
+                Ultra-slim interior glazed partitioning systems for executive boardroom suites, art galleries, and modern penthouses with dry polycarbonate clear joints.
+              </p>
+              
+              <div class="system-specs-table">
+                <div class="spec-item"><span>Profile Height</span><span>25 mm - 35 mm</span></div>
+                <div class="spec-item"><span>Glass Infill</span><span>10mm - 12.76mm Lami</span></div>
+                <div class="spec-item"><span>Acoustic Privacy</span><span>41 dB (Rw)</span></div>
+                <div class="spec-item"><span>Door Closers</span><span>Concealed Soft Pivot</span></div>
+              </div>
+            </div>
+
+            <div class="system-card-actions">
+              <a href="contact.html#estimator" class="btn-skyla btn-skyla-glass" style="padding:8px 18px; font-size:0.75rem;">BOQ ESTIMATOR</a>
+              <a href="contact.html" class="btn-skyla btn-skyla-gold" style="padding:8px 18px; font-size:0.75rem;">REQUEST SPEC KIT ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparative Performance Matrix -->
+  <section class="section-pad" style="background: var(--bg-deep);">
+    <div class="container">
+      <div class="section-header-center reveal-fade-up">
+        <div class="kicker-tag"><span class="dot"></span> ENGINEERING BENCHMARK MATRIX</div>
+        <div class="title-aura-wrap">
+          <h2 class="title-display">Comparative Performance <span class="title-accent">Matrix</span></h2>
+        </div>
+        <div class="title-divider-beam"></div>
+        <p class="desc-lead" style="margin: 0 auto;">
+          Directly cross-reference thermal U-values, acoustic dB insulation, maximum aperture thresholds, and wind pressure resistances.
+        </p>
+      </div>
+
+      <div class="perf-matrix-table-wrap reveal-fade-up reveal-delay-2">
+        <table class="perf-table">
+          <thead>
+            <tr>
+              <th>System Model</th>
+              <th>Typology</th>
+              <th>Sightline</th>
+              <th>Max Panel Wt</th>
+              <th>Thermal U-Value</th>
+              <th>Acoustic Rw</th>
+              <th>Wind Load Class</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">REL-SL18-PRO</td>
+              <td>18mm Minimalist Sliding</td>
+              <td>18 mm Slim</td>
+              <td>600 kg / Panel</td>
+              <td>1.1 W/m²K</td>
+              <td>42 dB</td>
+              <td>Class C4 (2400 Pa)</td>
+            </tr>
+            <tr>
+              <td class="highlight">REL-BF75-HEAVY</td>
+              <td>Concertina Bi-Fold</td>
+              <td>118 mm Stile</td>
+              <td>150 kg / Leaf</td>
+              <td>1.3 W/m²K</td>
+              <td>39 dB</td>
+              <td>Class C3 (1800 Pa)</td>
+            </tr>
+            <tr>
+              <td class="highlight">REL-LS150-MAX</td>
+              <td>Grand Lift &amp; Slide</td>
+              <td>35 mm Heavy</td>
+              <td>800 kg / Sash</td>
+              <td>1.0 W/m²K</td>
+              <td>44 dB</td>
+              <td>Class C5 (3500 Pa)</td>
+            </tr>
+            <tr>
+              <td class="highlight">REL-CS65-AERO</td>
+              <td>Acoustic Casement / Tilt</td>
+              <td>65 mm Flush</td>
+              <td>180 kg / Vent</td>
+              <td>0.95 W/m²K</td>
+              <td>48 dB Studio</td>
+              <td>Class C5 (3000 Pa)</td>
+            </tr>
+            <tr>
+              <td class="highlight">REL-CW50-MONO</td>
+              <td>Structural Curtain Wall</td>
+              <td>50 mm Grid</td>
+              <td>1,200 kg / Bay</td>
+              <td>1.1 W/m²K</td>
+              <td>46 dB</td>
+              <td>Class E4 (4000 Pa)</td>
+            </tr>
+            <tr>
+              <td class="highlight">REL-PT30-SLIM</td>
+              <td>Demountable Partitions</td>
+              <td>28 mm Channel</td>
+              <td>120 kg / Door</td>
+              <td>Interior</td>
+              <td>41 dB</td>
+              <td>1.2 kN/m Rigidity</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architectural Powder & Anodized Swatches -->
+  <section class="section-pad" style="background: var(--bg-void);">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div class="reveal-slide-left">
+          <div class="kicker-tag"><span class="dot"></span> QUALICOAT CLASS 2 &amp; EURAS CERTIFIED</div>
+          <div class="title-aura-wrap">
+            <h2 class="title-display">Enduring Surface <span class="title-accent">Finishes</span></h2>
+          </div>
+          <div class="title-divider-beam align-left"></div>
+          <p class="desc-lead" style="margin-bottom: 24px;">
+            Relinter finishes are engineered to withstand extreme UV radiation, coastal salinity, and monsoonal weathering. Certified to Qualicoat Class 2 Superdurable standards with up to 30-year colour fastness.
+          </p>
+          <a href="contact.html" class="btn-skyla btn-skyla-gold">ORDER MATERIAL SAMPLE BOX ↗</a>
+        </div>
+
+        <div class="grid-2 reveal-slide-right" style="gap: 14px;">
+          <div class="swatch-card shimmer-card">
+            <div class="swatch-orb" style="background: linear-gradient(135deg, #dfba73, #8c6e30);"></div>
+            <div>
+              <div style="font-weight: 700; color: #fff; font-size: 0.92rem;">Champagne Bronze</div>
+              <div style="font-size: 0.74rem; color: var(--text-muted);">EURAS 25µ Anodized</div>
+            </div>
+          </div>
+
+          <div class="swatch-card shimmer-card">
+            <div class="swatch-orb" style="background: linear-gradient(135deg, #1f232b, #0d0f12);"></div>
+            <div>
+              <div style="font-weight: 700; color: #fff; font-size: 0.92rem;">Obsidian Noir (9005)</div>
+              <div style="font-size: 0.74rem; color: var(--text-muted);">Qualicoat Class 2 Texture</div>
+            </div>
+          </div>
+
+          <div class="swatch-card shimmer-card">
+            <div class="swatch-orb" style="background: linear-gradient(135deg, #70757d, #3c4046);"></div>
+            <div>
+              <div style="font-weight: 700; color: #fff; font-size: 0.92rem;">Matte Anthracite (7016)</div>
+              <div style="font-size: 0.74rem; color: var(--text-muted);">Superdurable Powder</div>
+            </div>
+          </div>
+
+          <div class="swatch-card shimmer-card">
+            <div class="swatch-orb" style="background: linear-gradient(135deg, #c7d2de, #85919e);"></div>
+            <div>
+              <div style="font-weight: 700; color: #fff; font-size: 0.92rem;">Satin Titanium Silver</div>
+              <div style="font-size: 0.74rem; color: var(--text-muted);">Natural Satin Anodized</div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Fullscreen Lightbox Modal -->
+<div class="skyla-lightbox-overlay" id="lightboxOverlay">
+  <div class="lightbox-modal-box">
+    <div class="lightbox-top-bar">
+      <span class="project-meta-pill" id="lbIndexTag">RELINTER ATELIER SPEC • 2026</span>
+      <button class="mobile-close-btn" id="lightboxClose" style="position:static; width:36px; height:36px; font-size:1rem;">✕</button>
+    </div>
+    <div class="lightbox-stage">
+      <button class="lb-arrow-btn lb-arrow-prev" id="lbPrev">‹</button>
+      <img src="" alt="System Spec" id="lbImage" class="lightbox-img-el">
+      <button class="lb-arrow-btn lb-arrow-next" id="lbNext">›</button>
+    </div>
+    <div class="lightbox-bottom-caption">
+      <div>
+        <div id="lbTag" style="font-family:var(--font-mono); font-size:0.7rem; color:var(--gold-primary); text-transform:uppercase;"></div>
+        <h4 id="lbTitle" style="font-family:var(--font-display); font-size:1.2rem; color:#FFF;"></h4>
+        <p id="lbDesc" style="font-size:0.84rem; color:var(--text-secondary);"></p>
+      </div>
+      <a href="contact.html" class="btn-skyla btn-skyla-gold" style="padding:8px 20px; font-size:0.75rem;">BOOK CONSULTATION</a>
+    </div>
+  </div>
+</div>
+
+<!-- Maison Footer -->
+<footer class="skyla-footer">
+  <div class="container">
+    <div class="footer-grid-top">
+      <div class="footer-col">
+        <span class="brand-wordmark" style="font-size: 1.6rem; display: block; margin-bottom: 4px;">RELINTER</span>
+        <span class="brand-byline" style="margin-bottom: 14px;">ARCHITECTURAL SYSTEMS • EST. 2004</span>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.7; max-width: 320px;">
+          Manufacturer and certified installer of precision architectural aluminium windows, minimalist sliding portals, and structural curtain wall facades across India.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>SYSTEMS</h5>
+        <ul>
+          <li><a href="products.html">18mm Minimalist Sliding</a></li>
+          <li><a href="products.html">Concertina Slide &amp; Fold</a></li>
+          <li><a href="products.html">Grand Lift &amp; Slide 800kg</a></li>
+          <li><a href="products.html">Acoustic Casements 48dB</a></li>
+          <li><a href="products.html">Structural Curtain Wall CW50</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>ATELIER &amp; COMPANY</h5>
+        <ul>
+          <li><a href="about.html">About Relinter Systems</a></li>
+          <li><a href="projects.html">Project Archive</a></li>
+          <li><a href="about.html#cnc">German CNC Machining Hub</a></li>
+          <li><a href="about.html#quality">Primary 6063-T6 Standards</a></li>
+          <li><a href="contact.html">Contact Atelier</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>ARCHITECT CONCIERGE</h5>
+        <ul>
+          <li><a href="contact.html#estimator" style="color:var(--gold-primary); font-weight:700;">Live BOQ Calculator ↗</a></li>
+          <li><a href="tel:+918073756688">+91 80737 56688</a></li>
+          <li><a href="mailto:projects@relinter.com">projects@relinter.com</a></li>
+          <li><span style="color:var(--text-muted); font-size:0.82rem;">Bengaluru • Hyderabad • Mumbai • Goa</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-sub-bar">
+      <div>© 2026 Relinter Architectural Systems Pvt. Ltd. All Rights Reserved.</div>
+      <div>Engineered with Primary 6063-T6 Alloy &amp; European Hardware.</div>
+      <div style="display: flex; gap: 20px;">
+        <a href="about.html" style="color:var(--text-muted); text-decoration:none;">Quality Charter</a>
+        <a href="contact.html" style="color:var(--text-muted); text-decoration:none;">IS:875 Test Certificates</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/relinter.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Engineering Legacy &amp; German CNC Precision | RELINTER Systems</title>
+<meta name="description" content="Explore Relinter's 20+ year manufacturing legacy: German 5-axis CNC machining, primary 6063-T6 virgin aluminium extrusion, and LEED Platinum compliant architectural systems.">
+
+<link rel="stylesheet" href="css/relinter.css">
+</head>
+
+<body>
+
+<!-- Top Scroll Progress Bar -->
+<div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+<!-- 1. Master Architectural Sliding Glass Doors Preloader -->
+<div id="doorPreloader" class="relinter-preloader" aria-live="polite">
+  <div class="preloader-top-track"></div>
+
+  <div class="door-shutter-container">
+    <!-- Left Sliding Door Sash -->
+    <div class="door-shutter shutter-left">
+      <div class="door-glass-pane">
+        <div class="door-glass-reflection"></div>
+      </div>
+      <div class="door-interlock-stile">
+        <div class="door-pull-handle"></div>
+      </div>
+    </div>
+
+    <!-- Right Sliding Door Sash -->
+    <div class="door-shutter shutter-right">
+      <div class="door-glass-pane">
+        <div class="door-glass-reflection"></div>
+      </div>
+      <div class="door-interlock-stile">
+        <div class="door-pull-handle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preloader-bottom-track"></div>
+
+  <div class="preloader-center-emblem">
+    <div class="preloader-brand-crest">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="crest-svg">
+        <circle cx="24" cy="24" r="22" stroke="url(#crestGoldGradAbout)" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <path d="M15 12h14a7 7 0 0 1 7 7 7 7 0 0 1-4.48 6.55L36 34h-6l-5.3-7.5H21V34H15V12zm6 6v6h8a2.5 2.5 0 0 0 0-5H21z" fill="url(#crestGoldGradAbout)" />
+        <defs>
+          <linearGradient id="crestGoldGradAbout" x1="12" y1="10" x2="36" y2="34" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFE8A3"/>
+            <stop offset="0.5" stop-color="#F3C978"/>
+            <stop offset="1" stop-color="#B88E3E"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <h2 class="door-brand-title">RELINTER</h2>
+    <p class="door-brand-sub">ARCHITECTURAL SYSTEMS • EST. 2004</p>
+
+    <div class="door-track-bar">
+      <div class="door-track-fill" id="doorTrackFill"></div>
+    </div>
+
+    <div class="preloader-status-row">
+      <span class="preloader-status-msg" id="doorTelemetry">CALIBRATING 18MM SIGHTLINES...</span>
+      <span class="preloader-counter" id="preloaderPercent">0%</span>
+    </div>
+  </div>
+</div>
+
+<!-- Top Status Strip -->
+<div class="top-status-strip">
+  <span>✦ Relinter Virgin 6063-T6 Primary Alloy</span>
+  <span>✦ European Multi-Point Security Locking RC3</span>
+  <span>✦ Qualicoat Class-2 30-Year Marine UV Warranty</span>
+  <span>✦ Nationwide Turnkey Installation</span>
+</div>
+
+<!-- 2. Luxury Maison Sticky Navigation Header -->
+<header class="skyla-header" id="skylaHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="brand-cluster">
+      <div class="brand-logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M4 4h9a5 5 0 0 1 5 5 5 5 0 0 1-3.2 4.68L19 20h-4l-3.8-6H8v6H4V4zm4 4v3.5h5a1.75 1.75 0 0 0 0-3.5H8z"/></svg>
+      </div>
+      <div>
+        <span class="brand-wordmark">RELINTER</span>
+        <span class="brand-byline">ARCHITECTURAL SYSTEMS</span>
+      </div>
+    </a>
+
+    <ul class="nav-links-wrap">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="products.html">Systems Matrix</a></li>
+      <li><a href="projects.html">Architectural Archive</a></li>
+      <li><a href="about.html" class="active">Engineering &amp; CNC</a></li>
+      <li><a href="contact.html">Architect &amp; BOQ Portal</a></li>
+    </ul>
+
+    <div class="header-action-stack">
+      <a href="contact.html" class="btn-skyla btn-skyla-gold btn-header-cta">SCHEDULE PLANT VISIT</a>
+      <button class="mobile-toggle-btn" id="mobileMenuOpen" aria-label="Open Mobile Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-curtain" id="mobileNavDrawer">
+  <button class="mobile-close-btn" id="mobileMenuClose" aria-label="Close Mobile Menu">✕</button>
+  <a href="index.html" class="mob-link">OVERVIEW</a>
+  <a href="products.html" class="mob-link">SYSTEMS MATRIX</a>
+  <a href="projects.html" class="mob-link">ARCHITECTURAL ARCHIVE</a>
+  <a href="about.html" class="mob-link active">ENGINEERING &amp; CNC</a>
+  <a href="contact.html" class="mob-link" style="color:var(--gold-primary);">ARCHITECT &amp; BOQ PORTAL</a>
+</div>
+
+<main>
+
+  <!-- About Hero -->
+  <section class="section-pad text-center" style="background: radial-gradient(circle at 50% 10%, rgba(243, 201, 120, 0.1) 0%, var(--bg-void) 70%);">
+    <div class="container reveal-fade-up">
+      <div class="kicker-tag float-badge" style="margin: 0 auto 20px;"><span class="dot"></span> TWO DECADES OF FENESTRATION MASTERY</div>
+      
+      <div class="title-aura-wrap">
+        <h1 class="hero-kinetic-title">
+          THE SCIENCE OF<br>
+          <em>STRUCTURAL PERFECTION.</em>
+        </h1>
+      </div>
+
+      <div class="title-divider-beam"></div>
+
+      <p class="desc-lead" style="margin: 0 auto 32px;">
+        Founded in 2004, Relinter combines German 5-axis robotic CNC machining, primary 6063-T6 aerospace alloy billets, and artisanal European hardware to craft India's most refined architectural fenestration.
+      </p>
+
+      <div class="grid-4" style="max-width: 1000px; margin: 0 auto;">
+        <div class="feature-box-luxe text-center shimmer-card reveal-fade-up reveal-delay-1">
+          <h4 style="color:var(--gold-primary); font-size:clamp(1.8rem, 3.5vw, 2.2rem); margin-bottom:3px;" data-counter="2004">2004</h4>
+          <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Established in Bengaluru</p>
+        </div>
+        <div class="feature-box-luxe text-center shimmer-card reveal-fade-up reveal-delay-2">
+          <h4 style="color:var(--gold-primary); font-size:clamp(1.8rem, 3.5vw, 2.2rem); margin-bottom:3px;" data-counter="120" data-suffix="K">120K</h4>
+          <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Sq.Ft Plant Facility</p>
+        </div>
+        <div class="feature-box-luxe text-center shimmer-card reveal-fade-up reveal-delay-3">
+          <h4 style="color:var(--gold-primary); font-size:clamp(1.8rem, 3.5vw, 2.2rem); margin-bottom:3px;" data-counter="0.05" data-suffix="mm" data-decimals="2">0.05mm</h4>
+          <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Robotic CNC Precision</p>
+        </div>
+        <div class="feature-box-luxe text-center shimmer-card reveal-fade-up reveal-delay-4">
+          <h4 style="color:var(--gold-primary); font-size:clamp(1.8rem, 3.5vw, 2.2rem); margin-bottom:3px;" data-counter="850" data-suffix="+">850+</h4>
+          <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Completed Landmarks</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CNC Machining Story with Fresh Robotics Photography -->
+  <section class="section-pad" id="cnc" style="background: var(--bg-deep);">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div class="hero-glazing-portal shimmer-card reveal-slide-left" style="height: clamp(300px, 38vw, 460px);">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=90&fm=webp" alt="German 5-Axis Elumatec CNC Center" class="hero-glazing-img">
+          <div class="glazing-hud-badge hud-loc-bottom">
+            <b>ELUMATEC SBZ 151 • GERMAN 5-AXIS</b>
+            <span>Automated 0.05mm Sub-Millimeter Repeatability</span>
+          </div>
+        </div>
+
+        <div class="reveal-slide-right">
+          <div class="kicker-tag"><span class="dot"></span> DIGITAL FABRICATION HUB</div>
+          <div class="title-aura-wrap">
+            <h2 class="title-display">German Robotic <span class="title-accent">CNC Machining</span></h2>
+          </div>
+          <div class="title-divider-beam align-left"></div>
+          <p class="desc-lead" style="margin-bottom: 24px;">
+            Human variance in aluminium joinery causes whistling drafts, water ingress, and acoustic leakage. At Relinter, every profile is cut, notched, drilled, and crimped by German Elumatec 5-axis robotic machining centers.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div class="feature-box-luxe shimmer-card">
+              <h4 style="font-size:1rem;">Direct CAD-to-CNC Machine Coordinates</h4>
+              <p>Revit .RFA and AutoCAD .DWG drawings are translated directly into robotic toolpaths with zero manual interpolation error.</p>
+            </div>
+            <div class="feature-box-luxe shimmer-card">
+              <h4 style="font-size:1rem;">Epoxy-Crimped Dual-Spindle Mitre Joins</h4>
+              <p>Compound mitres are injected with structural German bicomponent epoxy for lifetime airtight structural cohesion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality & Metallurgy -->
+  <section class="section-pad" id="quality" style="background: var(--bg-void);">
+    <div class="container">
+      <div class="section-header-center reveal-fade-up">
+        <div class="kicker-tag"><span class="dot"></span> AEROSPACE GRADE PURITY</div>
+        <div class="title-aura-wrap">
+          <h2 class="title-display">Primary Virgin <span class="title-accent">6063-T6 Billets</span></h2>
+        </div>
+        <div class="title-divider-beam"></div>
+        <p class="desc-lead" style="margin: 0 auto;">
+          We reject recycled commercial scrap. Every Relinter extrusion is cast solely from virgin primary aluminium to ensure high tensile yield strength and flawless surface anodization.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="feature-box-luxe shimmer-card reveal-fade-up reveal-delay-1">
+          <span class="project-meta-pill">STRUCTURAL PURITY</span>
+          <h4>215 MPa Yield Strength</h4>
+          <p>T6 precipitation heat treatment enables 18mm ultra-slim vertical interlocks to withstand structural glass panel loads exceeding 800 kg.</p>
+        </div>
+
+        <div class="feature-box-luxe shimmer-card reveal-fade-up reveal-delay-2">
+          <span class="project-meta-pill">THERMAL BARRIER</span>
+          <h4>34mm PA66 Polyamide Breaks</h4>
+          <p>Glass-reinforced polyamide struts physically isolate outer and inner aluminium sections, blocking tropical heat transfer and condensation.</p>
+        </div>
+
+        <div class="feature-box-luxe shimmer-card reveal-fade-up reveal-delay-3">
+          <span class="project-meta-pill">GREEN BUILDING</span>
+          <h4>LEED Platinum Circularity</h4>
+          <p>100% recyclable alloy profiles with low embodied carbon, contributing directly to IGBC Green and LEED building credits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Maison Footer -->
+<footer class="skyla-footer">
+  <div class="container">
+    <div class="footer-grid-top">
+      <div class="footer-col">
+        <span class="brand-wordmark" style="font-size: 1.6rem; display: block; margin-bottom: 4px;">RELINTER</span>
+        <span class="brand-byline" style="margin-bottom: 14px;">ARCHITECTURAL SYSTEMS • EST. 2004</span>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.7; max-width: 320px;">
+          Manufacturer and certified installer of precision architectural aluminium windows, minimalist sliding portals, and structural curtain wall facades across India.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>SYSTEMS</h5>
+        <ul>
+          <li><a href="products.html">18mm Minimalist Sliding</a></li>
+          <li><a href="products.html">Concertina Slide &amp; Fold</a></li>
+          <li><a href="products.html">Grand Lift &amp; Slide 800kg</a></li>
+          <li><a href="products.html">Acoustic Casements 48dB</a></li>
+          <li><a href="products.html">Structural Curtain Wall CW50</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>ATELIER &amp; COMPANY</h5>
+        <ul>
+          <li><a href="about.html">About Relinter Systems</a></li>
+          <li><a href="projects.html">Project Archive</a></li>
+          <li><a href="about.html#cnc">German CNC Machining Hub</a></li>
+          <li><a href="about.html#quality">Primary 6063-T6 Standards</a></li>
+          <li><a href="contact.html">Contact Atelier</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>ARCHITECT CONCIERGE</h5>
+        <ul>
+          <li><a href="contact.html#estimator" style="color:var(--gold-primary); font-weight:700;">Live BOQ Calculator ↗</a></li>
+          <li><a href="tel:+918073756688">+91 80737 56688</a></li>
+          <li><a href="mailto:projects@relinter.com">projects@relinter.com</a></li>
+          <li><span style="color:var(--text-muted); font-size:0.82rem;">Bengaluru • Hyderabad • Mumbai • Goa</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-sub-bar">
+      <div>© 2026 Relinter Architectural Systems Pvt. Ltd. All Rights Reserved.</div>
+      <div>Engineered with Primary 6063-T6 Alloy &amp; European Hardware.</div>
+      <div style="display: flex; gap: 20px;">
+        <a href="about.html" style="color:var(--text-muted); text-decoration:none;">Quality Charter</a>
+        <a href="contact.html" style="color:var(--text-muted); text-decoration:none;">IS:875 Test Certificates</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/relinter.js"></script>
+</body>
+</html>
