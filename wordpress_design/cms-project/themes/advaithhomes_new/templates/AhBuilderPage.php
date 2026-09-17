@@ -68,7 +68,7 @@ if ( ! $no_header ) {
 ?>
 
 <?php /* ── Main content ─────────────────────────────────────────────────────────── */ ?>
-<main id="ah-builder-page" class="ah-builder-main" style="min-height:40vh;">
+<div id="ah-builder-page" class="ah-builder-main interactive-app-view" style="min-height:40vh;">
 
 <?php foreach ( $body_blocks as $_block ) :
 	$_t = $_block['type'] ?? '';
@@ -98,7 +98,7 @@ if ( ! empty( $page_opts['cta_enabled'] ) && ! empty( $page_opts['cta_heading'] 
 endif;
 ?>
 
-</main>
+</div>
 
 <script>
 /* Builder page interactive JS ─ FAQ accordion, tabs, dismissible alerts, steps scroll animation */

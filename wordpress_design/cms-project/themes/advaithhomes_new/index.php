@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<div id="primary" class="site-main interactive-app-view">
 <?php
 if ( have_posts() ) :
     while ( have_posts() ) :
@@ -40,6 +40,6 @@ else :
     <?php
 endif;
 ?>
-</main>
+</div>
 
 <?php get_footer(); ?>

@@ -41,6 +41,7 @@ adn_seo_register( array(
 	'description' => $page_excerpt,
 	'canonical'   => get_permalink(),
 	'breadcrumb'  => $breadcrumb,
+	'type'        => 'website',
 ) );
 
 get_header();
@@ -59,7 +60,7 @@ if ( function_exists( 'adn_component' ) ) {
 }
 ?>
 
-<main class="adn-wp-page" style="min-height:40vh;">
+<div class="adn-wp-page interactive-app-view" style="min-height:40vh;">
 	<div class="section section--md">
 		<div class="container">
 			<div class="adn-wp-page__content">
@@ -67,14 +68,16 @@ if ( function_exists( 'adn_component' ) ) {
 				remove_filter( 'the_content', 'wpautop' );
 				// If the post content contains an <h1>, demote to <h2> to maintain single <h1> hierarchy
 				$content_html = apply_filters( 'the_content', get_the_content() );
-				$content_html = preg_replace( '/<h1\b([^>]*)>(.*?)<\/h1>/i', '<h2$1>$2</h2>', $content_html );
+				$content_html = preg_replace( '/<h1\b([^>]*)>(.*?)<\/h1>/is', '<h2$1>$2</h2>', $content_html );
+				$content_html = preg_replace( '/<article\b([^>]*)>/is', '<div$1>', $content_html );
+				$content_html = preg_replace( '/<\/article\s*>/is', '</div>', $content_html );
 				echo $content_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				add_filter( 'the_content', 'wpautop' );
 				?>
 			</div>
 		</div>
 	</div>
-</main>
+</div>
 
 <?php
 adn_page_close( array( 'chrome' => $chrome, 'skip_page_content' => true ) );

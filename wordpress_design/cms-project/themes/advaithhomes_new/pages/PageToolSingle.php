@@ -45,6 +45,7 @@ adn_seo_register( array(
 	'description' => $_calc_desc,
 	'canonical'   => $_calc_url,
 	'breadcrumb'  => isset( $ctx['breadcrumb'] ) ? $ctx['breadcrumb'] : array(),
+	'type'        => 'website',
 	'schema_app'  => array(
 		'name'        => $_calc_title,
 		'description' => $_calc_desc,
@@ -81,7 +82,7 @@ adn_page_open( $_open_ctx );
 <div class="container">
 	<div class="page-with-sidebar tool-single-layout">
 
-		<main>
+		<div class="tool-main-content interactive-app-view">
 
 			<?php /* ── Before-calculator content ── */ ?>
 			<?php if ( ! empty( $ctx['before_content'] ) ) : ?>
@@ -124,7 +125,7 @@ adn_page_open( $_open_ctx );
 
 
 
-		</main>
+		</div>
 
 		<aside class="sidebar-col">
 

@@ -103,7 +103,7 @@ if ( ( '' !== $_ah_news_slug || $_ah_news_id > 0 ) && function_exists( 'adn_cms_
 			'canonical'      => '' !== $_nb_url ? $_nb_url : '',
 			'image'          => $_nb_img_url,
 			'breadcrumb'     => $_nb_breadcrumb,
-			'type'           => 'article',
+			'type'           => 'website',
 			'article_section'=> '' !== $_nb_label ? $_nb_label : 'News',
 			'published'      => '' !== $_nb_stamp ? date( 'c', strtotime( $_nb_stamp ) ) : '',
 			'schema_news'    => array(
@@ -133,7 +133,7 @@ if ( ( '' !== $_ah_news_slug || $_ah_news_id > 0 ) && function_exists( 'adn_cms_
 		<div class="article-outer">
 			<div class="article-layout">
 
-				<main class="article-main" id="main-content">
+				<div class="article-main interactive-app-view" id="main-content">
 				<div class="news-single-article">
 
 					<?php /* Meta bar: label + date */ ?>
@@ -187,7 +187,7 @@ if ( ( '' !== $_ah_news_slug || $_ah_news_id > 0 ) && function_exists( 'adn_cms_
 					</div>
 				<?php endif; ?>
 
-			</main>
+			</div>
 
 			<div class="article-right-col">
 				<aside class="article-sidebar">
