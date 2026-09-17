@@ -341,7 +341,7 @@
             '.article-promo', '.article-card-grid', '.compare-table-wrap',
             '.acard-grid', '.acard-bento', '.acard-row', '.acard-procon',
             '.acard-timeline', '.acard-insight', '.acard-stat'
-        ].map( function ( s ) { return ':is(.article-body, .article-body section) > ' + s; } ).join( ', ' );
+        ].map( function ( s ) { return ':is(.article-body, .article-body section, .article-body div) > ' + s; } ).join( ', ' );
 
         var els;
         try {

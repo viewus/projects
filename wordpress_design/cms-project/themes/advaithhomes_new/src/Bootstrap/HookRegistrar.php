@@ -163,6 +163,7 @@ class HookRegistrar {
 		\add_filter( 'wp_get_attachment_image_src', 'adn_cache_bust_attachment_image_src' );
 		\add_filter( 'the_content', 'adn_cache_bust_content_images' );
 		\add_filter( 'the_content', 'adn_cache_bust_content_bg_images' );
+		\add_filter( 'the_content', 'adn_clean_article_tags', 20 );
 		\add_filter( 'pre_get_posts', function( $query ) {
 			if ( $query->is_search() && ! \is_admin() ) {
 				$query->set( 'posts_per_page', 12 );

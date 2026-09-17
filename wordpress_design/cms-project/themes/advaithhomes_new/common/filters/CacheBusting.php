@@ -25,3 +25,12 @@ function adn_cache_bust_content_images( $content ) {
 function adn_cache_bust_content_bg_images( $content ) {
 	return \Adn\Theme\Feature\Filters\CacheBustingFilter::bustContentBgImages( $content );
 }
+
+function adn_clean_article_tags( $content ) {
+	if ( empty( $content ) || ! is_string( $content ) || false === stripos( $content, '<article' ) ) {
+		return $content;
+	}
+	$content = preg_replace( '/<article\b([^>]*)>/i', '<div$1>', $content );
+	$content = preg_replace( '/<\/article>/i', '</div>', $content );
+	return $content;
+}
