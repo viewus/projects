@@ -1674,7 +1674,7 @@ a.mini-card:hover .mini-card-title { color: var(--client-color) !important; }
         flex-direction: column !important;
         align-items: center !important;
     }
-    .page-hero p, .hero-desc {
+    .page-hero p, .page-hero .hero-desc {
         max-width: 85% !important;
         margin-left: auto !important;
         margin-right: auto !important;
@@ -1730,13 +1730,97 @@ a.mini-card:hover .mini-card-title { color: var(--client-color) !important; }
         text-align: center !important;
         color: #fff !important;
     }
-    .page-hero p, .hero-desc {
+    .page-hero p, .page-hero .hero-desc {
         max-width: 90% !important;
         margin-left: auto !important;
         margin-right: auto !important;
         font-size: 0.9rem !important;
         color: rgba(255,255,255,0.85) !important;
         text-align: center !important;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOME HERO — Always Left-Aligned & Auto-Height on Mobile
+   ══════════════════════════════════════════════════════════════ */
+.hero-home-inner,
+.hero-home .hero-content,
+.hero-home .hero-title,
+.hero-home .hero-desc,
+.hero-home .hero-actions {
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+@media (max-width: 1024px) {
+    .hero-home {
+        min-height: auto !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding-top: 24px !important;
+        padding-bottom: 40px !important;
+    }
+    .hero-home-inner {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding-top: 15px !important;
+        padding-bottom: 25px !important;
+        gap: 0 !important;
+    }
+    .hero-home .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: left !important;
+        align-items: flex-start !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .hero-home .hero-title {
+        text-align: left !important;
+        font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 12px !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+    .hero-home .hero-desc {
+        text-align: left !important;
+        font-size: 0.92rem !important;
+        line-height: 1.6 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        margin-bottom: 20px !important;
+        color: rgba(255, 255, 255, 0.95) !important;
+    }
+    .hero-home .hero-actions {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        justify-content: flex-start !important;
+        margin-top: 6px !important;
+        margin-bottom: 14px !important;
+        width: 100% !important;
+    }
+    .hero-home .hero-actions .btn {
+        position: relative !important;
+        z-index: 4 !important;
+        white-space: normal !important;
+        text-align: center !important;
+    }
+    .hero-carousel__dots {
+        bottom: 10px !important;
+        z-index: 5 !important;
     }
 }
 
