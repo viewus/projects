@@ -27,10 +27,13 @@ function adn_cache_bust_content_bg_images( $content ) {
 }
 
 function adn_clean_article_tags( $content ) {
-	if ( empty( $content ) || ! is_string( $content ) || false === stripos( $content, '<article' ) ) {
+	if ( empty( $content ) || ! is_string( $content ) ) {
 		return $content;
 	}
-	$content = preg_replace( '/<article\b([^>]*)>/i', '<div$1>', $content );
-	$content = preg_replace( '/<\/article>/i', '</div>', $content );
+	if ( false === stripos( $content, '<article' ) && false === stripos( $content, '</article' ) ) {
+		return $content;
+	}
+	$content = preg_replace( '/<article\b([^>]*)>/is', '<div$1>', $content );
+	$content = preg_replace( '/<\/article\s*>/is', '</div>', $content );
 	return $content;
 }

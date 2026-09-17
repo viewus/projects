@@ -184,9 +184,9 @@ get_header();
 			<div class="article-body">
 				<?php
 				$content_html = apply_filters( 'the_content', get_the_content() );
-				$content_html = preg_replace( '/<h1\b([^>]*)>(.*?)<\/h1>/i', '<h2$1>$2</h2>', $content_html );
-				$content_html = preg_replace( '/<article\b([^>]*)>/i', '<div$1>', $content_html );
-				$content_html = preg_replace( '/<\/article>/i', '</div>', $content_html );
+				$content_html = preg_replace( '/<h1\b([^>]*)>(.*?)<\/h1>/is', '<h2$1>$2</h2>', $content_html );
+				$content_html = preg_replace( '/<article\b([^>]*)>/is', '<div$1>', $content_html );
+				$content_html = preg_replace( '/<\/article\s*>/is', '</div>', $content_html );
 				echo $content_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 			</div>
