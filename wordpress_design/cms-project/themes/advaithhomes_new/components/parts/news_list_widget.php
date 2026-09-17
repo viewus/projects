@@ -82,7 +82,7 @@ if ( empty( $items ) && '' === $title ) { return; }
 		$tag = ! empty( $first_item['tag'] ) ? (string) $first_item['tag'] : '';
 		?>
 		<div class="news-hero-and-list">
-			<article class="news-hero-card <?php echo empty( $first_item['img_url'] ) ? 'news-hero-card--no-image' : ''; ?>">
+			<div class="news-hero-card <?php echo empty( $first_item['img_url'] ) ? 'news-hero-card--no-image' : ''; ?>">
 				<a href="<?php echo esc_url( adn_link( isset( $first_item['url'] ) ? $first_item['url'] : '' ) ); ?>" class="news-hero-card__link">
 					<?php if ( ! empty( $first_item['img_url'] ) ) : ?>
 					<div class="news-hero-card__img-wrap">
@@ -126,7 +126,7 @@ if ( empty( $items ) && '' === $title ) { return; }
 						<?php endif; ?>
 					</div>
 				</a>
-			</article>
+			</div>
 
 			<div class="news-list-remaining">
 			<?php foreach ( $items as $_card ) : ?>

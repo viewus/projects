@@ -25,7 +25,7 @@ Write raw HTML body content only for the topic:
 - Preferred tags:
   <h2>, <h3>, <h4>, <h5>, <h6>, <p>, <strong>, <em>,
   <ul>, <ol>, <li>, <table>, <thead>, <tbody>,
-  <tr>, <th>, <td>, <section>, <article>,
+  <tr>, <th>, <td>, <section>,
   <blockquote>, <figure>, <figcaption>, <details>, <summary>
 - Use <h2> for main sections, <h3> for sub-sections, <h4> for details
 - Use <table> for any comparative or structured data

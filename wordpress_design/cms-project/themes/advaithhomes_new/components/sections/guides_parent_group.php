@@ -28,7 +28,7 @@ $image_url = isset( $group['image_url'] ) ? (string) $group['image_url'] : '';
 
 $topic_count = count( $topics );
 ?>
-<article class="phg" id="phg-<?php echo esc_attr( $slug ); ?>">
+<div class="phg" id="phg-<?php echo esc_attr( $slug ); ?>">
 
 	<?php /* ── Left dark panel ─────────────────────────────────────── */ ?>
 	<div class="phg-left" style="<?php if ( '' !== $image_url ) : ?>background-image:linear-gradient(150deg,rgba(0,0,0,0.60),rgba(0,0,0,0.52)),url(<?php echo esc_url( $image_url ); ?>);background-size:cover;background-position:center<?php else : ?>background:<?php echo esc_attr( $gradient ); ?><?php endif; ?>">
@@ -119,4 +119,4 @@ $topic_count = count( $topics );
 
 	</div>
 
-</article>
+</div>

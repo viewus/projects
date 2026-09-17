@@ -107,7 +107,7 @@ $_uniq = 'sn-' . substr( md5( uniqid( '', true ) ), 0, 6 );
                 $_flip     = ( 0 !== $_i % 2 ) ? ' sn-chapter--flip' : '';
                 $_mcls     = ( '' !== $_mood && isset( $_mood_class[ $_mood ] ) ) ? ' ' . $_mood_class[ $_mood ] : '';
             ?>
-            <article class="sn-chapter<?php echo $_flip . $_mcls . ( $_last ? ' sn-chapter--last' : '' ); ?>"
+            <div class="sn-chapter<?php echo $_flip . $_mcls . ( $_last ? ' sn-chapter--last' : '' ); ?>"
                      data-sn-idx="<?php echo (int) $_i; ?>">
 
                 <span class="sn-num" aria-hidden="true"><?php echo esc_html( $_num ); ?></span>
@@ -166,7 +166,7 @@ $_uniq = 'sn-' . substr( md5( uniqid( '', true ) ), 0, 6 );
                     </div>
                 </div>
 
-            </article>
+            </div>
             <?php endforeach; ?>
         </div>
 
