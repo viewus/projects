@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Showroom Checkout & Verification | NEXORA ELECTRONICS</title>
+  <meta name="description" content="Complete your showroom order verification, select delivery or Bengaluru store pickup, and finalize WhatsApp dispatch." />
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/nexora.css" />
+</head>
+<body>
+
+  <!-- Component Mount Points -->
+  <div id="nexora-topbar-mount"></div>
+  <div id="nexora-header-mount"></div>
+  <div id="nexora-category-nav-mount"></div>
+  <div id="nexora-sub-nav-mount"></div>
+
+  <!-- Breadcrumbs -->
+  <div class="container" style="margin-top: 14px;">
+    <div class="store-breadcrumbs">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="cart.html">Showroom Cart</a>
+      <span>›</span>
+      <span style="font-weight: 600; color: var(--text-heading);">Showroom Checkout</span>
+    </div>
+  </div>
+
+  <!-- Checkout Main Content -->
+  <main class="container" style="margin-top: 16px; margin-bottom: 48px;">
+    <div class="checkout-page-layout" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; align-items: start;">
+      
+      <!-- Checkout Form -->
+      <section class="checkout-form-section" style="background: rgba(255, 255, 255, 0.9); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 28px; box-shadow: var(--shadow-sm);">
+        <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--text-heading); margin-bottom: 20px; font-family: var(--font-heading);">
+          <i class="fa-solid fa-user-shield" style="color:var(--accent-cyan); margin-right:6px;"></i> 1. Customer Verification & Delivery Preferences
+        </h2>
+
+        <form id="showroom-checkout-form" onsubmit="window.NexoraApp.submitCheckoutOrder(event)">
+          <div class="modal-form-grid">
+            
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="form-input" id="checkout-name" required placeholder="e.g. Akhilesh Ravuri" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">WhatsApp Contact Number *</label>
+              <input type="tel" class="form-input" id="checkout-phone" required placeholder="e.g. +91 98765 43210" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" id="checkout-email" placeholder="e.g. akhilesh@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Fulfillment Option *</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <label class="filter-check-item" style="padding: 12px; background: rgba(2, 132, 199, 0.06); border: 1px solid rgba(2, 132, 199, 0.25); border-radius: 8px;">
+                  <input type="radio" name="checkout-fulfillment" value="delivery" checked onchange="window.NexoraApp.state.shippingMode='delivery'" />
+                  <span><i class="fa-solid fa-truck-fast" style="color:var(--accent-cyan); margin-right:4px;"></i> Same-Day Bengaluru Delivery</span>
+                </label>
+                <label class="filter-check-item" style="padding: 12px; background: rgba(217, 119, 6, 0.06); border: 1px solid rgba(217, 119, 6, 0.25); border-radius: 8px;">
+                  <input type="radio" name="checkout-fulfillment" value="pickup" onchange="window.NexoraApp.state.shippingMode='pickup'" />
+                  <span><i class="fa-solid fa-store" style="color:var(--accent-gold); margin-right:4px;"></i> 30-Min Counter Pickup</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Delivery Address / Landmark Notes</label>
+              <textarea class="form-input" id="checkout-address" rows="3" placeholder="Enter street address, apartment / floor, Bengaluru pincode..."></textarea>
+            </div>
+
+            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-heading); margin: 16px 0 12px; font-family: var(--font-heading);">
+              <i class="fa-solid fa-credit-card" style="color:var(--accent-cyan); margin-right:6px;"></i> 2. Select Payment & Verification Mode
+            </h3>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+              <label class="filter-check-item" style="padding: 14px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px;">
+                <input type="radio" name="checkout-payment" value="WhatsApp Direct Confirmation" checked />
+                <div>
+                  <strong style="color: #059669;"><i class="fa-brands fa-whatsapp" style="margin-right:4px;"></i> WhatsApp Direct Concierge Confirmation</strong>
+                  <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">Zero gateway fees. Showroom manager confirms stock and provides live invoice.</p>
+                </div>
+              </label>
+
+              <label class="filter-check-item" style="padding: 14px; background: rgba(2, 132, 199, 0.04); border: 1px solid var(--border-subtle); border-radius: 8px;">
+                <input type="radio" name="checkout-payment" value="UPI Instant QR Scan" />
+                <div>
+                  <strong style="color: var(--text-heading);"><i class="fa-solid fa-qrcode" style="color:var(--accent-cyan); margin-right:4px;"></i> UPI Instant QR Payment</strong>
+                  <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">GPay, PhonePe, Paytm, BHIM instant transfer.</p>
+                </div>
+              </label>
+
+              <label class="filter-check-item" style="padding: 14px; background: rgba(2, 132, 199, 0.04); border: 1px solid var(--border-subtle); border-radius: 8px;">
+                <input type="radio" name="checkout-payment" value="Cash / Card on Delivery or Pickup" />
+                <div>
+                  <strong style="color: var(--text-heading);"><i class="fa-solid fa-money-bill-wave" style="color:#059669; margin-right:4px;"></i> Cash / Card on Delivery or Showroom Pickup</strong>
+                  <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">Pay after unboxing and inspecting serial seal.</p>
+                </div>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+              <i class="fa-solid fa-bolt" style="margin-right:6px;"></i> Confirm Order & Generate WhatsApp Dispatch Invoice
+            </button>
+
+          </div>
+        </form>
+      </section>
+
+      <!-- Order Review Sidebar -->
+      <aside class="checkout-review-sidebar" style="background: rgba(255, 255, 255, 0.95); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 24px; box-shadow: var(--shadow-sm);">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-heading); margin-bottom: 16px;"><i class="fa-solid fa-receipt" style="color:var(--accent-cyan); margin-right:6px;"></i> Order Items Review</h3>
+        <div id="checkout-items-review">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-size: 0.85rem; color: var(--text-muted);">
+            <span style="color:#059669;"><i class="fa-solid fa-shield-halved"></i></span>
+            <span>Brand Authorized Warranty Included</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-size: 0.85rem; color: var(--text-muted);">
+            <span style="color:var(--accent-cyan);"><i class="fa-solid fa-truck-fast"></i></span>
+            <span>Free Express Delivery Across Bengaluru</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center; font-size: 0.85rem; color: var(--text-muted);">
+            <span style="color:var(--accent-gold);"><i class="fa-solid fa-store"></i></span>
+            <span>Counter Pickup at 123 Commercial St</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Component Mount Point: Footer -->
+  <div id="nexora-footer-mount"></div>
+
+  <!-- Core Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/nexora-components.js"></script>
+  <script src="js/nexora.js"></script>
+</body>
+</html>

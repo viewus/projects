@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details | NEXORA ELECTRONICS Showroom</title>
+  <meta name="description" content="View full technical specifications, verified ratings, variant options, and direct WhatsApp ordering for electronics at Nexora Electronics Bengaluru." />
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/nexora.css" />
+</head>
+<body>
+
+  <!-- Component Mount Points -->
+  <div id="nexora-topbar-mount"></div>
+  <div id="nexora-header-mount"></div>
+  <div id="nexora-category-nav-mount"></div>
+  <div id="nexora-sub-nav-mount"></div>
+
+  <!-- Breadcrumbs -->
+  <div class="container" style="margin-top: 14px;">
+    <div class="store-breadcrumbs" id="pdp-breadcrumbs">
+      <a href="index.html">Home</a> <span>›</span>
+      <a href="shop.html">Catalogue</a> <span>›</span>
+      <span>Loading Product...</span>
+    </div>
+  </div>
+
+  <!-- Main Product Detail View -->
+  <main class="container" style="margin-top: 16px; margin-bottom: 48px;">
+    
+    <!-- Top Product Showcase Grid -->
+    <div class="product-detail-layout">
+      
+      <!-- Gallery Column -->
+      <div class="pdp-gallery-column">
+        <div class="pdp-main-image-wrap">
+          <img id="pdp-main-image" src="" alt="Product Image" class="pdp-main-img" />
+        </div>
+        <div class="pdp-gallery-thumbs" id="pdp-gallery-thumbs">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Info & Purchase Column -->
+      <div class="pdp-info-column">
+        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
+          <span class="badge-tag badge-tag-flagship" id="pdp-brand">BRAND</span>
+          <span class="product-sku-chip" id="pdp-sku" style="font-size:0.75rem; color:#94a3b8; font-family:var(--font-mono);">SKU: NX-001</span>
+          <span class="badge-discount-pill" id="pdp-discount-pill" style="display:none;">0% OFF</span>
+        </div>
+
+        <h1 class="pdp-title" id="pdp-title">Loading Product Details...</h1>
+
+        <div class="pdp-rating-row" id="pdp-rating-stars">
+          <!-- Star rating & reviews count -->
+        </div>
+
+        <!-- Price Block -->
+        <div class="pdp-price-box">
+          <div style="display: flex; align-items: baseline; gap: 12px;">
+            <span class="pdp-price-main" id="pdp-price-current">₹0</span>
+            <span class="pdp-price-old" id="pdp-price-original">₹0</span>
+          </div>
+          <div style="font-size: 0.8rem; color: #10b981; font-weight: 700; margin-top: 4px;">
+            <i class="fa-solid fa-circle-check" style="margin-right:4px;"></i> Inclusive of all taxes • Official Brand Sealed Unit
+          </div>
+        </div>
+
+        <!-- Description Snippet -->
+        <p class="pdp-desc-text" id="pdp-desc"></p>
+
+        <!-- Color Variants -->
+        <div class="pdp-variant-group">
+          <label class="pdp-variant-title"><i class="fa-solid fa-palette" style="margin-right:4px;"></i> COLOR FINISH</label>
+          <div class="pdp-variant-chips" id="pdp-color-variants">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Storage / Config Variants -->
+        <div class="pdp-variant-group">
+          <label class="pdp-variant-title"><i class="fa-solid fa-hard-drive" style="margin-right:4px;"></i> STORAGE & MEMORY CONFIGURATION</label>
+          <div class="pdp-variant-chips" id="pdp-storage-variants">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Quantity & Actions -->
+        <div class="pdp-actions-row">
+          <div class="pdp-qty-stepper">
+            <label style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">QTY:</label>
+            <input type="number" id="pdp-qty-input" value="1" min="1" max="10" class="form-input pdp-qty-box" />
+          </div>
+          
+          <button type="button" class="btn btn-primary btn-lg" id="pdp-add-cart-btn" style="flex: 1.2;">
+            <i class="fa-solid fa-cart-plus" style="margin-right:6px;"></i>
+            <span>Add to Cart</span>
+          </button>
+
+          <button type="button" class="btn btn-wa-green btn-lg" id="pdp-buy-wa-btn" style="flex: 1.2;">
+            <i class="fa-brands fa-whatsapp" style="font-size:1.2rem; margin-right:6px;"></i>
+            <span>WhatsApp Buy</span>
+          </button>
+
+          <button type="button" class="btn btn-outline pdp-wishlist-icon-btn" id="pdp-wishlist-btn" title="Add to Wishlist">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
+
+        <!-- Value Prop Badges -->
+        <div class="pdp-trust-grid">
+          <div class="pdp-trust-pill">
+            <span style="color:#10b981;"><i class="fa-solid fa-shield-halved"></i></span>
+            <span>Official Brand Warranty</span>
+          </div>
+          <div class="pdp-trust-pill">
+            <span style="color:var(--accent-cyan);"><i class="fa-solid fa-truck-fast"></i></span>
+            <span>Same-Day Bengaluru Dispatch</span>
+          </div>
+          <div class="pdp-trust-pill">
+            <span style="color:#34d399;"><i class="fa-solid fa-arrows-rotate"></i></span>
+            <span>Instant Trade-In Supported</span>
+          </div>
+          <div class="pdp-trust-pill">
+            <span style="color:#fbbf24;"><i class="fa-solid fa-credit-card"></i></span>
+            <span>0% No-Cost EMI Available</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Frequently Bought Together Bundle -->
+    <section id="pdp-bundle-box" style="margin-top: 36px;"></section>
+
+    <!-- Technical Specifications Table -->
+    <section class="store-section" style="margin-top: 36px;">
+      <div class="store-section-header">
+        <h2 class="section-headline"><i class="fa-solid fa-gears" style="color:var(--accent-cyan); margin-right:6px;"></i> Detailed Engineering Specifications</h2>
+      </div>
+      <div class="pdp-specs-grid" id="pdp-specs-table">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- Verified Customer Reviews Section -->
+    <section class="store-section" style="margin-top: 36px;">
+      <div class="store-section-header">
+        <h2 class="section-headline"><i class="fa-solid fa-star" style="color:#fbbf24; margin-right:6px;"></i> Verified Showroom Reviews & Ratings</h2>
+        <span style="font-size:0.85rem; color:#10b981; font-weight:700;"><i class="fa-solid fa-circle-check" style="margin-right:4px;"></i> 100% Genuine Bengaluru Buyers</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div class="review-card" style="background:rgba(255,255,255,0.9); border:1px solid var(--border-subtle); border-radius:12px; padding:20px; box-shadow:var(--shadow-xs);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <strong style="color:var(--text-heading);"><i class="fa-solid fa-user-check" style="color:var(--accent-cyan); margin-right:6px;"></i>Vikram S. — Bengaluru</strong>
+            <span style="color:#f59e0b;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+          </div>
+          <p style="color:var(--text-main); font-size:0.88rem; line-height:1.6;">
+            "Ordered directly on WhatsApp and picked up my unit 40 minutes later from Commercial Street. Sealed Indian retail box with Apple official invoice. Best buying experience!"
+          </p>
+        </div>
+
+        <div class="review-card" style="background:rgba(255,255,255,0.9); border:1px solid var(--border-subtle); border-radius:12px; padding:20px; box-shadow:var(--shadow-xs);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <strong style="color:var(--text-heading);"><i class="fa-solid fa-user-check" style="color:var(--accent-cyan); margin-right:6px;"></i>Ananya M. — Indiranagar</strong>
+            <span style="color:#f59e0b;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+          </div>
+          <p style="color:var(--text-main); font-size:0.88rem; line-height:1.6;">
+            "The engineer in the VIP showroom helped me calibrate my display settings. 0% EMI was processed instantly without hidden charges."
+          </p>
+        </div>
+
+        <div class="review-card" style="background:rgba(255,255,255,0.9); border:1px solid var(--border-subtle); border-radius:12px; padding:20px; box-shadow:var(--shadow-xs);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <strong style="color:var(--text-heading);"><i class="fa-solid fa-user-check" style="color:var(--accent-cyan); margin-right:6px;"></i>Rohan K. — Whitefield</strong>
+            <span style="color:#f59e0b;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+          </div>
+          <p style="color:var(--text-main); font-size:0.88rem; line-height:1.6;">
+            "Exchanged my old MacBook for spot valuation credit of ₹48,000. Super transparent valuation and seamless delivery."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="store-section" style="margin-top: 36px;">
+      <div class="store-section-header">
+        <h2 class="section-headline"><i class="fa-solid fa-fire" style="color:#f59e0b; margin-right:6px;"></i> You May Also Like</h2>
+        <a href="shop.html" class="section-view-all-link">EXPLORE MORE <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i></a>
+      </div>
+      <div class="products-grid-layout" id="pdp-related-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Component Mount Point: Footer -->
+  <div id="nexora-footer-mount"></div>
+
+  <!-- Core Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/nexora-components.js"></script>
+  <script src="js/nexora.js"></script>
+</body>
+</html>

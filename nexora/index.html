@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXORA ELECTRONICS | Online Electronics Showroom & Digital Storefront</title>
+  <meta name="description" content="Shop smartphones, laptops, 4K OLED TVs, audio, gaming consoles & accessories at Nexora Electronics Bengaluru showroom. Direct WhatsApp ordering & same-day pickup." />
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/nexora.css" />
+</head>
+<body>
+
+  <!-- Component Mount Points: Top Bar, Header, Category Nav, Sub Nav -->
+  <div id="nexora-topbar-mount"></div>
+  <div id="nexora-header-mount"></div>
+  <div id="nexora-category-nav-mount"></div>
+  <div id="nexora-sub-nav-mount"></div>
+
+  <!-- Main Home Content -->
+  <main class="container" style="margin-top: 16px;">
+    
+    <!-- Hero Promo Slider Carousel Component Mount -->
+    <div id="nexora-hero-carousel-mount"></div>
+
+    <!-- Infinite Live Showroom Marquee Ticker Mount -->
+    <div id="nexora-marquee-mount"></div>
+
+    <!-- INTERACTIVE SHOWROOM TOOLS & CONCIERGE HUB -->
+    <section class="store-section" style="margin-top: 20px; margin-bottom: 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px;">
+        <button type="button" class="btn store-product-card" style="padding:16px 14px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:12px; cursor:pointer;" onclick="window.NexoraApp.openAdvisorModal()">
+          <span style="font-size:1.6rem; background:rgba(2, 132, 199, 0.1); color:var(--accent-cyan); padding:10px 12px; border-radius:10px; border:1px solid rgba(2, 132, 199, 0.2);"><i class="fa-solid fa-robot"></i></span>
+          <div>
+            <div style="font-weight:800; font-size:0.92rem; color:var(--text-heading);">AI Tech Advisor</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Find Perfect Match</div>
+          </div>
+        </button>
+
+        <button type="button" class="btn store-product-card" style="padding:16px 14px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:12px; cursor:pointer;" onclick="window.NexoraApp.openExchangeModal()">
+          <span style="font-size:1.6rem; background:rgba(16, 185, 129, 0.1); color:#059669; padding:10px 12px; border-radius:10px; border:1px solid rgba(16, 185, 129, 0.2);"><i class="fa-solid fa-arrows-rotate"></i></span>
+          <div>
+            <div style="font-weight:800; font-size:0.92rem; color:var(--text-heading);">Trade-In Value</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Up to ₹65,000 Off</div>
+          </div>
+        </button>
+
+        <button type="button" class="btn store-product-card" style="padding:16px 14px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:12px; cursor:pointer;" onclick="window.NexoraApp.openEmiCalculator(139900)">
+          <span style="font-size:1.6rem; background:rgba(245, 158, 11, 0.1); color:#d97706; padding:10px 12px; border-radius:10px; border:1px solid rgba(245, 158, 11, 0.2);"><i class="fa-solid fa-credit-card"></i></span>
+          <div>
+            <div style="font-weight:800; font-size:0.92rem; color:var(--text-heading);">0% No-Cost EMI</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Monthly Finance Plans</div>
+          </div>
+        </button>
+
+        <button type="button" class="btn store-product-card" style="padding:16px 14px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:12px; cursor:pointer;" onclick="window.NexoraApp.openBookingModal()">
+          <span style="font-size:1.6rem; background:rgba(99, 102, 241, 0.1); color:#4f46e5; padding:10px 12px; border-radius:10px; border:1px solid rgba(99, 102, 241, 0.2);"><i class="fa-solid fa-calendar-check"></i></span>
+          <div>
+            <div style="font-weight:800; font-size:0.92rem; color:var(--text-heading);">Book VIP Demo</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Acoustic / 4K Room</div>
+          </div>
+        </button>
+
+        <button type="button" class="btn store-product-card" style="padding:16px 14px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:12px; cursor:pointer;" onclick="window.NexoraApp.openTrackOrderModal()">
+          <span style="font-size:1.6rem; background:rgba(100, 116, 139, 0.1); color:#475569; padding:10px 12px; border-radius:10px; border:1px solid rgba(100, 116, 139, 0.2);"><i class="fa-solid fa-box-open"></i></span>
+          <div>
+            <div style="font-weight:800; font-size:0.92rem; color:var(--text-heading);">Track Order</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Live Dispatch Status</div>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- SHOP BY OCCASION & USE-CASE (Interactive Tabbed Filter) -->
+    <section class="store-section">
+      <div class="store-section-header">
+        <div>
+          <h2 class="section-headline">
+            <span><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--accent-cyan); margin-right:6px;"></i> Shop by Occasion & Lifestyle</span>
+          </h2>
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">
+            Hardware setups tailored for esports, studio creators, executive productivity, and home cinema
+          </div>
+        </div>
+        <a href="shop.html" class="section-view-all-link">ALL OCCASIONS <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i></a>
+      </div>
+
+      <!-- Occasion Pill Tabs -->
+      <div style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 14px; margin-bottom: 14px;" id="home-occasion-tabs">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Products for selected occasion -->
+      <div class="products-grid-layout" id="home-occasion-products-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- SECTION 1: FLASH DEALS OF THE DAY -->
+    <section class="store-section">
+      <div class="store-section-header">
+        <div>
+          <h2 class="section-headline">
+            <span style="color: #e11d48;"><i class="fa-solid fa-bolt" style="margin-right:6px;"></i> Deal of the Day</span>
+          </h2>
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">Limited showroom stock at special festive rates</div>
+        </div>
+        <a href="shop.html?deal=true" class="section-view-all-link">VIEW ALL DEALS <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i></a>
+      </div>
+
+      <div class="products-grid-layout" id="home-flash-deals-grid">
+        <!-- JS rendered -->
+      </div>
+    </section>
+
+    <!-- PROMOTIONAL MINI BANNERS (Apple Flagship, Sony OLED, ASUS ROG, Bose Studio) -->
+    <div id="nexora-mini-banners-mount"></div>
+
+    <!-- SECTION 2: TOP SMARTPHONES -->
+    <section class="store-section">
+      <div class="store-section-header">
+        <div>
+          <h2 class="section-headline"><i class="fa-solid fa-mobile-screen-button" style="color:var(--accent-cyan); margin-right:6px;"></i> Best of Smartphones</h2>
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">Apple, Samsung, OnePlus & Google Pixel with 5G</div>
+        </div>
+        <a href="shop.html?category=Smartphones" class="section-view-all-link">VIEW ALL SMARTPHONES <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i></a>
+      </div>
+
+      <div class="products-grid-layout" id="home-smartphones-grid">
+        <!-- JS rendered -->
+      </div>
+    </section>
+
+    <!-- SECTION 3: LAPTOPS & WORKSTATIONS -->
+    <section class="store-section">
+      <div class="store-section-header">
+        <div>
+          <h2 class="section-headline"><i class="fa-solid fa-laptop" style="color:var(--accent-cyan); margin-right:6px;"></i> Premium Laptops & Computing</h2>
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">MacBooks, Dell XPS, Lenovo ThinkPad & RTX Gaming Rigs</div>
+        </div>
+        <a href="shop.html?category=Laptops" class="section-view-all-link">VIEW ALL LAPTOPS <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i></a>
+      </div>
+
+      <div class="products-grid-layout" id="home-laptops-grid">
+        <!-- JS rendered -->
+      </div>
+    </section>
+
+    <!-- FESTIVE FLASH SPECIAL PROMO BANNER WITH LIVE COUNTDOWN -->
+    <div id="nexora-festive-banner-mount"></div>
+
+    <!-- SECTION 4: TRENDING BESTSELLERS -->
+    <section class="store-section">
+      <div class="store-section-header">
+        <div>
+          <h2 class="section-headline"><i class="fa-solid fa-fire" style="color:#f59e0b; margin-right:6px;"></i> Trending Across Showroom</h2>
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">Most ordered electronics via WhatsApp concierge this week</div>
+        </div>
+        <a href="shop.html" class="section-view-all-link">EXPLORE ALL <i class="fa-solid fa-arrow-right" style="margin-left:4px;"></i></a>
+      </div>
+
+      <div class="products-grid-layout" id="home-trending-grid">
+        <!-- JS rendered -->
+      </div>
+    </section>
+
+    <!-- INSTAGRAM SHOWROOM REELS & COMMUNITY FEED COMPONENT MOUNT -->
+    <div id="nexora-instagram-feed-mount"></div>
+
+    <!-- AUTHORIZED BRAND PARTNERS SHOWCASE -->
+    <div id="nexora-brands-mount"></div>
+
+    <!-- PHYSICAL SHOWROOM TRUST BANNER -->
+    <section class="store-section" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px 24px; box-shadow: var(--shadow-sm);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: center;">
+        <div>
+          <span class="badge-tag badge-tag-flagship"><i class="fa-solid fa-location-dot" style="margin-right:4px;"></i> VISIT IN PERSON</span>
+          <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--text-heading); margin: 8px 0 12px; font-family: var(--font-heading);">
+            Nexora Physical Showroom — Bengaluru
+          </h3>
+          <p style="color: var(--text-main); margin-bottom: 20px; line-height: 1.6; font-size: 0.92rem;">
+            Experience 6,500 sq.ft of live electronics in Commercial Street, Bengaluru. Compare OLED screens, test studio acoustics, and get hands-on advice from certified hardware engineers before ordering.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-map-location-dot" style="margin-right:6px;"></i> Get Showroom Directions</a>
+            <a href="about.html" class="btn btn-outline"><i class="fa-solid fa-store" style="margin-right:6px;"></i> About Our Store</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80" alt="Showroom Bengaluru" style="border-radius: 12px; box-shadow: var(--shadow-md); width: 100%; height: 260px; object-fit: cover; border: 1px solid var(--border-subtle);" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Component Mount Point: Footer -->
+  <div id="nexora-footer-mount"></div>
+
+  <!-- Core Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/nexora-components.js"></script>
+  <script src="js/nexora.js"></script>
+</body>
+</html>
