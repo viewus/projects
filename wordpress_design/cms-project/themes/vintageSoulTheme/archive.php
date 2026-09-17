@@ -3,6 +3,7 @@
  * VintageSoulTheme - Masterpiece Archive, Category & Tag Template
  */
 
+use VintageSoul\Services\PostQueryService;
 use VintageSoul\Services\RouteService;
 use VintageSoul\Support\IconHelper;
 use VintageSoul\Support\PostHelper;
@@ -117,55 +118,27 @@ $archive_desc  = get_the_archive_description() ?: sprintf( __( 'Showing %d publi
 					
 					<!-- Sidebar Widget 1: Categories -->
 					<?php
-					$all_categories = get_categories( array( 'hide_empty' => true ) );
-					if ( ! empty( $all_categories ) ) :
+					View::component(
+						'sidebar/category-tags-widget',
+						array(
+							'categories' => PostQueryService::categories(),
+							'badge'      => '✦ TOPICS ✦',
+							'title'      => __( 'EXPLORE TOPICS', 'vintagesoul' ),
+						)
+					);
 					?>
-						<div class="sidebar-widget frame--ornate">
-							<div class="sidebar-widget__header">
-								<span class="sidebar-widget__badge">✦ TOPICS ✦</span>
-								<h3 class="sidebar-widget__title"><?php esc_html_e( 'EXPLORE TOPICS', 'vintagesoul' ); ?></h3>
-							</div>
-							<div class="sidebar-category-tags">
-								<?php foreach ( $all_categories as $c ) : ?>
-									<a href="<?php echo esc_url( get_category_link( $c->term_id ) ); ?>" class="sidebar-cat-tag">
-										<span class="cat-tag__name"><?php echo esc_html( $c->name ); ?></span>
-										<span class="cat-tag__count"><?php echo esc_html( $c->count ); ?></span>
-									</a>
-								<?php endforeach; ?>
-							</div>
-						</div>
-					<?php endif; ?>
 
 					<!-- Sidebar Widget 2: Recent Chronicles -->
-					<div class="sidebar-widget frame--ornate">
-						<div class="sidebar-widget__header">
-							<span class="sidebar-widget__badge">✦ RECENT ✦</span>
-							<h3 class="sidebar-widget__title"><?php esc_html_e( 'LATEST STORIES', 'vintagesoul' ); ?></h3>
-						</div>
-						<div class="sidebar-widget__list">
-							<?php
-							$recent_posts = get_posts(
-								array(
-									'post_type'      => 'post',
-									'post_status'    => 'publish',
-									'posts_per_page' => 4,
-								)
-							);
-							foreach ( $recent_posts as $rp ) :
-								$rp_thumb = get_the_post_thumbnail_url( $rp->ID, 'thumbnail' ) ?: UrlHelper::resolve( 'assets/images/sugarcane/story_moments.jpg' );
-							?>
-								<a href="<?php echo esc_url( get_permalink( $rp ) ); ?>" class="sidebar-post-item">
-									<div class="sidebar-post-item__thumb">
-										<img src="<?php echo esc_url( $rp_thumb ); ?>" alt="<?php echo esc_attr( get_the_title( $rp ) ); ?>" loading="lazy">
-									</div>
-									<div class="sidebar-post-item__meta">
-										<span class="sidebar-post-item__date"><?php echo esc_html( get_the_date( 'j M Y', $rp ) ); ?></span>
-										<h4 class="sidebar-post-item__title"><?php echo esc_html( get_the_title( $rp ) ); ?></h4>
-									</div>
-								</a>
-							<?php endforeach; ?>
-						</div>
-					</div>
+					<?php
+					View::component(
+						'sidebar/post-list-widget',
+						array(
+							'posts' => PostQueryService::recent( 4 ),
+							'badge' => '✦ RECENT ✦',
+							'title' => __( 'LATEST STORIES', 'vintagesoul' ),
+						)
+					);
+					?>
 
 					<!-- Sidebar Widget 3: London Parlour Concierge -->
 					<div class="sidebar-widget sidebar-widget--concierge frame--ornate">

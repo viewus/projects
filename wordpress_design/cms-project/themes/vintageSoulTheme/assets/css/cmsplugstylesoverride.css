@@ -666,3 +666,93 @@ div[id^="ch-tpop-"] .ch-terms-popup-content h3 {
 	min-height: 480px;
 	background: transparent;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   PART 4: SITE NOTICE POPUP — GUARANTEED ON TOP + LARGER PRESENCE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Nothing outranks an open notice ──────────────────────────────────
+   The popup already carries the maximum usable z-index, but the sticky
+   header, ticker and floating widgets each sit in their own high layer and
+   have crept upward over time. Rather than keep bidding higher, drop those
+   layers back down for exactly as long as a notice is open. */
+body:has(.ah-sn-modal.ah-sn-show) .site-header,
+body:has(.ah-sn-modal.ah-sn-show) .ribbon-ticker,
+body:has(.ah-sn-modal.ah-sn-show) .floating-whatsapp,
+body:has(.ah-sn-modal.ah-sn-show) .scroll-top,
+body:has(.ah-sn-modal.ah-sn-show) .section-nav {
+	z-index: 1 !important;
+}
+
+/* Keep the page itself from scrolling behind the open notice. */
+body:has(.ah-sn-modal.ah-sn-show) {
+	overflow: hidden !important;
+}
+
+/* ── 2. A bigger, more confident card ───────────────────────────────────── */
+.ah-sn-popup .ah-sn-card-wrap {
+	max-width: 660px !important;
+	width: min(94vw, 660px) !important;
+}
+
+.ah-sn-popup .ah-sn-card--modal {
+	max-height: 92vh !important;
+}
+
+.ah-sn-popup .ah-sn-media--modal {
+	height: 300px !important;
+	max-height: 46vh !important;
+}
+
+.ah-sn-popup .ah-sn-content--modal {
+	padding: var(--space-md, 1.5rem) var(--space-lg, 2rem) var(--space-lg, 2rem) !important;
+}
+
+.ah-sn-popup .ah-sn-title,
+.ah-sn-popup .ah-sn-title--modal,
+.ah-sn-title.ah-sn-title--modal {
+	font-size: var(--font-size-xl, 1.5rem) !important;
+	line-height: var(--line-height-tight, 1.2) !important;
+}
+
+.ah-sn-popup .ah-sn-msg--modal {
+	font-size: var(--font-size-lg, 1.125rem) !important;
+	line-height: var(--line-height-relaxed, 1.8) !important;
+}
+
+.ah-sn-popup .ah-sn-btn--modal {
+	padding: 14px 34px !important;
+	font-size: var(--font-size-sm, 0.875rem) !important;
+}
+
+.ah-sn-popup .ah-sn-badge {
+	font-size: var(--font-size-2xs, 0.6875rem) !important;
+	padding: 7px 14px !important;
+}
+
+.ah-sn-modal .ah-sn-close {
+	width: 38px !important;
+	height: 38px !important;
+	font-size: 20px !important;
+}
+
+@media (max-width: 640px) {
+	.ah-sn-popup .ah-sn-media--modal {
+		height: 210px !important;
+		max-height: 34vh !important;
+	}
+
+	.ah-sn-popup .ah-sn-content--modal {
+		padding: var(--space-sm, 1rem) var(--space-md, 1.5rem) var(--space-md, 1.5rem) !important;
+	}
+
+	.ah-sn-popup .ah-sn-title,
+	.ah-sn-popup .ah-sn-title--modal,
+	.ah-sn-title.ah-sn-title--modal {
+		font-size: var(--font-size-lg, 1.125rem) !important;
+	}
+
+	.ah-sn-popup .ah-sn-msg--modal {
+		font-size: var(--font-size-md, 1rem) !important;
+	}
+}

@@ -279,3 +279,20 @@
     transition: none;
   }
 }
+
+/* ═══════════ NARROW-DESKTOP FIT ═══════════
+   The primary menu now carries eight top-level items. Between the point the
+   mobile menu takes over (1100px, see components/header.css) and a roomy
+   desktop, tighten the row so the logo + nav + header CTA still fit on one
+   line instead of the CTA being pushed past the viewport edge. */
+@media (min-width: 1101px) and (max-width: 1400px) {
+  .site-header .nav__list {
+    gap: var(--space-3xs) !important;
+  }
+
+  .site-header .nav__link {
+    padding-inline: var(--space-3xs) !important;
+    font-size: var(--font-size-xs, 12px) !important;
+    letter-spacing: var(--tracking-wide, 0.04em) !important;
+  }
+}

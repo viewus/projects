@@ -49,6 +49,13 @@ return array(
 		'scripts'    => array(),
 	),
 
+	'occasions' => array(
+		'path'       => '/occasions',
+		'alternates' => array( 'our-occasions', 'whats-on', 'diary', 'calendar' ),
+		'styles'     => array(),
+		'scripts'    => array(),
+	),
+
 	'elements' => array(
 		'path'       => '/elements',
 		'alternates' => array( 'components', 'style-guide', 'ui-kit', 'testing' ),

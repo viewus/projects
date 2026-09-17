@@ -61,6 +61,8 @@ return array(
 		'ui-section-nav'          => 'assets/css/components/section-nav.css',
 		'ui-loader'               => 'assets/css/components/loader.css',
 		'ui-cookie-consent'       => 'assets/css/components/cookie-consent.css',
+		'ui-feature-sections'     => 'assets/css/components/feature-sections.css',
+		'ui-occasions'            => 'assets/css/components/occasions.css',
 		'cmsplugstylesoverride'   => 'assets/css/cmsplugstylesoverride.css',
 		'page-home'     => 'assets/css/pages/home.css',
 		'page-history'  => 'assets/css/pages/history.css',
@@ -110,5 +112,6 @@ return array(
 		'ui-cookie-consent'       => 'assets/js/components/cookie-consent.js',
 		'ui-sticky-sidebar'       => 'assets/js/components/sticky-sidebar.js',
 		'ui-logo-strip-marquee'   => 'assets/js/components/logo-strip-marquee.js',
+		'ui-occasions'            => 'assets/js/components/occasions.js',
 	),
 );

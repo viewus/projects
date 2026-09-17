@@ -2,6 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
+use VintageSoul\DataProviders\JsonFileProvider;
 use VintageSoul\Services\RouteService;
 use VintageSoul\Support\IconHelper;
 use VintageSoul\Support\UrlHelper;
@@ -11,88 +12,21 @@ $hero     = (array) ( $hero ?? array() );
 $slides   = (array) ( $hero['slides'] ?? array() );
 
 if ( empty( $slides ) ) {
-	$slides = array(
-		array(
-			'media'   => array( 'type' => 'video', 'src' => 'assets/videos/hero_bg.mp4', 'poster' => 'assets/images/sugarcane/hero_juice.jpg', 'alt' => 'Live fresh sugarcane extraction' ),
-			'content' => array(
-				'title'     => 'WELCOME TO THE TASTE OF TRADITION',
-				'eyebrow'   => 'Freshly Pressed · Naturally Refreshing',
-				'checklist' => array(
-					'100% Natural · No Additives · Freshly Pressed',
-					'Freshly cold-pressed right before your eyes.',
-					'A taste of tradition, crafted with love.',
-				),
-				'buttons'   => array(
-					array( 'label' => 'Visit Us', 'icon' => '📍', 'route' => 'contact' ),
-					array( 'label' => 'Book Us For Your Event', 'icon' => '📅', 'route' => 'contact', 'style' => 'ghost' ),
-				),
-			),
-		),
-		array(
-			'media'   => array( 'type' => 'image', 'src' => 'assets/images/sugarcane/hero_juice.jpg', 'alt' => 'Fresh sugarcane juice' ),
-			'content' => array(
-				'title'     => 'WATCH IT. TASTE IT. LOVE IT.',
-				'eyebrow'   => 'Pure Cold Pressed',
-				'checklist' => array(
-					'Freshly pressed right before your eyes.',
-					'100% pure sugarcane — nothing added.',
-					'A taste of tradition, crafted with love.',
-				),
-				'buttons'   => array(
-					array( 'label' => 'Visit Us', 'icon' => '📍', 'route' => 'contact' ),
-					array( 'label' => 'Book Us For Your Event', 'icon' => '📅', 'route' => 'contact', 'style' => 'ghost' ),
-				),
-			),
-		),
-		array(
-			'media'   => array( 'type' => 'image', 'src' => 'assets/images/sugarcane/stacks.jpg', 'alt' => 'Harvested sugarcane stalks' ),
-			'content' => array(
-				'title'     => 'HARVESTED PURE. PRESSED COLD.',
-				'eyebrow'   => 'From Farm To Stall',
-				'checklist' => array(
-					'Hand-picked premium sugarcane.',
-					'Cold extraction for maximum nutrients.',
-					'Rich in iron, magnesium & potassium.',
-				),
-				'buttons'   => array(
-					array( 'label' => 'All About Cane', 'icon' => '🌾', 'route' => 'history' ),
-					array( 'label' => 'Find Our Stall', 'icon' => '📍', 'route' => 'contact' ),
-				),
-			),
-		),
-		array(
-			'media'   => array( 'type' => 'image', 'src' => 'assets/images/sugarcane/combo.jpg', 'alt' => 'Signature cane combos' ),
-			'content' => array(
-				'title'     => 'SIGNATURE VINTAGE COMBOS',
-				'eyebrow'   => 'Handcrafted Flavours',
-				'checklist' => array(
-					'Fresh ginger, mint & lime infusions.',
-					'No added sugar, ice dilution or preservatives.',
-					'Crafted to order in seconds.',
-				),
-				'buttons'   => array(
-					array( 'label' => 'Explore Drinks', 'icon' => '🥤', 'route' => 'history' ),
-					array( 'label' => 'Book Live Bar', 'icon' => '🎪', 'route' => 'contact' ),
-				),
-			),
-		),
-		array(
-			'media'   => array( 'type' => 'image', 'src' => 'assets/images/sugarcane/story_moments.jpg', 'alt' => 'Heritage community moments' ),
-			'content' => array(
-				'title'     => 'MORE THAN JUST A DRINK',
-				'eyebrow'   => 'Heritage & Community',
-				'checklist' => array(
-					'Live pressing counter for weddings & private events.',
-					'London Borough & weekend market stall favourite.',
-					'Loved by thousands of happy customers.',
-				),
-				'buttons'   => array(
-					array( 'label' => 'Our Heritage', 'icon' => '📖', 'route' => 'about' ),
-					array( 'label' => 'Get In Touch', 'icon' => '✉️', 'route' => 'contact' ),
-				),
-			),
-		),
-	);
+	// Fall back to the same content file BannerBridgeService reads, rather
+	// than keeping a second copy of the slide deck hardcoded in this
+	// template. Editors change hero.json (or the CMS Home Banners admin);
+	// nothing here needs touching.
+	$hero_fallback = (array) ( JsonFileProvider::read( 'data/content/hero.json' ) ?? array() );
+	$slides        = (array) ( $hero_fallback['slides'] ?? array() );
+
+	if ( empty( $hero['settings'] ) && ! empty( $hero_fallback['settings'] ) ) {
+		$hero['settings'] = (array) $hero_fallback['settings'];
+	}
+}
+
+// No CMS banners and no JSON slides: render nothing rather than invent copy.
+if ( empty( $slides ) ) {
+	return;
 }
 
 $first_slide = (array) $slides[0];

@@ -43,25 +43,19 @@ $milestone_items = (array) ( $milestones['items'] ?? array() );
 	<?php View::component( 'sections/about-intro-section', array( 'intro' => $intro ) ); ?>
 
 	<!-- Gold Wave Divider -->
-	<div class="gold-wave-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( UrlHelper::resolve( 'assets/images/textures/border/gold-wave.svg' ) ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider', array( 'type' => 'gold-wave' ) ); ?>
 
 	<!-- ═══════════ 3. OUR SERVICES ═══════════ -->
 	<?php View::component( 'sections/about-services-section', array( 'intro' => $intro ) ); ?>
 
 	<!-- Deckled Edge Divider -->
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( UrlHelper::resolve( 'assets/images/textures/border/deckled-edge.svg' ) ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 
 	<!-- ═══════════ 4. FOUR PILLARS (Dark Botanical) ═══════════ -->
 	<?php View::component( 'sections/pillars-section', array( 'story' => $story ) ); ?>
 
 	<!-- Gold Wave Divider -->
-	<div class="gold-wave-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( UrlHelper::resolve( 'assets/images/textures/border/gold-wave.svg' ) ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider', array( 'type' => 'gold-wave' ) ); ?>
 
 	<!-- ═══════════ 6. OUR MILESTONES TIMELINE ═══════════ -->
 	<?php if ( ! empty( $milestone_items ) ) : ?>
@@ -79,9 +73,7 @@ $milestone_items = (array) ( $milestones['items'] ?? array() );
 	<?php endif; ?>
 
 	<!-- Deckled Edge Divider -->
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( UrlHelper::resolve( 'assets/images/textures/border/deckled-edge.svg' ) ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 
 	<!-- ═══════════ 7. MEET THE CANE FAMILY (Dark Botanical Stream) ═══════════ -->
 	<?php if ( ! empty( $team_members ) ) : ?>
@@ -111,25 +103,34 @@ $milestone_items = (array) ( $milestones['items'] ?? array() );
 	<?php endif; ?>
 
 	<!-- Deckled Edge Divider -->
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( UrlHelper::resolve( 'assets/images/textures/border/deckled-edge.svg' ) ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
+
+	<!-- ═══════════ 7b. ORIGIN STORY (data/content/origin-history.json) ═══════════ -->
+	<?php View::component( 'sections/origin-story-section' ); ?>
+
+	<!-- ═══════════ 7c. IN OUR CULTURE (data/content/culture.json) ═══════════ -->
+	<?php View::component( 'sections/culture-section' ); ?>
+
+	<!-- ═══════════ 7d. WHY IT MATTERS (data/content/why-us.json) ═══════════ -->
+	<?php View::component( 'sections/why-us-section' ); ?>
+
+	<!-- ═══════════ 7e. HEALTH BENEFITS CHECKLIST (data/content/benefits-list.json) ═══════════ -->
+	<?php View::component( 'sections/highlights-section', array( 'source' => 'benefits-list.json' ) ); ?>
+
+	<!-- ═══════════ 7f. FROM ONE SOURCE, MANY GOODS (data/content/byproducts.json) ═══════════ -->
+	<?php View::component( 'sections/byproducts-section' ); ?>
 
 	<!-- ═══════════ 8. QUALITY & CERTIFICATIONS (Food Safety Registered) ═══════════ -->
 	<?php View::component( 'sections/certifications-section' ); ?>
 
 	<!-- Gold Wave Divider -->
-	<div class="gold-wave-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( UrlHelper::resolve( 'assets/images/textures/border/gold-wave.svg' ) ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider', array( 'type' => 'gold-wave' ) ); ?>
 
 	<!-- ═══════════ 9. PHOTO GALLERY ARCHIVE ═══════════ -->
 	<?php View::component( 'sections/gallery-section' ); ?>
 
 	<!-- Gold Wave Divider -->
-	<div class="gold-wave-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( UrlHelper::resolve( 'assets/images/textures/border/gold-wave.svg' ) ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider', array( 'type' => 'gold-wave' ) ); ?>
 
 	<!-- ═══════════ 10. LOGO STRIP / PARTNERS ═══════════ -->
 	<?php View::component( 'sections/logo-strip-section' ); ?>

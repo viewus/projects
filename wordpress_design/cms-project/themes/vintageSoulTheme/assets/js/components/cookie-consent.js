@@ -101,8 +101,16 @@
     // 1. If an admin bumped the consent version (Theme Settings -> re-ask
     // cookie consent), forget this visitor's stored decision so they're
     // asked again, same as if they'd never decided.
-    var currentVersion = (window.vstCookieConsent && window.vstCookieConsent.version) ? window.vstCookieConsent.version : 1;
+    //
+    // Both sides MUST be parsed to numbers. wp_localize_script() casts every
+    // scalar it passes to a string, so window.vstCookieConsent.version arrives
+    // as "1", not 1. Comparing that to the parsed stored value with !== was
+    // always true, which wiped the saved decision on every single page load -
+    // the banner came back even right after someone pressed Reject.
+    var currentVersion = parseInt((window.vstCookieConsent && window.vstCookieConsent.version) || 1, 10);
+    if (isNaN(currentVersion)) { currentVersion = 1; }
     var storedVersion = parseInt(getStorage(STORAGE_KEY_VERSION) || '0', 10);
+    if (isNaN(storedVersion)) { storedVersion = 0; }
     if (storedVersion !== currentVersion) {
       setStorage(STORAGE_KEY_EXPIRY, '0');
       setStorage(STORAGE_KEY_VERSION, String(currentVersion));

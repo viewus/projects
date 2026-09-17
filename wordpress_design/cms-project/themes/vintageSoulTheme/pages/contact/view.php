@@ -213,9 +213,13 @@ $socials = (array) ( $contact_info['socials'] ?? array() );
 	</section>
 
 	<!-- Gold Wave Divider -->
-	<div class="gold-wave-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( \VintageSoul\Support\UrlHelper::resolve( 'assets/images/textures/border/gold-wave.svg' ) ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider', array( 'type' => 'gold-wave' ) ); ?>
+
+	<!-- 2b. Locations / Store Finder (data/content/locations.json) -->
+	<?php View::component( 'sections/locations-section' ); ?>
+
+	<!-- 2c. Opening Hours, with live open/closed status (data/content/opening-hours.json) -->
+	<?php View::component( 'sections/opening-hours-section' ); ?>
 
 	<!-- 3. FAQs Section -->
 	<?php if ( ! empty( $faqs ) ) : ?>

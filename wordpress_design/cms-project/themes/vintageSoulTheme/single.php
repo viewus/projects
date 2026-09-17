@@ -4,6 +4,7 @@
  */
 
 use VintageSoul\Controllers\SingleController;
+use VintageSoul\Services\PostQueryService;
 use VintageSoul\Services\RouteService;
 use VintageSoul\Support\IconHelper;
 use VintageSoul\Support\UrlHelper;
@@ -88,62 +89,28 @@ get_header();
 					<div class="single-article__sidebar-sticky">
 						
 						<!-- Sidebar Widget 1: Related / Recent Chronicles -->
-						<div class="sidebar-widget frame--ornate">
-							<div class="sidebar-widget__header">
-								<span class="sidebar-widget__badge">✦ DISCOVER ✦</span>
-								<h3 class="sidebar-widget__title"><?php esc_html_e( 'RELATED CHRONICLES', 'vintagesoul' ); ?></h3>
-							</div>
-							<div class="sidebar-widget__list">
-								<?php
-								$sidebar_posts = get_posts(
-									array(
-										'post_type'      => 'post',
-										'post_status'    => 'publish',
-										'posts_per_page' => 4,
-										'post__not_in'   => array( $post_id ),
-									)
-								);
-								if ( ! empty( $sidebar_posts ) ) :
-									foreach ( $sidebar_posts as $sp ) :
-										$sp_thumb = get_the_post_thumbnail_url( $sp->ID, 'thumbnail' ) ?: UrlHelper::resolve( 'assets/images/sugarcane/story_moments.jpg' );
-									?>
-										<a href="<?php echo esc_url( get_permalink( $sp ) ); ?>" class="sidebar-post-item">
-											<div class="sidebar-post-item__thumb">
-												<img src="<?php echo esc_url( $sp_thumb ); ?>" alt="<?php echo esc_attr( get_the_title( $sp ) ); ?>" loading="lazy">
-											</div>
-											<div class="sidebar-post-item__meta">
-												<span class="sidebar-post-item__date"><?php echo esc_html( get_the_date( 'j M Y', $sp ) ); ?></span>
-												<h4 class="sidebar-post-item__title"><?php echo esc_html( get_the_title( $sp ) ); ?></h4>
-											</div>
-										</a>
-									<?php
-									endforeach;
-								else :
-									?>
-									<p class="sidebar-empty-msg"><?php esc_html_e( 'Stay tuned for more stories.', 'vintagesoul' ); ?></p>
-								<?php endif; ?>
-							</div>
-						</div>
+						<?php
+						View::component(
+							'sidebar/post-list-widget',
+							array(
+								'posts'      => PostQueryService::recent( 4, array( $post_id ) ),
+								'badge'      => '✦ DISCOVER ✦',
+								'title'      => __( 'RELATED CHRONICLES', 'vintagesoul' ),
+								'empty_text' => __( 'Stay tuned for more stories.', 'vintagesoul' ),
+							)
+						);
+						?>
 
 						<!-- Sidebar Widget 2: Explore Topics -->
 						<?php
-						$categories = get_categories( array( 'hide_empty' => true ) );
-						if ( ! empty( $categories ) ) :
+						View::component(
+							'sidebar/category-tags-widget',
+							array(
+								'categories' => PostQueryService::categories(),
+								'title'      => __( 'EXPLORE TOPICS', 'vintagesoul' ),
+							)
+						);
 						?>
-							<div class="sidebar-widget frame--ornate">
-								<div class="sidebar-widget__header">
-									<h3 class="sidebar-widget__title"><?php esc_html_e( 'EXPLORE TOPICS', 'vintagesoul' ); ?></h3>
-								</div>
-								<div class="sidebar-category-tags">
-									<?php foreach ( $categories as $cat ) : ?>
-										<a href="<?php echo esc_url( get_category_link( $cat->term_id ) ); ?>" class="sidebar-cat-tag">
-											<span class="cat-tag__name"><?php echo esc_html( $cat->name ); ?></span>
-											<span class="cat-tag__count"><?php echo esc_html( $cat->count ); ?></span>
-										</a>
-									<?php endforeach; ?>
-								</div>
-							</div>
-						<?php endif; ?>
 
 						<!-- Sidebar Widget 4: Concierge & Quick Links -->
 						<div class="sidebar-widget sidebar-widget--concierge frame--ornate">

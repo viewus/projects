@@ -1,0 +1,633 @@
+/* ==========================================================================
+   VintageSoulTheme - Our Occasions (calendar + diary cards)
+   Framing comes from frame.css (.frame--ornate-sm / .frame--rough-cut);
+   this file owns layout, the calendar grid, and the occasion cards.
+
+   Progressive enhancement note: showing one month at a time is scoped to
+   html.js, so with JavaScript off every month grid stays visible and every
+   calendar day still works as a plain anchor to its card.
+   ========================================================================== */
+
+/* ══════════ Diary layout: calendar beside the next occasion ══════════ */
+.occasions-diary {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-lg);
+  align-items: start;
+  margin-top: var(--space-lg);
+}
+
+/* ══════════ Calendar shell ══════════ */
+.vs-calendar {
+  padding: var(--space-md);
+  box-shadow: var(--elevation-1);
+}
+
+.vs-calendar__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-2xs);
+  border-bottom: var(--border-dashed-gold);
+}
+
+.vs-calendar__label {
+  margin: 0;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-align: center;
+  color: var(--color-text-strong);
+}
+
+.vs-calendar__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: var(--border-vintage-outer-sm);
+  border-radius: var(--radius-circle);
+  background: var(--color-surface-raised);
+  color: var(--color-text-strong);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-xs);
+  transition: background-color var(--transition-fast) var(--ease-standard),
+    color var(--transition-fast) var(--ease-standard),
+    transform var(--transition-fast) var(--ease-standard);
+}
+
+.vs-calendar__nav:hover:not(:disabled),
+.vs-calendar__nav:focus-visible:not(:disabled) {
+  background: var(--client-brand-dark);
+  color: var(--vintage-gold-bright);
+  transform: translateY(-1px);
+}
+
+.vs-calendar__nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Month jump pills */
+.vs-calendar__months {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3xs);
+  margin: var(--space-2xs) 0 var(--space-sm);
+}
+
+.vs-calendar__month-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--border-hairline);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background-color var(--transition-fast) var(--ease-standard),
+    color var(--transition-fast) var(--ease-standard),
+    border-color var(--transition-fast) var(--ease-standard);
+}
+
+.vs-calendar__month-pill:hover,
+.vs-calendar__month-pill:focus-visible {
+  border-color: var(--color-border-strong);
+  color: var(--color-text-strong);
+}
+
+.vs-calendar__month-pill.is-active {
+  background: var(--client-brand-dark);
+  border-color: var(--vintage-gold-inner);
+  color: var(--vintage-gold-bright);
+}
+
+.vs-calendar__month-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 var(--space-3xs);
+  border-radius: var(--radius-pill);
+  background: var(--color-selected-wash);
+  font-size: var(--font-size-2xs);
+  color: inherit;
+}
+
+.vs-calendar__month-pill.is-active .vs-calendar__month-count {
+  background: var(--vintage-green-rich);
+}
+
+/* ══════════ Calendar grid ══════════ */
+.vs-calendar__grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* With JS on, one month at a time; with JS off, all months stay visible. */
+html.js .vs-calendar__grid {
+  display: none;
+}
+
+html.js .vs-calendar__grid.is-active {
+  display: table;
+}
+
+.vs-calendar__grid thead th {
+  padding: var(--space-3xs) 0 var(--space-2xs);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+
+.vs-calendar__grid thead abbr {
+  text-decoration: none;
+  border: 0;
+  cursor: help;
+}
+
+.vs-calendar__cell {
+  padding: var(--space-3xs);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.vs-calendar__day {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: background-color var(--transition-fast) var(--ease-standard),
+    color var(--transition-fast) var(--ease-standard),
+    transform var(--transition-fast) var(--ease-standard);
+}
+
+.vs-calendar__day--blank {
+  visibility: hidden;
+}
+
+.vs-calendar__day--empty {
+  color: var(--color-text-subtle);
+}
+
+/* A day that has occasions */
+a.vs-calendar__day {
+  border: var(--border-vintage-outer-sm);
+  background: var(--color-surface-raised);
+  color: var(--color-text-strong);
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--elevation-1);
+}
+
+a.vs-calendar__day:hover,
+a.vs-calendar__day:focus-visible {
+  background: var(--client-brand-dark);
+  border-color: var(--vintage-gold-inner);
+  color: var(--vintage-gold-bright);
+  transform: translateY(var(--elevation-lift-sm));
+  box-shadow: var(--elevation-2);
+}
+
+.vs-calendar__dots {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.vs-calendar__dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: var(--radius-circle);
+  background: var(--color-primary-shine);
+}
+
+a.vs-calendar__day:hover .vs-calendar__dot,
+a.vs-calendar__day:focus-visible .vs-calendar__dot {
+  background: var(--vintage-gold-bright);
+}
+
+.vs-calendar__cell.is-past a.vs-calendar__day {
+  opacity: 0.55;
+}
+
+.vs-calendar__cell.is-today .vs-calendar__day {
+  outline: var(--border-vintage-gold);
+  outline-offset: 2px;
+}
+
+.vs-calendar__legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin: var(--space-sm) 0 0;
+  padding-top: var(--space-2xs);
+  border-top: var(--border-dashed-bark);
+  font-size: var(--font-size-2xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+
+.vs-calendar__legend-key {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.vs-calendar__legend-today {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: var(--border-vintage-gold);
+  border-radius: var(--radius-sm);
+}
+
+/* ══════════ Next-up panel ══════════ */
+.occasions-next {
+  padding: var(--space-md);
+  box-shadow: var(--elevation-2);
+}
+
+.occasions-next__label {
+  display: inline-block;
+  margin-bottom: var(--space-2xs);
+  padding: var(--space-3xs) var(--space-2xs);
+  border-radius: var(--radius-pill);
+  background: var(--client-brand-dark);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--vintage-gold-bright);
+}
+
+.occasions-next__date {
+  margin: 0 0 var(--space-3xs);
+  font-family: var(--font-family-script);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary-shine);
+}
+
+.occasions-next__title {
+  margin: 0 0 var(--space-2xs);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-strong);
+}
+
+.occasions-next__place,
+.occasions-next__time {
+  margin: 0 0 var(--space-3xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.occasions-next__text {
+  margin: var(--space-2xs) 0 var(--space-sm);
+  padding-top: var(--space-2xs);
+  border-top: var(--border-dashed-bark);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-muted);
+}
+
+/* ══════════ Category filters ══════════ */
+.occasions-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2xs);
+  margin: var(--space-lg) 0 var(--space-md);
+}
+
+.occasions-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  padding: var(--space-2xs) var(--space-sm);
+  border: var(--border-vintage-outer-sm);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-raised);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--vintage-gold-inner);
+  transition: background-color var(--transition-fast) var(--ease-standard),
+    color var(--transition-fast) var(--ease-standard),
+    transform var(--transition-fast) var(--ease-standard);
+}
+
+.occasions-filter:hover,
+.occasions-filter:focus-visible {
+  transform: translateY(-2px);
+  color: var(--color-text-strong);
+}
+
+.occasions-filter.is-active {
+  background: var(--client-brand-dark);
+  border-color: var(--vintage-gold-bright);
+  color: var(--vintage-gold-bright);
+}
+
+.occasions-filter__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  border-radius: var(--radius-pill);
+  background: var(--color-selected-wash);
+  font-size: var(--font-size-2xs);
+}
+
+.occasions-filter.is-active .occasions-filter__count {
+  background: var(--vintage-green-rich);
+}
+
+/* ══════════ Occasion cards ══════════ */
+.occasions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+.occasion-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  scroll-margin-top: var(--space-3xl);
+  transition: transform var(--transition-normal) var(--ease-standard),
+    box-shadow var(--transition-normal) var(--ease-standard);
+}
+
+.occasion-card:hover,
+.occasion-card:focus-within {
+  transform: translateY(var(--elevation-lift));
+  box-shadow: var(--elevation-3);
+}
+
+.occasion-card:focus {
+  outline: none;
+}
+
+/* Flash after a calendar day jump */
+.occasion-card.is-flagged {
+  outline: var(--border-vintage-gold);
+  outline-offset: 3px;
+  box-shadow: var(--elevation-3);
+}
+
+.occasion-card--past {
+  opacity: 0.78;
+}
+
+.occasion-card--today {
+  outline: var(--border-vintage-gold);
+  outline-offset: 2px;
+}
+
+.occasion-card__media {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.occasion-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow) var(--ease-standard);
+}
+
+.occasion-card:hover .occasion-card__media img {
+  transform: scale(1.05);
+}
+
+/* Torn-paper date chip */
+.occasion-card__date {
+  position: absolute;
+  top: var(--space-2xs);
+  left: var(--space-2xs);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 52px;
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--border-vintage-outer-sm);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-md);
+}
+
+.occasion-card__date-day {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  color: var(--color-text-strong);
+}
+
+.occasion-card__date-month {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.occasion-card__badge {
+  position: absolute;
+  top: var(--space-2xs);
+  right: var(--space-2xs);
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--border-vintage-inner-sm);
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--color-brand-3), var(--color-brand-1));
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--vintage-gold-bright);
+  box-shadow: var(--shadow-sm);
+}
+
+.occasion-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  padding: var(--space-md);
+}
+
+.occasion-card__when {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs);
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+
+.occasion-card__live,
+.occasion-card__done {
+  padding: 2px var(--space-2xs);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-2xs);
+}
+
+.occasion-card__live {
+  background: var(--color-success-surface);
+  color: var(--color-success);
+}
+
+.occasion-card__done {
+  background: var(--color-hover-wash);
+  color: var(--color-text-subtle);
+}
+
+.occasion-card__title {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-strong);
+}
+
+.occasion-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.occasion-card__meta li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.occasion-card__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.occasion-card__text {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-muted);
+}
+
+.occasion-card__cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.occasions-empty {
+  margin: var(--space-lg) 0 0;
+  font-size: var(--font-size-md);
+  font-style: italic;
+  text-align: center;
+  color: var(--color-text-subtle);
+}
+
+/* ══════════ Responsive ══════════ */
+@media (max-width: 1000px) {
+  .occasions-diary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .vs-calendar {
+    padding: var(--space-sm);
+  }
+
+  .vs-calendar__label {
+    font-size: var(--font-size-md);
+  }
+
+  .vs-calendar__day {
+    font-size: var(--font-size-xs);
+    border-radius: var(--radius-md);
+  }
+
+  .vs-calendar__dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .occasions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .occasions-filter {
+    padding: var(--space-3xs) var(--space-2xs);
+  }
+}
+
+/* ══════════ Reduced motion ══════════ */
+@media (prefers-reduced-motion: reduce) {
+  .vs-calendar__nav,
+  .vs-calendar__month-pill,
+  .vs-calendar__day,
+  .occasions-filter,
+  .occasion-card,
+  .occasion-card__media img {
+    transition: none;
+  }
+
+  .vs-calendar__nav:hover:not(:disabled),
+  a.vs-calendar__day:hover,
+  .occasions-filter:hover,
+  .occasion-card:hover,
+  .occasion-card:hover .occasion-card__media img {
+    transform: none;
+  }
+}

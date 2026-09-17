@@ -9,7 +9,6 @@
 use VintageSoul\Controllers\HistoryController;
 use VintageSoul\Services\RouteService;
 use VintageSoul\Support\IconHelper;
-use VintageSoul\Support\UrlHelper;
 use VintageSoul\Support\View;
 
 defined( 'ABSPATH' ) || exit;
@@ -34,7 +33,6 @@ $storage_guide       = (array) ( $data['storage_guide'] ?? array() );
 $why_everyone_loves  = (array) ( $data['why_everyone_loves'] ?? array() );
 $faq                 = (array) ( $data['faq'] ?? array() );
 $closing             = (array) ( $data['closing'] ?? array() );
-$deckled_edge_url    = UrlHelper::resolve( 'assets/images/textures/border/deckled-edge.svg' );
 ?>
 
 <div class="history-page">
@@ -76,9 +74,7 @@ $deckled_edge_url    = UrlHelper::resolve( 'assets/images/textures/border/deckle
 				?>
 			</div>
 		</section>
-		<div class="deckled-divider" aria-hidden="true">
-			<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-		</div>
+		<?php View::component( 'divider/divider' ); ?>
 	<?php endif; ?>
 
 	<!-- ═══════════ 3. WHY SUGARCANE: 4 FOUNDATIONAL PILLARS ═══════════ -->
@@ -100,9 +96,7 @@ $deckled_edge_url    = UrlHelper::resolve( 'assets/images/textures/border/deckle
 				?>
 			</div>
 		</section>
-		<div class="deckled-divider" aria-hidden="true">
-			<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-		</div>
+		<?php View::component( 'divider/divider' ); ?>
 	<?php endif; ?>
 
 	<!-- ═══════════ 4. CHRONICLES OF SWEETNESS: HISTORICAL TIMELINE ═══════════ -->
@@ -127,9 +121,7 @@ $deckled_edge_url    = UrlHelper::resolve( 'assets/images/textures/border/deckle
 				?>
 			</div>
 		</section>
-		<div class="deckled-divider" aria-hidden="true">
-			<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-		</div>
+		<?php View::component( 'divider/divider' ); ?>
 	<?php endif; ?>
 
 	<!-- ═══════════ 5. HEIRLOOM CANE VARIETIES SHOWCASE ═══════════ -->
@@ -154,9 +146,7 @@ $deckled_edge_url    = UrlHelper::resolve( 'assets/images/textures/border/deckle
 				?>
 			</div>
 		</section>
-		<div class="deckled-divider" aria-hidden="true">
-			<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-		</div>
+		<?php View::component( 'divider/divider' ); ?>
 	<?php endif; ?>
 
 	<!-- ═══════════ 6. 7-STAGE BOTANICAL LIFE CYCLE ═══════════ -->
@@ -181,9 +171,7 @@ $deckled_edge_url    = UrlHelper::resolve( 'assets/images/textures/border/deckle
 				?>
 			</div>
 		</section>
-		<div class="deckled-divider" aria-hidden="true">
-			<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-		</div>
+		<?php View::component( 'divider/divider' ); ?>
 	<?php endif; ?>
 
 	<!-- ═══════════ 7. MINERAL ALCHEMY & NUTRITIONAL SCIENCE ═══════════ -->
@@ -228,9 +216,7 @@ $deckled_edge_url    = UrlHelper::resolve( 'assets/images/textures/border/deckle
 				</div>
 			</div>
 		</section>
-		<div class="deckled-divider" aria-hidden="true">
-			<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-		</div>
+		<?php View::component( 'divider/divider' ); ?>
 	<?php endif; ?>
 
 	<!-- ═══════════ 8. THE WHOLE-CANE ZERO-WASTE ECOSYSTEM: TRADITION, FOOD, BIOFUEL & MATERIALS ═══════════ -->
@@ -256,9 +242,7 @@ $deckled_edge_url    = UrlHelper::resolve( 'assets/images/textures/border/deckle
 				?>
 			</div>
 		</section>
-		<div class="deckled-divider" aria-hidden="true">
-			<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-		</div>
+		<?php View::component( 'divider/divider' ); ?>
 	<?php endif; ?>
 
 	<!-- ═══════════ 9. CONNOISSEUR STORAGE & FRESHNESS GUIDE ═══════════ -->
@@ -283,10 +267,14 @@ $deckled_edge_url    = UrlHelper::resolve( 'assets/images/textures/border/deckle
 				?>
 			</div>
 		</section>
-		<div class="deckled-divider" aria-hidden="true">
-			<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-		</div>
+		<?php View::component( 'divider/divider' ); ?>
 	<?php endif; ?>
+
+	<!-- ═══════════ 9b. EVERYDAY USES (data/content/uses.json) ═══════════ -->
+	<?php View::component( 'sections/highlights-section', array( 'source' => 'uses.json' ) ); ?>
+
+	<!-- ═══════════ 9c. WHY EVERYONE LOVES IT (data/content/why-everyone-loves.json) ═══════════ -->
+	<?php View::component( 'sections/highlights-section', array( 'source' => 'why-everyone-loves.json', 'variant' => 'dark' ) ); ?>
 
 	<!-- ═══════════ 10. FREQUENTLY ASKED QUESTIONS ═══════════ -->
 	<?php if ( ! empty( $faq['items'] ) ) : ?>

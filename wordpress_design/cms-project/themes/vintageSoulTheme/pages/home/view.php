@@ -1,7 +1,6 @@
 <?php
 
 use VintageSoul\Controllers\HomeController;
-use VintageSoul\Support\UrlHelper;
 use VintageSoul\Support\View;
 
 defined( 'ABSPATH' ) || exit;
@@ -32,7 +31,6 @@ $faqs             = (array) ( $data['faqs'] ?? array() );
 $contact          = (array) ( $data['contact'] ?? array() );
 $closing          = (array) ( $data['closing'] ?? array() );
 
-$deckled_edge_url = UrlHelper::resolve( 'assets/images/textures/border/deckled-edge.svg' );
 ?>
 
 <?php
@@ -50,9 +48,7 @@ $deckled_edge_url = UrlHelper::resolve( 'assets/images/textures/border/deckled-e
 
 <?php if ( ! empty( $intro['title'] ) ) : ?>
 	<?php View::component( 'sections/intro-section', $intro ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php
@@ -62,16 +58,12 @@ $deckled_edge_url = UrlHelper::resolve( 'assets/images/textures/border/deckled-e
 ?>
 <?php if ( ! empty( $products['items'] ) ) : ?>
 	<?php View::component( 'sections/order-juice-section', array( 'products' => (array) ( $products['items'] ?? array() ) ) ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php if ( ! empty( $video_showcase['videos'] ) ) : ?>
 	<?php View::component( 'sections/video-showcase-section', array( 'showcase_data' => $video_showcase ) ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 
@@ -82,23 +74,17 @@ $deckled_edge_url = UrlHelper::resolve( 'assets/images/textures/border/deckled-e
 ?>
 <?php if ( ! empty( $story ) ) : ?>
 	<?php View::component( 'sections/story-section', $story ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php if ( ! empty( $sourcing ) ) : ?>
 	<?php View::component( 'sections/sourcing-section', $sourcing ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php if ( ! empty( $benefits['items'] ) ) : ?>
 	<?php View::component( 'sections/benefits-section', $benefits ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php
@@ -107,22 +93,16 @@ $deckled_edge_url = UrlHelper::resolve( 'assets/images/textures/border/deckled-e
 // ══════════════════════════════════════════════════════════════════════════
 ?>
 <?php View::component( 'sections/social-stream-section' ); ?>
-<div class="deckled-divider" aria-hidden="true">
-	<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-</div>
+<?php View::component( 'divider/divider' ); ?>
 
 <?php if ( ! empty( $testimonials['items'] ) ) : ?>
 	<?php View::component( 'sections/reviews-section', $testimonials ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php if ( ! empty( $logo_strip['items'] ) ) : ?>
 	<?php View::component( 'sections/logo-strip-section', $logo_strip ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php
@@ -131,20 +111,14 @@ $deckled_edge_url = UrlHelper::resolve( 'assets/images/textures/border/deckled-e
 // ══════════════════════════════════════════════════════════════════════════
 ?>
 <?php View::component( 'sections/events-section', $events ); ?>
-<div class="deckled-divider" aria-hidden="true">
-	<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-</div>
+<?php View::component( 'divider/divider' ); ?>
 
 <?php View::component( 'sections/franchise-section', $franchise_teaser ); ?>
-<div class="deckled-divider" aria-hidden="true">
-	<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-</div>
+<?php View::component( 'divider/divider' ); ?>
 
 <?php if ( ! empty( $community['items'] ) ) : ?>
 	<?php View::component( 'sections/community-section', $community ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php
@@ -154,19 +128,13 @@ $deckled_edge_url = UrlHelper::resolve( 'assets/images/textures/border/deckled-e
 ?>
 <?php if ( ! empty( $faqs['items'] ) ) : ?>
 	<?php View::component( 'sections/faq-section', $faqs ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php if ( ! empty( $certs['groups'] ) || ! empty( $certs['items'] ) ) : ?>
 	<?php View::component( 'sections/certifications-section', $certs ); ?>
-	<div class="deckled-divider" aria-hidden="true">
-		<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-	</div>
+	<?php View::component( 'divider/divider' ); ?>
 <?php endif; ?>
 
 <?php View::component( 'sections/contact-form-section', $contact ); ?>
-<div class="deckled-divider" aria-hidden="true">
-	<img src="<?php echo esc_url( $deckled_edge_url ); ?>" alt="" loading="lazy">
-</div>
+<?php View::component( 'divider/divider' ); ?>

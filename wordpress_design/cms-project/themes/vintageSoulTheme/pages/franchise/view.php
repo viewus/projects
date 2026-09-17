@@ -53,17 +53,17 @@ View::component(
 		);
 		?>
 
-		<div class="events-types-grid" style="margin-bottom: 20px;">
-			<?php foreach ( $franchise_pillars as $pillar ) : ?>
-				<div class="event-type-card card--rough-cut">
-					<div class="event-type-card__head">
-						<span class="event-type-card__icon"><?php echo esc_html( (string) ( $pillar['icon'] ?? '✦' ) ); ?></span>
-					</div>
-					<h3 class="event-type-card__title"><?php echo esc_html( (string) ( $pillar['title'] ?? '' ) ); ?></h3>
-					<p class="event-type-card__desc"><?php echo esc_html( (string) ( $pillar['desc'] ?? '' ) ); ?></p>
-				</div>
-			<?php endforeach; ?>
-		</div>
+		<?php
+		View::component(
+			'icon-card-grid/icon-card-grid',
+			array(
+				'items'      => $franchise_pillars,
+				'block'      => 'event-type-card',
+				'grid_class' => 'events-types-grid',
+				'card_extra' => 'card--rough-cut',
+			)
+		);
+		?>
 	</div>
 </section>
 
@@ -102,9 +102,7 @@ View::component(
 </section>
 
 <!-- Deckled Border Divider -->
-<div class="deckled-divider" aria-hidden="true">
-	<img src="<?php echo esc_url( \VintageSoul\Support\UrlHelper::resolve( 'assets/images/textures/border/deckled-edge.svg' ) ); ?>" alt="" loading="lazy">
-</div>
+<?php View::component( 'divider/divider' ); ?>
 
 <!-- ═══════════ 4. HOW IT WORKS (Step Chain) ═══════════ -->
 <?php if ( ! empty( $how['items'] ) ) : ?>
@@ -127,6 +125,9 @@ View::component(
 		</div>
 	</section>
 <?php endif; ?>
+
+<!-- ═══════════ 4b. INVESTMENT PLANS & FORMATS (data/content/pricing-tiers.json) ═══════════ -->
+<?php View::component( 'sections/pricing-tiers-section' ); ?>
 
 <!-- ═══════════ 5. FEATURED TRUST STRIP ═══════════ -->
 <?php View::component( 'sections/logo-strip-section' ); ?>

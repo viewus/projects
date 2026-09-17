@@ -1,0 +1,171 @@
+{
+    "_source": "Our Occasions page - a dated diary of where the live cane bar and stall will be. One file feeds all three views on that page: the month calendar grid, the per-day detail panel, and the card list below it. Every entry carries its own place, time, category, long-form text and optional call to action, so nothing on that page is hard-coded.",
+
+    "hero": {
+        "tag": "✦ WHAT'S ON ✦",
+        "title": "Our <em>Occasions</em>",
+        "sub": "Markets, weddings, festivals and pop-ups - every date we are pressing cane in public, in one place.",
+        "image": "assets/images/backgrounds/vintage_coldpress_bar_catering.jpg"
+    },
+
+    "intro": {
+        "tag": "The Diary",
+        "title": "Find Us <em>In Person</em>",
+        "body": "Pick a date to see where we will be, what we are pouring, and how to reserve a spot. Dates are added as they are confirmed - if you would like us at your own occasion, the enquiry form takes two minutes."
+    },
+
+    "categories": [
+        { "id": "all", "label": "All Occasions" },
+        { "id": "market", "label": "Markets" },
+        { "id": "festival", "label": "Festivals" },
+        { "id": "wedding", "label": "Weddings" },
+        { "id": "community", "label": "Community" },
+        { "id": "workshop", "label": "Tastings" }
+    ],
+
+    "empty_text": "No occasions listed for this month yet - pick another month, or send us your own date.",
+
+    "cta": {
+        "tag": "Your Own Occasion",
+        "title": "Want Us At <em>Your Date?</em>",
+        "sub": "Weddings, corporate days, birthdays and street festivals - tell us the date and we will tell you what is possible.",
+        "buttons": [
+            { "label": "Enquire About A Date", "icon": "calendar", "route": "contact", "style": "primary" },
+            { "label": "See Event Packages", "icon": "tent", "route": "events", "style": "ghost" }
+        ]
+    },
+
+    "items": [
+        {
+            "id": "sutton-market-sep",
+            "title": "Sutton High Street Market",
+            "date": "2026-09-19",
+            "time": "09:00 - 17:00",
+            "place": "Sutton High Street",
+            "address": "High Street, Sutton, London SM1 1DA",
+            "category": "market",
+            "badge": "Weekly Stall",
+            "text": "Our home pitch. The full cold-press bar is out from opening, with mint, ginger and Sicilian lemon on the infusion board and the press running all day. Bring a bottle back for a refill discount.",
+            "image": "assets/images/gallery/stall_event_3.jpg",
+            "cta": { "label": "Get Directions", "url": "https://maps.google.com/?q=Sutton+High+Street+London" }
+        },
+        {
+            "id": "autumn-harvest-fest",
+            "title": "Autumn Harvest Festival",
+            "date": "2026-09-26",
+            "end_date": "2026-09-27",
+            "time": "10:00 - 20:00",
+            "place": "Manor Park, Sutton",
+            "address": "Manor Park, Sutton, London SM1 3AZ",
+            "category": "festival",
+            "badge": "Two Days",
+            "text": "A full weekend under the vintage canopy, pouring alongside the borough growers. Expect the spiced harvest blend - black salt, jaggery and fresh ginger - which we only press at this time of year.",
+            "image": "assets/images/gallery/stall_event_4.jpg",
+            "cta": { "label": "Book Our Bar", "route": "contact" }
+        },
+        {
+            "id": "tasting-evening-oct",
+            "title": "Cold-Press Tasting Evening",
+            "date": "2026-10-08",
+            "time": "18:30 - 21:00",
+            "place": "The Cane House Parlour",
+            "address": "Sutton, London",
+            "category": "workshop",
+            "badge": "Limited Places",
+            "text": "A seated evening for twelve. We press three cane varieties side by side, talk through what changes the flavour - soil, season, time between cut and press - and finish with botanical pairings.",
+            "image": "assets/images/gallery/drink_mint.jpg",
+            "cta": { "label": "Reserve A Seat", "route": "contact" }
+        },
+        {
+            "id": "croydon-street-food",
+            "title": "Croydon Street Food Nights",
+            "date": "2026-10-17",
+            "time": "16:00 - 22:00",
+            "place": "Surrey Street, Croydon",
+            "address": "Surrey Street Market, Croydon CR0 1RG",
+            "category": "market",
+            "badge": "Evening Pitch",
+            "text": "Late-night pressing under the lights. The lemon-ginger zest goes on tap for this one, and we run the cart alongside the regular traders until the last crowd clears.",
+            "image": "assets/images/gallery/drink_ginger.jpg",
+            "cta": { "label": "Get Directions", "url": "https://maps.google.com/?q=Surrey+Street+Market+Croydon" }
+        },
+        {
+            "id": "private-wedding-oct",
+            "title": "Private Wedding - Live Cane Bar",
+            "date": "2026-10-24",
+            "time": "By arrangement",
+            "place": "Surrey Hills, private venue",
+            "address": "Surrey",
+            "category": "wedding",
+            "badge": "Private Booking",
+            "text": "A closed booking, listed so you can see how the diary fills. Weddings take the full setup - uniformed pressers, the brass-trimmed bar, compostable service and a custom infusion menu agreed with the couple.",
+            "image": "assets/images/sugarcane/story_moments.jpg",
+            "cta": { "label": "Enquire For Your Wedding", "route": "contact" }
+        },
+        {
+            "id": "community-day-nov",
+            "title": "Community Giving Day",
+            "date": "2026-11-07",
+            "time": "11:00 - 16:00",
+            "place": "Sutton Civic Green",
+            "address": "Civic Green, Sutton, London",
+            "category": "community",
+            "badge": "Free Pours",
+            "text": "Every cup goes out free to local families, funded by the market takings from the season. A thank-you to the borough that kept the stall standing through its first winters.",
+            "image": "assets/images/gallery/community_cheers.jpg",
+            "cta": { "label": "Volunteer With Us", "route": "contact" }
+        },
+        {
+            "id": "winter-lights-nov",
+            "title": "Winter Lights Market",
+            "date": "2026-11-21",
+            "end_date": "2026-11-22",
+            "time": "12:00 - 21:00",
+            "place": "Kingston Riverside",
+            "address": "Riverside Walk, Kingston upon Thames KT1 1QN",
+            "category": "festival",
+            "badge": "Warm Pour",
+            "text": "The one weekend a year we serve cane warm - gently heated with clove, cinnamon and a twist of orange peel, poured beside the river while the lights go up.",
+            "image": "assets/images/sugarcane/combo.jpg",
+            "cta": { "label": "Book Our Bar", "route": "contact" }
+        },
+        {
+            "id": "corporate-winter-dec",
+            "title": "Corporate Winter Social",
+            "date": "2026-12-05",
+            "time": "17:00 - 22:00",
+            "place": "Central London, private venue",
+            "address": "London",
+            "category": "wedding",
+            "badge": "Private Booking",
+            "text": "An indoor live bar for an end-of-year social. Silent press, no open flame, full compostable service - the setup we bring when a venue has tight rules.",
+            "image": "assets/images/backgrounds/vintage_coldpress_bar_catering.jpg",
+            "cta": { "label": "Enquire For Your Office", "route": "contact" }
+        },
+        {
+            "id": "festive-market-dec",
+            "title": "Festive Farmers Market",
+            "date": "2026-12-19",
+            "time": "09:00 - 18:00",
+            "place": "Sutton High Street",
+            "address": "High Street, Sutton, London SM1 1DA",
+            "category": "market",
+            "badge": "Last Of The Year",
+            "text": "The final press of the year on our home pitch. Gift bottles, the spiced winter blend, and the last of the cane from this season before we close for the turn of the year.",
+            "image": "assets/images/gallery/stall_event_2.jpg",
+            "cta": { "label": "Get Directions", "url": "https://maps.google.com/?q=Sutton+High+Street+London" }
+        },
+        {
+            "id": "summer-fete-aug",
+            "title": "Summer Fete - Cheam",
+            "date": "2026-08-15",
+            "time": "11:00 - 18:00",
+            "place": "Cheam Park",
+            "address": "Cheam Park, Sutton, London SM3 8QF",
+            "category": "community",
+            "badge": "Past Occasion",
+            "text": "Over four hundred cups poured in a single afternoon - our busiest fete to date, and the reason the second cart exists.",
+            "image": "assets/images/gallery/stall_event_1.jpg"
+        }
+    ]
+}

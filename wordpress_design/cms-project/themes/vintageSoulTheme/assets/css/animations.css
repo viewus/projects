@@ -1,4 +1,4 @@
-html.js :is(.card, .feature-row__item, .product-list__item, .faq__item, .intro-photo-card, .pillar-card, .sourcing-pillar-card, .sourcing-vintage__photo-frame, .sourcing-signboard, .cert-h-card, .certs-featured-logo-card, .order-product-card, .memory-card-vintage, .look-back-card, .variety-card, .mineral-card, .storage-step-card, .timeline-step-card, .event-type-card, .franchise-pillar-card, .franchise-step-card, .wholesale-card, .blog-card, .contact-home-info-card, .faq-accordion-item, .social-card) {
+html.js :is(.card, .feature-row__item, .product-list__item, .faq__item, .intro-photo-card, .pillar-card, .sourcing-pillar-card, .sourcing-vintage__photo-frame, .sourcing-signboard, .cert-h-card, .certs-featured-logo-card, .order-product-card, .memory-card-vintage, .look-back-card, .variety-card, .mineral-card, .storage-step-card, .timeline-step-card, .event-type-card, .franchise-pillar-card, .franchise-step-card, .wholesale-card, .blog-card, .contact-home-info-card, .faq-accordion-item, .social-card, .why-us-card, .byproduct-card, .package-card, .pricing-tier-card, .location-card, .occasion-card, .occasions-next, .vs-calendar) {
   opacity: 0;
   transform: translateY(16px);
   will-change: opacity, transform;
@@ -8,7 +8,7 @@ html.js :is(.card, .feature-row__item, .product-list__item, .faq__item, .intro-p
     opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
 }
-html.js :is(.card, .feature-row__item, .product-list__item, .faq__item, .intro-photo-card, .pillar-card, .sourcing-pillar-card, .sourcing-vintage__photo-frame, .sourcing-signboard, .cert-h-card, .certs-featured-logo-card, .order-product-card, .memory-card-vintage, .look-back-card, .variety-card, .mineral-card, .storage-step-card, .timeline-step-card, .event-type-card, .franchise-pillar-card, .franchise-step-card, .wholesale-card, .blog-card, .contact-home-info-card, .faq-accordion-item, .social-card).is-revealed {
+html.js :is(.card, .feature-row__item, .product-list__item, .faq__item, .intro-photo-card, .pillar-card, .sourcing-pillar-card, .sourcing-vintage__photo-frame, .sourcing-signboard, .cert-h-card, .certs-featured-logo-card, .order-product-card, .memory-card-vintage, .look-back-card, .variety-card, .mineral-card, .storage-step-card, .timeline-step-card, .event-type-card, .franchise-pillar-card, .franchise-step-card, .wholesale-card, .blog-card, .contact-home-info-card, .faq-accordion-item, .social-card, .why-us-card, .byproduct-card, .package-card, .pricing-tier-card, .location-card, .occasion-card, .occasions-next, .vs-calendar).is-revealed {
   opacity: 1;
   transform: none;
   /* Reveal is one-shot (reveal.js unobserves after it fires) - release the
@@ -230,7 +230,7 @@ html.js .site-footer.is-revealed {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.js :is(.card, .feature-row__item, .gallery__item, .step-chain__item, .process-steps__item, .stats__item, .photo-grid__item, .photo-stamp, .product-list__item, .testimonial-card, .video-testimonial-card, .faq__item, .memories__item, .section-header, .container > h1, .container > h2, .container > h3, .container > p, .container > .btn, .container > .btn--outline, .container > .badge) {
+  html.js :is(.card, .feature-row__item, .gallery__item, .step-chain__item, .process-steps__item, .stats__item, .photo-grid__item, .photo-stamp, .product-list__item, .testimonial-card, .video-testimonial-card, .faq__item, .memories__item, .section-header, .container > h1, .container > h2, .container > h3, .container > p, .container > .btn, .container > .btn--outline, .container > .badge, .why-us-card, .byproduct-card, .package-card, .pricing-tier-card, .location-card, .occasion-card, .occasions-next, .vs-calendar) {
     opacity: 1;
     transform: none;
     filter: none;

@@ -171,6 +171,15 @@
   --shadow-press: inset 0 2px 4px rgba(47, 32, 14, 0.28);
   --shadow-paper: 0 1px 2px rgba(70, 48, 22, 0.14), 0 6px 16px rgba(70, 48, 22, 0.12);
 
+  /* Layered elevation. A single blur reads as a flat drop shadow; pairing a
+     tight contact shadow with a wide ambient one reads as actual depth, so
+     a card lifting on hover feels like it leaves the paper. */
+  --elevation-1: 0 1px 2px rgba(70, 48, 22, 0.10), 0 2px 8px rgba(70, 48, 22, 0.08);
+  --elevation-2: 0 2px 4px rgba(70, 48, 22, 0.12), 0 10px 22px rgba(70, 48, 22, 0.14);
+  --elevation-3: 0 4px 8px rgba(70, 48, 22, 0.14), 0 18px 40px rgba(70, 48, 22, 0.18);
+  --elevation-lift: -4px;
+  --elevation-lift-sm: -2px;
+
   --border-width: 1px;
   --border-width-thick: 2px;
   --border-style: solid;

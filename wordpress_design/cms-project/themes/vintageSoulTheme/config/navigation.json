@@ -1,39 +1,12 @@
 {
-    "_doc": "Main Navigation menu with Home, All About Cane, About Us, Events, Franchise, Blog (with dropdown), and Contact pages",
+    "_doc": "Emergency fallback only - the live menus come from the CMS admin. NavigationBridgeService reads the CMS Navigation Editor (admin.php?page=ah-navigation) first, from the ah_cms_navigation / ah_cms_nav_cta / ah_cms_footer options, and only falls through to this file if that admin data is missing entirely. The arrays below are intentionally empty so the admin stays the single source of truth; fill one in only if you need the theme to render a menu with no CMS data present.",
 
-    "header_cta": {
-        "_doc": "The persistent header action button",
-        "label": "Book Us",
-        "sublabel": "For Your Event",
-        "route": "events"
-    },
+    "_header_cta_doc": "Admin: Navigation Editor -> CTA button (ah_cms_nav_cta). Shape when used as a fallback: { label, sublabel, route }.",
+    "header_cta": {},
 
-    "primary": [
-        { "label": "Home", "url": "/" },
-        { "label": "All About Cane", "url": "/history" },
-        { "label": "About Us", "url": "/about" },
-        { "label": "Events", "url": "/events" },
-        { "label": "Franchise", "url": "/franchise" },
-        {
-            "label": "Blog",
-            "url": "#",
-            "children": [
-                { "label": "All Stories & Articles", "url": "/blog" },
-                { "label": "🌿 Botanical Nutrition", "url": "/blog/?article=why-cold-pressed-raw-cane-outperforms-synthetic-energy-drinks" },
-                { "label": "🌾 5,000-Year Heritage", "url": "/blog/?article=from-new-guinea-to-london-voyage-of-saccharum-officinarum" },
-                { "label": "🍹 Cold-Press Craft & Pairings", "url": "/blog/?article=artisanal-infusions-perfect-botanical-pairings" },
-                { "label": "🎉 Wedding & Live Bar Stories", "url": "/blog/?article=behind-the-scenes-live-sugarcane-bar-surrey-weddings" }
-            ]
-        },
-        { "label": "Contact", "url": "/contact" }
-    ],
-    "footer": [
-        { "label": "Home", "url": "/" },
-        { "label": "All About Cane", "url": "/history" },
-        { "label": "About Us", "url": "/about" },
-        { "label": "Events & Catering", "url": "/events" },
-        { "label": "Franchise", "url": "/franchise" },
-        { "label": "The Cane Chronicle Blog", "url": "/blog" },
-        { "label": "Contact", "url": "/contact" }
-    ]
+    "_primary_doc": "Admin: Navigation Editor -> main menu (ah_cms_navigation). Shape when used as a fallback: [ { label, url, children: [ { label, url } ] } ].",
+    "primary": [],
+
+    "_footer_doc": "Admin: Navigation Editor -> footer columns (ah_cms_footer), read by FooterController. Nothing reads this key today - NavigationService::menu('footer') has no callers - so it is kept only as a documented slot.",
+    "footer": []
 }
