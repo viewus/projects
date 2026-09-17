@@ -171,6 +171,10 @@ class HookRegistrar {
 				$query->set( 'posts_per_page', 12 );
 			}
 		} );
+		// Prevent WordPress from redirecting local development domains (.test, localhost, etc.) to production
+		if ( isset( $_SERVER['HTTP_HOST'] ) && ( \strpos( $_SERVER['HTTP_HOST'], '.test' ) !== false || \strpos( $_SERVER['HTTP_HOST'], 'localhost' ) !== false || \strpos( $_SERVER['HTTP_HOST'], '127.0.0.1' ) !== false || \strpos( $_SERVER['HTTP_HOST'], '.dev' ) !== false ) ) {
+			\add_filter( 'redirect_canonical', '__return_false' );
+		}
 	}
 
 	private static function registerShortcodes(): void {

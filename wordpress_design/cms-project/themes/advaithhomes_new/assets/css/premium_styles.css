@@ -1656,16 +1656,73 @@ a.mini-card:hover .mini-card-title { color: var(--client-color) !important; }
     overflow-wrap: break-word !important;
     word-break: normal !important;
 }
-/* Tablet: give the text a bit more room before the wave */
+/* Tablet and Mobile (<= 1024px): Center hero content */
 @media (max-width: 1024px) {
-    .page-hero-content { max-width: 58% !important; }
-    .page-hero p { max-width: 54% !important; }
+    .page-hero .container {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+    .page-hero-content {
+        max-width: 90% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .page-hero p, .hero-desc {
+        max-width: 85% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        color: rgba(255,255,255,0.88) !important;
+    }
+    .page-hero h1 {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        color: #fff !important;
+    }
+    .hero-breadcrumb {
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .hero-eyebrow {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+    .hero-share-corner {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .page-hero-nav-cards,
+    .page-hero-static-info,
+    .page-hero-services {
+        display: none !important;
+    }
+    .phb-premium .phb-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(15,25,20,0.78) 0%,
+            rgba(15,25,20,0.65) 50%,
+            rgba(15,25,20,0.85) 100%
+        ) !important;
+    }
 }
 /* Mobile: photo drops back, text spans full width */
-@media (max-width: 860px) {
+@media (max-width: 600px) {
     .page-hero-content {
         max-width: 100% !important;
         padding-right: 0 !important;
+        padding-left: 0 !important;
         text-align: center !important;
     }
     .page-hero h1 {
@@ -1673,7 +1730,7 @@ a.mini-card:hover .mini-card-title { color: var(--client-color) !important; }
         text-align: center !important;
         color: #fff !important;
     }
-    .page-hero p {
+    .page-hero p, .hero-desc {
         max-width: 90% !important;
         margin-left: auto !important;
         margin-right: auto !important;

@@ -648,11 +648,9 @@ section{
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .page-hero-nav-cards {
-    width: 100%;
-    margin-top: 24px;
-    display:none;
+    display: none !important;
   }
   .phb-premium ~ .container .category-hero-content,
   .phb-premium ~ .container .page-hero-content,
@@ -1149,30 +1147,38 @@ a.hero-bc-item:hover { color: var(--color-primary, #1e6fbf); }
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .page-hero {
     max-height: none;
-    padding-top: 50px;
-    padding-bottom: 24px;
+    padding-top: 40px;
+    padding-bottom: 28px;
   }
   .page-hero .container { 
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
   }
   .page-hero-content {
-    max-width: 100%;
+    max-width: 90%;
     padding-right: 0;
+    padding-left: 0;
     text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .page-hero h1 {
     color: #fff;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .page-hero p {
-    color: rgba(255,255,255,0.85);
+  .page-hero p, .hero-desc {
+    color: rgba(255,255,255,0.88);
     text-align: center;
     max-width: 85%;
     margin-left: auto;
@@ -1180,11 +1186,24 @@ a.hero-bc-item:hover { color: var(--color-primary, #1e6fbf); }
   }
   .hero-breadcrumb {
     justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-eyebrow {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .hero-share-corner {
+    margin-left: auto;
+    margin-right: auto;
   }
   .page-hero-static-info {
-    display: none;
+    display: none !important;
   }
-  .page-hero-services { display: none; }
+  .page-hero-services { display: none !important; }
 }
 
 @media (max-width: 1024px) {
@@ -1351,7 +1370,7 @@ a.hero-bc-item:hover { color: var(--color-primary, #1e6fbf); }
   color: var(--color-black, #6b7280);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .page-hero { min-height: 320px; }
   .page-hero-content {  max-width: 100%; text-align: center; }
   .page-hero h1 { color: #fff; text-align: center; }
@@ -8060,11 +8079,11 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
    Better text readability, spacing, and contrast on small screens
    ══════════════════════════════════════════════════════════════ */
 
-/* Tablet (768px - 1024px) - Dark overlay, reduced height */
+/* Tablet (768px - 1024px) - Centered layout */
 @media (max-width: 1024px) and (min-width: 769px) {
   .page-hero {
-    min-height: 380px;
-    max-height: 500px;
+    min-height: 400px;
+    max-height: none;
     padding-top: 40px;
     padding-bottom: 30px;
   }
@@ -8074,11 +8093,17 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: center;
   }
   .page-hero-content {
-    max-width: 70%;
+    max-width: 90%;
     padding-right: 0;
+    padding-left: 0;
     text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .page-hero h1 {
     font-size: clamp(1.8rem, 3.5vw, 2.6rem);
@@ -8088,14 +8113,16 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     font-weight: 700;
     text-align: center;
     letter-spacing: -0.01em;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .page-hero p {
+  .page-hero p, .hero-desc {
     font-size: 0.95rem;
-    max-width: 80%;
+    max-width: 85%;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.65;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.88);
     font-weight: 400;
     text-align: center;
   }
@@ -8104,6 +8131,8 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     text-align: center;
     width: 100%;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   .hero-bc-item {
     font-size: 0.82rem;
@@ -8126,17 +8155,23 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     width: auto;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-weight: 700;
   }
-  .page-hero-static-info {
-    display: none;
+  .hero-share-corner {
+    margin-left: auto;
+    margin-right: auto;
   }
-  .page-hero-services { display: none; }
+  .page-hero-static-info {
+    display: none !important;
+  }
+  .page-hero-services { display: none !important; }
+  .page-hero-nav-cards { display: none !important; }
 }
 
-/* Mobile Large (600px - 768px) - Dark overlay, centered */
+/* Mobile Large (600px - 768px) - Centered layout */
 @media (max-width: 768px) and (min-width: 601px) {
   .page-hero {
     min-height: 360px;
@@ -8149,11 +8184,17 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     gap: 0;
     padding: 0 24px;
     text-align: center;
+    justify-content: center;
   }
   .page-hero-content {
-    max-width: 100%;
+    max-width: 92%;
     padding-right: 0;
+    padding-left: 0;
     text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .page-hero h1 {
     font-size: clamp(1.8rem, 5.5vw, 2.2rem);
@@ -8163,14 +8204,16 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     font-weight: 700;
     text-align: center;
     letter-spacing: -0.01em;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .page-hero p {
+  .page-hero p, .hero-desc {
     font-size: 0.92rem;
-    max-width: 85%;
+    max-width: 88%;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.65;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.88);
     font-weight: 400;
     text-align: center;
   }
@@ -8179,6 +8222,8 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     text-align: center;
     width: 100%;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   .hero-bc-item {
     font-size: 0.78rem;
@@ -8191,11 +8236,26 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     font-size: 0.7rem;
     color: rgba(255,255,255,0.4);
   }
+  .hero-eyebrow {
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .hero-share-corner {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .page-hero-static-info {
-    display: none;
+    display: none !important;
   }
   .page-hero-services {
-    display: none;
+    display: none !important;
+  }
+  .page-hero-nav-cards {
+    display: none !important;
   }
 }
 
