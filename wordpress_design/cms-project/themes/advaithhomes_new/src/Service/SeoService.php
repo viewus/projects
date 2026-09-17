@@ -332,7 +332,7 @@ class SeoService {
 
 		$type = trim( (string) ( $reg['type'] ?? '' ) );
 		if ( '' === $type ) {
-			$type = is_singular( 'post' ) ? 'article' : 'website';
+			$type = 'website';
 		}
 
 		return compact( 'title', 'full_title', 'site_name', 'desc', 'canonical', 'image', 'type' );

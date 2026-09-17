@@ -164,6 +164,8 @@ class HookRegistrar {
 		\add_filter( 'the_content', 'adn_cache_bust_content_images' );
 		\add_filter( 'the_content', 'adn_cache_bust_content_bg_images' );
 		\add_filter( 'the_content', 'adn_clean_article_tags', 20 );
+		\add_filter( 'rank_math/opengraph/facebook/og_type', function() { return 'website'; } );
+		\add_filter( 'wpseo_opengraph_type', function() { return 'website'; } );
 		\add_filter( 'pre_get_posts', function( $query ) {
 			if ( $query->is_search() && ! \is_admin() ) {
 				$query->set( 'posts_per_page', 12 );

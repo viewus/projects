@@ -47,7 +47,7 @@ adn_seo_register( array(
 	'breadcrumb'  => ! empty( $ctx['breadcrumb'] ) ? $ctx['breadcrumb'] : array(),
 	'published'   => get_the_date( 'c' ),
 	'modified'    => get_the_modified_date( 'c' ),
-	'type'        => 'article',
+	'type'        => 'website',
 ) );
 
 get_header();
@@ -175,7 +175,7 @@ get_header();
 	<div class="article-layout">
 
 		<?php /* ── MAIN ARTICLE COLUMN ── */ ?>
-		<main class="article-main" id="main-content">
+		<div class="article-main interactive-app-view" id="main-content">
 
 			<?php /* Key takeaways box (renders nothing when empty) */ ?>
 			<?php adn_component( 'sections/post_key_takeaways', array( 'key_takeaways' => $ctx['key_takeaways'] ) ); ?>
@@ -218,7 +218,7 @@ get_header();
 			);
 			?>
 
-		</main>
+		</div>
 
 		<?php /* ── RIGHT COLUMN: TOC + Sidebar ── */ ?>
 		<div class="article-right-col">
