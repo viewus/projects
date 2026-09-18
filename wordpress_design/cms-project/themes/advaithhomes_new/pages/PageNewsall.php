@@ -287,7 +287,7 @@ adn_page_open( $_open_ctx );
 <?php /* ============================== MAIN LAYOUT ============================== */ ?>
 <div class="news-layout">
 
-	<main class="news-main" id="newsMain">
+	<div class="news-main" id="newsMain">
 
 		<?php /* API-driven grid: news.js fetches /api/v1/news and renders normal cards here. */ ?>
 		<div class="news-grid" id="newsGrid" aria-live="polite" aria-busy="true"></div>
@@ -304,9 +304,9 @@ adn_page_open( $_open_ctx );
 			<p><?php esc_html_e( 'No news found. Try a different filter or search.', ADN_TEXT_DOMAIN ); ?></p>
 		</div>
 
-		<?php /* Load more */ ?>
-		<div class="load-more-wrap" id="loadMoreWrap" hidden>
-			<button class="load-more-btn" id="loadMoreBtn" type="button">
+		<?php /* Pagination / Load more */ ?>
+		<div class="news-load-more-wrap" id="newsLoadMoreWrap" hidden>
+			<button class="btn btn-outline news-load-more-btn" id="newsLoadMoreBtn">
 				<?php echo esc_html( SITE_BTN_LOAD_MORE ); ?>
 			</button>
 		</div>
@@ -317,7 +317,7 @@ adn_page_open( $_open_ctx );
 			</div>
 		</noscript>
 
-	</main>
+	</div>
 
 	<aside class="news-sidebar">
 

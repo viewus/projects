@@ -18,11 +18,13 @@ $categories = isset( $categories ) && is_array( $categories ) ? $categories : ar
 				$key   = isset( $cat['key'] )   ? (string) $cat['key']   : '';
 				$label = isset( $cat['label'] ) ? (string) $cat['label'] : '';
 				$count = isset( $cat['count'] ) ? (int)    $cat['count'] : 0;
+				$computed_key = '' !== $key ? $key : ( stripos( $label, 'all' ) !== false ? 'all' : sanitize_key( $label ) );
 			?>
 				<button
-					class="news-cat-tab<?php echo 'all' === $key ? ' active' : ''; ?>"
-					data-cat="<?php echo esc_attr( $key ); ?>"
-					aria-pressed="<?php echo 'all' === $key ? 'true' : 'false'; ?>"
+					type="button"
+					class="news-cat-tab<?php echo 'all' === $computed_key ? ' active' : ''; ?>"
+					data-cat="<?php echo esc_attr( $computed_key ); ?>"
+					aria-pressed="<?php echo 'all' === $computed_key ? 'true' : 'false'; ?>"
 				>
 					<?php echo esc_html( $label ); ?>
 					<?php if ( $count > 0 ) : ?>

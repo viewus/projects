@@ -46,7 +46,7 @@ adn_page_open( $_open_ctx );
 <div class="expert-main-layout">
 
 	<?php /* MAIN - expert cards */ ?>
-	<main>
+	<div class="expert-cards-main">
 
 		<?php /* Search bar */ ?>
 		<div class="expert-search-row">
@@ -137,7 +137,7 @@ adn_page_open( $_open_ctx );
 				<?php adn_component( 'sections/expert_cant_find', array( 'cant_find_cta' => $ctx['cant_find_cta'] ) ); ?>
 			</div>
 		<?php endif; ?>
-	</main>
+	</div>
 
 	<?php /* SIDEBAR */ ?>
 	<?php if ( ! empty( $ctx['sidebar'] ) ) : ?>

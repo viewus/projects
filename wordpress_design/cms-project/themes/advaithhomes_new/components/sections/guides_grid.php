@@ -19,7 +19,7 @@ $placeholder  = isset( $guides['search_placeholder'] ) ? (string) $guides['searc
 $current_page = isset( $pagination['current'] ) ? (int) $pagination['current'] : 1;
 $total_pages  = isset( $pagination['total'] )   ? (int) $pagination['total']   : 1;
 ?>
-<main class="guides-main">
+<div class="guides-main">
 
 	<?php /* ── Toolbar: sort only ── */ ?>
 	<?php if ( ! empty( $sort_options ) ) : ?>
@@ -84,4 +84,4 @@ $total_pages  = isset( $pagination['total'] )   ? (int) $pagination['total']   :
 		</div>
 	<?php endif; ?>
 
-</main>
+</div>

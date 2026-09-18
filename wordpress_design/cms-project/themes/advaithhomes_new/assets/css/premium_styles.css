@@ -1824,6 +1824,71 @@ a.mini-card:hover .mini-card-title { color: var(--client-color) !important; }
     }
 }
 
+@keyframes phbSlowZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.10);
+    }
+}
+
+/* Auto Zoom on ALL hero pages except Main Home Hero */
+.page-hero .phb-bg,
+.phb-premium .phb-bg,
+.contact-hero-img,
+.expert-hero-img,
+.guidance-hero-img,
+.guides-hero-deco,
+.article-hero-img {
+    overflow: hidden !important;
+}
+
+.page-hero .phb-bg img,
+.page-hero .phb-bg video,
+.phb-premium .phb-bg img,
+.phb-premium .phb-bg video,
+.phb-wrapper.phb-premium .phb-bg img,
+.phb-wrapper.phb-premium .phb-bg video,
+section:not(.hero-home) .phb-bg img,
+section:not(.hero-home) .phb-bg video,
+.contact-hero-img img,
+.expert-hero-img img,
+.guidance-hero-img img,
+.guides-hero-deco img,
+.article-hero-img img {
+    animation: phbSlowZoom 4s ease-in-out infinite alternate !important;
+    will-change: transform;
+    transform-origin: center center;
+    transition: none !important;
+}
+
+/* Strictly ensure main home hero has no zoom */
+.hero-home,
+.hero-home *,
+.hero-home img,
+.hero-home video,
+.hero-home .phb-bg img,
+.hero-carousel__bg img,
+.hero-carousel__bg video {
+    animation: none !important;
+    transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-hero .phb-bg img,
+    .page-hero .phb-bg video,
+    .phb-premium .phb-bg img,
+    .phb-premium .phb-bg video,
+    .contact-hero-img img,
+    .expert-hero-img img,
+    .guidance-hero-img img,
+    .guides-hero-deco img,
+    .article-hero-img img {
+        animation: none !important;
+    }
+}
+
 
 /* ══════════════════════════════════════════════════════════════
    21. CALCULATOR SINGLE PAGE — spacing + Browse-by-Category widget

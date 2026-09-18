@@ -52,7 +52,7 @@ if ( ! $no_header ) {
 }
 ?>
 
-<main id="ah-builder-page" style="min-height:60vh;">
+<div id="ah-builder-page" style="min-height:60vh;">
 
 <?php foreach ( $blocks as $block ) :
 	$t = $block['type'] ?? '';
@@ -82,7 +82,7 @@ if ( ! empty( $page_opts['cta_enabled'] ) && ! empty( $page_opts['cta_heading'] 
 endif;
 ?>
 
-</main>
+</div>
 
 <script>
 document.querySelectorAll('.faq__q').forEach(function(btn){

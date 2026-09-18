@@ -91,7 +91,7 @@ adn_page_open( $_open_ctx );
 	<div class="guides-hub-layout">
 
 		<?php /* ── LEFT: parent groups ─────────────────────────────────── */ ?>
-		<main class="guides-hub-main">
+		<div class="guides-hub-main">
 			<?php if ( ! empty( $ctx['groups'] ) ) : ?>
 				<?php foreach ( $ctx['groups'] as $_group ) : ?>
 					<?php adn_component( 'sections/guides_parent_group', array( 'group' => $_group ) ); ?>
@@ -99,7 +99,7 @@ adn_page_open( $_open_ctx );
 			<?php else : ?>
 				<p class="guides-empty"><?php esc_html_e( 'No guides available yet. Check back soon.', ADN_TEXT_DOMAIN ); ?></p>
 			<?php endif; ?>
-		</main>
+		</div>
 
 		<?php /* ── RIGHT: sidebar ──────────────────────────────────────── */ ?>
 		<aside class="guides-hub-sidebar">

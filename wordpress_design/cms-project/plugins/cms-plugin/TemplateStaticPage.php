@@ -47,7 +47,7 @@ if ( function_exists( 'adn_page_open' ) ) {
 	get_header();
 }
 ?>
-<main class="ah-static-page-outer">
+<div class="ah-static-page-outer">
 	<?php if ( $html !== '' ) : ?>
 		<?php
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- intentional raw HTML output
@@ -61,7 +61,7 @@ if ( function_exists( 'adn_page_open' ) ) {
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
-</main>
+</div>
 
 <?php
 if ( function_exists( 'adn_page_close' ) ) {

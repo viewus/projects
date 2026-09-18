@@ -41,10 +41,12 @@ class NewsContext {
 			if ( isset( $_seen[ $_key ] ) ) {
 				$_seen[ $_key ]['count']++;
 			} else {
-				$_seen[ $_key ] = array( 'label' => $_lbl, 'count' => 1 );
+				$_seen[ $_key ] = array( 'key' => $_key, 'label' => $_lbl, 'count' => 1 );
 			}
 		}
-		arsort( $_seen );
+		uasort( $_seen, static function ( $a, $b ) {
+			return ( $b['count'] ?? 0 ) <=> ( $a['count'] ?? 0 );
+		} );
 		foreach ( $_seen as $_ldata ) {
 			$categories[] = $_ldata;
 		}
@@ -79,7 +81,7 @@ class NewsContext {
 	 */
 	public static function getContext( $sidebar_builder = null ) {
 		$sidebar_builder = $sidebar_builder ?: \Adn\Theme\Shared\SidebarBuilder::class;
-		$cache_key = 'page_news_context';
+		$cache_key = 'page_news_context_v2';
 		$cached = self::cacheGet( $cache_key );
 		if ( false !== $cached ) {
 			return $cached;

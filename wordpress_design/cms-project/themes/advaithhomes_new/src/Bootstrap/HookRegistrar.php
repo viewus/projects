@@ -165,7 +165,21 @@ class HookRegistrar {
 		\add_filter( 'the_content', 'adn_cache_bust_content_bg_images' );
 		\add_filter( 'the_content', 'adn_clean_article_tags', 20 );
 		\add_filter( 'rank_math/opengraph/facebook/og_type', function() { return 'website'; } );
+		\add_filter( 'rank_math/opengraph/twitter/card_type', function() { return 'summary_large_image'; } );
+		\add_filter( 'rank_math/snippet/rich_snippet', '__return_empty_string' );
+		\add_filter( 'rank_math/json_ld', function( $data, $json_ld ) {
+			if ( is_array( $data ) ) {
+				foreach ( $data as $key => $schema ) {
+					if ( is_array( $schema ) && isset( $schema['@type'] ) && in_array( $schema['@type'], [ 'Article', 'NewsArticle', 'BlogPosting', 'TechArticle', 'Report' ], true ) ) {
+						$data[ $key ]['@type'] = 'WebPage';
+					}
+				}
+			}
+			return $data;
+		}, 99, 2 );
 		\add_filter( 'wpseo_opengraph_type', function() { return 'website'; } );
+		\add_filter( 'wpseo_schema_article', '__return_false' );
+		\add_filter( 'wpseo_schema_article_type', function() { return 'WebPage'; } );
 		\add_filter( 'pre_get_posts', function( $query ) {
 			if ( $query->is_search() && ! \is_admin() ) {
 				$query->set( 'posts_per_page', 12 );

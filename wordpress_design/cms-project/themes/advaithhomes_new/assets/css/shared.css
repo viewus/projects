@@ -846,6 +846,7 @@ section{
   inset: 0;
   left: 50%;
   z-index: 0;
+  background: linear-gradient(135deg, #17241e 0%, #203c3e 100%);
 }
 .phb-bg img,
 .phb-bg video {
@@ -854,6 +855,73 @@ section{
   object-fit: cover;
   object-position: 65% center;
   display: block;
+  font-size: 0;
+  color: transparent;
+}
+
+/* Subtle Slow Zoom (Ken Burns) for Page Hero Backgrounds (Except Home Hero) */
+@keyframes phbSlowZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.10);
+  }
+}
+
+.page-hero .phb-bg,
+.phb-premium .phb-bg,
+.contact-hero-img,
+.expert-hero-img,
+.guidance-hero-img,
+.guides-hero-deco,
+.article-hero-img {
+  overflow: hidden !important;
+}
+
+.page-hero .phb-bg img,
+.page-hero .phb-bg video,
+.phb-premium .phb-bg img,
+.phb-premium .phb-bg video,
+.phb-wrapper.phb-premium .phb-bg img,
+.phb-wrapper.phb-premium .phb-bg video,
+section:not(.hero-home) .phb-bg img,
+section:not(.hero-home) .phb-bg video,
+.contact-hero-img img,
+.expert-hero-img img,
+.guidance-hero-img img,
+.guides-hero-deco img,
+.article-hero-img img {
+  animation: phbSlowZoom 2s ease-in-out infinite alternate !important;
+  will-change: transform;
+  transform-origin: center center;
+  transition: none !important;
+}
+
+/* Ensure home hero remains static */
+.hero-home,
+.hero-home *,
+.hero-home img,
+.hero-home video,
+.hero-home .phb-bg img,
+.hero-carousel__bg img,
+.hero-carousel__bg video {
+  animation: none !important;
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero .phb-bg img,
+  .page-hero .phb-bg video,
+  .phb-premium .phb-bg img,
+  .phb-premium .phb-bg video,
+  .contact-hero-img img,
+  .expert-hero-img img,
+  .guidance-hero-img img,
+  .guides-hero-deco img,
+  .article-hero-img img {
+    animation: none !important;
+  }
 }
 
 /* Desktop/mobile asset swap (only present when a mobile-specific banner is set) */

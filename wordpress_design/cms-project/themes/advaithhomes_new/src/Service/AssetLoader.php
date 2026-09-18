@@ -410,8 +410,33 @@ class AssetLoader {
 
 		if ( \is_page() ) {
 			$page_id = \get_the_ID();
-			$slug = \get_post_field( 'post_name', $page_id );
+			$slug = (string) \get_post_field( 'post_name', $page_id );
+			if ( function_exists( 'adn_get_page_definitions' ) ) {
+				$defs = \adn_get_page_definitions();
+				if ( isset( $defs[ $slug ]['template'] ) ) {
+					return \basename( $defs[ $slug ]['template'], '.php' );
+				}
+				foreach ( $defs as $def_slug => $def ) {
+					if ( ! empty( $def['aliases'] ) && in_array( $slug, (array) $def['aliases'], true ) && ! empty( $def['template'] ) ) {
+						return \basename( $def['template'], '.php' );
+					}
+				}
+			}
 			return 'page-' . $slug;
+		}
+
+		if ( function_exists( 'adn_get_page_definitions' ) ) {
+			$raw  = isset( $_SERVER['REQUEST_URI'] ) ? \sanitize_text_field( \wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
+			$path = trim( (string) parse_url( $raw, PHP_URL_PATH ), '/' );
+			$defs = \adn_get_page_definitions();
+			if ( isset( $defs[ $path ]['template'] ) ) {
+				return \basename( $defs[ $path ]['template'], '.php' );
+			}
+			foreach ( $defs as $def_slug => $def ) {
+				if ( ! empty( $def['aliases'] ) && in_array( $path, (array) $def['aliases'], true ) && ! empty( $def['template'] ) ) {
+					return \basename( $def['template'], '.php' );
+				}
+			}
 		}
 
 		return '';

@@ -209,8 +209,9 @@ function adn_enqueue_template_specific_assets() {
     // News listing: REST config for AJAX-driven cards. Handles the virtual
     // template case (SITE_NEWS_URL) as well as a real page template assignment.
     $is_news_tpl = is_page_template( 'pages/PageNewsall.php' ) || ( '' !== $virtual_tpl && 'PageNewsall' === $virtual_tpl );
-    if ( $is_news_tpl && wp_script_is( 'adn-page-newsall-script', 'enqueued' ) ) {
-        wp_localize_script( 'adn-page-newsall-script', 'adnNews', array(
+    $news_handle = wp_script_is( 'adn-PageNewsall-script', 'enqueued' ) ? 'adn-PageNewsall-script' : ( wp_script_is( 'adn-page-newsall-script', 'enqueued' ) ? 'adn-page-newsall-script' : '' );
+    if ( $is_news_tpl && '' !== $news_handle ) {
+        wp_localize_script( $news_handle, 'adnNews', array(
             'apiBase'   => rest_url( ADN_API_NS . '/news' ),
             'restNonce' => wp_create_nonce( 'wp_rest' ),
             'defaultImg'=> get_template_directory_uri() . THEME_DEFAULT_NEWS_IMG . '?v=' . LOCAL_CACHE_VERSION,

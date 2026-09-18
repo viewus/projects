@@ -136,7 +136,7 @@ adn_component( 'sections/page_hero', array(
 <div class="container parent-term-category-list">
 	<div class="page-with-sidebar">
 
-		<main class="cat-guide-main">
+		<div class="cat-guide-main">
 
 			<?php /* ── Guides Grid ── */ ?>
 			<?php if ( ! empty( $ctx['guides']['items'] ) ) { ?>
@@ -171,7 +171,7 @@ adn_component( 'sections/page_hero', array(
 			</div>
 			<?php endif; ?>
 
-		</main>
+		</div>
 
 		<aside class="sidebar-col">
 

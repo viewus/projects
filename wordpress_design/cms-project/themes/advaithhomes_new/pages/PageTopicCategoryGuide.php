@@ -107,7 +107,7 @@ adn_component( 'sections/page_hero', array(
 <div class="container">
 	<div class="page-with-sidebar topic-listing-layout">
 
-		<main class="topic-listing-main">
+		<div class="topic-listing-main">
 
 			<?php /* ── Category Search + Title row ── */ ?>
 			<div class="cat-listing-header">
@@ -214,7 +214,7 @@ adn_component( 'sections/page_hero', array(
 				</div>
 			<?php endif; ?>
 
-		</main>
+		</div>
 
 		<aside class="sidebar-col topic-listing-sidebar">
 

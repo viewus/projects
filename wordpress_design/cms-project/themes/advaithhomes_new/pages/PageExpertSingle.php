@@ -212,7 +212,7 @@ get_footer(); ?>
 <div class="expert-profile-layout-container">
 	<div class="expert-profile-layout">
 
-		<main class="expert-profile-main">
+		<div class="expert-profile-main">
 
 			<?php /* ── Bio ── */ ?>
 			<?php if ( ! empty( $ctx['bio'] ) ) : ?>
@@ -261,7 +261,7 @@ get_footer(); ?>
 				</section>
 			<?php endif; ?>
 
-		</main>
+		</div>
 
 		<?php /* ── Sidebar ── */ ?>
 		<aside class="expert-profile-sidebar">

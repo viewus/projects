@@ -15,7 +15,7 @@ $chrome = function_exists( 'adn_service_site_chrome' ) ? adn_service_site_chrome
 adn_page_open( array( 'chrome' => $chrome, 'breadcrumb' => array() ) );
 ?>
 
-<main class="adn-404-page">
+<div class="adn-404-page">
 	<div class="adn-404-container">
 		<div class="adn-404-card">
 
@@ -44,9 +44,9 @@ adn_page_open( array( 'chrome' => $chrome, 'breadcrumb' => array() ) );
 					<span class="adn-404-link-desc"><?php echo esc_html( adn_term( 'page_404.home_desc', 'Start from the beginning' ) ); ?></span>
 				</a>
 				<a href="<?php echo esc_url( home_url( SITE_GUIDES_URL ) ); ?>" class="adn-404-link-item">
-					<span class="adn-404-link-icon"><?php echo esc_html( adn_term( 'icons.guide_parent', '📚' ) ); ?></span>
+					<span class="adn-404-link-icon"><?php echo esc_html( adn_term( 'icons.guides', '📖' ) ); ?></span>
 					<strong class="adn-404-link-label"><?php echo esc_html( SITE_CONTENT_PLURAL ); ?></strong>
-					<span class="adn-404-link-desc"><?php echo esc_html( adn_term( 'page_404.guides_desc', 'Read step-by-step advice' ) ); ?></span>
+					<span class="adn-404-link-desc"><?php echo esc_html( adn_term( 'page_404.guides_desc', 'Explore UK buying guides' ) ); ?></span>
 				</a>
 				<a href="<?php echo esc_url( home_url( SITE_TOOLS_URL ) ); ?>" class="adn-404-link-item">
 					<span class="adn-404-link-icon"><?php echo esc_html( adn_term( 'icons.tools', '🧮' ) ); ?></span>
@@ -67,7 +67,7 @@ adn_page_open( array( 'chrome' => $chrome, 'breadcrumb' => array() ) );
 			</div>
 		</div>
 	</div>
-</main>
+</div>
 
 <?php
 adn_page_close( array( 'chrome' => $chrome ) );
