@@ -388,8 +388,6 @@ a.mini-card:hover .mini-card-title { color: var(--client-color) !important; }
 /* ══════════════════════════════════════════════════════════════
    13b. HERO HOME — title padding + staggered fade-in
    ══════════════════════════════════════════════════════════════ */
-.hero-home-inner { align-items: center !important; }
-.hero-content { padding-top: 8px !important; }
 .hero-title {
     letter-spacing: -0.02em !important;
     line-height: 1.12 !important;
@@ -1741,10 +1739,35 @@ a.mini-card:hover .mini-card-title { color: var(--client-color) !important; }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   HOME HERO — Always Left-Aligned & Auto-Height on Mobile
+   HOME HERO — Balanced Desktop Layout & Safe Node Overflow
    ══════════════════════════════════════════════════════════════ */
-.hero-home-inner,
-.hero-home .hero-content,
+.hero-home {
+    min-height: clamp(560px, 80vh, 740px) !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.hero-home-inner {
+    align-items: flex-start !important;
+    padding-top: 90px !important;
+    padding-bottom: 50px !important;
+}
+
+.hero-home .hero-content {
+    padding-top: clamp(24px, 4.5vh, 52px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+.hero-home .hero-visual--in-hero {
+    padding-top: clamp(10px, 2vh, 25px) !important;
+}
+
 .hero-home .hero-title,
 .hero-home .hero-desc,
 .hero-home .hero-actions {
@@ -1863,16 +1886,12 @@ section:not(.hero-home) .phb-bg video,
     transition: none !important;
 }
 
-/* Strictly ensure main home hero has no zoom */
-.hero-home,
-.hero-home *,
-.hero-home img,
-.hero-home video,
+/* Strictly ensure main home hero background has no zoom */
 .hero-home .phb-bg img,
+.hero-home .phb-bg video,
 .hero-carousel__bg img,
 .hero-carousel__bg video {
     animation: none !important;
-    transform: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

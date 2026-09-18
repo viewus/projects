@@ -898,16 +898,12 @@ section:not(.hero-home) .phb-bg video,
   transition: none !important;
 }
 
-/* Ensure home hero remains static */
-.hero-home,
-.hero-home *,
-.hero-home img,
-.hero-home video,
+/* Ensure home hero background remains static */
 .hero-home .phb-bg img,
+.hero-home .phb-bg video,
 .hero-carousel__bg img,
 .hero-carousel__bg video {
   animation: none !important;
-  transform: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
