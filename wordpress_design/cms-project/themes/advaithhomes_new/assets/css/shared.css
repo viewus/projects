@@ -865,7 +865,7 @@ section{
     transform: scale(1);
   }
   100% {
-    transform: scale(1.10);
+    transform: scale(1.06);
   }
 }
 
@@ -892,7 +892,7 @@ section:not(.hero-home) .phb-bg video,
 .guidance-hero-img img,
 .guides-hero-deco img,
 .article-hero-img img {
-  animation: phbSlowZoom 2s ease-in-out infinite alternate !important;
+  animation: phbSlowZoom 18s ease-in-out infinite alternate !important;
   will-change: transform;
   transform-origin: center center;
   transition: none !important;
