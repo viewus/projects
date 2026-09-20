@@ -40,7 +40,8 @@ class AssetLoader {
 		'adn-scroll-to-top-script' => '/assets/js/scroll-to-top.js',
 		'adn-premium-script'       => '/assets/js/premium.js',
 		'adn-faqs-script'          => '/assets/js/faqs.js',
-		'adn-form-builder-script'  => '/assets/js/form-builder.js'
+		'adn-form-builder-script'  => '/assets/js/form-builder.js',
+		'adn-offline-search-script'=> '/assets/js/offline-search.js',
 	];
 
 	/** CSS loaded only on specific page templates. */

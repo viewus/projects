@@ -1,0 +1,1624 @@
+{
+  "_note": "Content source for the homepage. Every visible string on the page should be read from here, never hardcoded in HTML. Anything marked [PLACEHOLDER] is a real gap — needs an actual figure or approved copy before this is final, not an invented number.",
+  "hero": {
+    "_note": "Single source for the Hero component (js/components/hero.js) on the homepage.",
+    "eyebrow": "SKILLS TODAY. BRIGHTER TOMORROWS.",
+    "headlineLines": [
+      {
+        "text": "Learn.",
+        "highlight": false
+      },
+      {
+        "text": "Build.",
+        "highlight": false
+      },
+      {
+        "text": "Get Ahead.",
+        "highlight": true
+      }
+    ],
+    "description": "Practical courses, expert mentorship, real projects and flexible learning — finish in 3 months and get 100% of your fee back.",
+    "search": {
+      "placeholder": "What do you want to learn today?",
+      "buttonLabel": "Explore Courses",
+      "popularLabel": "Popular:",
+      "popularTags": [
+        "Python",
+        "Web Development",
+        "Data Science",
+        "UI/UX Design",
+        "AI & ML"
+      ]
+    },
+    "primaryCta": {
+      "label": "Explore Courses",
+      "href": "index.html#courses"
+    },
+    "secondaryCta": {
+      "label": "See How the Refund Works",
+      "href": "index.html#refund"
+    },
+    "floatingBadges": [
+      {
+        "id": "mentor",
+        "title": "1-on-1 Mentorship",
+        "subtitle": "Learn from industry experts →",
+        "badgeType": "avatars"
+      },
+      {
+        "id": "doubt",
+        "title": "Live Doubt Solving",
+        "subtitle": "Get instant help ↗",
+        "badgeType": "teal"
+      },
+      {
+        "id": "project",
+        "title": "Real Projects",
+        "subtitle": "Build your portfolio",
+        "badgeType": "blue"
+      },
+      {
+        "id": "certificate",
+        "title": "Certificates",
+        "subtitle": "Showcase your skills",
+        "badgeType": "purple"
+      },
+      {
+        "id": "lifetime",
+        "title": "Lifetime Access",
+        "subtitle": "Learn at your own pace",
+        "badgeType": "indigo"
+      }
+    ],
+    "image": {
+      "src": "assets/images/hero-student-scene.jpg",
+      "fallbackSrc": "assets/images/homehero-ref.png",
+      "alt": "Indian student smiling while working on laptop with purple ambient lighting"
+    },
+    "decorativeNotes": [
+      {
+        "id": "students",
+        "text": "Same Students Brighter Futures ☻",
+        "position": "bottom-left"
+      },
+      {
+        "id": "steps",
+        "text": "Small Steps Big Progress",
+        "position": "top-right"
+      },
+      {
+        "id": "brighter",
+        "text": "A Brighter You ☻",
+        "position": "right-middle"
+      },
+      {
+        "id": "future",
+        "text": "Your Future Self Thanks You ♡",
+        "position": "bottom-right"
+      }
+    ],
+    "stats": [
+      {
+        "id": "learners",
+        "value": "250K+",
+        "label": "Learners",
+        "icon": "community"
+      },
+      {
+        "id": "rating",
+        "value": "4.9/5",
+        "label": "Google Rating",
+        "icon": "star"
+      },
+      {
+        "id": "courses",
+        "value": "64+",
+        "label": "Courses",
+        "icon": "book"
+      }
+    ]
+  },
+  "trustBar": {
+    "_note": "Real figures extracted live from tutedude.com's own homepage (Sep 2026) — not invented. Re-verify before final ship if this redesign ships long after that date, since these numbers grow over time on the real site.",
+    "stats": [
+      {
+        "id": "rating",
+        "value": "4.9/5",
+        "label": "Google Rating"
+      },
+      {
+        "id": "courses",
+        "value": "50+",
+        "label": "Courses"
+      },
+      {
+        "id": "learners",
+        "value": "100k+",
+        "label": "Learners"
+      },
+      {
+        "id": "doubts",
+        "value": "100k+",
+        "label": "Doubts Solved"
+      },
+      {
+        "id": "projects",
+        "value": "10k+",
+        "label": "Student Projects"
+      }
+    ]
+  },
+  "howItWorks": {
+    "sectionHeader": {
+      "kicker": "How it actually works",
+      "title": "One challenge, five things you get",
+      "description": "Every course on Tutedude is built the same way — this is the full stack, not a taste of it."
+    },
+    "steps": [
+      {
+        "order": 1,
+        "title": "Learn at your pace",
+        "description": "Recorded lectures you can rewatch, kept for good — even after your refund."
+      },
+      {
+        "order": 2,
+        "title": "Get unstuck live",
+        "description": "Live 1:1 doubt-solving with a mentor who's done the job you're training for."
+      },
+      {
+        "order": 3,
+        "title": "Build for real",
+        "description": "Projects and challenges you can show, not just certificates you can't explain."
+      },
+      {
+        "order": 4,
+        "title": "Get certified",
+        "description": "A completion certificate from Tutedude once you're done."
+      },
+      {
+        "order": 5,
+        "title": "Get paid back",
+        "description": "Finish inside 3 months and 100% of your fee comes back to you."
+      }
+    ]
+  },
+  "refundExplained": {
+    "sectionHeader": {
+      "kicker": "The part everyone asks about",
+      "title": "Yes, you really do get 100% back",
+      "description": "Not a discount. Not a coupon. The actual amount you paid, back in your account — if you finish the challenge."
+    },
+    "flow": [
+      {
+        "step": 1,
+        "label": "Pay to enroll",
+        "detail": "Single course, a combo pack, or the All Access Pack."
+      },
+      {
+        "step": 2,
+        "label": "Learn the course",
+        "detail": "Recorded lessons, live mentorship, real projects — at your own pace."
+      },
+      {
+        "step": 3,
+        "label": "Finish inside 3 months",
+        "detail": "Complete the challenge requirements before the 90-day window closes."
+      },
+      {
+        "step": 4,
+        "label": "Get 100% of your fee back",
+        "detail": "You keep the course, the certificate and lifetime access regardless."
+      }
+    ],
+    "conditions": [
+      "Finish the course and submit the projects inside your 3-month window — that's the whole requirement."
+    ],
+    "reassurance": "A fee ensures commitment and seriousness in learning, as free things are often undervalued. That's the real reason it isn't free from day one — and it's why most learners who start, finish."
+  },
+  "browseCourses": {
+    "sectionHeader": {
+      "kicker": "Pick your path",
+      "title": "Every course runs on the same challenge",
+      "description": "Recorded lessons, live 1:1 mentorship, real projects and the same 100% refund — on all 64 courses, whichever you choose."
+    },
+    "priceNote": "₹699 to enroll · 100% refundable",
+    "search": {
+      "placeholder": "Search courses by name or category...",
+      "noResultsText": "No courses match your search or filters."
+    },
+    "levels": [
+      "All Levels",
+      "Beginner",
+      "Intermediate",
+      "Advanced"
+    ],
+    "_categoriesNote": "Real category names/slugs, extracted from tutedude.com's own live category list (Sep 2026) — the real catalog has 40+ courses; this redesign covers the 4 with a browsable card, per the hackathon's 'two pages only' scope.",
+    "categories": [
+      {
+        "id": "all",
+        "label": "All Courses"
+      },
+      {
+        "id": "development",
+        "label": "Software Development"
+      },
+      {
+        "id": "dsa",
+        "label": "DSA"
+      },
+      {
+        "id": "data",
+        "label": "Data Science & Analytics"
+      },
+      {
+        "id": "ai",
+        "label": "AI & ML"
+      },
+      {
+        "id": "design",
+        "label": "Design"
+      },
+      {
+        "id": "devops",
+        "label": "DevOps & Cloud"
+      },
+      {
+        "id": "cyber",
+        "label": "Cyber Security"
+      },
+      {
+        "id": "marketing",
+        "label": "Marketing"
+      },
+      {
+        "id": "finance",
+        "label": "Finance"
+      },
+      {
+        "id": "video",
+        "label": "Video Editing"
+      }
+    ],
+    "_cardsNote": "Real catalog extracted from tutedude.com (Sep 2026): every course name, category grouping and logo below is theirs. Logos are downloaded from their own CDN (assets/avif/<slug>.avif) into assets/images/courses/. Full course-detail pages exist only for the ids in courseDetailPages (registry.json) — other cards link to course.html?course=<id> and fall back to the uiux template until their own JSON exists.",
+    "courses": [
+      {
+        "id": "python",
+        "title": "Python",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Beginner",
+        "logo": "assets/images/courses/python.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "mernstack",
+        "title": "Web Development (MERN Stack)",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/mernstack.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "reactjs",
+        "title": "React JS",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/reactjs.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "nextjs",
+        "title": "Next.js",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/nextjs.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "java",
+        "title": "Java",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Beginner",
+        "logo": "assets/images/courses/java.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "cpp",
+        "title": "C++",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Beginner",
+        "logo": "assets/images/courses/cpp.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "appdevelopment",
+        "title": "App Development",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/appdevelopment.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "flutter",
+        "title": "Flutter",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/flutter.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "wordpress",
+        "title": "WordPress",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Beginner",
+        "logo": "assets/images/courses/wordpress.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "systemdesign",
+        "title": "System Design",
+        "category": "development",
+        "categoryLabel": "Software Development",
+        "level": "Advanced",
+        "logo": "assets/images/courses/systemdesign.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "datastructure",
+        "title": "DSA with C++",
+        "category": "dsa",
+        "categoryLabel": "DSA",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/datastructure.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "dsawithpython",
+        "title": "DSA with Python",
+        "category": "dsa",
+        "categoryLabel": "DSA",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/dsawithpython.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "dsawithjava",
+        "title": "DSA with Java",
+        "category": "dsa",
+        "categoryLabel": "DSA",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/dsawithjava.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "competitiveprogramming",
+        "title": "Competitive Programming",
+        "category": "dsa",
+        "categoryLabel": "DSA",
+        "level": "Advanced",
+        "logo": "assets/images/courses/competitiveprogramming.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "datascience",
+        "title": "Data Science",
+        "category": "data",
+        "categoryLabel": "Data Science & Analytics",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/datascience.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "dataanalytics",
+        "title": "Data Analytics",
+        "category": "data",
+        "categoryLabel": "Data Science & Analytics",
+        "level": "Beginner",
+        "logo": "assets/images/courses/dataanalytics.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "businessanalytics",
+        "title": "Business Analytics",
+        "category": "data",
+        "categoryLabel": "Data Science & Analytics",
+        "level": "Beginner",
+        "logo": "assets/images/courses/businessanalytics.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "powerbi",
+        "title": "Power BI",
+        "category": "data",
+        "categoryLabel": "Data Science & Analytics",
+        "level": "Beginner",
+        "logo": "assets/images/courses/powerbi.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "excel",
+        "title": "Advanced Excel with AI",
+        "category": "data",
+        "categoryLabel": "Data Science & Analytics",
+        "level": "Beginner",
+        "logo": "assets/images/courses/excel.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "dbms",
+        "title": "DBMS with SQL",
+        "category": "data",
+        "categoryLabel": "Data Science & Analytics",
+        "level": "Beginner",
+        "logo": "assets/images/courses/dbms.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "dataengineering",
+        "title": "Data Engineering",
+        "category": "data",
+        "categoryLabel": "Data Science & Analytics",
+        "level": "Advanced",
+        "logo": "assets/images/courses/dataengineering.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "genai",
+        "title": "Gen AI",
+        "category": "ai",
+        "categoryLabel": "AI & ML",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/genai.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "machinelearning",
+        "title": "Machine Learning",
+        "category": "ai",
+        "categoryLabel": "AI & ML",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/machinelearning.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "deeplearning",
+        "title": "Deep Learning",
+        "category": "ai",
+        "categoryLabel": "AI & ML",
+        "level": "Advanced",
+        "logo": "assets/images/courses/deeplearning.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "nlp",
+        "title": "Natural Language Processing",
+        "category": "ai",
+        "categoryLabel": "AI & ML",
+        "level": "Advanced",
+        "logo": "assets/images/courses/nlp.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "llm",
+        "title": "Large Language Models",
+        "category": "ai",
+        "categoryLabel": "AI & ML",
+        "level": "Advanced",
+        "logo": "assets/images/courses/llm.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "aitools",
+        "title": "AI Tools",
+        "category": "ai",
+        "categoryLabel": "AI & ML",
+        "level": "Beginner",
+        "logo": "assets/images/courses/aitools.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "uiux",
+        "title": "UI/UX Designing",
+        "category": "design",
+        "categoryLabel": "Design",
+        "level": "Beginner",
+        "logo": "assets/images/courses/uiux.avif",
+        "hasDetailPage": true
+      },
+      {
+        "id": "uxresearch",
+        "title": "UX Research",
+        "category": "design",
+        "categoryLabel": "Design",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/uxresearch.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "graphicdesign",
+        "title": "Graphic Design",
+        "category": "design",
+        "categoryLabel": "Design",
+        "level": "Beginner",
+        "logo": "assets/images/courses/graphicdesign.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "graphicdesignwithai",
+        "title": "Graphic Design with AI",
+        "category": "design",
+        "categoryLabel": "Design",
+        "level": "Beginner",
+        "logo": "assets/images/courses/graphicdesignwithai.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "photoshop",
+        "title": "Adobe Photoshop",
+        "category": "design",
+        "categoryLabel": "Design",
+        "level": "Beginner",
+        "logo": "assets/images/courses/photoshop.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "illustrator",
+        "title": "Adobe Illustrator",
+        "category": "design",
+        "categoryLabel": "Design",
+        "level": "Beginner",
+        "logo": "assets/images/courses/illustrator.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "indesign",
+        "title": "Adobe InDesign",
+        "category": "design",
+        "categoryLabel": "Design",
+        "level": "Beginner",
+        "logo": "assets/images/courses/indesign.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "canva",
+        "title": "Canva",
+        "category": "design",
+        "categoryLabel": "Design",
+        "level": "Beginner",
+        "logo": "assets/images/courses/canva.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "devops",
+        "title": "DevOps",
+        "category": "devops",
+        "categoryLabel": "DevOps & Cloud",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/devops.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "dockerandkubernetes",
+        "title": "Docker & Kubernetes",
+        "category": "devops",
+        "categoryLabel": "DevOps & Cloud",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/dockerandkubernetes.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "linux",
+        "title": "Linux",
+        "category": "devops",
+        "categoryLabel": "DevOps & Cloud",
+        "level": "Beginner",
+        "logo": "assets/images/courses/linux.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "cloudcomputing",
+        "title": "Cloud Computing with AWS",
+        "category": "devops",
+        "categoryLabel": "DevOps & Cloud",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/cloudcomputing.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "awspractitioner",
+        "title": "AWS Cloud Practitioner",
+        "category": "devops",
+        "categoryLabel": "DevOps & Cloud",
+        "level": "Beginner",
+        "logo": "assets/images/courses/awspractitioner.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "terraform",
+        "title": "Terraform",
+        "category": "devops",
+        "categoryLabel": "DevOps & Cloud",
+        "level": "Advanced",
+        "logo": "assets/images/courses/terraform.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "ethicalhacking",
+        "title": "Ethical Hacking",
+        "category": "cyber",
+        "categoryLabel": "Cyber Security",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/ethicalhacking.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "cybersecurity",
+        "title": "Cyber Security",
+        "category": "cyber",
+        "categoryLabel": "Cyber Security",
+        "level": "Beginner",
+        "logo": "assets/images/courses/cybersecurity.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "digitalmarketing",
+        "title": "Digital Marketing",
+        "category": "marketing",
+        "categoryLabel": "Marketing",
+        "level": "Beginner",
+        "logo": "assets/images/courses/digitalmarketing.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "seo",
+        "title": "SEO",
+        "category": "marketing",
+        "categoryLabel": "Marketing",
+        "level": "Beginner",
+        "logo": "assets/images/courses/seo.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "performancemarketing",
+        "title": "Performance Marketing",
+        "category": "marketing",
+        "categoryLabel": "Marketing",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/performancemarketing.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "copywriting",
+        "title": "Copywriting",
+        "category": "marketing",
+        "categoryLabel": "Marketing",
+        "level": "Beginner",
+        "logo": "assets/images/courses/copywriting.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "instagramcreator",
+        "title": "Instagram Content Creation",
+        "category": "marketing",
+        "categoryLabel": "Marketing",
+        "level": "Beginner",
+        "logo": "assets/images/courses/instagramcreator.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "growthhacking",
+        "title": "Growth Hacking",
+        "category": "marketing",
+        "categoryLabel": "Marketing",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/growthhacking.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "d2cbrandbuilding",
+        "title": "D2C Brand Building",
+        "category": "marketing",
+        "categoryLabel": "Marketing",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/d2cbrandbuilding.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "youtubecreator",
+        "title": "YouTube Content Creation",
+        "category": "marketing",
+        "categoryLabel": "Marketing",
+        "level": "Beginner",
+        "logo": "assets/images/courses/youtubecreator.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "fundamentalanalysis",
+        "title": "Stock Market",
+        "category": "finance",
+        "categoryLabel": "Finance",
+        "level": "Beginner",
+        "logo": "assets/images/courses/fundamentalanalysis.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "technicalanalysis",
+        "title": "Technical Analysis",
+        "category": "finance",
+        "categoryLabel": "Finance",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/technicalanalysis.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "financialanalysis",
+        "title": "Financial Analysis",
+        "category": "finance",
+        "categoryLabel": "Finance",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/financialanalysis.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "financialmodelling",
+        "title": "Financial Modelling & Valuation",
+        "category": "finance",
+        "categoryLabel": "Finance",
+        "level": "Advanced",
+        "logo": "assets/images/courses/financialmodelling.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "riskmanagement",
+        "title": "Financial Risk Management",
+        "category": "finance",
+        "categoryLabel": "Finance",
+        "level": "Advanced",
+        "logo": "assets/images/courses/riskmanagement.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "premierepro",
+        "title": "Adobe Premiere Pro",
+        "category": "video",
+        "categoryLabel": "Video Editing",
+        "level": "Beginner",
+        "logo": "assets/images/courses/premierepro.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "aftereffects",
+        "title": "Adobe After Effects",
+        "category": "video",
+        "categoryLabel": "Video Editing",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/aftereffects.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "videoediting",
+        "title": "Video Editing",
+        "category": "video",
+        "categoryLabel": "Video Editing",
+        "level": "Beginner",
+        "logo": "assets/images/courses/videoediting.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "motiongraphics",
+        "title": "Motion Graphics",
+        "category": "video",
+        "categoryLabel": "Video Editing",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/motiongraphics.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "davinciresolve",
+        "title": "DaVinci Resolve",
+        "category": "video",
+        "categoryLabel": "Video Editing",
+        "level": "Beginner",
+        "logo": "assets/images/courses/davinciresolve.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "vfx",
+        "title": "VFX",
+        "category": "video",
+        "categoryLabel": "Video Editing",
+        "level": "Advanced",
+        "logo": "assets/images/courses/vfx.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "aivideogen",
+        "title": "AI Video Generation",
+        "category": "video",
+        "categoryLabel": "Video Editing",
+        "level": "Beginner",
+        "logo": "assets/images/courses/aivideogen.avif",
+        "hasDetailPage": false
+      },
+      {
+        "id": "blender",
+        "title": "Blender",
+        "category": "video",
+        "categoryLabel": "Video Editing",
+        "level": "Intermediate",
+        "logo": "assets/images/courses/blender.avif",
+        "hasDetailPage": false
+      }
+    ],
+    "countLabel": "courses"
+  },
+  "combosAndAllAccess": {
+    "_note": "Real combo packs, exactly as listed on tutedude.com (Sep 2026): names, ratings, enrolment counts, discounts, included courses and the 2-year refund validity are all theirs. Group tabs match their own filter tabs. Absolute pack prices are not shown on their card grid, so none are invented here — the generic builder and All Access prices below are the real ones they do publish.",
+    "sectionHeader": {
+      "kicker": "Learning more than one thing",
+      "title": "Career-focused combo packs",
+      "description": "Bundle related courses into one career track — same 100% refund rule, same lifetime access on everything you unlock."
+    },
+    "groups": [
+      {
+        "id": "all",
+        "label": "All Packs"
+      },
+      {
+        "id": "dev",
+        "label": "Development & Engineering"
+      },
+      {
+        "id": "data",
+        "label": "Data & Analytics"
+      },
+      {
+        "id": "design",
+        "label": "Design & Creative"
+      },
+      {
+        "id": "money",
+        "label": "Marketing & Finance"
+      }
+    ],
+    "packs": [
+      {
+        "id": "fullstackdev",
+        "title": "Full Stack Developer",
+        "group": "dev",
+        "rating": "4.8",
+        "enrolled": "8,000+",
+        "discount": "40% OFF",
+        "includes": [
+          {
+            "name": "MERN Stack",
+            "logo": "assets/images/courses/mernstack.avif"
+          },
+          {
+            "name": "React JS",
+            "logo": "assets/images/courses/reactjs.avif"
+          },
+          {
+            "name": "DSA With Python",
+            "logo": "assets/images/courses/dsawithpython.avif"
+          },
+          {
+            "name": "DevOps",
+            "logo": "assets/images/courses/devops.avif"
+          },
+          {
+            "name": "Python",
+            "logo": "assets/images/courses/python.avif"
+          },
+          {
+            "name": "DBMS",
+            "logo": "assets/images/courses/dbms.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "datascientist",
+        "title": "Data Scientist",
+        "group": "data",
+        "rating": "4.8",
+        "enrolled": "7,000+",
+        "discount": "40% OFF",
+        "includes": [
+          {
+            "name": "Data Science",
+            "logo": "assets/images/courses/datascience.avif"
+          },
+          {
+            "name": "Data Analytics",
+            "logo": "assets/images/courses/dataanalytics.avif"
+          },
+          {
+            "name": "Python",
+            "logo": "assets/images/courses/python.avif"
+          },
+          {
+            "name": "DSA With Python",
+            "logo": "assets/images/courses/dsawithpython.avif"
+          },
+          {
+            "name": "DBMS with SQL",
+            "logo": "assets/images/courses/dbms.avif"
+          },
+          {
+            "name": "Machine Learning",
+            "logo": "assets/images/courses/machinelearning.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "aiengineer",
+        "title": "AI Engineer",
+        "group": "data",
+        "rating": "4.9",
+        "enrolled": "7,000+",
+        "discount": "57% OFF",
+        "includes": [
+          {
+            "name": "Python",
+            "logo": "assets/images/courses/python.avif"
+          },
+          {
+            "name": "Gen AI",
+            "logo": "assets/images/courses/genai.avif"
+          },
+          {
+            "name": "Data Science",
+            "logo": "assets/images/courses/datascience.avif"
+          },
+          {
+            "name": "Machine Learning",
+            "logo": "assets/images/courses/machinelearning.avif"
+          },
+          {
+            "name": "Deep Learning",
+            "logo": "assets/images/courses/deeplearning.avif"
+          },
+          {
+            "name": "NLP",
+            "logo": "assets/images/courses/nlp.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "dataanalyst",
+        "title": "Data Analyst",
+        "group": "data",
+        "rating": "4.8",
+        "enrolled": "7,000+",
+        "discount": "40% OFF",
+        "includes": [
+          {
+            "name": "Data Analytics",
+            "logo": "assets/images/courses/dataanalytics.avif"
+          },
+          {
+            "name": "Power BI",
+            "logo": "assets/images/courses/powerbi.avif"
+          },
+          {
+            "name": "Tableau",
+            "logo": "assets/images/courses/tableau.avif"
+          },
+          {
+            "name": "SQL",
+            "logo": "assets/images/courses/sql.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "businessanalyst",
+        "title": "Business Analyst",
+        "group": "data",
+        "rating": "4.7",
+        "enrolled": "6,000+",
+        "discount": "45% OFF",
+        "includes": [
+          {
+            "name": "Business Analytics",
+            "logo": "assets/images/courses/businessanalytics.avif"
+          },
+          {
+            "name": "Excel",
+            "logo": "assets/images/courses/excel.avif"
+          },
+          {
+            "name": "Tableau",
+            "logo": "assets/images/courses/tableau.avif"
+          },
+          {
+            "name": "Power BI",
+            "logo": "assets/images/courses/powerbi.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "designer",
+        "title": "Designer",
+        "group": "design",
+        "rating": "4.7",
+        "enrolled": "6,000+",
+        "discount": "40% OFF",
+        "includes": [
+          {
+            "name": "Adobe Illustrator",
+            "logo": "assets/images/courses/illustrator.avif"
+          },
+          {
+            "name": "Adobe Photoshop",
+            "logo": "assets/images/courses/photoshop.avif"
+          },
+          {
+            "name": "UI/UX",
+            "logo": "assets/images/courses/uiux.avif"
+          },
+          {
+            "name": "UX Research",
+            "logo": "assets/images/courses/uxresearch.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "graphicdesigner",
+        "title": "Graphic Designer",
+        "group": "design",
+        "rating": "4.6",
+        "enrolled": "5,000+",
+        "discount": "45% OFF",
+        "includes": [
+          {
+            "name": "Adobe Photoshop",
+            "logo": "assets/images/courses/photoshop.avif"
+          },
+          {
+            "name": "Adobe Illustrator",
+            "logo": "assets/images/courses/illustrator.avif"
+          },
+          {
+            "name": "Adobe InDesign",
+            "logo": "assets/images/courses/indesign.avif"
+          },
+          {
+            "name": "Graphic Design with AI",
+            "logo": "assets/images/courses/graphicdesignwithai.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "videoeditor",
+        "title": "Video Editor",
+        "group": "design",
+        "rating": "4.7",
+        "enrolled": "4,000+",
+        "discount": "45% OFF",
+        "includes": [
+          {
+            "name": "Premiere Pro",
+            "logo": "assets/images/courses/premierepro.avif"
+          },
+          {
+            "name": "After Effects",
+            "logo": "assets/images/courses/aftereffects.avif"
+          },
+          {
+            "name": "DaVinci Resolve",
+            "logo": "assets/images/courses/davinciresolve.avif"
+          },
+          {
+            "name": "AI Video Generation",
+            "logo": "assets/images/courses/aivideogen.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "techgeek",
+        "title": "Tech Geek",
+        "group": "dev",
+        "rating": "4.6",
+        "enrolled": "5,000+",
+        "discount": "40% OFF",
+        "includes": [
+          {
+            "name": "Python",
+            "logo": "assets/images/courses/python.avif"
+          },
+          {
+            "name": "App Development",
+            "logo": "assets/images/courses/appdevelopment.avif"
+          },
+          {
+            "name": "Ethical Hacking",
+            "logo": "assets/images/courses/ethicalhacking.avif"
+          },
+          {
+            "name": "Java",
+            "logo": "assets/images/courses/java.avif"
+          },
+          {
+            "name": "Data Science",
+            "logo": "assets/images/courses/datascience.avif"
+          },
+          {
+            "name": "MERN Stack",
+            "logo": "assets/images/courses/mernstack.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "appdev",
+        "title": "App Developer",
+        "group": "dev",
+        "rating": "4.7",
+        "enrolled": "5,000+",
+        "discount": "40% OFF",
+        "includes": [
+          {
+            "name": "Java",
+            "logo": "assets/images/courses/java.avif"
+          },
+          {
+            "name": "Flutter",
+            "logo": "assets/images/courses/flutter.avif"
+          },
+          {
+            "name": "React JS",
+            "logo": "assets/images/courses/reactjs.avif"
+          },
+          {
+            "name": "App Development",
+            "logo": "assets/images/courses/appdevelopment.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "devopsandcloud",
+        "title": "DevOps & Cloud Engineer",
+        "group": "dev",
+        "rating": "4.7",
+        "enrolled": "4,000+",
+        "discount": "45% OFF",
+        "includes": [
+          {
+            "name": "DevOps",
+            "logo": "assets/images/courses/devops.avif"
+          },
+          {
+            "name": "AWS Cloud Practitioner",
+            "logo": "assets/images/courses/awspractitioner.avif"
+          },
+          {
+            "name": "Linux",
+            "logo": "assets/images/courses/linux.avif"
+          },
+          {
+            "name": "Cloud Computing with AWS",
+            "logo": "assets/images/courses/cloudcomputing.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "cybersecurityexpert",
+        "title": "Cyber Security Expert",
+        "group": "dev",
+        "rating": "4.6",
+        "enrolled": "3,000+",
+        "discount": "40% OFF",
+        "includes": [
+          {
+            "name": "Cyber Security",
+            "logo": "assets/images/courses/cybersecurity.avif"
+          },
+          {
+            "name": "Ethical Hacking",
+            "logo": "assets/images/courses/ethicalhacking.avif"
+          },
+          {
+            "name": "Linux",
+            "logo": "assets/images/courses/linux.avif"
+          },
+          {
+            "name": "Python",
+            "logo": "assets/images/courses/python.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "marketer",
+        "title": "Marketer",
+        "group": "money",
+        "rating": "4.5",
+        "enrolled": "4,000+",
+        "discount": "57% OFF",
+        "includes": [
+          {
+            "name": "Digital Marketing",
+            "logo": "assets/images/courses/digitalmarketing.avif"
+          },
+          {
+            "name": "Performance Marketing",
+            "logo": "assets/images/courses/performancemarketing.avif"
+          },
+          {
+            "name": "SEO",
+            "logo": "assets/images/courses/seo.avif"
+          },
+          {
+            "name": "Copywriting",
+            "logo": "assets/images/courses/copywriting.avif"
+          },
+          {
+            "name": "Graphic Design with AI",
+            "logo": "assets/images/courses/graphicdesignwithai.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      },
+      {
+        "id": "financeprofessional",
+        "title": "Finance Professional",
+        "group": "money",
+        "rating": "4.6",
+        "enrolled": "4,000+",
+        "discount": "40% OFF",
+        "includes": [
+          {
+            "name": "Financial Modelling",
+            "logo": "assets/images/courses/financialmodelling.avif"
+          },
+          {
+            "name": "Financial Risk Management",
+            "logo": "assets/images/courses/riskmanagement.avif"
+          },
+          {
+            "name": "Stock Market",
+            "logo": "assets/images/courses/fundamentalanalysis.avif"
+          },
+          {
+            "name": "Technical Analysis",
+            "logo": "assets/images/courses/technicalanalysis.avif"
+          },
+          {
+            "name": "Financial Analysis",
+            "logo": "assets/images/courses/financialanalysis.avif"
+          }
+        ],
+        "cta": {
+          "label": "Explore This Pack",
+          "href": "#"
+        }
+      }
+    ],
+    "allAccess": {
+      "title": "All Access Pack",
+      "description": "Every course on Tutedude, unlocked — including anything added later.",
+      "badge": "Best Value",
+      "priceNote": "₹3,999",
+      "originalPriceNote": "₹45,435",
+      "discountNote": "88% off",
+      "cta": {
+        "label": "Get All Access",
+        "href": "#"
+      },
+      "icon": "quality",
+      "tagline": "All 64 courses",
+      "coursesLabel": "Every course on the platform, one pack",
+      "sampleCourses": [
+        {
+          "name": "Python",
+          "logo": "assets/images/courses/python.avif"
+        },
+        {
+          "name": "UI/UX Designing",
+          "logo": "assets/images/courses/uiux.avif"
+        },
+        {
+          "name": "Machine Learning",
+          "logo": "assets/images/courses/machinelearning.avif"
+        },
+        {
+          "name": "React JS",
+          "logo": "assets/images/courses/reactjs.avif"
+        },
+        {
+          "name": "AWS Cloud Practitioner",
+          "logo": "assets/images/courses/awspractitioner.avif"
+        },
+        {
+          "name": "Power BI",
+          "logo": "assets/images/courses/powerbi.avif"
+        },
+        {
+          "name": "Adobe Premiere Pro",
+          "logo": "assets/images/courses/premierepro.avif"
+        },
+        {
+          "name": "Ethical Hacking",
+          "logo": "assets/images/courses/ethicalhacking.avif"
+        }
+      ],
+      "moreLabel": "+56 more",
+      "features": [
+        "All 64 courses across every domain",
+        "Anything added later is included",
+        "Live 1:1 mentorship and real projects",
+        "Certificate for every course you finish"
+      ]
+    },
+    "customPack": {
+      "title": "Customised Pack",
+      "description": "Choose any 4 or more courses and build your own track.",
+      "badge": "Most Popular",
+      "priceNote": "₹1,499",
+      "originalPriceNote": "₹2,796",
+      "discountNote": "45% off",
+      "cta": {
+        "label": "Build Your Pack",
+        "href": "index.html#courses"
+      },
+      "icon": "layout",
+      "tagline": "Pick any 4 or more",
+      "coursesLabel": "Mix and match from every category",
+      "sampleCourses": [
+        {
+          "name": "Python",
+          "logo": "assets/images/courses/python.avif"
+        },
+        {
+          "name": "UI/UX Designing",
+          "logo": "assets/images/courses/uiux.avif"
+        },
+        {
+          "name": "React JS",
+          "logo": "assets/images/courses/reactjs.avif"
+        },
+        {
+          "name": "Digital Marketing",
+          "logo": "assets/images/courses/digitalmarketing.avif"
+        },
+        {
+          "name": "Data Science",
+          "logo": "assets/images/courses/datascience.avif"
+        },
+        {
+          "name": "Video Editing",
+          "logo": "assets/images/courses/videoediting.avif"
+        }
+      ],
+      "moreLabel": "+58 more",
+      "features": [
+        "Any 4 or more courses, any category",
+        "Live 1:1 mentorship on each course",
+        "Real projects and lifetime access",
+        "Every course 100% refundable"
+      ]
+    },
+    "accessSectionHeader": {
+      "kicker": "Unlock more at once",
+      "title": "Build your own pack, or take everything",
+      "description": "Pick the courses you want, or open the whole catalogue in one go. Lifetime access either way."
+    },
+    "_accessNote": "The two headline plans, rendered as AccessCard (not the plain PricingCard). sampleCourses are real catalogue entries with their real icons; moreLabel is computed from the catalogue size at authoring time (64 courses)."
+  },
+  "whyTutedude": {
+    "_note": "The 4 benefits below are tutedude.com's own real 'Why Choose Us' claims (Sep 2026), including Internship Opportunities — a real feature we'd missed in an earlier pass of this redesign.",
+    "sectionHeader": {
+      "kicker": "Why this, not another course site",
+      "title": "Built so you actually finish",
+      "description": "Get instant mentorship, internship opportunities and a supportive learning community."
+    },
+    "benefits": [
+      {
+        "id": "refund",
+        "title": "100% Refund Guarantee",
+        "description": "You paid to start. We only keep that money if you don't finish."
+      },
+      {
+        "id": "mentor",
+        "title": "Personalized Mentorship",
+        "description": "Live 1:1 doubt-solving with an industry expert, not a chatbot or a forum post."
+      },
+      {
+        "id": "internship",
+        "title": "Internship Opportunities",
+        "description": "Real projects and mentor guidance that can lead somewhere, not just a certificate."
+      },
+      {
+        "id": "quality",
+        "title": "Premium Quality Courses",
+        "description": "Curated, up-to-date curriculum — not a stitched-together playlist."
+      }
+    ]
+  },
+  "proof": {
+    "_note": "Real review data extracted live from tutedude.com (Sep 2026). Tutedude publishes VIDEO reviews — a carousel of student names under the heading \"Video Reviews from Our Students!\" — with no written quotes and no per-review star ratings. So this section shows the real aggregate rating and the real reviewer names, and deliberately carries NO invented quote text. Learner photos are not reproduced: the names are rendered as initials. Per-course star ratings are also absent because the real site does not publish them per course; the per-COMBO-PACK ratings that do exist are shown on the combo cards instead.",
+    "sectionHeader": {
+      "kicker": "Real people, real challenge",
+      "title": "What finishing actually looks like",
+      "description": "Tutedude learners record their own review once they finish and get their fee back."
+    },
+    "rating": {
+      "value": "4.9",
+      "outOf": "5",
+      "stars": 5,
+      "source": "Google Ratings",
+      "supportLine": "100k+ learners across 50+ courses"
+    },
+    "highlights": [
+      {
+        "id": "community",
+        "value": "100k+",
+        "label": "Learners enrolled"
+      },
+      {
+        "id": "mentor",
+        "value": "100k+",
+        "label": "Doubts solved live"
+      },
+      {
+        "id": "project",
+        "value": "10k+",
+        "label": "Student projects built"
+      }
+    ],
+    "videoReviews": {
+      "label": "Video reviews from our students",
+      "role": "Student",
+      "watchLabel": "Watch review",
+      "people": [
+        {
+          "name": "Salman"
+        },
+        {
+          "name": "Apeksha"
+        },
+        {
+          "name": "Naveen"
+        },
+        {
+          "name": "Shadab Ahmed"
+        },
+        {
+          "name": "Uttam"
+        },
+        {
+          "name": "Ish Aggarwal"
+        },
+        {
+          "name": "Arsh Pathak"
+        },
+        {
+          "name": "Gaurav Chavda"
+        },
+        {
+          "name": "Shrinath Padvane"
+        },
+        {
+          "name": "Aranya"
+        },
+        {
+          "name": "Shubhodeep"
+        },
+        {
+          "name": "Saurav"
+        },
+        {
+          "name": "Aditya"
+        },
+        {
+          "name": "Harsh"
+        },
+        {
+          "name": "Pratap"
+        },
+        {
+          "name": "Rahul"
+        },
+        {
+          "name": "Sujan"
+        }
+      ]
+    },
+    "testimonials": []
+  },
+  "faq": {
+    "sectionHeader": {
+      "kicker": "Before you ask",
+      "title": "Got Questions? Check Out Our FAQs",
+      "description": ""
+    },
+    "_note": "Q1, Q2 and Q5 are tutedude.com's own real FAQ answers (Sep 2026, lightly trimmed); Q3 and Q4 are ours, consistent with the real ones.",
+    "items": [
+      {
+        "question": "How will I receive my 100% refund?",
+        "answer": "Through the original mode of payment, once you complete the course and submit the assignments, exercises and projects within the time period."
+      },
+      {
+        "question": "Will my course access expire after I get the refund?",
+        "answer": "No — you keep lifetime access to the course and your mentor's support, even after you've received your 100% refund."
+      },
+      {
+        "question": "What if I don't finish in 3 months?",
+        "answer": "You keep the course and your lifetime access either way — you just don't qualify for the refund on that attempt. Nothing expires or gets taken away."
+      },
+      {
+        "question": "What's the difference between a single course, a combo pack and All Access?",
+        "answer": "A single course covers one challenge. A combo bundles 4+ courses together. All Access unlocks every course on the platform."
+      },
+      {
+        "question": "How do I access my mentor?",
+        "answer": "Industry mentors come live in the evening and connect with you 1:1 — you can clear doubts by chat, audio or screen-sharing. Timings vary, mainly 7–10pm, Monday to Saturday."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Your first 90 days start whenever you're ready.",
+    "description": "Pick a course, start the challenge, get your money back when you finish.",
+    "primaryCta": {
+      "label": "Start Your 90 Days Challenge",
+      "href": "#courses"
+    }
+  }
+}

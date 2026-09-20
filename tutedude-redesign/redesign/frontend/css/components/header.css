@@ -1,0 +1,591 @@
+/*
+  Header component — two variants, one markup source (rendered by js/components/header.js).
+    .site-header--standard  full-width sticky header (default, top of page)
+    .site-header--floating  compact rounded floating bar, inset from the viewport edges
+
+  Figma note: both variants are simple auto-layout rows — logo | nav | actions —
+  with a single dropdown panel and a separate mobile-nav overlay. No effects here
+  that can't be rebuilt as a frame + auto layout + a couple of shadow/blur styles.
+*/
+
+/*
+  position: fixed, not sticky, at every breakpoint.
+  #header (the mount element this renders into) wraps only the header
+  itself, with no extra height beyond it — and `position: sticky` only
+  stays stuck while its containing block is still in the viewport. With a
+  containing block exactly as tall as the sticky element, it loses its
+  stick and scrolls away with the page the instant you scroll past the
+  header's own height. `position: fixed` sidesteps that entirely and pins
+  reliably regardless of ancestor height, on mobile and desktop alike.
+
+  Because fixed removes the header from the document flow, header.js
+  measures its rendered height into --header-offset and adds
+  `has-fixed-header` to <body>, so `main` gets that height back as
+  padding-top (see below) and page content never sits underneath it.
+*/
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  margin: 0;
+  max-width: none;
+  z-index: 100;
+  background: var(--white);
+  border: 1px solid transparent;
+  border-bottom-color: var(--gray-100);
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  /* Promotes the header to its own compositor layer, so mobile Safari/Chrome
+     don't visually lag or drag it during elastic overscroll/rubber-band
+     scrolling — a common cause of a "fixed" header appearing to move with
+     the page on real phones even though it's correctly pinned. */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  transition: background 0.3s ease, border-color 0.3s ease, border-radius 0.3s ease,
+    box-shadow 0.3s ease, top 0.3s ease, left 0.3s ease, right 0.3s ease,
+    max-width 0.3s ease, margin 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+body.has-fixed-header main {
+  padding-top: var(--header-offset, 64px);
+}
+
+/*
+  Scrolled state (standard variant only): the SAME fixed element — not a
+  wrapper, not a second layer — evolves from a full-bleed solid bar into an
+  inset, rounded, translucent/blurred "glass" bar. Logo, nav and actions
+  never leave this element, so the whole header transitions as one piece.
+*/
+.site-header--standard.is-scrolled {
+  top: var(--space-3);
+  left: var(--space-4);
+  right: var(--space-4);
+  max-width: calc(var(--container-max) - var(--space-8));
+  margin: 0 auto;
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.site-header--standard.is-scrolled .site-header__logo {
+  height: 28px;
+}
+
+.site-header--floating {
+  top: var(--space-4);
+  left: var(--space-4);
+  right: var(--space-4);
+  border-color: var(--gray-100);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  max-width: calc(var(--container-max) - var(--space-8));
+  margin: 0 auto;
+}
+
+.site-header__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-3) var(--gutter-mobile);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  transition: padding 0.3s ease;
+}
+
+.site-header--standard.is-scrolled .site-header__inner {
+  padding: var(--space-2) var(--space-4);
+}
+
+.site-header--floating .site-header__inner {
+  padding: var(--space-2) var(--space-4);
+}
+
+/* ---------- Brand ---------- */
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-header__logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.site-header--floating .site-header__logo {
+  height: 26px;
+}
+
+/* ---------- Primary nav (desktop) ---------- */
+.site-header__nav {
+  display: none;
+  flex: 1;
+}
+
+.site-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header__nav-item {
+  position: relative;
+}
+
+.site-header__nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  color: var(--ink-700);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-header__nav-link:hover {
+  color: var(--brand-700);
+}
+
+.site-header__nav-link.is-active {
+  color: var(--brand-700);
+  border-bottom-color: var(--brand-500);
+}
+
+.site-header__caret {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.15s ease;
+}
+
+.site-header__nav-item.is-open .site-header__caret {
+  transform: rotate(180deg);
+}
+
+/* ---------- Dropdown ----------
+   The outer .site-header__dropdown sits flush against the trigger (top: 100%,
+   no margin) and uses padding-top to create the visual gap instead. That
+   padding is still part of the element's hoverable box, so the cursor never
+   crosses dead space on the way from the link to the panel — no gap, no
+   flicker. The visible card (background/border/shadow) lives on the inner
+   .site-header__dropdown-panel only.
+*/
+.site-header__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: var(--space-3);
+  z-index: 10;
+}
+
+.site-header__dropdown-panel {
+  min-width: 300px;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-4);
+}
+
+.site-header__nav-item.is-open .site-header__dropdown {
+  display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-header__nav-item.has-dropdown:hover .site-header__dropdown {
+    display: block;
+  }
+}
+
+.site-header__dropdown-heading {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--ink-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 var(--space-3) 0;
+}
+
+.site-header__dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.site-header__dropdown-link {
+  display: block;
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+.site-header__dropdown-link:hover {
+  background: var(--brand-100);
+}
+
+.site-header__dropdown-title {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--ink-900);
+}
+
+.site-header__dropdown-desc {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-500);
+  margin-top: 2px;
+}
+
+/* ---------- Actions ---------- */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.site-header__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--ink-700);
+  cursor: pointer;
+}
+
+.site-header__icon-btn:hover {
+  background: var(--gray-100);
+}
+
+.site-header__icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.site-header__search {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--space-2);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+}
+
+.site-header__search.is-open {
+  display: block;
+}
+
+.site-header__search input {
+  width: 260px;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  padding: var(--space-2) var(--space-3);
+  color: var(--ink-900);
+}
+
+.site-header__login {
+  display: none;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  color: var(--ink-700);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+}
+
+.site-header__login:hover {
+  color: var(--brand-700);
+}
+
+.site-header__login svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.site-header__cta {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--white);
+  background: var(--brand-500);
+  text-decoration: none;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.site-header__cta:hover {
+  background: var(--brand-600);
+}
+
+.site-header__cta svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- Mobile menu toggle ---------- */
+.site-header__menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--ink-900);
+  cursor: pointer;
+}
+
+.site-header__menu-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ---------- Mobile nav overlay ---------- */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+}
+
+.mobile-nav.is-open {
+  display: block;
+}
+
+.mobile-nav__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 20, 69, 0.45);
+}
+
+.mobile-nav__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(340px, 86vw);
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.mobile-nav__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.mobile-nav__close {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--gray-100);
+  color: var(--ink-900);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav__close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.mobile-nav__list {
+  list-style: none;
+  margin: 0 0 var(--space-6) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav__item {
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.mobile-nav__link,
+.mobile-nav__item-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-medium);
+  color: var(--ink-900);
+  text-decoration: none;
+  padding: var(--space-4) var(--space-1);
+  cursor: pointer;
+}
+
+.mobile-nav__link.is-active {
+  color: var(--brand-700);
+}
+
+.mobile-nav__item-toggle svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.15s ease;
+}
+
+.mobile-nav__item.is-open .mobile-nav__item-toggle svg {
+  transform: rotate(180deg);
+}
+
+.mobile-nav__submenu {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: 0 0 var(--space-3) var(--space-3);
+}
+
+.mobile-nav__item.is-open .mobile-nav__submenu {
+  display: flex;
+}
+
+.mobile-nav__sublink {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--ink-500);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-1);
+}
+
+.mobile-nav__sublink.is-active {
+  color: var(--brand-700);
+  font-weight: var(--fw-semibold);
+}
+
+.mobile-nav__search {
+  margin-bottom: var(--space-5);
+}
+
+.mobile-nav__search input {
+  width: 100%;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  outline: none;
+}
+
+.mobile-nav__search input:focus {
+  border-color: var(--brand-500);
+}
+
+.mobile-nav__actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mobile-nav__login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body);
+  color: var(--ink-900);
+  background: var(--gray-100);
+  text-decoration: none;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+}
+
+.mobile-nav__login svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.mobile-nav__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body);
+  color: var(--white);
+  background: var(--brand-500);
+  text-decoration: none;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+}
+
+.mobile-nav__cta svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- Breakpoints ---------- */
+@media (min-width: 1024px) {
+  .site-header__nav {
+    display: flex;
+  }
+
+  .site-header__login,
+  .site-header__cta {
+    display: inline-flex;
+  }
+
+  .site-header__menu-toggle {
+    display: none;
+  }
+}

@@ -1,0 +1,163 @@
+/*
+  Tutedude Redesign — Design Tokens
+  Source of truth for color, type, spacing, radius, shadow and breakpoints.
+  Every value here should map 1:1 to a Figma color style / text style / effect style / variable.
+
+  Breakpoints (documented, not usable inside :root):
+    mobile:  0    - 767px   (base / mobile-first)
+    tablet:  768  - 1023px
+    desktop: 1024px+
+*/
+
+:root {
+  /* ---------- Brand ----------
+     Sampled directly from the logo file (TD Logo.jpeg), not invented.
+     The icon is a 2-color gradient: a light violet at the top and a
+     dark indigo at the bottom. Every step below is a real interpolation
+     between those two measured colors, not a separately chosen palette.
+       violet (logo, light end):  #AB74C4
+       indigo (logo, dark end):   #332C99
+  */
+  --brand-100: #EADCF0; /* violet tinted toward white */
+  --brand-200: #CDACDC;
+  --brand-300: #AB74C4; /* = logo's light violet, sampled */
+  --brand-400: #955EB6;
+  --brand-500: #815BB5; /* primary brand color — midpoint of the logo gradient */
+  --brand-600: #684CAC;
+  --brand-700: #332C99; /* = logo's dark indigo, sampled */
+  --brand-800: #231F6B;
+  --brand-900: #171445; /* indigo shaded toward black */
+
+  /* ---------- Ink (text) ---------- */
+  --ink-900: #14101F; /* headings */
+  --ink-700: #372F52; /* body text */
+  --ink-500: #635C7A; /* secondary text */
+  --ink-300: #A9A2C2; /* placeholder / disabled */
+
+  /* ---------- Surfaces ---------- */
+  --white:        #FFFFFF;
+  --surface:      #FBFAFF; /* page background, lavender-tinted */
+  --surface-alt:  #F1EEFB; /* section alt background */
+  --surface-dark: var(--brand-900); /* dark section background */
+
+  /* ---------- Semantic ---------- */
+  --success-600: #16A34A;
+  --success-500: #22C55E; /* refund / positive confirmation */
+  --success-100: #DCFCE7;
+
+  --accent-teal-500: #14B8A6; /* live doubt-solving / mentorship accent */
+  --accent-teal-100: #CCFBF1;
+
+  --gold-500: #F5A524; /* ratings / stars */
+
+  --danger-500: #EF4444;
+
+  /* ---------- Neutral gray scale ---------- */
+  --gray-900: #111827;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-100: #F3F4F6;
+
+  /* ---------- Dividers ----------
+     Opacity-based, not a flat gray swatch — stays visible at a consistent
+     contrast against any surface color (white, --surface, a tinted
+     gradient) instead of washing out on lighter backgrounds. */
+  --border-divider: rgba(20, 16, 31, 0.14);
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Plus Jakarta Sans', 'Sora', 'Segoe UI', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif;
+
+  /* Accent faces — used sparingly for one-line decorative moments (a
+     pull-quote, a handwritten aside), never for running body copy.
+     Figma: two extra text styles, "Serif Italic Accent" / "Script Accent". */
+  --font-serif: 'Lora', 'Georgia', serif;
+  --font-script: 'Caveat', cursive;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.6;
+
+  /* Type scale — mobile-first base sizes, overridden at tablet/desktop below */
+  --fs-hero: 2.5rem;   /* 40px — dedicated hero display size, larger than --fs-h1 */
+  --fs-h1: 2rem;       /* 32px */
+  --fs-h2: 1.5rem;      /* 24px */
+  --fs-h3: 1.25rem;     /* 20px */
+  --fs-body-lg: 1.125rem; /* 18px */
+  --fs-body: 1rem;      /* 16px */
+  --fs-body-sm: 0.875rem; /* 14px */
+  --fs-caption: 0.75rem;  /* 12px */
+
+  /* ---------- Spacing scale (4px base unit) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-30: 120px;
+
+  /* ---------- Radius (Figma Spec) ----------
+     XS: 6px, SM: 8px, MD: 12px, LG: 16px, XL: 24px, Pill: 9999px */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* ---------- Shadow (elevation) ---------- */
+  --shadow-sm: 0 1px 3px rgba(20, 16, 31, 0.05), 0 1px 2px rgba(20, 16, 31, 0.04);
+  --shadow-md: 0 6px 16px rgba(20, 16, 31, 0.07), 0 2px 6px rgba(20, 16, 31, 0.04);
+  --shadow-lg: 0 16px 32px rgba(20, 16, 31, 0.09), 0 4px 12px rgba(20, 16, 31, 0.05);
+  --shadow-card: 0 10px 30px rgba(51, 44, 153, 0.08), 0 2px 8px rgba(20, 16, 31, 0.04);
+  --shadow-hero: 0 24px 50px rgba(51, 44, 153, 0.16);
+  --shadow-glow: 0 12px 36px rgba(104, 76, 172, 0.25);
+
+  /* ---------- Glass (scrolled/floating surfaces) ---------- */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-blur: 16px;
+
+  /* ---------- Layout ---------- */
+  --container-max: 1280px;
+  --container-md: 960px;
+  --gutter-mobile: 20px;
+  --gutter-tablet: 40px;
+  --gutter-desktop: 64px;
+}
+
+/* ---------- Responsive type scale ---------- */
+@media (min-width: 768px) {
+  :root {
+    --fs-hero: 3.25rem; /* 52px */
+    --fs-h1: 2.5rem;   /* 40px */
+    --fs-h2: 1.875rem; /* 30px */
+    --fs-h3: 1.5rem;   /* 24px */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --fs-hero: 4.25rem; /* 68px */
+    --fs-h1: 3rem;     /* 48px */
+    --fs-h2: 2.25rem;  /* 36px */
+    --fs-h3: 1.75rem;  /* 28px */
+    --fs-body-lg: 1.25rem; /* 20px */
+  }
+}

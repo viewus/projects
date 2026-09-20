@@ -47,6 +47,7 @@ require_once ADN_THEME_DIR . '/src/Helper/LanguageHelper.php';
 require_once ADN_THEME_DIR . '/src/Helper/UrlHelper.php';
 require_once ADN_THEME_DIR . '/src/Helper/StringHelper.php';
 require_once ADN_THEME_DIR . '/src/Service/AssetLoader.php';
+require_once ADN_THEME_DIR . '/src/Service/OfflineSearchIndex.php';
 require_once ADN_THEME_DIR . '/src/Repository/CategoryRepository.php';
 require_once ADN_THEME_DIR . '/src/Repository/HomeRepository.php';
 require_once ADN_THEME_DIR . '/src/Repository/TopicCategoryRepository.php';

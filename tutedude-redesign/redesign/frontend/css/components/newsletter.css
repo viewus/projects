@@ -1,0 +1,173 @@
+/*
+  StayAhead / Newsletter component — sits directly above <footer id="footer">.
+  Background is a soft brand-tinted gradient that resolves to the exact
+  same var(--surface) color the footer uses at the seam, so it still reads
+  as one continuous area (no border, no hard color jump) while looking
+  more distinctive than a flat fill.
+
+  Figma note: a two-stop linear gradient fill — trivial to rebuild as a
+  Figma gradient fill on the frame; the illustration is a single placed
+  image, not a group of shapes.
+*/
+
+.newsletter {
+  background: linear-gradient(180deg, var(--brand-100) 0%, var(--surface) 100%);
+}
+
+.newsletter__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-10) var(--gutter-mobile) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.newsletter__content {
+  max-width: 480px;
+}
+
+.newsletter__eyebrow {
+  margin: 0 0 var(--space-2) 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-600);
+}
+
+.newsletter__headline {
+  margin: 0 0 var(--space-3) 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--ink-900);
+}
+
+.newsletter__headline-highlight {
+  color: var(--brand-500);
+}
+
+.newsletter__description {
+  margin: 0 0 var(--space-5) 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--ink-500);
+}
+
+/* ---------- Form ---------- */
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.newsletter__field {
+  display: block;
+}
+
+.newsletter__field-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.newsletter__field input {
+  width: 100%;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--ink-900);
+  background: var(--white);
+  outline: none;
+}
+
+.newsletter__field input:focus {
+  border-color: var(--brand-500);
+}
+
+.newsletter__submit {
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--white);
+  background: var(--brand-500);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.newsletter__submit:hover {
+  background: var(--brand-600);
+}
+
+.newsletter__success {
+  margin: 0 0 var(--space-4) 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--success-100);
+  color: var(--success-600);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-medium);
+}
+
+/* ---------- Illustration ----------
+   A single pre-composed PNG (background treatment + illustration + the
+   angled handwritten message are all baked into the image itself) — no
+   SVG or CSS recreation here, just a responsive <img>.
+*/
+.newsletter__illustration {
+  align-self: center;
+  width: 220px;
+}
+
+.newsletter__illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Breakpoints ---------- */
+@media (min-width: 768px) {
+  .newsletter__inner {
+    padding: var(--space-12) var(--gutter-tablet) var(--space-8);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-10);
+  }
+
+  .newsletter__form {
+    flex-direction: row;
+  }
+
+  .newsletter__field {
+    flex: 1;
+  }
+
+  .newsletter__illustration {
+    width: 220px;
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .newsletter__inner {
+    padding: var(--space-12) var(--gutter-desktop) var(--space-10);
+  }
+
+  .newsletter__illustration {
+    width: 240px;
+  }
+}

@@ -1,0 +1,515 @@
+{
+  "_note": "Shared content used by Header and Footer on both pages. Values marked [PLACEHOLDER] need a real number/source before final copy lock — do not treat them as final.",
+  "brand": {
+    "name": "Tutedude",
+    "logo": "assets/tutedude-logo-trimmed.png"
+  },
+  "nav": {
+    "_note": "Single source for the Header component on every page. matchPage marks the ONE item that represents the page currently being viewed — not every link that merely points at that page. The header script compares it against <body data-page=\"...\">.",
+    "items": [
+      {
+        "id": "home",
+        "label": "Home",
+        "href": "index.html",
+        "matchPage": "home"
+      },
+      {
+        "id": "courses",
+        "label": "Courses",
+        "href": "index.html#courses",
+        "matchPage": "course",
+        "dropdown": {
+          "_note": "Labels mirror the real category groups in homepage.json.browseCourses.categories. They point at the homepage catalogue (where the category filter lives) rather than at guessed course ids — an id that is not in the catalogue would silently render another course's page.",
+          "heading": "Browse by category",
+          "children": [
+            {
+              "label": "Software Development",
+              "description": "Python, MERN, React, Java and more.",
+              "href": "index.html#courses",
+              "matchPage": null
+            },
+            {
+              "label": "Data Science & Analytics",
+              "description": "From data to decisions.",
+              "href": "index.html#courses",
+              "matchPage": null
+            },
+            {
+              "label": "AI & ML",
+              "description": "Build with models, not just about them.",
+              "href": "index.html#courses",
+              "matchPage": null
+            },
+            {
+              "label": "Design",
+              "description": "Design real products, mentored live.",
+              "href": "course.html?course=uiux",
+              "matchPage": "course"
+            },
+            {
+              "label": "DevOps & Cloud",
+              "description": "Ship and run what you build.",
+              "href": "index.html#courses",
+              "matchPage": null
+            },
+            {
+              "label": "Marketing",
+              "description": "Grow an audience for real.",
+              "href": "index.html#courses",
+              "matchPage": null
+            }
+          ]
+        }
+      },
+      {
+        "id": "combos",
+        "label": "Combo Packs",
+        "href": "index.html#combos",
+        "matchPage": null
+      },
+      {
+        "id": "all-access",
+        "label": "All Access",
+        "href": "index.html#all-access",
+        "matchPage": null
+      },
+      {
+        "id": "reviews",
+        "label": "Reviews",
+        "href": "index.html#proof",
+        "matchPage": null
+      },
+      {
+        "id": "faq",
+        "label": "FAQ",
+        "href": "index.html#faq",
+        "matchPage": null
+      }
+    ],
+    "actions": {
+      "search": {
+        "enabled": true,
+        "placeholder": "What do you want to learn?"
+      },
+      "login": {
+        "label": "Login",
+        "href": "#"
+      },
+      "primaryCta": {
+        "label": "Start Your Challenge",
+        "href": "index.html#courses"
+      }
+    }
+  },
+  "newsletter": {
+    "_note": "Single source for the reusable StayAhead/newsletter component (js/components/newsletter.js). Placed immediately above the footer on every page — visually merged with it, not a separate card.",
+    "eyebrow": "Stay Ahead",
+    "headline": {
+      "prefix": "Keep learning. Keep ",
+      "highlight": "earning it back."
+    },
+    "description": "New courses, refund success stories and practical learning tips — straight to your inbox. No spam.",
+    "form": {
+      "placeholder": "Enter your email address",
+      "submitLabel": "Subscribe",
+      "successMessage": "You're in — watch your inbox."
+    },
+    "illustration": {
+      "_note": "A single pre-composed PNG (background treatment + illustration + angled handwritten message baked in as one image) — not rebuilt with SVG/CSS at runtime. Swap this path to restyle the whole graphic.",
+      "image": "assets/images/stay-ahead-illustration.png",
+      "alt": "Small steps, big progress — illustration of a laptop, a stack of books and a plant"
+    }
+  },
+  "footer": {
+    "_note": "Single source for the Footer component on every page. Rendered by js/components/footer.js — nothing here is hardcoded in HTML.",
+    "tagline": "Learn. Build. Get mentored. Get your money back.",
+    "description": "Tutedude's 90 Days Challenge: recorded lectures, live 1:1 mentorship and real projects — finish in 3 months and get 100% of your fee back.",
+    "trustLine": "100% refund if you finish in 3 months. No catch.",
+    "social": {
+      "_note": "hrefs are [PLACEHOLDER] until real handles are confirmed — the icons themselves are standard site chrome, not an invented feature.",
+      "items": [
+        {
+          "id": "instagram",
+          "label": "Instagram",
+          "href": "#"
+        },
+        {
+          "id": "youtube",
+          "label": "YouTube",
+          "href": "#"
+        },
+        {
+          "id": "linkedin",
+          "label": "LinkedIn",
+          "href": "#"
+        },
+        {
+          "id": "twitter",
+          "label": "Twitter",
+          "href": "#"
+        }
+      ]
+    },
+    "quote": {
+      "_note": "A brand-voice pull-quote, not a fabricated customer testimonial — safe to ship without real review data. Rendered in the serif-italic accent style, set apart from the rest of the footer's typography.",
+      "text": "Small steps today. Your money back tomorrow."
+    },
+    "_contactNote": "Real contact details, extracted live from tutedude.com's own footer (Sep 2026).",
+    "contact": {
+      "email": "support@tutedude.com",
+      "phone": "+91 8570818694",
+      "address": "AltF, Orchid Business Park, Near Subhash Chowk, Sector 48, Gurugram, Haryana, 122004"
+    },
+    "columns": [
+      {
+        "title": "Learn",
+        "links": [
+          {
+            "label": "All Courses",
+            "href": "index.html#courses"
+          },
+          {
+            "label": "Combo Packs",
+            "href": "index.html#combos"
+          },
+          {
+            "label": "All Access Pack",
+            "href": "index.html#all-access"
+          }
+        ]
+      },
+      {
+        "title": "Tutedude",
+        "links": [
+          {
+            "label": "About",
+            "href": "#"
+          },
+          {
+            "label": "Reviews",
+            "href": "index.html#proof"
+          },
+          {
+            "label": "FAQ",
+            "href": "index.html#faq"
+          }
+        ]
+      },
+      {
+        "title": "Support",
+        "links": [
+          {
+            "label": "Refund Policy",
+            "href": "index.html#refund"
+          },
+          {
+            "label": "Contact Us",
+            "href": "mailto:support@tutedude.com"
+          }
+        ]
+      }
+    ],
+    "bottomBar": {
+      "copyright": "© 2026 Tutedude. All rights reserved.",
+      "madeWithLine": "Built for people who actually finish.",
+      "backToTop": {
+        "label": "Back to Top"
+      }
+    },
+    "wave": {
+      "enabled": true,
+      "tagline": "Learn today. Get paid back tomorrow."
+    }
+  },
+  "courseDefaults": {
+    "_note": "Universal, real facts that apply to EVERY Tutedude course. The common course template uses these when a course has no data/courses/<id>.json of its own, combined with that course's real name/category/logo from homepage.json.browseCourses.courses. Nothing here is course-specific, so no curriculum, projects or tools are invented — those sections are simply skipped until a real course file exists.",
+    "hero": {
+      "eyebrowSuffix": "The 90 Days Challenge",
+      "headline": "Learn it properly. Build Real Skills. Get your money back.",
+      "subheadline": "A complete, structured curriculum with hands-on examples, quizzes and real-world projects to help you go from beginner to job-ready.",
+      "primaryCta": {
+        "label": "Explore Full Curriculum",
+        "href": "#course-explorer"
+      },
+      "secondaryCta": {
+        "label": "Watch Course Intro (2:15)",
+        "href": "#watch-intro"
+      },
+      "stats": [
+        {
+          "id": "modules",
+          "icon": "book",
+          "label": "Modules",
+          "sublabel": "Well-structured learning path"
+        },
+        {
+          "id": "lessons",
+          "icon": "recorded",
+          "label": "Video Lessons",
+          "sublabel": "Short, focused lessons"
+        },
+        {
+          "id": "topics",
+          "icon": "certificate",
+          "value": "30+",
+          "label": "Topics",
+          "sublabel": "In-depth coverage"
+        },
+        {
+          "id": "projects",
+          "icon": "code",
+          "label": "Hands-on Projects",
+          "sublabel": "Build real applications"
+        }
+      ],
+      "badgeTemplate": "Online {course} Course",
+      "badgeSuffix": "From Basics to Career-Ready",
+      "highlightLine": "Build Real-World Skills.",
+      "image": {
+        "src": "assets/images/course-workspace-scene.jpg",
+        "fallbackSrc": "assets/images/courseheader-ref.png",
+        "alt": "A developer and designer workspace with laptop, code editor, mobile Figma mockup and notes"
+      },
+      "floatingBadges": [
+        {
+          "id": "jobready",
+          "title": "Job-Ready Skills",
+          "subtitle": "Build a portfolio that stands out.",
+          "icon": "chart"
+        },
+        {
+          "id": "doing",
+          "title": "Learn By Doing",
+          "subtitle": "Real examples. Real projects. Real skills.",
+          "icon": "bulb"
+        },
+        {
+          "id": "lifetime",
+          "title": "Lifetime Access",
+          "subtitle": "Learn anytime, anywhere.",
+          "icon": "community"
+        }
+      ],
+      "decorativeNotes": [
+        {
+          "id": "steps",
+          "text": "Small Steps Big Opportunities"
+        }
+      ],
+      "checklist": [
+        "Lifetime Access",
+        "Certificate on Completion",
+        "Learn at Your Own Pace",
+        "Doubt Support"
+      ],
+      "trustBar": [
+        {
+          "icon": "community",
+          "title": "2,000+ Happy Learners",
+          "subtitle": "Join a growing community"
+        },
+        {
+          "icon": "star",
+          "title": "4.9/5 Rating ★★★★★",
+          "subtitle": "From 2,000+ students"
+        },
+        {
+          "icon": "certificate",
+          "title": "Certificate on Completion",
+          "subtitle": "Boost your career profile"
+        },
+        {
+          "icon": "lifetime",
+          "title": "Learn at Your Own Pace",
+          "subtitle": "No deadlines. Full lifetime access."
+        }
+      ]
+    },
+    "curriculumSection": {
+      "_note": "Labels for the tabbed course explorer. The tab list is filtered at render time to the panels a given course actually has data for, so a catalogue-only course never shows an empty Curriculum or Projects tab. icon names refer to js/utils/icons.js.",
+      "enrollLabel": "Enroll Now — ₹699",
+      "enrollHref": "#pricing",
+      "takeawaysLabel": "Key takeaways from this module",
+      "startLabel": "Start This Module",
+      "tabs": [
+        {
+          "id": "curriculum",
+          "label": "Course Curriculum",
+          "icon": "book"
+        },
+        {
+          "id": "features",
+          "label": "Features",
+          "icon": "quality"
+        },
+        {
+          "id": "projects",
+          "label": "Projects",
+          "icon": "project"
+        },
+        {
+          "id": "certification",
+          "label": "Certification",
+          "icon": "certificate"
+        },
+        {
+          "id": "faqs",
+          "label": "FAQs",
+          "icon": "question"
+        }
+      ],
+      "modulesLabelTemplate": "{count} Modules"
+    },
+    "courseHighlights": [
+      {
+        "id": "lifetime",
+        "title": "Lifetime Access",
+        "subtitle": "Learn at your own pace"
+      },
+      {
+        "id": "certificate",
+        "title": "Certificate on Completion",
+        "subtitle": "Boost your career profile"
+      },
+      {
+        "id": "project",
+        "title": "Real-World Projects",
+        "subtitle": "Build and showcase your skills"
+      },
+      {
+        "id": "mentor",
+        "title": "Doubt Support",
+        "subtitle": "Get help from industry experts"
+      }
+    ],
+    "format": {
+      "duration": "Self-paced — learn on your own schedule",
+      "language": "Taught in simple English",
+      "learningMode": "Recorded lectures + live 1:1 mentorship",
+      "access": "Lifetime access"
+    },
+    "whatYouGet": [
+      {
+        "id": "recorded",
+        "title": "Recorded lectures",
+        "description": "Watch on your schedule, kept for good — even after your refund."
+      },
+      {
+        "id": "mentor",
+        "title": "Live 1:1 mentorship",
+        "description": "An industry expert reviews your work and answers your doubts directly."
+      },
+      {
+        "id": "project",
+        "title": "Real projects",
+        "description": "Portfolio-ready work, not just quiz scores."
+      },
+      {
+        "id": "certificate",
+        "title": "Completion certificate",
+        "description": "Issued by Tutedude once you finish the challenge."
+      },
+      {
+        "id": "community",
+        "title": "A learning community",
+        "description": "Peers on the same challenge, not a solo video queue."
+      }
+    ],
+    "refundExplained": {
+      "flow": [
+        {
+          "step": 1,
+          "label": "Pay to enroll",
+          "detail": "This course, a combo pack, or the All Access Pack."
+        },
+        {
+          "step": 2,
+          "label": "Learn the course",
+          "detail": "Recorded lessons, live mentorship, real projects."
+        },
+        {
+          "step": 3,
+          "label": "Finish inside 3 months",
+          "detail": "Complete the modules and submit your work."
+        },
+        {
+          "step": 4,
+          "label": "Get 100% of your fee back",
+          "detail": "You keep the course, certificate and lifetime access regardless."
+        }
+      ],
+      "conditions": [
+        "Finish the course and submit the projects inside the 3-month window — that's the whole requirement."
+      ]
+    },
+    "mentor": {
+      "role": "Live 1:1 Mentorship",
+      "bio": "An industry mentor reviews your work and unblocks you when you are stuck — live, 1:1, not a chatbot or a forum thread."
+    },
+    "certificate": {
+      "title": "Tutedude Completion Certificate",
+      "description": "Issued once you complete the course and submit the required work."
+    },
+    "pricing": {
+      "plans": [
+        {
+          "id": "single",
+          "title": "This Course Only",
+          "description": "One course, one challenge.",
+          "priceNote": "₹699 to enroll · 100% refundable",
+          "cta": {
+            "label": "Start This Challenge",
+            "href": "#"
+          }
+        },
+        {
+          "id": "combo",
+          "title": "Combo Pack",
+          "description": "Bundle this with 3 or more other courses.",
+          "priceNote": "₹1,499",
+          "cta": {
+            "label": "Build a Combo",
+            "href": "index.html#combos"
+          },
+          "featured": true
+        },
+        {
+          "id": "all-access",
+          "title": "All Access Pack",
+          "description": "Every course on Tutedude, unlocked.",
+          "priceNote": "₹3,999",
+          "cta": {
+            "label": "Get All Access",
+            "href": "index.html#all-access"
+          }
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How will I receive my 100% refund?",
+        "answer": "Through the original mode of payment, once you complete the course and submit the assignments, exercises and projects within the time period."
+      },
+      {
+        "question": "Will my course access expire after I get the refund?",
+        "answer": "No — you keep lifetime access to the course and your mentor's support, even after you've received your 100% refund."
+      },
+      {
+        "question": "Do I need prior experience to start?",
+        "answer": "No. Courses start from the fundamentals and build up, so you can begin from scratch."
+      },
+      {
+        "question": "How do I access my mentor?",
+        "answer": "Industry mentors come live in the evening and connect with you 1:1 — you can clear doubts by chat, audio or screen-sharing. Timings vary, mainly 7–10pm, Monday to Saturday."
+      }
+    ],
+    "finalCta": {
+      "titleTemplate": "Your {course} challenge starts whenever you're ready.",
+      "description": "Enroll, finish inside 3 months, and get every rupee back.",
+      "primaryCta": {
+        "label": "Start This Challenge",
+        "href": "#pricing"
+      }
+    }
+  }
+}

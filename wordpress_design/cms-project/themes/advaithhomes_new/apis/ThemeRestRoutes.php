@@ -59,6 +59,7 @@ class ADN_Theme_Rest_Routes {
 			array( 'route' => '/guides',                             'methods' => 'GET',  'callback' => array( self::class, '_cb_guides' ),           'permission' => '__return_true' ),
 			array( 'route' => '/tools',                              'methods' => 'GET',  'callback' => array( self::class, '_cb_tools' ),            'permission' => '__return_true' ),
 			array( 'route' => '/search',                             'methods' => 'GET',  'callback' => array( self::class, '_cb_search' ),           'permission' => '__return_true' ),
+			array( 'route' => '/search/offline-index',               'methods' => 'GET',  'callback' => array( self::class, '_cb_search_offline_index' ), 'permission' => '__return_true' ),
 			array( 'route' => '/faqs',                               'methods' => 'GET',  'callback' => array( self::class, '_cb_faqs' ),             'permission' => '__return_true' ),
 			array( 'route' => '/home',                               'methods' => 'GET',  'callback' => array( self::class, '_cb_home' ),             'permission' => '__return_true' ),
 			array( 'route' => '/home/section/(?P<section>[a-z_]+)',  'methods' => 'GET',  'callback' => array( self::class, '_cb_home_fragment' ),    'permission' => '__return_true' ),
@@ -432,6 +433,21 @@ class ADN_Theme_Rest_Routes {
 			'data'    => $data,
 			'meta'    => array( 'query' => $q, 'total' => (int) $query->found_posts, 'page' => $page, 'per_page' => $per_page, 'total_pages' => (int) $query->max_num_pages ),
 		), 200 );
+	}
+
+	/** GET /search/offline-index - full precompiled client-side search index. */
+	public static function _cb_search_offline_index( WP_REST_Request $req ): WP_REST_Response {
+		$index = class_exists( '\Adn\Theme\Service\OfflineSearchIndex' )
+			? \Adn\Theme\Service\OfflineSearchIndex::getIndex()
+			: array( 'version' => 1, 'items' => array() );
+
+		$res = new WP_REST_Response( array(
+			'success' => true,
+			'data'    => $index,
+		), 200 );
+
+		$res->header( 'Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400' );
+		return $res;
 	}
 
 	/** GET /faqs - global FAQ list from CMS DB. */

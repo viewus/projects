@@ -1,0 +1,553 @@
+Yes. If you want to do this **like a real product/design project**, don't open Figma immediately.
+
+Follow this order:
+
+## Step 1 — Understand the current product
+
+First spend **30–60 minutes** only understanding Tutedude.
+
+Check:
+
+* Home page
+* Course page
+* All Access page
+* Combo Pack page
+* Reviews page
+* FAQs
+
+Your goal is to answer:
+
+> **“If I am a student who has never heard of Tutedude, what do I understand after 30 seconds?”**
+
+The brief specifically asks you to think like a stranger, not like an existing student. 
+
+---
+
+# Step 2 — Identify the real problems
+
+Create a simple document like this:
+
+| Problem                      | Why it is a problem              | Design solution                     |
+| ---------------------------- | -------------------------------- | ----------------------------------- |
+| Don't understand Tutedude    | User sees another course website | Explain the product clearly in hero |
+| Refund is confusing          | User doesn't trust it            | Create a simple refund explanation  |
+| Too many courses/cards       | Important message gets lost      | Improve hierarchy                   |
+| Claims don't feel believable | User needs proof                 | Add evidence/reviews/results        |
+| Weak CTA                     | User doesn't know what to do     | Use action-based CTA                |
+
+The brief itself gives you the three biggest problems:
+
+**What is Tutedude? → Refund doesn't land → Page doesn't sell.** 
+
+---
+
+# Step 3 — Define your brand direction
+
+Before Figma, decide:
+
+### Brand feeling
+
+For example:
+
+> **Confident + youthful + premium + trustworthy + student-focused**
+
+Then define:
+
+* Colors
+* Typography
+* Heading style
+* Body text
+* Button style
+* Card style
+* Border radius
+* Shadows
+* Icons
+* Illustration/image style
+* Spacing system
+
+Make a small **Brand System** page in Figma.
+
+The brief specifically says the logo is the only fixed element; everything else is your decision. 
+
+---
+
+# Step 4 — Design the user journey
+
+This is VERY important.
+
+Don't think:
+
+> "What sections should I put?"
+
+Think:
+
+> **"What question does the student have at every scroll?"**
+
+For example:
+
+### Scroll 1
+
+**What is Tutedude?**
+
+↓
+
+### Scroll 2
+
+**Why should I trust this?**
+
+↓
+
+### Scroll 3
+
+**What exactly do I get?**
+
+↓
+
+### Scroll 4
+
+**How does the ₹699 → 100% refund work?**
+
+↓
+
+### Scroll 5
+
+**Is this actually useful?**
+
+↓
+
+### Scroll 6
+
+**Can I see proof?**
+
+↓
+
+### Scroll 7
+
+**Which course should I choose?**
+
+↓
+
+### Scroll 8
+
+**What if I still have doubts?**
+
+↓
+
+### Final
+
+**Take action**
+
+That becomes your actual UX architecture.
+
+---
+
+# Step 5 — Build the Home Page wireframe
+
+Do **black/white wireframe first**.
+
+Don't waste time on colors.
+
+Something like:
+
+```text
+HEADER
+
+HERO
+"What is Tutedude?"
+100% Refund
+CTA
+
+PROOF / STATS
+
+HOW TUTEDUDE WORKS
+
+WHAT YOU GET
+
+COURSES
+
+COMBO PACKS
+
+100% REFUND EXPLAINED
+
+MENTORSHIP / PROJECTS / COMMUNITY
+
+WHY TUTEDUDE
+
+PROOF / STUDENT RESULTS
+
+REVIEWS
+
+FAQ
+
+FINAL CTA
+
+FOOTER
+```
+
+This is only your **structure**, not the final sections.
+
+---
+
+# Step 6 — Solve the refund BEFORE polishing anything
+
+This is the biggest part of the assignment.
+
+The brief literally says:
+
+> **“Solve the refund explanation before anything else.”** 
+
+Make the user understand:
+
+```text
+PAY ₹699
+     ↓
+LEARN THE COURSE
+     ↓
+COMPLETE WITHIN 3 MONTHS
+     ↓
+MEET REFUND CONDITIONS
+     ↓
+GET 100% MONEY BACK
+```
+
+Then explain the conditions clearly.
+
+No complicated marketing language.
+
+The user should not have to ask:
+
+> "Wait, is this actually free?"
+
+---
+
+# Step 7 — Design the Course Page
+
+Now create **one reusable template**.
+
+Think:
+
+```text
+COURSE HERO
+
+What is this course?
+
+WHO IS THIS FOR?
+
+WHAT YOU WILL LEARN
+
+CURRICULUM
+
+PROJECTS
+
+MENTORSHIP
+
+COMMUNITY
+
+CERTIFICATE
+
+REFUND EXPLANATION
+
+PROOF / REVIEWS
+
+PRICE
+
+FAQ
+
+FINAL CTA
+```
+
+Don't design only the UI/UX course.
+
+Use placeholders like:
+
+```text
+{Course Name}
+{Course Description}
+{Duration}
+{Projects}
+{Curriculum}
+{Price}
+```
+
+Because the brief requires the course page to work for **every course**. 
+
+---
+
+# Step 8 — Write the copy
+
+Do this **before final visual design**.
+
+For every section ask:
+
+> **What is the ONE thing I want the user to understand here?**
+
+The brief specifically says:
+
+> **One thing per section.** 
+
+Example:
+
+### Instead of
+
+> Level Up Your Career With Expert Mentorship & Internships...
+
+Try a clearer structure:
+
+**Learn. Build. Get Mentored. Get Your Money Back.**
+
+Then supporting text explains exactly how it works.
+
+Don't try to sound clever.
+
+---
+
+# Step 9 — Create mobile first
+
+Start with:
+
+### 390 × 844
+
+Design the **entire homepage** on mobile.
+
+Then:
+
+### 1440 × 900
+
+adapt it to desktop.
+
+Do NOT make desktop first and squeeze it into mobile later.
+
+The brief explicitly requires mobile-first. 
+
+---
+
+# Step 10 — Add visual design
+
+Now apply:
+
+* Brand colors
+* Typography
+* Images
+* Icons
+* Cards
+* Gradients if needed
+* Animations/interactions
+* Hover states
+* Sticky CTA where useful
+* Responsive behavior
+
+But keep asking:
+
+> **Does this help the student understand something?**
+
+If not, remove it.
+
+---
+
+# Step 11 — Prototype the real journey
+
+Connect:
+
+```text
+HOME
+ ↓
+Course
+ ↓
+Course Details
+ ↓
+CTA
+```
+
+Also test:
+
+```text
+Home → Course
+Home → Combo
+Home → All Access
+Home → FAQ
+```
+
+The submission requires a working prototype connecting the Home Page and Course Landing Page. 
+
+---
+
+# Step 12 — Test with a real person
+
+This is one of the most important steps.
+
+Take your design and show it to someone who **doesn't know Tutedude**.
+
+Don't explain anything.
+
+Ask them:
+
+### Question 1
+
+**"What does Tutedude do?"**
+
+### Question 2
+
+**"What do you get?"**
+
+### Question 3
+
+**"How does the 100% refund work?"**
+
+### Question 4
+
+**"What would you click?"**
+
+If they cannot answer quickly:
+
+**your UX isn't clear enough.**
+
+The brief explicitly recommends this test. 
+
+---
+
+# Step 13 — Polish
+
+Only now check:
+
+* Typography
+* Alignment
+* Spacing
+* Consistency
+* Mobile responsiveness
+* Button hierarchy
+* Image quality
+* Card consistency
+* Empty states
+* Existing-user state
+* Discount + combo + refund pricing
+* Closed/sold-out course state
+
+These edge cases are explicitly mentioned in the brief. 
+
+---
+
+# Step 14 — Make your Figma file professional
+
+Structure it like:
+
+```text
+00 — Cover
+
+01 — Brand System
+
+02 — Research / Problems
+
+03 — User Journey
+
+04 — Home — Mobile
+
+05 — Home — Desktop
+
+06 — Course — Mobile
+
+07 — Course — Desktop
+
+08 — Components
+
+09 — Prototype
+
+10 — Design Decisions
+```
+
+Keep:
+
+* Color styles
+* Text styles
+* Components
+* Variants
+* Proper frame names
+
+inside Figma, as requested. 
+
+---
+
+# Step 15 — Record the 5-minute video
+
+Structure it:
+
+```text
+0:00 – 0:30
+Problem I identified
+
+0:30 – 1:00
+Brand direction
+
+1:00 – 2:30
+Home Page walkthrough
+
+2:30 – 4:00
+Course Page walkthrough
+
+4:00 – 4:40
+Refund UX explanation
+
+4:40 – 5:00
+Why I made these decisions
+```
+
+The video is important because they explicitly want you to explain **why** sections and copy were designed that way. 
+
+---
+
+## Your actual workflow
+
+If you're starting **right now**, do this:
+
+```text
+TODAY
+
+1. Study current Tutedude
+        ↓
+2. Write problems
+        ↓
+3. Define brand direction
+        ↓
+4. Define user journey
+        ↓
+5. Write homepage structure
+        ↓
+6. Solve refund UX
+        ↓
+7. Wireframe mobile
+        ↓
+8. Wireframe desktop
+        ↓
+9. Write copy
+        ↓
+10. High-fidelity design
+        ↓
+11. Course template
+        ↓
+12. Prototype
+        ↓
+13. User test
+        ↓
+14. Polish
+        ↓
+15. Record video
+        ↓
+16. Submit .fig
+```
+
+### **Your first task right now**
+
+**Don't open Figma yet.**
+
+Open a document and create exactly these 4 headings:
+
+```text
+1. WHAT IS TUTEDUDE?
+
+2. WHAT PROBLEM DOES THE CURRENT WEBSITE HAVE?
+
+3. WHAT DOES THE USER NEED TO KNOW?
+
+4. WHAT SHOULD THE NEW USER JOURNEY BE?
+```
+
+Then we can work through those **one by one**, using the actual Tutedude content, and build your redesign strategy before touching the UI.

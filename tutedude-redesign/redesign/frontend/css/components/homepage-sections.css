@@ -1,0 +1,1683 @@
+/*
+  Homepage sections (post-hero) — StatsBar, ProcessSteps, RefundFlow,
+  CourseGrid, PricingGrid, FeatureGrid, FAQ, CTA. One file because they're
+  all rendered by the single js/components/homepage-sections.js pass and
+  share the same section/grid/card conventions below. This file is also
+  linked on course.html — FeatureGrid, PricingGrid, FAQ and CTASection are
+  reused there verbatim by js/components/course-page.js.
+
+  Figma note: every grid here is a plain CSS grid with a fixed column
+  count per breakpoint — no auto-fit magic beyond the one explicitly
+  noted exception — so each is a trivial auto-layout frame in Figma.
+*/
+
+.section {
+  padding: var(--space-16) var(--gutter-mobile);
+  /* The header is position: fixed, so anchor jumps (#courses, #combos,
+     #refund, #faq) would otherwise land with the section title hidden
+     underneath it. */
+  scroll-margin-top: 96px;
+}
+
+.section__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.section--alt {
+  background: var(--surface-alt);
+}
+
+/* ---------- Access packs: nicer wash + soft blobs, matching the course
+   page's pricing section treatment instead of a flat background. ---------- */
+#all-access {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--surface-alt) 0%, var(--surface) 100%);
+}
+
+#all-access::before,
+#all-access::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#all-access::before {
+  width: 420px;
+  height: 420px;
+  top: -160px;
+  left: -120px;
+  background: radial-gradient(circle, var(--brand-200) 0%, transparent 70%);
+  opacity: 0.5;
+}
+
+#all-access::after {
+  width: 360px;
+  height: 360px;
+  bottom: -140px;
+  right: -100px;
+  background: radial-gradient(circle, var(--accent-teal-100) 0%, transparent 70%);
+  opacity: 0.6;
+}
+
+#all-access .section__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Shared section header ---------- */
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-10);
+}
+
+/* Eyebrow as a soft pill (the reference's "gradient eyebrow" section-header
+   variant) — reads as a deliberate label rather than stray small caps. */
+.section-header__kicker {
+  display: inline-block;
+  margin: 0 0 var(--space-4);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--brand-100);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+}
+
+.section-header__title {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  color: var(--ink-900);
+  text-wrap: balance;
+}
+
+.section-header__description {
+  max-width: 54ch;
+  margin: 0 auto;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--ink-500);
+  text-wrap: pretty;
+}
+
+/* ---------- Stats bar ---------- */
+.stats-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.stats-bar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+}
+
+.stats-bar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--brand-100);
+  color: var(--brand-700);
+}
+
+.stats-bar__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.stats-bar__item--refund .stats-bar__icon,
+.stats-bar__item--project .stats-bar__icon {
+  background: var(--success-100);
+  color: var(--success-600);
+}
+
+.stats-bar__item--lifetime .stats-bar__icon {
+  background: var(--accent-teal-100);
+  color: var(--accent-teal-500);
+}
+
+.stats-bar__body strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--ink-900);
+}
+
+.stats-bar__body span {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  color: var(--ink-500);
+}
+
+/* Real numeric stats (trustBar) use a bigger value + small label instead
+   of the sentence-style title/subtitle above. */
+.stats-bar__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--ink-900);
+  line-height: var(--lh-tight);
+}
+
+.stats-bar__label {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  color: var(--ink-500);
+}
+
+/* ---------- Process steps ---------- */
+.process-steps {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-left: var(--space-2);
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  left: 21px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--brand-100);
+}
+
+.process-step {
+  position: relative;
+  display: flex;
+  gap: var(--space-4);
+}
+
+.process-step__number {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--brand-500);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body-lg);
+}
+
+.process-step__body strong {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--ink-900);
+}
+
+.process-step__body p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--ink-500);
+  line-height: var(--lh-relaxed);
+}
+
+/* ---------- Refund flow (highest-priority section) ---------- */
+.refund-section {
+  background: var(--ink-900);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--gutter-mobile);
+  color: var(--white);
+}
+
+.refund-section .section-header__title,
+.refund-section .section-header__description {
+  color: var(--white);
+}
+
+.refund-section .section-header__description {
+  color: var(--brand-100);
+}
+
+.refund-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.refund-flow__step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.refund-flow__number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--brand-500);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body-sm);
+}
+
+.refund-flow__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body);
+  color: var(--white);
+}
+
+.refund-flow__detail {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--brand-100);
+}
+
+.refund-conditions {
+  margin: var(--space-6) auto 0;
+  max-width: 900px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.refund-conditions li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--brand-100);
+}
+
+.refund-conditions svg {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: var(--success-500);
+}
+
+.refund-reassurance {
+  max-width: 900px;
+  margin: var(--space-5) auto 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-body);
+  color: var(--brand-100);
+}
+
+/* ---------- Course discovery: search + filters ----------
+   A soft gradient backdrop (same technique as the newsletter section)
+   gives this section its own visual identity without a complex effect.
+*/
+.section--discovery {
+  position: relative;
+  background: linear-gradient(180deg, var(--brand-100) 0%, var(--surface) 55%);
+}
+
+.course-discovery-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.course-search {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.course-search svg {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--ink-500);
+  pointer-events: none;
+}
+
+.course-search input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-10);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--ink-900);
+  outline: none;
+}
+
+.course-search input:focus {
+  border-color: var(--brand-500);
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.course-grid__empty {
+  display: none;
+  text-align: center;
+  padding: var(--space-8) 0;
+  font-family: var(--font-body);
+  color: var(--ink-500);
+}
+
+/* ---------- Category / level pills (also used as active filters) ---------- */
+.category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+.category-pill {
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--brand-100);
+  color: var(--brand-700);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.category-pill:hover {
+  background: var(--brand-500);
+  color: var(--white);
+}
+
+.category-pill.is-active {
+  background: var(--brand-500);
+  color: var(--white);
+}
+
+/* ---------- Course grid + mini cards ----------
+   The reference's "Course Cards (Mini)" pattern: logo, course name and a
+   category chip — nothing else. That's what keeps a 64-course catalog
+   scannable, and it's why there's no per-card "Refund Eligible" badge:
+   every course is refundable, so the section copy says it once instead of
+   repeating it 64 times. An optional `badge` field per course still
+   renders a tag (e.g. "New") when one is genuinely set.
+*/
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.course-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.course-card:hover {
+  border-color: var(--brand-300);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.course-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--surface-alt);
+}
+
+.course-card__icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.course-card__icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--brand-700);
+}
+
+.course-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--ink-900);
+}
+
+.course-card__meta {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.course-card__chip {
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-100);
+  color: var(--brand-700);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+}
+
+.course-card__chip--level {
+  background: var(--gray-100);
+  color: var(--ink-500);
+}
+
+.course-card__badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--success-100);
+  color: var(--success-600);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+}
+
+.course-grid__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.course-grid__count {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-500);
+}
+
+.course-grid__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--brand-300);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--brand-700);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.course-grid__more:hover {
+  background: var(--brand-500);
+  border-color: var(--brand-500);
+  color: var(--white);
+}
+
+.course-grid__more svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ---------- Combo pack cards ----------
+   The reference's "Combo Pack Card": pack name + discount, rating and
+   enrolment proof, then the actual courses inside the pack as icon+name
+   chips. Deliberately a different card to the mini course card above —
+   a pack is a bundle, not a course, and should not look like one.
+*/
+.combo-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+.combo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.combo-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.combo-card:hover {
+  border-color: var(--brand-300);
+  box-shadow: var(--shadow-md);
+}
+
+.combo-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.combo-card__title {
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--ink-900);
+}
+
+.combo-card__kicker {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-600);
+}
+
+.combo-card__discount {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--success-100);
+  color: var(--success-600);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  white-space: nowrap;
+}
+
+.combo-card__proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-500);
+}
+
+.combo-card__proof span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.combo-card__proof svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold-500);
+}
+
+.combo-card__includes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.combo-card__include {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-1);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  color: var(--ink-700);
+}
+
+.combo-card__include img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.combo-card__include--text-only {
+  padding-left: var(--space-3);
+}
+
+.combo-card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.combo-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--brand-500);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.combo-card__cta:hover {
+  background: var(--brand-600);
+}
+
+.combo-card__cta svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ---------- All Access / custom pack (the two headline plans) ----------
+   Richer than a plain PricingCard: icon + badge header, the real course
+   chips that are in the pack, the feature list, then price and CTA.
+*/
+.pack-highlight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-10);
+}
+
+.access-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.access-card:hover {
+  border-color: var(--brand-300);
+  box-shadow: var(--shadow-md);
+}
+
+/* The All Access card is the upsell, so it carries the tinted surface */
+.access-card--all {
+  background: linear-gradient(160deg, var(--brand-100) 0%, var(--white) 46%);
+  border-color: var(--brand-200);
+}
+
+.access-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* On phones the badge squeezed the title into an awkward two-line wrap,
+   so it drops to its own row underneath instead. */
+@media (max-width: 767px) {
+  .access-card__badge {
+    order: 3;
+  }
+}
+
+.access-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--brand-100);
+  color: var(--brand-600);
+}
+
+.access-card--all .access-card__icon {
+  background: var(--brand-500);
+  color: var(--white);
+}
+
+.access-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.access-card__heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.access-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  color: var(--ink-900);
+}
+
+.access-card__tagline {
+  margin: 2px 0 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  color: var(--brand-600);
+}
+
+/* Inline with the title, not floating over the card's top edge */
+.access-card__badge {
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--brand-500);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  white-space: nowrap;
+}
+
+.access-card__description {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--ink-500);
+}
+
+.access-card__courses-label {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-300);
+}
+
+.access-card__courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.access-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px var(--space-3);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  color: var(--ink-700);
+}
+
+.access-chip img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.access-chip--more {
+  background: var(--brand-100);
+  border-color: transparent;
+  color: var(--brand-700);
+  font-weight: var(--fw-bold);
+}
+
+.access-card__features {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-4) 0 0;
+  border-top: 1px solid var(--gray-100);
+  list-style: none;
+}
+
+.access-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-700);
+}
+
+.access-card__features svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  background: var(--success-100);
+  color: var(--success-600);
+}
+
+.access-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--gray-100);
+}
+
+.access-card__pricing {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.access-card__pricing strong {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  color: var(--ink-900);
+}
+
+.access-card__pricing s {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-300);
+}
+
+.access-card__discount {
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--success-100);
+  color: var(--success-600);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+}
+
+.access-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--brand-500);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.access-card__cta:hover {
+  background: var(--brand-600);
+}
+
+.access-card__cta svg {
+  width: 15px;
+  height: 15px;
+}
+
+.section-cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+/* ---------- Pricing grid (reused on course.html) ---------- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.pricing-card--featured {
+  border-color: var(--brand-500);
+  box-shadow: var(--shadow-lg);
+}
+
+.pricing-card__badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--brand-500);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.pricing-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--ink-900);
+}
+
+/* Included-course icon chips — only used by the Combo/All-Access pack
+   cards (cards.png's "shows courses included in the pack" pattern),
+   not by plain single-course pricing cards. */
+.pricing-card__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.pricing-card__icon-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--brand-100);
+  color: var(--brand-700);
+}
+
+.pricing-card__icon-chip svg {
+  width: 19px;
+  height: 19px;
+}
+
+.pricing-card__description {
+  margin: 0;
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-500);
+}
+
+.pricing-card__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.pricing-card__price-note {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--ink-900);
+}
+
+.pricing-card__price-original {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-500);
+  text-decoration: line-through;
+}
+
+.pricing-card__discount {
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--success-100);
+  color: var(--success-600);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+}
+
+.pricing-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--brand-100);
+  color: var(--brand-700);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body-sm);
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.pricing-card__cta svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.pricing-card--featured .pricing-card__cta {
+  background: var(--brand-500);
+  color: var(--white);
+}
+
+.pricing-card__cta:hover {
+  background: var(--brand-200);
+}
+
+.pricing-card--featured .pricing-card__cta:hover {
+  background: var(--brand-600);
+}
+
+/* ---------- Feature grid (reused on course.html for "What You Get") ---------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--brand-100);
+  color: var(--brand-700);
+}
+
+.feature-card__icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+/* Varied icon-box colors per card, matching the reference's multi-color
+   "Feature Cards (Icon + Text)" pattern instead of one repeated tint. */
+.feature-card__icon--teal {
+  background: var(--accent-teal-100);
+  color: var(--accent-teal-500);
+}
+
+.feature-card__icon--success {
+  background: var(--success-100);
+  color: var(--success-600);
+}
+
+.feature-card__icon--gold {
+  background: rgba(245, 165, 36, 0.16);
+  color: var(--gold-500);
+}
+
+.feature-card__icon--soft {
+  background: var(--brand-200);
+  color: var(--brand-700);
+}
+
+.feature-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-bold);
+  color: var(--ink-900);
+}
+
+.feature-card__description {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-500);
+  line-height: var(--lh-relaxed);
+}
+
+/* ---------- FAQ (reused on course.html) ---------- */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body);
+  color: var(--ink-900);
+  cursor: pointer;
+}
+
+.faq-item__question svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.faq-item.is-open .faq-item__question svg {
+  transform: rotate(180deg);
+}
+
+.faq-item__answer {
+  display: none;
+  padding: 0 var(--space-5) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--ink-500);
+}
+
+.faq-item.is-open .faq-item__answer {
+  display: block;
+}
+
+/* ---------- CTA section (reused on course.html) ---------- */
+.cta-section {
+  background: linear-gradient(135deg, var(--brand-600), var(--ink-900));
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--gutter-mobile);
+  text-align: center;
+  color: var(--white);
+}
+
+.cta-section__title {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+}
+
+.cta-section__description {
+  margin: 0 0 var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--brand-100);
+}
+
+.cta-section__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--white);
+  color: var(--brand-700);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  text-decoration: none;
+}
+
+.cta-section__button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- Breakpoints ---------- */
+@media (max-width: 479px) {
+  .section {
+    padding: var(--space-10) var(--gutter-mobile);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .course-grid {
+    gap: var(--space-2);
+  }
+
+  .course-card {
+    padding: 12px 10px;
+  }
+
+  .course-card__icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .course-card__icon img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .course-card__title {
+    font-size: 0.875rem;
+  }
+
+  .course-card__chip {
+    padding: 2px 8px;
+    font-size: 0.6875rem;
+  }
+
+  .pricing-card {
+    padding: var(--space-4);
+  }
+
+  .access-card {
+    padding: var(--space-4);
+  }
+
+  .combo-card {
+    padding: var(--space-4);
+  }
+
+  .rating-summary {
+    padding: var(--space-4);
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-20) var(--gutter-tablet);
+  }
+
+  .stats-bar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .combo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pack-highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Course page: 3 cards (This Course / Combo / All Access), so it gets a
+     third column instead of the homepage's 2-up grid. */
+  .pack-highlight-grid--three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-24) var(--gutter-desktop);
+  }
+
+  .stats-bar {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .pack-highlight-grid--three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .combo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .refund-flow {
+    flex-direction: row;
+  }
+
+  .refund-flow__step {
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .pricing-card--featured {
+    transform: translateY(-8px);
+  }
+}
+
+/* ---------- Proof: rating summary + video review strip ----------
+   Real aggregate rating and real reviewer names only — Tutedude publishes
+   video reviews with no written quotes, so there is no quote-card variant
+   here on purpose (see homepage.json proof._note).
+*/
+.rating-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.rating-summary__score {
+  text-align: center;
+}
+
+.rating-summary__value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  color: var(--ink-900);
+}
+
+.rating-summary__value span {
+  font-size: var(--fs-h3);
+  color: var(--ink-300);
+}
+
+.rating-summary__stars {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  color: var(--gold-500);
+}
+
+.rating-summary__stars svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.rating-summary__source {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--ink-900);
+}
+
+.rating-summary__support {
+  margin: 2px 0 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  color: var(--ink-500);
+}
+
+.rating-summary__stats {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-5) 0 0;
+  border-top: 1px solid var(--gray-100);
+  list-style: none;
+}
+
+.rating-summary__stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.rating-summary__stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--brand-100);
+  color: var(--brand-700);
+}
+
+.rating-summary__stat-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.rating-summary__stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-bold);
+  color: var(--ink-900);
+  line-height: var(--lh-tight);
+}
+
+.rating-summary__stat > span > span {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  color: var(--ink-500);
+}
+
+.review-strip__label {
+  margin: var(--space-8) 0 var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-300);
+}
+
+.review-strip {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.review-card:hover {
+  border-color: var(--brand-300);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Initials rather than a scraped photo of a real learner */
+.review-card__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--brand-100);
+  color: var(--brand-700);
+  font-family: var(--font-display);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+}
+
+.review-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.review-card__body strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--ink-900);
+}
+
+.review-card__body span {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  color: var(--ink-500);
+}
+
+.review-card__play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--brand-500);
+}
+
+.review-card__play svg {
+  width: 22px;
+  height: 22px;
+}
+
+@media (min-width: 768px) {
+  .rating-summary {
+    grid-template-columns: 240px 1fr;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  .rating-summary__stats {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 0 0 var(--space-8);
+    border-top: none;
+    border-left: 1px solid var(--gray-100);
+  }
+
+  .review-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .review-strip {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

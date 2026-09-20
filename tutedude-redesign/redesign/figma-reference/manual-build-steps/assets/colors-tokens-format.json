@@ -1,0 +1,41 @@
+{
+  "Brand": {
+    "100": { "value": "#EADCF0", "type": "color" },
+    "200": { "value": "#CDACDC", "type": "color" },
+    "300": { "value": "#AB74C4", "type": "color" },
+    "400": { "value": "#955EB6", "type": "color" },
+    "500": { "value": "#815BB5", "type": "color" },
+    "600": { "value": "#684CAC", "type": "color" },
+    "700": { "value": "#332C99", "type": "color" },
+    "800": { "value": "#231F6B", "type": "color" },
+    "900": { "value": "#171445", "type": "color" }
+  },
+  "Ink": {
+    "900": { "value": "#14101F", "type": "color" },
+    "700": { "value": "#372F52", "type": "color" },
+    "500": { "value": "#635C7A", "type": "color" },
+    "300": { "value": "#A9A2C2", "type": "color" }
+  },
+  "Surface": {
+    "White": { "value": "#FFFFFF", "type": "color" },
+    "Default": { "value": "#FBFAFF", "type": "color" },
+    "Alt": { "value": "#F1EEFB", "type": "color" },
+    "Dark": { "value": "#171445", "type": "color" }
+  },
+  "Semantic": {
+    "Success-600": { "value": "#16A34A", "type": "color" },
+    "Success-500": { "value": "#22C55E", "type": "color" },
+    "Success-100": { "value": "#DCFCE7", "type": "color" },
+    "Teal-500": { "value": "#14B8A6", "type": "color" },
+    "Teal-100": { "value": "#CCFBF1", "type": "color" },
+    "Gold-500": { "value": "#F5A524", "type": "color" },
+    "Danger-500": { "value": "#EF4444", "type": "color" }
+  },
+  "Gray": {
+    "900": { "value": "#111827", "type": "color" },
+    "700": { "value": "#374151", "type": "color" },
+    "500": { "value": "#6B7280", "type": "color" },
+    "300": { "value": "#D1D5DB", "type": "color" },
+    "100": { "value": "#F3F4F6", "type": "color" }
+  }
+}

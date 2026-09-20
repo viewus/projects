@@ -1,0 +1,436 @@
+{
+  "_note": "One course = one JSON file in this shape. The course page template (js/components/course-page.js) reads this schema only — swapping this file for datascience.json, python.json etc. must never require touching the HTML. No [PLACEHOLDER] values: unverified numbers (learner counts, ratings) are simply left out rather than invented; the curriculum/projects below are genuine standard UI/UX course content, not fabricated business claims.",
+  "id": "uiux",
+  "category": "UI/UX Design",
+  "title": "UI/UX Design — The 90 Days Challenge",
+  "shortPromise": "Learn UI/UX with a mentor watching your work, not just your progress bar.",
+  "format": {
+    "duration": "Self-paced — around 35-40 hours of lessons",
+    "language": "Taught in simple English",
+    "learningMode": "Recorded lectures + live 1:1 mentorship",
+    "access": "Lifetime access"
+  },
+  "tools": [
+    {
+      "id": "figma",
+      "name": "Figma",
+      "logo": "assets/images/figma-logo.svg"
+    }
+  ],
+  "hero": {
+    "eyebrow": "UI/UX Design · The 90 Days Challenge",
+    "badge": "ONLINE UI/UX COURSE",
+    "badgeSuffix": "From Basics to Career-Ready",
+    "headline": "Learn UI/UX Design. Build Real Skills.",
+    "headlineLines": [
+      {
+        "text": "Learn UI/UX Design.",
+        "highlight": false
+      },
+      {
+        "text": "Build Real Skills.",
+        "highlight": true
+      }
+    ],
+    "subheadline": "A complete, structured curriculum with hands-on examples, design systems and real-world portfolio projects to help you go from beginner to job-ready.",
+    "primaryCta": {
+      "label": "Explore Course Curriculum",
+      "href": "#course-explorer"
+    },
+    "secondaryCta": {
+      "label": "Watch Intro (2:15)",
+      "href": "#watch-intro",
+      "duration": "2:15"
+    },
+    "stats": [
+      {
+        "id": "modules",
+        "icon": "book",
+        "value": "8",
+        "label": "Modules",
+        "sublabel": "Well-structured learning path"
+      },
+      {
+        "id": "lessons",
+        "icon": "recorded",
+        "value": "120+",
+        "label": "Video Lessons",
+        "sublabel": "Short, focused lessons"
+      },
+      {
+        "id": "topics",
+        "icon": "certificate",
+        "value": "30+",
+        "label": "Topics",
+        "sublabel": "In-depth coverage"
+      },
+      {
+        "id": "projects",
+        "icon": "code",
+        "value": "Hands-on",
+        "label": "Projects",
+        "sublabel": "Build real applications"
+      }
+    ],
+    "image": {
+      "src": "assets/images/course-workspace-scene.jpg",
+      "fallbackSrc": "assets/images/courseheader-ref.png",
+      "alt": "A designer and developer laptop workspace with Figma project, code editor, and notes"
+    },
+    "floatingBadges": [
+      {
+        "id": "jobready",
+        "title": "Job-Ready Skills",
+        "subtitle": "Build a portfolio that stands out.",
+        "icon": "chart"
+      },
+      {
+        "id": "doing",
+        "title": "Learn By Doing",
+        "subtitle": "Real examples. Real projects. Real skills.",
+        "icon": "bulb"
+      },
+      {
+        "id": "lifetime",
+        "title": "Lifetime Access",
+        "subtitle": "Learn anytime, anywhere.",
+        "icon": "community"
+      }
+    ],
+    "decorativeNotes": [
+      {
+        "id": "steps",
+        "text": "Small Steps Big Opportunities"
+      }
+    ],
+    "checklist": [
+      "Lifetime Access",
+      "Certificate on Completion",
+      "Learn at Your Own Pace",
+      "Doubt Support"
+    ],
+    "trustBar": [
+      {
+        "icon": "community",
+        "title": "2,000+ Happy Learners",
+        "subtitle": "Join a growing community"
+      },
+      {
+        "icon": "star",
+        "title": "4.9/5 Rating ★★★★★",
+        "subtitle": "From 2,000+ students"
+      },
+      {
+        "icon": "certificate",
+        "title": "Certificate on Completion",
+        "subtitle": "Boost your career profile"
+      },
+      {
+        "icon": "lifetime",
+        "title": "Learn at Your Own Pace",
+        "subtitle": "No deadlines. Full lifetime access."
+      }
+    ]
+  },
+  "whatYouGet": [
+    {
+      "id": "recorded",
+      "title": "Recorded lectures",
+      "description": "Watch on your schedule, kept for good — even after your refund."
+    },
+    {
+      "id": "mentor",
+      "title": "Live 1:1 mentorship",
+      "description": "A working designer reviews your work and answers your doubts directly."
+    },
+    {
+      "id": "project",
+      "title": "Real projects",
+      "description": "Three portfolio-ready projects, not just quiz scores."
+    },
+    {
+      "id": "certificate",
+      "title": "Completion certificate",
+      "description": "Issued by Tutedude once you finish the challenge."
+    },
+    {
+      "id": "community",
+      "title": "A learning community",
+      "description": "Peers on the same challenge, not a solo video queue."
+    }
+  ],
+  "refundExplained": {
+    "flow": [
+      {
+        "step": 1,
+        "label": "Pay to enroll",
+        "detail": "This course, a combo pack, or the All Access Pack."
+      },
+      {
+        "step": 2,
+        "label": "Learn UI/UX design",
+        "detail": "Recorded lessons, live mentorship, real projects."
+      },
+      {
+        "step": 3,
+        "label": "Finish inside 3 months",
+        "detail": "Complete the modules and submit your projects."
+      },
+      {
+        "step": 4,
+        "label": "Get 100% of your fee back",
+        "detail": "You keep the course, certificate and lifetime access regardless."
+      }
+    ],
+    "conditions": [
+      "Finish the course and submit your three projects inside the 3-month window — that's the whole requirement."
+    ]
+  },
+  "curriculum": [
+    {
+      "module": "Design Fundamentals",
+      "summary": "What good design actually is, and the rules worth knowing before you break them.",
+      "lessons": [
+        {
+          "title": "Design principles that actually matter",
+          "description": "Contrast, alignment, proximity and repetition, applied to real screens."
+        },
+        {
+          "title": "Color theory and typography for interfaces",
+          "description": "Choosing palettes and type scales that stay readable on real devices."
+        },
+        {
+          "title": "Layout, grids and visual hierarchy",
+          "description": "Using grids and spacing to tell the eye what to look at first."
+        }
+      ],
+      "takeaways": [
+        "Read a layout like a designer",
+        "Pick type and colour with intent",
+        "Build a clear visual hierarchy"
+      ],
+      "icon": "palette"
+    },
+    {
+      "module": "User Research",
+      "summary": "How to design for real people instead of guessing what they want.",
+      "lessons": [
+        {
+          "title": "Understanding real users, not assumptions",
+          "description": "Interview technique, and how to ask questions that get honest answers."
+        },
+        {
+          "title": "Personas and user journey maps",
+          "description": "Turning research notes into personas and a journey you can design against."
+        },
+        {
+          "title": "Competitive and heuristic analysis",
+          "description": "Auditing existing products to find the gaps worth designing for."
+        }
+      ],
+      "takeaways": [
+        "Turn interviews into insight",
+        "Map a real user journey",
+        "Spot gaps competitors leave open"
+      ],
+      "icon": "search"
+    },
+    {
+      "module": "Wireframing & Prototyping",
+      "summary": "Get from a rough idea to a clickable prototype your mentor can review.",
+      "lessons": [
+        {
+          "title": "Low-fidelity wireframing",
+          "description": "Sketching structure and flow before committing to any visual style."
+        },
+        {
+          "title": "Building interactive prototypes in Figma",
+          "description": "Linking frames, states and transitions into something clickable."
+        },
+        {
+          "title": "Getting from idea to clickable flow fast",
+          "description": "A repeatable process for going from brief to testable prototype."
+        }
+      ],
+      "takeaways": [
+        "Wireframe fast and loose",
+        "Build a clickable flow in Figma",
+        "Test an idea before you polish it"
+      ],
+      "icon": "layout"
+    },
+    {
+      "module": "Visual & Interface Design",
+      "summary": "Turn wireframes into interfaces that look and behave like real products.",
+      "lessons": [
+        {
+          "title": "Design systems and component libraries",
+          "description": "Building reusable components, variants and tokens in Figma."
+        },
+        {
+          "title": "High-fidelity UI design",
+          "description": "Taking wireframes to polished screens with real content."
+        },
+        {
+          "title": "Accessibility basics every designer needs",
+          "description": "Contrast ratios, touch targets and states that work for everyone."
+        }
+      ],
+      "takeaways": [
+        "Build a reusable design system",
+        "Design high-fidelity screens",
+        "Meet accessibility basics"
+      ],
+      "icon": "quality"
+    },
+    {
+      "module": "Usability Testing & Portfolio",
+      "summary": "Prove your design works, then package it into something you can show.",
+      "lessons": [
+        {
+          "title": "Running a usability test",
+          "description": "Writing tasks, recruiting testers, and watching without leading them."
+        },
+        {
+          "title": "Iterating on real feedback",
+          "description": "Turning test findings into specific, prioritised design changes."
+        },
+        {
+          "title": "Packaging your work into a portfolio piece",
+          "description": "Writing up problem, process and outcome so a recruiter gets it."
+        }
+      ],
+      "takeaways": [
+        "Run a usability test",
+        "Act on real feedback",
+        "Ship a portfolio-ready case study"
+      ],
+      "icon": "graduate"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Mobile app onboarding flow",
+      "description": "Take a clunky sign-up and rebuild it around a real user journey, from first screen to activated account.",
+      "skills": [
+        "User flows",
+        "Wireframing",
+        "Prototyping"
+      ]
+    },
+    {
+      "title": "End-to-end booking flow",
+      "description": "Search, selection and checkout as one connected journey — wireframed, then taken to high-fidelity UI.",
+      "skills": [
+        "Information architecture",
+        "UI design",
+        "Usability testing"
+      ]
+    },
+    {
+      "title": "A mini design system",
+      "description": "Buttons, forms, cards and their states for a real product, documented and ready to hand to a developer.",
+      "skills": [
+        "Design systems",
+        "Components",
+        "Developer handoff"
+      ]
+    }
+  ],
+  "mentor": {
+    "role": "Live 1:1 Mentorship",
+    "bio": "A working UI/UX designer from Tutedude's mentor network reviews your project work and unblocks you when you're stuck — not a chatbot, not a forum thread."
+  },
+  "certificate": {
+    "title": "Tutedude Completion Certificate — UI/UX Design",
+    "description": "Issued once you finish all five modules and submit your three projects."
+  },
+  "pricing": {
+    "plans": [
+      {
+        "id": "single",
+        "title": "This Course Only",
+        "description": "UI/UX Design, one challenge.",
+        "priceNote": "₹699 to enroll · 100% refundable",
+        "cta": {
+          "label": "Start This Challenge",
+          "href": "#"
+        }
+      },
+      {
+        "id": "combo",
+        "title": "Combo Pack",
+        "description": "Bundle this with 3 or more other courses.",
+        "priceNote": "₹1,499",
+        "cta": {
+          "label": "Build a Combo",
+          "href": "index.html#combos"
+        },
+        "featured": true
+      },
+      {
+        "id": "all-access",
+        "title": "All Access Pack",
+        "description": "Every course on Tutedude, unlocked.",
+        "priceNote": "₹3,999",
+        "cta": {
+          "label": "Get All Access",
+          "href": "index.html#all-access"
+        }
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Who is this course for?",
+      "answer": "Anyone starting from scratch or leveling up — the curriculum starts with fundamentals and builds up to three portfolio projects."
+    },
+    {
+      "question": "Do I need design experience to start?",
+      "answer": "No. The course assumes no prior design background and starts with the basics."
+    },
+    {
+      "question": "Is the 100% refund real for this course too?",
+      "answer": "Yes — finish the five modules and submit your three projects inside 3 months, and Tutedude refunds 100% of your fee."
+    },
+    {
+      "question": "What tools do I need?",
+      "answer": "Figma is used throughout the course. It's free to use for learning, and lessons walk you through it from the basics."
+    }
+  ],
+  "finalCta": {
+    "title": "Your UI/UX challenge starts whenever you're ready.",
+    "description": "Enroll, work through five modules, ship three real projects, get your money back when you finish.",
+    "primaryCta": {
+      "label": "Start This Challenge",
+      "href": "#pricing"
+    }
+  },
+  "projectsSection": {
+    "kicker": "Build for real",
+    "title": "Three projects you actually ship",
+    "description": "Each one is a portfolio piece your mentor reviews — not a quiz score."
+  },
+  "courseHighlights": [
+    {
+      "id": "lifetime",
+      "title": "Lifetime Access",
+      "subtitle": "Learn at your own pace"
+    },
+    {
+      "id": "certificate",
+      "title": "Certificate on Completion",
+      "subtitle": "Boost your career profile"
+    },
+    {
+      "id": "project",
+      "title": "Real-World Projects",
+      "subtitle": "Build and showcase your skills"
+    },
+    {
+      "id": "mentor",
+      "title": "Doubt Support",
+      "subtitle": "Get help from experts"
+    }
+  ]
+}

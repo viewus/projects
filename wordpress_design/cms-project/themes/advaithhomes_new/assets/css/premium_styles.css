@@ -4208,3 +4208,94 @@ html.adn-reveal .acard-stat::before {
     }
 }
 
+/* ══════════════════════════════════════════════════════════════
+   OFFLINE SEARCH & LIVE KEYWORDS DROPDOWN
+   ══════════════════════════════════════════════════════════════ */
+.adn-offline-search-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(32, 60, 62, 0.14);
+    max-height: 380px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.adn-offline-search-dropdown[hidden] {
+    display: none !important;
+}
+
+.adn-search-res-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #111827;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.adn-search-res-item:hover,
+.adn-search-res-item.active {
+    background-color: #f3f7f6;
+    color: var(--client-color, #203c3e);
+}
+
+.adn-search-res-badge {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    background: #eef3f2;
+    color: var(--client-color, #203c3e);
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    margin-top: 2px;
+}
+
+.adn-search-res-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.adn-search-res-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: inherit;
+}
+
+.adn-search-res-title mark {
+    background: #fde68a;
+    color: #78350f;
+    padding: 0 2px;
+    border-radius: 2px;
+    font-weight: 700;
+}
+
+.adn-search-res-desc {
+    font-size: 0.78rem;
+    color: #6b7280;
+    margin-top: 3px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.adn-search-no-match {
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    color: #6b7280;
+    text-align: center;
+}
+

@@ -96,6 +96,9 @@
 
     function ckErase( name ) {
         document.cookie = name + '=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax';
+        try {
+            localStorage.removeItem( 'adn_offline_search_cache' );
+        } catch ( e ) {}
     }
 
     /* ── Preferences (granular) ───────────────────────────────── */

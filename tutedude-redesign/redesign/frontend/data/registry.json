@@ -1,0 +1,430 @@
+{
+  "_purpose": "Tracks which sections/components are planned, built, active, or removed. Update status as each component is delivered so unused ones are easy to spot and delete later.",
+  "statusValues": [
+    "planned",
+    "in-progress",
+    "built",
+    "active",
+    "unused",
+    "removed"
+  ],
+  "_realDataExtraction": "Sep 2026: pulled live from tutedude.com (raw HTML + JS bundle grep + a headless-browser DOM read, since the site is fully client-rendered with no SSR/API data exposed statically). This replaced several earlier placeholder/invented values with real ones: trustBar.stats (4.9/5 rating, 50+ courses, 100k+ learners, 100k+ doubts solved, 10k+ student projects), the real ₹699 single-course enrollment fee, real Combo Pack (₹1,499 from ₹2,796, 45% off) and All Access (₹3,999 from ₹45,435, 88% off) pricing, the real 'Why Choose Us' 4 features including Internship Opportunities (previously missed), the real refund reassurance line, several real FAQ answers, real course category icons (downloaded from tutedude.com's own CDN, assets/avif/<slug>.avif — their own IP, reused for redesigning their own site), and real footer contact info (support@tutedude.com, +91 8570818694, Gurugram office). The full real catalog is now modeled: 64 courses (real names, their own 10 category groups, real logos) and all 14 real combo packs with their real ratings, enrolment counts, discounts and included courses. Only course DETAIL pages remain partial — see courseDetailPages. Real testimonial names/videos were seen but deliberately NOT scraped/reused (real individuals' photos/videos need consent for this kind of derivative reuse, unlike Tutedude's own logo/icon assets).",
+  "components": {
+    "Header": {
+      "status": "active",
+      "usedIn": [
+        "homepage",
+        "course"
+      ],
+      "variants": [
+        "standard",
+        "floating"
+      ],
+      "files": [
+        "css/components/header.css",
+        "js/components/header.js"
+      ],
+      "note": "Renders from data/site.json (nav.items + nav.actions). Variant chosen via data-variant on #header; active page via <body data-page>."
+    },
+    "Footer": {
+      "status": "active",
+      "usedIn": [
+        "homepage",
+        "course"
+      ],
+      "files": [
+        "css/components/footer.css",
+        "js/components/footer.js"
+      ],
+      "note": "Renders from data/site.json (brand + footer). Link columns collapse into an accordion below 768px, always expanded from tablet width up."
+    },
+    "Newsletter": {
+      "status": "active",
+      "usedIn": [
+        "homepage",
+        "course"
+      ],
+      "files": [
+        "css/components/newsletter.css",
+        "js/components/newsletter.js"
+      ],
+      "note": "'Stay Ahead' promo band. Own mount (#stay-ahead), placed immediately above <footer> and sharing its background so it reads as one continuous footer area. Renders from data/site.json (newsletter). Reusable independently of Footer."
+    },
+    "Hero": {
+      "status": "active",
+      "usedIn": [
+        "homepage"
+      ],
+      "variants": [
+        "home"
+      ],
+      "files": [
+        "css/components/hero.css",
+        "js/components/hero.js"
+      ],
+      "note": "Homepage hero only. Renders from data/homepage.json (hero). Course page has its own CourseHero instead (different data shape, format facts + derived module/lesson/project counts) — not a variant of this component."
+    },
+    "CourseHero": {
+      "status": "active",
+      "usedIn": [
+        "course"
+      ],
+      "files": [
+        "css/components/course-page.css",
+        "js/components/course-page.js"
+      ],
+      "note": "Two-column hero from project/ideas/courseheader.png: dot/logo badge pill + inline suffix, two-line headline with the second line in brand colour, subheadline, a single-row 4-stat strip (value / label / supporting line), primary CTA + an outlined secondary with a circular play badge, and a 4-item checklist. The photo bleeds off the right edge of the page with three feature cards stacked over its left edge (cards drop below the image on mobile). A 4-item trust bar with hairline dividers closes the section. Stat values for modules/lessons/projects are derived from the course's own arrays and are dropped for a catalogue-only course; all labels come from site.json courseDefaults.hero.stats/trustBar."
+    },
+    "StatsBar": {
+      "status": "active",
+      "usedIn": [
+        "homepage",
+        "course"
+      ],
+      "files": [
+        "css/components/homepage-sections.css"
+      ],
+      "note": "Homepage trustBar now shows tutedude.com's own real numbers (4.9/5 rating, 50+ courses, 100k+ learners, 100k+ doubts solved, 10k+ student projects) — value+label style. Reused (same CSS, different item shape) on the course hero for real derived counts (modules/lessons/projects)."
+    },
+    "ProcessSteps": {
+      "status": "active",
+      "usedIn": [
+        "homepage"
+      ],
+      "note": "howItWorks — numbered vertical timeline."
+    },
+    "RefundFlow": {
+      "status": "active",
+      "usedIn": [
+        "homepage",
+        "course"
+      ],
+      "note": "Highest-priority component. js/components/homepage-sections.js exports renderRefundSection so course-page.js reuses the exact same markup/CSS for course.refundExplained instead of duplicating it."
+    },
+    "CourseCard": {
+      "status": "active",
+      "usedIn": [
+        "homepage"
+      ],
+      "note": "The reference's 'Course Cards (Mini)' pattern: real course logo + name + category/level chips, nothing else — that's what keeps the full 64-course catalog scannable. No per-card 'Refund Eligible' badge: every course is refundable, so the section copy states it once instead of repeating it 64 times. An optional per-course `badge` field still renders a tag (e.g. 'New') when genuinely set."
+    },
+    "CourseGrid": {
+      "status": "active",
+      "usedIn": [
+        "homepage"
+      ],
+      "note": "Responsive grid (2 cols mobile / 3 tablet / 5 desktop) over all 64 real courses, capped at 10 visible with a 'Show all 64 courses' toggle. The earlier horizontal carousel was removed — it was built for a 4-card set and doesn't scale to the real catalog."
+    },
+    "CourseDiscoveryControls": {
+      "status": "active",
+      "usedIn": [
+        "homepage"
+      ],
+      "files": [
+        "css/components/homepage-sections.css",
+        "js/components/homepage-sections.js"
+      ],
+      "note": "Search input + 11 real category filter pills (their own grouping: Software Development, DSA, Data Science & Analytics, AI & ML, Design, DevOps & Cloud, Cyber Security, Marketing, Finance, Video Editing) + 4 level pills, combined (AND) over the rendered card set via show/hide. Resets the show-all cap on every filter change and reports 'Showing X of Y courses'."
+    },
+    "ComboPackCard": {
+      "status": "active",
+      "usedIn": [
+        "homepage"
+      ],
+      "note": "The reference's 'Combo Pack Card', now driven by all 14 REAL packs from tutedude.com (Full Stack Developer, Data Scientist, AI Engineer, Data Analyst, Business Analyst, Designer, Graphic Designer, Video Editor, Tech Geek, App Developer, DevOps & Cloud Engineer, Cyber Security Expert, Marketer, Finance Professional) with their real ratings, enrolment counts, discounts and included-course lists rendered as real icon+name chips. Filterable by their own 4 real group tabs. Deliberately a different card to CourseCard — a bundle is not a course. Per-card refund-validity lines were removed — identical on all 14 cards, so the section description carries it instead."
+    },
+    "PackHighlightCard": {
+      "status": "removed",
+      "usedIn": [],
+      "note": "Replaced by AccessCard — the two headline plans no longer borrow PricingCard markup."
+    },
+    "PricingCard": {
+      "status": "active",
+      "usedIn": [
+        "course"
+      ],
+      "variants": [
+        "single",
+        "combo",
+        "all-access"
+      ],
+      "note": "renderPricingGrid exported from homepage-sections.js. Used plainly (no icon chips) for course.pricing.plans on the course page; the homepage uses ComboPackCard / PackHighlightCard instead."
+    },
+    "ToolsCard": {
+      "status": "active",
+      "usedIn": [
+        "course"
+      ],
+      "note": "Real tool logos (currently just Figma, downloaded from Wikimedia Commons — official brand SVG, not a drawn icon), from course.tools. Rendered inside the CourseExplorer Features panel; skipped entirely for a course with no tools data."
+    },
+    "CurriculumAccordion": {
+      "status": "removed",
+      "usedIn": [],
+      "note": "Replaced by CurriculumBrowser. The single-column accordion was a documented simplification of coursecurriculum.png; the reference's two-pane layout is now implemented properly, so the accordion markup and CSS were deleted rather than left dormant."
+    },
+    "ProjectCard": {
+      "status": "active",
+      "usedIn": [
+        "course"
+      ],
+      "note": "Numbered project cards (PROJECT 01/02/03 pill) with title, description and skill chips, driven by course.projects[].skills. Rendered inside the CourseExplorer Projects panel."
+    },
+    "MentorCard": {
+      "status": "active",
+      "usedIn": [
+        "course"
+      ],
+      "note": "Role-based (no fabricated named individual) — reuses .info-card alongside Certificate inside the CourseExplorer Certification panel."
+    },
+    "FeatureGrid": {
+      "status": "active",
+      "usedIn": [
+        "homepage",
+        "course"
+      ],
+      "note": "whyTutedude (homepage) and whatYouGet (course) both use renderFeatureGrid from homepage-sections.js. Icon-box color varies per item id (feature-card__icon--teal/success/gold/soft), matching the reference's multi-color icon-box pattern."
+    },
+    "FAQAccordion": {
+      "status": "active",
+      "usedIn": [
+        "homepage",
+        "course"
+      ],
+      "note": "renderFaqList + wireFaqAccordion exported from homepage-sections.js, reused verbatim by course-page.js."
+    },
+    "CTASection": {
+      "status": "active",
+      "usedIn": [
+        "homepage",
+        "course"
+      ]
+    },
+    "ProofStrip": {
+      "status": "active",
+      "usedIn": [
+        "homepage"
+      ],
+      "files": [
+        "css/components/homepage-sections.css",
+        "js/components/homepage-sections.js"
+      ],
+      "note": "Ratings + reviews section (#proof), the target of the header's Reviews link. Left: the real 4.9/5 Google rating with a 5-star row and the real platform counts (100k+ learners, 100k+ doubts solved, 10k+ student projects). Right/below: the real 17-name 'Video reviews from our students' strip. Tutedude publishes VIDEO reviews only — no written quotes, no per-review stars — so there is deliberately no quote-card variant and no invented testimonial text, and learner photos are not reproduced (names render as initials). Per-course star ratings are absent for the same reason; the per-combo-pack ratings that do exist are shown on ComboPackCard."
+    },
+    "AnnouncementBar": {
+      "status": "removed",
+      "note": "Countdown/urgency banners from the reference images (batch dates, early-bird timers) were not built — they'd require a real batch schedule we don't have. Fabricating dates would violate the 'don't invent features/facts' rule."
+    },
+    "Button": {
+      "status": "planned"
+    },
+    "Badge": {
+      "status": "planned"
+    },
+    "SectionHeader": {
+      "status": "active",
+      "usedIn": [
+        "homepage",
+        "course"
+      ],
+      "files": [
+        "css/components/homepage-sections.css",
+        "js/utils/icons.js"
+      ],
+      "note": "Shared kicker/title/description block. Kicker renders as a soft brand pill (the reference's gradient-eyebrow variant), title uses tight leading + negative tracking with text-wrap: balance, description is measure-capped at 54ch."
+    },
+    "CourseTemplateFallback": {
+      "status": "active",
+      "usedIn": [
+        "course"
+      ],
+      "files": [
+        "js/components/course-page.js",
+        "data/site.json (courseDefaults)"
+      ],
+      "note": "Builds a correct, honest course page for any of the 63 courses that do not yet have their own JSON — real identity from the catalogue plus universal facts, with course-specific sections omitted. Fixes the bug where every such course rendered UI/UX Design's title and syllabus."
+    },
+    "CourseExplorer": {
+      "status": "active",
+      "usedIn": [
+        "course"
+      ],
+      "files": [
+        "css/components/course-page.css",
+        "js/components/course-page.js"
+      ],
+      "note": "Tabbed white card from project/ideas/coursecurriculum.png that replaces five previously stacked sections (Course Curriculum / Features / Projects / Certification / FAQs), with icon tabs, a persistent 'Enroll Now' button and a 4-item highlights strip under a hairline. It carries no section header — the tab bar is the top of the card, as in the reference. Tabs are filtered at render time to panels that have real data, so a catalogue-only course shows only Features/Certification/FAQs. Panel bodies reuse FeatureGrid, ToolsCard, ProjectCard, MentorCard and FAQAccordion unchanged."
+    },
+    "CurriculumBrowser": {
+      "status": "active",
+      "usedIn": [
+        "course"
+      ],
+      "files": [
+        "css/components/course-page.css",
+        "js/components/course-page.js"
+      ],
+      "note": "Two-pane module browser in the Curriculum tab, matching coursecurriculum.png: left sidebar headed '{n} Modules' with number + per-module icon tile + topic count (active row filled brand); right pane with the module number, title, summary, a topics chip, one card per lesson (number, title, supporting description, Preview/Locked pill) and a Key Takeaways panel with a bulb badge and 'Start This Module'. Stacks to one column below 1024px; the Preview/Locked pill drops below the lesson title below 768px. Lessons are {title, description} objects in the course JSON, not bare strings."
+    },
+    "AccessCard": {
+      "status": "active",
+      "usedIn": [
+        "homepage"
+      ],
+      "files": [
+        "css/components/homepage-sections.css",
+        "js/components/homepage-sections.js"
+      ],
+      "note": "The two headline plans (Customised Pack, All Access Pack), rebuilt from the supplied combo/all-access sample: icon tile + title + tagline + badge header, description, a chip grid of the REAL courses in the pack (real catalogue names and their real AVIF icons) ending in a '+N more' chip computed from the catalogue size, a checkmark feature list, then price with strikethrough and discount pill beside the CTA. Distinct from PricingCard, which stays the plain 3-up plan card used on the course page. The All Access card carries a tinted surface as the upsell."
+    }
+  },
+  "sections": {
+    "homepage": [
+      {
+        "id": "header",
+        "component": "Header",
+        "status": "active"
+      },
+      {
+        "id": "hero",
+        "component": "Hero",
+        "status": "active"
+      },
+      {
+        "id": "trustBar",
+        "component": "StatsBar",
+        "status": "active"
+      },
+      {
+        "id": "howItWorks",
+        "component": "ProcessSteps",
+        "status": "active"
+      },
+      {
+        "id": "refundExplained",
+        "component": "RefundFlow",
+        "status": "active"
+      },
+      {
+        "id": "browseCourses",
+        "component": "CourseGrid",
+        "status": "active",
+        "note": "Also renders CourseDiscoveryControls (search/category/level filters + carousel)."
+      },
+      {
+        "id": "combosAndAllAccess",
+        "component": "ComboPackCard",
+        "status": "active"
+      },
+      {
+        "id": "accessPacks",
+        "component": "AccessCard",
+        "status": "active",
+        "note": "Customised Pack + All Access Pack, redesigned from the supplied sample image."
+      },
+      {
+        "id": "whyTutedude",
+        "component": "FeatureGrid",
+        "status": "active"
+      },
+      {
+        "id": "proof",
+        "component": "ProofStrip",
+        "status": "active"
+      },
+      {
+        "id": "faq",
+        "component": "FAQAccordion",
+        "status": "active"
+      },
+      {
+        "id": "finalCta",
+        "component": "CTASection",
+        "status": "active"
+      },
+      {
+        "id": "stayAhead",
+        "component": "Newsletter",
+        "status": "active"
+      },
+      {
+        "id": "footer",
+        "component": "Footer",
+        "status": "active"
+      }
+    ],
+    "course": [
+      {
+        "id": "header",
+        "component": "Header",
+        "status": "active"
+      },
+      {
+        "id": "courseHero",
+        "component": "CourseHero",
+        "status": "active"
+      },
+      {
+        "id": "courseExplorer",
+        "component": "CourseExplorer",
+        "status": "active",
+        "note": "Holds what used to be the whatYouGet, curriculum, projects, tools, mentorship, certificate and faq sections as tab panels — one section instead of seven, matching coursecurriculum.png."
+      },
+      {
+        "id": "refundExplained",
+        "component": "RefundFlow",
+        "status": "active"
+      },
+      {
+        "id": "pricing",
+        "component": "PricingCard",
+        "status": "active"
+      },
+      {
+        "id": "proof",
+        "component": "ProofStrip",
+        "status": "planned"
+      },
+      {
+        "id": "finalCta",
+        "component": "CTASection",
+        "status": "active"
+      },
+      {
+        "id": "stayAhead",
+        "component": "Newsletter",
+        "status": "active"
+      },
+      {
+        "id": "footer",
+        "component": "Footer",
+        "status": "active"
+      }
+    ]
+  },
+  "courseDetailPages": {
+    "_note": "How the common course template resolves content: a course whose catalogue entry has hasDetailPage:true loads its own data/courses/<id>.json and renders in full (curriculum, projects, tools). Every other course renders from its REAL catalogue entry (name, category, logo) merged with site.json.courseDefaults — the universal facts true of every Tutedude course — and the course-specific sections (curriculum/projects/tools) are skipped rather than borrowing another course's content. No 404 is ever fired: the catalogue flag decides. Writing more data/courses/*.json files is purely additive and needs no code change.",
+    "uiux": "data/courses/uiux.json"
+  },
+  "assets": {
+    "_note": "Everything under assets/images/courses/ (64 course icons + pack chip icons, .avif) was downloaded from tutedude.com's own CDN — their own IP, reused for redesigning their own site. Each download was validated as a real AVIF file, and a headless-browser pass confirms all 135 images on the homepage decode with zero broken images.",
+    "logo": "assets/tutedude-logo-trimmed.png (original Tutedude logo, unchanged)",
+    "heroPhoto": "assets/images/hero-student.jpg (Unsplash, free-to-use licence)",
+    "stayAheadIllustration": "assets/images/stay-ahead-illustration.png (composed for this project)",
+    "figmaLogo": "assets/images/figma-logo.svg (Wikimedia Commons, official brand SVG)",
+    "courseIcons": "assets/images/courses/*.avif (64 real course icons from tutedude.com)"
+  },
+  "removedFromOriginalSite": [
+    {
+      "id": "whyRefund",
+      "reason": "Merged into refundExplained — original site split the refund explanation across 3 separate sections, which the brief explicitly flags as unresolved."
+    },
+    {
+      "id": "howDifferentFromOthers",
+      "reason": "Merged into whyTutedude — overlapped with 'Why Choose Us'."
+    },
+    {
+      "id": "interestedInOtherCourses",
+      "reason": "Merged into browseCourses grid — redundant with the main course grid."
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+# UI/UX Design Hackathon - Make Tutedude Feel Like Tutedude.
+
+# Background
+
+You are a Tutedude student. So we are not going to explain Tutedude to you. You already know how the mentorship works, what the campus feels like and what the refund is.
+
+Here it is in one place anyway, because you will have to decide what goes on the page and what stays off it.
+
+1. A complete end to end course. Lifetime access, even after the refund.
+2. A community of likeminded students.
+3. Real world projects, challenges and tasks.
+4. Live 1:1 mentorship with an industry expert. 
+5. A learning dashboard with gamified features.
+6. A completion certificate from Tutedude.
+7. All of it bundled inside an immersive virtual campus.
+8. And above all this, **100% of the money back on finishing it in three months.**
+
+We sell this in three ways. Single courses. Combo packs of four or more courses. And an All Access Pack that opens every course on the platform.
+
+What you have probably never looked at closely is our website. The Home Page and the Course Landing Page. Those two pages are where somebody who has never heard of us decides whether this place is real and whether to pay for it.
+
+That is the job. Right now those pages are not doing it well enough.
+
+---
+
+# The Problem
+
+The Home Page and the Course Landing Page are where somebody who has never heard of Tutedude decides whether this place is real and whether to pay for it. A lot of them decide no.
+
+Three things go wrong there.
+
+1. **Nobody can tell what Tutedude actually is.**
+    1. Everything we give a learner is sitting on that page somewhere. It still reads like every other course site in India. What this place is does not reach the person reading it.
+2. **The 100% Refund Offer does not land.**
+    1. It is the strongest thing we sell and the least understood. People read it and leave thinking it is a trick, or thinking it is free and therefore cheap. Neither is true. Both cost us the sale. Go and read the offer everywhere it appears on the site and you will see the problem yourself.
+3. **The page does not sell.**
+    1. Everything Tutedude promises, courses that are effectively free, 100% money back, IIT Delhi alumni initiative, placement support, sounds too good to be true. The proof is real and it's all there. The pages just don't make anyone feel it. Turn our claims into proof.
+
+You know this product from the inside. Now look at both pages as a stranger and work out why they fail. Your task is to redesign these two pages so all three happen.
+
+---
+
+# What you have to do
+
+Redesign two pages.
+
+| **Tutedude Home Page** | https://tutedude.com |
+| --- | --- |
+| **Tutedude Course Page** | https://tutedude.com/category/uiux |
+
+The course page is a template. Design it so the same page works for every course we sell, not only UI/UX.
+
+**Mobile first.** Most of our learners are on a phone. Design the phone screen first and take it to desktop after, not the other way around.
+
+**The brand is yours.**
+
+You get the logo. Nothing else is fixed.
+
+<aside>
+💡
+
+Here’s the Logo: https://drive.google.com/drive/folders/1B8Tc8S061syarD-zDdGcrrb9oqPlCLOY?usp=sharing
+
+</aside>
+
+Sit in the chair of the **Head of Design at Tutedude**. Decide how Tutedude should feel the moment somebody hears the name. Then pull everything out of that decision. Colour, typography, tone, voice, components, imagery, spacing. Build it, and hold it across both pages.
+
+**The content is yours too.**
+
+You already know what Tutedude has. Go through all of it, and through both pages as they stand today. Decide what belongs on a page and what does not. We are not handing you a list of sections. What you keep, what you cut and what you add is the work.
+
+**Make sure you:**
+
+1. Design both pages fully, top to bottom.
+2. Make the course page work as a template for any course.
+3. Explain what Tutedude is without sounding like edtech.
+4. Make the 100% Refund Offer impossible to misunderstand.
+5. Design mobile properly.
+
+**Just make sure there is a reason behind what you do.**
+
+<aside>
+👉🏻
+
+You can (and are encouraged to) use **AI** to solve real problems. Research, copy drafts, images, illustrations, icons, whatever helps you move faster in 72 hours.
+One condition. Whatever you put on the page has to be functional and working, not theoretical and not a placeholder. A generated image should sit properly inside your design, not float there as a filler. Copy written with AI should be read out loud and fixed until a human wrote it. If it sounds like AI, we will notice, and so will the user.
+
+</aside>
+
+---
+
+# What you should not do
+
+1. Do not use our current colours, fonts or layout. Start on a clean page.
+2. Do not change the logo. That is the one thing that stays.
+3. Do not invent features we do not have. Everything on the page must be something Tutedude actually gives.
+4. Do not leave lorem ipsum anywhere. Copy is half of what we are scoring.
+5. Do not design the dashboard, the app, the checkout or any inner page. Two pages only.
+6. Do not copy an existing edtech site and change the colours. We will know.
+
+**Take your time to understand the problem. Do not jump into Figma directly. Think like a user. Think like a real person who is trying to get things done with less confusion and less waiting.**
+
+---
+
+# Who is it for?
+
+A twenty year old student in a tier two city. A fresher who did not get placed. A working person who wants to switch fields and has one hour a day. They have a phone, a tight budget and a lot of doubt. Many of them have already been burned by an online course, or know somebody who was.
+
+They are not designers. They will not read your clever headline twice. They decide in a few seconds whether this place is real.
+
+So write for them. Not for Dribbble, not for your portfolio, not for the judge.
+
+**Show your design to someone at home who has never heard of Tutedude. If they cannot tell you what we do, what we have and how the refund works after one scroll, go back and fix it.**
+
+Take your time to understand the brand before you open Figma. Look at the site. Read our FAQs. See how we talk today. Then decide how we should talk tomorrow.
+
+<aside>
+⚠️
+
+**Design Guidelines**
+
+The logo is the only thing we hand you. Everything else is your call.
+Whatever theme you build, hold it across both pages. Clean and confident beats loud and crowded. Do not overload the screen.
+Tip- Write your brand rules down before you start designing. Colour, type scale, voice, button style. It is faster than fixing colours at 2 am.
+
+</aside>
+
+---
+
+# Deliverables
+
+| Figma Design File (.fig) | Both pages in full, in desktop and mobile size. Keep your colour styles, text styles and components inside the file so we can see the system you built. Name your pages and frames properly. |
+| --- | --- |
+| Figma Prototype | A single working flow that connects the Home Page to the Course Landing Page and moves the way a real user would move. It should actually work when we click it. |
+| Demo Video | About 5 mins max. Show your theme, walk through both pages, and explain your copy. Tell us why a section is placed there and why a headline says what it says. Keep it clear and simple. |
+| Research (Optional)
+**Brownie Points** | Work that helps you understand the problem clearly. This can include user behaviour, similar apps or market conditions. Explore user research methods such as surveys and interviews to gather insights into user needs and preferences. |
+
+---
+
+# Evaluation Criteria
+
+We are looking at two things. That is it.
+
+**1. The visual aesthetic, look and feel.**
+
+1. Does it look like a brand or like a template.
+2. Is the theme consistent across both pages.
+3. Do the typography, spacing, colour and hierarchy hold up when we zoom in.
+4. Does it feel premium without feeling heavy.
+5. Is the page neat, or just full of extra things.
+
+**2. How well the copy and UX writing is done for *Conversion.***
+
+1. Is it clear in one read what Tutedude is.
+2. Is the 100% Refund Offer explained so well that there is nothing left to ask.
+3. Do the headlines make a person want to keep scrolling.
+4. Do the buttons say something better than Enroll Now.
+5. Is there a reason to buy sitting at every point where a person might leave.
+
+That is the whole scorecard. We are not marking your research deck, your persona, your process or the number of frames you made. A beautiful page with weak copy loses. Strong copy inside an ugly page also loses.
+
+---
+
+# Tips To Win
+
+1. First ultimate thing is your video. It should be clear and easy to follow. Show your thinking and pitch yourself.
+2. Spend your first few hours on the brand, not on Figma. Decide your colour, type, voice and button style before you place a single section.
+3. Write your copy in a plain document first. If it does not convince in black text on a white page, no gradient is going to save it.
+4. Solve the refund explanation before anything else. It is the hardest part of this brief and the biggest reason people drop off.
+5. Say one thing per section. A section trying to say three things is saying nothing.
+6. Buttons are copy too. Name them the way a person would say it.
+7. Test it on a friend or a parent. Ask them what we sell and how the refund works. Their answer is your score.
+8. Less is better. If you are unsure about a section, cut it.
+9. **Take mobile seriously. Do not leave it as three rushed frames at the end.**
+10. Think about the edge cases and mention them in your file. What does the page show to someone who has already bought a course. What happens when a course is sold out or a batch is closed. How do you show the price when there is a discount, a combo and a refund all sitting on the same card.
+
+---
+
+# Timeline
+
+- Hackathon Launch: **18 September, 7 pm**
+- Submission Deadline: **21 September at 11:59 pm**
+- Winner team will get prize of: **₹20,000**
+- 1st runner will get prize of: **₹5,000**
+- 2nd runner will get prize of: **₹3,000**
+- Winners will be announced on: **Within a week**
+- All the participants will get a **Participation certificate.**
+
+---
+
+# **Submission Guidelines**
+
+1. All submissions should be made in a digital format.
+2. Submissions must be in the form of a **.fig** file. No other file formats will be considered valid.
+3. The **.fig** file should contain all the required deliverables, including hi-fidelity designs, and prototype link. 
+4. Ensure that all team member names, details, and their contributions are clearly mentioned within the **.fig** file inside the given block.
+5. Participants are encouraged to provide a brief written explanation within the .fig file, detailing their design decisions and how their design addresses the challenges outlined in the problem statement.
+
+<aside>
+⚠️
+
+Figma tutorial - How To Save Your Figma Files To Desktop
+
+**Steps to Save .fig File:**
+
+***Open your figma file > Top Left Menu > File > Save a Local Copy***
+
+</aside>
+
+**NOTE: Failing to include team member information (even if solo) may result in difficulties identifying the ownership of the submission.**
+
+---
+
+# Solution Submission Link
+
+### https://forms.gle/VBaMUzgECYytfhak7
+
+---
+
+# Resources
+
+**Start here. Look at what you are redesigning.**
+
+- Home Page: tutedude.com
+- Course Landing Page: tutedude.com/category/uiux
+- All Access Pack: tutedude.com/category/allaccess
+- A combo pack page: tutedude.com/category/customizepack
+- What learners say: tutedude.com/reviews
+
+**UX Writing and Microcopy**
+
+- Nielsen Norman Group: UX Writing: Study Guide
+- Nielsen Norman Group: The 3 I's of Microcopy: Inform, Influence, and Interact
+- Nielsen Norman Group: UX Copy Sizes: Long, Short, and Micro
+
+**Conversion Copy for Landing Pages**
+
+- Shopify: Writing Microcopy: A Guide for Ecommerce UX with Examples
+- Prose: The psychology of conversion: how microcopy shapes user decisions on landing pages
+
+**Look outside edtech**
+
+Open five landing pages from brands you actually like. They do not have to be education. Fintech, D2C, SaaS, anything. Look at how they open the page, where they put the price, and what their buttons say. Then come back and look at ours.
+
+---
