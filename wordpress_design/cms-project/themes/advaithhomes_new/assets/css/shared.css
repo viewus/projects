@@ -217,7 +217,7 @@ font {
     color: #fff;
   }
   .site-header .nav-dropdown-link.nav-link--highlight {
-    color: var(--color-accent, #f59e0b);
+    color: var(--color-accent, #f59e0b) !important;
   }
   .site-header .nav-dropdown__media {
     background: rgba(255, 255, 255, 0.05);

@@ -283,8 +283,15 @@
                     '</div>' +
                     '<div class="adn-lang-modal__body">' +
                         '<div class="adn-lang-grid" id="adnLangGrid"></div>' +
-                        '<div class="adn-lang-empty" id="adnLangEmpty" hidden>' +
-                            '<p>No matching language found.</p>' +
+                        '<div class="adn-lang-empty notranslate" id="adnLangEmpty" translate="no" hidden>' +
+                            '<div class="adn-lang-empty__icon-wrap">' +
+                                '<svg class="adn-lang-empty__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+                                    '<circle cx="11" cy="11" r="8"></circle>' +
+                                    '<line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
+                                    '<line x1="8" y1="11" x2="14" y2="11"></line>' +
+                                '</svg>' +
+                            '</div>' +
+                            '<p class="adn-lang-empty__text">No matching language found.</p>' +
                         '</div>' +
                     '</div>' +
                 '</div>';
@@ -420,7 +427,7 @@
                 if ( match ) {
                     matchedCount++;
                     var isActive = ( lang.code.toLowerCase() === currentLang );
-                    html += '<button type="button" class="adn-lang-card notranslate' + ( isActive ? ' is-active' : '' ) + '" translate="no" data-lang="' + lang.code + '" aria-pressed="' + ( isActive ? 'true' : 'false' ) + '">';
+                    html += '<button type="button" class="adn-lang-card notranslate' + ( isActive ? ' is-active' : '' ) + '" translate="no" data-lang="' + lang.code + '" aria-pressed="' + ( isActive ? 'true' : 'false' ) + '"' + ( isActive ? ' disabled aria-disabled="true"' : '' ) + '>';
                     html += '  <span class="adn-lang-card__flag notranslate" translate="no">' + lang.flag + '</span>';
                     html += '  <span class="adn-lang-card__info notranslate" translate="no">';
                     html += '    <span class="adn-lang-card__native notranslate" translate="no">' + lang.native + '</span>';
@@ -434,8 +441,9 @@
             grid.innerHTML = html;
             if ( empty ) { empty.hidden = matchedCount > 0; }
 
-            grid.querySelectorAll( '.adn-lang-card' ).forEach( function ( card ) {
+            grid.querySelectorAll( '.adn-lang-card:not([disabled])' ).forEach( function ( card ) {
                 card.addEventListener( 'click', function () {
+                    if ( this.disabled || this.classList.contains( 'is-active' ) ) { return; }
                     var code = this.getAttribute( 'data-lang' );
                     if ( code ) { selectLanguage( code ); }
                 } );
