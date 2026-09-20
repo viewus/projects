@@ -89,6 +89,18 @@ function adn_set_language_cookie() {
 	\Adn\Theme\Helper\LanguageHelper::setLanguageCookie();
 }
 
+function adn_has_gtranslate() {
+	return \Adn\Theme\Helper\LanguageHelper::hasGTranslate();
+}
+
+function adn_render_gtranslate() {
+	return \Adn\Theme\Helper\LanguageHelper::renderGTranslate();
+}
+
+function adn_get_gtranslate_enabled_languages() {
+	return \Adn\Theme\Helper\LanguageHelper::getGTranslateEnabledLanguages();
+}
+
 function adn_visitor_has_cookie_category( $category ) {
 	return isset( $_COOKIE[ 'adn_cat_' . $category ] ) && '1' === $_COOKIE[ 'adn_cat_' . $category ];
 }

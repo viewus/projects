@@ -35,6 +35,7 @@ class AssetLoader {
 	/** Core JS loaded on every page. */
 	private const CORE_JS = [
 		'adn-utils-script'         => '/assets/js/common_utils.js',
+		'adn-toast-script'         => '/assets/js/toast.js',
 		'adn-main-script'          => '/assets/js/main.js',
 		'adn-common-script'        => '/assets/js/common.js',
 		'adn-scroll-to-top-script' => '/assets/js/scroll-to-top.js',
@@ -42,6 +43,7 @@ class AssetLoader {
 		'adn-faqs-script'          => '/assets/js/faqs.js',
 		'adn-form-builder-script'  => '/assets/js/form-builder.js',
 		'adn-offline-search-script'=> '/assets/js/offline-search.js',
+		'adn-language-script'      => '/assets/js/language-modal.js',
 	];
 
 	/** CSS loaded only on specific page templates. */
@@ -60,6 +62,7 @@ class AssetLoader {
 	];
 
 	public static function load(): void {
+		self::loadLanguageAntiFlicker();
 		self::loadCoreCss();
 		self::loadCoreJs();
 		self::loadConditionalAssets();
@@ -94,6 +97,75 @@ class AssetLoader {
 		if ( \file_exists( $theme_path ) ) {
 			\wp_enqueue_style( 'ah-review-cards-theme', \ADN_THEME_URI . '/assets/css/review-cards-theme.css', [ 'ah-review-cards-base' ], self::version( $theme_path ) );
 		}
+	}
+
+	/**
+	 * Anti-flicker pre-paint script & loader curtain for instant persistent translations.
+	 * If the visitor has a saved language (e.g. Telugu/Hindi/Chinese),
+	 * synchronizes cookies and displays a sleek minimal loader curtain to eliminate English FOUT (flash of untranslated text).
+	 */
+	private static function loadLanguageAntiFlicker(): void {
+		\add_action( 'wp_head', static function () {
+			?>
+			<script>
+			(function(){
+				try {
+					var lang = localStorage.getItem('adn_user_lang') || (document.cookie.match(/(?:^|;\s*)googtrans=(?:\/auto\/|\/en\/)([^;]+)/) || [])[1] || (document.cookie.match(/(?:^|;\s*)adn_lang=([^;]+)/) || [])[1];
+					if (lang && lang !== 'en') {
+						document.documentElement.classList.add('adn-lang-loading');
+						var oneYear = 31536000;
+						document.cookie = 'googtrans=/en/' + lang + '; path=/; max-age=' + oneYear + '; SameSite=Lax';
+						document.cookie = 'googtrans=/auto/' + lang + '; path=/; max-age=' + oneYear + '; SameSite=Lax';
+						var host = window.location.hostname;
+						if (host && host.indexOf('.') !== -1 && host !== 'localhost') {
+							var domain = '.' + host.replace(/^www\./, '');
+							document.cookie = 'googtrans=/en/' + lang + '; domain=' + domain + '; path=/; max-age=' + oneYear + '; SameSite=Lax';
+							document.cookie = 'googtrans=/auto/' + lang + '; domain=' + domain + '; path=/; max-age=' + oneYear + '; SameSite=Lax';
+						}
+						setTimeout(function(){
+							document.documentElement.classList.remove('adn-lang-loading');
+						}, 3000);
+					}
+				} catch(e){}
+			})();
+			</script>
+			<style>
+				.adn-lang-curtain {
+					position: fixed;
+					inset: 0;
+					background: #ffffff;
+					z-index: 2147483647;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					opacity: 0;
+					visibility: hidden;
+					pointer-events: none;
+					transition: opacity 0.22s ease, visibility 0.22s ease;
+				}
+				html.adn-lang-loading .adn-lang-curtain {
+					opacity: 1 !important;
+					visibility: visible !important;
+					pointer-events: auto !important;
+				}
+				html.adn-lang-loading body > *:not(.adn-lang-curtain):not(script):not(style) {
+					opacity: 0 !important;
+					visibility: hidden !important;
+				}
+				.adn-lang-curtain__spinner {
+					width: 36px;
+					height: 36px;
+					border: 3px solid rgba(176, 141, 87, 0.2);
+					border-top-color: #B08D57;
+					border-radius: 50%;
+					animation: adn-lang-curtain-spin 0.65s linear infinite;
+				}
+				@keyframes adn-lang-curtain-spin {
+					to { transform: rotate(360deg); }
+				}
+			</style>
+			<?php
+		}, 0 );
 	}
 
 	/**
@@ -200,13 +272,15 @@ class AssetLoader {
 			'rejectVersion'     => (string) \get_option( 'adn_cookie_consent_reject_version', 1 ),
 		] );
 
-		// Localize visitor/ajax URLs on utils script
+		// Localize visitor/ajax URLs & language dictionary path on utils script
 		\wp_add_inline_script(
 			'adn-utils-script',
 			'window.adnSite=' . \wp_json_encode( [
 				'visitorsUrl' => \rest_url( 'adn/v1/visitors' ),
 				'pingUrl'     => \rest_url( 'adn/v1/visitors/ping' ),
 				'ajaxUrl'     => \admin_url( 'admin-ajax.php' ),
+				'themeUrl'    => \get_template_directory_uri(),
+				'langDir'     => \get_template_directory_uri() . '/assets/js/lang',
 			] ) . ';',
 			'before'
 		);

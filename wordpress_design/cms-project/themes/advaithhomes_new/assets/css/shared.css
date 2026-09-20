@@ -65,12 +65,33 @@ ul { list-style: none; }
 button { cursor: pointer; font-family: inherit; }
 
 /* --- Typography --- */
-h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--color-dark); }
+h1, h2, h3, h4, h5, h6 { 
+  font-family: var(--font-display); 
+  font-weight: 600; 
+  line-height: 1.2; 
+  color: var(--color-dark);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
 h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
 h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
 h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 h4 { font-size: 1.1rem; }
-p { line-height: 1.7; color: var(--color-black); }
+p { 
+  line-height: 1.7; 
+  color: var(--color-black); 
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+font {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 
 /* --- Utilities --- */
 .container-wide { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
@@ -1240,6 +1261,10 @@ a.hero-bc-item:hover { color: var(--color-primary, #1e6fbf); }
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
   }
   .page-hero p, .page-hero .hero-desc {
     color: rgba(255,255,255,0.88);
@@ -1289,6 +1314,10 @@ a.hero-bc-item:hover { color: var(--color-primary, #1e6fbf); }
   font-size: clamp(1.9rem, 3.5vw, 2.9rem);
   margin-bottom: 14px;
   color: var(--color-text, #1a2332);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 /* Handle <p> tags from WordPress editor inside hero - prevent nested <p> issues */
@@ -8182,6 +8211,10 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     letter-spacing: -0.01em;
     margin-left: auto;
     margin-right: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
   }
   .page-hero p, .page-hero .hero-desc {
     font-size: 0.95rem;
@@ -8273,6 +8306,10 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     letter-spacing: -0.01em;
     margin-left: auto;
     margin-right: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
   }
   .page-hero p, .page-hero .hero-desc {
     font-size: 0.92rem;
@@ -8353,6 +8390,10 @@ a.mini-card:hover .mini-card-title { color: var(--color-primary); }
     font-weight: 700;
     text-align: center;
     letter-spacing: -0.01em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
   }
   .page-hero p {
     font-size: 0.9rem;

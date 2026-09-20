@@ -171,6 +171,17 @@ echo $_sn_ticker_html;
             </nav>
 
             <div class="header-actions">
+                <?php
+                $_gtranslate_html = function_exists( 'adn_render_gtranslate' ) ? adn_render_gtranslate() : '';
+                $_enabled_langs   = function_exists( 'adn_get_gtranslate_enabled_languages' ) ? adn_get_gtranslate_enabled_languages() : array();
+                // Only render language button if GTranslate is active and there are at least 2 languages
+                if ( '' !== trim( $_gtranslate_html ) && ( empty( $_enabled_langs ) || count( $_enabled_langs ) > 1 ) ) :
+                ?>
+                <button type="button" class="btn-translate js-open-lang-modal notranslate" translate="no" id="btnTranslate" aria-label="<?php esc_attr_e( 'Change Language', 'advaithhomes' ); ?>" aria-haspopup="dialog" title="<?php esc_attr_e( 'Change Language', 'advaithhomes' ); ?>">
+                    <?php echo adn_icon( 'translate' ); ?>
+                </button>
+                <?php endif; ?>
+
                 <button type="button" class="btn-search" aria-label="Search" aria-expanded="false" aria-controls="headerSearch"><?php echo adn_icon( 'fa-magnifying-glass' ); ?></button>
                 <?php if ( ! empty( $cta['label'] ) ) : ?>
                     <a href="<?php echo esc_url( adn_link( isset( $cta['url'] ) ? $cta['url'] : '' ) ); ?>" class="btn btn-primary btn-secondary btn-sm header-cta"><?php echo esc_html( $cta['label'] ); ?></a>
@@ -256,4 +267,14 @@ echo $_sn_ticker_html;
         </div>
     <?php endif; ?> -->
 </div>
+
+<?php if ( '' !== trim( $_gtranslate_html ) ) : ?>
+    <?php
+    $_enabled_langs = function_exists( 'adn_get_gtranslate_enabled_languages' ) ? adn_get_gtranslate_enabled_languages() : array();
+    ?>
+    <?php /* Hidden native backend for GTranslate engine with enabled languages metadata */ ?>
+    <div class="adn-gtranslate-backend notranslate" id="adnGTranslateBackend" translate="no" aria-hidden="true" data-enabled-languages="<?php echo esc_attr( wp_json_encode( $_enabled_langs ) ); ?>" style="position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none;visibility:hidden;width:1px;height:1px;overflow:hidden;">
+        <?php echo $_gtranslate_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+    </div>
+<?php endif; ?>
 </header>

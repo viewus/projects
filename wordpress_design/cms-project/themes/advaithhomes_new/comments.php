@@ -127,7 +127,7 @@ $_cb_args = array(
 		$user      = wp_get_current_user();
 		$user_id   = get_current_user_id();
 		$req       = get_option( 'require_name_email' );
-		$req_mark  = $req ? ' <span class="adn-required">*</span>' : '';
+		$req_mark  = $req ? ' <span class="adn-required notranslate">*</span>' : '';
 
 		$fields = array(
 			'author' => '<div class="adn-form-row">'
@@ -154,7 +154,7 @@ $_cb_args = array(
 			'submit_button'        => '<button name="%1$s" type="submit" id="%2$s" class="%3$s btn btn-primary">%4$s</button>',
 			'submit_field'         => '<div class="adn-form-submit">%1$s %2$s</div>',
 			'comment_field'        => '<div class="adn-form-row adn-form-row--full">'
-				. '<label for="comment">' . esc_html__( 'Comment', ADN_TEXT_DOMAIN ) . ' <span class="adn-required">*</span></label>'
+				. '<label for="comment">' . esc_html__( 'Comment', ADN_TEXT_DOMAIN ) . ' <span class="adn-required notranslate">*</span></label>'
 				. '<textarea id="comment" name="comment" rows="5" placeholder="' . esc_attr__( 'Share your thoughts…', ADN_TEXT_DOMAIN ) . '" required></textarea>'
 				. '</div>',
 			'must_log_in'          => '<p class="adn-must-login">' . sprintf(
@@ -168,7 +168,7 @@ $_cb_args = array(
 			) . '</p>' : '',
 			'comment_notes_before' => '<p class="adn-comment-note">'
 				. esc_html__( 'Your email address will not be published.', ADN_TEXT_DOMAIN )
-				. ( $req ? ' ' . esc_html__( 'Required fields are marked', ADN_TEXT_DOMAIN ) . ' <span class="adn-required">*</span>' : '' )
+				. ( $req ? ' ' . esc_html__( 'Required fields are marked', ADN_TEXT_DOMAIN ) . ' <span class="adn-required notranslate">*</span>' : '' )
 				. '</p>',
 			'comment_notes_after'  => '',
 			'fields'               => $fields,

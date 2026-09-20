@@ -37,6 +37,11 @@ $_adn_embed = ! empty( $_GET['embed'] ) || ! empty( $_GET['dialog'] ); // phpcs:
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div id="adn-lang-curtain" class="adn-lang-curtain notranslate" translate="no" aria-hidden="true">
+	<div class="adn-lang-curtain__box">
+		<div class="adn-lang-curtain__spinner"></div>
+	</div>
+</div>
 <?php if ( ! $_adn_embed ) : ?>
 <?php
 // ── Pre-header bar (home page only) ─────────────────────────────────────────

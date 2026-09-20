@@ -12,6 +12,11 @@ class IconHelper {
 			return '';
 		}
 
+		$icon_lower = strtolower( $icon );
+		if ( 'translate' === $icon_lower || 'language' === $icon_lower ) {
+			return '<svg class="ah-ico ah-ico-translate ' . esc_attr( $class ) . '" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>';
+		}
+
 		if ( false !== strpos( $icon, 'fa-' ) ) {
 			$has_style = ( false !== strpos( $icon, 'fa-solid' ) || false !== strpos( $icon, 'fa-regular' ) || false !== strpos( $icon, 'fa-brands' ) );
 			$cls       = $has_style ? $icon : 'fa-solid ' . $icon;
