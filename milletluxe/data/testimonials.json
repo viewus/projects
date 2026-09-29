@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Ananya Rao",
+    "role": "Chef & Nutrition Consultant",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+    "quote": "MilletLuxe's ragi flour is the finest I've cooked with — the aroma alone tells you it was milled with care.",
+    "rating": 5
+  },
+  {
+    "name": "Rahul Menon",
+    "role": "Home Cook, Bengaluru",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+    "quote": "I switched my family's rice to little millet six months ago. Energy levels are up and everyone loves the taste.",
+    "rating": 5
+  },
+  {
+    "name": "Priya Iyer",
+    "role": "Fitness Coach",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+    "quote": "Traceable sourcing matters to me — knowing exactly which farm my foxtail millet came from is a rare thing.",
+    "rating": 5
+  },
+  {
+    "name": "Vikram Shah",
+    "role": "Restaurateur, Mumbai",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop",
+    "quote": "We rebuilt our tasting menu around MilletLuxe grains. Consistent quality, batch after batch.",
+    "rating": 4
+  }
+]

@@ -1,0 +1,14 @@
+[
+  { "src": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop", "caption": "Millet fields at golden hour", "category": "Farm" },
+  { "src": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=1000&auto=format&fit=crop", "caption": "Kodo millet grain, freshly harvested", "category": "Grain" },
+  { "src": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1000&auto=format&fit=crop", "caption": "Pearl millet close-up", "category": "Grain" },
+  { "src": "https://images.unsplash.com/photo-1710149484964-d966b771c204?q=80&w=1000&auto=format&fit=crop", "caption": "Hands pouring freshly harvested grain", "category": "Farm" },
+  { "src": "https://images.unsplash.com/photo-1764070254247-351def349875?q=80&w=1000&auto=format&fit=crop", "caption": "Stone-milled millet, ready for packing", "category": "Mill" },
+  { "src": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?q=80&w=1000&auto=format&fit=crop", "caption": "Ragi dosa, plated", "category": "Kitchen" },
+  { "src": "https://images.unsplash.com/photo-1630409351211-d62ab2d24da4?q=80&w=1000&auto=format&fit=crop", "caption": "Bajra khichdi, slow-cooked", "category": "Kitchen" },
+  { "src": "https://images.unsplash.com/photo-1783042909392-0b8d8683e0a2?q=80&w=1000&auto=format&fit=crop", "caption": "Millet seed heads glowing in sunlight", "category": "Farm" },
+  { "src": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=1000&auto=format&fit=crop", "caption": "Finger millet (ragi) grains", "category": "Grain" },
+  { "src": "https://images.unsplash.com/photo-1777613112969-d7511ddfbe15?q=80&w=1000&auto=format&fit=crop", "caption": "Barnyard millet kheer", "category": "Kitchen" },
+  { "src": "https://images.unsplash.com/photo-1764070254247-351def349875?q=80&w=1000&auto=format&fit=crop", "caption": "Sacks of milled grain ready for dispatch", "category": "Mill" },
+  { "src": "https://images.unsplash.com/photo-1710149484964-d966b771c204?q=80&w=1000&auto=format&fit=crop", "caption": "Farmer inspecting the season's crop", "category": "Farm" }
+]

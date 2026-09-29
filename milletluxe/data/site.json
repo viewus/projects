@@ -1,0 +1,589 @@
+{
+  "brand": {
+    "name": "Millet",
+    "highlight": "Luxe",
+    "icon": "fa-solid fa-wheat-awn"
+  },
+  "nav": [
+    {
+      "id": "index",
+      "label": "Home",
+      "href": "index.html"
+    },
+    {
+      "id": "about",
+      "label": "Our Story",
+      "href": "about.html"
+    },
+    {
+      "id": "varieties",
+      "label": "Varieties",
+      "href": "varieties.html"
+    },
+    {
+      "id": "nutrition",
+      "label": "Nutrition",
+      "href": "nutrition.html"
+    },
+    {
+      "id": "recipes",
+      "label": "Recipes",
+      "href": "recipes.html"
+    },
+    {
+      "id": "sourcing",
+      "label": "Sourcing",
+      "href": "sourcing.html"
+    },
+    {
+      "id": "gallery",
+      "label": "Gallery",
+      "href": "gallery.html"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ",
+      "href": "faq.html"
+    }
+  ],
+  "navCta": {
+    "label": "Get in Touch",
+    "href": "contact.html"
+  },
+  "contact": {
+    "address": "Millet Valley Estate, Medak District, Telangana",
+    "phone": "+91 98765 43210",
+    "email": "hello@milletluxe.com",
+    "whatsapp": "https://wa.me/919876543210",
+    "mapEmbed": "https://www.google.com/maps?q=Medak%20District%2C%20Telangana&output=embed",
+    "formEndpoint": "",
+    "formEndpointHint": "Set data.contact.formEndpoint to a Formspree (or similar) URL to accept submissions with no backend. Left empty, the form opens the visitor's email client instead."
+  },
+  "social": [
+    {
+      "icon": "fa-brands fa-instagram",
+      "href": "#",
+      "label": "Instagram"
+    },
+    {
+      "icon": "fa-brands fa-facebook-f",
+      "href": "#",
+      "label": "Facebook"
+    },
+    {
+      "icon": "fa-brands fa-pinterest-p",
+      "href": "#",
+      "label": "Pinterest"
+    },
+    {
+      "icon": "fa-brands fa-youtube",
+      "href": "#",
+      "label": "YouTube"
+    }
+  ],
+  "footer": {
+    "about": "Heirloom millets, stone-milled in small batches and traced back to the farmer who grew them. Ancient grain, modern table.",
+    "columns": [
+      {
+        "title": "Explore",
+        "links": [
+          {
+            "label": "Our Story",
+            "href": "about.html"
+          },
+          {
+            "label": "Millet Varieties",
+            "href": "varieties.html"
+          },
+          {
+            "label": "Farm Sourcing",
+            "href": "sourcing.html"
+          },
+          {
+            "label": "Gallery",
+            "href": "gallery.html"
+          }
+        ]
+      },
+      {
+        "title": "Learn",
+        "links": [
+          {
+            "label": "Nutrition Guide",
+            "href": "nutrition.html"
+          },
+          {
+            "label": "Recipes",
+            "href": "recipes.html"
+          },
+          {
+            "label": "FAQs",
+            "href": "faq.html"
+          },
+          {
+            "label": "Contact",
+            "href": "contact.html"
+          }
+        ]
+      }
+    ],
+    "bottomRight": "Crafted with reverence for the humble grain."
+  },
+  "pages": {
+    "index": {
+      "hero": {
+        "images": [
+          "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1710149484964-d966b771c204?q=80&w=1920&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1920&auto=format&fit=crop"
+        ],
+        "eyebrow": "Ancient Grain · Modern Table",
+        "titleLine1": "The Quiet Luxury of",
+        "titleLine2": "Heirloom Millets",
+        "text": "Stone-milled in small batches, traced to the farmer who grew them. MilletLuxe brings India's oldest grains to your kitchen — unrefined, unhurried, unforgettable.",
+        "primaryCta": {
+          "label": "Explore Varieties",
+          "href": "varieties.html"
+        },
+        "secondaryCta": {
+          "label": "Our Story",
+          "href": "about.html"
+        },
+        "stats": [
+          {
+            "value": "8+",
+            "label": "Heirloom Varieties"
+          },
+          {
+            "value": "1,200+",
+            "label": "Partner Farmers"
+          },
+          {
+            "value": "100%",
+            "label": "Traceable Batches"
+          }
+        ]
+      },
+      "intro": {
+        "eyebrow": "Why Millets",
+        "title": "A grain that fed civilizations, forgotten by convenience",
+        "text": "For five thousand years, millets sustained entire regions on rainfall alone. As modern agriculture chased yield over resilience, this quiet grain was pushed to the margins — until now.",
+        "features": [
+          {
+            "icon": "fa-solid fa-leaf",
+            "title": "Regeneratively Grown",
+            "text": "Rain-fed, low-input farming that restores soil rather than depleting it."
+          },
+          {
+            "icon": "fa-solid fa-heart-pulse",
+            "title": "Nutrient Dense",
+            "text": "Higher fiber, iron and calcium than most refined staples, gram for gram."
+          },
+          {
+            "icon": "fa-solid fa-route",
+            "title": "Fully Traceable",
+            "text": "Every batch is linked back to the farm collective that grew it."
+          }
+        ],
+        "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop",
+        "badge": {
+          "icon": "fa-solid fa-award",
+          "title": "Lab-Tested Purity",
+          "text": "Every batch certified before packaging"
+        }
+      },
+      "varietiesSection": {
+        "eyebrow": "Signature Grains",
+        "title": "Featured Millet Varieties",
+        "text": "A curated selection from our eight heirloom varieties — each with its own story, texture and nutritional signature.",
+        "cta": {
+          "label": "View All Varieties",
+          "href": "varieties.html"
+        }
+      },
+      "stats": [
+        {
+          "value": "60%",
+          "label": "Less Water Than Rice"
+        },
+        {
+          "value": "8mg",
+          "label": "Iron per 100g (Bajra)"
+        },
+        {
+          "value": "Low",
+          "label": "Glycemic Index"
+        },
+        {
+          "value": "1,200+",
+          "label": "Farmers Supported"
+        }
+      ],
+      "sourcingSection": {
+        "eyebrow": "Farm to Table",
+        "title": "Sourced with a name and a face behind it",
+        "text": "We work directly with over 1,200 smallholder farmers across five states, paying above fair-trade rates and reinvesting in seed conservation for endangered millet varieties.",
+        "image": "https://images.unsplash.com/photo-1710149484964-d966b771c204?q=80&w=1200&auto=format&fit=crop",
+        "cta": {
+          "label": "Read our sourcing story",
+          "href": "sourcing.html"
+        }
+      },
+      "recipesSection": {
+        "eyebrow": "From Our Kitchen",
+        "title": "Recipes Worth Slowing Down For",
+        "text": "Traditional and modern preparations that let each grain's texture and aroma shine.",
+        "cta": {
+          "label": "Browse All Recipes",
+          "href": "recipes.html"
+        }
+      },
+      "testimonialsSection": {
+        "eyebrow": "Trusted By",
+        "title": "Voices From Our Table"
+      },
+      "ctaBand": {
+        "image": "https://images.unsplash.com/photo-1783042909392-0b8d8683e0a2?q=80&w=1600&auto=format&fit=crop",
+        "eyebrow": "Taste The Difference",
+        "title": "Bring Heirloom Millets Into Your Kitchen",
+        "text": "Have a question about a variety, bulk sourcing, or a recipe? Our team replies within one business day.",
+        "cta": {
+          "label": "Get in Touch",
+          "href": "contact.html"
+        }
+      }
+    },
+    "about": {
+      "header": {
+        "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop",
+        "eyebrow": "Our Story",
+        "title": "Roots Before Refinement",
+        "breadcrumb": "Home / Our Story"
+      },
+      "story": {
+        "eyebrow": "How We Began",
+        "title": "From one dying seed bank to a movement",
+        "paragraphs": [
+          "MilletLuxe began in 2016 when our founder, visiting a seed conservation center in Telangana, discovered that six local millet varieties were on the verge of disappearing entirely — replaced by high-yield rice and wheat monocultures that demanded irrigation the region could no longer sustain.",
+          "What started as an effort to preserve a handful of heirloom seeds grew into a farmer collective spanning five states. Today we work with over 1,200 growers, paying above fair-trade rates and reinvesting a share of every sale into seed banking and soil regeneration programs.",
+          "Every pack that reaches your kitchen carries a story — a region, a season, a family who tended it. We simply mill it, and get out of the way."
+        ],
+        "image": "https://images.unsplash.com/photo-1710149484964-d966b771c204?q=80&w=1200&auto=format&fit=crop",
+        "badge": {
+          "icon": "fa-solid fa-seedling",
+          "title": "Since 2016",
+          "text": "Preserving heirloom seed lines"
+        }
+      },
+      "values": {
+        "eyebrow": "What We Stand For",
+        "title": "Principles That Don't Bend",
+        "items": [
+          {
+            "icon": "fa-solid fa-hand-holding-heart",
+            "title": "Fair to the Farmer",
+            "text": "Above-market pricing, paid directly, with no middlemen taking margin from the grower."
+          },
+          {
+            "icon": "fa-solid fa-flask",
+            "title": "Purity Over Speed",
+            "text": "Every batch is lab-tested for contaminants before it's approved for milling."
+          },
+          {
+            "icon": "fa-solid fa-recycle",
+            "title": "Regenerative by Design",
+            "text": "Crop rotation and seed diversity practices that rebuild soil health season after season."
+          },
+          {
+            "icon": "fa-solid fa-magnifying-glass",
+            "title": "Radical Traceability",
+            "text": "Scan any batch code to see the exact farm collective and harvest season behind it."
+          }
+        ]
+      },
+      "team": {
+        "eyebrow": "The People Behind It",
+        "title": "A Small Team, A Large Network",
+        "members": [
+          {
+            "name": "Meera Kulkarni",
+            "role": "Founder & Agronomist",
+            "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop"
+          },
+          {
+            "name": "Arjun Reddy",
+            "role": "Head of Farmer Relations",
+            "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
+          },
+          {
+            "name": "Fatima Sheikh",
+            "role": "Quality & Nutrition Lead",
+            "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop"
+          },
+          {
+            "name": "Karan Singh",
+            "role": "Milling Operations",
+            "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop"
+          }
+        ]
+      }
+    },
+    "varieties": {
+      "header": {
+        "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1600&auto=format&fit=crop",
+        "eyebrow": "Signature Grains",
+        "title": "Our Millet Varieties",
+        "breadcrumb": "Home / Varieties"
+      },
+      "intro": {
+        "eyebrow": "Eight Heirloom Grains",
+        "title": "Every Grain, A Different Character",
+        "text": "Filter by nutritional focus to find the millet that fits your kitchen and your goals."
+      }
+    },
+    "nutrition": {
+      "header": {
+        "image": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=1600&auto=format&fit=crop",
+        "eyebrow": "Nutrition Guide",
+        "title": "The Science of the Grain",
+        "breadcrumb": "Home / Nutrition"
+      },
+      "intro": {
+        "eyebrow": "Why It Matters",
+        "title": "Small Grain, Outsized Nutrition",
+        "text": "Millets consistently outperform polished rice and refined wheat on fiber, minerals and glycemic response — while asking far less of the land that grows them.",
+        "image": "https://images.unsplash.com/photo-1783042909392-0b8d8683e0a2?q=80&w=1200&auto=format&fit=crop",
+        "badge": {
+          "icon": "fa-solid fa-chart-line",
+          "title": "Low Glycemic Index",
+          "text": "Steadier blood sugar response than polished rice"
+        }
+      },
+      "comparison": {
+        "eyebrow": "Head to Head",
+        "title": "Millets vs. Refined Staples",
+        "text": "Approximate values per 100g, dry weight — for general reference only.",
+        "rows": [
+          {
+            "label": "Fiber",
+            "millet": "8.5g",
+            "rice": "0.6g",
+            "wheat": "2.7g"
+          },
+          {
+            "label": "Iron",
+            "millet": "8mg",
+            "rice": "0.5mg",
+            "wheat": "3.5mg"
+          },
+          {
+            "label": "Calcium",
+            "millet": "344mg (Ragi)",
+            "rice": "10mg",
+            "wheat": "30mg"
+          },
+          {
+            "label": "Glycemic Index",
+            "millet": "Low–Medium",
+            "rice": "High",
+            "wheat": "Medium–High"
+          }
+        ]
+      },
+      "benefits": {
+        "eyebrow": "Everyday Benefits",
+        "title": "What Regular Millet Consumption Supports",
+        "items": [
+          {
+            "icon": "fa-solid fa-heart",
+            "title": "Heart Health",
+            "text": "Soluble fiber and magnesium content that supports healthy cholesterol levels."
+          },
+          {
+            "icon": "fa-solid fa-weight-scale",
+            "title": "Weight Management",
+            "text": "High satiety per calorie thanks to slow-digesting complex carbohydrates."
+          },
+          {
+            "icon": "fa-solid fa-bone",
+            "title": "Bone Strength",
+            "text": "Finger millet (ragi) offers one of the highest plant-based calcium sources."
+          },
+          {
+            "icon": "fa-solid fa-wheat-awn-circle-exclamation",
+            "title": "Naturally Gluten-Free",
+            "text": "Safe for gluten-sensitive diets when sourced from a dedicated facility."
+          }
+        ]
+      },
+      "disclaimer": "This page provides general nutrition education and is not a substitute for professional medical or dietary advice. Consult a qualified professional for guidance specific to your health needs.",
+      "insights": {
+        "eyebrow": "By The Numbers",
+        "title": "What The Data Shows",
+        "text": "Real per-100g values pulled from our eight heirloom varieties — not averages, not estimates."
+      }
+    },
+    "recipes": {
+      "header": {
+        "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=1600&auto=format&fit=crop",
+        "eyebrow": "From Our Kitchen",
+        "title": "Millet Recipes",
+        "breadcrumb": "Home / Recipes"
+      },
+      "intro": {
+        "eyebrow": "Cook With Us",
+        "title": "Recipes For Every Meal",
+        "text": "Filter by course to find your next dish — tap any card for full ingredients and method."
+      }
+    },
+    "sourcing": {
+      "header": {
+        "image": "https://images.unsplash.com/photo-1783042909392-0b8d8683e0a2?q=80&w=1600&auto=format&fit=crop",
+        "eyebrow": "Farm to Table",
+        "title": "Our Sourcing Story",
+        "breadcrumb": "Home / Sourcing"
+      },
+      "intro": {
+        "eyebrow": "Direct Partnerships",
+        "title": "No Middlemen, No Guesswork",
+        "text": "We work directly with farmer collectives across five Indian states, agreeing on pricing before the season begins so growers can plan with confidence.",
+        "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop",
+        "badge": {
+          "icon": "fa-solid fa-handshake",
+          "title": "Above Fair-Trade Rates",
+          "text": "Paid directly to farmer collectives"
+        }
+      },
+      "process": {
+        "eyebrow": "How It Works",
+        "title": "From Field to Your Pantry",
+        "steps": [
+          {
+            "icon": "fa-solid fa-seedling",
+            "title": "Rain-Fed Cultivation",
+            "text": "Farmers grow using traditional, low-input methods suited to arid soil."
+          },
+          {
+            "icon": "fa-solid fa-hand-holding-heart",
+            "title": "Fair-Price Procurement",
+            "text": "Grain is purchased directly at pre-agreed, above-market rates."
+          },
+          {
+            "icon": "fa-solid fa-flask",
+            "title": "Purity Testing",
+            "text": "Every batch is lab-tested before it's approved for milling."
+          },
+          {
+            "icon": "fa-solid fa-gear",
+            "title": "Stone Milling",
+            "text": "Small-batch stone mills preserve nutrients, aroma and texture."
+          },
+          {
+            "icon": "fa-solid fa-box",
+            "title": "Traceable Packaging",
+            "text": "Each pack is coded to its originating farm collective and harvest season."
+          },
+          {
+            "icon": "fa-solid fa-truck",
+            "title": "Direct Dispatch",
+            "text": "Shipped straight from our mill, typically within 5 days of order."
+          }
+        ]
+      },
+      "regions": {
+        "eyebrow": "Where We Grow",
+        "title": "Five States, One Standard",
+        "items": [
+          {
+            "name": "Telangana",
+            "grain": "Pearl & Finger Millet",
+            "image": "https://images.unsplash.com/photo-1639086407827-0dadcd5718c9?q=80&w=800&auto=format&fit=crop"
+          },
+          {
+            "name": "Karnataka",
+            "grain": "Finger Millet (Ragi)",
+            "image": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=800&auto=format&fit=crop"
+          },
+          {
+            "name": "Andhra Pradesh",
+            "grain": "Foxtail Millet",
+            "image": "https://images.unsplash.com/photo-1783042909392-0b8d8683e0a2?q=80&w=800&auto=format&fit=crop"
+          },
+          {
+            "name": "Madhya Pradesh",
+            "grain": "Kodo Millet",
+            "image": "https://images.unsplash.com/photo-1764070254247-351def349875?q=80&w=800&auto=format&fit=crop"
+          },
+          {
+            "name": "Uttarakhand",
+            "grain": "Barnyard Millet",
+            "image": "https://images.unsplash.com/photo-1710149484964-d966b771c204?q=80&w=800&auto=format&fit=crop"
+          }
+        ]
+      }
+    },
+    "gallery": {
+      "header": {
+        "image": "https://images.unsplash.com/photo-1764070254247-351def349875?q=80&w=1600&auto=format&fit=crop",
+        "eyebrow": "In Pictures",
+        "title": "Gallery",
+        "breadcrumb": "Home / Gallery"
+      },
+      "intro": {
+        "eyebrow": "Field to Table",
+        "title": "Moments From the Journey",
+        "text": "Filter by category to explore the farm, the mill, the grain and the kitchen."
+      }
+    },
+    "faq": {
+      "header": {
+        "image": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=1600&auto=format&fit=crop",
+        "eyebrow": "Have Questions?",
+        "title": "Frequently Asked Questions",
+        "breadcrumb": "Home / FAQ"
+      },
+      "intro": {
+        "eyebrow": "Before You Ask",
+        "title": "Answers, Upfront",
+        "text": "Can't find what you're looking for? Reach out on our Contact page and we'll respond within one business day."
+      }
+    },
+    "contact": {
+      "header": {
+        "image": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=1600&auto=format&fit=crop",
+        "eyebrow": "Get in Touch",
+        "title": "Contact MilletLuxe",
+        "breadcrumb": "Home / Contact"
+      },
+      "intro": {
+        "eyebrow": "We'd Love to Hear From You",
+        "title": "Send Us a Message",
+        "text": "Questions about bulk orders, wholesale partnerships, or a recipe gone wrong — our team replies within one business day."
+      },
+      "info": [
+        {
+          "icon": "fa-solid fa-location-dot",
+          "title": "Visit The Mill",
+          "text": "Millet Valley Estate, Medak District, Telangana"
+        },
+        {
+          "icon": "fa-solid fa-phone",
+          "title": "Call Us",
+          "text": "+91 98765 43210"
+        },
+        {
+          "icon": "fa-solid fa-envelope",
+          "title": "Email Us",
+          "text": "hello@milletluxe.com"
+        },
+        {
+          "icon": "fa-brands fa-whatsapp",
+          "title": "WhatsApp",
+          "text": "Chat with our team directly"
+        }
+      ],
+      "formNote": "We typically respond within one business day. For bulk / wholesale enquiries, please mention estimated quantity."
+    }
+  }
+}

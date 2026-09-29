@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sangeetBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d0b3f"/>
+      <stop offset="50%" stop-color="#180424"/>
+      <stop offset="100%" stop-color="#09010e"/>
+    </linearGradient>
+    <linearGradient id="goldS" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd56b"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#7a5814"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#sangeetBg)"/>
+
+  <!-- Ornate Border -->
+  <rect x="20" y="20" width="560" height="360" rx="20" fill="none" stroke="url(#goldS)" stroke-width="2" opacity="0.6"/>
+
+  <!-- Crystal Ballroom Chandelier & Musical Stars -->
+  <g transform="translate(300, 40)" opacity="0.8">
+    <path d="M -50 0 L 50 0 L 0 50 Z" fill="url(#goldS)"/>
+    <line x1="-30" y1="50" x2="-30" y2="80" stroke="url(#goldS)" stroke-width="2"/>
+    <line x1="0" y1="50" x2="0" y2="100" stroke="url(#goldS)" stroke-width="2"/>
+    <line x1="30" y1="50" x2="30" y2="80" stroke="url(#goldS)" stroke-width="2"/>
+    <circle cx="-30" cy="85" r="4" fill="#fff"/>
+    <circle cx="0" cy="105" r="5" fill="#fff"/>
+    <circle cx="30" cy="85" r="4" fill="#fff"/>
+  </g>
+
+  <!-- Traditional Punjabi Dhol / Musical Instrument -->
+  <g transform="translate(300, 210)">
+    <!-- Dhol Body Cylinder -->
+    <ellipse cx="0" cy="0" rx="100" ry="50" fill="#6e2b14" stroke="url(#goldS)" stroke-width="4"/>
+    <path d="M -100 0 C -80 -45 80 -45 100 0 L 100 30 C 80 75 -80 75 -100 30 Z" fill="#8f391a" stroke="url(#goldS)" stroke-width="2"/>
+    
+    <!-- Crossed Ropes / Wires on Dhol -->
+    <path d="M -80 -25 L -40 40 L 0 -35 L 40 40 L 80 -25" fill="none" stroke="url(#goldS)" stroke-width="3"/>
+    
+    <!-- Drumsticks / Dagga & Tilli -->
+    <line x1="-120" y1="-50" x2="-50" y2="-10" stroke="url(#goldS)" stroke-width="6" stroke-linecap="round"/>
+    <line x1="120" y1="-50" x2="50" y2="-10" stroke="url(#goldS)" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Musical Notes Floating -->
+    <text x="-140" y="-30" font-size="28" fill="url(#goldS)" opacity="0.8">♪</text>
+    <text x="130" y="-40" font-size="34" fill="url(#goldS)" opacity="0.9">♫</text>
+    <text x="-90" y="-90" font-size="22" fill="#fff5d6" opacity="0.7">♩</text>
+    <text x="90" y="-80" font-size="26" fill="#fff5d6" opacity="0.8">♬</text>
+  </g>
+
+  <!-- Title Banner -->
+  <text x="300" y="340" font-family="'Cinzel', serif" font-size="22" font-weight="700" fill="url(#goldS)" text-anchor="middle" letter-spacing="4">
+    SANGEET &amp; MUSICAL NIGHT
+  </text>
+</svg>

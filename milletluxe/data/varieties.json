@@ -1,0 +1,178 @@
+[
+  {
+    "id": "pearl",
+    "name": "Pearl Millet",
+    "local": "Bajra",
+    "tag": "Bestseller",
+    "region": "Rajasthan, India",
+    "season": "Kharif (Jun–Sep)",
+    "image": "https://images.unsplash.com/photo-1639086407827-0dadcd5718c9?q=80&w=1200&auto=format&fit=crop",
+    "summary": "A hardy, drought-resistant grain with a mild, nutty flavor — the foundation of rustic flatbreads across arid regions.",
+    "description": "Pearl millet has sustained communities across Rajasthan's arid belt for centuries, thriving where rainfall is scarce and soil is sandy. Our bajra is stone-milled within 48 hours of dehusking to preserve its distinctive nutty aroma, and is the backbone of the region's winter flatbread tradition.",
+    "nutrition": {
+      "protein": "11g",
+      "fiber": "8.5g",
+      "iron": "8mg",
+      "calories": "361 kcal"
+    },
+    "uses": [
+      "Flatbreads (Roti)",
+      "Porridge",
+      "Flour blends"
+    ]
+  },
+  {
+    "id": "finger",
+    "name": "Finger Millet",
+    "local": "Ragi",
+    "tag": "Calcium Rich",
+    "region": "Karnataka, India",
+    "season": "Kharif (Jul–Oct)",
+    "image": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=1200&auto=format&fit=crop",
+    "summary": "Deep reddish-brown grain prized for exceptional calcium content — a staple weaning food and fitness favorite.",
+    "description": "Grown on the red-soil plateaus of Karnataka, finger millet carries one of the highest natural calcium levels of any grain. It's traditionally the first solid food given to infants in the region, and today it's equally at home in a fitness enthusiast's post-workout bowl.",
+    "nutrition": {
+      "protein": "7.3g",
+      "fiber": "3.6g",
+      "iron": "3.9mg",
+      "calories": "336 kcal"
+    },
+    "uses": [
+      "Malt drinks",
+      "Dosa & idli",
+      "Cookies"
+    ]
+  },
+  {
+    "id": "foxtail",
+    "name": "Foxtail Millet",
+    "local": "Kangni",
+    "tag": "Low GI",
+    "region": "Andhra Pradesh, India",
+    "season": "Kharif (Jun–Sep)",
+    "image": "https://images.unsplash.com/photo-1783042909392-0b8d8683e0a2?q=80&w=1200&auto=format&fit=crop",
+    "summary": "Small golden grains with a low glycemic index, ideal for pilafs and upma with a delicate, slightly sweet bite.",
+    "description": "Among the oldest cultivated millets, foxtail's small golden grains cook quickly and fluff up light, making them a favorite substitute for polished rice among households managing blood sugar. Its subtly sweet flavor pairs especially well with tempered spices.",
+    "nutrition": {
+      "protein": "12.3g",
+      "fiber": "8g",
+      "iron": "2.8mg",
+      "calories": "351 kcal"
+    },
+    "uses": [
+      "Upma",
+      "Pilaf",
+      "Khichdi"
+    ]
+  },
+  {
+    "id": "kodo",
+    "name": "Kodo Millet",
+    "local": "Kodra",
+    "tag": "Gut Friendly",
+    "region": "Madhya Pradesh, India",
+    "season": "Kharif (Jul–Oct)",
+    "image": "https://images.unsplash.com/photo-1764070254247-351def349875?q=80&w=1200&auto=format&fit=crop",
+    "summary": "A high-fiber ancient grain with a subtle earthy aroma, prized for supporting digestion and sustained energy.",
+    "description": "Cultivated by tribal farming communities in Madhya Pradesh's forested belts, kodo millet is prized for its exceptional fiber content and earthy, slow-releasing energy. It's traditionally recommended for those seeking steadier digestion and all-day satiety.",
+    "nutrition": {
+      "protein": "8.3g",
+      "fiber": "9g",
+      "iron": "1.7mg",
+      "calories": "353 kcal"
+    },
+    "uses": [
+      "Pulao",
+      "Salads",
+      "Baked snacks"
+    ]
+  },
+  {
+    "id": "little",
+    "name": "Little Millet",
+    "local": "Kutki",
+    "tag": "Antioxidant",
+    "region": "Odisha, India",
+    "season": "Kharif (Jun–Sep)",
+    "image": "https://images.unsplash.com/photo-1788240371020-c5ceadce05d6?q=80&w=1200&auto=format&fit=crop",
+    "summary": "Tiny, nutrient-dense grains rich in antioxidants — a light, versatile substitute for rice in everyday meals.",
+    "description": "The smallest of our eight varieties, little millet packs an outsized dose of antioxidant compounds into every grain. Odisha's tribal farmers have grown it for generations as a light, easily digestible everyday staple that swaps seamlessly into rice-based dishes.",
+    "nutrition": {
+      "protein": "7.7g",
+      "fiber": "7.6g",
+      "iron": "9.3mg",
+      "calories": "341 kcal"
+    },
+    "uses": [
+      "Rice substitute",
+      "Porridge",
+      "Idli batter"
+    ]
+  },
+  {
+    "id": "proso",
+    "name": "Proso Millet",
+    "local": "Barri / Chena",
+    "tag": "Quick Cook",
+    "region": "Maharashtra, India",
+    "season": "Kharif & Rabi (year-round)",
+    "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1200&auto=format&fit=crop",
+    "summary": "Fast-cooking, mildly sweet grain that fluffs beautifully — perfect for weeknight bowls and quick breakfasts.",
+    "description": "Proso millet's short cooking time made it a favorite grain along ancient trade routes, and it remains one of the fastest-cooking whole grains available today. Its mild sweetness and fluffy texture make it an easy weeknight swap for rice or couscous.",
+    "nutrition": {
+      "protein": "12.5g",
+      "fiber": "2.2g",
+      "iron": "0.8mg",
+      "calories": "378 kcal"
+    },
+    "uses": [
+      "Breakfast bowls",
+      "Stir-fry",
+      "Puddings"
+    ]
+  },
+  {
+    "id": "barnyard",
+    "name": "Barnyard Millet",
+    "local": "Sanwa / Jhangora",
+    "tag": "Weight Friendly",
+    "region": "Uttarakhand, India",
+    "season": "Kharif (Jun–Sep)",
+    "image": "https://images.unsplash.com/photo-1710149484964-d966b771c204?q=80&w=1200&auto=format&fit=crop",
+    "summary": "Light, fluffy grain with high fiber and low fat — a favorite for fasting meals and weight-conscious diets.",
+    "description": "Grown on the terraced hillsides of Uttarakhand, barnyard millet is the traditional grain of choice during religious fasting periods thanks to its light, low-fat profile. Its high fiber content also makes it a favorite among weight-conscious home cooks.",
+    "nutrition": {
+      "protein": "6.2g",
+      "fiber": "10g",
+      "iron": "5.0mg",
+      "calories": "307 kcal"
+    },
+    "uses": [
+      "Kheer",
+      "Fasting meals",
+      "Khichdi"
+    ]
+  },
+  {
+    "id": "sorghum",
+    "name": "Sorghum",
+    "local": "Jowar",
+    "tag": "Gluten Free",
+    "region": "Maharashtra, India",
+    "season": "Kharif & Rabi (year-round)",
+    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop",
+    "summary": "A versatile, naturally gluten-free grain milled into flour for soft rotis and crisp, golden flatbreads.",
+    "description": "Jowar is Maharashtra's everyday grain — milled fresh into flour for the region's iconic soft rotis and crisp, cracker-like bhakri. Naturally gluten-free and remarkably versatile, it's one of the easiest millets to fold into a modern kitchen.",
+    "nutrition": {
+      "protein": "10.4g",
+      "fiber": "6.7g",
+      "iron": "4.1mg",
+      "calories": "329 kcal"
+    },
+    "uses": [
+      "Roti",
+      "Popped snacks",
+      "Flour blends"
+    ]
+  }
+]

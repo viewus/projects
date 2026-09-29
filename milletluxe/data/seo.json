@@ -1,0 +1,62 @@
+{
+  "siteName": "MilletLuxe",
+  "siteUrl": "https://milletluxe.example.com",
+  "twitterHandle": "@milletluxe",
+  "defaultImage": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop",
+  "pages": {
+    "index": {
+      "title": "MilletLuxe | Heirloom Millets, Stone-Milled & Traceable",
+      "description": "MilletLuxe brings heirloom, stone-milled millets from smallholder farms to your table — traceable sourcing, rich nutrition, and recipes for the modern kitchen.",
+      "keywords": "millets, heirloom millets, bajra, ragi, foxtail millet, organic grains, millet flour, healthy grains India",
+      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop"
+    },
+    "about": {
+      "title": "Our Story | MilletLuxe",
+      "description": "Discover how MilletLuxe grew from a single seed-conservation effort into a farmer collective spanning five Indian states.",
+      "keywords": "millet brand story, farmer collective, seed conservation, sustainable agriculture India",
+      "image": "https://images.unsplash.com/photo-1710149484964-d966b771c204?q=80&w=1200&auto=format&fit=crop"
+    },
+    "varieties": {
+      "title": "Millet Varieties | MilletLuxe",
+      "description": "Explore eight heirloom millet varieties — pearl, finger, foxtail, kodo, little, proso, barnyard and sorghum — with nutrition facts and culinary uses.",
+      "keywords": "millet varieties, bajra, ragi, jowar, kodo millet, foxtail millet, barnyard millet, little millet, proso millet",
+      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1200&auto=format&fit=crop"
+    },
+    "nutrition": {
+      "title": "Nutrition Guide | MilletLuxe",
+      "description": "Compare the fiber, iron, calcium and glycemic index of millets against refined rice and wheat, and learn the everyday health benefits.",
+      "keywords": "millet nutrition, glycemic index, fiber rich grains, gluten free grains, millet health benefits",
+      "image": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=1200&auto=format&fit=crop"
+    },
+    "recipes": {
+      "title": "Millet Recipes | MilletLuxe",
+      "description": "Traditional and modern millet recipes — ragi dosa, bajra khichdi, foxtail upma and more — with full ingredients and step-by-step method.",
+      "keywords": "millet recipes, ragi dosa recipe, bajra khichdi, foxtail millet upma, millet cookies",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=1200&auto=format&fit=crop"
+    },
+    "sourcing": {
+      "title": "Farm Sourcing | MilletLuxe",
+      "description": "See how MilletLuxe sources millets directly from farmer collectives across five Indian states, from field to stone mill to your pantry.",
+      "keywords": "millet sourcing, farm to table grains, direct trade farmers, sustainable millet farming",
+      "image": "https://images.unsplash.com/photo-1783042909392-0b8d8683e0a2?q=80&w=1200&auto=format&fit=crop"
+    },
+    "gallery": {
+      "title": "Gallery | MilletLuxe",
+      "description": "A visual journey through MilletLuxe's fields, mills and kitchens — from harvest to plate.",
+      "keywords": "millet farm photos, grain photography, farm to table gallery",
+      "image": "https://images.unsplash.com/photo-1764070254247-351def349875?q=80&w=1200&auto=format&fit=crop"
+    },
+    "faq": {
+      "title": "FAQs | MilletLuxe",
+      "description": "Answers to common questions about millet sourcing, storage, gluten-free suitability, shipping and more.",
+      "keywords": "millet faq, gluten free millet, millet storage, millet shipping India",
+      "image": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=1200&auto=format&fit=crop"
+    },
+    "contact": {
+      "title": "Contact Us | MilletLuxe",
+      "description": "Get in touch with MilletLuxe for bulk orders, wholesale partnerships, or general questions about our heirloom millets.",
+      "keywords": "contact milletluxe, bulk millet orders, wholesale millets India",
+      "image": "https://images.unsplash.com/photo-1620827792322-5960fe216618?q=80&w=1200&auto=format&fit=crop"
+    }
+  }
+}

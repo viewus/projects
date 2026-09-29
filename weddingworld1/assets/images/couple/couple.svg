@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b0f17"/>
+      <stop offset="50%" stop-color="#1f070d"/>
+      <stop offset="100%" stop-color="#0a0305"/>
+    </linearGradient>
+    <linearGradient id="goldSheen" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0%" stop-color="#8c6a24"/>
+      <stop offset="30%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#fff5d6"/>
+      <stop offset="70%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8c6a24"/>
+    </linearGradient>
+    <linearGradient id="lehengaRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b81d34"/>
+      <stop offset="100%" stop-color="#6e0b1c"/>
+    </linearGradient>
+    <linearGradient id="sherwaniCream" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff9ed"/>
+      <stop offset="100%" stop-color="#e8dcbe"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="800" fill="url(#bgGlow)"/>
+
+  <!-- Ornate Arch Frame -->
+  <path d="M 50 750 L 50 300 C 50 150 200 50 300 50 C 400 50 550 150 550 300 L 550 750 Z" 
+        fill="none" stroke="url(#goldSheen)" stroke-width="3" opacity="0.8"/>
+  <path d="M 65 750 L 65 310 C 65 170 210 70 300 70 C 390 70 535 170 535 310 L 535 750 Z" 
+        fill="none" stroke="url(#goldSheen)" stroke-dasharray="4 6" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Background Mandala Aura -->
+  <g transform="translate(300, 300)" opacity="0.18">
+    <circle r="180" fill="none" stroke="url(#goldSheen)" stroke-width="2"/>
+    <circle r="140" fill="none" stroke="url(#goldSheen)" stroke-dasharray="6 8" stroke-width="2"/>
+    <circle r="100" fill="none" stroke="url(#goldSheen)" stroke-width="1.5"/>
+    <path d="M 0 -180 L 15 -120 L 0 -100 L -15 -120 Z" fill="url(#goldSheen)"/>
+    <path d="M 0 180 L 15 120 L 0 100 L -15 120 Z" fill="url(#goldSheen)"/>
+    <path d="M -180 0 L -120 15 L -100 0 L -120 -15 Z" fill="url(#goldSheen)"/>
+    <path d="M 180 0 L 120 15 L 100 0 L 120 -15 Z" fill="url(#goldSheen)"/>
+    <path d="M -127 -127 L -90 -70 L -70 -70 L -70 -90 Z" fill="url(#goldSheen)"/>
+    <path d="M 127 127 L 90 70 L 70 70 L 70 90 Z" fill="url(#goldSheen)"/>
+    <path d="M -127 127 L -70 90 L -70 70 L -90 70 Z" fill="url(#goldSheen)"/>
+    <path d="M 127 -127 L 70 -90 L 70 -70 L 90 -70 Z" fill="url(#goldSheen)"/>
+  </g>
+
+  <!-- Groom Silhouette & Royal Sherwani (Left Side) -->
+  <g transform="translate(180, 240)">
+    <!-- Pagdi / Royal Turban -->
+    <path d="M 15 45 C 5 25 30 0 65 5 C 95 10 115 35 105 55 C 85 50 35 48 15 45 Z" fill="#b81d34"/>
+    <path d="M 40 10 Q 55 -20 50 -35 Q 40 -15 38 5 Z" fill="url(#goldSheen)"/> <!-- Kalgi / Feather -->
+    <circle cx="48" cy="15" r="5" fill="url(#goldSheen)"/>
+    
+    <!-- Face & Beard Profile -->
+    <path d="M 35 48 Q 40 75 50 90 Q 65 105 75 90 Q 80 70 78 50 Z" fill="#d9ab8b"/>
+    <path d="M 45 80 Q 55 98 68 85 Q 65 80 52 75 Z" fill="#2d1c15"/> <!-- Royal Beard -->
+    
+    <!-- Royal Sherwani -->
+    <path d="M -10 110 Q 60 100 130 110 L 140 380 L -20 380 Z" fill="url(#sherwaniCream)"/>
+    <path d="M 50 110 L 50 380" stroke="url(#goldSheen)" stroke-width="8"/>
+    <!-- Pearl Mala Necklace -->
+    <path d="M 15 125 Q 55 190 95 125" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="5 4"/>
+    <path d="M 25 125 Q 55 220 85 125" fill="none" stroke="url(#goldSheen)" stroke-width="3"/>
+  </g>
+
+  <!-- Bride Silhouette & Bridal Elegance (Right Side) -->
+  <g transform="translate(300, 255)">
+    <!-- Red Bridal Dupatta Veil Drape -->
+    <path d="M -20 40 Q 50 -20 120 30 Q 140 160 130 365 L -40 365 Q -10 200 -20 40 Z" fill="url(#lehengaRed)" opacity="0.95"/>
+    <path d="M -20 40 Q 50 -20 120 30" fill="none" stroke="url(#goldSheen)" stroke-width="6"/>
+
+    <!-- Bride Face Profile & Traditional Bun -->
+    <circle cx="50" cy="55" r="28" fill="#30141b"/> <!-- Hair Bun -->
+    <path d="M 30 45 Q 25 75 40 88 Q 55 98 65 85 Q 70 65 65 45 Z" fill="#e8ba99"/>
+    <circle cx="35" cy="50" r="4" fill="url(#goldSheen)"/> <!-- Maang Tikka -->
+    <path d="M 35 50 L 48 35" stroke="url(#goldSheen)" stroke-width="2"/>
+    <circle cx="28" cy="68" r="8" fill="none" stroke="url(#goldSheen)" stroke-width="2"/> <!-- Nath / Nose Ring -->
+
+    <!-- Bridal Lehenga Blouse & Jewels -->
+    <path d="M 0 105 Q 50 95 100 105 L 110 365 L -10 365 Z" fill="url(#lehengaRed)"/>
+    <!-- Heavy Gold Choker & Rani Haar -->
+    <path d="M 22 105 Q 48 140 75 105" fill="none" stroke="url(#goldSheen)" stroke-width="7"/>
+    <path d="M 12 115 Q 48 180 85 115" fill="none" stroke="url(#goldSheen)" stroke-width="4"/>
+  </g>
+
+  <!-- Golden Varmala / Rose Garland Linking Couple -->
+  <path d="M 235 340 Q 300 420 365 340" fill="none" stroke="#ff4d6d" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 235 340 Q 300 420 365 340" fill="none" stroke="url(#goldSheen)" stroke-width="4" stroke-dasharray="6 8"/>
+
+  <!-- Foreground Arch Lamp & Floating Rose Petals -->
+  <circle cx="120" cy="560" r="6" fill="#ff4d6d" opacity="0.8"/>
+  <circle cx="480" cy="520" r="8" fill="#ff4d6d" opacity="0.75"/>
+  <circle cx="160" cy="680" r="5" fill="#ffd166" opacity="0.8"/>
+  <circle cx="440" cy="650" r="7" fill="#ffd166" opacity="0.9"/>
+  <circle cx="300" cy="720" r="9" fill="#ff4d6d" opacity="0.85"/>
+
+  <!-- Bottom Gold Inscription -->
+  <text x="300" y="730" font-family="'Cinzel', serif" font-size="22" font-weight="700" fill="url(#goldSheen)" text-anchor="middle" letter-spacing="4">
+    ANANYA &amp; RAHUL
+  </text>
+  <text x="300" y="755" font-family="'Playfair Display', serif" font-size="13" font-style="italic" fill="#ded2be" text-anchor="middle" letter-spacing="2">
+    Two Souls • One Sacred Eternal Bond
+  </text>
+</svg>

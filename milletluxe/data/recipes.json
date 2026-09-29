@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ragi-dosa",
+    "title": "Ragi Dosa",
+    "category": "Breakfast",
+    "millet": "Finger Millet",
+    "time": "25 min",
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?q=80&w=1000&auto=format&fit=crop",
+    "summary": "Crisp, lacy crepes made from fermented ragi batter — calcium-rich comfort food for any time of day.",
+    "ingredients": ["1 cup ragi flour", "1/2 cup rice flour", "1/4 cup curd", "Salt to taste", "Water as needed"],
+    "steps": ["Whisk ragi flour, rice flour, curd and salt into a smooth, pourable batter.", "Rest for 20 minutes to hydrate the flours.", "Heat a tawa, pour a thin layer of batter and spread in a circular motion.", "Drizzle oil, cook until golden and crisp, then flip briefly.", "Serve hot with coconut chutney and sambar."]
+  },
+  {
+    "id": "bajra-khichdi",
+    "title": "Bajra Khichdi",
+    "category": "Lunch",
+    "millet": "Pearl Millet",
+    "time": "40 min",
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1630409351211-d62ab2d24da4?q=80&w=1000&auto=format&fit=crop",
+    "summary": "A one-pot rustic khichdi where hearty pearl millet meets lentils, ghee, and warming winter spices.",
+    "ingredients": ["1 cup bajra, soaked overnight", "1/2 cup moong dal", "1 onion, chopped", "2 tsp ghee", "Cumin, turmeric, salt"],
+    "steps": ["Pressure cook soaked bajra with moong dal until soft.", "Temper cumin seeds in ghee until fragrant.", "Add onion and saute until golden, then stir in turmeric.", "Fold the cooked bajra-dal mixture into the tempering.", "Simmer 5 minutes and finish with a spoon of ghee."]
+  },
+  {
+    "id": "foxtail-upma",
+    "title": "Foxtail Millet Upma",
+    "category": "Breakfast",
+    "millet": "Foxtail Millet",
+    "time": "20 min",
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1626901148200-0e934140a02b?q=80&w=1000&auto=format&fit=crop",
+    "summary": "A light, low-GI take on classic upma with mustard seeds, curry leaves, and crunchy peanuts.",
+    "ingredients": ["1 cup foxtail millet", "1 carrot, diced", "1 tbsp peanuts", "Mustard seeds, curry leaves", "2 tbsp oil"],
+    "steps": ["Dry roast foxtail millet lightly and set aside.", "Temper mustard seeds, curry leaves and peanuts in oil.", "Add diced vegetables and saute for 2 minutes.", "Add 2 cups water, bring to a boil, then stir in millet.", "Cover and cook on low heat until fluffy, about 10 minutes."]
+  },
+  {
+    "id": "kodo-pulao",
+    "title": "Kodo Millet Pulao",
+    "category": "Dinner",
+    "millet": "Kodo Millet",
+    "time": "35 min",
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1789992252165-28c05878c442?q=80&w=1000&auto=format&fit=crop",
+    "summary": "A fragrant, whole-spice pulao that showcases kodo millet's earthy aroma alongside garden vegetables.",
+    "ingredients": ["1 cup kodo millet", "Mixed vegetables", "Whole spices (bay leaf, cloves, cinnamon)", "1 onion, sliced", "2 tbsp ghee"],
+    "steps": ["Soak kodo millet for 30 minutes and drain.", "Saute whole spices and onion in ghee until aromatic.", "Add vegetables and saute briefly.", "Add millet and 2 cups water, season with salt.", "Cover and cook until grains are tender and separate."]
+  },
+  {
+    "id": "millet-cookies",
+    "title": "Multi-Millet Cookies",
+    "category": "Snack",
+    "millet": "Finger & Sorghum Blend",
+    "time": "45 min",
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1000&auto=format&fit=crop",
+    "summary": "Wholesome, jaggery-sweetened cookies that turn everyday millet flour into a guilt-free treat.",
+    "ingredients": ["1/2 cup ragi flour", "1/2 cup jowar flour", "1/4 cup jaggery powder", "1/4 cup ghee", "1/2 tsp baking powder"],
+    "steps": ["Cream ghee and jaggery until fluffy.", "Fold in both flours and baking powder to form a soft dough.", "Shape into small discs and place on a lined tray.", "Bake at 170°C for 15-18 minutes until edges turn golden.", "Cool completely before storing in an airtight jar."]
+  },
+  {
+    "id": "barnyard-kheer",
+    "title": "Barnyard Millet Kheer",
+    "category": "Dessert",
+    "millet": "Barnyard Millet",
+    "time": "30 min",
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1777613112969-d7511ddfbe15?q=80&w=1000&auto=format&fit=crop",
+    "summary": "A silky, fasting-friendly pudding simmered slowly in milk with cardamom, saffron, and toasted nuts.",
+    "ingredients": ["1/2 cup barnyard millet", "3 cups milk", "1/4 cup sugar or jaggery", "Cardamom, saffron", "Mixed nuts, roasted"],
+    "steps": ["Rinse barnyard millet and pressure cook briefly with a splash of water.", "Simmer milk on low heat until slightly reduced.", "Add the cooked millet and sweetener, stirring often.", "Flavor with cardamom and saffron strands.", "Garnish with roasted nuts and serve warm or chilled."]
+  }
+]

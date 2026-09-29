@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8c6a24"/>
+      <stop offset="35%" stop-color="#d9b65c"/>
+      <stop offset="65%" stop-color="#fff0a8"/>
+      <stop offset="100%" stop-color="#b98b35"/>
+    </linearGradient>
+    <radialGradient id="v" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#fbf3df" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#3a2313" stop-opacity="0.35"/>
+    </radialGradient>
+  </defs>
+  <rect width="700" height="500" fill="#f7f1e3"/>
+  <rect width="700" height="500" fill="url(#g)" opacity="0.28"/>
+  <rect width="700" height="500" fill="url(#v)"/>
+  <circle cx="350" cy="240" r="83" fill="none" stroke="#8c6a24" stroke-width="2" opacity="0.55"/>
+  <text x="50%" y="52%" font-family="Georgia, serif" font-size="31" fill="#3a2313" text-anchor="middle" opacity="0.85">Bride's Family</text>
+</svg>

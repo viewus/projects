@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 660" width="100%" height="100%">
+  <defs>
+    <linearGradient id="brideBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4a0e17"/>
+      <stop offset="60%" stop-color="#28050c"/>
+      <stop offset="100%" stop-color="#120205"/>
+    </linearGradient>
+    <linearGradient id="goldSheenBride" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0%" stop-color="#8c6a24"/>
+      <stop offset="30%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#fff5d6"/>
+      <stop offset="70%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8c6a24"/>
+    </linearGradient>
+    <linearGradient id="lehengaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c91834"/>
+      <stop offset="100%" stop-color="#78081a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="660" fill="url(#brideBg)"/>
+
+  <!-- Ornate Arch -->
+  <path d="M 40 620 L 40 240 C 40 120 150 40 250 40 C 350 40 460 120 460 240 L 460 620 Z" 
+        fill="none" stroke="url(#goldSheenBride)" stroke-width="3" opacity="0.8"/>
+  <path d="M 55 620 L 55 245 C 55 135 155 55 250 55 C 345 55 445 135 445 245 L 445 620 Z" 
+        fill="none" stroke="url(#goldSheenBride)" stroke-dasharray="4 6" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Background Mandala -->
+  <g transform="translate(250, 240)" opacity="0.15">
+    <circle r="150" fill="none" stroke="url(#goldSheenBride)" stroke-width="2"/>
+    <circle r="110" fill="none" stroke="url(#goldSheenBride)" stroke-dasharray="6 6" stroke-width="1.5"/>
+  </g>
+
+  <!-- Bride Illustration -->
+  <g transform="translate(145, 120)">
+    <!-- Crimson Dupatta / Veil -->
+    <path d="M -10 90 Q 105 10 220 90 Q 240 280 210 480 L 0 480 Q -30 280 -10 90 Z" fill="url(#lehengaGrad)"/>
+    <path d="M -10 90 Q 105 10 220 90" fill="none" stroke="url(#goldSheenBride)" stroke-width="8"/>
+    <path d="M -10 90 Q 105 10 220 90" fill="none" stroke="#fff5d6" stroke-width="2" stroke-dasharray="4 8"/>
+
+    <!-- Royal Bun with Jasmine / Mogra Gajra -->
+    <circle cx="105" cy="115" r="46" fill="#1f0a10"/>
+    <path d="M 70 125 Q 105 75 140 125" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-dasharray="6 6"/>
+
+    <!-- Face & Features -->
+    <path d="M 75 105 Q 65 155 85 178 Q 105 195 125 178 Q 145 155 135 105 Z" fill="#ebd2be"/>
+    <!-- Maang Tikka & Matha Patti -->
+    <circle cx="105" cy="115" r="6" fill="url(#goldSheenBride)"/>
+    <path d="M 105 115 L 105 85" stroke="url(#goldSheenBride)" stroke-width="2.5"/>
+    <path d="M 80 105 Q 105 95 130 105" fill="none" stroke="url(#goldSheenBride)" stroke-width="3"/>
+    <!-- Traditional Nath (Nose Ring) -->
+    <circle cx="82" cy="148" r="10" fill="none" stroke="url(#goldSheenBride)" stroke-width="2"/>
+    <path d="M 82 148 Q 65 140 78 120" fill="none" stroke="url(#goldSheenBride)" stroke-width="1.5"/>
+
+    <!-- Bridal Choker & Polki Necklaces -->
+    <path d="M 68 200 Q 105 240 142 200" fill="none" stroke="url(#goldSheenBride)" stroke-width="12"/>
+    <path d="M 52 215 Q 105 285 158 215" fill="none" stroke="url(#goldSheenBride)" stroke-width="8"/>
+    <path d="M 40 235 Q 105 340 170 235" fill="none" stroke="url(#goldSheenBride)" stroke-width="4" stroke-dasharray="4 6"/>
+
+    <!-- Bridal Lehenga Blouse -->
+    <path d="M 30 205 Q 105 190 180 205 L 195 480 L 15 480 Z" fill="url(#lehengaGrad)"/>
+    <!-- Gold Zardozi Embroidery -->
+    <circle cx="70" cy="310" r="14" fill="none" stroke="url(#goldSheenBride)" stroke-width="2"/>
+    <circle cx="140" cy="310" r="14" fill="none" stroke="url(#goldSheenBride)" stroke-width="2"/>
+    <circle cx="105" cy="380" r="18" fill="none" stroke="url(#goldSheenBride)" stroke-width="2"/>
+  </g>
+
+  <!-- Title Badge -->
+  <text x="250" y="580" font-family="'Cinzel', serif" font-size="20" font-weight="700" fill="url(#goldSheenBride)" text-anchor="middle" letter-spacing="3">
+    ANANYA SHARMA
+  </text>
+  <text x="250" y="605" font-family="'Great Vibes', cursive" font-size="24" fill="#faecc3" text-anchor="middle">
+    The Royal Bride
+  </text>
+</svg>
