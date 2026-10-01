@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Static site repo — plain HTML/CSS/JS, no build step.
 
 # OS cruft
@@ -26,3 +27,12 @@ $RECYCLE.BIN/
 *.bak
 
 node_modules/
+=======
+wordpress_design/cms-project/themes/advaithhomes_new.zip
+wordpress_design/cms-project/plugins/cms-plugin.zip
+wordpress_design/cms-project/cms-project-before-optimize/*
+wordpress_design/cms-project/react_code/royal-heritage-hub-admin/node_modules/*
+wordpress_design/cms-project/react_code/royal-heritage-hub-admin/dist/*
+wordpress_design/cms-project/react_code/royal-heritage-hub/node_modules/*
+wordpress_design/cms-project/react_code/royal-heritage-hub-admin/dist/*
+>>>>>>> 4ac2a3abc5617c358259e79a283e8dce51053251

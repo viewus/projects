@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Projects
 
 A collection of modern, responsive websites developed for clients.
@@ -106,3 +107,6 @@ Served by GitHub Pages from the default branch. [`CNAME`](CNAME) points the site
 ## Licence
 
 All rights reserved. Client work — please don't reuse designs or content without permission.
+=======
+# projects
+>>>>>>> 4ac2a3abc5617c358259e79a283e8dce51053251
