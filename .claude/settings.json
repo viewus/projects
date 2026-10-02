@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i 's/setTimeout\\(r,60\\)/setTimeout\\(r,250\\)/; s/y+=600/y+=500/' shot.mjs)",
+      "Bash(node shot.mjs \"http://localhost:8123/#/\" home_top.png 1440 900 0)",
+      "Bash(node shot.mjs \"http://localhost:8123/#/\" home.png 1440 900 1)",
+      "Bash(sed -i \"s#    await p.evaluate\\(\\(\\)=>location.reload\\(\\)\\); await p.waitForLoadState\\('networkidle'\\);#    await p.waitForTimeout\\(500\\);#\" sweep.mjs)",
+      "Bash(node sweep.mjs)",
+      "Read(//e/MY-GITHUB/AKHILESHRAVURI2001/AR01F_Integrated/**)",
+      "Bash(sed -i 's#/content/customer-feedback#/content/turning-customer-feedback-into-growth#' __TRACKED_VAR__/sweep.mjs)",
+      "Bash(node __TRACKED_VAR__/sweep.mjs)",
+      "Bash(node shot.mjs \"http://localhost:8123/#/category/food-drinks\" cat.png 1440 900 1)",
+      "Bash(node shot.mjs \"http://localhost:8123/#/categories\" cats.png 1440 900 0)",
+      "Bash(node shot.mjs \"http://localhost:8123/#/\" m_home.png 390 844 0)",
+      "Bash(node shot.mjs \"http://localhost:8123/#/content/big-buck-bunny-blender-open-movie\" content.png 1440 900 0)",
+      "Bash(sed -i \"s#'/creator/healthy-living'#'/provider/healthy-living','/provider/sweet-bites','/providers?type=business'#\" sweep.mjs)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8123/index.html)",
+      "Bash(PYTHONIOENCODING=utf-8 python patch_gen3.py)",
+      "Bash(python gen_data.py)",
+      "Bash(node shot.mjs \"http://localhost:8123/#/\" r_home.png 1440 900 1)",
+      "Bash(node shot.mjs \"http://localhost:8123/#/provider/healthy-living\" r_prov.png 1440 900 0)",
+      "Bash(node shot.mjs \"http://localhost:8123/#/\" r_mob.png 390 844 0)"
+    ]
+  }
+}

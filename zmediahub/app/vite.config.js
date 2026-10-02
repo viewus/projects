@@ -28,6 +28,11 @@ export default defineConfig({
   base: './',
   plugins: [react(), serveStatic()],
   publicDir: false,
-  build: { outDir: '..', emptyOutDir: false, assetsDir: 'assets', sourcemap: false },
+  build: {
+    outDir: '..', emptyOutDir: false, assetsDir: 'assets', sourcemap: false,
+    // Fixed file names (no hash), so every build writes the same names and index.html never changes between builds.
+    // Trade-off: browsers may keep an old copy for a few minutes after you publish (GitHub Pages caches ~10 min).
+    rollupOptions: { output: { entryFileNames: 'assets/app.js', chunkFileNames: 'assets/[name].js', assetFileNames: 'assets/[name][extname]' } },
+  },
   server: { port: 5173 },
 });
