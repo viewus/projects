@@ -1,0 +1,7 @@
+id,question,answer,category,sort_order,status
+q1,Are your products suitable for everyone?,"Ayurvedic and herbal products suit many people, but not everyone. If you are pregnant, taking medication or managing a condition, please speak to a doctor first.",Products,1,active
+q2,What does Rasayana mean?,"Rasayana is the Ayurvedic branch of rejuvenation: foods and herbs traditionally taken to support strength and resilience, such as Chyawanprash.",Products,2,active
+q3,How should I store herbal powders and oils?,"Keep them airtight, away from direct sun and moisture. Cold-pressed oils keep best in a cool, dark place.",Products,3,active
+q4,Is the information here medical advice?,No. It is general information based on traditional Ayurvedic ideas. It does not diagnose or treat any condition.,About,4,active
+q5,Where can I find your contact details?,On the Contact page. You can also reach us on WhatsApp where available.,Visiting,5,active
+q6,Where can I learn about doshas and daily routines?,"Start with our journal articles on the three doshas and on dinacharya, the Ayurvedic daily routine.",Journal,6,active

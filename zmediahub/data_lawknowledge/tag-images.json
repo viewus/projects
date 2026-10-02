@@ -1,0 +1,18 @@
+{
+  "_readme": "Hero image for every tag page, kept apart from tags.csv. Add a line  \"tag-slug\": \"data/media/tags/your-image.jpg\"  to give a tag its own image. Tags without an entry use the image of their most common category, then \"default\".",
+  "default": "data/media/banners/hero-1.jpg",
+  "tags": {
+    "contracts": "data/media/categories/contracts-agreements.jpg",
+    "tenancy": "data/media/categories/property-tenancy.jpg",
+    "property": "data/media/categories/family-wills.jpg",
+    "wills": "data/media/categories/business-companies.jpg",
+    "business-law": "data/media/categories/rights-procedure.jpg",
+    "employment": "data/media/categories/contracts-agreements.jpg",
+    "intellectual-property": "data/media/categories/property-tenancy.jpg",
+    "consumer-rights": "data/media/categories/family-wills.jpg",
+    "disputes": "data/media/categories/business-companies.jpg",
+    "documents": "data/media/categories/rights-procedure.jpg",
+    "courts": "data/media/categories/contracts-agreements.jpg",
+    "checklists": "data/media/categories/property-tenancy.jpg"
+  }
+}

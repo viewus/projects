@@ -1,0 +1,9 @@
+id,question,answer,category,sort_order,status
+q1,Is the information here legal advice?,"No. It is general information to help you understand common topics. Laws differ by country and change over time, so please speak to a qualified lawyer about your situation.",General,1,active
+q2,Which country's law do the guides describe?,"They are written in a jurisdiction-neutral way, covering ideas that are common in many legal systems. Always check the rules that apply where you live.",General,2,active
+q3,Does a contract have to be in writing to be binding?,"Not always. Many verbal agreements can be binding, but they are hard to prove, and some types of agreement must be in writing by law. Writing things down protects everyone.",Contracts,3,active
+q4,What should I check before signing an agreement?,"Names and dates, exactly what each side promises, the price and payment terms, how long it lasts, and how either side can end it. See our pre-signing checklist.",Contracts,4,active
+q5,What is a security deposit for?,"It is usually held against unpaid rent or damage beyond normal wear. Photograph the property when you move in and out, and keep your receipts.",Property,5,active
+q6,Do I need a will if I do not own much?,"A will also names who should look after minor children and who carries out your wishes, so it can matter even when your property is modest.",Wills,6,active
+q7,What is the difference between a trademark and copyright?,"A trademark protects names, logos and slogans that identify a business. Copyright protects creative works such as writing, images and music.",Business,7,active
+q8,Do I always need to go to court to settle a dispute?,"No. Many disputes are settled through negotiation or mediation, which is often faster and cheaper than court.",Disputes,8,active

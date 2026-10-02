@@ -1,0 +1,52 @@
+key,value
+baseUrl,https://www.punarjiva.in/
+staticPagesPath,
+routing,hash
+titleTemplate,{title} | Punarjiva Organics
+homeTitle,"Punarjiva Organics – Ayurvedic Wisdom, Rebirth Through Nature"
+defaultDescription,"Punarjiva Organics shares Ayurvedic wisdom, organic foods and nature-led care: Rasayana, herbal churnas, skin and hair care, healing oils and the Ayurvedic pantry."
+defaultImage,data/media/images/og-default.jpg
+imageAlt,"Punarjiva Organics – Organic, Natural, Ayurvedic"
+twitterCard,summary_large_image
+twitterSite,
+locale,en_IN
+themeColor,#7b2a58
+robots,"index,follow"
+organization.name,Punarjiva Organics
+organization.logo,data/media/images/logo-mark.png
+pages.categories.title,Our Ayurvedic Range
+pages.categories.description,"Rasayana, herbal churna and kadha, skin and hair care, healing oils and the Ayurvedic pantry from Punarjiva Organics."
+pages.trending.title,Popular Picks
+pages.trending.description,What people look at most across the Punarjiva Organics Ayurvedic range.
+pages.popular.title,Most Loved
+pages.popular.description,Favourites from every part of the Punarjiva Organics range.
+pages.new.title,New Arrivals
+pages.new.description,"The newest additions to the Punarjiva Organics range, newest first."
+pages.tags.title,Browse Tags
+pages.tags.description,"Explore by Ayurvedic topic: Rasayana, agni, ojas, dinacharya, abhyanga and more."
+pages.search.title,Search
+pages.search.description,"Search Punarjiva Organics for Ayurvedic products, journal articles and topics."
+pages.blog.title,Ayurveda Journal
+pages.blog.description,"Doshas, dinacharya, agni and rasayana explained plainly, plus millets, oils and natural care."
+pages.businesses.title,Businesses
+pages.businesses.description,"Discover businesses sharing useful content, tools and ideas on Punarjiva Organics."
+pages.notfound.title,Page not found
+pages.notfound.description,The page you are looking for does not exist.
+pages.providers.title,Explore Creators & Businesses
+pages.providers.description,"Discover creators, businesses, brands and publishers and the content they share across Instagram, YouTube, Facebook, TikTok and the web."
+templates.category.title,"{name}: Videos, Posts & Creators"
+templates.category.description,"{description} Explore trending, popular and new {name} content on Punarjiva Organics."
+templates.tag.title,#{name}: Content & Creators
+templates.tag.description,{description} Browse {count} items tagged #{name} on Punarjiva Organics.
+templates.content.title,{title}
+templates.content.description,{description}
+templates.blog.title,{title}
+templates.blog.description,{description}
+templates.business.title,{name}: Business Profile
+templates.business.description,{description}
+templates.provider.title,{name} (@{username}): Content & Platforms
+templates.provider.description,{bio} Explore content from {name} on Punarjiva Organics.
+sitemap.changefreq,weekly
+sitemap.priority.home,1.0
+sitemap.priority.listing,0.8
+sitemap.priority.detail,0.6

@@ -1,0 +1,73 @@
+{
+  "description": "Created by health-conscious minds, Organic Guru revives the body's natural harmony through Ayurvedic wisdom, organic foods and nature-led care.",
+  "columns": [
+    {
+      "type": "links",
+      "title": "Explore",
+      "links": [
+        {
+          "label": "Home",
+          "href": "#/"
+        },
+        {
+          "label": "Ayurvedic Range",
+          "href": "#/categories"
+        },
+        {
+          "label": "Popular",
+          "href": "#/popular"
+        },
+        {
+          "label": "New",
+          "href": "#/new"
+        },
+        {
+          "label": "Journal",
+          "href": "#/blog"
+        }
+      ]
+    },
+    {
+      "type": "categories",
+      "title": "Ayurvedic Range",
+      "limit": 8
+    },
+    {
+      "type": "tags",
+      "title": "Ayurveda Topics",
+      "limit": 8
+    },
+    {
+      "type": "links",
+      "title": "Visit & Contact",
+      "links": [
+        {
+          "label": "About Us",
+          "href": "#/page/about"
+        },
+        {
+          "label": "Contact",
+          "href": "#/page/contact"
+        },
+        {
+          "label": "Search",
+          "href": "#/search"
+        }
+      ]
+    }
+  ],
+  "bottomLinks": [
+    {
+      "label": "Privacy Policy",
+      "href": "#/page/privacy"
+    },
+    {
+      "label": "Terms of Use",
+      "href": "#/page/terms"
+    },
+    {
+      "label": "Contact",
+      "href": "#/page/contact"
+    }
+  ]
+}

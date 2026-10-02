@@ -1,0 +1,51 @@
+{
+  "_readme": "Pills shown in the platform filter. 'platform' filters by platform id (see data/platforms.csv); 'type' filters by content_type. Icon and colour come from platforms.csv unless set here. 'embedHosts' lists the only sites allowed to load as embeds.",
+  "filters": [
+    {
+      "key": "all",
+      "label": "All",
+      "icon": "fa-solid fa-table-cells-large"
+    }
+  ],
+  "embedHosts": [
+    "www.youtube.com",
+    "www.youtube-nocookie.com",
+    "player.vimeo.com",
+    "www.instagram.com",
+    "www.facebook.com",
+    "www.tiktok.com",
+    "platform.twitter.com",
+    "open.spotify.com",
+    "youtube.com",
+    "m.youtube.com",
+    "youtu.be",
+    "instagram.com",
+    "facebook.com",
+    "m.facebook.com",
+    "tiktok.com"
+  ],
+  "embeds": {
+    "_readme": "Embed settings per platform. ratio = width/height of the player; shortRatio is used for reels and shorts. Paste a normal link into embed_url (youtube.com/watch?v=..., youtu.be/..., instagram.com/p/... or /reel/..., facebook.com/.../videos/...) and the site builds the official embed. Hosts must be listed in embedHosts.",
+    "youtube": {
+      "ratio": "16/9",
+      "shortRatio": "9/16"
+    },
+    "instagram": {
+      "ratio": "4/5"
+    },
+    "facebook": {
+      "ratio": "16/9",
+      "shortRatio": "9/16"
+    },
+    "tiktok": {
+      "ratio": "9/16"
+    },
+    "x": {
+      "ratio": "4/5"
+    },
+    "generic": {
+      "ratio": "16/9",
+      "shortRatio": "9/16"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+id,name,slug,icon,color,embed_supported,profile_url,sort_order,status
+instagram,Instagram,instagram,fa-brands fa-instagram,#e1306c,1,https://www.instagram.com/explore/tags,1,active
+youtube,YouTube,youtube,fa-brands fa-youtube,#ff0033,1,https://www.youtube.com/results?search_query=,2,active
+facebook,Facebook,facebook,fa-brands fa-facebook-f,#1877f2,1,https://www.facebook.com/search/top?q=,3,active
+tiktok,TikTok,tiktok,fa-brands fa-tiktok,#111111,1,https://www.tiktok.com/search?q=,4,active
+x,X (Twitter),x,fa-brands fa-x-twitter,#111111,0,https://x.com/search?q=,5,active
+blog,Blog,blog,fa-solid fa-newspaper,#5b6577,0,https://www.google.com/search?q=,6,active
+website,Website,website,fa-solid fa-globe,#0f766e,0,https://www.google.com/search?q=,7,active

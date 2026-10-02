@@ -1,0 +1,21 @@
+id,name,slug,description,icon,image,parent_id,sort_order,featured,status,color
+1,Business,business,"Business ideas, marketing tips, productivity and growth strategies.",fa-solid fa-briefcase,data/media/categories/business.jpg,,1,1,active,#c47f17
+2,Technology,technology,"Gadgets, software, AI tools and tutorials from tech creators.",fa-solid fa-laptop-code,data/media/categories/technology.jpg,,2,1,active,#1b8fc7
+3,Education,education,"Study tips, courses and ways to keep learning every day.",fa-solid fa-book-open,data/media/categories/education.jpg,,3,1,active,#5b6ee1
+4,Lifestyle,lifestyle,"Daily life, habits and inspiration for living well.",fa-solid fa-seedling,data/media/categories/lifestyle.jpg,,4,1,active,#2e9e5b
+5,Food & Drinks,food-drinks,"Recipes, cooking tips, food reviews, healthy eating and more.",fa-solid fa-utensils,data/media/categories/food-drinks.jpg,,5,1,active,#e8590c
+6,Travel,travel,"Beautiful places, travel guides and real experiences.",fa-solid fa-plane,data/media/categories/travel.jpg,,6,1,active,#1c7ed6
+7,Health & Fitness,health-fitness,"Workouts, healthy living and wellness tips.",fa-solid fa-heart-pulse,data/media/categories/health-fitness.jpg,,7,1,active,#e03131
+8,Home & Garden,home-garden,"Home decor, gardening tips and organization ideas.",fa-solid fa-house,data/media/categories/home-garden.jpg,,8,1,active,#e8830c
+9,DIY & Crafts,diy-crafts,"Creative ideas, DIY projects and handmade crafts.",fa-solid fa-scissors,data/media/categories/diy-crafts.jpg,,9,1,active,#e0348c
+10,Beauty & Fashion,beauty-fashion,"Makeup tips, fashion trends and beauty routines.",fa-solid fa-wand-magic-sparkles,data/media/categories/beauty-fashion.jpg,,10,1,active,#d6409f
+11,Finance,finance,"Money tips, investing basics, budgeting and personal finance.",fa-solid fa-chart-simple,data/media/categories/finance.jpg,,11,1,active,#2b9348
+12,Pets,pets,"Pet care tips, cute moments and training guides.",fa-solid fa-paw,data/media/categories/pets.jpg,,12,1,active,#a86b2d
+13,Nature,nature,"Nature, wildlife, outdoor activities and sustainability.",fa-solid fa-tree,data/media/categories/nature.jpg,,13,1,active,#2f9e44
+14,Parenting,parenting,"Parenting tips, kids activities and family life.",fa-solid fa-baby,data/media/categories/parenting.jpg,,14,1,active,#8e5bd6
+15,Art & Design,art-design,"Creative art, design inspiration and tutorials.",fa-solid fa-palette,data/media/categories/art-design.jpg,,15,0,active,#c2255c
+16,Automotive,automotive,"Cars, bikes, reviews and automotive tips.",fa-solid fa-car-side,data/media/categories/automotive.jpg,,16,0,active,#495057
+17,Entertainment,entertainment,"Movies, music, animation and fun content.",fa-solid fa-clapperboard,data/media/categories/entertainment.jpg,,17,0,active,#343a40
+18,Science,science,"Science facts, discoveries and educational content.",fa-solid fa-flask,data/media/categories/science.jpg,,18,0,active,#0c8599
+19,Motivation,motivation,"Inspirational stories, success tips and motivation.",fa-solid fa-star,data/media/categories/motivation.jpg,,19,0,active,#f08c00
+20,Photography,photography,"Photography tips, editing guides and stunning visuals.",fa-solid fa-camera,data/media/categories/photography.jpg,,20,0,active,#d9480f

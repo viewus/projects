@@ -1,0 +1,69 @@
+id,title,slug,excerpt,content,author,category_id,tags,thumbnail,published_at,featured,status
+1,"How a House Gets Built, Step by Step",how-a-house-gets-built-step-by-step,From site clearing to handover: the usual order of work on a new home.,"Every build is different, but most follow the same sequence.
+
+## 1. Plan and approve
+Design, drawings, budget and permits come first. Changes are cheap on paper and expensive on site.
+
+## 2. Prepare the site
+Clear, level and mark out the plot, and organise drainage, access and temporary services.
+
+## 3. Foundations and structure
+Excavate, pour foundations and let them cure, then raise the walls and frame.
+
+## 4. Roof and weather-tightness
+Once the roof is on and openings are closed, the interior can be worked on regardless of weather.
+
+## 5. Services and finishes
+Electrics, plumbing, plaster, floors and paint, followed by inspections and handover.
+
+Allow time between stages: concrete needs days to cure, and plaster needs to dry before painting.
+
+*This article is general information for planning and learning. Building rules, permits and safety requirements differ by location. Always follow your local codes and consult a qualified engineer, architect or licensed contractor before you build.*",BuildRight,1,blueprints;checklists,data/media/blog/how-a-house-gets-built-step-by-step.jpg,2026-09-24,1,active
+2,Concrete Basics for Homeowners,concrete-basics-for-homeowners,"Why strength comes from the right mix, careful pouring and patient curing.","Concrete is cement, sand, stone and water, and each part matters.
+
+## The mix
+Too much water makes concrete easier to pour but weaker. Follow the mix specified by your engineer.
+
+## Pouring
+Place it in layers, compact it to remove air pockets and keep it level.
+
+## Curing
+Concrete gains strength as it cures, not as it dries. Keep it damp and shaded for several days.
+
+## Reinforcement
+Steel bars carry the pulling forces concrete cannot. Keep them clean and covered by the specified thickness of concrete.
+
+*This article is general information for planning and learning. Building rules, permits and safety requirements differ by location. Always follow your local codes and consult a qualified engineer, architect or licensed contractor before you build.*",BuildRight,2,concrete;foundation,data/media/blog/concrete-basics-for-homeowners.jpg,2026-09-17,0,active
+3,Site Safety Fundamentals,site-safety-fundamentals,The habits that prevent most building-site accidents.,"Most site accidents are preventable.
+
+## Wear the basics
+- hard hat
+- safety boots
+- gloves and eye protection
+- hearing protection near loud tools
+
+## Work at height
+Scaffolding needs a firm base, guardrails and regular inspection. Never overload platforms.
+
+## Keep the site tidy
+Clear walkways, store materials safely and cover openings.
+
+## Talk about it
+A short briefing each morning about the day's hazards is one of the cheapest safety measures there is.
+
+*This article is general information for planning and learning. Building rules, permits and safety requirements differ by location. Always follow your local codes and consult a qualified engineer, architect or licensed contractor before you build.*",BuildRight,4,safety;scaffolding;checklists,data/media/blog/site-safety-fundamentals.jpg,2026-09-10,0,active
+4,Keeping Water Out: A Waterproofing Guide,keeping-water-out-waterproofing-guide,Where leaks start and how to stop them early.,"Water is the most common cause of building damage.
+
+## Know the weak points
+Roofs, bathrooms, balconies, basements and joints between materials.
+
+## Choose a system
+Membranes, coatings and cement-based products each suit different places. Follow the manufacturer's instructions on surface preparation.
+
+## Test before you finish
+Flood-test bathroom floors and flat roofs before tiling or covering them.
+
+## Maintain
+Clean gutters and drains, and inspect sealants yearly.
+
+*This article is general information for planning and learning. Building rules, permits and safety requirements differ by location. Always follow your local codes and consult a qualified engineer, architect or licensed contractor before you build.*",BuildRight,5,waterproofing;finishing,data/media/blog/keeping-water-out-waterproofing-guide.jpg,2026-09-03,0,active

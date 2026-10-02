@@ -1,0 +1,14 @@
+id,category_id,name,slug,description,image,icon,sort_order,status
+101,1,Chyawanprash & Lehyams,lehyams,Chyawanprash & Lehyams from Punarjiva Organics.,data/media/categories/rasayana-vitality.jpg,fa-solid fa-jar,1,active
+102,1,Rasayana Herbs,rasayana-herbs,Rasayana Herbs from Punarjiva Organics.,data/media/categories/rasayana-vitality.jpg,fa-solid fa-leaf,2,active
+103,1,Tonics & Energy Mixes,tonics-energy,Tonics & Energy Mixes from Punarjiva Organics.,data/media/categories/rasayana-vitality.jpg,fa-solid fa-bolt,3,active
+104,2,Churnas (Herbal Powders),churnas,Churnas (Herbal Powders) from Punarjiva Organics.,data/media/categories/herbal-churna-kadha.jpg,fa-solid fa-mortar-pestle,4,active
+105,2,Kadha & Herbal Teas,kadha,Kadha & Herbal Teas from Punarjiva Organics.,data/media/categories/herbal-churna-kadha.jpg,fa-solid fa-mug-hot,5,active
+106,3,Face Care (Mukha),face-care,Face Care (Mukha) from Punarjiva Organics.,data/media/categories/skin-hair-care.jpg,fa-solid fa-face-smile,6,active
+107,3,Bath & Ubtan,bath-ubtan,Bath & Ubtan from Punarjiva Organics.,data/media/categories/skin-hair-care.jpg,fa-solid fa-bath,7,active
+108,3,Hair Cleansers,hair-cleansers,Hair Cleansers from Punarjiva Organics.,data/media/categories/skin-hair-care.jpg,fa-solid fa-wind,8,active
+109,4,Hair & Scalp Oils,hair-oils,Hair & Scalp Oils from Punarjiva Organics.,data/media/categories/abhyanga-oils.jpg,fa-solid fa-droplet,9,active
+110,4,Cooking & Body Oils,body-oils,Cooking & Body Oils from Punarjiva Organics.,data/media/categories/abhyanga-oils.jpg,fa-solid fa-oil-can,10,active
+111,5,Millets & Grains,millets-grains,Millets & Grains from Punarjiva Organics.,data/media/categories/ahara-pantry.jpg,fa-solid fa-wheat-awn,11,active
+112,5,Dals & Pulses,dals-pulses,Dals & Pulses from Punarjiva Organics.,data/media/categories/ahara-pantry.jpg,fa-solid fa-seedling,12,active
+113,5,Spices & Sweeteners,spices-sweeteners,Spices & Sweeteners from Punarjiva Organics.,data/media/categories/ahara-pantry.jpg,fa-solid fa-pepper-hot,13,active

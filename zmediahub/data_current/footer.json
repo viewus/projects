@@ -1,0 +1,117 @@
+{
+  "description": "MediaHub is a discovery platform that organises useful content from many creators, businesses and publishers across Instagram, YouTube, Facebook, TikTok, X and the web.",
+  "columns": [
+    {
+      "type": "links",
+      "title": "Explore",
+      "links": [
+        {
+          "label": "Home",
+          "href": "#/"
+        },
+        {
+          "label": "Categories",
+          "href": "#/categories"
+        },
+        {
+          "label": "Creators",
+          "href": "#/creators",
+          "feature": "providers"
+        },
+        {
+          "label": "Trending",
+          "href": "#/trending"
+        },
+        {
+          "label": "Popular",
+          "href": "#/popular"
+        },
+        {
+          "label": "New",
+          "href": "#/new"
+        },
+        {
+          "label": "Blog",
+          "href": "#/blog"
+        }
+      ]
+    },
+    {
+      "type": "categories",
+      "title": "Categories",
+      "limit": 8
+    },
+    {
+      "type": "tags",
+      "title": "Popular Tags",
+      "limit": 8
+    },
+    {
+      "type": "platforms",
+      "title": "Platforms"
+    },
+    {
+      "type": "links",
+      "title": "Business",
+      "links": [
+        {
+          "label": "Business Directory",
+          "href": "#/businesses"
+        },
+        {
+          "label": "Business Content",
+          "href": "#/category/business"
+        },
+        {
+          "label": "Marketing Tips",
+          "href": "#/tag/marketing"
+        },
+        {
+          "label": "Growth Strategies",
+          "href": "#/tag/growth"
+        },
+        {
+          "label": "Small Business",
+          "href": "#/tag/smallbusiness"
+        }
+      ],
+      "feature": "businesses"
+    },
+    {
+      "type": "links",
+      "title": "Resources",
+      "links": [
+        {
+          "label": "All Tags",
+          "href": "#/tags"
+        },
+        {
+          "label": "Search",
+          "href": "#/search"
+        },
+        {
+          "label": "Guides & Articles",
+          "href": "#/blog"
+        },
+        {
+          "label": "Contact",
+          "href": "#/page/contact"
+        }
+      ]
+    }
+  ],
+  "bottomLinks": [
+    {
+      "label": "Privacy Policy",
+      "href": "#/page/privacy"
+    },
+    {
+      "label": "Terms of Use",
+      "href": "#/page/terms"
+    },
+    {
+      "label": "Contact",
+      "href": "#/page/contact"
+    }
+  ]
+}

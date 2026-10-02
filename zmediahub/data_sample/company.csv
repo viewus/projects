@@ -1,0 +1,18 @@
+key,value
+name,MediaHub
+legalName,MediaHub (sample company)
+email,hello@example.com
+phone,+1 (555) 010-0199
+address,"100 Sample Street, Suite 200, Anytown, 00000"
+website,https://www.example.com/
+hours,"Monday to Friday, 9:00 – 17:00"
+newsletterEndpoint,
+social.instagram,https://www.instagram.com/
+social.youtube,https://www.youtube.com/
+social.facebook,https://www.facebook.com/
+social.tiktok,https://www.tiktok.com/
+social.x,https://x.com/
+links.privacy,#/page/privacy
+links.terms,#/page/terms
+links.contact,#/page/contact
+contactEndpoint,

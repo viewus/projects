@@ -1,0 +1,129 @@
+{
+  "categories": {
+    "title": "All",
+    "highlight": "Topics",
+    "subtitle": "Plain-language guides to everyday law: contracts, property and tenancy, family and wills, business, and your rights. General information, not legal advice.",
+    "image": "data/media/banners/hero-1.jpg",
+    "searchPlaceholder": "Search topics…",
+    "banner": "info"
+  },
+  "trending": {
+    "title": "Popular",
+    "highlight": "Guides",
+    "subtitle": "What readers open most.",
+    "image": "data/media/banners/hero-1.jpg",
+    "sort": "trending",
+    "icon": "fa-solid fa-fire"
+  },
+  "popular": {
+    "title": "Most",
+    "highlight": "Read",
+    "subtitle": "Favourites across every topic.",
+    "image": "data/media/banners/about.jpg",
+    "sort": "popular",
+    "icon": "fa-solid fa-gem"
+  },
+  "new": {
+    "title": "New",
+    "highlight": "Guides",
+    "subtitle": "The newest additions, newest first.",
+    "image": "data/media/banners/about.jpg",
+    "sort": "latest",
+    "icon": "fa-regular fa-clock"
+  },
+  "tags": {
+    "title": "Browse",
+    "highlight": "Tags",
+    "subtitle": "Jump into a subject with a tag.",
+    "image": "data/media/banners/hero-1.jpg"
+  },
+  "search": {
+    "title": "Search",
+    "highlight": "Legal Compass",
+    "subtitle": "Find guides, articles and topics.",
+    "image": "data/media/banners/hero-1.jpg"
+  },
+  "blog": {
+    "title": "The Legal",
+    "highlight": "Compass Journal",
+    "subtitle": "Short, practical reads in plain language.",
+    "image": "data/media/banners/about.jpg"
+  },
+  "businesses": {
+    "title": "Useful",
+    "highlight": "Businesses",
+    "subtitle": "Discover brands and local businesses sharing helpful content.",
+    "image": "data/media/banners/about.jpg"
+  },
+  "static": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "2026-01-01",
+      "intro": "This is a template. Replace it with the privacy policy approved by Legal Compass before launch.",
+      "image": "data/media/banners/about.jpg",
+      "sections": [
+        {
+          "heading": "What we collect",
+          "body": "This is an information website. It does not require an account. Items you save are stored only in your own browser."
+        },
+        {
+          "heading": "Third-party content",
+          "body": "If you open an embedded video or visit an external page, that platform may set its own cookies under its own policy."
+        },
+        {
+          "heading": "Contact",
+          "body": "Questions about privacy can be sent to the email address on the Contact page."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "updated": "2026-01-01",
+      "intro": "This is a template. Replace it with the terms approved by Legal Compass before launch.",
+      "image": "data/media/banners/about.jpg",
+      "sections": [
+        {
+          "heading": "General information only",
+          "body": "This article is general information, not legal advice. Laws differ by country and change over time, and your facts matter. Please speak to a qualified lawyer before acting on anything here."
+        },
+        {
+          "heading": "Third-party content",
+          "body": "Links and embedded content belong to their owners and are subject to the terms of the site that hosts them."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "intro": "Tell us what you would like explained, and we will consider it for a future guide.",
+      "sections": [],
+      "image": "data/media/banners/about.jpg"
+    },
+    "about": {
+      "title": "About Legal Compass",
+      "updated": "",
+      "intro": "Plain-language guides to everyday law: contracts, property and tenancy, family and wills, business, and your rights. General information, not legal advice.",
+      "image": "data/media/banners/about.jpg",
+      "sections": [
+        {
+          "heading": "Why we exist",
+          "body": "Law affects everyday life, yet most of it is written for lawyers. Legal Compass explains the basics in plain language so you can understand your position and ask better questions."
+        },
+        {
+          "heading": "What we cover",
+          "body": "- **Contracts & Agreements** — how they work and what to check.\n- **Property & Tenancy** — renting, buying and owning.\n- **Family & Wills** — wills, inheritance and key documents.\n- **Business & Companies** — structures, employees and intellectual property.\n- **Rights & Procedure** — consumer rights and how courts work."
+        },
+        {
+          "heading": "Important",
+          "body": "Everything here is general information, not legal advice. Laws differ by country and region and change over time. For advice about your situation, please consult a qualified lawyer."
+        }
+      ]
+    }
+  },
+  "providers": {
+    "title": "Explore",
+    "highlight": "Creators & Businesses",
+    "subtitle": "Independent creators, businesses, brands and publishers, each with their own accounts across platforms.",
+    "image": "data/media/banners/about.jpg",
+    "banner": "custom"
+  }
+}

@@ -1,0 +1,8 @@
+id,title,subtitle,description,image,mobile_image,button_text,link,position,category_id,provider_id,priority,start_date,end_date,status,icon
+1,"Know Your Rights,||In Plain Words","Everyday law, explained","Clear guides to contracts, property, family law, business and your rights. General information to help you ask better questions.",data/media/banners/hero-1.jpg,,Explore the Guides,#/categories,hero,,,10,,,active,
+2,Read Before||You Sign,Contracts & Agreements,"What makes a contract binding, what to check in the fine print and how to keep a clean paper trail.",data/media/banners/hero-2.jpg,,Contracts & Agreements,#/category/contracts-agreements,hero,,,9,,,active,
+3,"Rent, Buy,||Own with Confidence",Property & Tenancy,"Leases, deposits, titles and the paperwork behind buying a home.",data/media/banners/hero-3.jpg,,Property & Tenancy,#/category/property-tenancy,hero,,,8,,,active,
+4,Read the Journal,From the journal,"Short, practical reads written in plain language.",data/media/banners/promo.jpg,,Read the Journal,#/blog,promo,,,5,,,active,
+5,About Legal Compass,Our story,"Law affects everyday life, yet most of it is written for lawyers. Legal Compass explains the basics in plain language so you can understand your position and ask better questions.",data/media/banners/about.jpg,,About Us,#/page/about,seasonal,,,6,,,active,
+6,Have a question about a topic?,,"Tell us what you would like explained, and we will consider it for a future guide.",,,Get in Touch,#/page/contact,cta,,,5,,,active,
+7,Stay in touch,,"Tell us what you would like explained, and we will consider it for a future guide.",data/media/banners/info.jpg,,Contact Us,#/page/contact,info,,,4,,,active,

@@ -1,0 +1,154 @@
+{
+  "name": "MediaHub",
+  "nameParts": [
+    "Media",
+    "Hub"
+  ],
+  "tagline": "Discover • Learn • Grow",
+  "description": "Discover useful content from people, creators and businesses, organised in one searchable place.",
+  "logo": "data/media/images/logo-mark.svg",
+  "favicon": "data/media/images/favicon.svg",
+  "placeholder": "data/media/images/placeholder.svg",
+  "copyright": "© {year} MediaHub. All rights reserved.",
+  "language": "en",
+  "pageSize": 30,
+  "heroAutoplayMs": 7500,
+  "search": {
+    "placeholder": "Search videos, posts, creators, topics…",
+    "minChars": 2,
+    "debounceMs": 220,
+    "suggestions": 6
+  },
+  "contentTabs": [
+    {
+      "key": "trending",
+      "label": "Trending",
+      "icon": "fa-solid fa-arrow-trend-up",
+      "sort": "trending"
+    },
+    {
+      "key": "popular",
+      "label": "Popular",
+      "icon": "fa-regular fa-gem",
+      "sort": "popular"
+    },
+    {
+      "key": "new",
+      "label": "New",
+      "icon": "fa-regular fa-clock",
+      "sort": "latest"
+    },
+    {
+      "key": "liked",
+      "label": "Most Liked",
+      "icon": "fa-solid fa-heart",
+      "sort": "likes"
+    },
+    {
+      "key": "commented",
+      "label": "Most Commented",
+      "icon": "fa-regular fa-comment",
+      "sort": "comments"
+    }
+  ],
+  "sortOptions": [
+    {
+      "key": "latest",
+      "label": "Latest"
+    },
+    {
+      "key": "oldest",
+      "label": "Oldest"
+    },
+    {
+      "key": "views",
+      "label": "Most Viewed"
+    },
+    {
+      "key": "likes",
+      "label": "Most Liked"
+    },
+    {
+      "key": "comments",
+      "label": "Most Commented"
+    },
+    {
+      "key": "shares",
+      "label": "Most Shared"
+    },
+    {
+      "key": "trending",
+      "label": "Trending"
+    },
+    {
+      "key": "alpha",
+      "label": "Alphabetical (A–Z)"
+    }
+  ],
+  "contentTypes": [
+    {
+      "key": "video",
+      "label": "Videos"
+    },
+    {
+      "key": "reel",
+      "label": "Reels"
+    },
+    {
+      "key": "short",
+      "label": "Shorts"
+    },
+    {
+      "key": "post",
+      "label": "Posts"
+    },
+    {
+      "key": "article",
+      "label": "Articles"
+    },
+    {
+      "key": "live",
+      "label": "Live"
+    },
+    {
+      "key": "link",
+      "label": "Links"
+    }
+  ],
+  "dateRanges": [
+    {
+      "key": "",
+      "label": "Any time"
+    },
+    {
+      "key": "week",
+      "label": "Past week"
+    },
+    {
+      "key": "month",
+      "label": "Past month"
+    },
+    {
+      "key": "quarter",
+      "label": "Past 3 months"
+    },
+    {
+      "key": "year",
+      "label": "Past year"
+    }
+  ],
+  "features": {
+    "businesses": false,
+    "saved": {
+      "enabled": true,
+      "limit": 30
+    },
+    "faq": false,
+    "glossary": false
+  },
+  "_readme": "Brand and global settings. features.businesses switches the whole business directory on or off (nav link, footer column, /businesses pages, business mentions in content and search). It is off for now. cards.showProvider / cards.showStats show or hide the creator name and the views, likes and comments on every content card (both hidden for now). features.saved.limit caps the 'Saved' list (kept in the visitor's browser localStorage, which is small); set features.saved to false to remove it.",
+  "cards": {
+    "showProvider": false,
+    "showStats": false
+  }
+}

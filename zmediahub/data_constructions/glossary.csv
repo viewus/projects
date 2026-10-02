@@ -1,0 +1,19 @@
+term,definition,category,status
+Aggregate,"Sand, gravel or crushed stone mixed with cement to make concrete.",Materials,active
+Cantilever,A beam or slab fixed at one end and unsupported at the other.,Structure,active
+Curing,Keeping concrete damp and protected after pouring so it gains strength.,Structure,active
+Damp-proof course,A barrier in a wall that stops moisture rising from the ground.,Finishing,active
+Elevation,A drawing showing one side of a building as seen from the front.,Planning,active
+Footing,The widened base of a foundation that spreads a building's load into the ground.,Structure,active
+Formwork,Temporary moulds that hold concrete in shape until it hardens.,Structure,active
+Joist,A horizontal beam that supports a floor or ceiling.,Structure,active
+Lintel,A beam above a door or window that carries the wall above it.,Structure,active
+Load-bearing wall,A wall that carries the weight of the building above it.,Structure,active
+Mortar,"A mix of cement, sand and water used to bind bricks or blocks.",Materials,active
+Plumb,Perfectly vertical.,Materials,active
+Rebar,Steel bars placed in concrete to carry pulling forces.,Materials,active
+Scaffolding,A temporary frame that lets workers reach high parts of a building safely.,Safety,active
+Screed,A thin layer of cement and sand that levels a floor before finishes.,Finishing,active
+Setting out,Marking the position of a building and its walls on the ground.,Planning,active
+Slab,"A flat, horizontal piece of concrete forming a floor or roof.",Structure,active
+Truss,"A triangulated frame, usually of timber or steel, that supports a roof.",Structure,active

@@ -1,0 +1,148 @@
+/*
+ * Mobile polish (loaded last). Tighter spacing, single-line breadcrumbs, compact cards and a shorter footer,
+ * so phones show content instead of padding.
+ */
+@media (max-width: 768px) {
+  :root { --mh-space-section: 28px; --mh-header-offset: calc(var(--mh-space-header-height) + 14px); }
+  .section--tight { padding-block: 8px 0; }
+  .page > .container:last-child, .page > .section:last-child { padding-bottom: 36px; }
+  .site-footer { margin-top: 44px; }
+
+  /* sort + layout controls shrink to fit, even on 320px phones */
+  .toolbar__right { flex-wrap: nowrap; gap: 8px; min-width: 0; }
+  .toolbar__right .select-field { flex: 1; min-width: 0; padding-left: 12px; }
+  .toolbar__right .select-field select { flex: 1; min-width: 0; max-width: none; }
+  .view-toggle { flex: none; }
+
+  /* breadcrumbs: one line, the current page truncates instead of wrapping */
+  .breadcrumbs ol { flex-wrap: nowrap; overflow: hidden; gap: 5px; margin-bottom: 10px; font-size: 0.8rem; }
+  .breadcrumbs li { flex: none; }
+  .breadcrumbs li:last-child { flex: 1 1 auto; min-width: 0; }
+  .breadcrumbs [aria-current] { display: block; max-width: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* section headings: icon sits beside the title, not above it */
+  .section-header { margin-bottom: 12px; gap: 10px; }
+  .section-header__title { min-width: 0; }
+  .platform-filter { margin-block: 10px 4px; }
+  .toolbar { margin-bottom: 12px; }
+  .result-count { margin: 2px 0 10px; }
+  .layout-3col__main { gap: 12px; }
+  .spaced { margin-block: 8px; }
+
+  /* hero */
+  .hero__inner { padding-block: 10px 26px; gap: 22px; }
+  .hero__texts { margin-bottom: 18px; }
+  .hero__quick { margin-top: 12px; }
+  .hero__dots { margin-top: 16px; }
+  .hero-feature { padding: 12px; gap: 8px; }
+
+  /* cards */
+  .content-card__body { padding: 12px; gap: 6px; }
+  .content-card__stats { padding-top: 0; }
+  .provider-card { padding: 14px; gap: 10px; }
+  .banner { min-height: 160px; }
+  .banner__body { padding: 20px 18px; gap: 8px; }
+  .banner p:not(.eyebrow) { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .cta { padding: 20px 16px; gap: 14px; }
+  .cta__icon { width: 52px; height: 52px; font-size: 1.4rem; }
+  .tag-strip { padding: 12px; }
+  .business-layout { gap: 14px; }
+  .topic-chips { margin-bottom: 14px; }
+
+  /* category hero: the subcategory carousel right below already lists them */
+  .cat-hero { padding: 16px 14px; min-height: 0; gap: 12px; border-radius: var(--mh-radius-lg); }
+  .cat-hero__subs { display: none; }
+  .cat-hero__title { align-items: flex-start; gap: 12px; }
+  .cat-hero__title p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.92rem; }
+  .cat-hero__icon { width: 50px; height: 50px; font-size: 1.25rem; }
+  .cat-hero__copy { gap: 10px; }
+
+  /* content detail */
+  .detail { gap: 18px; margin-top: 0; }
+  .detail__main { gap: 14px; }
+  .detail__head h1 { margin-block: 10px 6px; }
+  .detail__provider { padding: 10px 12px; }
+  .detail__provider .btn { display: none; }
+  .detail__provider-link { flex: 1; gap: 12px; }
+  .detail__provider-link strong { display: block; }
+  .detail__stats { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .detail__stats li { padding: 10px 2px; font-size: 0.66rem; }
+  .detail__stats strong { font-size: 0.98rem; }
+  .detail__actions { gap: 8px; }
+  .fallback-card { min-height: 240px; }
+  .fallback-card__body { padding: 20px 16px; gap: 10px; }
+  .fallback-card h2 { font-size: 1.2rem; }
+  .fallback-card .platform-badge--lg { --s: 42px; }
+  .fallback-card .btn--lg { min-height: 46px; padding: 0 22px; font-size: 0.95rem; }
+  .embed-note { font-size: 0.78rem; }
+
+  /* provider profile */
+  .profile { padding: 18px 14px; gap: 12px; }
+  .profile .avatar--2xl { --s: 92px; }
+  .profile__platforms { display: grid; grid-template-columns: 1fr; width: 100%; gap: 8px; text-align: left; }
+  .profile__platforms a, .profile__platforms li > span:not(.muted) { padding: 6px 12px 6px 6px; gap: 10px; }
+  .profile__platforms li a > i, .profile__platforms li > a > i { margin-left: auto; }
+  .profile__contact { margin: 12px 0 4px; }
+  .mini-title { margin: 14px 0 8px; }
+  .profile-meta { gap: 14px; margin: 14px 0 18px; }
+  .tag-hero { padding: 22px 16px; margin-bottom: 14px; }
+  .biz-profile__body { padding-bottom: 18px; }
+
+  /* footer: two columns of links instead of one very long list */
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 24px 16px; padding-block: 32px 18px; }
+  .footer__brand { grid-column: 1 / -1; }
+  .footer__brand p { margin: 10px 0 14px; }
+  .footer__news { margin-top: 16px; }
+  .footer__list { gap: 7px; }
+  .footer__bottom .container { padding-block: 14px; }
+}
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .footer__list--platforms a { gap: 7px; }
+  .carousel--cards .carousel__item { width: 82%; }
+  .tabs { margin-bottom: 0; }
+}
+
+/* phones: tighter vertical rhythm and gutters, nothing decorative that only adds space */
+@media (max-width: 768px) {
+  :root { --mh-space-gutter: 14px; --mh-space-section: 20px; }
+  .section { padding-block: 20px 0; }
+  .section--tight { padding-block: 6px 0; }
+  .page > .container:last-child, .page > .section:last-child { padding-bottom: 24px; }
+  .section--tint { padding-block: 20px; margin-top: 20px; }
+  .site-footer { margin-top: 28px; }
+  .section-header { margin-bottom: 8px; }
+  .section-header__row { gap: 8px; }
+  .section-header__sub { font-size: 0.8rem; margin-top: 0; }
+  .platform-filter { margin-block: 6px 2px; }
+  .platform-filter--sticky { padding-block: 6px; }
+  .tag-strip { padding: 10px; gap: 8px; border-radius: var(--mh-radius-md); }
+  .banner { min-height: 140px; }
+  .banner__body { padding: 16px 14px; }
+  .cta { padding: 14px; }
+  .toolbar { margin-bottom: 8px; gap: 8px; }
+  .result-count { margin: 0 0 8px; }
+  .content-grid, .blog-grid, .biz-grid, .provider-grid, .cat-grid { gap: 12px; }
+  .carousel__track { margin-block: -6px -6px; padding-block: 6px; }
+  .rail-mobile { padding-block: 2px 8px; gap: 10px; }
+  .hero__inner { padding-block: 6px 14px; gap: 14px; }
+  .hero__texts { margin-bottom: 12px; }
+  .hero__quick { margin-top: 10px; gap: 6px 8px; }
+  .hero__dots { margin-top: 12px; }
+  .hero__foot { padding-bottom: 14px; gap: 8px; }
+  .hero__stats { gap: 8px; }
+  .hero__stats li { padding: 6px 10px 6px 6px; gap: 8px; }
+  .hero__lead { margin: 12px 0 16px; }
+  .page-hero { min-height: 150px; padding-bottom: 14px; }
+  .page-hero--compact { min-height: 140px; }
+  .page-hero__inner { padding-top: 8px; }
+  .page-hero__sub::after { margin-top: 8px; }
+  .breadcrumbs ol { margin-bottom: 6px; }
+  .filters, .filter-bar { margin-bottom: 8px; }
+  .side-card { padding: 12px; }
+  .profile { padding: 14px 12px; }
+  .profile-meta { margin: 10px 0 12px; gap: 10px; }
+  .footer__grid { padding-block: 24px 12px; gap: 18px 14px; }
+  .empty-state { padding: 26px 14px; }
+  .tag-group, .policy__item, .contact-card { padding: 12px; }
+}

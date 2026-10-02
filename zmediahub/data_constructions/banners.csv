@@ -1,0 +1,8 @@
+id,title,subtitle,description,image,mobile_image,button_text,link,position,category_id,provider_id,priority,start_date,end_date,status,icon
+1,"Build It Right,||The First Time",Practical construction guides,"Plain-language guides to planning, foundations, materials, site safety and finishing, for homeowners and builders alike.",data/media/banners/hero-1.jpg,,Explore the Guides,#/categories,hero,,,10,,,active,
+2,Plan Before||You Build,Planning & Design,"Budgets, permits, plans and choosing the right team before the first brick is laid.",data/media/banners/hero-2.jpg,,Planning & Design,#/category/planning-design,hero,,,9,,,active,
+3,"Safe Sites,||Strong Structures",Safety & Foundations,"Scaffolding, protective gear, concrete and foundations explained clearly.",data/media/banners/hero-3.jpg,,Site Safety,#/category/safety-site,hero,,,8,,,active,
+4,Read the Journal,From the journal,"Short, practical reads written in plain language.",data/media/banners/promo.jpg,,Read the Journal,#/blog,promo,,,5,,,active,
+5,About BuildRight,Our story,"Good construction starts with good information. BuildRight explains how buildings are planned, built and maintained in plain language, so owners and builders can make better decisions.",data/media/banners/about.jpg,,About Us,#/page/about,seasonal,,,6,,,active,
+6,Planning a build?,,"Tell us what you would like explained, and we will consider it for a future guide.",,,Get in Touch,#/page/contact,cta,,,5,,,active,
+7,Stay in touch,,"Tell us what you would like explained, and we will consider it for a future guide.",data/media/banners/info.jpg,,Contact Us,#/page/contact,info,,,4,,,active,

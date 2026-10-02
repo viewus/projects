@@ -1,0 +1,29 @@
+/*
+ * Design tokens. Colours and shadows are NOT defined here - they come only from data/theme.json. Other tokens are DEFAULTS: data/theme.json supplies every colour and is applied on top of them at
+ * start-up (see services/config.js), so editing data/theme.json re-themes the whole site.
+ * Nothing else in the CSS contains a raw brand colour.
+ */
+:root {
+
+  --mh-radius-sm: 4px;
+  --mh-radius-md: 5px;
+  --mh-radius-lg: 6px;
+  --mh-radius-xl: 6px;
+  --mh-radius-pill: 6px;
+
+
+  --mh-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --mh-font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mh-font-size: 15px;
+  --mh-line-height: 1.55;
+
+  --mh-space-section: 36px;
+  --mh-space-container: 1320px;
+  --mh-space-gutter: 20px;
+  --mh-space-header-height: 60px;
+
+  /* derived */
+  --mh-header-offset: calc(var(--mh-space-header-height) + 20px);
+  --mh-primary-gradient: linear-gradient(135deg, var(--mh-primary-light), var(--mh-primary) 55%, var(--mh-primary-dark));
+  --mh-ring: 0 0 0 3px color-mix(in srgb, var(--mh-primary) 35%, transparent);
+}

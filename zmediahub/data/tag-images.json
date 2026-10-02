@@ -1,0 +1,21 @@
+{
+  "_readme": "Hero image for every tag page, kept apart from tags.csv. Add a line  \"tag-slug\": \"data/media/tags/your-image.jpg\"  to give a tag its own image. Tags without an entry use the image of their most common category, then \"default\".",
+  "default": "data/media/banners/hero-range.jpg",
+  "tags": {
+    "rasayana": "data/media/categories/rasayana-vitality.jpg",
+    "ojas": "data/media/categories/rasayana-vitality.jpg",
+    "agni": "data/media/categories/herbal-churna-kadha.jpg",
+    "immunity": "data/media/categories/rasayana-vitality.jpg",
+    "twak": "data/media/categories/skin-hair-care.jpg",
+    "kesha": "data/media/categories/abhyanga-oils.jpg",
+    "abhyanga": "data/media/categories/abhyanga-oils.jpg",
+    "dinacharya": "data/media/categories/abhyanga-oils.jpg",
+    "ahara": "data/media/categories/ahara-pantry.jpg",
+    "millets": "data/media/categories/ahara-pantry.jpg",
+    "herbs": "data/media/categories/herbal-churna-kadha.jpg",
+    "cold-pressed": "data/media/categories/abhyanga-oils.jpg",
+    "kadha": "data/media/categories/herbal-churna-kadha.jpg",
+    "ubtan": "data/media/categories/skin-hair-care.jpg",
+    "tridosha": "data/media/categories/rasayana-vitality.jpg"
+  }
+}

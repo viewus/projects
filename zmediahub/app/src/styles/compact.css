@@ -1,0 +1,120 @@
+/* Compact scale: smaller type, controls and cards so nothing looks oversized. Loaded after responsive.css. */
+h1 { font-size: clamp(1.7rem, 1.2rem + 2vw, 2.5rem); }
+h2 { font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem); }
+h3 { font-size: 0.98rem; }
+.section-header__title { font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem); }
+.section-header__sub { font-size: 0.84rem; }
+.btn { min-height: 40px; padding: 0 18px; font-size: 0.86rem; }
+.btn--sm { min-height: 32px; padding: 0 13px; font-size: 0.8rem; }
+.btn--lg { min-height: 46px; padding: 0 24px; font-size: 0.94rem; }
+.icon-btn { width: 38px; height: 38px; }
+.pagination { gap: 8px; margin-top: 20px; }
+.pagination a, .pagination li > span:not(.pagination__gap) { min-width: 36px; height: 36px; padding: 0 6px; font-size: 0.84rem; }
+.pagination__info { font-size: 0.8rem; }
+.pf-pill { min-height: 36px; padding: 6px 13px 6px 8px; font-size: 0.8rem; gap: 7px; }
+.pf-pill__icon { width: 22px; height: 22px; font-size: 1rem; }
+.platform-filter__track { padding: 6px 8px; gap: 4px; }
+.cat-chip { width: 96px; height: 80px; font-size: 0.76rem; gap: 6px; }
+.cat-chip__icon { font-size: 1.25rem; }
+.tab { min-height: 38px; padding: 7px 14px; font-size: 0.82rem; }
+.dd--inline .dd__btn { min-height: 38px; }
+.dd--stack .dd__btn { padding: 6px 12px 7px; }
+.dd__value, .dd__opt { font-size: 0.84rem; }
+.view-toggle a, .view-toggle button { width: 34px; height: 32px; }
+.searchbox { height: 40px; }
+.searchbox--hero { height: 52px; }
+.searchbox__btn { width: 32px; height: 32px; }
+.site-header__bar { gap: 14px; }
+.main-nav a, .main-nav > ul > li > button { padding: 7px 11px; font-size: 0.84rem; }
+.logo__name { font-size: 1.3rem; }
+.hero { min-height: 480px; }
+.hero__title { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.3rem); }
+.hero__lead { font-size: 0.98rem; }
+.hero .searchbox--hero { height: 54px; }
+.hero__stats li { padding: 7px 13px 7px 8px; }
+.hero__stats strong { font-size: 1rem; }
+.hero__stats span { width: 30px; height: 30px; }
+.page-hero { min-height: 220px; padding-bottom: 20px; }
+.page-hero--compact { min-height: 200px; }
+.page-hero__title { font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.4rem); }
+.page-hero__sub { font-size: 0.94rem; }
+.content-card__title { font-size: 0.92rem; }
+.content-card__desc { font-size: 0.78rem; }
+.content-card__body { padding: 10px 11px; gap: 5px; }
+.content-card .platform-badge, .content-card__platforms .platform-badge { --s: 28px; }
+.content-card__type { font-size: 0.64rem; padding: 2px 8px; }
+.content-card__duration { font-size: 0.66rem; padding: 2px 7px; }
+.content-grid { gap: 14px; }
+.cat-card, .cat-card__body { min-height: 140px; }
+.cat-card__icon { width: 42px; height: 42px; font-size: 1.05rem; }
+.cat-card__name { font-size: 1.02rem; }
+.cat-card__go { width: 30px; height: 30px; }
+.cat-hero { min-height: 200px; padding: 18px 20px; }
+.cat-hero__icon { width: 54px; height: 54px; font-size: 1.4rem; }
+.cat-hero h1 { font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem); }
+.sub-chip { padding: 6px 14px 6px 6px; }
+.sub-chip__icon { width: 30px; height: 30px; }
+.avatar--2xl { --s: 96px; } .avatar--xl { --s: 72px; } .avatar--lg { --s: 48px; }
+.profile { padding: 18px; } .profile h1 { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); }
+.provider-card { padding: 13px; } .provider-card--profile { padding: 20px 16px 16px; }
+.stat-row strong { font-size: 0.95rem; }
+.feat-tile--lg { min-height: 340px; }
+.feat-tile--lg h3 { font-size: clamp(1.25rem, 1rem + 0.8vw, 1.7rem); }
+.feat-tile { min-height: 164px; }
+.banner { min-height: 160px; } .banner h2 { font-size: clamp(1.35rem, 1.1rem + 1vw, 1.9rem); }
+.cta h2 { font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem); }
+.tag-card__body strong { font-size: 1.1rem; }
+.detail__head h1 { font-size: clamp(1.4rem, 1.1rem + 1.4vw, 2rem); }
+.detail__stats li { padding: 10px 6px; } .detail__stats strong { font-size: 1rem; }
+.footer__col h2, .footer__news h2 { font-size: 0.84rem; margin-bottom: 10px; }
+.footer__list { font-size: 0.82rem; gap: 7px; }
+@media (max-width: 768px) { .hero { min-height: 0; } .page-hero { min-height: 180px; } .page-hero--compact { min-height: 170px; } .content-card__body { padding: 10px; } }
+
+/* themed scrollbars (thin, rounded, brand-coloured on hover) */
+* { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--mh-primary) 45%, var(--mh-border)) transparent; }
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--mh-primary) 40%, var(--mh-border)); border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+*::-webkit-scrollbar-thumb:hover { background: var(--mh-primary); background-clip: content-box; }
+*::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+.dd__list { scrollbar-width: thin; padding-right: 3px; }
+.dd__list::-webkit-scrollbar { width: 6px; }
+.carousel__track, .platform-filter__track, .tabs, .tag-strip__list, .hero__quick { scrollbar-width: none; }
+.carousel__track::-webkit-scrollbar, .platform-filter__track::-webkit-scrollbar, .tabs::-webkit-scrollbar, .tag-strip__list::-webkit-scrollbar { display: none; }
+
+/* text selection uses the brand colour instead of the browser blue */
+::selection { background: color-mix(in srgb, var(--mh-primary) 32%, white); color: var(--mh-text); }
+.hero ::selection, .page-hero ::selection, .banner ::selection, .feat-tile ::selection, .site-footer ::selection { background: var(--mh-primary); color: var(--mh-white); }
+
+/* dropdown list: softer look, brand-coloured highlight and tick */
+.dd__list { border-radius: var(--mh-radius-md); box-shadow: 0 16px 40px rgba(var(--mh-shadow-ink-rgb), 0.18); }
+.dd__opt { transition: background 0.1s; }
+.dd__opt.is-active { background: color-mix(in srgb, var(--mh-primary) 10%, var(--mh-surface)); }
+.dd__opt.is-selected { background: var(--mh-primary-soft); color: var(--mh-primary-dark); }
+.dd__opt.is-selected i { color: var(--mh-primary); }
+select, input, textarea { accent-color: var(--mh-primary); }
+
+@media (max-width: 600px) { .hero__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hero__stats li { min-width: 0; padding-right: 8px; } .hero__stats em { overflow-wrap: anywhere; } }
+
+/* ------------------------------------------------------------ YouTube-style cards: big rounded thumbnail, clean text below */
+.content-card:not(.content-card--row):not(.content-card--mini) { background: transparent; border: 0; box-shadow: none; border-radius: 0; overflow: visible; }
+.content-card:not(.content-card--row):not(.content-card--mini):hover { transform: none; box-shadow: none; }
+.content-card:not(.content-card--row):not(.content-card--mini) .content-card__media { border-radius: var(--mh-radius-lg); }
+.content-card:not(.content-card--row):not(.content-card--mini) .content-card__body { padding: 10px 2px 4px; gap: 3px; }
+.content-card__title { font-size: 0.94rem; font-weight: 700; line-height: 1.3; min-height: 0; }
+.content-card:not(.content-card--row):not(.content-card--mini) .content-card__title { min-height: 2.6em; }
+.content-card__desc { display: none; }
+.content-card__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0 6px; font-size: 0.76rem; color: var(--mh-text-muted); line-height: 1.5; }
+.content-card__meta a { position: relative; z-index: 2; color: inherit; }
+.content-card__meta a:hover { color: var(--mh-primary-dark); text-decoration: underline; }
+.content-card__meta > * + *::before { content: '\00B7'; margin-right: 6px; opacity: 0.7; }
+.content-card__meta a:first-child { font-weight: 600; }
+.content-card--row .content-card__desc { display: -webkit-box; }
+.content-card--row .content-card__meta { margin-top: auto; }
+.content-card__stats { display: none; }
+.content-card--row .content-card__stats { display: flex; }
+
+.content-card__meta { flex-wrap: nowrap; overflow: hidden; white-space: nowrap; }
+.content-card__meta > * { flex: none; }
+.content-card__meta > a:first-child { flex: none; }
+.content-card__meta > a:nth-child(2) { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }

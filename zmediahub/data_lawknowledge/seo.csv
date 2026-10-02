@@ -1,0 +1,52 @@
+key,value
+baseUrl,https://www.example.com/
+staticPagesPath,
+routing,hash
+titleTemplate,{title} | Legal Compass
+homeTitle,"Legal Compass – Know your rights, plainly"
+defaultDescription,"Plain-language guides to everyday law: contracts, property and tenancy, family and wills, business, and your rights. General information, not legal advice."
+defaultImage,data/media/images/og-default.jpg
+imageAlt,Legal Compass
+twitterCard,summary_large_image
+twitterSite,
+locale,en
+themeColor,#1e3a5f
+robots,"index,follow"
+organization.name,Legal Compass
+organization.logo,data/media/images/logo-mark.svg
+pages.categories.title,All Topics
+pages.categories.description,"Plain-language guides to everyday law: contracts, property and tenancy, family and wills, business, and your rights. General information, not legal advice."
+pages.trending.title,Popular Guides
+pages.trending.description,"The most talked-about videos, reels and posts right now, from creators on every platform."
+pages.popular.title,Most Read
+pages.popular.description,The most viewed and loved content on Legal Compass across every category.
+pages.new.title,New Guides
+pages.new.description,"Fresh videos, posts and articles added to Legal Compass, newest first."
+pages.tags.title,Browse Tags
+pages.tags.description,"Explore content by tag, from #Business and #Recipes to #Travel and #Fitness."
+pages.search.title,Search
+pages.search.description,"Search Legal Compass for content, creators, categories, tags, blogs and businesses."
+pages.blog.title,Journal
+pages.blog.description,"Guides, tips and ideas from the Legal Compass editorial team and contributors."
+pages.businesses.title,Businesses
+pages.businesses.description,"Discover businesses sharing useful content, tools and ideas on Legal Compass."
+pages.notfound.title,Page not found
+pages.notfound.description,The page you are looking for does not exist.
+pages.providers.title,Explore Creators & Businesses
+pages.providers.description,"Discover creators, businesses, brands and publishers and the content they share across Instagram, YouTube, Facebook, TikTok and the web."
+templates.category.title,"{name}: Videos, Posts & Creators"
+templates.category.description,"{description} Explore trending, popular and new {name} content on Legal Compass."
+templates.tag.title,#{name}: Content & Creators
+templates.tag.description,{description} Browse {count} items tagged #{name} on Legal Compass.
+templates.content.title,{title}
+templates.content.description,{description}
+templates.blog.title,{title}
+templates.blog.description,{description}
+templates.business.title,{name}: Business Profile
+templates.business.description,{description}
+templates.provider.title,{name} (@{username}): Content & Platforms
+templates.provider.description,{bio} Explore content from {name} on Legal Compass.
+sitemap.changefreq,weekly
+sitemap.priority.home,1.0
+sitemap.priority.listing,0.8
+sitemap.priority.detail,0.6

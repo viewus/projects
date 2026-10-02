@@ -1,0 +1,6 @@
+id,name,slug,description,icon,image,parent_id,sort_order,featured,status,color
+1,Contracts & Agreements,contracts-agreements,"How agreements are formed, what makes them binding and what to check before you sign.",fa-solid fa-file-signature,data/media/categories/contracts-agreements.jpg,,1,1,active,var(--mh-primary)
+2,Property & Tenancy,property-tenancy,"Renting, buying and owning property: leases, deposits, titles and common disputes.",fa-solid fa-house-chimney,data/media/categories/property-tenancy.jpg,,2,1,active,var(--mh-secondary)
+3,Family & Wills,family-wills,"Wills, inheritance, guardianship and the paperwork families need.",fa-solid fa-people-roof,data/media/categories/family-wills.jpg,,3,1,active,var(--mh-primary)
+4,Business & Companies,business-companies,"Starting and running a business: structures, employees, intellectual property.",fa-solid fa-briefcase,data/media/categories/business-companies.jpg,,4,1,active,var(--mh-secondary)
+5,Rights & Procedure,rights-procedure,"Consumer rights, how courts work and what to expect from a legal dispute.",fa-solid fa-scale-balanced,data/media/categories/rights-procedure.jpg,,5,1,active,var(--mh-primary)

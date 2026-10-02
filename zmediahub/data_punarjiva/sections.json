@@ -1,0 +1,83 @@
+{
+  "_readme": "Homepage sections, rendered in this order. Set enabled to false to remove a section. 'type' picks the renderer; other keys are options for that renderer.",
+  "home": [
+    {
+      "type": "hero",
+      "enabled": true,
+      "searchPlaceholder": "Search herbs, oils, skin care…",
+      "quickTags": 5
+    },
+    {
+      "type": "categories",
+      "enabled": true,
+      "title": "Our Ayurvedic Range",
+      "subtitle": "Rasayana, herbal churna, skin & hair care, healing oils and the Ayurvedic pantry",
+      "variant": "icon",
+      "limit": 16,
+      "href": "#/categories"
+    },
+    {
+      "type": "tags",
+      "enabled": true,
+      "title": "Ayurveda Topics",
+      "limit": 14,
+      "href": "#/tags",
+      "linkLabel": "More Topics"
+    },
+    {
+      "type": "banner",
+      "enabled": true,
+      "position": "seasonal"
+    },
+    {
+      "type": "trending",
+      "enabled": true,
+      "title": "Popular Picks",
+      "subtitle": "Most-loved from the Ayurvedic range",
+      "icon": "fa-solid fa-fire",
+      "iconColor": "var(--mh-primary)",
+      "limit": 10,
+      "href": "#/trending",
+      "filterByPlatform": false
+    },
+    {
+      "type": "banner",
+      "enabled": true,
+      "position": "promo"
+    },
+    {
+      "type": "latest",
+      "enabled": true,
+      "title": "New Arrivals",
+      "subtitle": "The newest additions to our range",
+      "icon": "fa-regular fa-clock",
+      "iconColor": "var(--mh-secondary)",
+      "limit": 8,
+      "href": "#/new",
+      "filterByPlatform": false
+    },
+    {
+      "type": "featured",
+      "enabled": true,
+      "title": "Hand-picked Ayurveda",
+      "subtitle": "Our favourites from the range",
+      "icon": "fa-solid fa-award",
+      "iconColor": "var(--mh-primary)",
+      "limit": 5
+    },
+    {
+      "type": "blogs",
+      "enabled": true,
+      "title": "From the Ayurveda Journal",
+      "subtitle": "Doshas, dinacharya, agni and rasayana explained plainly",
+      "icon": "fa-regular fa-newspaper",
+      "iconColor": "var(--mh-secondary)",
+      "limit": 3,
+      "href": "#/blog"
+    },
+    {
+      "type": "cta",
+      "enabled": true
+    }
+  ]
+}

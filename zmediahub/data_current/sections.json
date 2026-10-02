@@ -1,0 +1,93 @@
+{
+  "_readme": "Homepage sections, rendered in this order. Set enabled to false to remove a section. 'type' picks the renderer; other keys are options for that renderer.",
+  "home": [
+    {
+      "type": "hero",
+      "enabled": true,
+      "searchPlaceholder": "Search content, tags, categories or creators…",
+      "quickTags": 5
+    },
+    {
+      "type": "categories",
+      "enabled": true,
+      "title": "Categories",
+      "subtitle": "Explore content across different topics",
+      "variant": "icon",
+      "limit": 16,
+      "href": "#/categories"
+    },
+    {
+      "type": "tags",
+      "enabled": true,
+      "title": "Popular Tags",
+      "limit": 14,
+      "href": "#/tags",
+      "linkLabel": "More Tags"
+    },
+    {
+      "type": "banner",
+      "enabled": true,
+      "position": "seasonal"
+    },
+    {
+      "type": "trending",
+      "enabled": true,
+      "title": "Trending Now",
+      "subtitle": "Popular content from across platforms",
+      "icon": "fa-solid fa-fire",
+      "iconColor": "#e8590c",
+      "limit": 10,
+      "href": "#/trending",
+      "filterByPlatform": true
+    },
+    {
+      "type": "banner",
+      "enabled": true,
+      "position": "promo"
+    },
+    {
+      "type": "popular_categories",
+      "enabled": true,
+      "title": "Popular Categories",
+      "subtitle": "Find content in your favourite areas",
+      "icon": "fa-solid fa-star",
+      "iconColor": "#e0a030",
+      "limit": 10,
+      "href": "#/categories"
+    },
+    {
+      "type": "latest",
+      "enabled": true,
+      "title": "Latest Content",
+      "subtitle": "Fresh content from across platforms",
+      "icon": "fa-regular fa-clock",
+      "iconColor": "#e8830c",
+      "limit": 8,
+      "href": "#/new",
+      "filterByPlatform": true
+    },
+    {
+      "type": "featured",
+      "enabled": true,
+      "title": "Featured Content",
+      "subtitle": "Hand-picked content worth your time",
+      "icon": "fa-solid fa-award",
+      "iconColor": "#b8791d",
+      "limit": 5
+    },
+    {
+      "type": "blogs",
+      "enabled": true,
+      "title": "Useful Resources",
+      "subtitle": "Guides, tutorials and articles from the MediaHub team",
+      "icon": "fa-regular fa-newspaper",
+      "iconColor": "#5b6577",
+      "limit": 3,
+      "href": "#/blog"
+    },
+    {
+      "type": "cta",
+      "enabled": true
+    }
+  ]
+}

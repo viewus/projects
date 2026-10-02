@@ -1,0 +1,22 @@
+key,value
+name,Organic Guru
+legalName,Organic Guru
+email,hello@example.com
+phone,+00 00000 00000
+whatsapp,
+address,Add your address in data/company.csv
+website,https://www.example.com/
+hours,Add your opening hours
+newsletterEndpoint,
+links.privacy,#/page/privacy
+links.terms,#/page/terms
+links.contact,#/page/contact
+contactEndpoint,
+maps,
+googleReviews,
+social.instagram,https://www.instagram.com/
+social.facebook,https://www.facebook.com/
+social.youtube,https://www.youtube.com/
+social.x,https://x.com/
+social.whatsapp,
+social.maps,

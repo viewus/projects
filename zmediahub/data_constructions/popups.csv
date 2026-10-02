@@ -1,0 +1,2 @@
+id,title,message,image,button_text,link,page,delay_seconds,frequency,start_date,end_date,priority,status
+welcome,Welcome to BuildRight,"Practical guides to construction: planning and design, foundations and structure, materials, site safety and finishing. General information for homeowners and builders.",data/media/banners/popup.jpg,Explore the guides,#/categories,home,8,once,,,10,active

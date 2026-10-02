@@ -1,0 +1,6 @@
+id,name,slug,description,icon,image,parent_id,sort_order,featured,status,color
+1,Planning & Design,planning-design,"Budgets, permits, plans and choosing the right team before the first brick is laid.",fa-solid fa-compass-drafting,data/media/categories/planning-design.jpg,,1,1,active,var(--mh-primary)
+2,Foundations & Structure,foundations-structure,"Site preparation, foundations, concrete, walls and the frame that carries the load.",fa-solid fa-building,data/media/categories/foundations-structure.jpg,,2,1,active,var(--mh-secondary)
+3,Materials & Methods,materials-methods,"Bricks, blocks, concrete, steel and timber: what to use where and how it is laid.",fa-solid fa-trowel-bricks,data/media/categories/materials-methods.jpg,,3,1,active,var(--mh-primary)
+4,Safety & Site Management,safety-site,"Protective gear, scaffolding, site rules and keeping a build on schedule.",fa-solid fa-helmet-safety,data/media/categories/safety-site.jpg,,4,1,active,var(--mh-secondary)
+5,Finishing & Maintenance,finishing-maintenance,"Waterproofing, plaster, paint, flooring and looking after a finished building.",fa-solid fa-paint-roller,data/media/categories/finishing-maintenance.jpg,,5,1,active,var(--mh-primary)

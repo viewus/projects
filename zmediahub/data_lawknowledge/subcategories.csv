@@ -1,0 +1,11 @@
+id,category_id,name,slug,description,image,icon,sort_order,status
+101,1,Contract Basics,contract-basics,Contract Basics: guides from Legal Compass.,data/media/categories/contracts-agreements.jpg,fa-solid fa-handshake,1,active
+102,1,Before You Sign,signing-checks,Before You Sign: guides from Legal Compass.,data/media/categories/contracts-agreements.jpg,fa-solid fa-pen-nib,2,active
+103,2,Renting a Home,renting,Renting a Home: guides from Legal Compass.,data/media/categories/property-tenancy.jpg,fa-solid fa-key,3,active
+104,2,Buying Property,buying-property,Buying Property: guides from Legal Compass.,data/media/categories/property-tenancy.jpg,fa-solid fa-house-circle-check,4,active
+105,3,Wills & Inheritance,wills-inheritance,Wills & Inheritance: guides from Legal Compass.,data/media/categories/family-wills.jpg,fa-solid fa-scroll,5,active
+106,3,Family Documents,family-documents,Family Documents: guides from Legal Compass.,data/media/categories/family-wills.jpg,fa-solid fa-folder-open,6,active
+107,4,Starting a Business,starting-business,Starting a Business: guides from Legal Compass.,data/media/categories/business-companies.jpg,fa-solid fa-store,7,active
+108,4,Work & Intellectual Property,work-ip,Work & Intellectual Property: guides from Legal Compass.,data/media/categories/business-companies.jpg,fa-solid fa-copyright,8,active
+109,5,Consumer Rights,consumer,Consumer Rights: guides from Legal Compass.,data/media/categories/rights-procedure.jpg,fa-solid fa-cart-shopping,9,active
+110,5,Courts & Disputes,courts,Courts & Disputes: guides from Legal Compass.,data/media/categories/rights-procedure.jpg,fa-solid fa-gavel,10,active

@@ -1,0 +1,4 @@
+id,title,message,image,button_text,link,page,delay_seconds,frequency,start_date,end_date,priority,status
+welcome,Welcome to MediaHub,"Discover useful videos, posts and ideas from creators and businesses across Instagram, YouTube, Facebook and TikTok, all organised in one place.",data/media/banners/hero-interior.jpg,Start exploring,#/trending,home,8,once,,,10,active
+travel-guide,Autumn Travel Guide,"Fall foliage, cosy city breaks and golden-hour road trips. See this season's best travel picks.",data/media/banners/seasonal-autumn.jpg,Browse Travel,#/category/travel,category/travel,3,session,2026-09-01,2026-11-30,5,active
+featured-sample,Sample announcement (hidden),"This row is switched off. Set status to active to show it, and change page to all to show it on every page.",,Learn more,#/blog,all,5,always,,,1,draft

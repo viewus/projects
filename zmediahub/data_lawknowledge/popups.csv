@@ -1,0 +1,2 @@
+id,title,message,image,button_text,link,page,delay_seconds,frequency,start_date,end_date,priority,status
+welcome,Welcome to Legal Compass,"Plain-language guides to everyday law: contracts, property and tenancy, family and wills, business, and your rights. General information, not legal advice.",data/media/banners/popup.jpg,Explore the guides,#/categories,home,8,once,,,10,active

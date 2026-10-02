@@ -1,0 +1,93 @@
+{
+  "_readme": "Homepage sections, rendered in this order. Set enabled to false to remove a section. 'type' picks the renderer; other keys are options for that renderer.",
+  "home": [
+    {
+      "type": "hero",
+      "enabled": true,
+      "searchPlaceholder": "Search contracts, tenancy, wills…",
+      "quickTags": 5
+    },
+    {
+      "type": "categories",
+      "enabled": true,
+      "title": "Browse by Topic",
+      "subtitle": "Pick a subject to start",
+      "variant": "icon",
+      "limit": 16,
+      "href": "#/categories"
+    },
+    {
+      "type": "tags",
+      "enabled": true,
+      "title": "Popular Tags",
+      "limit": 14,
+      "href": "#/tags",
+      "linkLabel": "More Tags"
+    },
+    {
+      "type": "banner",
+      "enabled": true,
+      "position": "seasonal"
+    },
+    {
+      "type": "trending",
+      "enabled": true,
+      "title": "Popular Guides",
+      "subtitle": "What readers open most",
+      "icon": "fa-solid fa-fire",
+      "iconColor": "var(--mh-primary)",
+      "limit": 10,
+      "href": "#/trending",
+      "filterByPlatform": false
+    },
+    {
+      "type": "banner",
+      "enabled": true,
+      "position": "promo"
+    },
+    {
+      "type": "latest",
+      "enabled": true,
+      "title": "New Guides",
+      "subtitle": "The newest additions",
+      "icon": "fa-regular fa-clock",
+      "iconColor": "var(--mh-primary)",
+      "limit": 8,
+      "href": "#/new",
+      "filterByPlatform": false
+    },
+    {
+      "type": "featured",
+      "enabled": true,
+      "title": "Start Here",
+      "subtitle": "Hand-picked guides",
+      "icon": "fa-solid fa-award",
+      "iconColor": "var(--mh-primary)",
+      "limit": 5
+    },
+    {
+      "type": "blogs",
+      "enabled": true,
+      "title": "From the Journal",
+      "subtitle": "Short, practical reads",
+      "icon": "fa-regular fa-newspaper",
+      "iconColor": "var(--mh-primary)",
+      "limit": 3,
+      "href": "#/blog"
+    },
+    {
+      "type": "faq",
+      "enabled": true,
+      "title": "Frequently asked questions",
+      "subtitle": "Quick answers to common questions",
+      "icon": "fa-regular fa-circle-question",
+      "iconColor": "var(--mh-secondary)",
+      "limit": 6,
+      "href": "#/faq"
+    },
+    {
+      "type": "cta",
+      "enabled": true
+    }
+  ]
+}

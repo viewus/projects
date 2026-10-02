@@ -1,0 +1,115 @@
+{
+  "name": "Organic Guru",
+  "nameParts": [
+    "Organic",
+    "Guru"
+  ],
+  "tagline": "Pure Wisdom, Naturally",
+  "description": "Organic Guru shares Ayurvedic wisdom, organic foods and nature-led care: Rasayana, herbal churnas, skin and hair care, healing oils and the Ayurvedic pantry.",
+  "logo": "data/media/images/logo-mark.svg",
+  "favicon": "data/media/images/favicon.svg",
+  "placeholder": "data/media/images/placeholder.svg",
+  "copyright": "© {year} Organic Guru. All rights reserved.",
+  "language": "en",
+  "pageSize": 30,
+  "heroAutoplayMs": 7500,
+  "search": {
+    "placeholder": "Search herbs, oils, skin care…",
+    "minChars": 2,
+    "debounceMs": 220,
+    "suggestions": 6
+  },
+  "contentTabs": [
+    {
+      "key": "trending",
+      "label": "Trending",
+      "icon": "fa-solid fa-arrow-trend-up",
+      "sort": "trending"
+    },
+    {
+      "key": "popular",
+      "label": "Popular",
+      "icon": "fa-regular fa-gem",
+      "sort": "popular"
+    },
+    {
+      "key": "new",
+      "label": "New",
+      "icon": "fa-regular fa-clock",
+      "sort": "latest"
+    }
+  ],
+  "sortOptions": [
+    {
+      "key": "latest",
+      "label": "Latest"
+    },
+    {
+      "key": "oldest",
+      "label": "Oldest"
+    },
+    {
+      "key": "trending",
+      "label": "Trending"
+    },
+    {
+      "key": "alpha",
+      "label": "Alphabetical (A–Z)"
+    }
+  ],
+  "contentTypes": [
+    {
+      "key": "post",
+      "label": "Posts"
+    },
+    {
+      "key": "article",
+      "label": "Articles"
+    },
+    {
+      "key": "video",
+      "label": "Videos"
+    },
+    {
+      "key": "reel",
+      "label": "Reels"
+    }
+  ],
+  "dateRanges": [
+    {
+      "key": "",
+      "label": "Any time"
+    },
+    {
+      "key": "week",
+      "label": "Past week"
+    },
+    {
+      "key": "month",
+      "label": "Past month"
+    },
+    {
+      "key": "quarter",
+      "label": "Past 3 months"
+    },
+    {
+      "key": "year",
+      "label": "Past year"
+    }
+  ],
+  "features": {
+    "providers": false,
+    "businesses": false,
+    "saved": {
+      "enabled": true,
+      "limit": 30
+    },
+    "faq": true,
+    "glossary": false
+  },
+  "_readme": "Brand and global settings for the Organic Guru Ayurvedic information site. features.providers=false hides the creators list (single organisation). features.businesses=false hides the business directory. cards.showProvider / showStats control the creator name and numbers on every card. features.saved.limit caps the 'Saved' list (kept in the visitor's browser localStorage, which is small); set features.saved to false to remove it.",
+  "cards": {
+    "showProvider": false,
+    "showStats": false
+  }
+}

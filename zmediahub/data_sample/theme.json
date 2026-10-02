@@ -1,0 +1,196 @@
+{
+  "colors": {
+    "primary": "#b8791d",
+    "primaryDark": "#98600f",
+    "primaryLight": "#e0a844",
+    "primarySoft": "#f8ecd5",
+    "secondary": "#2b261f",
+    "accent": "#d99a2b",
+    "background": "#fffcf6",
+    "surface": "#ffffff",
+    "surfaceAlt": "#f7f1e6",
+    "text": "#1f1b16",
+    "textMuted": "#6c655a",
+    "border": "#ece3d2",
+    "success": "#2e8b57",
+    "danger": "#d64545",
+    "warning": "#e0a030",
+    "darkBg": "#1c1a17",
+    "darkSurface": "#26231f",
+    "darkText": "#f5efe4",
+    "darkMuted": "#aaa293",
+    "onPrimary": "#ffffff",
+    "overlay": "rgba(24, 19, 12, 0.62)",
+    "white": "#ffffff",
+    "black": "#000000",
+    "ink": "#0e0a05",
+    "shadowInk": "#3c280a",
+    "gold": "#e8b14a",
+    "successLight": "#7fd6a2",
+    "dangerLight": "#ff9b9b",
+    "info": "#2f80ed"
+  },
+  "radius": {
+    "sm": "4px",
+    "md": "5px",
+    "lg": "6px",
+    "xl": "6px",
+    "pill": "6px"
+  },
+  "shadow": {
+    "sm": "0 1px 2px rgba(60, 40, 10, 0.06), 0 2px 8px rgba(60, 40, 10, 0.05)",
+    "md": "0 6px 22px rgba(60, 40, 10, 0.10)",
+    "lg": "0 18px 48px rgba(60, 40, 10, 0.16)"
+  },
+  "typography": {
+    "headingFont": "'Playfair Display', Georgia, 'Times New Roman', serif",
+    "bodyFont": "'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+    "googleFonts": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap",
+    "baseSize": "14px",
+    "lineHeight": "1.55"
+  },
+  "spacing": {
+    "section": "28px",
+    "container": "1240px",
+    "gutter": "20px",
+    "headerHeight": "56px"
+  },
+  "_readme": "ALL colours live in this file (data/theme.json). Every colour is a hex value; the site also derives an rgb triplet for each one (--mh-<name>-rgb) so transparent tints follow automatically. Radius values are kept between 4px and 6px for a crisp, editorial look.",
+  "patterns": {
+    "dots": "data/media/images/pattern-dots.svg",
+    "waves": "data/media/images/pattern-waves.svg",
+    "rings": "data/media/images/pattern-rings.svg"
+  },
+  "_patterns": "Decorative SVG backgrounds (black shapes used as masks, tinted with the primary colour). Replace a file, or set a value to \"\" to switch that pattern off.",
+  "preset": "",
+  "presets": {
+    "logo": {
+      "colors": {
+        "primary": "#b8791d",
+        "primaryDark": "#98600f",
+        "primaryLight": "#e0a844",
+        "primarySoft": "#f8ecd5",
+        "secondary": "#2b261f",
+        "accent": "#d99a2b",
+        "gold": "#e8b14a",
+        "background": "#fffcf6",
+        "surfaceAlt": "#f7f1e6",
+        "border": "#ece3d2",
+        "text": "#1f1b16",
+        "textMuted": "#6c655a",
+        "darkBg": "#1c1a17",
+        "darkSurface": "#26231f",
+        "ink": "#0e0a05",
+        "shadowInk": "#3c280a"
+      }
+    },
+    "professional-navy": {
+      "colors": {
+        "primary": "#1e3a5f",
+        "primaryDark": "#14294a",
+        "primaryLight": "#6f95c4",
+        "primarySoft": "#e6edf6",
+        "secondary": "#0f8b8d",
+        "secondaryDark": "#0a6668",
+        "secondaryLight": "#7fd0d1",
+        "secondarySoft": "#e0f2f2",
+        "accent": "#0f8b8d",
+        "brand1": "#1e3a5f",
+        "brand2": "#0f8b8d",
+        "gold": "#7fd0d1",
+        "background": "#f7f9fc",
+        "surfaceAlt": "#eef2f7",
+        "border": "#dbe3ee",
+        "text": "#17212f",
+        "textMuted": "#5b6778",
+        "darkBg": "#0e1726",
+        "darkSurface": "#162338",
+        "ink": "#0e1726",
+        "shadowInk": "#14294a"
+      }
+    },
+    "professional-slate": {
+      "colors": {
+        "primary": "#334155",
+        "primaryDark": "#1e293b",
+        "primaryLight": "#94a3b8",
+        "primarySoft": "#eaeef3",
+        "secondary": "#b45309",
+        "secondaryDark": "#8a3f06",
+        "secondaryLight": "#f0b46a",
+        "secondarySoft": "#fbeedc",
+        "accent": "#b45309",
+        "brand1": "#334155",
+        "brand2": "#b45309",
+        "gold": "#f0b46a",
+        "background": "#f8f9fb",
+        "surfaceAlt": "#eff1f5",
+        "border": "#dde2e9",
+        "text": "#1a202c",
+        "textMuted": "#5f6b7a",
+        "darkBg": "#12171f",
+        "darkSurface": "#1b222d",
+        "ink": "#12171f",
+        "shadowInk": "#1e293b"
+      }
+    },
+    "classic-green": {
+      "colors": {
+        "primary": "#2f5d3a",
+        "primaryDark": "#234a2d",
+        "primaryLight": "#6fa57a",
+        "primarySoft": "#e8f1e4",
+        "secondary": "#a8741a",
+        "secondaryDark": "#80570f",
+        "secondaryLight": "#e0b866",
+        "secondarySoft": "#f6ecd6",
+        "accent": "#a8741a",
+        "brand1": "#2f5d3a",
+        "brand2": "#a8741a",
+        "gold": "#e0b866",
+        "background": "#fbf9ef",
+        "surfaceAlt": "#f2efe0",
+        "border": "#e0e3d0",
+        "text": "#1d2a21",
+        "textMuted": "#5d6b60",
+        "darkBg": "#16241b",
+        "darkSurface": "#1e3025",
+        "ink": "#16241b",
+        "shadowInk": "#234a2d"
+      }
+    },
+    "warm-terracotta": {
+      "colors": {
+        "primary": "#a4492b",
+        "primaryDark": "#7f3520",
+        "primaryLight": "#e0987f",
+        "primarySoft": "#faebe5",
+        "secondary": "#3f6b5a",
+        "secondaryDark": "#2c4f41",
+        "secondaryLight": "#9cc7b5",
+        "secondarySoft": "#e4f0ea",
+        "accent": "#3f6b5a",
+        "brand1": "#a4492b",
+        "brand2": "#3f6b5a",
+        "gold": "#9cc7b5",
+        "background": "#fdf9f6",
+        "surfaceAlt": "#f6eee8",
+        "border": "#eadbd0",
+        "text": "#2a1d18",
+        "textMuted": "#6f5e56",
+        "darkBg": "#1f1410",
+        "darkSurface": "#2c1d17",
+        "ink": "#1f1410",
+        "shadowInk": "#7f3520"
+      }
+    }
+  },
+  "_presets": "Set \"preset\" to one of: logo, professional-navy, professional-slate, classic-green, warm-terracotta (empty = use the colours above). A preset overrides only the colours it lists; edit or add presets freely.",
+  "particles": {
+    "enabled": true,
+    "count": 60,
+    "speed": 0.5,
+    "links": true,
+    "size": 5
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "description": "Plain-language guides to everyday law: contracts, property and tenancy, family and wills, business, and your rights. General information, not legal advice.",
+  "columns": [
+    {
+      "type": "links",
+      "title": "Explore",
+      "links": [
+        {
+          "label": "Home",
+          "href": "#/"
+        },
+        {
+          "label": "Topics",
+          "href": "#/categories"
+        },
+        {
+          "label": "Popular",
+          "href": "#/popular"
+        },
+        {
+          "label": "New",
+          "href": "#/new"
+        },
+        {
+          "label": "Journal",
+          "href": "#/blog"
+        }
+      ]
+    },
+    {
+      "type": "categories",
+      "title": "Topics",
+      "limit": 8
+    },
+    {
+      "type": "tags",
+      "title": "Popular Tags",
+      "limit": 8
+    },
+    {
+      "type": "links",
+      "title": "About",
+      "links": [
+        {
+          "label": "About Us",
+          "href": "#/page/about"
+        },
+        {
+          "label": "Contact",
+          "href": "#/page/contact"
+        },
+        {
+          "label": "Saved",
+          "href": "#/saved"
+        },
+        {
+          "label": "Search",
+          "href": "#/search"
+        }
+      ]
+    }
+  ],
+  "bottomLinks": [
+    {
+      "label": "Privacy Policy",
+      "href": "#/page/privacy"
+    },
+    {
+      "label": "Terms of Use",
+      "href": "#/page/terms"
+    },
+    {
+      "label": "Contact",
+      "href": "#/page/contact"
+    }
+  ]
+}

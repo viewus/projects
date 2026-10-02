@@ -1,0 +1,114 @@
+{
+  "main": [
+    {
+      "label": "Home",
+      "href": "#/",
+      "match": [
+        "home"
+      ]
+    },
+    {
+      "label": "Ayurvedic Range",
+      "href": "#/categories",
+      "match": [
+        "categories",
+        "category"
+      ]
+    },
+    {
+      "label": "Journal",
+      "href": "#/blog",
+      "match": [
+        "blog"
+      ]
+    },
+    {
+      "label": "About",
+      "href": "#/page/about",
+      "match": [
+        "page"
+      ]
+    },
+    {
+      "label": "Contact",
+      "href": "#/page/contact",
+      "match": [
+        "page"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "label": "Tags",
+      "href": "#/tags",
+      "icon": "fa-solid fa-hashtag",
+      "match": [
+        "tags",
+        "tag"
+      ]
+    },
+    {
+      "label": "Popular",
+      "href": "#/popular",
+      "icon": "fa-regular fa-gem",
+      "match": [
+        "popular"
+      ]
+    },
+    {
+      "label": "New",
+      "href": "#/new",
+      "icon": "fa-regular fa-clock",
+      "match": [
+        "new"
+      ]
+    },
+    {
+      "label": "Search",
+      "href": "#/search",
+      "icon": "fa-solid fa-magnifying-glass",
+      "match": [
+        "search"
+      ]
+    },
+    {
+      "label": "Saved",
+      "href": "#/saved",
+      "icon": "fa-regular fa-bookmark",
+      "match": [
+        "saved"
+      ],
+      "feature": "saved"
+    }
+  ],
+  "mobileTabs": [
+    {
+      "label": "Home",
+      "href": "#/",
+      "icon": "fa-solid fa-house"
+    },
+    {
+      "label": "Range",
+      "href": "#/categories",
+      "icon": "fa-solid fa-table-cells-large",
+      "prefix": "/category"
+    },
+    {
+      "label": "Journal",
+      "href": "#/blog",
+      "icon": "fa-regular fa-newspaper",
+      "prefix": "/blog"
+    },
+    {
+      "label": "New",
+      "href": "#/new",
+      "icon": "fa-regular fa-clock"
+    },
+    {
+      "label": "Contact",
+      "href": "#/page/contact",
+      "icon": "fa-regular fa-envelope",
+      "prefix": "/page"
+    }
+  ]
+}

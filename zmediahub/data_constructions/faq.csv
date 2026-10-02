@@ -1,0 +1,9 @@
+id,question,answer,category,sort_order,status
+q1,Are these guides a substitute for a professional?,"No. They are general information. Building rules and safety requirements differ by location, so consult a qualified engineer, architect or licensed contractor before you build.",General,1,active
+q2,How much contingency should I add to a building budget?,"Many builders suggest setting aside around 10 to 15 percent for the unexpected, more for renovations of older buildings.",Planning,2,active
+q3,Do I need a permit to build or extend?,"Most building work needs approval from the local authority. Requirements vary, so check with them before you start.",Planning,3,active
+q4,Why does concrete need to be kept damp after pouring?,"Concrete gains strength through a chemical reaction with water called curing. Letting it dry out too quickly weakens it, so keep it damp for several days.",Structure,4,active
+q5,"Which is better, bricks or concrete blocks?","It depends on strength, insulation, speed and cost. Blocks are usually faster to lay; bricks have a traditional look and good durability. See our comparison.",Materials,5,active
+q6,What protective equipment is the minimum on a building site?,"At least a hard hat, safety boots and gloves, with eye and hearing protection around cutting or loud tools.",Safety,6,active
+q7,How do I tell damp from condensation?,"Condensation forms on cold surfaces and wipes away; rising damp leaves tide marks low on walls; leaks show near roofs, pipes or joints. A surveyor can confirm the cause.",Finishing,7,active
+q8,How do I choose a contractor?,"Ask for references and a licence, get a written scope and price, agree staged payments and check their insurance.",Planning,8,active

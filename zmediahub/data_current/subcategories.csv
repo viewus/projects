@@ -1,0 +1,83 @@
+id,category_id,name,slug,description,image,icon,sort_order,status
+101,1,Social Media Marketing,social-media-marketing,Social Media Marketing content curated from creators across platforms.,data/media/categories/business.jpg,fa-solid fa-briefcase,1,active
+102,1,Business Ideas,business-ideas,Business Ideas content curated from creators across platforms.,data/media/categories/business.jpg,fa-solid fa-briefcase,2,active
+103,1,Productivity Tools,productivity-tools,Productivity Tools content curated from creators across platforms.,data/media/categories/business.jpg,fa-solid fa-briefcase,3,active
+104,1,Marketing Tips,marketing-tips,Marketing Tips content curated from creators across platforms.,data/media/categories/business.jpg,fa-solid fa-briefcase,4,active
+105,1,Branding,branding,Branding content curated from creators across platforms.,data/media/categories/business.jpg,fa-solid fa-briefcase,5,active
+106,1,Customer Engagement,customer-engagement,Customer Engagement content curated from creators across platforms.,data/media/categories/business.jpg,fa-solid fa-briefcase,6,active
+107,1,Entrepreneurship,entrepreneurship,Entrepreneurship content curated from creators across platforms.,data/media/categories/business.jpg,fa-solid fa-briefcase,7,active
+108,1,Local Business,local-business,Local Business content curated from creators across platforms.,data/media/categories/business.jpg,fa-solid fa-briefcase,8,active
+109,1,Growth Strategies,growth-strategies,Growth Strategies content curated from creators across platforms.,data/media/categories/business.jpg,fa-solid fa-briefcase,9,active
+110,2,Gadgets,gadgets,Gadgets content curated from creators across platforms.,data/media/categories/technology.jpg,fa-solid fa-laptop-code,1,active
+111,2,Software & Apps,software-apps,Software & Apps content curated from creators across platforms.,data/media/categories/technology.jpg,fa-solid fa-laptop-code,2,active
+112,2,AI & Automation,ai-automation,AI & Automation content curated from creators across platforms.,data/media/categories/technology.jpg,fa-solid fa-laptop-code,3,active
+113,2,Web Development,web-development,Web Development content curated from creators across platforms.,data/media/categories/technology.jpg,fa-solid fa-laptop-code,4,active
+114,3,Study Tips,study-tips,Study Tips content curated from creators across platforms.,data/media/categories/education.jpg,fa-solid fa-book-open,1,active
+115,3,Online Courses,online-courses,Online Courses content curated from creators across platforms.,data/media/categories/education.jpg,fa-solid fa-book-open,2,active
+116,3,Languages,languages,Languages content curated from creators across platforms.,data/media/categories/education.jpg,fa-solid fa-book-open,3,active
+117,3,Career Skills,career-skills,Career Skills content curated from creators across platforms.,data/media/categories/education.jpg,fa-solid fa-book-open,4,active
+118,4,Morning Routines,morning-routines,Morning Routines content curated from creators across platforms.,data/media/categories/lifestyle.jpg,fa-solid fa-seedling,1,active
+119,4,Minimalism,minimalism,Minimalism content curated from creators across platforms.,data/media/categories/lifestyle.jpg,fa-solid fa-seedling,2,active
+120,4,Personal Growth,personal-growth,Personal Growth content curated from creators across platforms.,data/media/categories/lifestyle.jpg,fa-solid fa-seedling,3,active
+121,4,Daily Habits,daily-habits,Daily Habits content curated from creators across platforms.,data/media/categories/lifestyle.jpg,fa-solid fa-seedling,4,active
+122,5,Recipes,recipes,Recipes content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,1,active
+123,5,Healthy Eating,healthy-eating,Healthy Eating content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,2,active
+124,5,Cooking Tips,cooking-tips,Cooking Tips content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,3,active
+125,5,Food Reviews,food-reviews,Food Reviews content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,4,active
+126,5,Street Food,street-food,Street Food content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,5,active
+127,5,Beverages,beverages,Beverages content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,6,active
+128,5,Desserts,desserts,Desserts content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,7,active
+129,5,Vegan & Vegetarian,vegan-vegetarian,Vegan & Vegetarian content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,8,active
+130,5,Meal Prep,meal-prep,Meal Prep content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,9,active
+131,5,Baking,baking,Baking content curated from creators across platforms.,data/media/categories/food-drinks.jpg,fa-solid fa-utensils,10,active
+132,6,Destinations,destinations,Destinations content curated from creators across platforms.,data/media/categories/travel.jpg,fa-solid fa-plane,1,active
+133,6,Travel Tips,travel-tips,Travel Tips content curated from creators across platforms.,data/media/categories/travel.jpg,fa-solid fa-plane,2,active
+134,6,Budget Travel,budget-travel,Budget Travel content curated from creators across platforms.,data/media/categories/travel.jpg,fa-solid fa-plane,3,active
+135,6,Road Trips,road-trips,Road Trips content curated from creators across platforms.,data/media/categories/travel.jpg,fa-solid fa-plane,4,active
+136,7,Workouts,workouts,Workouts content curated from creators across platforms.,data/media/categories/health-fitness.jpg,fa-solid fa-heart-pulse,1,active
+137,7,Yoga & Mindfulness,yoga-mindfulness,Yoga & Mindfulness content curated from creators across platforms.,data/media/categories/health-fitness.jpg,fa-solid fa-heart-pulse,2,active
+138,7,Nutrition,nutrition,Nutrition content curated from creators across platforms.,data/media/categories/health-fitness.jpg,fa-solid fa-heart-pulse,3,active
+139,7,Wellness,wellness,Wellness content curated from creators across platforms.,data/media/categories/health-fitness.jpg,fa-solid fa-heart-pulse,4,active
+140,8,Home Decor,home-decor,Home Decor content curated from creators across platforms.,data/media/categories/home-garden.jpg,fa-solid fa-house,1,active
+141,8,Gardening,gardening,Gardening content curated from creators across platforms.,data/media/categories/home-garden.jpg,fa-solid fa-house,2,active
+142,8,Organization,organization,Organization content curated from creators across platforms.,data/media/categories/home-garden.jpg,fa-solid fa-house,3,active
+143,8,Kitchen Spaces,kitchen-spaces,Kitchen Spaces content curated from creators across platforms.,data/media/categories/home-garden.jpg,fa-solid fa-house,4,active
+144,9,Home DIY,home-diy,Home DIY content curated from creators across platforms.,data/media/categories/diy-crafts.jpg,fa-solid fa-scissors,1,active
+145,9,Handmade Gifts,handmade-gifts,Handmade Gifts content curated from creators across platforms.,data/media/categories/diy-crafts.jpg,fa-solid fa-scissors,2,active
+146,9,Paper Crafts,paper-crafts,Paper Crafts content curated from creators across platforms.,data/media/categories/diy-crafts.jpg,fa-solid fa-scissors,3,active
+147,9,Upcycling,upcycling,Upcycling content curated from creators across platforms.,data/media/categories/diy-crafts.jpg,fa-solid fa-scissors,4,active
+148,10,Skincare,skincare,Skincare content curated from creators across platforms.,data/media/categories/beauty-fashion.jpg,fa-solid fa-wand-magic-sparkles,1,active
+149,10,Makeup,makeup,Makeup content curated from creators across platforms.,data/media/categories/beauty-fashion.jpg,fa-solid fa-wand-magic-sparkles,2,active
+150,10,Style Guides,style-guides,Style Guides content curated from creators across platforms.,data/media/categories/beauty-fashion.jpg,fa-solid fa-wand-magic-sparkles,3,active
+151,10,Hair Care,hair-care,Hair Care content curated from creators across platforms.,data/media/categories/beauty-fashion.jpg,fa-solid fa-wand-magic-sparkles,4,active
+152,11,Budgeting,budgeting,Budgeting content curated from creators across platforms.,data/media/categories/finance.jpg,fa-solid fa-chart-simple,1,active
+153,11,Investing,investing,Investing content curated from creators across platforms.,data/media/categories/finance.jpg,fa-solid fa-chart-simple,2,active
+154,11,Saving Tips,saving-tips,Saving Tips content curated from creators across platforms.,data/media/categories/finance.jpg,fa-solid fa-chart-simple,3,active
+155,11,Personal Finance,personal-finance,Personal Finance content curated from creators across platforms.,data/media/categories/finance.jpg,fa-solid fa-chart-simple,4,active
+156,12,Dog Care,dog-care,Dog Care content curated from creators across platforms.,data/media/categories/pets.jpg,fa-solid fa-paw,1,active
+157,12,Cat Care,cat-care,Cat Care content curated from creators across platforms.,data/media/categories/pets.jpg,fa-solid fa-paw,2,active
+158,12,Pet Training,pet-training,Pet Training content curated from creators across platforms.,data/media/categories/pets.jpg,fa-solid fa-paw,3,active
+159,13,Hiking,hiking,Hiking content curated from creators across platforms.,data/media/categories/nature.jpg,fa-solid fa-tree,1,active
+160,13,Wildlife,wildlife,Wildlife content curated from creators across platforms.,data/media/categories/nature.jpg,fa-solid fa-tree,2,active
+161,13,Sustainability,sustainability,Sustainability content curated from creators across platforms.,data/media/categories/nature.jpg,fa-solid fa-tree,3,active
+162,14,Kids Activities,kids-activities,Kids Activities content curated from creators across platforms.,data/media/categories/parenting.jpg,fa-solid fa-baby,1,active
+163,14,Family Life,family-life,Family Life content curated from creators across platforms.,data/media/categories/parenting.jpg,fa-solid fa-baby,2,active
+164,14,Learning at Home,learning-at-home,Learning at Home content curated from creators across platforms.,data/media/categories/parenting.jpg,fa-solid fa-baby,3,active
+165,15,Painting,painting,Painting content curated from creators across platforms.,data/media/categories/art-design.jpg,fa-solid fa-palette,1,active
+166,15,Graphic Design,graphic-design,Graphic Design content curated from creators across platforms.,data/media/categories/art-design.jpg,fa-solid fa-palette,2,active
+167,15,Illustration,illustration,Illustration content curated from creators across platforms.,data/media/categories/art-design.jpg,fa-solid fa-palette,3,active
+168,16,Car Reviews,car-reviews,Car Reviews content curated from creators across platforms.,data/media/categories/automotive.jpg,fa-solid fa-car-side,1,active
+169,16,Bikes,bikes,Bikes content curated from creators across platforms.,data/media/categories/automotive.jpg,fa-solid fa-car-side,2,active
+170,16,Car Care,car-care,Car Care content curated from creators across platforms.,data/media/categories/automotive.jpg,fa-solid fa-car-side,3,active
+171,17,Movies,movies,Movies content curated from creators across platforms.,data/media/categories/entertainment.jpg,fa-solid fa-clapperboard,1,active
+172,17,Music,music,Music content curated from creators across platforms.,data/media/categories/entertainment.jpg,fa-solid fa-clapperboard,2,active
+173,17,Animation,animation,Animation content curated from creators across platforms.,data/media/categories/entertainment.jpg,fa-solid fa-clapperboard,3,active
+174,18,Space,space,Space content curated from creators across platforms.,data/media/categories/science.jpg,fa-solid fa-flask,1,active
+175,18,Experiments,experiments,Experiments content curated from creators across platforms.,data/media/categories/science.jpg,fa-solid fa-flask,2,active
+176,18,Discoveries,discoveries,Discoveries content curated from creators across platforms.,data/media/categories/science.jpg,fa-solid fa-flask,3,active
+177,19,Success Stories,success-stories,Success Stories content curated from creators across platforms.,data/media/categories/motivation.jpg,fa-solid fa-star,1,active
+178,19,Mindset,mindset,Mindset content curated from creators across platforms.,data/media/categories/motivation.jpg,fa-solid fa-star,2,active
+179,19,Daily Quotes,daily-quotes,Daily Quotes content curated from creators across platforms.,data/media/categories/motivation.jpg,fa-solid fa-star,3,active
+180,20,Camera Gear,camera-gear,Camera Gear content curated from creators across platforms.,data/media/categories/photography.jpg,fa-solid fa-camera,1,active
+181,20,Editing Tips,editing-tips,Editing Tips content curated from creators across platforms.,data/media/categories/photography.jpg,fa-solid fa-camera,2,active
+182,20,Street Photography,street-photography,Street Photography content curated from creators across platforms.,data/media/categories/photography.jpg,fa-solid fa-camera,3,active

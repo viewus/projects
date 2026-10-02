@@ -1,0 +1,13 @@
+id,name,slug,description,usage_count,featured,status
+contracts,Contracts,contracts,Agreements and how they work.,6,1,active
+tenancy,Tenancy,tenancy,Renting and leases.,3,1,active
+property,Property,property,"Buying, owning and transferring property.",2,1,active
+wills,Wills,wills,Wills and inheritance.,3,1,active
+business-law,Business Law,business-law,Starting and running a business.,2,1,active
+employment,Employment,employment,Rights and duties at work.,1,1,active
+intellectual-property,Intellectual Property,intellectual-property,"Trademarks, copyright and creative work.",2,1,active
+consumer-rights,Consumer Rights,consumer-rights,Buying goods and services.,1,1,active
+disputes,Disputes,disputes,Resolving disagreements.,4,1,active
+documents,Legal Documents,documents,The paperwork that matters.,6,1,active
+courts,Courts,courts,How courts work.,2,1,active
+checklists,Checklists,checklists,Short practical lists.,8,1,active

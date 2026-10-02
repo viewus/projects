@@ -1,0 +1,121 @@
+{
+  "categories": {
+    "title": "Explore All",
+    "highlight": "Categories",
+    "subtitle": "Discover amazing content across different topics from real creators.",
+    "image": "data/media/banners/hero-interior.jpg",
+    "searchPlaceholder": "Search categories, topics or keywords…",
+    "banner": "info"
+  },
+  "trending": {
+    "title": "Trending",
+    "highlight": "Now",
+    "subtitle": "What people are watching, saving and sharing right now.",
+    "image": "data/media/banners/hero-hiker.jpg",
+    "sort": "trending",
+    "icon": "fa-solid fa-fire"
+  },
+  "popular": {
+    "title": "Popular",
+    "highlight": "Content",
+    "subtitle": "The most viewed and loved content across every category.",
+    "image": "data/media/banners/hero-food.jpg",
+    "sort": "popular",
+    "icon": "fa-solid fa-gem"
+  },
+  "new": {
+    "title": "New",
+    "highlight": "Content",
+    "subtitle": "Fresh videos, reels, posts and articles, newest first.",
+    "image": "data/media/banners/hero-study.jpg",
+    "sort": "latest",
+    "icon": "fa-regular fa-clock"
+  },
+  "tags": {
+    "title": "Browse",
+    "highlight": "Tags",
+    "subtitle": "Jump into any topic with a tag. Every tag collects content from all platforms.",
+    "image": "data/media/banners/seasonal-autumn.jpg"
+  },
+  "search": {
+    "title": "Search",
+    "highlight": "MediaHub",
+    "subtitle": "Find content, creators, categories, tags, blogs and businesses.",
+    "image": "data/media/banners/hero-interior.jpg"
+  },
+  "blog": {
+    "title": "The MediaHub",
+    "highlight": "Blog",
+    "subtitle": "Guides, tips and ideas to help you discover and learn more.",
+    "image": "data/media/banners/info-team.jpg"
+  },
+  "businesses": {
+    "title": "Useful",
+    "highlight": "Businesses",
+    "subtitle": "Discover brands and local businesses sharing helpful content.",
+    "image": "data/media/banners/biz-startup.jpg"
+  },
+  "static": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "2026-01-01",
+      "intro": "This is a sample privacy policy for the MediaHub demo. Replace it with your own text before launching.",
+      "sections": [
+        {
+          "heading": "What we collect",
+          "body": "MediaHub is a public discovery site and does not require an account. Saved items, followed categories and view preferences are stored only in your own browser using local storage."
+        },
+        {
+          "heading": "Third-party content",
+          "body": "When you open an embedded video or visit an original post, the platform that hosts it (for example YouTube or Instagram) may set its own cookies and collect its own data under its own policy."
+        },
+        {
+          "heading": "Newsletter",
+          "body": "If you subscribe to updates we use your email address only to send MediaHub news. You can unsubscribe at any time."
+        },
+        {
+          "heading": "Contact",
+          "body": "Questions about privacy can be sent to the email address listed on the contact page."
+        }
+      ],
+      "image": "data/media/banners/info-team.jpg"
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "updated": "2026-01-01",
+      "intro": "These are sample terms for the MediaHub demo. Replace them with your own legal text before launching.",
+      "sections": [
+        {
+          "heading": "Using MediaHub",
+          "body": "MediaHub organises links, previews and information about content published by other people. You may browse and share the site for personal, non-commercial use."
+        },
+        {
+          "heading": "Content ownership",
+          "body": "All videos, posts, images and trademarks belong to their original owners. MediaHub links back to the original source and does not claim ownership of third-party content."
+        },
+        {
+          "heading": "Removal requests",
+          "body": "If you own content listed on MediaHub and would like it removed or corrected, please contact us and we will review your request promptly."
+        },
+        {
+          "heading": "Changes",
+          "body": "We may update these terms from time to time. Continued use of the site means you accept the updated terms."
+        }
+      ],
+      "image": "data/media/banners/hero-study.jpg"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "intro": "Questions, feedback, or want your content or business featured? We would love to hear from you.",
+      "sections": [],
+      "image": "data/media/banners/custom-social.jpg"
+    }
+  },
+  "providers": {
+    "title": "Explore",
+    "highlight": "Creators & Businesses",
+    "subtitle": "Independent creators, businesses, brands and publishers, each with their own accounts across platforms.",
+    "image": "data/media/banners/promo-creators.jpg",
+    "banner": "custom"
+  }
+}

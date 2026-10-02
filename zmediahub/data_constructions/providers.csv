@@ -1,0 +1,2 @@
+id,name,slug,provider_type,username,avatar,logo,bio,description,website,email,phone,location,category_id,featured,verified,status
+prov_001,BuildRight,buildright,organization,buildright,data/media/providers/logo.svg,data/media/providers/logo.svg,"Build it right, first time.","Practical guides to construction: planning and design, foundations and structure, materials, site safety and finishing. General information for homeowners and builders.",https://www.example.com/,hello@example.com,+00 00000 00000,Your city,1,1,0,active

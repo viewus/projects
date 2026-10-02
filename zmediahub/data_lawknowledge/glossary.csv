@@ -1,0 +1,19 @@
+term,definition,category,status
+Agreement,A shared understanding between two or more parties about what each will do.,Contracts,active
+Breach,"Failing to do what a contract requires, in whole or in part.",Contracts,active
+Consideration,Something of value that each side gives or promises in a contract.,Contracts,active
+Damages,Money a court may order one party to pay to another to make up for a loss.,Disputes,active
+Executor,The person named in a will to carry out its instructions.,Wills,active
+Intestacy,"The situation where someone dies without a valid will, so the law decides who inherits.",Wills,active
+Indemnity,A promise to cover another party's loss or cost if a particular thing happens.,Contracts,active
+Landlord,The owner who lets a property to a tenant.,Property,active
+Liability,"Legal responsibility for something, such as a debt or harm.",General,active
+Mediation,A process where a neutral person helps both sides reach a settlement.,Disputes,active
+Notice period,The time you must give before ending an agreement such as a lease or job.,Contracts,active
+Plaintiff,The person or organisation that starts a legal case.,Disputes,active
+Probate,The process of proving a will is valid and administering the estate.,Wills,active
+Tenant,A person who rents a property from a landlord.,Property,active
+Title,Legal ownership of property.,Property,active
+Trademark,"A sign, name or logo that identifies the source of goods or services.",Business,active
+Copyright,The right of a creator to control copying and use of an original work.,Business,active
+Witness,A person who watches a document being signed and confirms it.,Wills,active

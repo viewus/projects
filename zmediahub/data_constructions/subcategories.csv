@@ -1,0 +1,11 @@
+id,category_id,name,slug,description,image,icon,sort_order,status
+101,1,Budgeting & Costs,budgeting,Budgeting & Costs: guides from BuildRight.,data/media/categories/planning-design.jpg,fa-solid fa-coins,1,active
+102,1,Permits & Plans,permits-plans,Permits & Plans: guides from BuildRight.,data/media/categories/planning-design.jpg,fa-solid fa-file-lines,2,active
+103,2,Site Preparation,site-prep,Site Preparation: guides from BuildRight.,data/media/categories/foundations-structure.jpg,fa-solid fa-trowel,3,active
+104,2,Concrete & Walls,concrete-walls,Concrete & Walls: guides from BuildRight.,data/media/categories/foundations-structure.jpg,fa-solid fa-layer-group,4,active
+105,3,Bricks & Blocks,bricks-blocks,Bricks & Blocks: guides from BuildRight.,data/media/categories/materials-methods.jpg,fa-solid fa-cubes,5,active
+106,3,Steel & Timber,steel-timber,Steel & Timber: guides from BuildRight.,data/media/categories/materials-methods.jpg,fa-solid fa-grip-lines,6,active
+107,4,Site Safety,site-safety,Site Safety: guides from BuildRight.,data/media/categories/safety-site.jpg,fa-solid fa-shield-halved,7,active
+108,4,Managing the Build,site-management,Managing the Build: guides from BuildRight.,data/media/categories/safety-site.jpg,fa-solid fa-clipboard-check,8,active
+109,5,Waterproofing,waterproofing,Waterproofing: guides from BuildRight.,data/media/categories/finishing-maintenance.jpg,fa-solid fa-droplet,9,active
+110,5,Finishes & Upkeep,finishes,Finishes & Upkeep: guides from BuildRight.,data/media/categories/finishing-maintenance.jpg,fa-solid fa-brush,10,active

@@ -1,0 +1,2 @@
+id,name,slug,icon,color,embed_supported,profile_url,sort_order,status
+website,BuildRight Website,website,fa-solid fa-globe,var(--mh-secondary),0,https://www.google.com/search?q=,7,active

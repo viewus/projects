@@ -1,0 +1,116 @@
+{
+  "_readme": "The single registry for ALL data. Each entry lists the local file (used when mode is \"files\") and the REST endpoint (used when mode is \"api\"). To integrate a backend: set mode to \"api\", fill apiBase (and headers if needed), and make each endpoint return the same shape as its file. Any entry can override the global mode with \"source\": \"file\" or \"api\".",
+  "mode": "files",
+  "basePath": "data/",
+  "apiBase": "",
+  "headers": {},
+  "version": "1",
+  "resources": {
+    "settings": {
+      "site": {
+        "file": "site.json",
+        "endpoint": "/settings/site"
+      },
+      "theme": {
+        "file": "theme.json",
+        "endpoint": "/settings/theme"
+      },
+      "navigation": {
+        "file": "navigation.json",
+        "endpoint": "/settings/navigation"
+      },
+      "platforms": {
+        "file": "platforms.json",
+        "endpoint": "/settings/platforms"
+      },
+      "sections": {
+        "file": "sections.json",
+        "endpoint": "/settings/sections"
+      },
+      "footer": {
+        "file": "footer.json",
+        "endpoint": "/settings/footer"
+      },
+      "pages": {
+        "file": "pages.json",
+        "endpoint": "/settings/pages"
+      },
+      "tag-images": {
+        "file": "tag-images.json",
+        "endpoint": "/settings/tag-images"
+      }
+    },
+    "tables": {
+      "platforms": {
+        "file": "platforms.csv",
+        "endpoint": "/platforms"
+      },
+      "categories": {
+        "file": "categories.csv",
+        "endpoint": "/categories"
+      },
+      "subcategories": {
+        "file": "subcategories.csv",
+        "endpoint": "/subcategories"
+      },
+      "tags": {
+        "file": "tags.csv",
+        "endpoint": "/tags"
+      },
+      "content_tags": {
+        "file": "content_tags.csv",
+        "endpoint": "/content-tags"
+      },
+      "providers": {
+        "file": "providers.csv",
+        "endpoint": "/providers"
+      },
+      "provider_platforms": {
+        "file": "provider_platforms.csv",
+        "endpoint": "/provider-platforms"
+      },
+      "content": {
+        "file": "content.csv",
+        "endpoint": "/content"
+      },
+      "content_platforms": {
+        "file": "content_platforms.csv",
+        "endpoint": "/content-platforms"
+      },
+      "banners": {
+        "file": "banners.csv",
+        "endpoint": "/banners"
+      },
+      "blogs": {
+        "file": "blogs.csv",
+        "endpoint": "/blogs"
+      },
+      "businesses": {
+        "file": "businesses.csv",
+        "endpoint": "/businesses"
+      },
+      "popups": {
+        "file": "popups.csv",
+        "endpoint": "/popups"
+      },
+      "faq": {
+        "file": "faq.csv",
+        "endpoint": "/faq"
+      },
+      "glossary": {
+        "file": "glossary.csv",
+        "endpoint": "/glossary"
+      }
+    },
+    "keyValues": {
+      "seo": {
+        "file": "seo.csv",
+        "endpoint": "/settings/seo"
+      },
+      "company": {
+        "file": "company.csv",
+        "endpoint": "/settings/company"
+      }
+    }
+  }
+}

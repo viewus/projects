@@ -1,0 +1,66 @@
+id,name,slug,description,usage_count,featured,status
+business,Business,business,"Business ideas, strategy and planning.",4,1,active
+entrepreneurship,Entrepreneurship,entrepreneurship,Starting and growing ventures.,1,0,active
+smallbusiness,SmallBusiness,smallbusiness,Tips for small and local businesses.,3,0,active
+marketing,Marketing,marketing,Marketing tactics that work.,4,0,active
+branding,Branding,branding,Build a memorable brand.,2,0,active
+socialmedia,SocialMedia,socialmedia,Social media strategy and tips.,1,0,active
+growth,Growth,growth,Growth strategies and lessons.,2,0,active
+productivity,Productivity,productivity,Tools and habits to get more done.,3,1,active
+techtips,TechTips,techtips,Quick tips to get more from technology.,7,1,active
+gadgets,Gadgets,gadgets,Useful gadgets and reviews.,2,0,active
+ai,AI,ai,AI tools and automation.,1,0,active
+coding,Coding,coding,Programming and web development.,2,0,active
+study,Study,study,Study techniques and learning methods.,4,1,active
+learning,Learning,learning,Learn something new every day.,8,0,active
+careers,Careers,careers,Career skills and growth.,2,0,active
+selfcare,SelfCare,selfcare,Looking after your mind and body.,10,1,active
+minimalism,Minimalism,minimalism,"Live with less, focus on more.",3,0,active
+morningroutine,MorningRoutine,morningroutine,Start the day with intention.,3,0,active
+recipes,Recipes,recipes,Step-by-step recipes for every taste.,7,1,active
+healthyeating,HealthyEating,healthyeating,Nutritious food that tastes great.,3,0,active
+mealprep,MealPrep,mealprep,"Plan ahead, eat well all week.",1,0,active
+streetfood,StreetFood,streetfood,Street food from around the world.,2,0,active
+desserts,Desserts,desserts,Sweet treats and dessert ideas.,2,0,active
+baking,Baking,baking,"Bakes, breads and cakes.",3,0,active
+vegan,Vegan,vegan,Plant-based cooking.,1,0,active
+cookingtips,CookingTips,cookingtips,Kitchen techniques made simple.,4,0,active
+beverages,Beverages,beverages,"Drinks, coffee and smoothies.",2,0,active
+quickmeals,QuickMeals,quickmeals,Fast meals for busy days.,2,0,active
+breakfast,Breakfast,breakfast,Breakfast ideas to start the day.,3,0,active
+foodreview,FoodReview,foodreview,Honest food and restaurant reviews.,2,0,active
+travel,Travel,travel,"Destinations, guides and travel stories.",9,1,active
+budgettravel,BudgetTravel,budgettravel,"See more, spend less.",2,0,active
+roadtrip,RoadTrip,roadtrip,Road trip routes and checklists.,2,0,active
+healthyliving,HealthyLiving,healthyliving,Habits for a healthier life.,1,1,active
+fitness,Fitness,fitness,"Training, strength and cardio.",4,1,active
+workout,Workout,workout,Workout routines for every level.,4,0,active
+yoga,Yoga,yoga,Yoga flows and stretching.,1,0,active
+mindfulness,Mindfulness,mindfulness,"Calm, focus and presence.",2,0,active
+wellness,Wellness,wellness,Whole-body wellbeing.,2,0,active
+homedecor,HomeDecor,homedecor,Decor ideas for every budget.,5,1,active
+gardening,Gardening,gardening,Grow plants indoors and out.,2,0,active
+organization,Organization,organization,"Tidy, organised spaces.",1,0,active
+diy,DIY,diy,Do-it-yourself projects.,5,1,active
+crafts,Crafts,crafts,Handmade crafts and gifts.,2,0,active
+skincare,Skincare,skincare,Skincare routines and advice.,1,0,active
+makeup,Makeup,makeup,Makeup looks and tutorials.,2,0,active
+fashion,Fashion,fashion,"Style, trends and wardrobes.",3,0,active
+finance,Finance,finance,Personal finance made simple.,4,1,active
+investing,Investing,investing,Investing basics and market insight.,2,0,active
+saving,Saving,saving,Build better saving habits.,2,0,active
+budgeting,Budgeting,budgeting,Budgeting methods that stick.,1,0,active
+pets,Pets,pets,"Care, training and cute moments.",3,0,active
+dogs,Dogs,dogs,Everything for dog lovers.,2,0,active
+cats,Cats,cats,Everything for cat lovers.,1,0,active
+nature,Nature,nature,The natural world.,7,0,active
+hiking,Hiking,hiking,"Trails, tips and gear.",2,0,active
+parenting,Parenting,parenting,Family life and kids activities.,2,0,active
+art,Art,art,"Painting, drawing and design.",3,0,active
+cars,Cars,cars,Car reviews and care.,2,0,active
+movies,Movies,movies,Films and film-making.,4,0,active
+music,Music,music,Music and performance.,2,0,active
+animation,Animation,animation,Animated films and craft.,4,0,active
+science,Science,science,Science explained simply.,4,0,active
+motivation,Motivation,motivation,Inspiration to keep going.,4,1,active
+photography,Photography,photography,"Cameras, editing and composition.",7,1,active

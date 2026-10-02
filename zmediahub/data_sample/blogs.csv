@@ -1,0 +1,158 @@
+id,title,slug,excerpt,content,author,category_id,tags,thumbnail,published_at,featured,status
+1,How MediaHub Organises Content,how-mediahub-organises-content,"Learn how we collect useful posts, videos and articles from different platforms and organise them by topic.","MediaHub is a content discovery platform. Instead of asking you to follow dozens of accounts, we collect useful posts, videos and articles from many platforms and organise them in one searchable place.
+
+## Categories, subcategories and tags
+
+Every item belongs to a category (like Food & Drinks) and a subcategory (like Healthy Eating). Tags such as #MealPrep add another layer so you can find related ideas quickly.
+
+## We send you to the original
+
+When you open an item you can watch an embedded preview where the platform allows it, or jump straight to the original creator. Credit and traffic always go back to the people who made the content.
+
+## Always growing
+
+- New content is added regularly
+- Creators and businesses can be featured
+- Everything stays public: no account is needed",MediaHub Team,3,learning;study,data/media/thumbnails/books.jpg,2026-09-27,1,published
+2,Five Habits for a Calmer Morning,five-habits-for-a-calmer-morning,"Small, realistic habits that make mornings feel slower and more intentional.","A calm morning rarely happens by accident. It usually comes from a handful of small decisions made the night before.
+
+## Prepare the night before
+
+Lay out clothes, fill a water bottle and decide on breakfast. Removing choices early leaves your mind free later.
+
+## Delay the screen
+
+Try the first twenty minutes of your day without a phone. Stretch, make tea or simply look out of the window.
+
+## Move a little
+
+Ten minutes of gentle movement is enough to wake the body up.
+
+- Water first
+- Light stretch
+- Write one intention for the day",Healthy Living,4,morningroutine;selfcare,data/media/thumbnails/coffee.jpg,2026-09-21,1,published
+3,A Beginner's Guide to Meal Prep,a-beginner-s-guide-to-meal-prep,"Plan, cook and store a week of balanced meals without spending your whole Sunday in the kitchen.","Meal prep does not have to mean eating the same chicken and rice for five days. The trick is to prepare building blocks rather than finished meals.
+
+## Cook components
+
+Batch-cook a grain, roast a tray of vegetables and prepare one or two proteins. Add sauces and toppings on the day.
+
+## Use the right containers
+
+Glass containers with tight lids keep food fresh for up to four days in the fridge.
+
+## Keep it interesting
+
+- Rotate sauces and spices
+- Add something fresh each day
+- Freeze portions you will not eat in time",Nutri Life,5,mealprep;healthyeating,data/media/thumbnails/meal-prep.jpg,2026-09-15,1,published
+4,How to Pick a Niche for Your Small Business,how-to-pick-a-niche-for-your-small-business,"A simple framework for choosing a focus area that fits your skills, your market and your energy.","Picking a niche can feel like closing doors. In reality, it is how small businesses become memorable.
+
+## Start with what you know
+
+List your skills, past work and interests. The best niches sit where experience and curiosity overlap.
+
+## Check demand
+
+Search for the problem you want to solve. Are people asking questions, watching videos and reading articles about it?
+
+## Test before you commit
+
+- Talk to five potential customers
+- Publish three pieces of content
+- Measure which one gets the most replies",Business Guide,1,business;entrepreneurship;smallbusiness,data/media/thumbnails/business.jpg,2026-09-09,0,published
+5,Budget Travel: Seven Ways to Spend Less,budget-travel-seven-ways-to-spend-less,Practical ways to stretch your travel money without missing out on the experiences that matter.,"Great trips do not need big budgets. They need good planning and a few smart choices.
+
+## Travel off-peak
+
+Shoulder seasons offer lower prices, fewer crowds and often better weather than you expect.
+
+## Eat like a local
+
+Markets and neighbourhood cafés are cheaper and more memorable than tourist restaurants.
+
+## Use public transport
+
+- Buy day or week passes
+- Walk when distances are short
+- Book long journeys in advance",Travel Diaries,6,travel;budgettravel,data/media/thumbnails/island.jpg,2026-09-03,0,published
+6,Starter Workouts You Can Do at Home,starter-workouts-you-can-do-at-home,"No gym, no problem. Build strength and energy with a simple home routine.","You do not need a membership to get stronger. Bodyweight exercises can build a solid foundation.
+
+## Warm up first
+
+Five minutes of marching on the spot, arm circles and hip rolls prepare your joints.
+
+## The simple circuit
+
+Repeat three rounds with thirty seconds of work and thirty seconds of rest:
+
+- Squats
+- Push-ups (knees down is fine)
+- Glute bridges
+- Plank
+
+## Recover well
+
+Stretch afterwards, hydrate and aim for consistency over intensity.",Fitness With Me,7,fitness;workout,data/media/thumbnails/workout.jpg,2026-08-28,0,published
+7,Indoor Plants for Beginners,indoor-plants-for-beginners,Five forgiving plants and a few simple rules that keep them thriving.,"Plants make a home feel alive, and some are surprisingly easy to keep happy.
+
+## Start with forgiving varieties
+
+Snake plants, pothos, ZZ plants and succulents tolerate missed waterings and lower light.
+
+## Water less than you think
+
+Check the soil with your finger. If the top inch is dry, water; if not, wait.
+
+## Give them light
+
+- Place leafy plants near bright, indirect light
+- Rotate pots every few weeks
+- Dust the leaves occasionally",Home Style,8,gardening;homedecor,data/media/thumbnails/plants.jpg,2026-08-22,0,published
+8,Understanding the 50/30/20 Budget,understanding-the-50-30-20-budget,A beginner-friendly look at one of the simplest budgeting rules around.,"The 50/30/20 rule splits your after-tax income into three groups so you can see where your money goes.
+
+## 50% needs
+
+Rent, groceries, utilities, transport and minimum debt payments.
+
+## 30% wants
+
+Dining out, entertainment, hobbies and subscriptions.
+
+## 20% savings and debt
+
+Emergency fund, long-term savings and extra debt payments.
+
+The percentages are a starting point. Adjust them to fit your life, then automate your savings so it happens without effort.",Money Matters,11,finance;budgeting;saving,data/media/thumbnails/money.jpg,2026-08-16,0,published
+9,Camera Basics: Exposure Explained,camera-basics-exposure-explained,"Aperture, shutter speed and ISO in plain language, with simple practice ideas.","Every photo is a balance of three settings, often called the exposure triangle.
+
+## Aperture
+
+Controls how much light enters the lens and how blurry the background looks.
+
+## Shutter speed
+
+Controls how long the sensor is exposed. Fast speeds freeze motion; slow speeds create blur.
+
+## ISO
+
+Controls sensitivity. Keep it low in bright light and raise it only when you need to.
+
+- Practise in aperture priority mode
+- Change one setting at a time
+- Review your photos and notice the differences",Lens & Light,20,photography,data/media/thumbnails/camera.jpg,2026-08-10,0,published
+10,Why Short-Form Video Is Great for Learning,why-short-form-video-is-great-for-learning,"Ninety seconds can be enough to spark curiosity, teach a concept and inspire a deeper dive.","Short videos get a bad reputation, but when used well they are excellent entry points to new subjects.
+
+## Curiosity first
+
+A quick explanation shows you what is possible and what you want to learn next.
+
+## Repetition helps
+
+Small lessons are easy to rewatch and easy to remember.
+
+## Follow up
+
+- Save the best clips
+- Look for the creator's longer content
+- Practise what you have learned",Learn Daily,3,learning;study,data/media/thumbnails/tech.jpg,2026-08-04,0,published

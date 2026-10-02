@@ -1,0 +1,137 @@
+{
+  "categories": {
+    "title": "Our Ayurvedic",
+    "highlight": "Range",
+    "subtitle": "Rasayana, herbal churna, skin & hair care, healing oils and the Ayurvedic pantry.",
+    "image": "data/media/banners/hero-range.jpg",
+    "searchPlaceholder": "Search the Ayurvedic range…",
+    "banner": "info"
+  },
+  "trending": {
+    "title": "Popular",
+    "highlight": "Picks",
+    "subtitle": "What people look at most.",
+    "image": "data/media/banners/hero-ayurveda.jpg",
+    "sort": "trending",
+    "icon": "fa-solid fa-fire"
+  },
+  "popular": {
+    "title": "Most",
+    "highlight": "Loved",
+    "subtitle": "Favourites from every part of our range.",
+    "image": "data/media/banners/hero-groceries.jpg",
+    "sort": "popular",
+    "icon": "fa-solid fa-gem"
+  },
+  "new": {
+    "title": "New",
+    "highlight": "Arrivals",
+    "subtitle": "The newest additions, newest first.",
+    "image": "data/media/banners/hero-cosmetics.jpg",
+    "sort": "latest",
+    "icon": "fa-regular fa-clock"
+  },
+  "tags": {
+    "title": "Ayurveda",
+    "highlight": "Topics",
+    "subtitle": "Rasayana, agni, ojas, dinacharya, abhyanga and more.",
+    "image": "data/media/banners/hero-range.jpg"
+  },
+  "search": {
+    "title": "Search",
+    "highlight": "Punarjiva",
+    "subtitle": "Find Ayurvedic products, journal articles and topics.",
+    "image": "data/media/banners/hero-about.jpg"
+  },
+  "blog": {
+    "title": "The Ayurveda",
+    "highlight": "Journal",
+    "subtitle": "Doshas, dinacharya, agni and rasayana explained plainly, plus millets, oils and natural care.",
+    "image": "data/media/banners/hero-about.jpg"
+  },
+  "businesses": {
+    "title": "Useful",
+    "highlight": "Businesses",
+    "subtitle": "Discover brands and local businesses sharing helpful content.",
+    "image": "data/media/banners/hero-about.jpg"
+  },
+  "static": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "2026-01-01",
+      "intro": "This is a template privacy policy. Replace it with the text approved by Punarjiva Organics Private Limited before launch.",
+      "sections": [
+        {
+          "heading": "What we collect",
+          "body": "This is an information website. It does not require an account and does not sell anything online."
+        },
+        {
+          "heading": "Third-party content",
+          "body": "When you open an embedded video or visit an original post, the platform that hosts it (for example YouTube or Instagram) may set its own cookies under its own policy."
+        },
+        {
+          "heading": "Contact",
+          "body": "Questions about privacy can be sent to the email address on the Contact page."
+        }
+      ],
+      "image": "data/media/banners/hero-about.jpg"
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "updated": "2026-01-01",
+      "intro": "This is a template. Replace it with the terms approved by Punarjiva Organics Private Limited before launch.",
+      "sections": [
+        {
+          "heading": "About this site",
+          "body": "This site shares information about Punarjiva Organics. Product details are for information only; please call or message the store to confirm availability."
+        },
+        {
+          "heading": "Health information",
+          "body": "Content on this site is general information based on traditional Ayurvedic practice. It does not diagnose, treat, cure or prevent any condition and is not a substitute for advice from a qualified practitioner or doctor."
+        },
+        {
+          "heading": "Third-party content",
+          "body": "Embedded posts and videos belong to their owners and are shown under the terms of the platform that hosts them."
+        }
+      ],
+      "image": "data/media/banners/hero-about.jpg"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "intro": "Call the store or send your list on WhatsApp — we will confirm availability and guide you with care.",
+      "sections": [],
+      "image": "data/media/banners/store.jpg"
+    },
+    "about": {
+      "title": "About Punarjiva Organics",
+      "updated": "",
+      "intro": "Created by health-conscious minds, Punarjiva Organics is dedicated to reviving the body's natural harmony through organic foods, nature-led care and time-tested Ayurvedic wisdom.",
+      "image": "data/media/banners/hero-about.jpg",
+      "sections": [
+        {
+          "heading": "What “Punarjivam” means to us",
+          "body": "The body deserves Punarjivam — a revival powered by organic purity and ancient natural strength. That idea shapes what we stock: staples that belong in a traditional Indian kitchen, personal care that stays close to its plant sources, and Ayurvedic preparations that have been trusted for generations."
+        },
+        {
+          "heading": "Our promise",
+          "body": "Organic purity, ancient strength, true Punarjivam. We offer verified, hygienic products for everyday wellness, rooted in traditional practices."
+        },
+        {
+          "heading": "What we bring together",
+          "body": "- **Rasayana & Vitality** — classical tonics such as Chyawanprash, lehyams and ashwagandha.\n- **Herbal Churna & Kadha** — triphala, moringa, turmeric and tulsi-giloy.\n- **Skin & Hair Care** — plant-led care for twak and kesha.\n- **Abhyanga & Healing Oils** — bhringraj, groundnut and coconut oils.\n- **Ahara: the Ayurvedic Pantry** — millets, dals, atta, spices, jaggery and honey."
+        },
+        {
+          "heading": "A store you can take your time in",
+          "body": "Step into a space crafted to feel serene, grounded and close to nature. Explore, ask and choose at your own pace — and if you would rather send your list ahead, WhatsApp works just as well."
+        }
+      ]
+    }
+  },
+  "providers": {
+    "title": "Explore",
+    "highlight": "Creators & Businesses",
+    "subtitle": "Independent creators, businesses, brands and publishers, each with their own accounts across platforms.",
+    "image": "data/media/banners/hero-about.jpg",
+    "banner": "custom"
+  }
+}

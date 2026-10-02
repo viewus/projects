@@ -1,0 +1,2 @@
+id,title,message,image,button_text,link,page,delay_seconds,frequency,start_date,end_date,priority,status
+welcome,Namaste & welcome,"Punarjiva Organics brings Ayurvedic wisdom, organic food and natural care together. Browse the range or start with our guide to the three doshas.",data/media/banners/store.jpg,Read the dosha guide,#/blog/the-three-doshas-in-plain-language,home,8,once,,,10,active

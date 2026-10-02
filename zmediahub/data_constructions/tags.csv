@@ -1,0 +1,13 @@
+id,name,slug,description,usage_count,featured,status
+budget,Budget,budget,Costing and cost control.,3,1,active
+permits,Permits,permits,Approvals and regulations.,2,1,active
+blueprints,Blueprints,blueprints,Plans and drawings.,1,1,active
+foundation,Foundation,foundation,Foundations and groundwork.,3,1,active
+concrete,Concrete,concrete,"Mixing, pouring and curing.",4,1,active
+bricks,Bricks & Blocks,bricks,Masonry and walling.,3,1,active
+steel,Steel,steel,Reinforcement and structure.,2,1,active
+safety,Safety,safety,Protecting people on site.,3,1,active
+scaffolding,Scaffolding,scaffolding,Working at height.,1,1,active
+waterproofing,Waterproofing,waterproofing,Keeping moisture out.,2,1,active
+finishing,Finishing,finishing,"Plaster, paint and floors.",2,1,active
+checklists,Checklists,checklists,Short practical lists.,7,1,active

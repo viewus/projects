@@ -1,0 +1,18 @@
+{
+  "_readme": "Hero image for every tag page, kept apart from tags.csv. Add a line  \"tag-slug\": \"data/media/tags/your-image.jpg\"  to give a tag its own image. Tags without an entry use the image of their most common category, then \"default\".",
+  "default": "data/media/banners/hero-1.jpg",
+  "tags": {
+    "budget": "data/media/categories/planning-design.jpg",
+    "permits": "data/media/categories/foundations-structure.jpg",
+    "blueprints": "data/media/categories/materials-methods.jpg",
+    "foundation": "data/media/categories/safety-site.jpg",
+    "concrete": "data/media/categories/finishing-maintenance.jpg",
+    "bricks": "data/media/categories/planning-design.jpg",
+    "steel": "data/media/categories/foundations-structure.jpg",
+    "safety": "data/media/categories/materials-methods.jpg",
+    "scaffolding": "data/media/categories/safety-site.jpg",
+    "waterproofing": "data/media/categories/finishing-maintenance.jpg",
+    "finishing": "data/media/categories/planning-design.jpg",
+    "checklists": "data/media/categories/foundations-structure.jpg"
+  }
+}

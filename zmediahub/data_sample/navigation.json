@@ -1,0 +1,132 @@
+{
+  "main": [
+    {
+      "label": "Home",
+      "href": "#/",
+      "match": [
+        "home"
+      ]
+    },
+    {
+      "label": "Categories",
+      "href": "#/categories",
+      "match": [
+        "categories",
+        "category"
+      ]
+    },
+    {
+      "label": "Creators",
+      "href": "#/creators",
+      "match": [
+        "creators",
+        "creator"
+      ],
+      "feature": "providers"
+    },
+    {
+      "label": "Trending",
+      "href": "#/trending",
+      "match": [
+        "trending"
+      ]
+    },
+    {
+      "label": "Popular",
+      "href": "#/popular",
+      "match": [
+        "popular"
+      ]
+    },
+    {
+      "label": "New",
+      "href": "#/new",
+      "match": [
+        "new"
+      ]
+    },
+    {
+      "label": "Blog",
+      "href": "#/blog",
+      "match": [
+        "blog",
+        "blog-post"
+      ]
+    },
+    {
+      "label": "Businesses",
+      "href": "#/businesses",
+      "match": [
+        "businesses",
+        "business"
+      ],
+      "feature": "businesses"
+    }
+  ],
+  "more": [
+    {
+      "label": "Tags",
+      "href": "#/tags",
+      "icon": "fa-solid fa-hashtag",
+      "match": [
+        "tags",
+        "tag"
+      ]
+    },
+    {
+      "label": "Search",
+      "href": "#/search",
+      "icon": "fa-solid fa-magnifying-glass",
+      "match": [
+        "search"
+      ]
+    },
+    {
+      "label": "Contact",
+      "href": "#/page/contact",
+      "icon": "fa-regular fa-envelope",
+      "match": [
+        "page"
+      ]
+    },
+    {
+      "label": "Saved",
+      "href": "#/saved",
+      "icon": "fa-regular fa-bookmark",
+      "match": [
+        "saved"
+      ],
+      "feature": "saved"
+    }
+  ],
+  "mobileTabs": [
+    {
+      "label": "Home",
+      "href": "#/",
+      "icon": "fa-solid fa-house"
+    },
+    {
+      "label": "Categories",
+      "href": "#/categories",
+      "icon": "fa-solid fa-table-cells-large",
+      "prefix": "/category"
+    },
+    {
+      "label": "Trending",
+      "href": "#/trending",
+      "icon": "fa-solid fa-fire"
+    },
+    {
+      "label": "New",
+      "href": "#/new",
+      "icon": "fa-regular fa-clock"
+    },
+    {
+      "label": "Creators",
+      "href": "#/creators",
+      "icon": "fa-solid fa-user-group",
+      "prefix": "/provider",
+      "feature": "providers"
+    }
+  ]
+}

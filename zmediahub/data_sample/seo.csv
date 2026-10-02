@@ -1,0 +1,52 @@
+key,value
+baseUrl,https://projects.akhileshravuri.online/zmediahub/
+staticPagesPath,
+routing,hash
+titleTemplate,{title} | MediaHub
+homeTitle,MediaHub – Discover Useful Content From Creators Across the Web
+defaultDescription,"Discover useful videos, posts, tutorials and business ideas from creators on Instagram, YouTube, Facebook, TikTok and the web, organised in one searchable place."
+defaultImage,data/media/images/og-default.jpg
+imageAlt,MediaHub – discover useful content
+twitterCard,summary_large_image
+twitterSite,
+locale,en_US
+themeColor,#b8791d
+robots,"index,follow"
+organization.name,MediaHub
+organization.logo,data/media/images/logo-mark.svg
+pages.categories.title,All Categories
+pages.categories.description,"Browse every MediaHub category, from business and technology to food, travel, fitness and more."
+pages.trending.title,Trending Content
+pages.trending.description,"The most talked-about videos, reels and posts right now, from creators on every platform."
+pages.popular.title,Popular Content
+pages.popular.description,The most viewed and loved content on MediaHub across every category.
+pages.new.title,New Content
+pages.new.description,"Fresh videos, posts and articles added to MediaHub, newest first."
+pages.tags.title,Browse Tags
+pages.tags.description,"Explore content by tag, from #Business and #Recipes to #Travel and #Fitness."
+pages.search.title,Search
+pages.search.description,"Search MediaHub for content, creators, categories, tags, blogs and businesses."
+pages.blog.title,Blog
+pages.blog.description,"Guides, tips and ideas from the MediaHub editorial team and contributors."
+pages.businesses.title,Businesses
+pages.businesses.description,"Discover businesses sharing useful content, tools and ideas on MediaHub."
+pages.notfound.title,Page not found
+pages.notfound.description,The page you are looking for does not exist.
+pages.providers.title,Explore Creators & Businesses
+pages.providers.description,"Discover creators, businesses, brands and publishers and the content they share across Instagram, YouTube, Facebook, TikTok and the web."
+templates.category.title,"{name}: Videos, Posts & Creators"
+templates.category.description,"{description} Explore trending, popular and new {name} content on MediaHub."
+templates.tag.title,#{name}: Content & Creators
+templates.tag.description,{description} Browse {count} items tagged #{name} on MediaHub.
+templates.content.title,{title}
+templates.content.description,{description}
+templates.blog.title,{title}
+templates.blog.description,{description}
+templates.business.title,{name}: Business Profile
+templates.business.description,{description}
+templates.provider.title,{name} (@{username}): Content & Platforms
+templates.provider.description,{bio} Explore content from {name} on MediaHub.
+sitemap.changefreq,weekly
+sitemap.priority.home,1.0
+sitemap.priority.listing,0.8
+sitemap.priority.detail,0.6

@@ -1,0 +1,2 @@
+id,name,slug,provider_type,username,avatar,logo,bio,description,website,email,phone,location,category_id,featured,verified,status
+prov_001,Legal Compass,legal-compass,organization,legalcompass,data/media/providers/logo.svg,data/media/providers/logo.svg,"Know your rights, plainly.","Plain-language guides to everyday law: contracts, property and tenancy, family and wills, business, and your rights. General information, not legal advice.",https://www.example.com/,hello@example.com,+00 00000 00000,Your city,1,1,0,active

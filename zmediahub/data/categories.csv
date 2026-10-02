@@ -1,0 +1,6 @@
+id,name,slug,description,icon,image,parent_id,sort_order,featured,status,color
+1,Rasayana & Vitality,rasayana-vitality,"Chyawanprash, lehyams, ashwagandha and daily tonics: classical Rasayana for everyday strength and resilience.",fa-solid fa-seedling,data/media/categories/rasayana-vitality.jpg,,1,1,active,var(--mh-primary)
+2,Herbal Churna & Kadha,herbal-churna-kadha,"Triphala, moringa, turmeric and tulsi-giloy blends from the Ayurvedic herb shelf.",fa-solid fa-mortar-pestle,data/media/categories/herbal-churna-kadha.jpg,,2,1,active,var(--mh-secondary)
+3,Skin & Hair Care,skin-hair-care,"Kumkumadi, neem-tulsi, sandal, ubtan and shikakai: plant-led care for twak (skin) and kesha (hair).",fa-solid fa-spa,data/media/categories/skin-hair-care.jpg,,3,1,active,var(--mh-primary)
+4,Abhyanga & Healing Oils,abhyanga-oils,"Bhringraj, wood-pressed groundnut and cold-pressed coconut oils for massage, scalp and kitchen.",fa-solid fa-droplet,data/media/categories/abhyanga-oils.jpg,,4,1,active,var(--mh-secondary)
+5,Ahara: The Ayurvedic Pantry,ahara-pantry,"Millets, dals, atta, spices, jaggery and honey: in Ayurveda, food is the first medicine.",fa-solid fa-wheat-awn,data/media/categories/ahara-pantry.jpg,,5,1,active,var(--mh-primary)

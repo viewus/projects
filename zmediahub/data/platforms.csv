@@ -1,0 +1,2 @@
+id,name,slug,icon,color,embed_supported,profile_url,sort_order,status
+website,Organic Guru Website,website,fa-solid fa-globe,var(--mh-secondary),0,https://www.example.com/,7,active
