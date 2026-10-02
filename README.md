@@ -11,6 +11,7 @@ The root [`index.html`](index.html) is a hub page that lists every site in this 
 
 | Site | Folder | Category | Pages |
 | --- | --- | --- | --- |
+| MediaHub | [`zmediahub/`](zmediahub/) | Content Platform | 15 |
 | Punarjiva Organics | [`punarjiva_organics/`](punarjiva_organics/) | Wellness | 40 |
 | Advaith Homes | [`advaith_homes/`](advaith_homes/) | Real Estate | 21 |
 | Artisano | [`living-designers/`](living-designers/) | Interiors | 6 |
